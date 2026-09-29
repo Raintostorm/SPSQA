@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2543f148dd08246ea94fa77833c59d78, type: 3}
+  m_Name: GameBalance
+  m_EditorClassIdentifier: Assembly-CSharp::Project.Data.GameBalance
+  RollCost: 20
+  StartingCoins: 40
+  CoinPerWaveClear: 40
+  SellPriceByRarity: 02000000050000000a00000014000000
+  ClusterRewardHP: 0a0000001900000064000000c8000000
+  ClusterRewardDamage: 0a0000001900000064000000c8000000
+  ClusterRewardCritChance: 0100000002000000050000000f000000
+  ClusterRewardAtkSpeed: 050000000f0000003200000064000000
+  ClusterRewardCoin: 0f0000002800000050000000c8000000
+  DefaultMoveSpeed: 1.35
+  MeleeStrikeInterval: 0.24
+  RangedShotInterval: 0.52
+  DefaultAttackRange: 1.65
+  EngageDelay: 2
+  LevelCount: 3
