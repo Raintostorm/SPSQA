@@ -11,10 +11,12 @@ namespace Project.Data
         public int CoinPerWaveClear = 40;
 
         [Header("Sell")]
-        // Index = (int)Rarity: 0 Common · 1 Rare · 2 Epic · 3 Legendary
-        public int[] SellPriceByRarity = { 2, 5, 10, 20 };
+        // Index = (int)Rarity: 0 Common · 1 Rare · 2 Epic · 3 Legendary · 4 Mythic
+        // Mythic = 0 chi de mang an toan voi moi gia tri enum.
+        // Luat "Mythic khong ban duoc" phai viet thanh dieu kien ro rang o cho xu ly ban.
+        public int[] SellPriceByRarity = { 2, 5, 10, 20, 0 };
         [Header("ClusterReward")]
-        // Index = (int)ClusterReward: 3 slots same · 4 slots same · 5 slots same · 6 slots same
+        // Index 0..3 ↔ cum 3..6 o cung loai · tra bang [soO - 3]
         public int[] ClusterRewardHP = {10, 25, 100, 200};
         public int[] ClusterRewardDamage = {10, 25, 100, 200};
         public int[] ClusterRewardCritChance = {1, 2, 5, 15};
@@ -30,5 +32,12 @@ namespace Project.Data
 
         [Header("Battle")]
         public int LevelCount = 3;
+
+        [Header("Grid")]
+        public int GridRows = 4;
+        public int GridCols = 4;
+        public int MaxUnitsPerCell = 3;     // Common → Legendary
+        public int MaxMythicPerCell = 1;
+        public int StartingMythicLimit = 2;   // buff treasure tăng CÁI NÀY trong RunState, không sửa asset
     }
 }
