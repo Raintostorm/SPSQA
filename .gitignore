@@ -1,0 +1,66 @@
+# ── Unity ─────────────────────────────────────────
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
+/[Aa]ssets/AssetStoreTools*
+/[Aa]ssets/Plugins/Editor/JetBrains*
+
+# ── IDE ───────────────────────────────────────────
+.vs/
+.idea/
+.vscode/
+.cursor/
+*.csproj
+*.unityproj
+*.sln
+*.slnx
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# ── Build output ──────────────────────────────────
+*.apk
+*.aab
+*.xapk
+*.unitypackage
+*.app
+ExportedObj/
+crashlytics-build.properties
+sysinfo.txt
+
+# ── Addressables ──────────────────────────────────
+/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
+/[Aa]ssets/[Ss]treamingAssets/aa.meta
+/[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# ── File nguon art: KHONG commit ──────────────────
+# Chi commit PNG da xuat. File nguon de o Google Drive / o ngoai.
+*.psd
+*.kra
+*.xcf
+*.clip
+*.ai
+*.sai
+
+# ── Python / tooling ──────────────────────────────
+**/__pycache__/
+*.pyc
+.venv/
+*.log
+
+# ── macOS ─────────────────────────────────────────
+.DS_Store
+**/.DS_Store
