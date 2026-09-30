@@ -9,6 +9,7 @@ namespace Project.Data
         public int RollCost = 20;              // giá 1 lần roll, treasure buff đọc rồi trừ vào RunState
         public int StartingCoins = 40;
         public int CoinPerWaveClear = 40;
+        public int[] AllyCountWeights = { 1, 5, 20, 40, 24, 8, 2 }; // Index = số ô Ally: 0..6
 
         [Header("Sell")]
         // Index = (int)Rarity: 0 Common · 1 Rare · 2 Epic · 3 Legendary · 4 Mythic

@@ -246,3 +246,91 @@ ally, nó **đẩy** ally lên.
 **Đánh đổi nằm gọn trong một con số**: kéo tỉ số xuống cho Legendary hiếm đi
 thì tỉ lệ "roll không ra con lính nào" tăng lên. Muốn thoát khỏi đánh đổi này
 phải đổi cách tính trọng số (vd phạt riêng `a=6`), không phải chỉnh hằng số.
+
+---
+
+## 10. Trọng số roll — bỏ công thức, dùng bảng
+
+**Chốt 2026-09-30.** Mục 9 ở trên (tỉ số `A/C`) **đã bị thay thế**.
+
+### Vì sao công thức luỹ thừa không đủ
+
+Số **bộ ba** ứng với mỗi số ô Ally là cố định bởi toán học:
+
+```
+a=0: 7 bộ ba   a=1: 6   a=2: 4   a=3: 4   a=4: 3   a=5: 2   a=6: 1
+```
+
+Với `P(a) ∝ count(a) · r^a`, ràng buộc chặt nhất là `4r³ > 3r⁴` → **`r` phải
+< 1.333** thì Rare mới thấp hơn Common. Nhưng kéo `r` xuống lại làm tỉ lệ
+"roll không ra ô Ally nào" tăng vọt:
+
+| `r` | Không ra ô Ally | Com : Rare : Epic : Leg |
+|---|---|---|
+| 1.5 | 8,7% | 24 : 27 : 27 : 21 |
+| 1.0 | 25,9% | 40 : 30 : 20 : 10 |
+| 0.7 | 44,6% | 54 : 28 : 13 : 5 |
+
+**Một cái vặn, hai thứ dính liền.** Lý do gốc: `r^a` là hàm **đơn điệu** theo
+`a` — nó chỉ *nghiêng đường thẳng*, không *uốn cong* được. Thứ cần là một
+**cái bướu**: thấp ở cả hai đầu (hiếm khi không có lính, hiếm khi Legendary),
+cao ở giữa. Một số mũ duy nhất không tạo ra hình đó được.
+
+### Cơ chế mới
+
+Thay `r^a` bằng **bảng trọng số theo số ô Ally** — 7 số độc lập:
+
+```csharp
+// GameBalance.cs
+public int[] AllyCountWeights = { 1, 5, 20, 40, 24, 8, 2 };  // index = số ô Ally 0..6
+```
+
+Sau chuẩn hoá, **mảng đó CHÍNH LÀ phân bố**. Không vặn rồi đoán — viết thẳng
+tỉ lệ mong muốn vào Inspector.
+
+| | |
+|---|---|
+| Không ra ô Ally (a<3, coin/buff thắng) | 26% |
+| Common (3 ô) | **40%** |
+| Rare (4 ô) | **24%** |
+| Epic (5 ô) | **8%** |
+| Legendary (6 ô) | **2%** |
+
+So với bộ cũ: Legendary từ 14,2% → **2%**, Common từ 16,8% → **40%**.
+
+### Ba điểm kỹ thuật bắt buộc nhớ
+
+**① Phải chia cho `count(a)`.** Thanh thước weighted-random dựng từ **từng bộ
+ba**, không phải từng nhóm. Gán thẳng `w = W[a]` thì nhóm `a=3` (4 bộ ba) ăn
+trọn `40×4 = 160` trong khi `a=6` (1 bộ) chỉ được 2 → sai gấp 4 lần.
+
+```
+w = Math.Max(1, W[a] * 1000 / countByAlly[a])
+```
+
+**② `* 1000` là bắt buộc.** `w` là `int`. `a=0` có `W=1`, `count=7` → `1/7 = 0`,
+nhóm đó **biến mất**. Nhân trước khi chia thì `1000/7 = 142`, giữ được 0,994%.
+Chỉ tỉ lệ giữa các `w` có nghĩa, giá trị tuyệt đối thì không.
+
+**③ Đếm phải cùng điều kiện lọc.** `countByAlly[a]++` đặt **sau** cả hai câu
+`continue`. Đặt trước thì `a=2` đếm ra 5 thay vì 4 (vì `(2,2,2)` bị loại).
+
+### Cạm bẫy đã biết
+
+`Math.Max(1, ...)` khiến **không thể tắt hẳn một mức** bằng cách đặt trọng số 0
+— `0 * 1000 / 1 = 0` → `Max(1, 0)` = 1, mức đó vẫn xảy ra ~0,001%. Muốn tắt
+hẳn phải xử lý riêng.
+
+### Hướng phụ thuộc
+
+`SixSlotRollGenerator` là **C# thuần**, test được không cần Unity. Giữ như vậy:
+generator **nhận** trọng số qua tham số, **không đi tìm** `GameBalance`.
+
+```
+GameBalance.AllyCountWeights  ──truyền vào──>  Generate(rng, weights)
+```
+
+### Đã kiểm chứng
+
+Mô phỏng 200.000 lượt bằng đúng thuật toán (kể cả phép chia số nguyên):
+`1,0 / 5,0 / 19,9 / 40,0 / 24,1 / 8,0 / 2,0` — lệch tối đa 0,006 điểm %.
