@@ -7,14 +7,18 @@ namespace Project.Gacha
     /// Sinh 6 ô. KHÔNG random từng ô độc lập — random cái *phân hoạch* (coin, ally, buff),
     /// loại bỏ (2,2,2) để LUÔN có ít nhất một loại đạt ≥3 ô.
     /// Nhờ vậy người chơi không bao giờ có lượt trắng tay.
+    ///
+    /// Mỗi số chạy 0..6 (CHO PHÉP 0). Nếu ép cả ba ≥1 thì số lớn nhất chỉ tới
+    /// 6-1-1 = 4, nghĩa là cụm 5 và 6 KHÔNG BAO GIỜ xảy ra — Jackpot chết,
+    /// và roll không bao giờ ra lính Epic/Legendary. Bản cũ dính đúng lỗi này.
     /// </summary>
     public static class SixSlotRollGenerator
     {
         /// <summary>Lũy thừa trọng số theo số ô Ally (cao hơn = ally xuất hiện nhiều hơn).</summary>
-        const double AllyCountBiasPow = 1.78d;
+        const double AllyCountBiasPow = 1.5d;
 
-        /// <summary>Giảm nhẹ trọng số khi nhiều ô Coin hoặc Buff (để ally tương đối nổi hơn).</summary>
-        const double CoinBuffCountBiasPow = 0.9d;
+        /// <summary>Trọng số theo số ô Coin+Buff. = 1.0 nghĩa là KHÔNG ảnh hưởng gì.</summary>
+        const double CoinBuffCountBiasPow = 1.0d;
 
         public static RollCellKind[] Generate(Random rng)
         {
@@ -36,15 +40,15 @@ namespace Project.Gacha
             return arr;
         }
 
-        /// <summary>Chọn (coin, ally, buff) tổng = 6, mỗi số 1..4, bỏ (2,2,2), trọng số nghiêng về Ally.</summary>
+        /// <summary>Chọn (coin, ally, buff) tổng = 6, mỗi số 0..6, bỏ (2,2,2), trọng số nghiêng về Ally.</summary>
         static (int coin, int ally, int buff) PickPartitionTripleWeighted(Random rng)
         {
-            var entries = new List<(int c, int a, int b, int w)>(12);
-            for (var c = 1; c <= 4; c++)
+            var entries = new List<(int c, int a, int b, int w)>(27);
+            for (var c = 0; c <= 6; c++)
             {
-                for (var a = 1; a <= 4; a++)
+                for (var a = 0; a <= 6; a++)
                 {
-                    for (var b = 1; b <= 4; b++)
+                    for (var b = 0; b <= 6; b++)
                     {
                         if (c + a + b != 6)
                             continue;

@@ -158,3 +158,91 @@ bàn đầy, **không phải** chiến thuật kiếm tiền.
   `animator.speed` là **một** giá trị cho **cả Animator** — đặt speed=2 để
   đánh nhanh thì clip Walk cũng chạy gấp đôi. Cách xử lý: đặt `animator.speed`
   **mỗi lần đổi state** trong `SpriteUnitVisual.Play()`.
+
+---
+
+## 9. Thuật toán roll 6 ô — sửa lỗi bản cũ
+
+**Lỗi phát hiện 2026-09-30**: bản cũ ép cả ba số `(coin, ally, buff)` phải ≥1.
+Hệ quả số học: số lớn nhất chỉ tới `6-1-1 = 4`.
+
+| Hệ quả | |
+|---|---|
+| Cụm 5 và 6 ô | **không bao giờ xảy ra** |
+| Cờ Jackpot | code chết, không bao giờ bật |
+| Hoà (hai loại cùng ≥3) | cần `(3,3,0)` → không tồn tại → mỗi lượt luôn đúng 1 cụm ăn |
+| Roll ra lính Epic / Legendary | **không thể** — chỉ merge mới lên được |
+| Thưởng cụm 5 & 6 trong `GameBalance` | dữ liệu chết |
+
+`Handoff/01` mục 3.1 mô tả đúng thuật toán (`1..4`) nhưng mục 3.3 lại kẻ bảng
+thưởng có hàng 5 ô và 6 ô. Hai phần trong **cùng một file** mâu thuẫn nhau
+suốt nhiều tháng mà không ai phát hiện.
+
+### Chốt lại
+
+```
+mỗi số chạy 0..6  (CHO PHÉP 0)   · tổng = 6 · vẫn loại (2,2,2)
+AllyCountBiasPow      1.78 → 1.5
+CoinBuffCountBiasPow  0.9  → 1.0   (= 1.0 nghĩa là không ảnh hưởng gì)
+```
+
+→ **27 bộ ba** hợp lệ thay vì 9. Cụm 5, 6 và Jackpot sống lại.
+
+### Phân bố thực tế của bộ số hiện tại
+
+| | |
+|---|---|
+| Không có ô Ally nào | 8,72% |
+| Cụm Ally ≥3 (được lính) | 68,85% |
+| → Common (3 ô) | 16,82% |
+| → Rare (4 ô) | 18,92% |
+| → **Epic (5 ô)** | **18,92%** |
+| → **Legendary (6 ô)** | **14,19%** |
+| Jackpot | 16,68% |
+| Hoà (hai cụm cùng ăn) | 9,66% |
+| Trung bình ô Ally / lượt | 3,40 / 6 |
+| Kỳ vọng coin thưởng / lượt | 8,9 (giá roll 20) |
+
+### ⚠️ Rủi ro cân bằng đã nêu, user chấp nhận
+
+Với `CoinBuffCountBiasPow = 1.0`, trọng số chỉ còn `1.5^ally`. Bộ `(0,6,0)`
+là bộ duy nhất có `a=6` nên nó hưởng trọng số cao nhất và trở thành
+**kết quả phổ biến nhất bảng (14,19%)**.
+
+- Cứ ~7 lượt roll ra một Legendary; Epic trở lên chiếm 33% số lượt
+- Merge mất nhiều ý nghĩa — không cần gom khi roll thẳng ra bậc cao
+- Chạm trần Mythic (2 con) sau khoảng 20 lượt roll
+- Jackpot 1/6 lượt → không còn cảm giác hiếm
+
+### Phát hiện: hai hằng số là THỪA — chỉ tỉ số có ý nghĩa
+
+Vì `c + a + b = 6` nên `c + b = 6 − a`, do đó:
+
+```
+w = A^a · C^(6−a) = C⁶ · (A/C)^a
+```
+
+`C⁶` là hằng số, **bị triệt tiêu khi chuẩn hoá**. Nên `(1.5, 1.0)`, `(1.2, 0.8)`,
+`(3.0, 2.0)` cho phân bố **giống hệt nhau**. Chỉ **tỉ số `A/C`** quyết định.
+
+- Bản cũ: `1.78 / 0.9` = tỉ số **1.978**
+- Hiện tại: `1.5 / 1.0` = tỉ số **1.5**
+
+⚠️ **Trực giác dễ sai**: giảm `CoinBuffCountBiasPow` KHÔNG ghìm bậc cao — nó
+làm tỉ số **tăng** → bậc cao ra **nhiều hơn**. Số `0.9` của bản cũ không hãm
+ally, nó **đẩy** ally lên.
+
+### Bảng tra theo tỉ số — một trục duy nhất
+
+| Tỉ số `A/C` | Không có ô Ally | Legendary |
+|---|---|---|
+| 0.8 | 37,7% | 1,4% |
+| 1.0 (đều) | 25,9% | 3,7% |
+| 1.2 | 17,1% | 7,3% |
+| **1.5** | **8,7%** | **14,2%** ← hiện tại |
+| 1.978 | 3,0% | 25,8% ← bản cũ |
+| 2.5 | 1,1% | 36,7% |
+
+**Đánh đổi nằm gọn trong một con số**: kéo tỉ số xuống cho Legendary hiếm đi
+thì tỉ lệ "roll không ra con lính nào" tăng lên. Muốn thoát khỏi đánh đổi này
+phải đổi cách tính trọng số (vd phạt riêng `a=6`), không phải chỉnh hằng số.

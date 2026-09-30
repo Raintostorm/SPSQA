@@ -48,6 +48,12 @@ Có **delay 2 giây** sau khi bấm Start trước khi lính thật sự lao và
 
 ### 3.1 Cách sinh 6 ô
 
+> ⚠️ **PHẦN DƯỚI ĐÂY ĐÃ LỖI THỜI — xem `09-QUYET-DINH-THIET-KE.md` mục 9.**
+> Mô tả cũ (`mỗi số từ 1..4`) **mâu thuẫn với chính bảng thưởng ở mục 3.3**:
+> nếu cả ba số đều ≥1 thì số lớn nhất chỉ tới `6-1-1 = 4`, nên cụm 5 và 6
+> KHÔNG BAO GIỜ xảy ra — hàng "Epic", "Legendary" và cờ Jackpot là dữ liệu chết.
+> Bản mới cho phép số 0 và đổi trọng số.
+
 Ba loại ô: **Coin**, **Ally**, **Buff**.
 
 Thuật toán **không random từng ô độc lập**. Nó random cái *phân hoạch*:
