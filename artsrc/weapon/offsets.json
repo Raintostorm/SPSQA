@@ -1,0 +1,50 @@
+{
+  "damage_stoneage": {
+    "w": 282,
+    "h": 283
+  },
+  "damage_medieval": {
+    "w": 289,
+    "h": 310
+  },
+  "damage_modern": {
+    "w": 274,
+    "h": 296
+  },
+  "damage_future": {
+    "w": 297,
+    "h": 318
+  },
+  "range_stoneage": {
+    "w": 299,
+    "h": 326
+  },
+  "range_medieval": {
+    "w": 252,
+    "h": 346
+  },
+  "range_modern": {
+    "w": 293,
+    "h": 331
+  },
+  "range_future": {
+    "w": 300,
+    "h": 329
+  },
+  "tank_stoneage": {
+    "w": 284,
+    "h": 332
+  },
+  "tank_medieval": {
+    "w": 309,
+    "h": 332
+  },
+  "tank_modern": {
+    "w": 310,
+    "h": 322
+  },
+  "tank_future": {
+    "w": 312,
+    "h": 331
+  }
+}

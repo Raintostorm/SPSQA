@@ -104,6 +104,11 @@ def main():
     ap.add_argument("--names", nargs="*", default=None,
                     help="ten tung nhan vat, trai sang phai")
     ap.add_argument("--role", default="", help="tien to vai tro, vd melee")
+    ap.add_argument("--grid", default="", help=(
+        "sheet dang luoi, vd 3x4. Chia anh thanh o roi lay mang lon nhat "
+        "moi o. Dung voi --rows va --cols de dat ten."))
+    ap.add_argument("--rows", nargs="*", default=None, help="ten tung hang")
+    ap.add_argument("--cols", nargs="*", default=None, help="ten tung cot")
     ap.add_argument("--part", default="", help=(
         "sheet mot-part (giap, mu, vu khi): moi o chi co 1 mang. "
         "Xuat file phang <ten>.png thay vi thu muc head/body/hand."))
@@ -117,6 +122,38 @@ def main():
     print(f"Anh {W}x{H} — tim thay {len(comps)} mang roi nhau")
     if not comps:
         sys.exit("Khong thay mang nao. Kiem tra mau nen co phai magenta khong.")
+
+    # ── Che do LUOI: chia o co dinh, moi o lay mang lon nhat ──────────
+    if args.grid:
+        R, C = (int(v) for v in args.grid.lower().split("x"))
+        rows = args.rows or [f"r{i+1}" for i in range(R)]
+        cols = args.cols or [f"c{i+1}" for i in range(C)]
+        ch, cw2 = H / R, W / C
+        os.makedirs(args.out, exist_ok=True)
+        cells = {}
+        for pts in comps:
+            x0, y0, x1, y1 = bbox(pts)
+            r = min(R - 1, int(((y0 + y1) / 2) // ch))
+            c = min(C - 1, int(((x0 + x1) / 2) // cw2))
+            # giu mang lon nhat moi o (loai manh vun)
+            if (r, c) not in cells or len(pts) > len(cells[(r, c)]):
+                cells[(r, c)] = pts
+        mf2 = {}
+        print(f"Luoi {R}x{C} — tim duoc {len(cells)}/{R*C} o co noi dung\n")
+        for r in range(R):
+            for c in range(C):
+                if (r, c) not in cells:
+                    print(f"   {rows[r]}_{cols[c]:<12} TRONG")
+                    continue
+                img, _ = cut(src, cells[(r, c)], W, H)
+                name = f"{rows[r]}_{cols[c]}"
+                fn = os.path.join(args.out, f"{name}.png")
+                img.save(fn)
+                mf2[name] = {"w": img.width, "h": img.height}
+                print(f"   {name:<22} {img.width:>4} x {img.height:<4}  → {fn}")
+        with open(os.path.join(args.out, "offsets.json"), "w") as f:
+            json.dump(mf2, f, indent=2)
+        return
 
     # gom theo nhan vat: cum theo tam x
     comps.sort(key=lambda c: (bbox(c)[0] + bbox(c)[2]) / 2)
