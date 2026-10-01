@@ -12,10 +12,10 @@ namespace Project.Data
         public int[] AllyCountWeights = { 1, 5, 20, 40, 24, 8, 2 }; // Index = số ô Ally: 0..6
 
         [Header("Sell")]
-        // Index = (int)Rarity: 0 Common · 1 Rare · 2 Epic · 3 Legendary · 4 Mythic
+        // Index = (int)Era: 0 StoneAge · 1 Medieval · 2 Modern · 3 Future · 4 Mythic
         // Mythic = 0 chi de mang an toan voi moi gia tri enum.
         // Luat "Mythic khong ban duoc" phai viet thanh dieu kien ro rang o cho xu ly ban.
-        public int[] SellPriceByRarity = { 2, 5, 10, 20, 0 };
+        public int[] SellPriceByEra = { 2, 5, 10, 20, 0 };
         [Header("ClusterReward")]
         // Index 0..3 ↔ cum 3..6 o cung loai · tra bang [soO - 3]
         public int[] ClusterRewardHP = {10, 25, 100, 200};

@@ -9,10 +9,10 @@ namespace Project.Data
     public sealed class UnitDefinition : ScriptableObject
     {
         [Header("Identity")]
-        public string UnitId;          // chi de ĐỌC (save/log). KHONG parse ra Race/Rarity tu chuoi nay.
+        public string UnitId;          // chi de ĐỌC (save/log). KHONG parse ra Role/Era tu chuoi nay.
         public string DisplayName;
-        public Race Race;
-        public Rarity BaseRarity;
+        public UnitRole Role;
+        public Era BaseEra;
         public UnitTeam Team;
 
         [Header("Stats")]

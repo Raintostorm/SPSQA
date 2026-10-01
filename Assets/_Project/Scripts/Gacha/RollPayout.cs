@@ -3,16 +3,16 @@ using Project.Data;
 
 namespace Project.Gacha
 {
-    /// <summary>Một ô Ally thắng cụm → cấp 1 lính. Race random, rarity theo cỡ cụm.</summary>
+    /// <summary>Một ô Ally thắng cụm → cấp 1 lính. Vai random, thời đại theo cỡ cụm.</summary>
     public readonly struct AllyRollGrant
     {
-        public readonly Race Race;
-        public readonly Rarity RarityTier;
+        public readonly UnitRole Role;
+        public readonly Era EraTier;
 
-        public AllyRollGrant(Race race, Rarity rarityTier)
+        public AllyRollGrant(UnitRole role, Era eraTier)
         {
-            Race = race;
-            RarityTier = rarityTier;
+            Role = role;
+            EraTier = eraTier;
         }
     }
 

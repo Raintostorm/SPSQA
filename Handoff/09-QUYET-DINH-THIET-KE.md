@@ -1,73 +1,90 @@
 # 09 — Quyết định thiết kế (ghi đè Handoff 00–08)
 
-> Chốt ngày 2026-09-29, trong quá trình làm M1.
+> Cập nhật 2026-10-01. Viết lại toàn bộ — bản trước mô tả 5 chủng tộc và
+> merge tự động, cả hai đều đã bị thay.
+>
 > Folder `Handoff/` 00–08 chép số từ **code bản cũ đã chạy**.
-> File này ghi những chỗ **thiết kế mới khác bản cũ**.
-> **Khi mâu thuẫn, file này thắng.**
+> File này ghi **thiết kế hiện tại**. **Khi mâu thuẫn, file này thắng.**
 
 ---
 
 ## 1. Bảng ghi đè
 
-| Điểm | Handoff 00–08 nói | Chốt lại |
+| Điểm | Handoff 00–08 | Chốt lại |
 |---|---|---|
-| Hệ số stat theo rarity | `BaseHp[]`/`BaseAtk[]` nhân với hệ số dòng lính | **Bỏ công thức.** Mỗi lính khai tay `BaseHp` + `BaseAttack` |
-| Phân loại lính | ngũ hành Mộc/Hỏa/Kim/Thủy/Thổ, `LineIndex:int` | **5 chủng tộc**: Human, Elf, Necro, Robot, Beast → `enum Race` |
-| Lưới mỗi phe | 4 hàng × 2 cột = 8 ô | **4 × 4 = 16 ô** |
-| Sức chứa 1 ô (ally) | tối đa 1 lính | **3 lính** (Common→Legendary), hoặc **1 Mythic** |
-| Túi lính (bench) | 4×4 = 16 slot | **Bỏ hẳn.** Bench vốn để đựng weapon, không phải ally |
-| Merge | tự động khi đủ 3 con trên bàn | **Thủ công**, bấm vào ô |
-| Bán lính | 12 coin cố định | **Mảng theo rarity**: 2 / 5 / 10 / 20 / Mythic không bán |
-| moveSpeed | 1.35 chung | **Riêng từng lính**; GameBalance chỉ giữ mốc mặc định |
-| Số wave mỗi level | cố định 10 | **Tuỳ level** → sau này cần `LevelDefinition` |
-| Buff AtkSpeed | chia interval đếm giờ | **Phải tua nhanh animation** (`animator.speed`), bội số 1/x |
-| Thưởng cụm 6 ô | 200 coin | **200** (giữ nguyên) |
+| Bậc sức mạnh | rarity Common→Rare→Epic→Legendary | **thời đại**: StoneAge → Medieval → Modern → Future (+ Mythic) |
+| Phân loại lính | 5 chủng tộc ngũ hành | **3 vai trò**: Damage · Range · Tank |
+| Số lính gốc | 5 × 4 = 20 | **3 × 4 = 12** (Mythic riêng) |
+| Hệ số stat theo bậc | `BaseHp[]` nhân hệ số dòng lính | **bỏ công thức** — mỗi lính khai tay `BaseHp` + `BaseAttack` |
+| Gộp lính | "merge", tự động | **"evolution"**, **thủ công** |
+| Lưới mỗi phe | 4 × 2 = 8 ô | **4 × 4 = 16 ô** |
+| Sức chứa 1 ô | 1 lính | **3 lính**, hoặc **1 Mythic** |
+| Túi lính (bench) | 4×4 = 16 slot | **bỏ hẳn** — vốn để đựng weapon |
+| Bán lính | 12 coin cố định | **mảng theo bậc**: 2 / 5 / 10 / 20 / Mythic không bán |
+| Pipeline animation | sprite từng frame | **Spine 3.8 (skeletal)** |
+| Nhân vật | có chân, có walk cycle | **không chân** — thân/đầu/tay rời |
+| Số animation | 5 clip (idle/walk/attack/hit/dead) | **2 clip**: idle + attack |
+| Thưởng cụm 6 ô | 200 coin | 200 (giữ) |
 
 ---
 
 ## 2. Cấu trúc lính
 
-**Mỗi cặp `(Race, Rarity)` ứng với ĐÚNG MỘT `UnitDefinition`.**
+**Mỗi cặp `(UnitRole, Era)` ứng với ĐÚNG MỘT `UnitDefinition`.**
 
 ```
-5 race × 4 rarity = 20 lính gốc      (Mythic tính riêng)
+3 vai × 4 thời đại = 12 lính gốc      (Mythic tính riêng)
 ```
+
+| | StoneAge | Medieval | Modern | Future |
+|---|---|---|---|---|
+| **Damage** | rìu đá | kiếm | dao chiến đấu | kiếm năng lượng |
+| **Range** | lao | cung | súng trường | súng năng lượng |
+| **Tank** | chuỳ gỗ | chuỳ gai | dùi cui | búa điện |
 
 Hệ quả:
+- "Damage Medieval" là **một** con duy nhất.
+- So sánh hai lính có trùng nhau không → **so tham chiếu `UnitDefinition`**.
+- Pool mỗi thời đại có **3 ứng viên** (một per vai).
 
-- "Human Rare" là **một** con duy nhất. Kiểu đánh melee/ranged là thuộc tính
-  **cố định** của nó, **không** tham gia định danh.
-- So sánh hai lính có "trùng" nhau không → so **tham chiếu `UnitDefinition`**,
-  không cần so từng field.
-- Pool mỗi rarity có **5 ứng viên** (một per race).
+### Enum trong code
+
+```csharp
+enum Era      { StoneAge=0, Medieval=1, Modern=2, Future=3, Mythic=4 }
+enum UnitRole { Damage=0, Range=1, Tank=2 }
+```
+
+**Thứ tự KHÔNG được đổi** — `(int)Era` là index tra mảng trong `GameBalance`,
+và số đã serialize vào file `.asset`. Chèn giá trị vào giữa = mọi asset đổi
+nghĩa âm thầm.
 
 ---
 
-## 3. Luật merge
+## 3. Evolution (trước gọi là merge)
 
 | | |
 |---|---|
 | Kích hoạt | **thủ công** — bấm vào ô có đủ 3 lính |
-| Điều kiện | 3 con **cùng chủng tộc + cùng rarity** (đúng bằng lúc ô đầy) |
-| UI hiện ra | 3 nút: **ⓘ** thông tin · **Sell** · **Merge** |
-| Kết quả | **1 lính NGẪU NHIÊN** ở rarity kế tiếp — random trong 5 race |
+| Điều kiện | 3 con **cùng vai + cùng thời đại** (đúng bằng lúc ô đầy) |
+| UI hiện ra | 3 nút: **ⓘ** thông tin · **Sell** · **Evolve** |
+| Kết quả | **1 lính NGẪU NHIÊN** ở thời đại kế tiếp — bốc 1 trong 3 vai |
 | Vị trí kết quả | nằm lại **chính ô đó** |
 
-> Merge ra con ngẫu nhiên chính là ý nghĩa chữ "spin" trong tên game.
+> Kết quả ngẫu nhiên chính là chữ "spin" trong tên game.
 > Người chơi **không nhắm được** con cụ thể.
 
-**Hệ quả kiến trúc**: không dùng field `NextRarityUnit` trỏ 1-1.
-Cần một **pool tra theo rarity** — và gacha (ô Ally) cần đúng cấu trúc đó.
-Một `UnitPool` phục vụ cả hai. Làm ở M5, không làm sớm.
+**Hệ quả kiến trúc**: không dùng field trỏ 1-1 tới bậc kế tiếp.
+Cần một **pool tra theo Era** — và gacha (ô Ally) cần đúng cấu trúc đó.
+Một `UnitPool` phục vụ cả hai. Làm ở M5.
 
 **Tầng đúng**: logic **trả lời**, UI **hỏi**.
 
 ```
-UI hỏi:    "ô này merge được không?"  → MergeSystem trả true/false → hiện/ẩn nút
-Người bấm: "merge ô này"              → MergeSystem thực hiện
+UI hỏi:    "ô này evolve được không?"  → EvolutionSystem trả true/false → hiện/ẩn nút
+Người bấm: "evolve ô này"              → EvolutionSystem thực hiện
 ```
 
-`MergeSystem` **không được** đi tìm cái nút để ẩn nó.
+`EvolutionSystem` **không được** đi tìm cái nút để ẩn nó.
 
 ---
 
@@ -79,7 +96,7 @@ Người bấm: "merge ô này"              → MergeSystem thực hiện
 | Giới hạn mỗi trận | **2** lúc đầu, buff treasure tăng thêm |
 | Cách đếm | theo **tổng số Mythic** trên sân; trùng loại vẫn tính |
 | Bán / phân giải | **không được** — UI không hiện nút Sell |
-| Khi đủ giới hạn | **chỉ ô Legendary** ẩn nút Merge; rarity dưới merge bình thường |
+| Khi đủ giới hạn | **chỉ ô Future** ẩn nút Evolve; bậc dưới evolve bình thường |
 
 ---
 
@@ -106,154 +123,91 @@ Mọi ô trùng đều đầy → tìm ô trống.
 **Giá bán cố ý rẻ** (2–20 so với 20 coin một lần roll): bán là lối thoát khi
 bàn đầy, **không phải** chiến thuật kiếm tiền.
 
-**Thưởng wave đặc biệt** (handoff không nhắc):
-
+**Thưởng wave đặc biệt**:
 - wave chia hết 5 nhưng lẻ (5, 15, 25…) → **1 weapon**
-- wave chia hết 10 (10, 20, 30…) → **1 weapon + 1 buff mạnh** (mức buff 6-roll Legendary)
+- wave chia hết 10 → **1 weapon + 1 buff mạnh** (mức buff 6-roll Future)
 
-**Weapon**: gắn với ally bậc 5 (Mythic). Để sau M7.
-
----
-
-## 7. Quy tắc dữ liệu rút ra
-
-1. **Đừng suy dữ liệu từ tên.** `Race`/`Rarity` là field khai thẳng.
-   `UnitId` chỉ để **đọc** (save, log) — không bao giờ parse ra thứ khác.
-   *(Bản cũ suy ngũ hành từ chuỗi id → hàm map phình thành một đống `if`.)*
-
-2. **Cấu trúc dữ liệu lo an toàn, code lo diễn đạt luật.**
-   `SellPriceByRarity` có 5 phần tử để không `IndexOutOfRangeException`;
-   luật "Mythic không bán" viết thành điều kiện rõ ràng, không dựa vào số 0.
-
-3. **`GameBalance` là CHỈ ĐỌC lúc chạy.** Sửa ScriptableObject lúc runtime
-   thì trong Editor nó **ghi thật vào file `.asset`** và ở lại sau khi Stop —
-   nhưng khi build ra máy thật lại không ghi được. Bug chỉ xảy ra một bên.
-   Giá trị thay đổi trong trận (buff giảm giá roll, crit, tốc đánh) thuộc về
-   **`RunState`** — object thường trong RAM, sinh ra mỗi trận.
-
-4. **Thứ tự enum không được đổi.** Giá trị đã serialize vào file `.asset`.
-   Chèn giá trị mới vào giữa = mọi asset đổi nghĩa âm thầm.
-
-5. **Ngưỡng dòng là cái chuông, không phải mục tiêu.** `GameBalance` quá
-   80 dòng ≈ có số đã len vào nhầm chỗ (số riêng của lính / level / weapon).
+**Weapon**: gắn với lính bậc Mythic. Để sau M7.
 
 ---
 
-## 8. Còn treo, chưa quyết
+## 7. Nhân vật & animation
 
-- **Chỉ số thật**: đang dùng placeholder **200 HP / 30 ATK**. User tự trích
-  xuất data từ game gốc, sẽ có spec chi tiết sau.
-  Mốc khuyến nghị nếu phải tự đặt: **×3 mỗi bậc rarity** — khớp đúng tỉ lệ
-  merge 3-con-thành-1.
-  Đã tra mạng: SpinSquad (tên cũ **Lucky Offense**) **không có bảng HP/ATK
-  công khai**, chỉ có tier list chủ quan.
-- **Chủng tộc có tác dụng cơ chế gì không** (khắc chế? cộng hưởng?) — chưa rõ.
-  Hiện chỉ dùng làm một nửa điều kiện merge.
-- **Có bao nhiêu Mythic** — chưa chốt.
-- **"Bàn đầy" định nghĩa chính xác** — xem mục 5.
-- **16 ô × 3 lính = 48 lính/phe, 96 sprite trên màn hình dọc.** Con số lý
-  thuyết. Chỉ kiểm chứng được ở M3–M4 khi có lính thật.
-- **`IUnitVisual` cần thêm method chỉnh tốc độ phát animation** (cho buff
-  AtkSpeed). Handoff mục 04.6 chưa có. Lưu ý ở M2:
-  `animator.speed` là **một** giá trị cho **cả Animator** — đặt speed=2 để
-  đánh nhanh thì clip Walk cũng chạy gấp đôi. Cách xử lý: đặt `animator.speed`
-  **mỗi lần đổi state** trong `SpriteUnitVisual.Play()`.
+### Cấu trúc — không có chân
+
+Lấy cảm hứng từ **Forge Master** (Lessmore GmbH). Lính không có chân, không
+đi lại. Thân là một khối bo tròn, đầu nhỏ nằm trên, một cánh tay cầm vũ khí.
+
+```
+root
+└── main
+    ├── body   ← slot: bare / armor_stoneage / armor_medieval / ...
+    ├── head   ← slot: head
+    │   └── helmet ← slot: none / helmet_stoneage / ...
+    └── arm    ← slot: arm
+        └── weapon ← slot: damage_stoneage / range_medieval / ...
+```
+
+5 xương, 5 slot. Mỗi slot nhiều attachment, đổi bằng `SetAttachment` lúc chạy.
+
+**Giáp THAY THẾ thân**, không đè lên. Thân trần (da) chỉ hiện khi chưa trang bị.
+
+### Chỉ cần 2 clip
+
+| Animation | Cách làm | Cần clip? |
+|---|---|---|
+| **idle** | đầu nhún 2 keyframe | ✅ |
+| **attack** | xoay xương `arm`, event `impact` tại khung vươn xa nhất | ✅ |
+| **hit** | đổi `Skeleton.R/G/B` sang trắng 0,1s rồi trả về | ❌ code |
+| **dead** | spawn prefab "hồn thoát xác", thân mờ dần (`Skeleton.A`) | ❌ VFX dùng chung |
+
+Hit và dead **dùng chung cho cả roster** — không phụ thuộc hình dáng lính.
+
+### Spine 3.8
+
+Runtime `spine-unity 3.8.0` lấy từ repo cũ, **compile sạch trên Unity 6.4**
+(0 lỗi, 56 cảnh báo API lỗi thời). Cảnh báo nói "will be removed in a future
+version" → **nâng lên Spine 4.x là việc sẽ phải làm**, không urgent.
 
 ---
 
-## 9. Thuật toán roll 6 ô — sửa lỗi bản cũ
+## 8. Pipeline art
 
-**Lỗi phát hiện 2026-09-30**: bản cũ ép cả ba số `(coin, ally, buff)` phải ≥1.
-Hệ quả số học: số lớn nhất chỉ tới `6-1-1 = 4`.
+Xem `10-ART-PIPELINE.md`. Tóm tắt:
+
+- Sinh sheet nền **magenta `#FF00FF`**, các part **rời nhau** (không chạm)
+- `tools/split_sheet.py` tách thành PNG trong suốt, 3 chế độ
+- 5 lượt sinh ảnh → **35 file part** → tổ hợp ra **192 diện mạo**
+
+```
+artsrc/base/    head · body · hand
+artsrc/armor/   4 thời đại
+artsrc/helmet/  4 thời đại
+artsrc/weapon/  12 món (3 vai × 4 thời đại)
+```
+
+---
+
+## 9. Thuật toán roll 6 ô
+
+### Lỗi đã sửa của bản cũ
+
+Bản cũ ép cả ba số `(coin, ally, buff)` phải ≥1. Hệ quả số học: số lớn nhất
+chỉ tới `6-1-1 = 4`.
 
 | Hệ quả | |
 |---|---|
 | Cụm 5 và 6 ô | **không bao giờ xảy ra** |
-| Cờ Jackpot | code chết, không bao giờ bật |
-| Hoà (hai loại cùng ≥3) | cần `(3,3,0)` → không tồn tại → mỗi lượt luôn đúng 1 cụm ăn |
-| Roll ra lính Epic / Legendary | **không thể** — chỉ merge mới lên được |
-| Thưởng cụm 5 & 6 trong `GameBalance` | dữ liệu chết |
+| Cờ Jackpot | code chết |
+| Hoà (hai loại cùng ≥3) | cần `(3,3,0)` → không tồn tại |
+| Roll ra lính bậc cao | **không thể** |
 
-`Handoff/01` mục 3.1 mô tả đúng thuật toán (`1..4`) nhưng mục 3.3 lại kẻ bảng
-thưởng có hàng 5 ô và 6 ô. Hai phần trong **cùng một file** mâu thuẫn nhau
-suốt nhiều tháng mà không ai phát hiện.
+`Handoff/01` mục 3.1 mô tả đúng thuật toán nhưng mục 3.3 lại kẻ bảng thưởng
+có hàng 5 và 6 ô. Hai phần trong **cùng một file** mâu thuẫn nhau nhiều tháng.
 
-### Chốt lại
+**Chốt**: mỗi số chạy **0..6**, tổng = 6, vẫn loại `(2,2,2)` → **27 bộ ba**.
 
-```
-mỗi số chạy 0..6  (CHO PHÉP 0)   · tổng = 6 · vẫn loại (2,2,2)
-AllyCountBiasPow      1.78 → 1.5
-CoinBuffCountBiasPow  0.9  → 1.0   (= 1.0 nghĩa là không ảnh hưởng gì)
-```
-
-→ **27 bộ ba** hợp lệ thay vì 9. Cụm 5, 6 và Jackpot sống lại.
-
-### Phân bố thực tế của bộ số hiện tại
-
-| | |
-|---|---|
-| Không có ô Ally nào | 8,72% |
-| Cụm Ally ≥3 (được lính) | 68,85% |
-| → Common (3 ô) | 16,82% |
-| → Rare (4 ô) | 18,92% |
-| → **Epic (5 ô)** | **18,92%** |
-| → **Legendary (6 ô)** | **14,19%** |
-| Jackpot | 16,68% |
-| Hoà (hai cụm cùng ăn) | 9,66% |
-| Trung bình ô Ally / lượt | 3,40 / 6 |
-| Kỳ vọng coin thưởng / lượt | 8,9 (giá roll 20) |
-
-### ⚠️ Rủi ro cân bằng đã nêu, user chấp nhận
-
-Với `CoinBuffCountBiasPow = 1.0`, trọng số chỉ còn `1.5^ally`. Bộ `(0,6,0)`
-là bộ duy nhất có `a=6` nên nó hưởng trọng số cao nhất và trở thành
-**kết quả phổ biến nhất bảng (14,19%)**.
-
-- Cứ ~7 lượt roll ra một Legendary; Epic trở lên chiếm 33% số lượt
-- Merge mất nhiều ý nghĩa — không cần gom khi roll thẳng ra bậc cao
-- Chạm trần Mythic (2 con) sau khoảng 20 lượt roll
-- Jackpot 1/6 lượt → không còn cảm giác hiếm
-
-### Phát hiện: hai hằng số là THỪA — chỉ tỉ số có ý nghĩa
-
-Vì `c + a + b = 6` nên `c + b = 6 − a`, do đó:
-
-```
-w = A^a · C^(6−a) = C⁶ · (A/C)^a
-```
-
-`C⁶` là hằng số, **bị triệt tiêu khi chuẩn hoá**. Nên `(1.5, 1.0)`, `(1.2, 0.8)`,
-`(3.0, 2.0)` cho phân bố **giống hệt nhau**. Chỉ **tỉ số `A/C`** quyết định.
-
-- Bản cũ: `1.78 / 0.9` = tỉ số **1.978**
-- Hiện tại: `1.5 / 1.0` = tỉ số **1.5**
-
-⚠️ **Trực giác dễ sai**: giảm `CoinBuffCountBiasPow` KHÔNG ghìm bậc cao — nó
-làm tỉ số **tăng** → bậc cao ra **nhiều hơn**. Số `0.9` của bản cũ không hãm
-ally, nó **đẩy** ally lên.
-
-### Bảng tra theo tỉ số — một trục duy nhất
-
-| Tỉ số `A/C` | Không có ô Ally | Legendary |
-|---|---|---|
-| 0.8 | 37,7% | 1,4% |
-| 1.0 (đều) | 25,9% | 3,7% |
-| 1.2 | 17,1% | 7,3% |
-| **1.5** | **8,7%** | **14,2%** ← hiện tại |
-| 1.978 | 3,0% | 25,8% ← bản cũ |
-| 2.5 | 1,1% | 36,7% |
-
-**Đánh đổi nằm gọn trong một con số**: kéo tỉ số xuống cho Legendary hiếm đi
-thì tỉ lệ "roll không ra con lính nào" tăng lên. Muốn thoát khỏi đánh đổi này
-phải đổi cách tính trọng số (vd phạt riêng `a=6`), không phải chỉnh hằng số.
-
----
-
-## 10. Trọng số roll — bỏ công thức, dùng bảng
-
-**Chốt 2026-09-30.** Mục 9 ở trên (tỉ số `A/C`) **đã bị thay thế**.
-
-### Vì sao công thức luỹ thừa không đủ
+### Trọng số: bỏ công thức, dùng bảng
 
 Số **bộ ba** ứng với mỗi số ô Ally là cố định bởi toán học:
 
@@ -261,76 +215,99 @@ Số **bộ ba** ứng với mỗi số ô Ally là cố định bởi toán h�
 a=0: 7 bộ ba   a=1: 6   a=2: 4   a=3: 4   a=4: 3   a=5: 2   a=6: 1
 ```
 
-Với `P(a) ∝ count(a) · r^a`, ràng buộc chặt nhất là `4r³ > 3r⁴` → **`r` phải
-< 1.333** thì Rare mới thấp hơn Common. Nhưng kéo `r` xuống lại làm tỉ lệ
-"roll không ra ô Ally nào" tăng vọt:
+Với `P(a) ∝ count(a) · r^a`, ràng buộc chặt nhất là `4r³ > 3r⁴` → `r < 1.333`
+thì Rare mới thấp hơn Common. Nhưng kéo `r` xuống lại làm "roll không ra ô
+Ally nào" tăng vọt. **Một cái vặn, hai thứ dính liền.**
 
-| `r` | Không ra ô Ally | Com : Rare : Epic : Leg |
-|---|---|---|
-| 1.5 | 8,7% | 24 : 27 : 27 : 21 |
-| 1.0 | 25,9% | 40 : 30 : 20 : 10 |
-| 0.7 | 44,6% | 54 : 28 : 13 : 5 |
+Lý do gốc: `r^a` là hàm **đơn điệu** — chỉ *nghiêng đường thẳng*, không
+*uốn cong*. Thứ cần là một **cái bướu**: thấp ở cả hai đầu, cao ở giữa.
 
-**Một cái vặn, hai thứ dính liền.** Lý do gốc: `r^a` là hàm **đơn điệu** theo
-`a` — nó chỉ *nghiêng đường thẳng*, không *uốn cong* được. Thứ cần là một
-**cái bướu**: thấp ở cả hai đầu (hiếm khi không có lính, hiếm khi Legendary),
-cao ở giữa. Một số mũ duy nhất không tạo ra hình đó được.
-
-### Cơ chế mới
-
-Thay `r^a` bằng **bảng trọng số theo số ô Ally** — 7 số độc lập:
+**Giải pháp**: bảng trọng số theo số ô Ally — 7 số độc lập.
 
 ```csharp
-// GameBalance.cs
 public int[] AllyCountWeights = { 1, 5, 20, 40, 24, 8, 2 };  // index = số ô Ally 0..6
 ```
 
-Sau chuẩn hoá, **mảng đó CHÍNH LÀ phân bố**. Không vặn rồi đoán — viết thẳng
-tỉ lệ mong muốn vào Inspector.
+Sau chuẩn hoá, **mảng đó CHÍNH LÀ phân bố**.
 
 | | |
 |---|---|
-| Không ra ô Ally (a<3, coin/buff thắng) | 26% |
-| Common (3 ô) | **40%** |
-| Rare (4 ô) | **24%** |
-| Epic (5 ô) | **8%** |
-| Legendary (6 ô) | **2%** |
-
-So với bộ cũ: Legendary từ 14,2% → **2%**, Common từ 16,8% → **40%**.
+| Không ra ô Ally (coin/buff thắng) | 26% |
+| StoneAge (3 ô) | **40%** |
+| Medieval (4 ô) | **24%** |
+| Modern (5 ô) | **8%** |
+| Future (6 ô) | **2%** |
 
 ### Ba điểm kỹ thuật bắt buộc nhớ
 
 **① Phải chia cho `count(a)`.** Thanh thước weighted-random dựng từ **từng bộ
 ba**, không phải từng nhóm. Gán thẳng `w = W[a]` thì nhóm `a=3` (4 bộ ba) ăn
-trọn `40×4 = 160` trong khi `a=6` (1 bộ) chỉ được 2 → sai gấp 4 lần.
+`40×4 = 160` trong khi `a=6` (1 bộ) chỉ được 2 → sai gấp 4 lần.
 
 ```
 w = Math.Max(1, W[a] * 1000 / countByAlly[a])
 ```
 
-**② `* 1000` là bắt buộc.** `w` là `int`. `a=0` có `W=1`, `count=7` → `1/7 = 0`,
-nhóm đó **biến mất**. Nhân trước khi chia thì `1000/7 = 142`, giữ được 0,994%.
-Chỉ tỉ lệ giữa các `w` có nghĩa, giá trị tuyệt đối thì không.
+**② `* 1000` là bắt buộc.** `w` là `int`. `a=0` có `W=1`, `count=7` →
+`1/7 = 0`, nhóm đó **biến mất**. Nhân trước khi chia thì `1000/7 = 142`.
 
 **③ Đếm phải cùng điều kiện lọc.** `countByAlly[a]++` đặt **sau** cả hai câu
 `continue`. Đặt trước thì `a=2` đếm ra 5 thay vì 4 (vì `(2,2,2)` bị loại).
 
-### Cạm bẫy đã biết
+### Cạm bẫy
 
-`Math.Max(1, ...)` khiến **không thể tắt hẳn một mức** bằng cách đặt trọng số 0
-— `0 * 1000 / 1 = 0` → `Max(1, 0)` = 1, mức đó vẫn xảy ra ~0,001%. Muốn tắt
-hẳn phải xử lý riêng.
+`Math.Max(1, ...)` khiến **không thể tắt hẳn một mức** bằng trọng số 0 —
+`Max(1, 0)` = 1, mức đó vẫn xảy ra ~0,001%.
 
 ### Hướng phụ thuộc
 
 `SixSlotRollGenerator` là **C# thuần**, test được không cần Unity. Giữ như vậy:
 generator **nhận** trọng số qua tham số, **không đi tìm** `GameBalance`.
 
-```
-GameBalance.AllyCountWeights  ──truyền vào──>  Generate(rng, weights)
-```
-
 ### Đã kiểm chứng
 
-Mô phỏng 200.000 lượt bằng đúng thuật toán (kể cả phép chia số nguyên):
+Mô phỏng 200.000 lượt bằng đúng thuật toán (kể cả chia số nguyên):
 `1,0 / 5,0 / 19,9 / 40,0 / 24,1 / 8,0 / 2,0` — lệch tối đa 0,006 điểm %.
+
+---
+
+## 10. Quy tắc dữ liệu rút ra
+
+1. **Đừng suy dữ liệu từ tên.** `UnitRole`/`Era` là field khai thẳng.
+   `UnitId` chỉ để **đọc** (save, log) — không bao giờ parse ra thứ khác.
+   *(Bản cũ suy ngũ hành từ chuỗi id → hàm map phình thành một đống `if`.)*
+
+2. **Cấu trúc dữ liệu lo an toàn, code lo diễn đạt luật.**
+   `SellPriceByEra` có 5 phần tử để không `IndexOutOfRangeException`;
+   luật "Mythic không bán" viết thành điều kiện rõ ràng, không dựa vào số 0.
+
+3. **`GameBalance` là CHỈ ĐỌC lúc chạy.** Sửa ScriptableObject lúc runtime thì
+   trong Editor nó **ghi thật vào file `.asset`** và ở lại sau khi Stop — nhưng
+   khi build ra máy thật lại không ghi được. Bug chỉ xảy ra một bên.
+   Giá trị thay đổi trong trận thuộc về **`RunState`** — object thường, sinh ra
+   mỗi trận, không cần `Clear()` thì không thể quên `Clear()`.
+
+4. **Thứ tự enum không được đổi.** Giá trị đã serialize vào `.asset`.
+
+5. **Fallback phải KÊU.** Bản cũ nuốt lỗi im lặng → cả roster rơi về hình khối
+   mà game vẫn "chạy". `SpineUnitVisual` cảnh báo khi thiếu animation hoặc
+   thiếu event `impact`.
+
+6. **Ngưỡng dòng là cái chuông, không phải mục tiêu.** `GameBalance` quá
+   80 dòng ≈ có số đã len vào nhầm chỗ.
+
+---
+
+## 11. Còn treo, chưa quyết
+
+- **Lính có di chuyển không?** Quyết định này chặn `UnitBrain` ở M3.
+  Nhân vật không có chân → nghiêng về **đứng yên**, nhưng chưa xác nhận.
+  Nếu đứng yên: bỏ `MoveSpeed` khỏi `UnitDefinition`, `UnitBrain` ~90 dòng
+  thay vì ~180.
+- **Chỉ số thật**: đang dùng placeholder **200 HP / 30 ATK**.
+  Mốc khuyến nghị nếu phải tự đặt: **×3 mỗi bậc** — khớp tỉ lệ evolution
+  3-con-thành-1. Đã tra mạng: SpinSquad (tên cũ **Lucky Offense**) và
+  Forge Master **không có bảng chỉ số công khai**.
+- **"Bàn đầy" định nghĩa chính xác** — xem mục 5.
+- **16 ô × 3 lính = 48 lính/phe.** Con số lý thuyết, kiểm chứng ở M3–M4.
+- **Có bao nhiêu Mythic** — chưa chốt.
