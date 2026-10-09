@@ -1,0 +1,291 @@
+{
+  "id": "machine-rare-gear-gunner",
+  "name": "Gear Gunner",
+  "race": "machine",
+  "rank": "rare",
+  "combat": "ranged",
+  "weapon": "mechanical-repeating-gun",
+  "status": "draft_pending_user_review",
+  "reference_height": 246,
+  "sources": [
+    "assets/sheet.png"
+  ],
+  "animations": {
+    "idle": {
+      "poses": [
+        {
+          "rect": [
+            0,
+            0,
+            400,
+            260
+          ],
+          "anchor_x": 187,
+          "anchor_y": 256,
+          "source": 0
+        },
+        {
+          "rect": [
+            400,
+            0,
+            380,
+            260
+          ],
+          "anchor_x": 563,
+          "anchor_y": 256,
+          "source": 0
+        },
+        {
+          "rect": [
+            780,
+            0,
+            380,
+            260
+          ],
+          "anchor_x": 947,
+          "anchor_y": 256,
+          "source": 0
+        },
+        {
+          "rect": [
+            1160,
+            0,
+            376,
+            260
+          ],
+          "anchor_x": 1328,
+          "anchor_y": 256,
+          "source": 0
+        }
+      ],
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "frame_durations": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "duration_seconds": 1,
+      "loop": true
+    },
+    "walk": {
+      "poses": [
+        {
+          "rect": [
+            0,
+            260,
+            400,
+            253
+          ],
+          "anchor_x": 195,
+          "anchor_y": 510,
+          "source": 0
+        },
+        {
+          "rect": [
+            400,
+            260,
+            380,
+            253
+          ],
+          "anchor_x": 580,
+          "anchor_y": 510,
+          "source": 0
+        },
+        {
+          "rect": [
+            780,
+            260,
+            380,
+            253
+          ],
+          "anchor_x": 957,
+          "anchor_y": 507,
+          "source": 0
+        },
+        {
+          "rect": [
+            1160,
+            260,
+            376,
+            253
+          ],
+          "anchor_x": 1340,
+          "anchor_y": 510,
+          "source": 0
+        }
+      ],
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "frame_durations": [
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "duration_seconds": 0.8,
+      "loop": true
+    },
+    "attack": {
+      "poses": [
+        {
+          "rect": [
+            0,
+            513,
+            400,
+            251
+          ],
+          "anchor_x": 187,
+          "anchor_y": 758,
+          "source": 0
+        },
+        {
+          "rect": [
+            400,
+            513,
+            380,
+            251
+          ],
+          "anchor_x": 565,
+          "anchor_y": 758,
+          "source": 0
+        },
+        {
+          "rect": [
+            780,
+            513,
+            380,
+            251
+          ],
+          "anchor_x": 930,
+          "anchor_y": 758,
+          "source": 0
+        },
+        {
+          "rect": [
+            1160,
+            513,
+            376,
+            251
+          ],
+          "anchor_x": 1325,
+          "anchor_y": 757,
+          "source": 0
+        }
+      ],
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "frame_durations": [
+        0.2,
+        0.12,
+        0.28,
+        0.4
+      ],
+      "duration_seconds": 1.0,
+      "loop": true
+    },
+    "dead": {
+      "poses": [
+        {
+          "rect": [
+            0,
+            764,
+            400,
+            260
+          ],
+          "anchor_x": 190,
+          "anchor_y": 998,
+          "source": 0
+        },
+        {
+          "rect": [
+            400,
+            764,
+            340,
+            260
+          ],
+          "anchor_x": 557,
+          "anchor_y": 998,
+          "source": 0
+        },
+        {
+          "rect": [
+            750,
+            764,
+            410,
+            260
+          ],
+          "anchor_x": 915,
+          "anchor_y": 990,
+          "source": 0
+        },
+        {
+          "rect": [
+            1160,
+            764,
+            376,
+            260
+          ],
+          "anchor_x": 1300,
+          "anchor_y": 991,
+          "source": 0
+        }
+      ],
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "frame_durations": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "duration_seconds": 1,
+      "loop": false
+    }
+  },
+  "generation_mode": "built-in image_gen",
+  "notes": [
+    "Monowheel robot, integrated mechanical gun; no humanoid hands or legs.",
+    "Gun fires at attack pose2 during recoil, pose3 cycles bolt and ejects casing, pose4 returns ready.",
+    "Wheel axle and suspension inspected independently of playback tests.",
+    "Draft motion pending user review; not integrated in Unity."
+  ],
+  "projectile": {
+    "release_pose": 2,
+    "muzzle_source": [
+      742,
+      689
+    ],
+    "speed_heights_per_second": 8,
+    "lifetime": 0.4
+  },
+  "sizing_policy": {
+    "version": "rank5-v1",
+    "common_baseline_px": 80,
+    "rank_multiplier": 1.05,
+    "target_idle_height_px": 84.0,
+    "metric": "idle1 silhouette alpha>80/255 including headgear; excluding transparent margins and hover offset",
+    "reference_idle_visible_height_px": 247,
+    "reference_idle_pose_normalization": 1,
+    "calibration_factor": 0.9959514170040485,
+    "render_reference_height": 247
+  },
+  "default_preview_height_px": 84.0
+}

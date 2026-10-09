@@ -1,0 +1,250 @@
+{
+  "id": "elf-common-elf-archer",
+  "race": "elf",
+  "rank": "common",
+  "combat": "ranged",
+  "weapon": "bow",
+  "status": "user_accepted_provisionally",
+  "reference_height": 260,
+  "sheet": "assets/elf-archer-sheet-v2.png",
+  "animations": {
+    "idle": {
+      "poses": [
+        {
+          "rect": [
+            65,
+            58,
+            200,
+            263
+          ],
+          "anchor_x": 157,
+          "anchor_y": 319
+        },
+        {
+          "rect": [
+            389,
+            56,
+            192,
+            265
+          ],
+          "anchor_x": 474,
+          "anchor_y": 319
+        },
+        {
+          "rect": [
+            701,
+            55,
+            193,
+            266
+          ],
+          "anchor_x": 787,
+          "anchor_y": 319
+        },
+        {
+          "rect": [
+            1006,
+            58,
+            200,
+            263
+          ],
+          "anchor_x": 1092,
+          "anchor_y": 319
+        }
+      ],
+      "duration_seconds": 1,
+      "loop": true,
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "walk": {
+      "poses": [
+        {
+          "rect": [
+            27,
+            62,
+            469,
+            588
+          ],
+          "anchor_x": 258,
+          "anchor_y": 650,
+          "source": 1,
+          "normalization": 0.4406779661016949
+        },
+        {
+          "rect": [
+            574,
+            60,
+            463,
+            592
+          ],
+          "anchor_x": 801,
+          "anchor_y": 650,
+          "source": 1,
+          "normalization": 0.4406779661016949
+        },
+        {
+          "rect": [
+            1109,
+            60,
+            467,
+            592
+          ],
+          "anchor_x": 1330,
+          "anchor_y": 650,
+          "source": 1,
+          "normalization": 0.4406779661016949
+        },
+        {
+          "rect": [
+            1651,
+            60,
+            465,
+            592
+          ],
+          "anchor_x": 1870,
+          "anchor_y": 650,
+          "source": 1,
+          "normalization": 0.4406779661016949
+        }
+      ],
+      "duration_seconds": 0.8,
+      "loop": true,
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "attack": {
+      "poses": [
+        {
+          "rect": [
+            56,
+            686,
+            204,
+            256
+          ],
+          "anchor_x": 160,
+          "anchor_y": 940
+        },
+        {
+          "rect": [
+            368,
+            680,
+            245,
+            263
+          ],
+          "anchor_x": 475,
+          "anchor_y": 940
+        },
+        {
+          "rect": [
+            682,
+            692,
+            243,
+            251
+          ],
+          "anchor_x": 787,
+          "anchor_y": 940
+        },
+        {
+          "rect": [
+            1008,
+            691,
+            201,
+            252
+          ],
+          "anchor_x": 1103,
+          "anchor_y": 940
+        }
+      ],
+      "duration_seconds": 1,
+      "loop": true,
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "dead": {
+      "poses": [
+        {
+          "rect": [
+            56,
+            976,
+            217,
+            243
+          ],
+          "anchor_x": 155,
+          "anchor_y": 1224
+        },
+        {
+          "rect": [
+            370,
+            1020,
+            237,
+            193
+          ],
+          "anchor_x": 477,
+          "anchor_y": 1224
+        },
+        {
+          "rect": [
+            656,
+            1043,
+            281,
+            170
+          ],
+          "anchor_x": 785,
+          "anchor_y": 1224
+        },
+        {
+          "rect": [
+            944,
+            1080,
+            293,
+            147
+          ],
+          "anchor_x": 1094,
+          "anchor_y": 1224
+        }
+      ],
+      "duration_seconds": 1,
+      "loop": false,
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  },
+  "notes": [
+    "Walk sequence 1→2→3→4→1; no frame5.",
+    "Preview projectile is illustrative and separate from character sprite.",
+    "Not integrated or tested in Unity.",
+    "Pants markings only applied to Walk; other animations retain earlier costume pending gait review."
+  ],
+  "walk_correction_sheet": "assets/walk-pants-v9.png",
+  "walk_rules": "../../../character-animation-checklist.md",
+  "validation_report": "walk-review-v9.md",
+  "acceptance_note": "User: tạm tạm, lưu con đó lại. Walk v9 accepted provisionally; idle/attack/dead retain prior costume without marked pants.",
+  "sizing_policy": {
+    "version": "rank5-v1",
+    "common_baseline_px": 80,
+    "rank_multiplier": 1.0,
+    "target_idle_height_px": 80.0,
+    "metric": "idle1 silhouette alpha>80/255 including headgear; excluding transparent margins and hover offset",
+    "reference_idle_visible_height_px": 258,
+    "reference_idle_pose_normalization": 1,
+    "calibration_factor": 1.0077519379844961,
+    "render_reference_height": 258
+  },
+  "default_preview_height_px": 80.0
+}

@@ -64,3 +64,6 @@ sysinfo.txt
 # ── macOS ─────────────────────────────────────────
 .DS_Store
 **/.DS_Store
+
+# anh xem truoc do Claude dung, khong phai asset
+preview_*.png

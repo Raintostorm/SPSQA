@@ -1,0 +1,12 @@
+Production sprite animation, transparent background. Use ONLY original reference character and attack mechanics, specifically THIRD ROW of this reference. Make eight complete poses arranged TWO COLUMNS x FOUR ROWS, reading left-right then down, with generous empty transparency between complete silhouettes; no cells or borders. Enough room for entire long sword. Do not crop head, sword or boots.
+Royal Hero exactly as reference: brown hair, gold WHITE armored LEFT arm underneath the lion shoulder stays DOWN with FREE clenched fist in EVERY frame. The BLUE armored RIGHT arm (behind the body, on image right) is the sword arm in EVERY frame. Preserve this asymmetric anatomy. DO NOT swap colors between arms. DO NOT raise the lion shoulder's arm. DO NOT attach the sword arm to the lion shoulder. Raised sword passes BEHIND HEAD while gold lion shoulder and gold left forearm remain low in front, precisely like reference third row second pose.
+Eight poses of ONE overhead slash:
+1 ready, BLUE right arm holds sword forward up-right, GOLD left arm low.
+2 draw BLUE right arm back, sword begins rising diagonally over RIGHT side of head, GOLD left fist low.
+3 full windup EXACTLY as third row second reference pose: BLUE right arm bent BACK BEHIND HEAD, sword up-left; GOLD lion shoulder/left elbow/left fist visibly LOW.
+4 BLUE right arm begins slash from behind head, blade overhead pointing up-right, GOLD left fist low.
+5 BLUE right arm fully extends sword down-right, GOLD left fist still low by left hip; head leans forward modestly.
+6 BLUE right arm follows through down-right, GOLD left fist low, no kneeling.
+7 BLUE right hand draws sword back toward horizontal right, GOLD left fist low.
+8 same as ready pose1.
+Same feet planted at same positions and same baseline in each row, same anatomical/head scale, same sword blade length, same camera right-facing throughout. Navy BLUE RIGHT ARM always carries sword. Gold LEFT fist never approaches hilt. No crossover grip, no twohand grip, no additional arms, no missing blade, no magenta, no ground, no shadows, no text, no effect trails. Preserve all original hair, armor and cape detail, proportions, design, and art style. Real transparent alpha.

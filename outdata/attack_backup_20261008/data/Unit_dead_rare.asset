@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1571af2fcd6794a56afca7a6b4084845, type: 3}
+  m_Name: Unit_dead_rare
+  m_EditorClassIdentifier: Assembly-CSharp::Project.Data.UnitDefinition
+  UnitId: dead_rare
+  DisplayName: Spirit Wisp
+  Race: 2
+  Rank: 1
+  BaseHp: 232
+  BaseAttack: 35
+  IsRanged: 1
+  AttackRange: 3.2
+  AttackCooldown: 0.95
+  MoveSpeed: 2
+  ProjectilePrefab: {fileID: 1100000000000000001, guid: 5d9b7dd068b3e5b9b129dd2df18becce, type: 3}
+  ProjectileSpeed: 18
+  ProjectileArcHeight: 0
+  Animations: {fileID: 11400000, guid: 30780bb3b35b546d386738e75b98dc0f, type: 2}
+  Scale: 1
+  BattlePrefab: {fileID: 0}
+  Portrait: {fileID: 0}

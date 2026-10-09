@@ -1,0 +1,391 @@
+{
+  "id": "human-common-militia",
+  "name": "Dân quân cầm liềm",
+  "race": "human",
+  "rank": "common",
+  "combat": "melee",
+  "weapon": "short-sickle",
+  "status": "design_and_attack_user_approved_new_motion_pending_review",
+  "reference_height": 570,
+  "sources": [
+    "assets/states.png",
+    "assets/attack.png",
+    "assets/walk-frame3.png",
+    "assets/walk-frame4.png"
+  ],
+  "animations": {
+    "idle": {
+      "poses": [
+        {
+          "rect": [
+            0,
+            0,
+            360,
+            406
+          ],
+          "anchor_x": 150,
+          "anchor_y": 401,
+          "source": 0,
+          "normalization": 1.5616438356164384
+        },
+        {
+          "rect": [
+            360,
+            0,
+            375,
+            406
+          ],
+          "anchor_x": 520,
+          "anchor_y": 401,
+          "source": 0,
+          "normalization": 1.5616438356164384
+        },
+        {
+          "rect": [
+            735,
+            0,
+            350,
+            406
+          ],
+          "anchor_x": 885,
+          "anchor_y": 401,
+          "source": 0,
+          "normalization": 1.5616438356164384
+        },
+        {
+          "rect": [
+            1085,
+            0,
+            363,
+            406
+          ],
+          "anchor_x": 1255,
+          "anchor_y": 401,
+          "source": 0,
+          "normalization": 1.5616438356164384
+        }
+      ],
+      "duration_seconds": 1,
+      "frame_durations": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "loop": true,
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "status": "pending_user_review"
+    },
+    "walk": {
+      "poses": [
+        {
+          "rect": [
+            0,
+            407,
+            360,
+            364
+          ],
+          "anchor_x": 170,
+          "anchor_y": 767,
+          "source": 0,
+          "normalization": 1.5616438356164384
+        },
+        {
+          "rect": [
+            360,
+            407,
+            375,
+            364
+          ],
+          "anchor_x": 540,
+          "anchor_y": 767,
+          "source": 0,
+          "normalization": 1.5616438356164384
+        },
+        {
+          "rect": [
+            750,
+            417,
+            360,
+            385
+          ],
+          "anchor_x": 920,
+          "anchor_y": 790,
+          "source": 2,
+          "normalization": 1.5616438356164384
+        },
+        {
+          "rect": [
+            399,
+            52,
+            658,
+            988
+          ],
+          "anchor_x": 740,
+          "anchor_y": 1040,
+          "source": 3,
+          "normalization": 0.5769230769230769
+        }
+      ],
+      "duration_seconds": 0.8,
+      "frame_durations": [
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "loop": true,
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "status": "pending_user_review"
+    },
+    "attack": {
+      "poses": [
+        {
+          "rect": [
+            130,
+            25,
+            535,
+            582
+          ],
+          "parts": [
+            [
+              130,
+              25,
+              535,
+              578
+            ],
+            [
+              130,
+              603,
+              435,
+              4
+            ]
+          ],
+          "anchor_x": 380,
+          "anchor_y": 605,
+          "source": 1
+        },
+        {
+          "rect": [
+            870,
+            20,
+            485,
+            588
+          ],
+          "parts": [
+            [
+              870,
+              20,
+              485,
+              583
+            ],
+            [
+              870,
+              603,
+              435,
+              5
+            ]
+          ],
+          "anchor_x": 1110,
+          "anchor_y": 605,
+          "source": 1
+        },
+        {
+          "rect": [
+            80,
+            607,
+            745,
+            479
+          ],
+          "parts": [
+            [
+              80,
+              607,
+              745,
+              479
+            ],
+            [
+              460,
+              600,
+              110,
+              7
+            ]
+          ],
+          "anchor_x": 380,
+          "anchor_y": 1070,
+          "source": 1
+        },
+        {
+          "rect": [
+            840,
+            607,
+            475,
+            479
+          ],
+          "parts": [
+            [
+              840,
+              607,
+              475,
+              479
+            ],
+            [
+              1100,
+              603,
+              90,
+              4
+            ]
+          ],
+          "anchor_x": 1100,
+          "anchor_y": 1070,
+          "source": 1
+        }
+      ],
+      "duration_seconds": 1,
+      "frame_durations": [
+        0.2,
+        0.32,
+        0.1,
+        0.38
+      ],
+      "loop": true,
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "status": "user_approved"
+    },
+    "dead": {
+      "poses": [
+        {
+          "rect": [
+            0,
+            773,
+            358,
+            313
+          ],
+          "anchor_x": 150,
+          "anchor_y": 1055,
+          "source": 0,
+          "normalization": 1.5616438356164384,
+          "parts": [
+            [
+              0,
+              773,
+              350,
+              313
+            ],
+            [
+              350,
+              960,
+              8,
+              65
+            ]
+          ]
+        },
+        {
+          "rect": [
+            356,
+            800,
+            352,
+            286
+          ],
+          "anchor_x": 520,
+          "anchor_y": 1055,
+          "source": 0,
+          "normalization": 1.5616438356164384,
+          "parts": [
+            [
+              356,
+              800,
+              352,
+              160
+            ],
+            [
+              360,
+              960,
+              348,
+              65
+            ],
+            [
+              356,
+              1025,
+              352,
+              61
+            ]
+          ]
+        },
+        {
+          "rect": [
+            705,
+            865,
+            363,
+            221
+          ],
+          "anchor_x": 885,
+          "anchor_y": 1055,
+          "source": 0,
+          "normalization": 1.5616438356164384
+        },
+        {
+          "rect": [
+            1068,
+            890,
+            380,
+            196
+          ],
+          "anchor_x": 1255,
+          "anchor_y": 1055,
+          "source": 0,
+          "normalization": 1.5616438356164384
+        }
+      ],
+      "duration_seconds": 1,
+      "frame_durations": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "loop": false,
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "status": "pending_user_review"
+    }
+  },
+  "generation_mode": "built-in image_gen",
+  "notes": [
+    "Design and attack approved by user 2026-10-05; idle/walk/dead awaiting user motion review.",
+    "Walk1 cream rear/navy front;2 cream raised/navy vertical support;3 cream front/navy rear;4 cream vertical support/navy raised behind. Right cream remains foreground.",
+    "Preview uses reduced-resolution embedded copies; original PNG assets retained.",
+    "Not integrated/tested in Unity."
+  ],
+  "sizing_policy": {
+    "version": "rank5-v1",
+    "common_baseline_px": 80,
+    "rank_multiplier": 1.0,
+    "target_idle_height_px": 80.0,
+    "metric": "idle1 silhouette alpha>80/255 including headgear; excluding transparent margins and hover offset",
+    "reference_idle_visible_height_px": 363,
+    "reference_idle_pose_normalization": 1.5616438356164384,
+    "calibration_factor": 1.0055096418732783,
+    "render_reference_height": 566.8767123287671
+  },
+  "default_preview_height_px": 80.0
+}

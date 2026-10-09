@@ -1,0 +1,25 @@
+Use case: identity-preserve. Repair a production game sprite attack animation.
+Input image 1: original Royal Hero full sheet. Identity and motion reference; third row is attack. Input image 2: current idle sprite, exact identity/style/proportions reference.
+Generate eight complete sequential attack poses of this SAME human_legendary Royal Hero in ONE true transparent landscape sheet, four poses across upper row then four across lower row. No drawn cell borders, no square pose cages: each pose has freely sized bounds and wide transparent spacing. Whole head, both boots, cape, sword hilt AND ENTIRE long sword blade must be visible. Leave generous empty space between the EXTREMITIES of neighbours, including sword tips, and generous outer padding. Nothing overlaps. Do not squeeze swords to fit.
+Preserve brown tousled hair, blank simple black-eye chibi face, asymmetric white/gold and navy plate armor, lion shoulder relief, blue gold tabard, red gold-trim cape, long straight silver broad sword with gold decoration, gold guard. Preserve scale, head size, anatomy, perspective and three-quarter right-facing camera across every pose. Sword same rigid blade length and guard in all poses, no morphing. Same sword hand as original third attack row; OTHER HAND stays a free clenched fist, NOT holding sword. Exactly ONE SWORD, one continuous attack.
+Feet planted in same stance throughout all eight poses, unchanged distance between feet and same baseline within each row; only torso/arm lean modestly. NEVER kneel, fall, shrink, grow, switch hands, flip side or turn back to the viewer.
+Sequence:
+1 READY: sword extends diagonally right slightly upward, free fist lowered.
+2 WINDUP BEGIN: sword arm lifts the hilt above shoulder; blade rotates up-right toward overhead.
+3 FULL WINDUP: sword hand above head, sword blade pointing diagonally UP LEFT behind head; free fist low forward.
+4 STRIKE START: hand drives forward above forehead, blade sweeps through overhead to UP RIGHT, torso leans slightly right.
+5 IMPACT: sword fully swept down-right, sword hand forward chest height, tip points DOWN RIGHT near ground; knees mildly flexed, head and both feet visible.
+6 FOLLOW THROUGH: blade still down-right slightly lower, free fist remains free, stance planted. Never a crouching death pose.
+7 RECOVERY: torso straightens, hand draws sword back a little, tip rises from down-right toward horizontal right.
+8 READY: same natural stance and up-right blade orientation as pose1.
+One smooth overhead downward slash, no second slash, no duplicate neutral pose mid-strike. No slash effects, glow trails, projectiles, ground shadow, magenta, background colour, labels, numbers, watermarks. Match original polished cartoon rendering. True alpha background. Wide 3072x1536 layout preferred.
+
+Targeted correction (first result rejected for switching sword hands):
+Edit this eight-pose Royal Hero attack sheet. CRITICAL targeted fix: poses 2, 3, 4 currently move sword into the WRONG gold-armored arm. Keep the sword in the character's SAME original sword arm from pose1 and pose8: the NAVY / dark blue armored forearm on the RIGHT side of the image, whose hand holds sword in the ready stance. The gold/light-armored arm below the lion shoulder on IMAGE LEFT is the NON-SWORD arm; its gold fist remains LOW and FREE through all eight poses. In poses2-4 raise the NAVY sword arm up and behind the head for windup; do NOT raise the gold arm. Do not mirror or swap armor between arms.
+Pose2 navy arm bends upward, blade angles up-right.
+Pose3 navy hand above/behind head, blade points up-left.
+Pose4 navy arm drives forward above forehead, blade points up-right.
+Pose5 and6 MUST ALSO keep the sword in the NAVY forearm right-side hand extended forward/down right; gold forearm and free fist on left stays low, not crossing over to grip sword.
+Pose7 navy sword hand recovers to horizontal right, gold fist low.
+Pose1 and8 unchanged design and stance.
+Preserve the exact same face/hair/armor/cape/sword identity and proportions, feet positions and size, eight poses in same reading order, true transparent background. Preserve the original sword hand consistently; never use two hands to grip. Only repair arm mechanics of this one overhead downward slash. Keep the ENTIRE long blade, head, cape and both boots visible with generous transparent padding, widen spacing as needed, no borders, no square constraints, no magenta, no new effects, no shadows, no text.

@@ -1,0 +1,286 @@
+{
+  "id": "monster-rare-armored-bear",
+  "name": "Armored Bear",
+  "race": "monster",
+  "rank": "rare",
+  "combat": "melee",
+  "weapon": "claws",
+  "status": "appearance_revision_pending_user_review",
+  "reference_height": 244,
+  "sources": [
+    "assets/sheet-chibi-v2-simple-eyes.png"
+  ],
+  "animations": {
+    "idle": {
+      "poses": [
+        {
+          "rect": [
+            0,
+            0,
+            400,
+            259
+          ],
+          "anchor_x": 200,
+          "anchor_y": 254,
+          "source": 0
+        },
+        {
+          "rect": [
+            400,
+            0,
+            360,
+            259
+          ],
+          "anchor_x": 566,
+          "anchor_y": 252,
+          "source": 0
+        },
+        {
+          "rect": [
+            760,
+            0,
+            380,
+            259
+          ],
+          "anchor_x": 937,
+          "anchor_y": 253,
+          "source": 0
+        },
+        {
+          "rect": [
+            1140,
+            0,
+            396,
+            259
+          ],
+          "anchor_x": 1305,
+          "anchor_y": 251,
+          "source": 0
+        }
+      ],
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "frame_durations": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "duration_seconds": 1,
+      "loop": true
+    },
+    "walk": {
+      "poses": [
+        {
+          "rect": [
+            0,
+            259,
+            400,
+            251
+          ],
+          "anchor_x": 200,
+          "anchor_y": 500,
+          "source": 0
+        },
+        {
+          "rect": [
+            400,
+            259,
+            360,
+            251
+          ],
+          "anchor_x": 566,
+          "anchor_y": 499,
+          "source": 0
+        },
+        {
+          "rect": [
+            760,
+            259,
+            380,
+            251
+          ],
+          "anchor_x": 937,
+          "anchor_y": 500,
+          "source": 0
+        },
+        {
+          "rect": [
+            1140,
+            259,
+            396,
+            251
+          ],
+          "anchor_x": 1305,
+          "anchor_y": 503,
+          "source": 0
+        }
+      ],
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "frame_durations": [
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "duration_seconds": 0.8,
+      "loop": true
+    },
+    "attack": {
+      "poses": [
+        {
+          "rect": [
+            0,
+            510,
+            400,
+            246
+          ],
+          "anchor_x": 200,
+          "anchor_y": 753,
+          "source": 0
+        },
+        {
+          "rect": [
+            400,
+            510,
+            360,
+            252
+          ],
+          "anchor_x": 566,
+          "anchor_y": 755,
+          "source": 0
+        },
+        {
+          "rect": [
+            760,
+            510,
+            380,
+            252
+          ],
+          "anchor_x": 937,
+          "anchor_y": 752,
+          "source": 0
+        },
+        {
+          "rect": [
+            1140,
+            510,
+            396,
+            252
+          ],
+          "anchor_x": 1305,
+          "anchor_y": 758,
+          "source": 0
+        }
+      ],
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "frame_durations": [
+        0.2,
+        0.32,
+        0.1,
+        0.38
+      ],
+      "duration_seconds": 1,
+      "loop": true
+    },
+    "dead": {
+      "poses": [
+        {
+          "rect": [
+            0,
+            758,
+            400,
+            266
+          ],
+          "anchor_x": 200,
+          "anchor_y": 1009,
+          "source": 0
+        },
+        {
+          "rect": [
+            400,
+            762,
+            360,
+            262
+          ],
+          "anchor_x": 566,
+          "anchor_y": 998,
+          "source": 0
+        },
+        {
+          "rect": [
+            760,
+            762,
+            380,
+            262
+          ],
+          "anchor_x": 937,
+          "anchor_y": 1005,
+          "source": 0
+        },
+        {
+          "rect": [
+            1140,
+            762,
+            396,
+            262
+          ],
+          "anchor_x": 1305,
+          "anchor_y": 989,
+          "source": 0
+        }
+      ],
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "frame_durations": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "duration_seconds": 1,
+      "loop": false
+    }
+  },
+  "generation_mode": "built-in image_gen",
+  "notes": [
+    "Chibi revision 2 design and motion accepted by user on 06/10/2026.",
+    "Original v1 manifest and source art retained.",
+    "Not integrated in Unity.",
+    "Actual anatomy inspected separately from playback frame-order checks.",
+    "Near right hind leg stays in front drawing layer; opposite contact poses 1/3 and alternate lifted legs 2/4.",
+    "Simple-eye revision requested by user; pose anatomy and near/far leg identity retained. Original sources preserved. Revision motion awaiting user review."
+  ],
+  "revision": "chibi-v2-simple-eyes-v1",
+  "eye_style": "simple solid dark oval, no sclera/iris/highlight/glow; closed eyes single line",
+  "sizing_policy": {
+    "version": "rank5-v1",
+    "common_baseline_px": 80,
+    "rank_multiplier": 1.05,
+    "target_idle_height_px": 84.0,
+    "metric": "idle1 silhouette alpha>80/255 including headgear; excluding transparent margins and hover offset",
+    "reference_idle_visible_height_px": 244,
+    "reference_idle_pose_normalization": 1,
+    "calibration_factor": 1.0,
+    "render_reference_height": 244
+  },
+  "default_preview_height_px": 84.0
+}

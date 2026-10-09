@@ -1,0 +1,10 @@
+Precise object edit of this transparent eight-pose Royal Hero sprite sheet. Preserve layout, character identity, proportions, ALL sword geometry, all feet, hair, red cape and armor. Keep true transparency.
+The sheet reads two columns, four rows, frames1-8 left-to-right then down.
+FIX ONLY FRAMES 2,3,4 (top-right, second-row-left, second-row-right):
+They currently have THREE HANDS / THREE ARMS. A navy-blue armored arm is raised over/behind the head holding the sword, a gold-armored fist hangs low on IMAGE LEFT under the lion shoulder, AND an erroneous extra navy-blue fist/forearm hangs at waist level on IMAGE RIGHT. DELETE that erroneous low navy-blue fist AND its low forearm in each of frames2,3,4. Replace its pixels with true transparency or the existing torso armor where required. Do NOT remove the GOLD lowered arm. Do NOT remove the raised sword hand.
+After edit each frame2,3,4 must have EXACTLY TWO ARMS AND EXACTLY TWO HANDS:
+A: GOLD/WHITE arm under lion shoulder on image left, hand lowered and EMPTY.
+B: NAVY/BLUE arm from the image-right shoulder, connected anatomically from shoulder behind head to raised elbow to sword-gripping hand. This is the SAME navy sword arm as in frames1,5,6,7,8.
+There is NO navy hand at waist when the navy hand is raised overhead. No third arm, no floating hand, no two hands on sword, no swapping arms. If needed repair the raised BLUE upper-arm path to visibly originate from RIGHT shoulder BEHIND the head, not from the lion shoulder. The GOLD shoulder arm stays completely lowered.
+FRAMES1,5,6,7,8 unchanged: they already have gold free arm low and navy sword arm forward.
+Do not recolor armor to hide the issue. Physically remove the third limb. Do not redesign poses, do not flip character, no magenta, no background, no added text, no cropping any part, preserve full swords and all eight complete poses.

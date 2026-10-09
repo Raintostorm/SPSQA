@@ -1,0 +1,234 @@
+{
+  "id": "dead-common-skeleton-warrior",
+  "name": "Skeleton Warrior",
+  "race": "dead",
+  "rank": "common",
+  "status": "user_approved",
+  "approved_on": "2026-10-05",
+  "animations": {
+    "idle": {
+      "duration_seconds": 1.0,
+      "loop": true,
+      "frames": [
+        {
+          "source": "assets/base-sheet.png",
+          "rect": [
+            68,
+            51,
+            197,
+            248
+          ],
+          "anchor_x": 166.5,
+          "anchor_y": 299
+        },
+        {
+          "source": "assets/base-sheet.png",
+          "rect": [
+            387,
+            58,
+            192,
+            241
+          ],
+          "anchor_x": 483.0,
+          "anchor_y": 299
+        },
+        {
+          "source": "assets/base-sheet.png",
+          "rect": [
+            698,
+            45,
+            195,
+            254
+          ],
+          "anchor_x": 795.5,
+          "anchor_y": 299
+        },
+        {
+          "source": "assets/base-sheet.png",
+          "rect": [
+            1013,
+            54,
+            196,
+            245
+          ],
+          "anchor_x": 1111.0,
+          "anchor_y": 299
+        }
+      ],
+      "reference_height": 250
+    },
+    "attack": {
+      "duration_seconds": 0.85,
+      "loop": false,
+      "frames": [
+        {
+          "source": "assets/base-sheet.png",
+          "rect": [
+            39,
+            679,
+            224,
+            235
+          ],
+          "anchor_x": 151.0,
+          "anchor_y": 914
+        },
+        {
+          "source": "assets/base-sheet.png",
+          "rect": [
+            376,
+            655,
+            198,
+            259
+          ],
+          "anchor_x": 475.0,
+          "anchor_y": 914
+        },
+        {
+          "source": "assets/base-sheet.png",
+          "rect": [
+            681,
+            677,
+            296,
+            237
+          ],
+          "anchor_x": 829.0,
+          "anchor_y": 914
+        },
+        {
+          "source": "assets/base-sheet.png",
+          "rect": [
+            1023,
+            676,
+            170,
+            238
+          ],
+          "anchor_x": 1108.0,
+          "anchor_y": 914
+        }
+      ],
+      "reference_height": 250
+    },
+    "dead": {
+      "duration_seconds": 0.9,
+      "loop": false,
+      "frames": [
+        {
+          "source": "assets/base-sheet.png",
+          "rect": [
+            68,
+            966,
+            201,
+            233
+          ],
+          "anchor_x": 168.5,
+          "anchor_y": 1199
+        },
+        {
+          "source": "assets/base-sheet.png",
+          "rect": [
+            399,
+            1010,
+            174,
+            189
+          ],
+          "anchor_x": 486.0,
+          "anchor_y": 1199
+        },
+        {
+          "source": "assets/base-sheet.png",
+          "rect": [
+            660,
+            1037,
+            245,
+            168
+          ],
+          "anchor_x": 782.5,
+          "anchor_y": 1205
+        },
+        {
+          "source": "assets/base-sheet.png",
+          "rect": [
+            943,
+            1085,
+            273,
+            121
+          ],
+          "anchor_x": 1079.5,
+          "anchor_y": 1206
+        }
+      ],
+      "reference_height": 250
+    },
+    "walk": {
+      "duration_seconds": 0.7,
+      "loop": true,
+      "frame_order": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "loop_to": 1,
+      "reference_height": 550,
+      "frames": [
+        {
+          "source": "assets/walk-poses-1-4.png",
+          "rect": [
+            86,
+            82,
+            455,
+            562
+          ],
+          "anchor_x": 268,
+          "anchor_y": 644
+        },
+        {
+          "source": "assets/walk-corrections-2-3.png",
+          "rect": [
+            612,
+            78,
+            441,
+            570
+          ],
+          "anchor_x": 787,
+          "anchor_y": 648
+        },
+        {
+          "source": "assets/walk-corrections-2-3.png",
+          "rect": [
+            1145,
+            79,
+            449,
+            567
+          ],
+          "anchor_x": 1320,
+          "anchor_y": 646
+        },
+        {
+          "source": "assets/walk-poses-1-4.png",
+          "rect": [
+            1687,
+            82,
+            432,
+            562
+          ],
+          "anchor_x": 1864,
+          "anchor_y": 644
+        }
+      ]
+    }
+  },
+  "default_preview_height_px": 80.0,
+  "validation": "User approved the latest sprite preview; not tested as a Unity prefab.",
+  "sizing_policy": {
+    "version": "rank5-v1",
+    "common_baseline_px": 80,
+    "rank_multiplier": 1.0,
+    "target_idle_height_px": 80.0,
+    "metric": "idle1 silhouette alpha>80/255 including headgear; excluding transparent margins and hover offset",
+    "reference_idle_visible_height_px": 248,
+    "reference_idle_pose_normalization": 1,
+    "calibration_factor": 1.0080645161290323,
+    "render_reference_height": 248
+  }
+}

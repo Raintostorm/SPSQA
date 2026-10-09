@@ -1,0 +1,308 @@
+{
+  "id": "human-epic-crescent-mage",
+  "name": "Crescent Mage",
+  "race": "human",
+  "rank": "epic",
+  "combat": "ranged",
+  "weapon": "crescent crystal staff",
+  "status": "proportion_revision_pending_user_review",
+  "reference_height": 244,
+  "sources": [
+    "assets/sheet-proportions-v2.png"
+  ],
+  "animations": {
+    "idle": {
+      "poses": [
+        {
+          "rect": [
+            66,
+            11,
+            302,
+            248
+          ],
+          "anchor_x": 187,
+          "anchor_y": 257,
+          "source": 0
+        },
+        {
+          "rect": [
+            447,
+            10,
+            300,
+            249
+          ],
+          "anchor_x": 575,
+          "anchor_y": 257,
+          "source": 0
+        },
+        {
+          "rect": [
+            832,
+            9,
+            304,
+            249
+          ],
+          "anchor_x": 960,
+          "anchor_y": 256,
+          "source": 0
+        },
+        {
+          "rect": [
+            1218,
+            9,
+            297,
+            248
+          ],
+          "anchor_x": 1345,
+          "anchor_y": 255,
+          "source": 0
+        }
+      ],
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "frame_durations": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "duration_seconds": 1,
+      "loop": true
+    },
+    "walk": {
+      "poses": [
+        {
+          "rect": [
+            56,
+            263,
+            312,
+            251
+          ],
+          "anchor_x": 187,
+          "anchor_y": 512,
+          "source": 0
+        },
+        {
+          "rect": [
+            450,
+            262,
+            317,
+            252
+          ],
+          "anchor_x": 575,
+          "anchor_y": 512,
+          "source": 0
+        },
+        {
+          "rect": [
+            821,
+            264,
+            316,
+            251
+          ],
+          "anchor_x": 960,
+          "anchor_y": 513,
+          "source": 0
+        },
+        {
+          "rect": [
+            1213,
+            260,
+            312,
+            255
+          ],
+          "anchor_x": 1345,
+          "anchor_y": 513,
+          "source": 0
+        }
+      ],
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "frame_durations": [
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "duration_seconds": 0.8,
+      "loop": true
+    },
+    "attack": {
+      "poses": [
+        {
+          "rect": [
+            41,
+            518,
+            331,
+            253
+          ],
+          "anchor_x": 187,
+          "anchor_y": 769,
+          "source": 0
+        },
+        {
+          "rect": [
+            430,
+            514,
+            323,
+            256
+          ],
+          "anchor_x": 575,
+          "anchor_y": 768,
+          "source": 0
+        },
+        {
+          "rect": [
+            804,
+            516,
+            374,
+            258
+          ],
+          "anchor_x": 960,
+          "anchor_y": 772,
+          "source": 0
+        },
+        {
+          "rect": [
+            1209,
+            514,
+            313,
+            259
+          ],
+          "anchor_x": 1345,
+          "anchor_y": 771,
+          "source": 0
+        }
+      ],
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "frame_durations": [
+        0.22,
+        0.36,
+        0.12,
+        0.3
+      ],
+      "duration_seconds": 1.0,
+      "loop": true
+    },
+    "dead": {
+      "poses": [
+        {
+          "rect": [
+            53,
+            774,
+            312,
+            236
+          ],
+          "anchor_x": 187,
+          "anchor_y": 1008,
+          "source": 0
+        },
+        {
+          "rect": [
+            436,
+            778,
+            316,
+            230
+          ],
+          "anchor_x": 575,
+          "anchor_y": 1006,
+          "source": 0
+        },
+        {
+          "rect": [
+            790,
+            845,
+            354,
+            154
+          ],
+          "anchor_x": 960,
+          "anchor_y": 997,
+          "source": 0
+        },
+        {
+          "rect": [
+            1164,
+            849,
+            351,
+            153
+          ],
+          "anchor_x": 1345,
+          "anchor_y": 1000,
+          "source": 0
+        }
+      ],
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "frame_durations": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "duration_seconds": 1,
+      "loop": false
+    }
+  },
+  "generation_mode": "built-in image_gen",
+  "notes": [
+    "Four-pose loop1→2→3→4→1. Draft awaiting user motion approval.",
+    "Right near leg remains foreground; support legs vertical; mage walk4 corrected before playback.",
+    "Projectile is emitted from source-calibrated crystal/muzzle at pose3 and travels independently.",
+    "Simple-eye revision requested by user; pose anatomy and near/far leg identity retained. Original sources preserved. Revision motion awaiting user review.",
+    "Proportions v2: longer torso and legs, reduced head relative to body; actual walk leg identity inspected before playback, user motion review pending."
+  ],
+  "projectile": {
+    "release_pose": 3,
+    "origins_by_attack_pose": [
+      [
+        347,
+        620
+      ],
+      [
+        729,
+        595
+      ],
+      [
+        1152,
+        621
+      ],
+      [
+        1490,
+        623
+      ]
+    ],
+    "speed_heights_per_second": 5,
+    "lifetime": 0.65
+  },
+  "revision": "proportions-v2",
+  "eye_style": "simple solid dark oval, no sclera/iris/highlight/glow; closed eyes single line",
+  "sizing_policy": {
+    "version": "rank5-v1",
+    "common_baseline_px": 80,
+    "rank_multiplier": 1.1025,
+    "target_idle_height_px": 88.2,
+    "metric": "idle1 silhouette alpha>80/255 including headgear; excluding transparent margins and hover offset",
+    "reference_idle_visible_height_px": 244,
+    "reference_idle_pose_normalization": 1,
+    "calibration_factor": 1.0,
+    "render_reference_height": 244
+  },
+  "default_preview_height_px": 88.2
+}

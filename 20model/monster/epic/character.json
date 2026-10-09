@@ -1,0 +1,294 @@
+{
+  "id": "monster-epic-lava-scorpion",
+  "name": "Lava Scorpion",
+  "race": "monster",
+  "rank": "epic",
+  "combat": "melee",
+  "weapon": "lava stinger and claws",
+  "status": "appearance_revision_pending_user_review",
+  "reference_height": 246,
+  "sources": [
+    "assets/sheet-v1-simple-eyes.png",
+    "assets/attack-tail-v2-simple-eyes.png"
+  ],
+  "animations": {
+    "idle": {
+      "poses": [
+        {
+          "rect": [
+            36,
+            5,
+            346,
+            251
+          ],
+          "anchor_x": 169,
+          "anchor_y": 252,
+          "source": 0
+        },
+        {
+          "rect": [
+            416,
+            7,
+            343,
+            249
+          ],
+          "anchor_x": 548,
+          "anchor_y": 251,
+          "source": 0
+        },
+        {
+          "rect": [
+            791,
+            7,
+            347,
+            253
+          ],
+          "anchor_x": 923,
+          "anchor_y": 255,
+          "source": 0
+        },
+        {
+          "rect": [
+            1176,
+            6,
+            339,
+            249
+          ],
+          "anchor_x": 1306,
+          "anchor_y": 251,
+          "source": 0
+        }
+      ],
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "frame_durations": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "duration_seconds": 1,
+      "loop": true
+    },
+    "walk": {
+      "poses": [
+        {
+          "rect": [
+            20,
+            265,
+            356,
+            238
+          ],
+          "anchor_x": 165,
+          "anchor_y": 499,
+          "source": 0
+        },
+        {
+          "rect": [
+            410,
+            266,
+            353,
+            238
+          ],
+          "anchor_x": 549,
+          "anchor_y": 500,
+          "source": 0
+        },
+        {
+          "rect": [
+            797,
+            267,
+            344,
+            237
+          ],
+          "anchor_x": 922,
+          "anchor_y": 500,
+          "source": 0
+        },
+        {
+          "rect": [
+            1173,
+            264,
+            343,
+            240
+          ],
+          "anchor_x": 1303,
+          "anchor_y": 500,
+          "source": 0
+        }
+      ],
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "frame_durations": [
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "duration_seconds": 0.8,
+      "loop": true
+    },
+    "attack": {
+      "poses": [
+        {
+          "rect": [
+            31,
+            507,
+            348,
+            261
+          ],
+          "anchor_x": 166,
+          "anchor_y": 764,
+          "source": 0
+        },
+        {
+          "rect": [
+            407,
+            510,
+            345,
+            263
+          ],
+          "anchor_x": 547,
+          "anchor_y": 769,
+          "source": 0
+        },
+        {
+          "rect": [
+            774,
+            528,
+            374,
+            246
+          ],
+          "anchor_x": 924,
+          "anchor_y": 770,
+          "source": 1
+        },
+        {
+          "rect": [
+            1221,
+            505,
+            309,
+            267
+          ],
+          "anchor_x": 1357,
+          "anchor_y": 768,
+          "source": 0
+        }
+      ],
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "frame_durations": [
+        0.2,
+        0.36,
+        0.12,
+        0.32
+      ],
+      "duration_seconds": 1.0,
+      "loop": true
+    },
+    "dead": {
+      "poses": [
+        {
+          "rect": [
+            18,
+            774,
+            358,
+            236
+          ],
+          "anchor_x": 170,
+          "anchor_y": 1006,
+          "source": 0
+        },
+        {
+          "rect": [
+            397,
+            804,
+            351,
+            209
+          ],
+          "anchor_x": 550,
+          "anchor_y": 1009,
+          "source": 0
+        },
+        {
+          "rect": [
+            782,
+            857,
+            357,
+            155
+          ],
+          "anchor_x": 928,
+          "anchor_y": 1007,
+          "source": 0
+        },
+        {
+          "rect": [
+            1159,
+            875,
+            372,
+            136
+          ],
+          "anchor_x": 1335,
+          "anchor_y": 1007,
+          "source": 0
+        }
+      ],
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "frame_durations": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "duration_seconds": 1,
+      "loop": false
+    }
+  },
+  "generation_mode": "built-in image_gen",
+  "notes": [
+    "Draft awaiting user motion approval; not tested in Unity.",
+    "Near-side limbs foreground; articulated tail continuously attaches to rear body.",
+    "Actual atlas gutters and parts used; no blind equal-grid slicing.",
+    "Simple-eye revision requested by user; pose anatomy and near/far leg identity retained. Original sources preserved. Revision motion awaiting user review."
+  ],
+  "impact": {
+    "strike_pose": 3,
+    "stinger_source": [
+      1107,
+      758
+    ],
+    "type": "contact_sparks",
+    "lifetime": 0.35
+  },
+  "revision": "-simple-eyes-v1",
+  "eye_style": "simple solid dark oval, no sclera/iris/highlight/glow; closed eyes single line",
+  "sizing_policy": {
+    "version": "rank5-v1",
+    "common_baseline_px": 80,
+    "rank_multiplier": 1.1025,
+    "target_idle_height_px": 88.2,
+    "metric": "idle1 silhouette alpha>80/255 including headgear; excluding transparent margins and hover offset",
+    "reference_idle_visible_height_px": 246,
+    "reference_idle_pose_normalization": 1,
+    "calibration_factor": 1.0,
+    "render_reference_height": 246
+  },
+  "default_preview_height_px": 88.2
+}

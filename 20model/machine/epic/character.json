@@ -1,0 +1,381 @@
+{
+  "id": "machine-epic-furnace-crawler",
+  "name": "Furnace Crawler",
+  "race": "machine",
+  "rank": "epic",
+  "combat": "melee",
+  "weapon": "continuous short-range flamethrower",
+  "status": "draft_pending_user_review",
+  "reference_height": 246,
+  "sources": [
+    "assets/sheet-v1.png"
+  ],
+  "animations": {
+    "idle": {
+      "poses": [
+        {
+          "rect": [
+            26,
+            5,
+            334,
+            247
+          ],
+          "anchor_x": 170,
+          "anchor_y": 249,
+          "source": 0
+        },
+        {
+          "rect": [
+            411,
+            2,
+            328,
+            250
+          ],
+          "anchor_x": 554,
+          "anchor_y": 249,
+          "source": 0
+        },
+        {
+          "rect": [
+            795,
+            3,
+            335,
+            249
+          ],
+          "anchor_x": 938,
+          "anchor_y": 249,
+          "source": 0
+        },
+        {
+          "rect": [
+            1180,
+            4,
+            334,
+            248
+          ],
+          "anchor_x": 1322,
+          "anchor_y": 249,
+          "source": 0
+        }
+      ],
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "frame_durations": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "duration_seconds": 1,
+      "loop": true
+    },
+    "walk": {
+      "poses": [
+        {
+          "rect": [
+            26,
+            258,
+            340,
+            249
+          ],
+          "anchor_x": 172,
+          "anchor_y": 504,
+          "source": 0
+        },
+        {
+          "rect": [
+            411,
+            259,
+            338,
+            248
+          ],
+          "anchor_x": 555,
+          "anchor_y": 504,
+          "source": 0
+        },
+        {
+          "rect": [
+            797,
+            258,
+            341,
+            249
+          ],
+          "anchor_x": 940,
+          "anchor_y": 504,
+          "source": 0
+        },
+        {
+          "rect": [
+            1181,
+            258,
+            334,
+            249
+          ],
+          "anchor_x": 1322,
+          "anchor_y": 504,
+          "source": 0
+        }
+      ],
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "frame_durations": [
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "duration_seconds": 0.8,
+      "loop": true
+    },
+    "attack": {
+      "poses": [
+        {
+          "rect": [
+            28,
+            513,
+            318,
+            250
+          ],
+          "anchor_x": 170,
+          "anchor_y": 760,
+          "source": 0
+        },
+        {
+          "rect": [
+            411,
+            513,
+            340,
+            250
+          ],
+          "anchor_x": 555,
+          "anchor_y": 760,
+          "source": 0
+        },
+        {
+          "rect": [
+            794,
+            513,
+            341,
+            250
+          ],
+          "anchor_x": 939,
+          "anchor_y": 760,
+          "source": 0
+        },
+        {
+          "rect": [
+            1181,
+            515,
+            316,
+            248
+          ],
+          "anchor_x": 1323,
+          "anchor_y": 760,
+          "source": 0
+        }
+      ],
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "frame_durations": [
+        0.35,
+        0.18,
+        0.18,
+        0.4
+      ],
+      "duration_seconds": null,
+      "loop": false,
+      "channel": {
+        "startup_pose": 1,
+        "startup_seconds": 0.35,
+        "sustain_poses": [
+          2,
+          3
+        ],
+        "sustain_pose_seconds": 0.18,
+        "recovery_pose": 4,
+        "recovery_seconds": 0.4,
+        "hold_until_released": true
+      },
+      "minimum_duration_seconds": 0.75,
+      "duration_model": "startup + held sustain duration + recovery"
+    },
+    "dead": {
+      "poses": [
+        {
+          "rect": [
+            33,
+            766,
+            333,
+            239
+          ],
+          "anchor_x": 185,
+          "anchor_y": 1002,
+          "source": 0
+        },
+        {
+          "rect": [
+            424,
+            767,
+            321,
+            237
+          ],
+          "anchor_x": 566,
+          "anchor_y": 1001,
+          "source": 0
+        },
+        {
+          "rect": [
+            767,
+            808,
+            368,
+            192
+          ],
+          "anchor_x": 960,
+          "anchor_y": 997,
+          "source": 0
+        },
+        {
+          "rect": [
+            1167,
+            820,
+            347,
+            177
+          ],
+          "anchor_x": 1360,
+          "anchor_y": 994,
+          "source": 0
+        }
+      ],
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "frame_durations": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "duration_seconds": 1,
+      "loop": false
+    }
+  },
+  "generation_mode": "built-in image_gen",
+  "notes": [
+    "Nonhumanoid tracked furnace robot; constant near/far track depth and connected fuel hose/nozzle.",
+    "Attack is a channel: startup1, sustain2↔3 while held, recover4 on release.",
+    "40DPS, 10damage per0.25s exposure. First tick is delayed; exits reset exposure.",
+    "Draft pending motion review; standalone preview, not Unity integration."
+  ],
+  "combat_logic": {
+    "dps": 40,
+    "tick_interval_seconds": 0.25,
+    "damage_per_tick": 10,
+    "first_tick": "after .25 seconds of continuous exposure during sustain",
+    "exit_resets_partial_tick": true,
+    "range_heights": 1.05,
+    "half_width_at_tip_heights": 0.19,
+    "logic_file": "flame-channel.js"
+  },
+  "nozzle_by_attack_pose": [
+    [
+      336,
+      692
+    ],
+    [
+      739,
+      693
+    ],
+    [
+      1123,
+      693
+    ],
+    [
+      1484,
+      694
+    ]
+  ],
+  "exhaust_by_pose": [
+    [
+      [
+        124,
+        16
+      ],
+      [
+        508,
+        16
+      ],
+      [
+        892,
+        16
+      ],
+      [
+        1276,
+        16
+      ]
+    ],
+    [
+      [
+        124,
+        272
+      ],
+      [
+        508,
+        272
+      ],
+      [
+        892,
+        272
+      ],
+      [
+        1276,
+        272
+      ]
+    ],
+    [
+      [
+        124,
+        528
+      ],
+      [
+        508,
+        528
+      ],
+      [
+        892,
+        528
+      ],
+      [
+        1276,
+        528
+      ]
+    ]
+  ],
+  "preview_logic_file": "flame-preview.js",
+  "sizing_policy": {
+    "version": "rank5-v1",
+    "common_baseline_px": 80,
+    "rank_multiplier": 1.1025,
+    "target_idle_height_px": 88.2,
+    "metric": "idle1 silhouette alpha>80/255 including headgear; excluding transparent margins and hover offset",
+    "reference_idle_visible_height_px": 244,
+    "reference_idle_pose_normalization": 1,
+    "calibration_factor": 1.0081967213114753,
+    "render_reference_height": 244
+  },
+  "default_preview_height_px": 88.2
+}

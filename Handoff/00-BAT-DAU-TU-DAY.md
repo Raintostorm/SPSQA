@@ -47,3 +47,14 @@ Bản mới: giữ nguyên **luật chơi và con số** (file 01), viết lại
 - Target: **mobile portrait**, mốc kiểm tra **iPhone X (1125×2436, tỉ lệ 9:19.5)**
 - Camera: **Orthographic**
 - Ngôn ngữ hiển thị trong game: **tiếng Anh**
+
+---
+
+## 11 — Lỗi đã gặp
+
+[`11-LOI-DA-GAP.md`](11-LOI-DA-GAP.md) — sổ ghi lỗi **đã thật sự xảy ra**,
+kèm triệu chứng và cách chặn. Điểm chung của gần hết danh sách: **Unity
+không báo gì cả**, lỗi chỉ lộ khi nhìn hoặc khi chạy.
+
+Đọc trước khi sinh file YAML bằng script, và khi gặp một triệu chứng khó hiểu.
+

@@ -1,0 +1,403 @@
+{
+  "id": "elf-epic-moon-archer",
+  "name": "Moon Archer",
+  "race": "elf",
+  "rank": "epic",
+  "combat": "ranged",
+  "weapon": "crescent energy bow",
+  "status": "appearance_revision_pending_user_review",
+  "reference_height": 272,
+  "sources": [
+    "assets/sheet-v1-simple-eyes.png"
+  ],
+  "animations": {
+    "idle": {
+      "poses": [
+        {
+          "rect": [
+            84,
+            11,
+            252,
+            280
+          ],
+          "anchor_x": 211,
+          "anchor_y": 287,
+          "source": 0
+        },
+        {
+          "rect": [
+            421,
+            12,
+            252,
+            278
+          ],
+          "anchor_x": 553,
+          "anchor_y": 287,
+          "source": 0
+        },
+        {
+          "rect": [
+            826,
+            12,
+            244,
+            279
+          ],
+          "anchor_x": 950,
+          "anchor_y": 287,
+          "source": 0
+        },
+        {
+          "rect": [
+            1198,
+            13,
+            252,
+            278
+          ],
+          "anchor_x": 1333,
+          "anchor_y": 287,
+          "source": 0
+        }
+      ],
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "frame_durations": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "duration_seconds": 1,
+      "loop": true
+    },
+    "walk": {
+      "poses": [
+        {
+          "rect": [
+            70,
+            292,
+            276,
+            257
+          ],
+          "anchor_x": 214,
+          "anchor_y": 548,
+          "source": 0,
+          "parts": [
+            [
+              70,
+              300,
+              276,
+              249
+            ],
+            [
+              222,
+              294,
+              34,
+              6
+            ]
+          ]
+        },
+        {
+          "rect": [
+            445,
+            292,
+            269,
+            260
+          ],
+          "anchor_x": 582,
+          "anchor_y": 549,
+          "source": 0,
+          "parts": [
+            [
+              445,
+              300,
+              269,
+              243
+            ],
+            [
+              587,
+              294,
+              34,
+              6
+            ],
+            [
+              555,
+              543,
+              60,
+              7
+            ]
+          ]
+        },
+        {
+          "rect": [
+            816,
+            293,
+            267,
+            259
+          ],
+          "anchor_x": 955,
+          "anchor_y": 548,
+          "source": 0,
+          "parts": [
+            [
+              816,
+              300,
+              267,
+              244
+            ],
+            [
+              951,
+              295,
+              33,
+              5
+            ],
+            [
+              874,
+              544,
+              142,
+              6
+            ]
+          ]
+        },
+        {
+          "rect": [
+            1214,
+            293,
+            276,
+            259
+          ],
+          "anchor_x": 1354,
+          "anchor_y": 548,
+          "source": 0,
+          "parts": [
+            [
+              1214,
+              300,
+              276,
+              252
+            ],
+            [
+              1358,
+              295,
+              34,
+              5
+            ]
+          ]
+        }
+      ],
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "frame_durations": [
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "duration_seconds": 0.8,
+      "loop": true
+    },
+    "attack": {
+      "poses": [
+        {
+          "rect": [
+            62,
+            549,
+            286,
+            262
+          ],
+          "anchor_x": 208,
+          "anchor_y": 807,
+          "source": 0,
+          "parts": [
+            [
+              62,
+              553,
+              286,
+              258
+            ],
+            [
+              310,
+              547,
+              14,
+              6
+            ]
+          ]
+        },
+        {
+          "rect": [
+            432,
+            544,
+            316,
+            269
+          ],
+          "anchor_x": 565,
+          "anchor_y": 809,
+          "source": 0,
+          "parts": [
+            [
+              432,
+              552,
+              316,
+              261
+            ],
+            [
+              616,
+              544,
+              22,
+              8
+            ]
+          ]
+        },
+        {
+          "rect": [
+            805,
+            544,
+            324,
+            269
+          ],
+          "anchor_x": 954,
+          "anchor_y": 809,
+          "source": 0,
+          "parts": [
+            [
+              805,
+              552,
+              324,
+              261
+            ],
+            [
+              1035,
+              544,
+              20,
+              8
+            ]
+          ]
+        },
+        {
+          "rect": [
+            1212,
+            553,
+            264,
+            260
+          ],
+          "anchor_x": 1352,
+          "anchor_y": 809,
+          "source": 0
+        }
+      ],
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "frame_durations": [
+        0.2,
+        0.36,
+        0.12,
+        0.32
+      ],
+      "duration_seconds": 1.0,
+      "loop": true
+    },
+    "dead": {
+      "poses": [
+        {
+          "rect": [
+            52,
+            814,
+            295,
+            197
+          ],
+          "anchor_x": 211,
+          "anchor_y": 1007,
+          "source": 0
+        },
+        {
+          "rect": [
+            395,
+            820,
+            337,
+            192
+          ],
+          "anchor_x": 568,
+          "anchor_y": 1008,
+          "source": 0
+        },
+        {
+          "rect": [
+            771,
+            871,
+            380,
+            149
+          ],
+          "anchor_x": 949,
+          "anchor_y": 1016,
+          "source": 0
+        },
+        {
+          "rect": [
+            1166,
+            874,
+            343,
+            141
+          ],
+          "anchor_x": 1334,
+          "anchor_y": 1011,
+          "source": 0
+        }
+      ],
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "frame_durations": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "duration_seconds": 1,
+      "loop": false
+    }
+  },
+  "generation_mode": "built-in image_gen",
+  "notes": [
+    "Draft awaiting user motion approval; not tested in Unity.",
+    "Near right cream leg foreground, far left navy behind; vertical support legs and alternate lifted legs.",
+    "Actual atlas gutters and parts used; no blind equal-grid slicing.",
+    "Simple-eye revision requested by user; pose anatomy and near/far leg identity retained. Original sources preserved. Revision motion awaiting user review."
+  ],
+  "projectile": {
+    "release_pose": 3,
+    "origin_source": [
+      1102,
+      699
+    ],
+    "speed_heights_per_second": 6,
+    "lifetime": 0.6
+  },
+  "revision": "-simple-eyes-v1",
+  "eye_style": "simple solid dark oval, no sclera/iris/highlight/glow; closed eyes single line",
+  "sizing_policy": {
+    "version": "rank5-v1",
+    "common_baseline_px": 80,
+    "rank_multiplier": 1.1025,
+    "target_idle_height_px": 88.2,
+    "metric": "idle1 silhouette alpha>80/255 including headgear; excluding transparent margins and hover offset",
+    "reference_idle_visible_height_px": 275,
+    "reference_idle_pose_normalization": 1,
+    "calibration_factor": 0.9890909090909091,
+    "render_reference_height": 275
+  },
+  "default_preview_height_px": 88.2
+}

@@ -1,0 +1,882 @@
+[
+  {
+    "id": "human-common-militia",
+    "race": "human",
+    "rank": "common",
+    "manifest": "human/common/character.json",
+    "status": "design_and_attack_user_approved_new_motion_pending_review",
+    "animations": {
+      "idle": {
+        "poses": 4,
+        "status": "pending_user_review",
+        "loop": true
+      },
+      "walk": {
+        "poses": 4,
+        "status": "pending_user_review",
+        "loop": true
+      },
+      "attack": {
+        "poses": 4,
+        "status": "user_approved",
+        "loop": true
+      },
+      "dead": {
+        "poses": 4,
+        "status": "pending_user_review",
+        "loop": false
+      }
+    },
+    "files": [
+      {
+        "file": "human/common/assets/attack.png",
+        "sha256": "ca890c44429ded02d80992bf46002ac73d259894ec5bb0f944a749db35266a1a",
+        "bytes": 1391132
+      },
+      {
+        "file": "human/common/assets/states.png",
+        "sha256": "06fb798d9b5445ce633f1a3374ecddb50de2d68dbbcdc310effd0b2d3178d28f",
+        "bytes": 1771701
+      },
+      {
+        "file": "human/common/assets/walk-frame3.png",
+        "sha256": "ea809fa9cc0252c045f8fb8f6a69b3122f2fb3d2576091f63d4102a3d2416cee",
+        "bytes": 1764752
+      },
+      {
+        "file": "human/common/assets/walk-frame4.png",
+        "sha256": "b9920159427060d2b6ff96dcedceac177dbd54ff9f9ccb0296a008e20947a9e4",
+        "bytes": 780680
+      }
+    ]
+  },
+  {
+    "id": "human-rare-lion-spear-knight",
+    "race": "human",
+    "rank": "rare",
+    "manifest": "human/rare/character.json",
+    "status": "design_and_attack_user_approved_new_motion_pending_review",
+    "animations": {
+      "idle": {
+        "poses": 4,
+        "status": "pending_user_review",
+        "loop": true
+      },
+      "walk": {
+        "poses": 4,
+        "status": "pending_user_review",
+        "loop": true
+      },
+      "attack": {
+        "poses": 4,
+        "status": "user_approved",
+        "loop": true
+      },
+      "dead": {
+        "poses": 4,
+        "status": "pending_user_review",
+        "loop": false
+      }
+    },
+    "files": [
+      {
+        "file": "human/rare/assets/attack.png",
+        "sha256": "0e827453854fd8587316e53bee0e17ec5b39d692d9e250055dc138cdef43890a",
+        "bytes": 1947532
+      },
+      {
+        "file": "human/rare/assets/dead.png",
+        "sha256": "deb965d315abb07f1c32c07fd941d1b326504e1134c7b2ba97458b3055424416",
+        "bytes": 1718170
+      },
+      {
+        "file": "human/rare/assets/states.png",
+        "sha256": "c9ab302299ee106681f13caac5363b014fff4d2b9a0fde06630c77a80eb16158",
+        "bytes": 2327458
+      }
+    ]
+  },
+  {
+    "id": "human-epic-crescent-mage",
+    "race": "human",
+    "rank": "epic",
+    "manifest": "human/epic/character.json",
+    "status": "proportion_revision_pending_user_review",
+    "animations": {
+      "idle": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "walk": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "attack": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "dead": {
+        "poses": 4,
+        "status": null,
+        "loop": false
+      }
+    },
+    "files": [
+      {
+        "file": "human/epic/assets/sheet-proportions-v2.png",
+        "sha256": "b9a3e5a78d197f25a354ca34d3cc9769c9f3322c7db3b3a6a9054666de61f25a",
+        "bytes": 2517732
+      }
+    ]
+  },
+  {
+    "id": "human-legendary-royal-hero",
+    "race": "human",
+    "rank": "legendary",
+    "manifest": "human/legendary/character.json",
+    "status": "draft_pending_user_review",
+    "animations": {
+      "idle": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "walk": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "attack": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "dead": {
+        "poses": 4,
+        "status": null,
+        "loop": false
+      },
+      "skill": {
+        "poses": 6,
+        "status": null,
+        "loop": false
+      }
+    },
+    "files": [
+      {
+        "file": "human/legendary/../../../legendary-skills/skill-runtime.mjs",
+        "sha256": "ea78dd667583cc9ae3e98e743760f0196b1869a861d08d5e94f4a814fe11a612",
+        "bytes": 4878
+      },
+      {
+        "file": "human/legendary/assets/sheet-v2.png",
+        "sha256": "c19bca98556f923d1408bc9ce53c13450b4625bd3e99b3baae5812fd91cbce86",
+        "bytes": 2609807
+      },
+      {
+        "file": "human/legendary/assets/skill-v1.png",
+        "sha256": "5ea3cc77c940b833d8c505d6d2ba929d790865ae8a8d3e472475797533773d8c",
+        "bytes": 2180560
+      }
+    ]
+  },
+  {
+    "id": "dead-common-skeleton-warrior",
+    "race": "dead",
+    "rank": "common",
+    "manifest": "dead/common/character.json",
+    "status": "user_approved",
+    "animations": {
+      "idle": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "attack": {
+        "poses": 4,
+        "status": null,
+        "loop": false
+      },
+      "dead": {
+        "poses": 4,
+        "status": null,
+        "loop": false
+      },
+      "walk": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      }
+    },
+    "files": [
+      {
+        "file": "dead/common/assets/base-sheet.png",
+        "sha256": "b9428e6e89e892eb340e1dbae47f3d2957913d083f92fe6ee855ccff680eae1f",
+        "bytes": 1301765
+      },
+      {
+        "file": "dead/common/assets/walk-corrections-2-3.png",
+        "sha256": "4d108bbbf82ca3deccb28b2241b877717fa686891c5cef17c9acd9978fd232f8",
+        "bytes": 1130821
+      },
+      {
+        "file": "dead/common/assets/walk-poses-1-4.png",
+        "sha256": "00fc9ecbf2858830f607e9525883e4f54630869ff77940156db4ea77d8f8a263",
+        "bytes": 1122989
+      }
+    ]
+  },
+  {
+    "id": "dead-rare-spirit-wisp",
+    "race": "dead",
+    "rank": "rare",
+    "manifest": "dead/rare/character.json",
+    "status": "user_approved",
+    "animations": {
+      "idle": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "walk": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "attack": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "dead": {
+        "poses": 4,
+        "status": null,
+        "loop": false
+      }
+    },
+    "files": [
+      {
+        "file": "dead/rare/assets/attack-strike-chibi-v2.png",
+        "sha256": "a39cdfca69d511a36861248384334991e2aa4e8bd39be3cbe9d66958d60dd679",
+        "bytes": 1318556
+      },
+      {
+        "file": "dead/rare/assets/sheet-chibi-v2.png",
+        "sha256": "6048cf8c6cd0ef1da6b7c68e06f13a58ab329a53a9d5a3b88ea5ae109713725d",
+        "bytes": 2400995
+      }
+    ]
+  },
+  {
+    "id": "dead-epic-haunted-tank",
+    "race": "dead",
+    "rank": "epic",
+    "manifest": "dead/epic/character.json",
+    "status": "draft_pending_user_review",
+    "animations": {
+      "idle": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "walk": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "attack": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "dead": {
+        "poses": 4,
+        "status": null,
+        "loop": false
+      }
+    },
+    "files": [
+      {
+        "file": "dead/epic/assets/sheet-v1.png",
+        "sha256": "8f833b10c4bb5867c7f6d5ff49396773f74bda97e0f85f9b498dbdb929ed5ce4",
+        "bytes": 2906295
+      }
+    ]
+  },
+  {
+    "id": "dead-legendary-skeleton-king",
+    "race": "dead",
+    "rank": "legendary",
+    "manifest": "dead/legendary/character.json",
+    "status": "draft_pending_user_review",
+    "animations": {
+      "idle": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "walk": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "attack": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "dead": {
+        "poses": 4,
+        "status": null,
+        "loop": false
+      },
+      "skill": {
+        "poses": 6,
+        "status": null,
+        "loop": false
+      }
+    },
+    "files": [
+      {
+        "file": "dead/legendary/../../../legendary-skills/skill-runtime.mjs",
+        "sha256": "ea78dd667583cc9ae3e98e743760f0196b1869a861d08d5e94f4a814fe11a612",
+        "bytes": 4878
+      },
+      {
+        "file": "dead/legendary/assets/sheet-v2.png",
+        "sha256": "86ddc7fdcf452ed1627eec7a6af3fae9394c869d0d2e9371ff5a5ccdcfd699fa",
+        "bytes": 2510697
+      },
+      {
+        "file": "dead/legendary/assets/skill-v1.png",
+        "sha256": "c0211d4f1875d623abc3cd5e55162ce4f3caa5a7b4a0f1781725891fa4a2077b",
+        "bytes": 2254503
+      }
+    ]
+  },
+  {
+    "id": "elf-common-elf-archer",
+    "race": "elf",
+    "rank": "common",
+    "manifest": "elf/common/character.json",
+    "status": "user_accepted_provisionally",
+    "animations": {
+      "idle": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "walk": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "attack": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "dead": {
+        "poses": 4,
+        "status": null,
+        "loop": false
+      }
+    },
+    "files": [
+      {
+        "file": "elf/common/../../../character-animation-checklist.md",
+        "sha256": "4ad37dcbd909abc017c9ada63523464f664f2e79a4a2ca69d5531bd55147fa5f",
+        "bytes": 25182
+      },
+      {
+        "file": "elf/common/assets/elf-archer-sheet-v2.png",
+        "sha256": "b1db35820fb491675fdc6063708c646c5d2d9413cd3b7e27e72462b19a88295a",
+        "bytes": 1488647
+      },
+      {
+        "file": "elf/common/assets/walk-pants-v9.png",
+        "sha256": "89ad4bf422f53372a2eb26acfe44673541064fbb99a3d26f7d11bff93b20e2d7",
+        "bytes": 1293408
+      },
+      {
+        "file": "elf/common/walk-review-v9.md",
+        "sha256": "1d05a39da1944dd751e36d84c2e7bad41f6f85281a3e58fd9a34ee95e14d8227",
+        "bytes": 581
+      }
+    ]
+  },
+  {
+    "id": "elf-rare-leaf-blade",
+    "race": "elf",
+    "rank": "rare",
+    "manifest": "elf/rare/character.json",
+    "status": "appearance_revision_pending_user_review",
+    "animations": {
+      "idle": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "walk": {
+        "poses": 4,
+        "status": "user_approved",
+        "loop": true
+      },
+      "attack": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "dead": {
+        "poses": 4,
+        "status": null,
+        "loop": false
+      }
+    },
+    "files": [
+      {
+        "file": "elf/rare/assets/attack-corrections-2-3-simple-eyes.png",
+        "sha256": "0dfc9d69419fc6458dd9e71f47bced1816443f3acc53311b76eb38b6d6cb4766",
+        "bytes": 1144042
+      },
+      {
+        "file": "elf/rare/assets/sheet-simple-eyes.png",
+        "sha256": "afd22483a565c30c2fa86abcec13e61559bd6c94cbdc7df37e068a390e739a98",
+        "bytes": 2536295
+      },
+      {
+        "file": "elf/rare/assets/walk-corrections-3-4.png",
+        "sha256": "db89be60f6e6cdf7fa937f9371d6897bc3137222048b4dee71827b3bc266f437",
+        "bytes": 1272285
+      },
+      {
+        "file": "elf/rare/assets/walk-proportions-v2-simple-eyes.png",
+        "sha256": "48b67a118f57fbe2979562ff4014c9515201d1fc0daf49c2bde12d6f85f18bca",
+        "bytes": 2499375
+      }
+    ]
+  },
+  {
+    "id": "elf-epic-moon-archer",
+    "race": "elf",
+    "rank": "epic",
+    "manifest": "elf/epic/character.json",
+    "status": "appearance_revision_pending_user_review",
+    "animations": {
+      "idle": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "walk": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "attack": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "dead": {
+        "poses": 4,
+        "status": null,
+        "loop": false
+      }
+    },
+    "files": [
+      {
+        "file": "elf/epic/assets/sheet-v1-simple-eyes.png",
+        "sha256": "d428efd0141a906c93863fb9f68dcc187e4045de7b4f698d7b5b29d26efa878f",
+        "bytes": 2670130
+      }
+    ]
+  },
+  {
+    "id": "elf-legendary-verdant-archer",
+    "race": "elf",
+    "rank": "legendary",
+    "manifest": "elf/legendary/character.json",
+    "status": "appearance_revision_pending_user_review",
+    "animations": {
+      "idle": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "walk": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "attack": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "dead": {
+        "poses": 4,
+        "status": null,
+        "loop": false
+      },
+      "skill": {
+        "poses": 6,
+        "status": null,
+        "loop": false
+      }
+    },
+    "files": [
+      {
+        "file": "elf/legendary/../../../legendary-skills/skill-runtime.mjs",
+        "sha256": "ea78dd667583cc9ae3e98e743760f0196b1869a861d08d5e94f4a814fe11a612",
+        "bytes": 4878
+      },
+      {
+        "file": "elf/legendary/assets/sheet-v2-simple-eyes.png",
+        "sha256": "6eda93abdeadf3d9f86273189b1d8beef358a93e425c527749ba40a504812935",
+        "bytes": 2781330
+      },
+      {
+        "file": "elf/legendary/assets/skill-v1.png",
+        "sha256": "a31b4b320c2c3807a581369fc8b6bd9a9caf1b1461ffe8b8d3c4aebb2ac210bd",
+        "bytes": 2452580
+      }
+    ]
+  },
+  {
+    "id": "monster-common-web-spider",
+    "race": "monster",
+    "rank": "common",
+    "manifest": "monster/common/character.json",
+    "status": "appearance_revision_pending_user_review",
+    "animations": {
+      "idle": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "walk": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "attack": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "dead": {
+        "poses": 4,
+        "status": null,
+        "loop": false
+      }
+    },
+    "files": [
+      {
+        "file": "monster/common/assets/web-spider-sheet-v1-simple-eyes.png",
+        "sha256": "38bee9f344ccd2a253d526180a21e528f77219d4f3aec06fd3a22f48756b19ac",
+        "bytes": 1612897
+      }
+    ]
+  },
+  {
+    "id": "monster-rare-armored-bear",
+    "race": "monster",
+    "rank": "rare",
+    "manifest": "monster/rare/character.json",
+    "status": "appearance_revision_pending_user_review",
+    "animations": {
+      "idle": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "walk": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "attack": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "dead": {
+        "poses": 4,
+        "status": null,
+        "loop": false
+      }
+    },
+    "files": [
+      {
+        "file": "monster/rare/assets/sheet-chibi-v2-simple-eyes.png",
+        "sha256": "1fe952556513cce38a007659c2403966ee5c5505d98bcda98666b00827363175",
+        "bytes": 2336560
+      }
+    ]
+  },
+  {
+    "id": "monster-epic-lava-scorpion",
+    "race": "monster",
+    "rank": "epic",
+    "manifest": "monster/epic/character.json",
+    "status": "appearance_revision_pending_user_review",
+    "animations": {
+      "idle": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "walk": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "attack": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "dead": {
+        "poses": 4,
+        "status": null,
+        "loop": false
+      }
+    },
+    "files": [
+      {
+        "file": "monster/epic/assets/attack-tail-v2-simple-eyes.png",
+        "sha256": "c32e9dc3ec02f51c42236572b1de6118a898893cfcaadedfab27a3c386293f49",
+        "bytes": 2460385
+      },
+      {
+        "file": "monster/epic/assets/sheet-v1-simple-eyes.png",
+        "sha256": "c32e9dc3ec02f51c42236572b1de6118a898893cfcaadedfab27a3c386293f49",
+        "bytes": 2460385
+      }
+    ]
+  },
+  {
+    "id": "monster-legendary-lion-warlord",
+    "race": "monster",
+    "rank": "legendary",
+    "manifest": "monster/legendary/character.json",
+    "status": "appearance_revision_pending_user_review",
+    "animations": {
+      "idle": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "walk": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "attack": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "dead": {
+        "poses": 4,
+        "status": null,
+        "loop": false
+      },
+      "skill": {
+        "poses": 6,
+        "status": null,
+        "loop": false
+      }
+    },
+    "files": [
+      {
+        "file": "monster/legendary/../../../legendary-skills/skill-runtime.mjs",
+        "sha256": "ea78dd667583cc9ae3e98e743760f0196b1869a861d08d5e94f4a814fe11a612",
+        "bytes": 4878
+      },
+      {
+        "file": "monster/legendary/assets/sheet-v2-simple-eyes.png",
+        "sha256": "aeb9eb0d21e344cad258f178004f10734092a2423bdf4ff7e56c5681c66e505b",
+        "bytes": 2766921
+      },
+      {
+        "file": "monster/legendary/assets/skill-v1.png",
+        "sha256": "e4255a62f80478a4a140f440b06931f2139b66b67c4c62c8a1232fe0ad959027",
+        "bytes": 2450959
+      }
+    ]
+  },
+  {
+    "id": "machine-common-saw-crawler",
+    "race": "machine",
+    "rank": "common",
+    "manifest": "machine/common/character.json",
+    "status": "user_accepted_provisionally",
+    "animations": {
+      "idle": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "walk": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "attack": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "dead": {
+        "poses": 4,
+        "status": null,
+        "loop": false
+      }
+    },
+    "files": [
+      {
+        "file": "machine/common/assets/saw-crawler-sheet-v1.png",
+        "sha256": "bf71c7967fda72ae5187e45d8b5a6563d32cf777dbfa24e2d084d1a09959ad19",
+        "bytes": 1890693
+      }
+    ]
+  },
+  {
+    "id": "machine-rare-gear-gunner",
+    "race": "machine",
+    "rank": "rare",
+    "manifest": "machine/rare/character.json",
+    "status": "draft_pending_user_review",
+    "animations": {
+      "idle": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "walk": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "attack": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "dead": {
+        "poses": 4,
+        "status": null,
+        "loop": false
+      }
+    },
+    "files": [
+      {
+        "file": "machine/rare/assets/sheet.png",
+        "sha256": "a5ca4b65433421071b4a7b611d059aec39c041e0846ef7ad86e5756099bfe412",
+        "bytes": 2420693
+      }
+    ]
+  },
+  {
+    "id": "machine-epic-furnace-crawler",
+    "race": "machine",
+    "rank": "epic",
+    "manifest": "machine/epic/character.json",
+    "status": "draft_pending_user_review",
+    "animations": {
+      "idle": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "walk": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "attack": {
+        "poses": 4,
+        "status": null,
+        "loop": false
+      },
+      "dead": {
+        "poses": 4,
+        "status": null,
+        "loop": false
+      }
+    },
+    "files": [
+      {
+        "file": "machine/epic/assets/sheet-v1.png",
+        "sha256": "d4f48d6656d557654439f9890bdcf3bb3c9c64c507b8fcdc06ded856aac06902",
+        "bytes": 2734203
+      },
+      {
+        "file": "machine/epic/flame-channel.js",
+        "sha256": "a163826da23bd5941db21f8be0ba06fff93831089129fb1a1f20f995f3b84aca",
+        "bytes": 2208
+      },
+      {
+        "file": "machine/epic/flame-preview.js",
+        "sha256": "fddd839ff1cfd8133e96c1392706b0d717825c78dd74142abd67ddabf9f6ff3b",
+        "bytes": 5692
+      }
+    ]
+  },
+  {
+    "id": "machine-legendary-titan-pugilist",
+    "race": "machine",
+    "rank": "legendary",
+    "manifest": "machine/legendary/character.json",
+    "status": "draft_pending_user_review",
+    "animations": {
+      "idle": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "walk": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "attack": {
+        "poses": 4,
+        "status": null,
+        "loop": true
+      },
+      "dead": {
+        "poses": 4,
+        "status": null,
+        "loop": false
+      },
+      "skill": {
+        "poses": 6,
+        "status": null,
+        "loop": false
+      }
+    },
+    "files": [
+      {
+        "file": "machine/legendary/../../../legendary-skills/skill-runtime.mjs",
+        "sha256": "ea78dd667583cc9ae3e98e743760f0196b1869a861d08d5e94f4a814fe11a612",
+        "bytes": 4878
+      },
+      {
+        "file": "machine/legendary/assets/sheet-v2.png",
+        "sha256": "f980522c17fd8236924fca474fe5b40e27bae324b54579cecea4183419b7a9b8",
+        "bytes": 2705228
+      },
+      {
+        "file": "machine/legendary/assets/skill-v1.png",
+        "sha256": "8dce6ef7245982150196a9db90fe8f2e8c1c2174d337202d11dbc332c0f66855",
+        "bytes": 2286455
+      }
+    ]
+  }
+]

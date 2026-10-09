@@ -1,0 +1,248 @@
+{
+  "id": "machine-common-saw-crawler",
+  "race": "machine",
+  "rank": "common",
+  "combat": "melee",
+  "weapon": "piston-mounted-circular-saw",
+  "locomotion": "caterpillar-tracks",
+  "status": "user_accepted_provisionally",
+  "sheet": "assets/saw-crawler-sheet-v1.png",
+  "reference_height": 215,
+  "animations": {
+    "idle": {
+      "poses": [
+        {
+          "rect": [
+            32,
+            74,
+            298,
+            216
+          ],
+          "anchor_x": 170,
+          "anchor_y": 289
+        },
+        {
+          "rect": [
+            390,
+            74,
+            299,
+            216
+          ],
+          "anchor_x": 529,
+          "anchor_y": 289
+        },
+        {
+          "rect": [
+            750,
+            74,
+            298,
+            216
+          ],
+          "anchor_x": 888,
+          "anchor_y": 289
+        },
+        {
+          "rect": [
+            1109,
+            74,
+            298,
+            216
+          ],
+          "anchor_x": 1247,
+          "anchor_y": 289
+        }
+      ],
+      "duration_seconds": 1,
+      "loop": true
+    },
+    "walk": {
+      "poses": [
+        {
+          "rect": [
+            24,
+            326,
+            311,
+            213
+          ],
+          "anchor_x": 170,
+          "anchor_y": 543
+        },
+        {
+          "rect": [
+            388,
+            327,
+            302,
+            215
+          ],
+          "anchor_x": 529,
+          "anchor_y": 543
+        },
+        {
+          "rect": [
+            750,
+            327,
+            306,
+            216
+          ],
+          "anchor_x": 888,
+          "anchor_y": 543
+        },
+        {
+          "rect": [
+            1110,
+            327,
+            301,
+            214
+          ],
+          "anchor_x": 1247,
+          "anchor_y": 543
+        }
+      ],
+      "duration_seconds": 0.8,
+      "loop": true
+    },
+    "attack": {
+      "poses": [
+        {
+          "rect": [
+            33,
+            606,
+            302,
+            198
+          ],
+          "anchor_x": 170,
+          "anchor_y": 806,
+          "saw_center": [
+            273,
+            742
+          ]
+        },
+        {
+          "rect": [
+            377,
+            591,
+            302,
+            215
+          ],
+          "anchor_x": 542,
+          "anchor_y": 806,
+          "saw_center": [
+            621,
+            754
+          ]
+        },
+        {
+          "rect": [
+            721,
+            590,
+            422,
+            214
+          ],
+          "anchor_x": 859,
+          "anchor_y": 806,
+          "saw_center": [
+            1088,
+            713
+          ]
+        },
+        {
+          "rect": [
+            1145,
+            600,
+            276,
+            205
+          ],
+          "anchor_x": 1283,
+          "anchor_y": 806,
+          "saw_center": [
+            1364,
+            746
+          ]
+        }
+      ],
+      "duration_seconds": 0.9,
+      "loop": true,
+      "frame_durations_seconds": [
+        0.16,
+        0.3,
+        0.16,
+        0.28
+      ]
+    },
+    "dead": {
+      "poses": [
+        {
+          "rect": [
+            29,
+            841,
+            329,
+            209
+          ],
+          "anchor_x": 170,
+          "anchor_y": 1050
+        },
+        {
+          "rect": [
+            374,
+            856,
+            341,
+            194
+          ],
+          "anchor_x": 529,
+          "anchor_y": 1050
+        },
+        {
+          "rect": [
+            727,
+            893,
+            340,
+            147
+          ],
+          "anchor_x": 888,
+          "anchor_y": 1050
+        },
+        {
+          "rect": [
+            1077,
+            919,
+            348,
+            123
+          ],
+          "anchor_x": 1247,
+          "anchor_y": 1050
+        }
+      ],
+      "duration_seconds": 1,
+      "loop": false
+    }
+  },
+  "notes": [
+    "Non-humanoid machine trial: no hands or legs.",
+    "Same saw carriage/piston attached throughout.",
+    "Walk generated roller details vary between poses; further mechanical consistency polish pending review.",
+    "Preview only, not Unity integration."
+  ],
+  "effects": {
+    "exhaust": {
+      "source_markers": "const exhaustMarkers=[[[78,82],[437,82],[796,82],[1155,82]],[[80,336],[434,336],[795,336],[1157,336]],[[76,617],[449,602],[760,602],[1184,610]],[[89,858],[423,871],[774,908],[1157,934]]];",
+      "idle_interval_seconds": 0.32,
+      "walk_interval_seconds": 0.16,
+      "attack_peak_interval_seconds": 0.08,
+      "lifetime_seconds": 1.05,
+      "dead": "stop emitting, remaining world-space puffs fade"
+    }
+  },
+  "acceptance_note": "User: được rồi đó, tới monster nữa thôi (smoke v2).",
+  "sizing_policy": {
+    "version": "rank5-v1",
+    "common_baseline_px": 80,
+    "rank_multiplier": 1.0,
+    "target_idle_height_px": 80.0,
+    "metric": "idle1 silhouette alpha>80/255 including headgear; excluding transparent margins and hover offset",
+    "reference_idle_visible_height_px": 214,
+    "reference_idle_pose_normalization": 1,
+    "calibration_factor": 1.0046728971962617,
+    "render_reference_height": 214
+  },
+  "default_preview_height_px": 80.0
+}

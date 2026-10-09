@@ -1,0 +1,304 @@
+{
+  "id": "dead-epic-haunted-tank",
+  "name": "Haunted Tank",
+  "race": "dead",
+  "rank": "epic",
+  "combat": "ranged",
+  "weapon": "haunted cannon",
+  "status": "draft_pending_user_review",
+  "reference_height": 238,
+  "sources": [
+    "assets/sheet-v1.png"
+  ],
+  "animations": {
+    "idle": {
+      "poses": [
+        {
+          "rect": [
+            0,
+            0,
+            384,
+            256
+          ],
+          "anchor_x": 185,
+          "anchor_y": 253,
+          "source": 0
+        },
+        {
+          "rect": [
+            384,
+            0,
+            384,
+            256
+          ],
+          "anchor_x": 570,
+          "anchor_y": 253,
+          "source": 0
+        },
+        {
+          "rect": [
+            768,
+            0,
+            384,
+            256
+          ],
+          "anchor_x": 952,
+          "anchor_y": 253,
+          "source": 0
+        },
+        {
+          "rect": [
+            1152,
+            0,
+            384,
+            256
+          ],
+          "anchor_x": 1332,
+          "anchor_y": 253,
+          "source": 0
+        }
+      ],
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "frame_durations": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "duration_seconds": 1,
+      "loop": true
+    },
+    "walk": {
+      "poses": [
+        {
+          "rect": [
+            0,
+            256,
+            384,
+            256
+          ],
+          "anchor_x": 185,
+          "anchor_y": 506,
+          "source": 0
+        },
+        {
+          "rect": [
+            384,
+            256,
+            384,
+            256
+          ],
+          "anchor_x": 570,
+          "anchor_y": 506,
+          "source": 0
+        },
+        {
+          "rect": [
+            768,
+            256,
+            384,
+            256
+          ],
+          "anchor_x": 952,
+          "anchor_y": 506,
+          "source": 0
+        },
+        {
+          "rect": [
+            1152,
+            256,
+            384,
+            256
+          ],
+          "anchor_x": 1332,
+          "anchor_y": 506,
+          "source": 0
+        }
+      ],
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "frame_durations": [
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "duration_seconds": 0.8,
+      "loop": true
+    },
+    "attack": {
+      "poses": [
+        {
+          "rect": [
+            0,
+            512,
+            384,
+            256
+          ],
+          "anchor_x": 185,
+          "anchor_y": 759,
+          "source": 0
+        },
+        {
+          "rect": [
+            384,
+            512,
+            384,
+            256
+          ],
+          "anchor_x": 570,
+          "anchor_y": 759,
+          "source": 0
+        },
+        {
+          "rect": [
+            768,
+            512,
+            384,
+            256
+          ],
+          "anchor_x": 952,
+          "anchor_y": 760,
+          "source": 0
+        },
+        {
+          "rect": [
+            1152,
+            512,
+            384,
+            256
+          ],
+          "anchor_x": 1332,
+          "anchor_y": 759,
+          "source": 0
+        }
+      ],
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "frame_durations": [
+        0.22,
+        0.36,
+        0.12,
+        0.3
+      ],
+      "duration_seconds": 1.0,
+      "loop": true
+    },
+    "dead": {
+      "poses": [
+        {
+          "rect": [
+            0,
+            768,
+            384,
+            256
+          ],
+          "anchor_x": 185,
+          "anchor_y": 1009,
+          "source": 0
+        },
+        {
+          "rect": [
+            384,
+            768,
+            384,
+            256
+          ],
+          "anchor_x": 570,
+          "anchor_y": 1011,
+          "source": 0
+        },
+        {
+          "rect": [
+            768,
+            768,
+            384,
+            256
+          ],
+          "anchor_x": 952,
+          "anchor_y": 1010,
+          "source": 0
+        },
+        {
+          "rect": [
+            1152,
+            768,
+            384,
+            256
+          ],
+          "anchor_x": 1332,
+          "anchor_y": 1005,
+          "source": 0
+        }
+      ],
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "frame_durations": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "duration_seconds": 1,
+      "loop": false
+    }
+  },
+  "generation_mode": "built-in image_gen",
+  "notes": [
+    "Four-pose loop1→2→3→4→1. Draft awaiting user motion approval.",
+    "Near track foreground; cannon slides into its cradle at recoil; no humanoid limbs.",
+    "Projectile is emitted from source-calibrated crystal/muzzle at pose3 and travels independently."
+  ],
+  "projectile": {
+    "release_pose": 3,
+    "origins_by_attack_pose": [
+      [
+        359,
+        646
+      ],
+      [
+        744,
+        646
+      ],
+      [
+        1054,
+        641
+      ],
+      [
+        1503,
+        647
+      ]
+    ],
+    "speed_heights_per_second": 7,
+    "lifetime": 0.65
+  },
+  "sizing_policy": {
+    "version": "rank5-v1",
+    "common_baseline_px": 80,
+    "rank_multiplier": 1.1025,
+    "target_idle_height_px": 88.2,
+    "metric": "idle1 silhouette alpha>80/255 including headgear; excluding transparent margins and hover offset",
+    "reference_idle_visible_height_px": 238,
+    "reference_idle_pose_normalization": 1,
+    "calibration_factor": 1.0,
+    "render_reference_height": 238
+  },
+  "default_preview_height_px": 88.2
+}

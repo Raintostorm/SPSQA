@@ -1,0 +1,3841 @@
+[
+ {
+  "key": "dead_common",
+  "race": "dead",
+  "rank": "common",
+  "name": "Skeleton Warrior",
+  "combat": "?",
+  "weapon": "?",
+  "ppu": 208.14,
+  "world_h": 0.86,
+  "anims": {
+   "idle": {
+    "files": [
+     "dead_common/idle_smooth_1.png",
+     "dead_common/idle_smooth_2.png",
+     "dead_common/idle_smooth_3.png",
+     "dead_common/idle_smooth_4.png",
+     "dead_common/idle_smooth_5.png",
+     "dead_common/idle_smooth_6.png",
+     "dead_common/idle_smooth_7.png",
+     "dead_common/idle_smooth_8.png"
+    ],
+    "durations": [
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true,
+    "playback": "forward"
+   },
+   "walk": {
+    "files": [
+     "dead_common/walk_smooth_1.png",
+     "dead_common/walk_smooth_2.png",
+     "dead_common/walk_smooth_3.png",
+     "dead_common/walk_smooth_4.png",
+     "dead_common/walk_smooth_5.png",
+     "dead_common/walk_smooth_6.png",
+     "dead_common/walk_smooth_7.png",
+     "dead_common/walk_smooth_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true,
+    "playback": "forward"
+   },
+   "attack": {
+    "files": [
+     "dead_common/attack_smooth_1.png",
+     "dead_common/attack_smooth_2.png",
+     "dead_common/attack_smooth_3.png",
+     "dead_common/attack_smooth_4.png",
+     "dead_common/attack_smooth_5.png",
+     "dead_common/attack_smooth_6.png",
+     "dead_common/attack_smooth_7.png",
+     "dead_common/attack_smooth_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.12,
+     0.12,
+     0.1,
+     0.08,
+     0.12,
+     0.16,
+     0.2
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true
+   },
+   "dead": {
+    "files": [
+     "dead_common/dead_smooth_1.png",
+     "dead_common/dead_smooth_2.png",
+     "dead_common/dead_smooth_3.png",
+     "dead_common/dead_smooth_4.png",
+     "dead_common/dead_smooth_5.png",
+     "dead_common/dead_smooth_6.png",
+     "dead_common/dead_smooth_7.png",
+     "dead_common/dead_smooth_8.png"
+    ],
+    "durations": [
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": false
+   }
+  },
+  "vfx": {
+   "walk": {
+    "files": [
+     "human_common/dust_1.png",
+     "human_common/dust_2.png",
+     "human_common/dust_3.png",
+     "human_common/dust_4.png",
+     "human_common/dust_5.png",
+     "human_common/dust_6.png",
+     "human_common/dust_7.png",
+     "human_common/dust_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true
+   },
+   "attack": {
+    "files": [
+     "dead_common/sword_swipe_1.png",
+     "dead_common/sword_swipe_2.png",
+     "dead_common/sword_swipe_3.png",
+     "dead_common/sword_swipe_4.png",
+     "dead_common/sword_swipe_5.png",
+     "dead_common/sword_swipe_6.png",
+     "dead_common/sword_swipe_7.png",
+     "dead_common/sword_swipe_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.12,
+     0.12,
+     0.1,
+     0.08,
+     0.12,
+     0.16,
+     0.2
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": false
+   },
+   "walk_offset": {
+    "x": 0.0,
+    "y": -0.02
+   },
+   "foot_spacing": 0.09,
+   "attack_offset": {
+    "x": 0.23,
+    "y": 0.32
+   },
+   "dead_offset": {
+    "x": 0.0,
+    "y": 0.05
+   },
+   "walk_scale": 0.24,
+   "attack_scale": 0.36,
+   "dead_scale": 0.38,
+   "walk_alpha": 0.25,
+   "attack_alpha": 0.65,
+   "dead_alpha": 0.55,
+   "dead": {
+    "files": [
+     "human_common/soul_1.png",
+     "human_common/soul_2.png",
+     "human_common/soul_3.png",
+     "human_common/soul_4.png",
+     "human_common/soul_5.png",
+     "human_common/soul_6.png",
+     "human_common/soul_7.png",
+     "human_common/soul_8.png"
+    ],
+    "durations": [
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": false
+   }
+  },
+  "cell_scale": 0.731,
+  "cell_offset": {
+   "x": 0.0439,
+   "y": -0.3143
+  }
+ },
+ {
+  "key": "dead_epic",
+  "race": "dead",
+  "rank": "epic",
+  "name": "Haunted Tank",
+  "combat": "ranged",
+  "weapon": "haunted cannon",
+  "ppu": 176.12,
+  "world_h": 0.9482,
+  "anims": {
+   "idle": {
+    "files": [
+     "dead_epic/idle_smooth_1.png",
+     "dead_epic/idle_smooth_2.png",
+     "dead_epic/idle_smooth_3.png",
+     "dead_epic/idle_smooth_4.png",
+     "dead_epic/idle_smooth_5.png",
+     "dead_epic/idle_smooth_6.png",
+     "dead_epic/idle_smooth_7.png",
+     "dead_epic/idle_smooth_8.png"
+    ],
+    "durations": [
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true,
+    "playback": "forward"
+   },
+   "walk": {
+    "files": [
+     "dead_epic/walk_smooth_1.png",
+     "dead_epic/walk_smooth_2.png",
+     "dead_epic/walk_smooth_3.png",
+     "dead_epic/walk_smooth_4.png",
+     "dead_epic/walk_smooth_5.png",
+     "dead_epic/walk_smooth_6.png",
+     "dead_epic/walk_smooth_7.png",
+     "dead_epic/walk_smooth_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true,
+    "playback": "forward"
+   },
+   "attack": {
+    "files": [
+     "dead_epic/attack_smooth_1.png",
+     "dead_epic/attack_smooth_2.png",
+     "dead_epic/attack_smooth_3.png",
+     "dead_epic/attack_smooth_4.png",
+     "dead_epic/attack_smooth_5.png",
+     "dead_epic/attack_smooth_6.png",
+     "dead_epic/attack_smooth_7.png",
+     "dead_epic/attack_smooth_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.12,
+     0.12,
+     0.1,
+     0.08,
+     0.12,
+     0.16,
+     0.2
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true
+   },
+   "dead": {
+    "files": [
+     "dead_epic/dead_smooth_1.png",
+     "dead_epic/dead_smooth_2.png",
+     "dead_epic/dead_smooth_3.png",
+     "dead_epic/dead_smooth_4.png",
+     "dead_epic/dead_smooth_5.png",
+     "dead_epic/dead_smooth_6.png",
+     "dead_epic/dead_smooth_7.png",
+     "dead_epic/dead_smooth_8.png"
+    ],
+    "durations": [
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": false
+   }
+  },
+  "cell_scale": 0.6,
+  "cell_offset": {
+   "x": -0.0341,
+   "y": -0.2811
+  }
+ },
+ {
+  "key": "dead_legendary",
+  "race": "dead",
+  "rank": "legendary",
+  "name": "Skeleton King",
+  "combat": "melee",
+  "weapon": "engraved royal longsword",
+  "ppu": 196.87,
+  "world_h": 0.9956,
+  "anims": {
+   "idle": {
+    "files": [
+     "dead_legendary/idle_smooth_1.png",
+     "dead_legendary/idle_smooth_2.png",
+     "dead_legendary/idle_smooth_3.png",
+     "dead_legendary/idle_smooth_4.png",
+     "dead_legendary/idle_smooth_5.png",
+     "dead_legendary/idle_smooth_6.png",
+     "dead_legendary/idle_smooth_7.png",
+     "dead_legendary/idle_smooth_8.png"
+    ],
+    "durations": [
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true,
+    "playback": "forward"
+   },
+   "walk": {
+    "files": [
+     "dead_legendary/walk_smooth_1.png",
+     "dead_legendary/walk_smooth_2.png",
+     "dead_legendary/walk_smooth_3.png",
+     "dead_legendary/walk_smooth_4.png",
+     "dead_legendary/walk_smooth_5.png",
+     "dead_legendary/walk_smooth_6.png",
+     "dead_legendary/walk_smooth_7.png",
+     "dead_legendary/walk_smooth_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true,
+    "playback": "forward"
+   },
+   "attack": {
+    "files": [
+     "dead_legendary/attack_smooth_1.png",
+     "dead_legendary/attack_smooth_2.png",
+     "dead_legendary/attack_smooth_3.png",
+     "dead_legendary/attack_smooth_4.png",
+     "dead_legendary/attack_smooth_5.png",
+     "dead_legendary/attack_smooth_6.png",
+     "dead_legendary/attack_smooth_7.png",
+     "dead_legendary/attack_smooth_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.12,
+     0.12,
+     0.1,
+     0.08,
+     0.12,
+     0.16,
+     0.2
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true
+   },
+   "dead": {
+    "files": [
+     "dead_legendary/dead_smooth_1.png",
+     "dead_legendary/dead_smooth_2.png",
+     "dead_legendary/dead_smooth_3.png",
+     "dead_legendary/dead_smooth_4.png",
+     "dead_legendary/dead_smooth_5.png",
+     "dead_legendary/dead_smooth_6.png",
+     "dead_legendary/dead_smooth_7.png",
+     "dead_legendary/dead_smooth_8.png"
+    ],
+    "durations": [
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": false
+   },
+   "skill": {
+    "files": [
+     "dead_legendary/skill_smooth_1.png",
+     "dead_legendary/skill_smooth_2.png",
+     "dead_legendary/skill_smooth_3.png",
+     "dead_legendary/skill_smooth_4.png",
+     "dead_legendary/skill_smooth_5.png",
+     "dead_legendary/skill_smooth_6.png",
+     "dead_legendary/skill_smooth_7.png",
+     "dead_legendary/skill_smooth_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.12,
+     0.12,
+     0.1,
+     0.12,
+     0.12,
+     0.16,
+     0.2
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": false
+   }
+  },
+  "cell_scale": 0.683,
+  "cell_offset": {
+   "x": 0.052,
+   "y": -0.3409
+  }
+ },
+ {
+  "key": "dead_rare",
+  "race": "dead",
+  "rank": "rare",
+  "name": "Spirit Wisp",
+  "combat": "ranged",
+  "weapon": "psychic-blast",
+  "ppu": 191.58,
+  "world_h": 0.903,
+  "anims": {
+   "idle": {
+    "files": [
+     "dead_rare/idle_smooth_1.png",
+     "dead_rare/idle_smooth_2.png",
+     "dead_rare/idle_smooth_3.png",
+     "dead_rare/idle_smooth_4.png",
+     "dead_rare/idle_smooth_5.png",
+     "dead_rare/idle_smooth_6.png",
+     "dead_rare/idle_smooth_7.png",
+     "dead_rare/idle_smooth_8.png"
+    ],
+    "durations": [
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true,
+    "playback": "forward"
+   },
+   "walk": {
+    "files": [
+     "dead_rare/walk_smooth_1.png",
+     "dead_rare/walk_smooth_2.png",
+     "dead_rare/walk_smooth_3.png",
+     "dead_rare/walk_smooth_4.png",
+     "dead_rare/walk_smooth_5.png",
+     "dead_rare/walk_smooth_6.png",
+     "dead_rare/walk_smooth_7.png",
+     "dead_rare/walk_smooth_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true,
+    "playback": "forward"
+   },
+   "attack": {
+    "files": [
+     "dead_rare/attack_smooth_1.png",
+     "dead_rare/attack_smooth_2.png",
+     "dead_rare/attack_smooth_3.png",
+     "dead_rare/attack_smooth_4.png",
+     "dead_rare/attack_smooth_5.png",
+     "dead_rare/attack_smooth_6.png",
+     "dead_rare/attack_smooth_7.png",
+     "dead_rare/attack_smooth_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.12,
+     0.12,
+     0.1,
+     0.08,
+     0.12,
+     0.16,
+     0.2
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true
+   },
+   "dead": {
+    "files": [
+     "dead_rare/dead_smooth_1.png",
+     "dead_rare/dead_smooth_2.png",
+     "dead_rare/dead_smooth_3.png",
+     "dead_rare/dead_smooth_4.png",
+     "dead_rare/dead_smooth_5.png",
+     "dead_rare/dead_smooth_6.png",
+     "dead_rare/dead_smooth_7.png",
+     "dead_rare/dead_smooth_8.png"
+    ],
+    "durations": [
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": false
+   }
+  },
+  "cell_scale": 0.763,
+  "cell_offset": {
+   "x": 0.1952,
+   "y": -0.3395
+  }
+ },
+ {
+  "key": "elf_common",
+  "race": "elf",
+  "rank": "common",
+  "name": "",
+  "combat": "ranged",
+  "weapon": "bow",
+  "ppu": 226.74,
+  "world_h": 0.86,
+  "anims": {
+   "idle": {
+    "files": [
+     "elf_common/idle_smooth_1.png",
+     "elf_common/idle_smooth_2.png",
+     "elf_common/idle_smooth_3.png",
+     "elf_common/idle_smooth_4.png",
+     "elf_common/idle_smooth_5.png",
+     "elf_common/idle_smooth_6.png",
+     "elf_common/idle_smooth_7.png",
+     "elf_common/idle_smooth_8.png"
+    ],
+    "durations": [
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true,
+    "playback": "forward"
+   },
+   "walk": {
+    "files": [
+     "elf_common/walk_smooth_1.png",
+     "elf_common/walk_smooth_2.png",
+     "elf_common/walk_smooth_3.png",
+     "elf_common/walk_smooth_4.png",
+     "elf_common/walk_smooth_5.png",
+     "elf_common/walk_smooth_6.png",
+     "elf_common/walk_smooth_7.png",
+     "elf_common/walk_smooth_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true,
+    "playback": "forward"
+   },
+   "attack": {
+    "files": [
+     "elf_common/attack_smooth_1.png",
+     "elf_common/attack_smooth_2.png",
+     "elf_common/attack_smooth_3.png",
+     "elf_common/attack_smooth_4.png",
+     "elf_common/attack_smooth_5.png",
+     "elf_common/attack_smooth_6.png",
+     "elf_common/attack_smooth_7.png",
+     "elf_common/attack_smooth_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.12,
+     0.12,
+     0.1,
+     0.08,
+     0.12,
+     0.16,
+     0.2
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true
+   },
+   "dead": {
+    "files": [
+     "elf_common/dead_smooth_1.png",
+     "elf_common/dead_smooth_2.png",
+     "elf_common/dead_smooth_3.png",
+     "elf_common/dead_smooth_4.png",
+     "elf_common/dead_smooth_5.png",
+     "elf_common/dead_smooth_6.png",
+     "elf_common/dead_smooth_7.png",
+     "elf_common/dead_smooth_8.png"
+    ],
+    "durations": [
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": false
+   }
+  },
+  "vfx": {
+   "walk": {
+    "files": [
+     "human_common/dust_1.png",
+     "human_common/dust_2.png",
+     "human_common/dust_3.png",
+     "human_common/dust_4.png",
+     "human_common/dust_5.png",
+     "human_common/dust_6.png",
+     "human_common/dust_7.png",
+     "human_common/dust_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true
+   },
+   "attack": {
+    "files": [
+     "elf_common/bow_release_1.png",
+     "elf_common/bow_release_2.png",
+     "elf_common/bow_release_3.png",
+     "elf_common/bow_release_4.png",
+     "elf_common/bow_release_5.png",
+     "elf_common/bow_release_6.png",
+     "elf_common/bow_release_7.png",
+     "elf_common/bow_release_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.12,
+     0.12,
+     0.1,
+     0.08,
+     0.12,
+     0.16,
+     0.2
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": false
+   },
+   "walk_offset": {
+    "x": 0.0,
+    "y": -0.02
+   },
+   "foot_spacing": 0.1,
+   "attack_offset": {
+    "x": 0.48,
+    "y": 0.35
+   },
+   "dead_offset": {
+    "x": 0.0,
+    "y": 0.05
+   },
+   "walk_scale": 0.25,
+   "attack_scale": 0.34,
+   "dead_scale": 0.38,
+   "walk_alpha": 0.26,
+   "attack_alpha": 0.65,
+   "dead_alpha": 0.55,
+   "dead": {
+    "files": [
+     "human_common/soul_1.png",
+     "human_common/soul_2.png",
+     "human_common/soul_3.png",
+     "human_common/soul_4.png",
+     "human_common/soul_5.png",
+     "human_common/soul_6.png",
+     "human_common/soul_7.png",
+     "human_common/soul_8.png"
+    ],
+    "durations": [
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": false
+   }
+  },
+  "cell_scale": 0.772,
+  "cell_offset": {
+   "x": -0.0289,
+   "y": -0.332
+  }
+ },
+ {
+  "key": "elf_epic",
+  "race": "elf",
+  "rank": "epic",
+  "name": "Moon Archer",
+  "combat": "ranged",
+  "weapon": "crescent energy bow",
+  "ppu": 211.98,
+  "world_h": 0.9482,
+  "anims": {
+   "idle": {
+    "files": [
+     "elf_epic/idle_smooth_1.png",
+     "elf_epic/idle_smooth_2.png",
+     "elf_epic/idle_smooth_3.png",
+     "elf_epic/idle_smooth_4.png",
+     "elf_epic/idle_smooth_5.png",
+     "elf_epic/idle_smooth_6.png",
+     "elf_epic/idle_smooth_7.png",
+     "elf_epic/idle_smooth_8.png"
+    ],
+    "durations": [
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true,
+    "playback": "forward"
+   },
+   "walk": {
+    "files": [
+     "elf_epic/walk_smooth_1.png",
+     "elf_epic/walk_smooth_2.png",
+     "elf_epic/walk_smooth_3.png",
+     "elf_epic/walk_smooth_4.png",
+     "elf_epic/walk_smooth_5.png",
+     "elf_epic/walk_smooth_6.png",
+     "elf_epic/walk_smooth_7.png",
+     "elf_epic/walk_smooth_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true,
+    "playback": "forward"
+   },
+   "attack": {
+    "files": [
+     "elf_epic/attack_smooth_1.png",
+     "elf_epic/attack_smooth_2.png",
+     "elf_epic/attack_smooth_3.png",
+     "elf_epic/attack_smooth_4.png",
+     "elf_epic/attack_smooth_5.png",
+     "elf_epic/attack_smooth_6.png",
+     "elf_epic/attack_smooth_7.png",
+     "elf_epic/attack_smooth_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.12,
+     0.12,
+     0.1,
+     0.08,
+     0.12,
+     0.16,
+     0.2
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true
+   },
+   "dead": {
+    "files": [
+     "elf_epic/dead_smooth_1.png",
+     "elf_epic/dead_smooth_2.png",
+     "elf_epic/dead_smooth_3.png",
+     "elf_epic/dead_smooth_4.png",
+     "elf_epic/dead_smooth_5.png",
+     "elf_epic/dead_smooth_6.png",
+     "elf_epic/dead_smooth_7.png",
+     "elf_epic/dead_smooth_8.png"
+    ],
+    "durations": [
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": false
+   }
+  },
+  "cell_scale": 0.685,
+  "cell_offset": {
+   "x": 0.0,
+   "y": -0.328
+  }
+ },
+ {
+  "key": "elf_legendary",
+  "race": "elf",
+  "rank": "legendary",
+  "name": "Verdant Archer",
+  "combat": "ranged",
+  "weapon": "ornate gold and emerald bow with physical arrows",
+  "ppu": 177.78,
+  "world_h": 0.9956,
+  "anims": {
+   "idle": {
+    "files": [
+     "elf_legendary/idle_smooth_1.png",
+     "elf_legendary/idle_smooth_2.png",
+     "elf_legendary/idle_smooth_3.png",
+     "elf_legendary/idle_smooth_4.png",
+     "elf_legendary/idle_smooth_5.png",
+     "elf_legendary/idle_smooth_6.png",
+     "elf_legendary/idle_smooth_7.png",
+     "elf_legendary/idle_smooth_8.png"
+    ],
+    "durations": [
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true,
+    "playback": "forward"
+   },
+   "walk": {
+    "files": [
+     "elf_legendary/walk_smooth_1.png",
+     "elf_legendary/walk_smooth_2.png",
+     "elf_legendary/walk_smooth_3.png",
+     "elf_legendary/walk_smooth_4.png",
+     "elf_legendary/walk_smooth_5.png",
+     "elf_legendary/walk_smooth_6.png",
+     "elf_legendary/walk_smooth_7.png",
+     "elf_legendary/walk_smooth_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true,
+    "playback": "forward"
+   },
+   "attack": {
+    "files": [
+     "elf_legendary/attack_smooth_1.png",
+     "elf_legendary/attack_smooth_2.png",
+     "elf_legendary/attack_smooth_3.png",
+     "elf_legendary/attack_smooth_4.png",
+     "elf_legendary/attack_smooth_5.png",
+     "elf_legendary/attack_smooth_6.png",
+     "elf_legendary/attack_smooth_7.png",
+     "elf_legendary/attack_smooth_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.12,
+     0.12,
+     0.1,
+     0.08,
+     0.12,
+     0.16,
+     0.2
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true
+   },
+   "dead": {
+    "files": [
+     "elf_legendary/dead_smooth_1.png",
+     "elf_legendary/dead_smooth_2.png",
+     "elf_legendary/dead_smooth_3.png",
+     "elf_legendary/dead_smooth_4.png",
+     "elf_legendary/dead_smooth_5.png",
+     "elf_legendary/dead_smooth_6.png",
+     "elf_legendary/dead_smooth_7.png",
+     "elf_legendary/dead_smooth_8.png"
+    ],
+    "durations": [
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": false
+   },
+   "skill": {
+    "files": [
+     "elf_legendary/skill_smooth_1.png",
+     "elf_legendary/skill_smooth_2.png",
+     "elf_legendary/skill_smooth_3.png",
+     "elf_legendary/skill_smooth_4.png",
+     "elf_legendary/skill_smooth_5.png",
+     "elf_legendary/skill_smooth_6.png",
+     "elf_legendary/skill_smooth_7.png",
+     "elf_legendary/skill_smooth_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.12,
+     0.12,
+     0.1,
+     0.12,
+     0.12,
+     0.16,
+     0.2
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": false
+   }
+  },
+  "cell_scale": 0.61,
+  "cell_offset": {
+   "x": -0.0172,
+   "y": -0.3054
+  }
+ },
+ {
+  "key": "elf_rare",
+  "race": "elf",
+  "rank": "rare",
+  "name": "Leaf Blade",
+  "combat": "melee",
+  "weapon": "longsword",
+  "ppu": 203.77,
+  "world_h": 0.903,
+  "anims": {
+   "idle": {
+    "files": [
+     "elf_rare/idle_smooth_1.png",
+     "elf_rare/idle_smooth_2.png",
+     "elf_rare/idle_smooth_3.png",
+     "elf_rare/idle_smooth_4.png",
+     "elf_rare/idle_smooth_5.png",
+     "elf_rare/idle_smooth_6.png",
+     "elf_rare/idle_smooth_7.png",
+     "elf_rare/idle_smooth_8.png"
+    ],
+    "durations": [
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true,
+    "playback": "forward"
+   },
+   "walk": {
+    "files": [
+     "elf_rare/walk_smooth_1.png",
+     "elf_rare/walk_smooth_2.png",
+     "elf_rare/walk_smooth_3.png",
+     "elf_rare/walk_smooth_4.png",
+     "elf_rare/walk_smooth_5.png",
+     "elf_rare/walk_smooth_6.png",
+     "elf_rare/walk_smooth_7.png",
+     "elf_rare/walk_smooth_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true,
+    "playback": "forward"
+   },
+   "attack": {
+    "files": [
+     "elf_rare/attack_smooth_1.png",
+     "elf_rare/attack_smooth_2.png",
+     "elf_rare/attack_smooth_3.png",
+     "elf_rare/attack_smooth_4.png",
+     "elf_rare/attack_smooth_5.png",
+     "elf_rare/attack_smooth_6.png",
+     "elf_rare/attack_smooth_7.png",
+     "elf_rare/attack_smooth_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.12,
+     0.12,
+     0.1,
+     0.08,
+     0.12,
+     0.16,
+     0.2
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true
+   },
+   "dead": {
+    "files": [
+     "elf_rare/dead_smooth_1.png",
+     "elf_rare/dead_smooth_2.png",
+     "elf_rare/dead_smooth_3.png",
+     "elf_rare/dead_smooth_4.png",
+     "elf_rare/dead_smooth_5.png",
+     "elf_rare/dead_smooth_6.png",
+     "elf_rare/dead_smooth_7.png",
+     "elf_rare/dead_smooth_8.png"
+    ],
+    "durations": [
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": false
+   }
+  },
+  "cell_scale": 0.742,
+  "cell_offset": {
+   "x": -0.0182,
+   "y": -0.335
+  }
+ },
+ {
+  "key": "human_common",
+  "race": "human",
+  "rank": "common",
+  "name": "Dân quân cầm liềm",
+  "combat": "melee",
+  "weapon": "short-sickle",
+  "ppu": 241.86,
+  "world_h": 0.86,
+  "anims": {
+   "idle": {
+    "files": [
+     "human_common/idle_smooth_1.png",
+     "human_common/idle_smooth_2.png",
+     "human_common/idle_smooth_3.png",
+     "human_common/idle_smooth_4.png",
+     "human_common/idle_smooth_5.png",
+     "human_common/idle_smooth_6.png",
+     "human_common/idle_smooth_7.png",
+     "human_common/idle_smooth_8.png"
+    ],
+    "durations": [
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true,
+    "playback": "forward"
+   },
+   "walk": {
+    "files": [
+     "human_common/walk_smooth_1.png",
+     "human_common/walk_smooth_2.png",
+     "human_common/walk_smooth_3.png",
+     "human_common/walk_smooth_4.png",
+     "human_common/walk_smooth_5.png",
+     "human_common/walk_smooth_6.png",
+     "human_common/walk_smooth_7.png",
+     "human_common/walk_smooth_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true,
+    "playback": "forward"
+   },
+   "attack": {
+    "files": [
+     "human_common/attack_smooth_1.png",
+     "human_common/attack_smooth_2.png",
+     "human_common/attack_smooth_3.png",
+     "human_common/attack_smooth_4.png",
+     "human_common/attack_smooth_5.png",
+     "human_common/attack_smooth_6.png",
+     "human_common/attack_smooth_7.png",
+     "human_common/attack_smooth_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.12,
+     0.12,
+     0.1,
+     0.08,
+     0.12,
+     0.16,
+     0.2
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true
+   },
+   "dead": {
+    "files": [
+     "human_common/dead_smooth_1.png",
+     "human_common/dead_smooth_2.png",
+     "human_common/dead_smooth_3.png",
+     "human_common/dead_smooth_4.png",
+     "human_common/dead_smooth_5.png",
+     "human_common/dead_smooth_6.png",
+     "human_common/dead_smooth_7.png",
+     "human_common/dead_smooth_8.png"
+    ],
+    "durations": [
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": false
+   }
+  },
+  "vfx": {
+   "walk": {
+    "files": [
+     "human_common/dust_1.png",
+     "human_common/dust_2.png",
+     "human_common/dust_3.png",
+     "human_common/dust_4.png",
+     "human_common/dust_5.png",
+     "human_common/dust_6.png",
+     "human_common/dust_7.png",
+     "human_common/dust_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true
+   },
+   "dead": {
+    "files": [
+     "human_common/soul_1.png",
+     "human_common/soul_2.png",
+     "human_common/soul_3.png",
+     "human_common/soul_4.png",
+     "human_common/soul_5.png",
+     "human_common/soul_6.png",
+     "human_common/soul_7.png",
+     "human_common/soul_8.png"
+    ],
+    "durations": [
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": false
+   },
+   "walk_offset": {
+    "x": 0.0,
+    "y": -0.02
+   },
+   "foot_spacing": 0.1,
+   "dead_offset": {
+    "x": 0.0,
+    "y": 0.05
+   },
+   "walk_scale": 0.28,
+   "dead_scale": 0.38,
+   "walk_alpha": 0.32,
+   "dead_alpha": 0.55
+  },
+  "cell_scale": 0.583,
+  "cell_offset": {
+   "x": -0.0374,
+   "y": -0.2465
+  }
+ },
+ {
+  "key": "human_epic",
+  "race": "human",
+  "rank": "epic",
+  "name": "Crescent Mage",
+  "combat": "ranged",
+  "weapon": "crescent crystal staff",
+  "ppu": 256.28,
+  "world_h": 0.9482,
+  "anims": {
+   "idle": {
+    "files": [
+     "human_epic/idle_smooth_1.png",
+     "human_epic/idle_smooth_2.png",
+     "human_epic/idle_smooth_3.png",
+     "human_epic/idle_smooth_4.png",
+     "human_epic/idle_smooth_5.png",
+     "human_epic/idle_smooth_6.png",
+     "human_epic/idle_smooth_7.png",
+     "human_epic/idle_smooth_8.png"
+    ],
+    "durations": [
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true,
+    "playback": "forward"
+   },
+   "walk": {
+    "files": [
+     "human_epic/walk_smooth_1.png",
+     "human_epic/walk_smooth_2.png",
+     "human_epic/walk_smooth_3.png",
+     "human_epic/walk_smooth_4.png",
+     "human_epic/walk_smooth_5.png",
+     "human_epic/walk_smooth_6.png",
+     "human_epic/walk_smooth_7.png",
+     "human_epic/walk_smooth_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true,
+    "playback": "forward"
+   },
+   "attack": {
+    "files": [
+     "human_epic/attack_smooth_1.png",
+     "human_epic/attack_smooth_2.png",
+     "human_epic/attack_smooth_3.png",
+     "human_epic/attack_smooth_4.png",
+     "human_epic/attack_smooth_5.png",
+     "human_epic/attack_smooth_6.png",
+     "human_epic/attack_smooth_7.png",
+     "human_epic/attack_smooth_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.12,
+     0.12,
+     0.07,
+     0.07,
+     0.1,
+     0.13,
+     0.16
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": false,
+    "playback": "forward",
+    "ppu": 342.8
+   },
+   "dead": {
+    "files": [
+     "human_epic/dead_smooth_1.png",
+     "human_epic/dead_smooth_2.png",
+     "human_epic/dead_smooth_3.png",
+     "human_epic/dead_smooth_4.png",
+     "human_epic/dead_smooth_5.png",
+     "human_epic/dead_smooth_6.png",
+     "human_epic/dead_smooth_7.png",
+     "human_epic/dead_smooth_8.png"
+    ],
+    "durations": [
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": false
+   }
+  },
+  "impact_step": 4,
+  "cell_scale": 0.85,
+  "cell_offset": {
+   "x": -0.0746,
+   "y": -0.4046
+  }
+ },
+ {
+  "key": "human_legendary",
+  "race": "human",
+  "rank": "legendary",
+  "name": "Royal Hero",
+  "combat": "melee",
+  "weapon": "engraved royal longsword",
+  "ppu": 184.81,
+  "world_h": 0.9956,
+  "anims": {
+   "idle": {
+    "files": [
+     "human_legendary/idle_smooth_1.png",
+     "human_legendary/idle_smooth_2.png",
+     "human_legendary/idle_smooth_3.png",
+     "human_legendary/idle_smooth_4.png",
+     "human_legendary/idle_smooth_5.png",
+     "human_legendary/idle_smooth_6.png",
+     "human_legendary/idle_smooth_7.png",
+     "human_legendary/idle_smooth_8.png"
+    ],
+    "durations": [
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true,
+    "playback": "forward"
+   },
+   "walk": {
+    "files": [
+     "human_legendary/walk_smooth_1.png",
+     "human_legendary/walk_smooth_2.png",
+     "human_legendary/walk_smooth_3.png",
+     "human_legendary/walk_smooth_4.png",
+     "human_legendary/walk_smooth_5.png",
+     "human_legendary/walk_smooth_6.png",
+     "human_legendary/walk_smooth_7.png",
+     "human_legendary/walk_smooth_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true,
+    "playback": "forward"
+   },
+   "attack": {
+    "files": [
+     "human_legendary/attack_smooth_1.png",
+     "human_legendary/attack_smooth_2.png",
+     "human_legendary/attack_smooth_3.png",
+     "human_legendary/attack_smooth_4.png",
+     "human_legendary/attack_smooth_5.png",
+     "human_legendary/attack_smooth_6.png",
+     "human_legendary/attack_smooth_7.png",
+     "human_legendary/attack_smooth_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.1,
+     0.13,
+     0.07,
+     0.06,
+     0.09,
+     0.13,
+     0.18
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": false,
+    "playback": "forward",
+    "ppu": 269.1
+   },
+   "dead": {
+    "files": [
+     "human_legendary/dead_smooth_1.png",
+     "human_legendary/dead_smooth_2.png",
+     "human_legendary/dead_smooth_3.png",
+     "human_legendary/dead_smooth_4.png",
+     "human_legendary/dead_smooth_5.png",
+     "human_legendary/dead_smooth_6.png",
+     "human_legendary/dead_smooth_7.png",
+     "human_legendary/dead_smooth_8.png"
+    ],
+    "durations": [
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": false
+   },
+   "skill": {
+    "files": [
+     "human_legendary/skill_smooth_1.png",
+     "human_legendary/skill_smooth_2.png",
+     "human_legendary/skill_smooth_3.png",
+     "human_legendary/skill_smooth_4.png",
+     "human_legendary/skill_smooth_5.png",
+     "human_legendary/skill_smooth_6.png",
+     "human_legendary/skill_smooth_7.png",
+     "human_legendary/skill_smooth_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.12,
+     0.12,
+     0.1,
+     0.12,
+     0.12,
+     0.16,
+     0.2
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": false
+   }
+  },
+  "impact_step": 4,
+  "cell_scale": 0.499,
+  "cell_offset": {
+   "x": -0.081,
+   "y": -0.2484
+  }
+ },
+ {
+  "key": "human_rare",
+  "race": "human",
+  "rank": "rare",
+  "name": "Lion Spear Knight",
+  "combat": "melee",
+  "weapon": "spear",
+  "ppu": 199.34,
+  "world_h": 0.903,
+  "anims": {
+   "idle": {
+    "files": [
+     "human_rare/idle_smooth_1.png",
+     "human_rare/idle_smooth_2.png",
+     "human_rare/idle_smooth_3.png",
+     "human_rare/idle_smooth_4.png",
+     "human_rare/idle_smooth_5.png",
+     "human_rare/idle_smooth_6.png",
+     "human_rare/idle_smooth_7.png",
+     "human_rare/idle_smooth_8.png"
+    ],
+    "durations": [
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true,
+    "playback": "forward"
+   },
+   "walk": {
+    "files": [
+     "human_rare/walk_smooth_1.png",
+     "human_rare/walk_smooth_2.png",
+     "human_rare/walk_smooth_3.png",
+     "human_rare/walk_smooth_4.png",
+     "human_rare/walk_smooth_5.png",
+     "human_rare/walk_smooth_6.png",
+     "human_rare/walk_smooth_7.png",
+     "human_rare/walk_smooth_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true,
+    "playback": "forward"
+   },
+   "attack": {
+    "files": [
+     "human_rare/attack_smooth_1.png",
+     "human_rare/attack_smooth_2.png",
+     "human_rare/attack_smooth_3.png",
+     "human_rare/attack_smooth_4.png",
+     "human_rare/attack_smooth_5.png",
+     "human_rare/attack_smooth_6.png",
+     "human_rare/attack_smooth_7.png",
+     "human_rare/attack_smooth_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.12,
+     0.12,
+     0.1,
+     0.08,
+     0.12,
+     0.16,
+     0.2
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true
+   },
+   "dead": {
+    "files": [
+     "human_rare/dead_smooth_1.png",
+     "human_rare/dead_smooth_2.png",
+     "human_rare/dead_smooth_3.png",
+     "human_rare/dead_smooth_4.png",
+     "human_rare/dead_smooth_5.png",
+     "human_rare/dead_smooth_6.png",
+     "human_rare/dead_smooth_7.png",
+     "human_rare/dead_smooth_8.png"
+    ],
+    "durations": [
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": false
+   }
+  },
+  "vfx": {
+   "walk": {
+    "files": [
+     "human_common/dust_1.png",
+     "human_common/dust_2.png",
+     "human_common/dust_3.png",
+     "human_common/dust_4.png",
+     "human_common/dust_5.png",
+     "human_common/dust_6.png",
+     "human_common/dust_7.png",
+     "human_common/dust_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true
+   },
+   "attack": {
+    "files": [
+     "human_rare/spear_thrust_1.png",
+     "human_rare/spear_thrust_2.png",
+     "human_rare/spear_thrust_3.png",
+     "human_rare/spear_thrust_4.png",
+     "human_rare/spear_thrust_5.png",
+     "human_rare/spear_thrust_6.png",
+     "human_rare/spear_thrust_7.png",
+     "human_rare/spear_thrust_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.12,
+     0.12,
+     0.1,
+     0.08,
+     0.12,
+     0.16,
+     0.2
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": false
+   },
+   "dead": {
+    "files": [
+     "human_common/soul_1.png",
+     "human_common/soul_2.png",
+     "human_common/soul_3.png",
+     "human_common/soul_4.png",
+     "human_common/soul_5.png",
+     "human_common/soul_6.png",
+     "human_common/soul_7.png",
+     "human_common/soul_8.png"
+    ],
+    "durations": [
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": false
+   },
+   "walk_offset": {
+    "x": 0.0,
+    "y": -0.02
+   },
+   "foot_spacing": 0.12,
+   "attack_offset": {
+    "x": 0.62,
+    "y": 0.32
+   },
+   "dead_offset": {
+    "x": 0.0,
+    "y": 0.05
+   },
+   "walk_scale": 0.28,
+   "attack_scale": 0.42,
+   "dead_scale": 0.38,
+   "walk_alpha": 0.32,
+   "attack_alpha": 0.75,
+   "dead_alpha": 0.55
+  },
+  "cell_scale": 0.597,
+  "cell_offset": {
+   "x": -0.1168,
+   "y": -0.2695
+  }
+ },
+ {
+  "key": "machine_common",
+  "race": "machine",
+  "rank": "common",
+  "name": "",
+  "combat": "melee",
+  "weapon": "piston-mounted-circular-saw",
+  "ppu": 174.42,
+  "world_h": 0.86,
+  "anims": {
+   "idle": {
+    "files": [
+     "machine_common/idle_smooth_1.png",
+     "machine_common/idle_smooth_2.png",
+     "machine_common/idle_smooth_3.png",
+     "machine_common/idle_smooth_4.png",
+     "machine_common/idle_smooth_5.png",
+     "machine_common/idle_smooth_6.png",
+     "machine_common/idle_smooth_7.png",
+     "machine_common/idle_smooth_8.png"
+    ],
+    "durations": [
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true,
+    "playback": "forward"
+   },
+   "walk": {
+    "files": [
+     "machine_common/walk_smooth_1.png",
+     "machine_common/walk_smooth_2.png",
+     "machine_common/walk_smooth_3.png",
+     "machine_common/walk_smooth_4.png",
+     "machine_common/walk_smooth_5.png",
+     "machine_common/walk_smooth_6.png",
+     "machine_common/walk_smooth_7.png",
+     "machine_common/walk_smooth_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true,
+    "playback": "forward"
+   },
+   "attack": {
+    "files": [
+     "machine_common/attack_smooth_1.png",
+     "machine_common/attack_smooth_2.png",
+     "machine_common/attack_smooth_3.png",
+     "machine_common/attack_smooth_4.png",
+     "machine_common/attack_smooth_5.png",
+     "machine_common/attack_smooth_6.png",
+     "machine_common/attack_smooth_7.png",
+     "machine_common/attack_smooth_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.12,
+     0.12,
+     0.1,
+     0.08,
+     0.12,
+     0.16,
+     0.2
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true
+   },
+   "dead": {
+    "files": [
+     "machine_common/dead_smooth_1.png",
+     "machine_common/dead_smooth_2.png",
+     "machine_common/dead_smooth_3.png",
+     "machine_common/dead_smooth_4.png",
+     "machine_common/dead_smooth_5.png",
+     "machine_common/dead_smooth_6.png",
+     "machine_common/dead_smooth_7.png",
+     "machine_common/dead_smooth_8.png"
+    ],
+    "durations": [
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": false
+   }
+  },
+  "vfx": {
+   "walk": {
+    "files": [
+     "human_common/dust_1.png",
+     "human_common/dust_2.png",
+     "human_common/dust_3.png",
+     "human_common/dust_4.png",
+     "human_common/dust_5.png",
+     "human_common/dust_6.png",
+     "human_common/dust_7.png",
+     "human_common/dust_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true
+   },
+   "attack": {
+    "files": [
+     "machine_common/saw_sparks_1.png",
+     "machine_common/saw_sparks_2.png",
+     "machine_common/saw_sparks_3.png",
+     "machine_common/saw_sparks_4.png",
+     "machine_common/saw_sparks_5.png",
+     "machine_common/saw_sparks_6.png",
+     "machine_common/saw_sparks_7.png",
+     "machine_common/saw_sparks_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.12,
+     0.12,
+     0.1,
+     0.08,
+     0.12,
+     0.16,
+     0.2
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": false
+   },
+   "walk_offset": {
+    "x": 0.0,
+    "y": -0.02
+   },
+   "foot_spacing": 0.16,
+   "attack_offset": {
+    "x": 0.44,
+    "y": 0.15
+   },
+   "dead_offset": {
+    "x": 0.0,
+    "y": 0.05
+   },
+   "walk_scale": 0.18,
+   "attack_scale": 0.28,
+   "dead_scale": 0.38,
+   "walk_alpha": 0.16,
+   "attack_alpha": 0.65,
+   "dead_alpha": 0.55
+  },
+  "cell_scale": 0.687,
+  "cell_offset": {
+   "x": -0.0453,
+   "y": -0.2964
+  }
+ },
+ {
+  "key": "machine_epic",
+  "race": "machine",
+  "rank": "epic",
+  "name": "Furnace Crawler",
+  "combat": "melee",
+  "weapon": "continuous short-range flamethrower",
+  "ppu": 196.16,
+  "world_h": 0.9482,
+  "anims": {
+   "idle": {
+    "files": [
+     "machine_epic/idle_smooth_1.png",
+     "machine_epic/idle_smooth_2.png",
+     "machine_epic/idle_smooth_3.png",
+     "machine_epic/idle_smooth_4.png",
+     "machine_epic/idle_smooth_5.png",
+     "machine_epic/idle_smooth_6.png",
+     "machine_epic/idle_smooth_7.png",
+     "machine_epic/idle_smooth_8.png"
+    ],
+    "durations": [
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true,
+    "playback": "forward"
+   },
+   "walk": {
+    "files": [
+     "machine_epic/walk_smooth_1.png",
+     "machine_epic/walk_smooth_2.png",
+     "machine_epic/walk_smooth_3.png",
+     "machine_epic/walk_smooth_4.png",
+     "machine_epic/walk_smooth_5.png",
+     "machine_epic/walk_smooth_6.png",
+     "machine_epic/walk_smooth_7.png",
+     "machine_epic/walk_smooth_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true,
+    "playback": "forward"
+   },
+   "attack": {
+    "files": [
+     "machine_epic/attack_smooth_1.png",
+     "machine_epic/attack_smooth_2.png",
+     "machine_epic/attack_smooth_3.png",
+     "machine_epic/attack_smooth_4.png",
+     "machine_epic/attack_smooth_5.png",
+     "machine_epic/attack_smooth_6.png",
+     "machine_epic/attack_smooth_7.png",
+     "machine_epic/attack_smooth_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.12,
+     0.12,
+     0.1,
+     0.08,
+     0.12,
+     0.16,
+     0.2
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true
+   },
+   "dead": {
+    "files": [
+     "machine_epic/dead_smooth_1.png",
+     "machine_epic/dead_smooth_2.png",
+     "machine_epic/dead_smooth_3.png",
+     "machine_epic/dead_smooth_4.png",
+     "machine_epic/dead_smooth_5.png",
+     "machine_epic/dead_smooth_6.png",
+     "machine_epic/dead_smooth_7.png",
+     "machine_epic/dead_smooth_8.png"
+    ],
+    "durations": [
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": false
+   }
+  },
+  "cell_scale": 0.706,
+  "cell_offset": {
+   "x": -0.0324,
+   "y": -0.3257
+  }
+ },
+ {
+  "key": "machine_legendary",
+  "race": "machine",
+  "rank": "legendary",
+  "name": "Titan Pugilist",
+  "combat": "melee",
+  "weapon": "integrated piston boxing fists",
+  "ppu": 172.76,
+  "world_h": 0.9956,
+  "anims": {
+   "idle": {
+    "files": [
+     "machine_legendary/idle_smooth_1.png",
+     "machine_legendary/idle_smooth_2.png",
+     "machine_legendary/idle_smooth_3.png",
+     "machine_legendary/idle_smooth_4.png",
+     "machine_legendary/idle_smooth_5.png",
+     "machine_legendary/idle_smooth_6.png",
+     "machine_legendary/idle_smooth_7.png",
+     "machine_legendary/idle_smooth_8.png"
+    ],
+    "durations": [
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true,
+    "playback": "forward"
+   },
+   "walk": {
+    "files": [
+     "machine_legendary/walk_smooth_1.png",
+     "machine_legendary/walk_smooth_2.png",
+     "machine_legendary/walk_smooth_3.png",
+     "machine_legendary/walk_smooth_4.png",
+     "machine_legendary/walk_smooth_5.png",
+     "machine_legendary/walk_smooth_6.png",
+     "machine_legendary/walk_smooth_7.png",
+     "machine_legendary/walk_smooth_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true,
+    "playback": "forward"
+   },
+   "attack": {
+    "files": [
+     "machine_legendary/attack_smooth_1.png",
+     "machine_legendary/attack_smooth_2.png",
+     "machine_legendary/attack_smooth_3.png",
+     "machine_legendary/attack_smooth_4.png",
+     "machine_legendary/attack_smooth_5.png",
+     "machine_legendary/attack_smooth_6.png",
+     "machine_legendary/attack_smooth_7.png",
+     "machine_legendary/attack_smooth_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.12,
+     0.12,
+     0.1,
+     0.08,
+     0.12,
+     0.16,
+     0.2
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true
+   },
+   "dead": {
+    "files": [
+     "machine_legendary/dead_smooth_1.png",
+     "machine_legendary/dead_smooth_2.png",
+     "machine_legendary/dead_smooth_3.png",
+     "machine_legendary/dead_smooth_4.png",
+     "machine_legendary/dead_smooth_5.png",
+     "machine_legendary/dead_smooth_6.png",
+     "machine_legendary/dead_smooth_7.png",
+     "machine_legendary/dead_smooth_8.png"
+    ],
+    "durations": [
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": false
+   },
+   "skill": {
+    "files": [
+     "machine_legendary/skill_smooth_1.png",
+     "machine_legendary/skill_smooth_2.png",
+     "machine_legendary/skill_smooth_3.png",
+     "machine_legendary/skill_smooth_4.png",
+     "machine_legendary/skill_smooth_5.png",
+     "machine_legendary/skill_smooth_6.png",
+     "machine_legendary/skill_smooth_7.png",
+     "machine_legendary/skill_smooth_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.12,
+     0.12,
+     0.1,
+     0.12,
+     0.12,
+     0.16,
+     0.2
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": false
+   }
+  },
+  "cell_scale": 0.607,
+  "cell_offset": {
+   "x": -0.0053,
+   "y": -0.3039
+  }
+ },
+ {
+  "key": "machine_rare",
+  "race": "machine",
+  "rank": "rare",
+  "name": "Gear Gunner",
+  "combat": "ranged",
+  "weapon": "mechanical-repeating-gun",
+  "ppu": 202.66,
+  "world_h": 0.903,
+  "anims": {
+   "idle": {
+    "files": [
+     "machine_rare/idle_smooth_1.png",
+     "machine_rare/idle_smooth_2.png",
+     "machine_rare/idle_smooth_3.png",
+     "machine_rare/idle_smooth_4.png",
+     "machine_rare/idle_smooth_5.png",
+     "machine_rare/idle_smooth_6.png",
+     "machine_rare/idle_smooth_7.png",
+     "machine_rare/idle_smooth_8.png"
+    ],
+    "durations": [
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true,
+    "playback": "forward"
+   },
+   "walk": {
+    "files": [
+     "machine_rare/walk_smooth_1.png",
+     "machine_rare/walk_smooth_2.png",
+     "machine_rare/walk_smooth_3.png",
+     "machine_rare/walk_smooth_4.png",
+     "machine_rare/walk_smooth_5.png",
+     "machine_rare/walk_smooth_6.png",
+     "machine_rare/walk_smooth_7.png",
+     "machine_rare/walk_smooth_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true,
+    "playback": "forward"
+   },
+   "attack": {
+    "files": [
+     "machine_rare/attack_smooth_1.png",
+     "machine_rare/attack_smooth_2.png",
+     "machine_rare/attack_smooth_3.png",
+     "machine_rare/attack_smooth_4.png",
+     "machine_rare/attack_smooth_5.png",
+     "machine_rare/attack_smooth_6.png",
+     "machine_rare/attack_smooth_7.png",
+     "machine_rare/attack_smooth_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.12,
+     0.12,
+     0.1,
+     0.08,
+     0.12,
+     0.16,
+     0.2
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true
+   },
+   "dead": {
+    "files": [
+     "machine_rare/dead_smooth_1.png",
+     "machine_rare/dead_smooth_2.png",
+     "machine_rare/dead_smooth_3.png",
+     "machine_rare/dead_smooth_4.png",
+     "machine_rare/dead_smooth_5.png",
+     "machine_rare/dead_smooth_6.png",
+     "machine_rare/dead_smooth_7.png",
+     "machine_rare/dead_smooth_8.png"
+    ],
+    "durations": [
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": false
+   }
+  },
+  "cell_scale": 0.723,
+  "cell_offset": {
+   "x": -0.0749,
+   "y": -0.3407
+  }
+ },
+ {
+  "key": "monster_common",
+  "race": "monster",
+  "rank": "common",
+  "name": "",
+  "combat": "ranged",
+  "weapon": "web-spit",
+  "ppu": 162.79,
+  "world_h": 0.86,
+  "anims": {
+   "idle": {
+    "files": [
+     "monster_common/idle_smooth_1.png",
+     "monster_common/idle_smooth_2.png",
+     "monster_common/idle_smooth_3.png",
+     "monster_common/idle_smooth_4.png",
+     "monster_common/idle_smooth_5.png",
+     "monster_common/idle_smooth_6.png",
+     "monster_common/idle_smooth_7.png",
+     "monster_common/idle_smooth_8.png"
+    ],
+    "durations": [
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true,
+    "playback": "forward"
+   },
+   "walk": {
+    "files": [
+     "monster_common/walk_smooth_1.png",
+     "monster_common/walk_smooth_2.png",
+     "monster_common/walk_smooth_3.png",
+     "monster_common/walk_smooth_4.png",
+     "monster_common/walk_smooth_5.png",
+     "monster_common/walk_smooth_6.png",
+     "monster_common/walk_smooth_7.png",
+     "monster_common/walk_smooth_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true,
+    "playback": "forward"
+   },
+   "attack": {
+    "files": [
+     "monster_common/attack_smooth_1.png",
+     "monster_common/attack_smooth_2.png",
+     "monster_common/attack_smooth_3.png",
+     "monster_common/attack_smooth_4.png",
+     "monster_common/attack_smooth_5.png",
+     "monster_common/attack_smooth_6.png",
+     "monster_common/attack_smooth_7.png",
+     "monster_common/attack_smooth_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.12,
+     0.12,
+     0.1,
+     0.08,
+     0.12,
+     0.16,
+     0.2
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true
+   },
+   "dead": {
+    "files": [
+     "monster_common/dead_smooth_1.png",
+     "monster_common/dead_smooth_2.png",
+     "monster_common/dead_smooth_3.png",
+     "monster_common/dead_smooth_4.png",
+     "monster_common/dead_smooth_5.png",
+     "monster_common/dead_smooth_6.png",
+     "monster_common/dead_smooth_7.png",
+     "monster_common/dead_smooth_8.png"
+    ],
+    "durations": [
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": false
+   }
+  },
+  "vfx": {
+   "walk": {
+    "files": [
+     "human_common/dust_1.png",
+     "human_common/dust_2.png",
+     "human_common/dust_3.png",
+     "human_common/dust_4.png",
+     "human_common/dust_5.png",
+     "human_common/dust_6.png",
+     "human_common/dust_7.png",
+     "human_common/dust_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true
+   },
+   "attack": {
+    "files": [
+     "monster_common/web_spit_1.png",
+     "monster_common/web_spit_2.png",
+     "monster_common/web_spit_3.png",
+     "monster_common/web_spit_4.png",
+     "monster_common/web_spit_5.png",
+     "monster_common/web_spit_6.png",
+     "monster_common/web_spit_7.png",
+     "monster_common/web_spit_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.12,
+     0.12,
+     0.1,
+     0.08,
+     0.12,
+     0.16,
+     0.2
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": false
+   },
+   "walk_offset": {
+    "x": 0.0,
+    "y": -0.02
+   },
+   "foot_spacing": 0.17,
+   "attack_offset": {
+    "x": 0.44,
+    "y": 0.18
+   },
+   "dead_offset": {
+    "x": 0.0,
+    "y": 0.05
+   },
+   "walk_scale": 0.2,
+   "attack_scale": 0.32,
+   "dead_scale": 0.38,
+   "walk_alpha": 0.2,
+   "attack_alpha": 0.65,
+   "dead_alpha": 0.55,
+   "dead": {
+    "files": [
+     "human_common/soul_1.png",
+     "human_common/soul_2.png",
+     "human_common/soul_3.png",
+     "human_common/soul_4.png",
+     "human_common/soul_5.png",
+     "human_common/soul_6.png",
+     "human_common/soul_7.png",
+     "human_common/soul_8.png"
+    ],
+    "durations": [
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": false
+   }
+  },
+  "cell_scale": 0.608,
+  "cell_offset": {
+   "x": -0.0261,
+   "y": -0.2661
+  }
+ },
+ {
+  "key": "monster_epic",
+  "race": "monster",
+  "rank": "epic",
+  "name": "Lava Scorpion",
+  "combat": "melee",
+  "weapon": "lava stinger and claws",
+  "ppu": 163.47,
+  "world_h": 0.9482,
+  "anims": {
+   "idle": {
+    "files": [
+     "monster_epic/idle_smooth_1.png",
+     "monster_epic/idle_smooth_2.png",
+     "monster_epic/idle_smooth_3.png",
+     "monster_epic/idle_smooth_4.png",
+     "monster_epic/idle_smooth_5.png",
+     "monster_epic/idle_smooth_6.png",
+     "monster_epic/idle_smooth_7.png",
+     "monster_epic/idle_smooth_8.png"
+    ],
+    "durations": [
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true,
+    "playback": "forward"
+   },
+   "walk": {
+    "files": [
+     "monster_epic/walk_smooth_1.png",
+     "monster_epic/walk_smooth_2.png",
+     "monster_epic/walk_smooth_3.png",
+     "monster_epic/walk_smooth_4.png",
+     "monster_epic/walk_smooth_5.png",
+     "monster_epic/walk_smooth_6.png",
+     "monster_epic/walk_smooth_7.png",
+     "monster_epic/walk_smooth_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true,
+    "playback": "forward"
+   },
+   "attack": {
+    "files": [
+     "monster_epic/attack_smooth_1.png",
+     "monster_epic/attack_smooth_2.png",
+     "monster_epic/attack_smooth_3.png",
+     "monster_epic/attack_smooth_4.png",
+     "monster_epic/attack_smooth_5.png",
+     "monster_epic/attack_smooth_6.png",
+     "monster_epic/attack_smooth_7.png",
+     "monster_epic/attack_smooth_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.12,
+     0.12,
+     0.1,
+     0.08,
+     0.12,
+     0.16,
+     0.2
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true
+   },
+   "dead": {
+    "files": [
+     "monster_epic/dead_smooth_1.png",
+     "monster_epic/dead_smooth_2.png",
+     "monster_epic/dead_smooth_3.png",
+     "monster_epic/dead_smooth_4.png",
+     "monster_epic/dead_smooth_5.png",
+     "monster_epic/dead_smooth_6.png",
+     "monster_epic/dead_smooth_7.png",
+     "monster_epic/dead_smooth_8.png"
+    ],
+    "durations": [
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": false
+   }
+  },
+  "cell_scale": 0.547,
+  "cell_offset": {
+   "x": -0.1021,
+   "y": -0.2618
+  }
+ },
+ {
+  "key": "monster_legendary",
+  "race": "monster",
+  "rank": "legendary",
+  "name": "Lion Warlord",
+  "combat": "melee",
+  "weapon": "spiked iron mace",
+  "ppu": 185.82,
+  "world_h": 0.9956,
+  "anims": {
+   "idle": {
+    "files": [
+     "monster_legendary/idle_smooth_1.png",
+     "monster_legendary/idle_smooth_2.png",
+     "monster_legendary/idle_smooth_3.png",
+     "monster_legendary/idle_smooth_4.png",
+     "monster_legendary/idle_smooth_5.png",
+     "monster_legendary/idle_smooth_6.png",
+     "monster_legendary/idle_smooth_7.png",
+     "monster_legendary/idle_smooth_8.png"
+    ],
+    "durations": [
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true,
+    "playback": "forward"
+   },
+   "walk": {
+    "files": [
+     "monster_legendary/walk_smooth_1.png",
+     "monster_legendary/walk_smooth_2.png",
+     "monster_legendary/walk_smooth_3.png",
+     "monster_legendary/walk_smooth_4.png",
+     "monster_legendary/walk_smooth_5.png",
+     "monster_legendary/walk_smooth_6.png",
+     "monster_legendary/walk_smooth_7.png",
+     "monster_legendary/walk_smooth_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true,
+    "playback": "forward"
+   },
+   "attack": {
+    "files": [
+     "monster_legendary/attack_smooth_1.png",
+     "monster_legendary/attack_smooth_2.png",
+     "monster_legendary/attack_smooth_3.png",
+     "monster_legendary/attack_smooth_4.png",
+     "monster_legendary/attack_smooth_5.png",
+     "monster_legendary/attack_smooth_6.png",
+     "monster_legendary/attack_smooth_7.png",
+     "monster_legendary/attack_smooth_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.12,
+     0.12,
+     0.1,
+     0.08,
+     0.12,
+     0.16,
+     0.2
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true
+   },
+   "dead": {
+    "files": [
+     "monster_legendary/dead_smooth_1.png",
+     "monster_legendary/dead_smooth_2.png",
+     "monster_legendary/dead_smooth_3.png",
+     "monster_legendary/dead_smooth_4.png",
+     "monster_legendary/dead_smooth_5.png",
+     "monster_legendary/dead_smooth_6.png",
+     "monster_legendary/dead_smooth_7.png",
+     "monster_legendary/dead_smooth_8.png"
+    ],
+    "durations": [
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": false
+   },
+   "skill": {
+    "files": [
+     "monster_legendary/skill_smooth_1.png",
+     "monster_legendary/skill_smooth_2.png",
+     "monster_legendary/skill_smooth_3.png",
+     "monster_legendary/skill_smooth_4.png",
+     "monster_legendary/skill_smooth_5.png",
+     "monster_legendary/skill_smooth_6.png",
+     "monster_legendary/skill_smooth_7.png",
+     "monster_legendary/skill_smooth_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.12,
+     0.12,
+     0.1,
+     0.12,
+     0.12,
+     0.16,
+     0.2
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": false
+   }
+  },
+  "cell_scale": 0.619,
+  "cell_offset": {
+   "x": -0.0683,
+   "y": -0.3065
+  }
+ },
+ {
+  "key": "monster_rare",
+  "race": "monster",
+  "rank": "rare",
+  "name": "Armored Bear",
+  "combat": "melee",
+  "weapon": "claws",
+  "ppu": 187.15,
+  "world_h": 0.903,
+  "anims": {
+   "idle": {
+    "files": [
+     "monster_rare/idle_smooth_1.png",
+     "monster_rare/idle_smooth_2.png",
+     "monster_rare/idle_smooth_3.png",
+     "monster_rare/idle_smooth_4.png",
+     "monster_rare/idle_smooth_5.png",
+     "monster_rare/idle_smooth_6.png",
+     "monster_rare/idle_smooth_7.png",
+     "monster_rare/idle_smooth_8.png"
+    ],
+    "durations": [
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true,
+    "playback": "forward"
+   },
+   "walk": {
+    "files": [
+     "monster_rare/walk_smooth_1.png",
+     "monster_rare/walk_smooth_2.png",
+     "monster_rare/walk_smooth_3.png",
+     "monster_rare/walk_smooth_4.png",
+     "monster_rare/walk_smooth_5.png",
+     "monster_rare/walk_smooth_6.png",
+     "monster_rare/walk_smooth_7.png",
+     "monster_rare/walk_smooth_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true,
+    "playback": "forward"
+   },
+   "attack": {
+    "files": [
+     "monster_rare/attack_smooth_1.png",
+     "monster_rare/attack_smooth_2.png",
+     "monster_rare/attack_smooth_3.png",
+     "monster_rare/attack_smooth_4.png",
+     "monster_rare/attack_smooth_5.png",
+     "monster_rare/attack_smooth_6.png",
+     "monster_rare/attack_smooth_7.png",
+     "monster_rare/attack_smooth_8.png"
+    ],
+    "durations": [
+     0.1,
+     0.12,
+     0.12,
+     0.1,
+     0.08,
+     0.12,
+     0.16,
+     0.2
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": true
+   },
+   "dead": {
+    "files": [
+     "monster_rare/dead_smooth_1.png",
+     "monster_rare/dead_smooth_2.png",
+     "monster_rare/dead_smooth_3.png",
+     "monster_rare/dead_smooth_4.png",
+     "monster_rare/dead_smooth_5.png",
+     "monster_rare/dead_smooth_6.png",
+     "monster_rare/dead_smooth_7.png",
+     "monster_rare/dead_smooth_8.png"
+    ],
+    "durations": [
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125,
+     0.125
+    ],
+    "sequence": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "loop": false
+   }
+  },
+  "cell_scale": 0.676,
+  "cell_offset": {
+   "x": -0.0704,
+   "y": -0.3133
+  }
+ }
+]

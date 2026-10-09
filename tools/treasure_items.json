@@ -1,0 +1,442 @@
+[
+ {
+  "name": "Cốc gỗ sứt",
+  "tier": "Common",
+  "stats": [
+   {
+    "stat": "ATK",
+    "base": 3,
+    "perLevel": 0.3
+   }
+  ],
+  "maxLevel": 10,
+  "art": "a chipped wooden drinking cup, plain and worn"
+ },
+ {
+  "name": "Ly thiếc móp",
+  "tier": "Common",
+  "stats": [
+   {
+    "stat": "Máu",
+    "base": 3,
+    "perLevel": 0.3
+   }
+  ],
+  "maxLevel": 10,
+  "art": "a dented tin tankard with a simple handle"
+ },
+ {
+  "name": "Gậy gỗ sồi",
+  "tier": "Common",
+  "stats": [
+   {
+    "stat": "ATK",
+    "base": 3,
+    "perLevel": 0.3
+   }
+  ],
+  "maxLevel": 10,
+  "art": "a plain oak walking staff, bark still on it"
+ },
+ {
+  "name": "Áo choàng vải thô",
+  "tier": "Common",
+  "stats": [
+   {
+    "stat": "Giáp",
+    "base": 1.5,
+    "perLevel": 0.15
+   }
+  ],
+  "maxLevel": 10,
+  "art": "a coarse brown burlap cloak with a rope tie"
+ },
+ {
+  "name": "Ấn đất nung",
+  "tier": "Common",
+  "stats": [
+   {
+    "stat": "Máu",
+    "base": 3,
+    "perLevel": 0.3
+   }
+  ],
+  "maxLevel": 10,
+  "art": "a small terracotta clay seal stamp"
+ },
+ {
+  "name": "Bùa cỏ bện",
+  "tier": "Common",
+  "stats": [
+   {
+    "stat": "Tốc đánh",
+    "base": 3,
+    "perLevel": 0.3
+   }
+  ],
+  "maxLevel": 10,
+  "art": "a charm braided from dry grass and twine"
+ },
+ {
+  "name": "Huy hiệu đồng",
+  "tier": "Common",
+  "stats": [
+   {
+    "stat": "Chí mạng",
+    "base": 1.5,
+    "perLevel": 0.15
+   }
+  ],
+  "maxLevel": 10,
+  "art": "a plain round bronze badge, slightly tarnished"
+ },
+ {
+  "name": "Nhẫn sắt",
+  "tier": "Common",
+  "stats": [
+   {
+    "stat": "ATK",
+    "base": 3,
+    "perLevel": 0.3
+   }
+  ],
+  "maxLevel": 10,
+  "art": "a plain iron band ring, no gem"
+ },
+ {
+  "name": "Chuông đồng nhỏ",
+  "tier": "Common",
+  "stats": [
+   {
+    "stat": "Tốc đánh",
+    "base": 3,
+    "perLevel": 0.3
+   }
+  ],
+  "maxLevel": 10,
+  "art": "a small bronze handbell"
+ },
+ {
+  "name": "Sách da cũ",
+  "tier": "Common",
+  "stats": [
+   {
+    "stat": "ST chí mạng",
+    "base": 3,
+    "perLevel": 0.3
+   }
+  ],
+  "maxLevel": 10,
+  "art": "a worn leather-bound book, pages frayed"
+ },
+ {
+  "name": "Mũ da",
+  "tier": "Common",
+  "stats": [
+   {
+    "stat": "Giáp",
+    "base": 1.5,
+    "perLevel": 0.15
+   }
+  ],
+  "maxLevel": 10,
+  "art": "a simple brown leather cap"
+ },
+ {
+  "name": "Dây chuyền xương",
+  "tier": "Common",
+  "stats": [
+   {
+    "stat": "Máu",
+    "base": 3,
+    "perLevel": 0.3
+   }
+  ],
+  "maxLevel": 10,
+  "art": "a necklace of small bone beads on a cord"
+ },
+ {
+  "name": "Chén bạc",
+  "tier": "Rare",
+  "stats": [
+   {
+    "stat": "Máu",
+    "base": 6,
+    "perLevel": 0.6
+   }
+  ],
+  "maxLevel": 8,
+  "art": "a polished silver goblet with an engraved rim"
+ },
+ {
+  "name": "Trượng khắc rune",
+  "tier": "Rare",
+  "stats": [
+   {
+    "stat": "ATK",
+    "base": 6,
+    "perLevel": 0.6
+   }
+  ],
+  "maxLevel": 8,
+  "art": "a dark wooden staff carved with glowing blue runes"
+ },
+ {
+  "name": "Áo choàng lông sói",
+  "tier": "Rare",
+  "stats": [
+   {
+    "stat": "Giáp",
+    "base": 3,
+    "perLevel": 0.3
+   }
+  ],
+  "maxLevel": 8,
+  "art": "a grey wolf-fur cloak with a silver clasp"
+ },
+ {
+  "name": "Ấn triện bạc",
+  "tier": "Rare",
+  "stats": [
+   {
+    "stat": "ST chí mạng",
+    "base": 6,
+    "perLevel": 0.6
+   }
+  ],
+  "maxLevel": 8,
+  "art": "a silver seal stamp with a scrollwork handle"
+ },
+ {
+  "name": "Bùa mắt quạ",
+  "tier": "Rare",
+  "stats": [
+   {
+    "stat": "Chí mạng",
+    "base": 3,
+    "perLevel": 0.3
+   }
+  ],
+  "maxLevel": 8,
+  "art": "an amulet shaped like a raven's eye, black feather attached"
+ },
+ {
+  "name": "Huy hiệu kỵ sĩ",
+  "tier": "Rare",
+  "stats": [
+   {
+    "stat": "Tốc đánh",
+    "base": 6,
+    "perLevel": 0.6
+   }
+  ],
+  "maxLevel": 8,
+  "art": "a silver winged knight's badge"
+ },
+ {
+  "name": "Đồng hồ cát",
+  "tier": "Rare",
+  "stats": [
+   {
+    "stat": "Tốc đánh",
+    "base": 6,
+    "perLevel": 0.6
+   }
+  ],
+  "maxLevel": 8,
+  "art": "a small hourglass in a silver frame, blue sand inside"
+ },
+ {
+  "name": "Nhẫn hồng ngọc",
+  "tier": "Rare",
+  "stats": [
+   {
+    "stat": "ATK",
+    "base": 6,
+    "perLevel": 0.6
+   }
+  ],
+  "maxLevel": 8,
+  "art": "a silver ring set with a single red ruby"
+ },
+ {
+  "name": "Chén thánh vàng",
+  "tier": "Epic",
+  "stats": [
+   {
+    "stat": "Máu",
+    "base": 10,
+    "perLevel": 1.0
+   },
+   {
+    "stat": "Hút máu",
+    "base": 10,
+    "perLevel": 1.0
+   }
+  ],
+  "maxLevel": 6,
+  "art": "an ornate golden chalice brimming with glowing red liquid"
+ },
+ {
+  "name": "Trượng tinh thể",
+  "tier": "Epic",
+  "stats": [
+   {
+    "stat": "ATK",
+    "base": 10,
+    "perLevel": 1.0
+   },
+   {
+    "stat": "ST chí mạng",
+    "base": 10,
+    "perLevel": 1.0
+   }
+  ],
+  "maxLevel": 6,
+  "art": "a gold staff topped with a large purple crystal, faint glow"
+ },
+ {
+  "name": "Áo choàng bóng tối",
+  "tier": "Epic",
+  "stats": [
+   {
+    "stat": "Giáp",
+    "base": 10,
+    "perLevel": 1.0
+   },
+   {
+    "stat": "Tốc đánh",
+    "base": 10,
+    "perLevel": 1.0
+   }
+  ],
+  "maxLevel": 6,
+  "art": "a black cloak dissolving into purple smoke at the hem"
+ },
+ {
+  "name": "Ấn triện rồng",
+  "tier": "Epic",
+  "stats": [
+   {
+    "stat": "ATK",
+    "base": 10,
+    "perLevel": 1.0
+   },
+   {
+    "stat": "Chí mạng",
+    "base": 10,
+    "perLevel": 1.0
+   }
+  ],
+  "maxLevel": 6,
+  "art": "a gold seal stamp with a coiled dragon handle"
+ },
+ {
+  "name": "Sách cấm",
+  "tier": "Epic",
+  "stats": [
+   {
+    "stat": "ST chí mạng",
+    "base": 10,
+    "perLevel": 1.0
+   },
+   {
+    "stat": "Chí mạng",
+    "base": 10,
+    "perLevel": 1.0
+   }
+  ],
+  "maxLevel": 6,
+  "art": "a chained grimoire with a purple eye on the cover, glowing"
+ },
+ {
+  "name": "Đèn thần",
+  "tier": "Epic",
+  "stats": [
+   {
+    "stat": "Máu",
+    "base": 10,
+    "perLevel": 1.0
+   },
+   {
+    "stat": "Giáp",
+    "base": 10,
+    "perLevel": 1.0
+   }
+  ],
+  "maxLevel": 6,
+  "art": "a golden genie lamp with blue smoke curling from the spout"
+ },
+ {
+  "name": "Vương miện bất tử",
+  "tier": "Legendary",
+  "stats": [
+   {
+    "stat": "Máu",
+    "base": 16,
+    "perLevel": 1.6
+   },
+   {
+    "stat": "Hút máu",
+    "base": 14,
+    "perLevel": 1.4
+   }
+  ],
+  "maxLevel": 5,
+  "art": "a radiant golden crown set with red gems, bright light rays"
+ },
+ {
+  "name": "Trượng hỗn mang",
+  "tier": "Legendary",
+  "stats": [
+   {
+    "stat": "ATK",
+    "base": 16,
+    "perLevel": 1.6
+   },
+   {
+    "stat": "ST chí mạng",
+    "base": 16,
+    "perLevel": 1.6
+   }
+  ],
+  "maxLevel": 5,
+  "art": "a twisted black-and-gold staff with a swirling void orb, radiant"
+ },
+ {
+  "name": "Ấn triện thần",
+  "tier": "Legendary",
+  "stats": [
+   {
+    "stat": "Chí mạng",
+    "base": 14,
+    "perLevel": 1.4
+   },
+   {
+    "stat": "Tốc đánh",
+    "base": 16,
+    "perLevel": 1.6
+   }
+  ],
+  "maxLevel": 5,
+  "art": "a divine gold seal stamp with a winged handle, blazing light"
+ },
+ {
+  "name": "Giáp hoàng kim",
+  "tier": "Legendary",
+  "stats": [
+   {
+    "stat": "Giáp",
+    "base": 14,
+    "perLevel": 1.4
+   },
+   {
+    "stat": "Máu",
+    "base": 16,
+    "perLevel": 1.6
+   }
+  ],
+  "maxLevel": 5,
+  "art": "an ornate golden breastplate with a sunburst emblem, radiant"
+ }
+]

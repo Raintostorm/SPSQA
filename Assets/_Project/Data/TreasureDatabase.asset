@@ -1,0 +1,315 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d96b18be6cb0c47eb8d06e86cd86c8d3, type: 3}
+  m_Name: TreasureDatabase
+  m_EditorClassIdentifier: Assembly-CSharp::Project.Data.TreasureDatabase
+  Items:
+  - Id: item_c1
+    DisplayName: "C\u1ED1c g\u1ED7 s\u1EE9t"
+    Tier: 0
+    MaxLevel: 10
+    Icon: {fileID: 21300000, guid: 5e14d1f512db63ad96d6db87b9997d7d, type: 3}
+    Stats:
+    - Stat: 0
+      Base: 3
+      PerLevel: 0.3
+  - Id: item_c2
+    DisplayName: "Ly thi\u1EBFc m\xF3p"
+    Tier: 0
+    MaxLevel: 10
+    Icon: {fileID: 21300000, guid: 4655e765a60302e8b3f1126d4b79951e, type: 3}
+    Stats:
+    - Stat: 1
+      Base: 3
+      PerLevel: 0.3
+  - Id: item_c3
+    DisplayName: "G\u1EADy g\u1ED7 s\u1ED3i"
+    Tier: 0
+    MaxLevel: 10
+    Icon: {fileID: 21300000, guid: 3db5ab96358f23a5b301ad8073306c84, type: 3}
+    Stats:
+    - Stat: 0
+      Base: 3
+      PerLevel: 0.3
+  - Id: item_c4
+    DisplayName: "\xC1o cho\xE0ng v\u1EA3i th\xF4"
+    Tier: 0
+    MaxLevel: 10
+    Icon: {fileID: 21300000, guid: b455cb7cb4df5a07263446038c455746, type: 3}
+    Stats:
+    - Stat: 6
+      Base: 1.5
+      PerLevel: 0.15
+  - Id: item_c5
+    DisplayName: "\u1EA4n \u0111\u1EA5t nung"
+    Tier: 0
+    MaxLevel: 10
+    Icon: {fileID: 21300000, guid: c2e0ec3bf299999bcaab97e04fede4c3, type: 3}
+    Stats:
+    - Stat: 1
+      Base: 3
+      PerLevel: 0.3
+  - Id: item_c6
+    DisplayName: "B\xF9a c\u1ECF b\u1EC7n"
+    Tier: 0
+    MaxLevel: 10
+    Icon: {fileID: 21300000, guid: 79852fdb5acb2e468f27839d5283194a, type: 3}
+    Stats:
+    - Stat: 2
+      Base: 3
+      PerLevel: 0.3
+  - Id: item_c7
+    DisplayName: "Huy hi\u1EC7u \u0111\u1ED3ng"
+    Tier: 0
+    MaxLevel: 10
+    Icon: {fileID: 21300000, guid: 28254e0d91371f6b1cdf2bc41951bffb, type: 3}
+    Stats:
+    - Stat: 4
+      Base: 1.5
+      PerLevel: 0.15
+  - Id: item_c8
+    DisplayName: "Nh\u1EABn s\u1EAFt"
+    Tier: 0
+    MaxLevel: 10
+    Icon: {fileID: 21300000, guid: 76e21bf142c47f37ce54569bd8c81039, type: 3}
+    Stats:
+    - Stat: 0
+      Base: 3
+      PerLevel: 0.3
+  - Id: item_c9
+    DisplayName: "Chu\xF4ng \u0111\u1ED3ng nh\u1ECF"
+    Tier: 0
+    MaxLevel: 10
+    Icon: {fileID: 21300000, guid: 7bb32a6c7358736a9365bc2d5c043375, type: 3}
+    Stats:
+    - Stat: 2
+      Base: 3
+      PerLevel: 0.3
+  - Id: item_c10
+    DisplayName: "S\xE1ch da c\u0169"
+    Tier: 0
+    MaxLevel: 10
+    Icon: {fileID: 21300000, guid: 6e93e4a7a087aebb932d496112558140, type: 3}
+    Stats:
+    - Stat: 3
+      Base: 3
+      PerLevel: 0.3
+  - Id: item_c11
+    DisplayName: "M\u0169 da"
+    Tier: 0
+    MaxLevel: 10
+    Icon: {fileID: 21300000, guid: 0c6b7377d002193f3ff679cead8943ca, type: 3}
+    Stats:
+    - Stat: 6
+      Base: 1.5
+      PerLevel: 0.15
+  - Id: item_c12
+    DisplayName: "D\xE2y chuy\u1EC1n x\u01B0\u01A1ng"
+    Tier: 0
+    MaxLevel: 10
+    Icon: {fileID: 21300000, guid: 79da2352435661cbb533e647a952f45b, type: 3}
+    Stats:
+    - Stat: 1
+      Base: 3
+      PerLevel: 0.3
+  - Id: item_r1
+    DisplayName: "Ch\xE9n b\u1EA1c"
+    Tier: 1
+    MaxLevel: 8
+    Icon: {fileID: 21300000, guid: 599c8a3d00cfa47fca7a6c542545f45f, type: 3}
+    Stats:
+    - Stat: 1
+      Base: 6
+      PerLevel: 0.6
+  - Id: item_r2
+    DisplayName: "Tr\u01B0\u1EE3ng kh\u1EAFc rune"
+    Tier: 1
+    MaxLevel: 8
+    Icon: {fileID: 21300000, guid: f0053b6b307651751b8666c822b7cb55, type: 3}
+    Stats:
+    - Stat: 0
+      Base: 6
+      PerLevel: 0.6
+  - Id: item_r3
+    DisplayName: "\xC1o cho\xE0ng l\xF4ng s\xF3i"
+    Tier: 1
+    MaxLevel: 8
+    Icon: {fileID: 21300000, guid: a0e9fffdb25f19a4f4f8162208e48159, type: 3}
+    Stats:
+    - Stat: 6
+      Base: 3
+      PerLevel: 0.3
+  - Id: item_r4
+    DisplayName: "\u1EA4n tri\u1EC7n b\u1EA1c"
+    Tier: 1
+    MaxLevel: 8
+    Icon: {fileID: 21300000, guid: b276914e06d8169ba5573e2680d79066, type: 3}
+    Stats:
+    - Stat: 3
+      Base: 6
+      PerLevel: 0.6
+  - Id: item_r5
+    DisplayName: "B\xF9a m\u1EAFt qu\u1EA1"
+    Tier: 1
+    MaxLevel: 8
+    Icon: {fileID: 21300000, guid: 62830d22b2079eecd4037ff2875dc2eb, type: 3}
+    Stats:
+    - Stat: 4
+      Base: 3
+      PerLevel: 0.3
+  - Id: item_r6
+    DisplayName: "Huy hi\u1EC7u k\u1EF5 s\u0129"
+    Tier: 1
+    MaxLevel: 8
+    Icon: {fileID: 21300000, guid: bfb3a2cd38deb89f20b1b717a0a59794, type: 3}
+    Stats:
+    - Stat: 2
+      Base: 6
+      PerLevel: 0.6
+  - Id: item_r7
+    DisplayName: "\u0110\u1ED3ng h\u1ED3 c\xE1t"
+    Tier: 1
+    MaxLevel: 8
+    Icon: {fileID: 21300000, guid: d616b89cd3530d812e8c4774d46cf46d, type: 3}
+    Stats:
+    - Stat: 2
+      Base: 6
+      PerLevel: 0.6
+  - Id: item_r8
+    DisplayName: "Nh\u1EABn h\u1ED3ng ng\u1ECDc"
+    Tier: 1
+    MaxLevel: 8
+    Icon: {fileID: 21300000, guid: 066a36c9a539e9f6196f0186a21ba4de, type: 3}
+    Stats:
+    - Stat: 0
+      Base: 6
+      PerLevel: 0.6
+  - Id: item_e1
+    DisplayName: "Ch\xE9n th\xE1nh v\xE0ng"
+    Tier: 2
+    MaxLevel: 6
+    Icon: {fileID: 21300000, guid: 6b0805ae79d3aee5e897b1dc89ad0fda, type: 3}
+    Stats:
+    - Stat: 1
+      Base: 10
+      PerLevel: 1
+    - Stat: 5
+      Base: 10
+      PerLevel: 1
+  - Id: item_e2
+    DisplayName: "Tr\u01B0\u1EE3ng tinh th\u1EC3"
+    Tier: 2
+    MaxLevel: 6
+    Icon: {fileID: 21300000, guid: a8b0bb212e1d0ee1de7c7f5c6a5c106f, type: 3}
+    Stats:
+    - Stat: 0
+      Base: 10
+      PerLevel: 1
+    - Stat: 3
+      Base: 10
+      PerLevel: 1
+  - Id: item_e3
+    DisplayName: "\xC1o cho\xE0ng b\xF3ng t\u1ED1i"
+    Tier: 2
+    MaxLevel: 6
+    Icon: {fileID: 21300000, guid: 20a759eff150d2e96409328ce0640055, type: 3}
+    Stats:
+    - Stat: 6
+      Base: 10
+      PerLevel: 1
+    - Stat: 2
+      Base: 10
+      PerLevel: 1
+  - Id: item_e4
+    DisplayName: "\u1EA4n tri\u1EC7n r\u1ED3ng"
+    Tier: 2
+    MaxLevel: 6
+    Icon: {fileID: 21300000, guid: da659fe6810257317329c6724cbb1240, type: 3}
+    Stats:
+    - Stat: 0
+      Base: 10
+      PerLevel: 1
+    - Stat: 4
+      Base: 10
+      PerLevel: 1
+  - Id: item_e5
+    DisplayName: "S\xE1ch c\u1EA5m"
+    Tier: 2
+    MaxLevel: 6
+    Icon: {fileID: 21300000, guid: cf629d75b980cc90f9d185c68487be0f, type: 3}
+    Stats:
+    - Stat: 3
+      Base: 10
+      PerLevel: 1
+    - Stat: 4
+      Base: 10
+      PerLevel: 1
+  - Id: item_e6
+    DisplayName: "\u0110\xE8n th\u1EA7n"
+    Tier: 2
+    MaxLevel: 6
+    Icon: {fileID: 21300000, guid: ef318ad7698ec8610e4f5b0cfa22259e, type: 3}
+    Stats:
+    - Stat: 1
+      Base: 10
+      PerLevel: 1
+    - Stat: 6
+      Base: 10
+      PerLevel: 1
+  - Id: item_l1
+    DisplayName: "V\u01B0\u01A1ng mi\u1EC7n b\u1EA5t t\u1EED"
+    Tier: 3
+    MaxLevel: 5
+    Icon: {fileID: 21300000, guid: 4431962592aa1765ed61eade4ff85656, type: 3}
+    Stats:
+    - Stat: 1
+      Base: 16
+      PerLevel: 1.6
+    - Stat: 5
+      Base: 14
+      PerLevel: 1.4
+  - Id: item_l2
+    DisplayName: "Tr\u01B0\u1EE3ng h\u1ED7n mang"
+    Tier: 3
+    MaxLevel: 5
+    Icon: {fileID: 21300000, guid: e00838dc3b949e7cace76412149b1b7d, type: 3}
+    Stats:
+    - Stat: 0
+      Base: 16
+      PerLevel: 1.6
+    - Stat: 3
+      Base: 16
+      PerLevel: 1.6
+  - Id: item_l3
+    DisplayName: "\u1EA4n tri\u1EC7n th\u1EA7n"
+    Tier: 3
+    MaxLevel: 5
+    Icon: {fileID: 21300000, guid: dbbba0089046de9d12ffa388a7943f98, type: 3}
+    Stats:
+    - Stat: 4
+      Base: 14
+      PerLevel: 1.4
+    - Stat: 2
+      Base: 16
+      PerLevel: 1.6
+  - Id: item_l4
+    DisplayName: "Gi\xE1p ho\xE0ng kim"
+    Tier: 3
+    MaxLevel: 5
+    Icon: {fileID: 21300000, guid: 7774389a78d5b2000e35b1a0a343212e, type: 3}
+    Stats:
+    - Stat: 6
+      Base: 14
+      PerLevel: 1.4
+    - Stat: 1
+      Base: 16
+      PerLevel: 1.6

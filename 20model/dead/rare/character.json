@@ -1,0 +1,299 @@
+{
+  "id": "dead-rare-spirit-wisp",
+  "name": "Spirit Wisp",
+  "race": "dead",
+  "rank": "rare",
+  "combat": "ranged",
+  "weapon": "psychic-blast",
+  "status": "user_approved",
+  "reference_height": 224,
+  "sources": [
+    "assets/sheet-chibi-v2.png",
+    "assets/attack-strike-chibi-v2.png"
+  ],
+  "animations": {
+    "idle": {
+      "poses": [
+        {
+          "rect": [
+            0,
+            0,
+            390,
+            257
+          ],
+          "anchor_x": 260,
+          "anchor_y": 242,
+          "source": 0
+        },
+        {
+          "rect": [
+            390,
+            0,
+            390,
+            257
+          ],
+          "anchor_x": 630,
+          "anchor_y": 244,
+          "source": 0
+        },
+        {
+          "rect": [
+            780,
+            0,
+            405,
+            257
+          ],
+          "anchor_x": 1015,
+          "anchor_y": 242,
+          "source": 0
+        },
+        {
+          "rect": [
+            1185,
+            0,
+            351,
+            257
+          ],
+          "anchor_x": 1395,
+          "anchor_y": 241,
+          "source": 0
+        }
+      ],
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "frame_durations": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "duration_seconds": 1,
+      "loop": true
+    },
+    "walk": {
+      "poses": [
+        {
+          "rect": [
+            0,
+            257,
+            390,
+            249
+          ],
+          "anchor_x": 260,
+          "anchor_y": 496,
+          "source": 0
+        },
+        {
+          "rect": [
+            390,
+            257,
+            390,
+            249
+          ],
+          "anchor_x": 630,
+          "anchor_y": 489,
+          "source": 0
+        },
+        {
+          "rect": [
+            780,
+            257,
+            405,
+            249
+          ],
+          "anchor_x": 1015,
+          "anchor_y": 495,
+          "source": 0
+        },
+        {
+          "rect": [
+            1185,
+            257,
+            351,
+            249
+          ],
+          "anchor_x": 1395,
+          "anchor_y": 494,
+          "source": 0
+        }
+      ],
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "frame_durations": [
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "duration_seconds": 0.8,
+      "loop": true
+    },
+    "attack": {
+      "poses": [
+        {
+          "rect": [
+            0,
+            506,
+            390,
+            248
+          ],
+          "anchor_x": 260,
+          "anchor_y": 747,
+          "source": 0
+        },
+        {
+          "rect": [
+            390,
+            506,
+            390,
+            248
+          ],
+          "anchor_x": 630,
+          "anchor_y": 747,
+          "source": 0
+        },
+        {
+          "rect": [
+            80,
+            70,
+            1255,
+            1030
+          ],
+          "anchor_x": 880,
+          "anchor_y": 1092,
+          "source": 1,
+          "normalization": 0.224,
+          "release_palm": [
+            1255,
+            790
+          ]
+        },
+        {
+          "rect": [
+            1185,
+            506,
+            351,
+            248
+          ],
+          "anchor_x": 1395,
+          "anchor_y": 747,
+          "source": 0
+        }
+      ],
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "frame_durations": [
+        0.2,
+        0.32,
+        0.1,
+        0.38
+      ],
+      "duration_seconds": 1,
+      "loop": true
+    },
+    "dead": {
+      "poses": [
+        {
+          "rect": [
+            0,
+            754,
+            390,
+            270
+          ],
+          "anchor_x": 260,
+          "anchor_y": 991,
+          "source": 0
+        },
+        {
+          "rect": [
+            390,
+            754,
+            390,
+            270
+          ],
+          "anchor_x": 630,
+          "anchor_y": 990,
+          "source": 0
+        },
+        {
+          "rect": [
+            780,
+            754,
+            405,
+            270
+          ],
+          "anchor_x": 1015,
+          "anchor_y": 979,
+          "source": 0
+        },
+        {
+          "rect": [
+            1185,
+            754,
+            351,
+            270
+          ],
+          "anchor_x": 1395,
+          "anchor_y": 991,
+          "source": 0
+        }
+      ],
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "frame_durations": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "duration_seconds": 1,
+      "loop": false
+    }
+  },
+  "generation_mode": "built-in image_gen",
+  "notes": [
+    "Chibi revision 2 design and motion accepted by user on 06/10/2026.",
+    "Original v1 manifest and source art retained.",
+    "Not integrated in Unity.",
+    "Actual anatomy inspected separately from playback frame-order checks.",
+    "Near right casting arm crosses chest; dedicated release sprite. Glide has no legs."
+  ],
+  "projectile": {
+    "palm_source": [
+      1255,
+      790
+    ],
+    "release_pose": 3,
+    "speed_heights_per_second": 4,
+    "lifetime": 0.7
+  },
+  "revision": "chibi-v2",
+  "sizing_policy": {
+    "version": "rank5-v1",
+    "common_baseline_px": 80,
+    "rank_multiplier": 1.05,
+    "target_idle_height_px": 84.0,
+    "metric": "idle1 silhouette alpha>80/255 including headgear; excluding transparent margins and hover offset",
+    "reference_idle_visible_height_px": 222,
+    "reference_idle_pose_normalization": 1,
+    "calibration_factor": 1.009009009009009,
+    "render_reference_height": 222
+  },
+  "default_preview_height_px": 84.0
+}

@@ -163,6 +163,21 @@ root
 
 Hit và dead **dùng chung cho cả roster** — không phụ thuộc hình dáng lính.
 
+### Di chuyển: có, nhưng trượt
+
+Lính **có** di chuyển tới địch. Nhưng **không có clip walk** — nó trượt,
+và clip `idle` vẫn chạy trong lúc trượt. Nhịp nhún của idle đủ để bước đi
+không chết cứng.
+
+Hệ quả:
+
+- Vẫn chỉ **2 clip**, bảng trên không đổi.
+- `MoveSpeed` trong `UnitDefinition` **giữ lại**, có dùng thật.
+- `UnitBrain` ~180 dòng (bản có di chuyển), không phải ~90.
+- `SpriteUnitVisual.SetMoving()` cố ý luôn gọi `PlayIdle()`. Đây là
+  quyết định, không phải chưa làm xong. Khi nào có clip walk thì sửa
+  đúng một dòng đó.
+
 ### Spine 3.8
 
 Runtime `spine-unity 3.8.0` lấy từ repo cũ, **compile sạch trên Unity 6.4**
@@ -300,10 +315,6 @@ Mô phỏng 200.000 lượt bằng đúng thuật toán (kể cả chia số ngu
 
 ## 11. Còn treo, chưa quyết
 
-- **Lính có di chuyển không?** Quyết định này chặn `UnitBrain` ở M3.
-  Nhân vật không có chân → nghiêng về **đứng yên**, nhưng chưa xác nhận.
-  Nếu đứng yên: bỏ `MoveSpeed` khỏi `UnitDefinition`, `UnitBrain` ~90 dòng
-  thay vì ~180.
 - **Chỉ số thật**: đang dùng placeholder **200 HP / 30 ATK**.
   Mốc khuyến nghị nếu phải tự đặt: **×3 mỗi bậc** — khớp tỉ lệ evolution
   3-con-thành-1. Đã tra mạng: SpinSquad (tên cũ **Lucky Offense**) và
@@ -311,3 +322,41 @@ Mô phỏng 200.000 lượt bằng đúng thuật toán (kể cả chia số ngu
 - **"Bàn đầy" định nghĩa chính xác** — xem mục 5.
 - **16 ô × 3 lính = 48 lính/phe.** Con số lý thuyết, kiểm chứng ở M3–M4.
 - **Có bao nhiêu Mythic** — chưa chốt.
+
+---
+
+## 12. Màn hình: NGANG (chốt 2026-10-02)
+
+Trước đây tài liệu ghi *"mobile portrait, mốc kiểm tra iPhone X 1125×2436"*.
+**Đã đổi sang ngang 1920×1080.**
+
+**Vì sao đổi** — đây là ràng buộc toán, không phải gu:
+
+| | Màn rộng | Hai lưới cạnh nhau cần | |
+|---|---|---|---|
+| Dọc 1125×2436 | 4.62 đơn vị | 11.0 | **không vừa** |
+| Ngang 1920×1080 | 14.22 đơn vị | 11.0 | vừa, chiếm 77% |
+
+Ép hai lưới vào màn dọc thì `cellSize` còn 0.53, lính cao 0.38 đơn vị —
+dưới ngưỡng đọc được mặt.
+
+Mà xếp trên–dưới thì hai phe nhìn nhau theo chiều dọc trong khi sprite vẽ
+nhìn ngang. Gượng.
+
+**Bố cục chốt** (camera orthographic size **4.0**):
+
+```
+Ally   cot x  -5.0 -4.0 -3.0 -2.0        origin (-5.0, -1.5)
+Enemy  cot x  +2.0 +3.0 +4.0 +5.0        origin (+2.0, -1.5)
+hang y        -1.5 -0.5 +0.5 +1.5
+khoang giua hai luoi: 3.0 don vi
+```
+
+Thân lính cao **105 px** trên màn 1080 — gấp gần ba so với bản dọc.
+
+**Đổi lại được:** lệnh `SpinSquad → Dựng scene — màn DỌC` vẫn còn, dựng lại
+bố cục cũ trong một bấm. Camera, hai `Origin` đều tự đổi theo.
+
+**Hệ quả chưa làm:** `ProjectSettings` đã khoá hướng ngang, nhưng UI của M5
+sẽ phải thiết kế theo khung ngang. Quyết sớm ở đây để khỏi dựng UI hai lần.
+

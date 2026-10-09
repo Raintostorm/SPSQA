@@ -1,0 +1,234 @@
+{
+  "id": "monster-common-web-spider",
+  "race": "monster",
+  "rank": "common",
+  "combat": "ranged",
+  "weapon": "web-spit",
+  "status": "appearance_revision_pending_user_review",
+  "sheet": "assets/web-spider-sheet-v1-simple-eyes.png",
+  "reference_height": 215,
+  "animations": {
+    "idle": {
+      "poses": [
+        {
+          "rect": [
+            26,
+            75,
+            311,
+            215
+          ],
+          "anchor_x": 170,
+          "anchor_y": 290
+        },
+        {
+          "rect": [
+            385,
+            75,
+            311,
+            215
+          ],
+          "anchor_x": 529,
+          "anchor_y": 290
+        },
+        {
+          "rect": [
+            744,
+            75,
+            312,
+            215
+          ],
+          "anchor_x": 888,
+          "anchor_y": 290
+        },
+        {
+          "rect": [
+            1103,
+            75,
+            311,
+            215
+          ],
+          "anchor_x": 1247,
+          "anchor_y": 290
+        }
+      ],
+      "duration_seconds": 1,
+      "loop": true
+    },
+    "walk": {
+      "poses": [
+        {
+          "rect": [
+            26,
+            342,
+            328,
+            210
+          ],
+          "anchor_x": 170,
+          "anchor_y": 553
+        },
+        {
+          "rect": [
+            380,
+            341,
+            314,
+            210
+          ],
+          "anchor_x": 529,
+          "anchor_y": 553
+        },
+        {
+          "rect": [
+            737,
+            338,
+            321,
+            215
+          ],
+          "anchor_x": 888,
+          "anchor_y": 553
+        },
+        {
+          "rect": [
+            1097,
+            344,
+            312,
+            206
+          ],
+          "anchor_x": 1247,
+          "anchor_y": 553
+        }
+      ],
+      "duration_seconds": 0.8,
+      "loop": true
+    },
+    "attack": {
+      "poses": [
+        {
+          "rect": [
+            23,
+            618,
+            327,
+            201
+          ],
+          "anchor_x": 170,
+          "anchor_y": 819
+        },
+        {
+          "rect": [
+            374,
+            634,
+            332,
+            184
+          ],
+          "anchor_x": 529,
+          "anchor_y": 819
+        },
+        {
+          "rect": [
+            731,
+            613,
+            350,
+            204
+          ],
+          "anchor_x": 888,
+          "anchor_y": 819
+        },
+        {
+          "rect": [
+            1104,
+            611,
+            309,
+            208
+          ],
+          "anchor_x": 1247,
+          "anchor_y": 819
+        }
+      ],
+      "duration_seconds": 1,
+      "loop": true,
+      "frame_durations_seconds": [
+        0.18,
+        0.32,
+        0.15,
+        0.35
+      ],
+      "projectile": {
+        "kind": "web-bolt",
+        "source_mouth": [
+          1020,
+          732
+        ],
+        "emit_on_frame": 3,
+        "speed_character_heights_per_second": 4,
+        "life_seconds": 0.55
+      }
+    },
+    "dead": {
+      "poses": [
+        {
+          "rect": [
+            25,
+            866,
+            325,
+            200
+          ],
+          "anchor_x": 170,
+          "anchor_y": 1066
+        },
+        {
+          "rect": [
+            377,
+            877,
+            331,
+            180
+          ],
+          "anchor_x": 529,
+          "anchor_y": 1066
+        },
+        {
+          "rect": [
+            731,
+            905,
+            347,
+            151
+          ],
+          "anchor_x": 888,
+          "anchor_y": 1066
+        },
+        {
+          "rect": [
+            1098,
+            912,
+            322,
+            140
+          ],
+          "anchor_x": 1247,
+          "anchor_y": 1066
+        }
+      ],
+      "duration_seconds": 1,
+      "loop": false
+    }
+  },
+  "notes": [
+    "Eight-leg spider concept; far-side legs are partly occluded in this three-quarter view.",
+    "Leg occlusion prevents definitive verification of all eight root connections from sheet alone; motion review pending.",
+    "Ranged projectile emitted from mouth at attack frame3; preview has no hit simulation.",
+    "Not tested in Unity.",
+    "Simple-eye revision requested by user; pose anatomy and near/far leg identity retained. Original sources preserved. Revision motion awaiting user review."
+  ],
+  "acceptance_note": "User: con này được rồi đó, 2026-10-05",
+  "revision": "-simple-eyes-v1",
+  "eye_style": "simple solid dark oval, no sclera/iris/highlight/glow; closed eyes single line",
+  "sizing_policy": {
+    "version": "rank5-v1",
+    "common_baseline_px": 80,
+    "rank_multiplier": 1.0,
+    "target_idle_height_px": 80.0,
+    "metric": "idle1 silhouette alpha>80/255 including headgear; excluding transparent margins and hover offset",
+    "reference_idle_visible_height_px": 215,
+    "reference_idle_pose_normalization": 1,
+    "calibration_factor": 1.0,
+    "render_reference_height": 215
+  },
+  "default_preview_height_px": 80.0
+}

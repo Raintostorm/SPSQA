@@ -1,0 +1,125 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b78605722048e43e593de427ba136363, type: 3}
+  m_Name: Anim_dead_common
+  m_EditorClassIdentifier: Assembly-CSharp::Project.Data.UnitAnimationSet
+  Idle:
+    Frames:
+    - {fileID: 21300000, guid: 676febbd737fd79d93cc932c16504344, type: 3}
+    - {fileID: 21300000, guid: fb71ba417b7db1552eb133ff3608a52f, type: 3}
+    - {fileID: 21300000, guid: d83a487aec3885a319e13c1ff1e749b6, type: 3}
+    - {fileID: 21300000, guid: ab61a98064d5c2c25775cda2abfd1b60, type: 3}
+    - {fileID: 21300000, guid: 069ac8caf3c8a83645b7e39b4e44a5a6, type: 3}
+    - {fileID: 21300000, guid: d66edf3ea195b77b3403c0831449d961, type: 3}
+    - {fileID: 21300000, guid: b994d56e592ad8fee06c565003a434ba, type: 3}
+    - {fileID: 21300000, guid: 50ac8bf1de14f5d2fd261b45271d0a9f, type: 3}
+    Durations: [0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125]
+    Sequence: 0000000001000000020000000300000004000000050000000600000007000000
+    Loop: 1
+    UseExplicitPlayback: 1
+    PingPong: 0
+  Walk:
+    Frames:
+    - {fileID: 21300000, guid: 1ad0fc8628bcc64dd83aecf3d6adffc6, type: 3}
+    - {fileID: 21300000, guid: 4c9e51b41dd4601fe7ec79ed9a8fa1c5, type: 3}
+    - {fileID: 21300000, guid: cc21328be737e91fb9215c2137ecc7a6, type: 3}
+    - {fileID: 21300000, guid: 324bef752fc9e2cdc19857846f0fdd3e, type: 3}
+    - {fileID: 21300000, guid: 5e23a097d8f314538c7a778c20651fbd, type: 3}
+    - {fileID: 21300000, guid: 131ee326b409280cdc149ae6b49458b4, type: 3}
+    - {fileID: 21300000, guid: dd541a8a35edc0c046429298fae1bbcc, type: 3}
+    - {fileID: 21300000, guid: 8b1da8e355ce054ee26e53cc81e9b1f0, type: 3}
+    Durations: [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1]
+    Sequence: 0000000001000000020000000300000004000000050000000600000007000000
+    Loop: 1
+    UseExplicitPlayback: 1
+    PingPong: 0
+  Attack:
+    Frames:
+    - {fileID: 21300000, guid: ecc889e1713f6ce1ef06d90f632db819, type: 3}
+    - {fileID: 21300000, guid: a4e0d9caa81c96ec9ca3bdc258ab6f34, type: 3}
+    - {fileID: 21300000, guid: 1fa95e3e2f5442bee8967bba47fa6a95, type: 3}
+    - {fileID: 21300000, guid: c9a12aa7871640e4f0ae84ee8118a21c, type: 3}
+    - {fileID: 21300000, guid: eb51ab2758473e1db6aeb773b21e8f73, type: 3}
+    - {fileID: 21300000, guid: 1f49b3561bd0838fc13598e3808d8bd8, type: 3}
+    - {fileID: 21300000, guid: b142e6fd4a35d5535cd38ac8dc005422, type: 3}
+    - {fileID: 21300000, guid: b86dd52b08de1c268cbafb0d19833be4, type: 3}
+    Durations: [0.1, 0.12, 0.12, 0.1, 0.08, 0.12, 0.16, 0.2]
+    Sequence: 0000000001000000020000000300000004000000050000000600000007000000
+    Loop: 1
+  Dead:
+    Frames:
+    - {fileID: 21300000, guid: 4671772fab48d540c6af56c62230e599, type: 3}
+    - {fileID: 21300000, guid: 4564fe9d28a822dbc1a80588b0578bed, type: 3}
+    - {fileID: 21300000, guid: d8ce7e93296f37df9baf6ced0a5a534f, type: 3}
+    - {fileID: 21300000, guid: dd4cd5ffa769fdb58d1136f02cff21c6, type: 3}
+    - {fileID: 21300000, guid: 30b6913afed8eb44313281e8f1d07cc2, type: 3}
+    - {fileID: 21300000, guid: bead7939b0bc4fd5d6a82b73e643512a, type: 3}
+    - {fileID: 21300000, guid: 8a8eb22f5c066bc423240b3c74787203, type: 3}
+    - {fileID: 21300000, guid: c08d667b5fe636d80a2764c82cca77fc, type: 3}
+    Durations: [0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125]
+    Sequence: 0000000001000000020000000300000004000000050000000600000007000000
+    Loop: 0
+  Skill:
+    Frames: []
+    Durations: []
+    Sequence: 
+    Loop: 0
+  WalkVfx:
+    Frames:
+    - {fileID: 21300000, guid: 8433a47173353be0596c7b29b6c26971, type: 3}
+    - {fileID: 21300000, guid: 2b517417dd37bf19a94ebeefa015bdb7, type: 3}
+    - {fileID: 21300000, guid: aa07f9c403df616cb1a9ddf24db0df78, type: 3}
+    - {fileID: 21300000, guid: 544ecfc986016355b4f0d926a4e72977, type: 3}
+    - {fileID: 21300000, guid: 5a69429bd6fef7cb06c7746d796d3d30, type: 3}
+    - {fileID: 21300000, guid: 8e358b0638128982ad626d0276fdd08d, type: 3}
+    - {fileID: 21300000, guid: 02c97a743151412f78afe0f743f53ae4, type: 3}
+    - {fileID: 21300000, guid: c7434228b2eb67abbdee1fd615974d29, type: 3}
+    Durations: [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1]
+    Sequence: 0000000001000000020000000300000004000000050000000600000007000000
+    Loop: 1
+  AttackVfx:
+    Frames:
+    - {fileID: 21300000, guid: 0a35618314e6ce75329d0c64c14d42ac, type: 3}
+    - {fileID: 21300000, guid: 87d8bea2b8c4fb25d1526d12c76f86fd, type: 3}
+    - {fileID: 21300000, guid: f892617d70aef47ba22070092000bd4c, type: 3}
+    - {fileID: 21300000, guid: 232aa0bbb01b99363ffe813ddaa9c98d, type: 3}
+    - {fileID: 21300000, guid: 7b5673d34ec746b762adbe884a39ce60, type: 3}
+    - {fileID: 21300000, guid: 1cc75be1ac070b0a2ed17e6a8e255335, type: 3}
+    - {fileID: 21300000, guid: 0d5d5cc3dab485773f8a82ddfdd7ba03, type: 3}
+    - {fileID: 21300000, guid: a6ef606fa1c91bcf9d55056d90cff7b9, type: 3}
+    Durations: [0.1, 0.12, 0.12, 0.1, 0.08, 0.12, 0.16, 0.2]
+    Sequence: 0000000001000000020000000300000004000000050000000600000007000000
+    Loop: 0
+  DeathVfx:
+    Frames:
+    - {fileID: 21300000, guid: 30242719192887604deb052541df4054, type: 3}
+    - {fileID: 21300000, guid: fdc3861632984d3ca7c0998425dbab72, type: 3}
+    - {fileID: 21300000, guid: bd4f70a4ca1240e949278808c8423cd5, type: 3}
+    - {fileID: 21300000, guid: 790fa75e2b46b2926ad35a85d1e91dce, type: 3}
+    - {fileID: 21300000, guid: ee0d4372c76462fa80a0c1c6b0b949ca, type: 3}
+    - {fileID: 21300000, guid: 1761e3651497bf255b91a76981815bb1, type: 3}
+    - {fileID: 21300000, guid: 02fd60c08f4025fbcf4334b8a5a621d8, type: 3}
+    - {fileID: 21300000, guid: 21640519677d6cff8bc0caf58c1fbcff, type: 3}
+    Durations: [0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125]
+    Sequence: 0000000001000000020000000300000004000000050000000600000007000000
+    Loop: 0
+  WalkVfxOffset: {x: 0.0, y: -0.02}
+  AttackVfxOffset: {x: 0.23, y: 0.32}
+  DeathVfxOffset: {x: 0.0, y: 0.05}
+  WalkVfxFootSpacing: 0.09
+  WalkVfxScale: 0.24
+  AttackVfxScale: 0.36
+  DeathVfxScale: 0.38
+  WalkVfxAlpha: 0.25
+  AttackVfxAlpha: 0.65
+  DeathVfxAlpha: 0.55
+  ImpactStep: 4

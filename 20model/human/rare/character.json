@@ -1,0 +1,334 @@
+{
+  "id": "human-rare-lion-spear-knight",
+  "name": "Lion Spear Knight",
+  "race": "human",
+  "rank": "rare",
+  "combat": "melee",
+  "weapon": "spear",
+  "status": "design_and_attack_user_approved_new_motion_pending_review",
+  "reference_height": 436,
+  "sources": [
+    "assets/states.png",
+    "assets/attack.png",
+    "assets/dead.png"
+  ],
+  "animations": {
+    "idle": {
+      "poses": [
+        {
+          "rect": [
+            0,
+            0,
+            400,
+            360
+          ],
+          "anchor_x": 150,
+          "anchor_y": 345,
+          "source": 0,
+          "normalization": 1.468013468013468
+        },
+        {
+          "rect": [
+            400,
+            0,
+            380,
+            360
+          ],
+          "anchor_x": 535,
+          "anchor_y": 345,
+          "source": 0,
+          "normalization": 1.468013468013468
+        },
+        {
+          "rect": [
+            780,
+            0,
+            385,
+            360
+          ],
+          "anchor_x": 910,
+          "anchor_y": 345,
+          "source": 0,
+          "normalization": 1.468013468013468
+        },
+        {
+          "rect": [
+            1165,
+            0,
+            371,
+            360
+          ],
+          "anchor_x": 1290,
+          "anchor_y": 345,
+          "source": 0,
+          "normalization": 1.468013468013468
+        }
+      ],
+      "duration_seconds": 1,
+      "frame_durations": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "loop": true,
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "status": "pending_user_review"
+    },
+    "walk": {
+      "poses": [
+        {
+          "rect": [
+            0,
+            360,
+            400,
+            326
+          ],
+          "anchor_x": 150,
+          "anchor_y": 673,
+          "source": 0,
+          "normalization": 1.468013468013468
+        },
+        {
+          "rect": [
+            400,
+            360,
+            380,
+            326
+          ],
+          "anchor_x": 535,
+          "anchor_y": 673,
+          "source": 0,
+          "normalization": 1.468013468013468
+        },
+        {
+          "rect": [
+            780,
+            360,
+            385,
+            326
+          ],
+          "anchor_x": 910,
+          "anchor_y": 673,
+          "source": 0,
+          "normalization": 1.468013468013468
+        },
+        {
+          "rect": [
+            1165,
+            360,
+            371,
+            326
+          ],
+          "anchor_x": 1290,
+          "anchor_y": 673,
+          "source": 0,
+          "normalization": 1.468013468013468
+        }
+      ],
+      "duration_seconds": 0.8,
+      "frame_durations": [
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "loop": true,
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "status": "pending_user_review"
+    },
+    "attack": {
+      "poses": [
+        {
+          "rect": [
+            75,
+            35,
+            719,
+            445
+          ],
+          "anchor_x": 272,
+          "anchor_y": 476,
+          "source": 1
+        },
+        {
+          "rect": [
+            875,
+            65,
+            635,
+            415
+          ],
+          "anchor_x": 1085,
+          "anchor_y": 476,
+          "source": 1
+        },
+        {
+          "rect": [
+            30,
+            540,
+            918,
+            425
+          ],
+          "parts": [
+            [
+              30,
+              540,
+              870,
+              425
+            ],
+            [
+              900,
+              700,
+              48,
+              65
+            ]
+          ],
+          "anchor_x": 280,
+          "anchor_y": 962,
+          "source": 1
+        },
+        {
+          "rect": [
+            920,
+            546,
+            600,
+            423
+          ],
+          "parts": [
+            [
+              920,
+              546,
+              600,
+              154
+            ],
+            [
+              945,
+              700,
+              575,
+              65
+            ],
+            [
+              920,
+              765,
+              600,
+              204
+            ]
+          ],
+          "anchor_x": 1110,
+          "anchor_y": 962,
+          "source": 1
+        }
+      ],
+      "duration_seconds": 1,
+      "frame_durations": [
+        0.2,
+        0.32,
+        0.1,
+        0.38
+      ],
+      "loop": true,
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "status": "user_approved"
+    },
+    "dead": {
+      "poses": [
+        {
+          "rect": [
+            0,
+            0,
+            790,
+            550
+          ],
+          "anchor_x": 300,
+          "anchor_y": 520,
+          "source": 2,
+          "normalization": 1.117948717948718
+        },
+        {
+          "rect": [
+            790,
+            0,
+            746,
+            550
+          ],
+          "anchor_x": 1090,
+          "anchor_y": 520,
+          "source": 2,
+          "normalization": 1.117948717948718
+        },
+        {
+          "rect": [
+            0,
+            650,
+            790,
+            374
+          ],
+          "anchor_x": 300,
+          "anchor_y": 934,
+          "source": 2,
+          "normalization": 1.117948717948718
+        },
+        {
+          "rect": [
+            790,
+            650,
+            746,
+            374
+          ],
+          "anchor_x": 1090,
+          "anchor_y": 934,
+          "source": 2,
+          "normalization": 1.117948717948718
+        }
+      ],
+      "duration_seconds": 1,
+      "frame_durations": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "loop": false,
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "status": "pending_user_review"
+    }
+  },
+  "generation_mode": "built-in image_gen",
+  "notes": [
+    "Design and attack approved by user 2026-10-05; idle/walk/dead awaiting user motion review.",
+    "Walk1 cream rear/navy front;2 cream raised/navy vertical support;3 cream front/navy rear;4 cream vertical support/navy raised behind. Right cream remains foreground.",
+    "Preview uses reduced-resolution embedded copies; original PNG assets retained.",
+    "Not integrated/tested in Unity."
+  ],
+  "sizing_policy": {
+    "version": "rank5-v1",
+    "common_baseline_px": 80,
+    "rank_multiplier": 1.05,
+    "target_idle_height_px": 84.0,
+    "metric": "idle1 silhouette alpha>80/255 including headgear; excluding transparent margins and hover offset",
+    "reference_idle_visible_height_px": 297,
+    "reference_idle_pose_normalization": 1.468013468013468,
+    "calibration_factor": 1.0,
+    "render_reference_height": 436.0
+  },
+  "default_preview_height_px": 84.0
+}

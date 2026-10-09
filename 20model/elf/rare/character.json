@@ -1,0 +1,345 @@
+{
+  "id": "elf-rare-leaf-blade",
+  "name": "Leaf Blade",
+  "race": "elf",
+  "rank": "rare",
+  "combat": "melee",
+  "weapon": "longsword",
+  "status": "appearance_revision_pending_user_review",
+  "reference_height": 244,
+  "sources": [
+    "assets/sheet-simple-eyes.png",
+    "assets/walk-corrections-3-4.png",
+    "assets/attack-corrections-2-3-simple-eyes.png",
+    "assets/walk-proportions-v2-simple-eyes.png"
+  ],
+  "animations": {
+    "idle": {
+      "poses": [
+        {
+          "rect": [
+            0,
+            0,
+            408,
+            261
+          ],
+          "anchor_x": 205,
+          "anchor_y": 253,
+          "source": 0
+        },
+        {
+          "rect": [
+            408,
+            0,
+            399,
+            261
+          ],
+          "anchor_x": 585,
+          "anchor_y": 253,
+          "source": 0
+        },
+        {
+          "rect": [
+            807,
+            0,
+            365,
+            261
+          ],
+          "anchor_x": 970,
+          "anchor_y": 253,
+          "source": 0
+        },
+        {
+          "rect": [
+            1172,
+            0,
+            364,
+            261
+          ],
+          "anchor_x": 1345,
+          "anchor_y": 254,
+          "source": 0
+        }
+      ],
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "frame_durations": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "duration_seconds": 1,
+      "loop": true
+    },
+    "walk": {
+      "poses": [
+        {
+          "rect": [
+            0,
+            261,
+            408,
+            254
+          ],
+          "anchor_x": 205,
+          "anchor_y": 511,
+          "source": 0
+        },
+        {
+          "rect": [
+            408,
+            261,
+            399,
+            251
+          ],
+          "anchor_x": 585,
+          "anchor_y": 511,
+          "source": 0,
+          "parts": [
+            [
+              408,
+              261,
+              399,
+              246
+            ],
+            [
+              550,
+              507,
+              100,
+              5
+            ]
+          ]
+        },
+        {
+          "rect": [
+            807,
+            261,
+            365,
+            254
+          ],
+          "anchor_x": 970,
+          "anchor_y": 511,
+          "source": 3,
+          "layers": [
+            {
+              "rect": [
+                807,
+                452,
+                365,
+                63
+              ],
+              "anchor_x": 970,
+              "anchor_y": 511,
+              "source": 3
+            },
+            {
+              "rect": [
+                0,
+                261,
+                408,
+                191
+              ],
+              "anchor_x": 205,
+              "anchor_y": 511,
+              "source": 0
+            }
+          ]
+        },
+        {
+          "rect": [
+            1172,
+            261,
+            364,
+            254
+          ],
+          "anchor_x": 1345,
+          "anchor_y": 511,
+          "source": 3
+        }
+      ],
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "frame_durations": [
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "duration_seconds": 0.8,
+      "loop": true,
+      "status": "user_approved"
+    },
+    "attack": {
+      "poses": [
+        {
+          "rect": [
+            0,
+            515,
+            408,
+            261
+          ],
+          "anchor_x": 205,
+          "anchor_y": 765,
+          "source": 0
+        },
+        {
+          "rect": [
+            60,
+            20,
+            675,
+            795
+          ],
+          "anchor_x": 440,
+          "anchor_y": 804,
+          "source": 2,
+          "normalization": 0.4
+        },
+        {
+          "rect": [
+            845,
+            205,
+            929,
+            610
+          ],
+          "anchor_x": 1200,
+          "anchor_y": 804,
+          "source": 2,
+          "normalization": 0.4
+        },
+        {
+          "rect": [
+            1172,
+            515,
+            364,
+            261
+          ],
+          "anchor_x": 1345,
+          "anchor_y": 765,
+          "source": 0,
+          "parts": [
+            [
+              1172,
+              515,
+              364,
+              228
+            ],
+            [
+              1205,
+              743,
+              331,
+              33
+            ]
+          ]
+        }
+      ],
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "frame_durations": [
+        0.2,
+        0.32,
+        0.1,
+        0.38
+      ],
+      "duration_seconds": 1.0,
+      "loop": true
+    },
+    "dead": {
+      "poses": [
+        {
+          "rect": [
+            0,
+            776,
+            408,
+            248
+          ],
+          "anchor_x": 205,
+          "anchor_y": 989,
+          "source": 0
+        },
+        {
+          "rect": [
+            408,
+            776,
+            399,
+            248
+          ],
+          "anchor_x": 585,
+          "anchor_y": 988,
+          "source": 0
+        },
+        {
+          "rect": [
+            807,
+            776,
+            365,
+            248
+          ],
+          "anchor_x": 970,
+          "anchor_y": 1000,
+          "source": 0
+        },
+        {
+          "rect": [
+            1172,
+            776,
+            364,
+            248
+          ],
+          "anchor_x": 1345,
+          "anchor_y": 999,
+          "source": 0
+        }
+      ],
+      "sequence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "frame_durations": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "duration_seconds": 1,
+      "loop": false
+    }
+  },
+  "generation_mode": "built-in image_gen",
+  "notes": [
+    "Longsword held by far left hand consistently; near right arm with silver shoulder guard stays empty.",
+    "Dedicated corrections replace wrong walk3/4 and wrong attack2/3 from base sheet. Do not consume rejected base cells.",
+    "Near right cream trouser overlaps far left olive, anatomical hip-knee-ankle checked; support legs vertical, loop 1-2-3-4-1.",
+    "Source-specific scale calibrated once per correction strip; no per-frame bounding-box fitting.",
+    "Draft motion pending user review; not integrated in Unity.",
+    "Walk3/4 use legs-only atlas edit at original scale1; old normalization0.338 rejected. Walk3 retains exact frame1 upper-body layer for consistent head/body/weapon hand. Motion pending review.",
+    "Simple-eye revision requested by user; pose anatomy and near/far leg identity retained. Original sources preserved. Revision motion awaiting user review."
+  ],
+  "revision": "walk-proportion-v2-simple-eyes-v1",
+  "eye_style": "simple solid dark oval, no sclera/iris/highlight/glow; closed eyes single line",
+  "sizing_policy": {
+    "version": "rank5-v1",
+    "common_baseline_px": 80,
+    "rank_multiplier": 1.05,
+    "target_idle_height_px": 84.0,
+    "metric": "idle1 silhouette alpha>80/255 including headgear; excluding transparent margins and hover offset",
+    "reference_idle_visible_height_px": 244,
+    "reference_idle_pose_normalization": 1,
+    "calibration_factor": 1.0,
+    "render_reference_height": 244
+  },
+  "default_preview_height_px": 84.0
+}

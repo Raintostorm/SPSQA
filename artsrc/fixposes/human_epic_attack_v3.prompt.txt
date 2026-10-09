@@ -1,0 +1,14 @@
+Use case: identity-preserve. Production game sprite animation repair.
+Reference image is the original Crescent Mage human_epic full sheet. Preserve EXACT character identity, chibi proportions, red curly hair, purple floppy hat with gold crescent, teal gold-edged cape, purple and cream trousers, boots, and full gold crescent staff with cyan diamond and hanging charm. Reference THIRD ROW is attack, do not use death row.
+Create ONE transparent wide landscape image with EIGHT complete isolated poses in a readable sequence, four poses across the upper row and four across the lower row. This is layout for storage only, NOT square cells: allow each pose as much horizontal space as needed; no borders. Very generous transparent gaps, whole staff tip/hat/cape/boots visible with padding around every pose; none touches another or image boundary. True transparent alpha background, no magenta or colored background, no floor, no shadows, no labels, no effects/projectiles.
+Every pose same anatomical scale, head size, boot size, same camera three-quarter facing RIGHT. Feet planted at same baseline within each row, left/right boots occupy same root positions, no stepping. Torso may lean modestly; do not grow/shrink.
+ONE smooth spell cast, not two attacks:
+1 ready: staff diagonally up right, free hand relaxed.
+2 anticipation: torso leans slightly back, staff lifts slightly, free hand starts drawing toward chest.
+3 charged windup: staff drawn slightly back, free hand close chest, eyes focused right.
+4 acceleration: torso begins leaning right, staff pushes toward right halfway, free palm starts opening.
+5 release/impact: staff thrust fully right near horizontal, free hand extended open; retain full crescent tip and fingers.
+6 follow-through: same extension with slightly relaxed elbow, cape follows, no return to ready yet.
+7 recovery: staff gradually draws back to diagonal, torso straightens, free hand lowers halfway.
+8 ready: matches pose1 natural settled stance.
+No random jumps in staff orientation, no staff switching hands, no neutral pose between windup and impact, no new costumes, no missing limb or staff, no giant glowing blob. Match original polished cartoon art. 3072x1536 wide canvas preferred.

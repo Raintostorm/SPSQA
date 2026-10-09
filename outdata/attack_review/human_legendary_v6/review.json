@@ -1,0 +1,71 @@
+{
+  "source": "artsrc/fixposes/human_legendary_attack_v6.png",
+  "ppu": 269.1,
+  "impact_step": 4,
+  "frames": [
+    {
+      "file": "attack_1.png",
+      "pivot": [
+        0.5199449793672627,
+        0.12578616352201255
+      ],
+      "duration": 0.1
+    },
+    {
+      "file": "attack_2.png",
+      "pivot": [
+        0.5,
+        0.21288515406162467
+      ],
+      "duration": 0.1
+    },
+    {
+      "file": "attack_3.png",
+      "pivot": [
+        0.5471167369901547,
+        0.14492753623188404
+      ],
+      "duration": 0.13
+    },
+    {
+      "file": "attack_4.png",
+      "pivot": [
+        0.48703170028818443,
+        0.09195402298850575
+      ],
+      "duration": 0.07
+    },
+    {
+      "file": "attack_5.png",
+      "pivot": [
+        0.4648786717752235,
+        0.19277108433734935
+      ],
+      "duration": 0.06
+    },
+    {
+      "file": "attack_6.png",
+      "pivot": [
+        0.42569659442724456,
+        0.12881355932203387
+      ],
+      "duration": 0.09
+    },
+    {
+      "file": "attack_7.png",
+      "pivot": [
+        0.4583333333333333,
+        0.049645390070921946
+      ],
+      "duration": 0.13
+    },
+    {
+      "file": "attack_8.png",
+      "pivot": [
+        0.4675118858954041,
+        0.07534246575342463
+      ],
+      "duration": 0.18
+    }
+  ]
+}

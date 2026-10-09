@@ -15,17 +15,18 @@ MonoBehaviour:
   RollCost: 20
   StartingCoins: 40
   CoinPerWaveClear: 40
-  SellPriceByRarity: 02000000050000000a0000001400000000000000
+  SellPriceByRank: 02000000050000000a00000014000000
   ClusterRewardHP: 0a0000001900000064000000c8000000
   ClusterRewardDamage: 0a0000001900000064000000c8000000
   ClusterRewardCritChance: 0100000002000000050000000f000000
   ClusterRewardAtkSpeed: 050000000f0000003200000064000000
   ClusterRewardCoin: 0f0000002800000050000000c8000000
-  DefaultMoveSpeed: 1.35
+  DefaultMoveSpeed: 2.2
   MeleeStrikeInterval: 0.24
   RangedShotInterval: 0.52
   DefaultAttackRange: 1.65
   EngageDelay: 2
+  WavesPerLevel: 3
   LevelCount: 3
   GridRows: 4
   GridCols: 4

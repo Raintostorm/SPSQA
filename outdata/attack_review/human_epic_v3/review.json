@@ -1,0 +1,71 @@
+{
+  "source": "artsrc/fixposes/human_epic_attack_v3.png",
+  "ppu": 342.8,
+  "impact_step": 4,
+  "frames": [
+    {
+      "file": "attack_1.png",
+      "pivot": [
+        0.4642857142857143,
+        0.11403508771929827
+      ],
+      "duration": 0.1
+    },
+    {
+      "file": "attack_2.png",
+      "pivot": [
+        0.5216346153846154,
+        0.11403508771929827
+      ],
+      "duration": 0.12
+    },
+    {
+      "file": "attack_3.png",
+      "pivot": [
+        0.4758771929824561,
+        0.11403508771929827
+      ],
+      "duration": 0.12
+    },
+    {
+      "file": "attack_4.png",
+      "pivot": [
+        0.40408163265306124,
+        0.11403508771929827
+      ],
+      "duration": 0.07
+    },
+    {
+      "file": "attack_5.png",
+      "pivot": [
+        0.3920863309352518,
+        0.1922246220302376
+      ],
+      "duration": 0.07
+    },
+    {
+      "file": "attack_6.png",
+      "pivot": [
+        0.3897338403041825,
+        0.1900647948164147
+      ],
+      "duration": 0.1
+    },
+    {
+      "file": "attack_7.png",
+      "pivot": [
+        0.4611973392461197,
+        0.1900647948164147
+      ],
+      "duration": 0.13
+    },
+    {
+      "file": "attack_8.png",
+      "pivot": [
+        0.3876146788990826,
+        0.18574514038876888
+      ],
+      "duration": 0.16
+    }
+  ]
+}

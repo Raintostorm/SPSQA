@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1571af2fcd6794a56afca7a6b4084845, type: 3}
+  m_Name: Unit_elf_epic
+  m_EditorClassIdentifier: Assembly-CSharp::Project.Data.UnitDefinition
+  UnitId: elf_epic
+  DisplayName: Moon Archer
+  Race: 1
+  Rank: 2
+  BaseHp: 2000
+  BaseAttack: 300
+  IsRanged: 1
+  AttackRange: 3.2
+  AttackCooldown: 0.95
+  MoveSpeed: 2
+  ProjectilePrefab: {fileID: 1100000000000000001, guid: f27f93c7f35c6b55eed9c50a4691a16e, type: 3}
+  ProjectileSpeed: 24
+  ProjectileArcHeight: 0
+  Animations: {fileID: 11400000, guid: b9e54d32881be4a81a33ad49c4f24c54, type: 2}
+  Scale: 0.685
+  CellOffset: {x: 0, y: -0.328}
+  BattlePrefab: {fileID: 0}
+  Portrait: {fileID: 0}
