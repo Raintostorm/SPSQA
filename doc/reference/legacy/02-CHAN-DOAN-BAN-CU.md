@@ -1,3 +1,5 @@
+> TÀI LIỆU LỊCH SỬ (09–10/2026). Không phải luật hay hướng dẫn hiện hành. Đọc [chỉ mục hiện tại](../../README.md) trước; kiểm tra mã nguồn trước khi sử dụng số liệu hoặc pipeline bên dưới.
+
 # 02 — Bản cũ hỏng ở đâu
 
 Không phải để chê. Để bạn nhận ra **dấu hiệu sớm** và dừng lại trước khi

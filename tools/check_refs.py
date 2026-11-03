@@ -35,7 +35,7 @@ for f in targets:
 
 # --- phep kiem 2: dong YAML hong ---
 # "khoa:" xuong dong roi moi "[]" -> Unity doc "[]" la mot khoa moi va bao
-# "Expect ':' between key and value". Loi nay da xay ra HAI lan, xem Handoff/11 muc A1.
+# "Expect ':' between key and value". Loi nay da xay ra HAI lan, xem doc/reference/legacy/11-LOI-DA-GAP.md muc A1.
 yaml_bad = {}
 for f in targets:
     if f.endswith('.meta'): continue

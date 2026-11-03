@@ -67,3 +67,6 @@ sysinfo.txt
 
 # anh xem truoc do Claude dung, khong phai asset
 preview_*.png
+
+# Temporary work ownership markers for local agents
+/doc/.claims/

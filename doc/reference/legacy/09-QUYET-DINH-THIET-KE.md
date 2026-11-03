@@ -1,3 +1,5 @@
+> TÀI LIỆU LỊCH SỬ (09–10/2026). Không phải luật hay hướng dẫn hiện hành. Đọc [chỉ mục hiện tại](../../README.md) trước; kiểm tra mã nguồn trước khi sử dụng số liệu hoặc pipeline bên dưới.
+
 # 09 — Quyết định thiết kế (ghi đè Handoff 00–08)
 
 > Cập nhật 2026-10-01. Viết lại toàn bộ — bản trước mô tả 5 chủng tộc và

@@ -1,3 +1,5 @@
+> TÀI LIỆU LỊCH SỬ (09–10/2026). Không phải luật hay hướng dẫn hiện hành. Đọc [chỉ mục hiện tại](../../README.md) trước; kiểm tra mã nguồn trước khi sử dụng số liệu hoặc pipeline bên dưới.
+
 # 04 — Pipeline nhân vật 2D
 
 > Đây là phần bạn nói đang thiếu, và cũng là phần bản cũ chết nhiều lần nhất.

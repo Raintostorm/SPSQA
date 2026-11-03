@@ -1,3 +1,5 @@
+> TÀI LIỆU LỊCH SỬ (09–10/2026). Không phải luật hay hướng dẫn hiện hành. Đọc [chỉ mục hiện tại](../../README.md) trước; kiểm tra mã nguồn trước khi sử dụng số liệu hoặc pipeline bên dưới.
+
 # 11 — Lỗi đã gặp, và cách nhận ra lần sau
 
 > Sổ ghi lỗi. Mỗi mục: **triệu chứng** → **nguyên nhân** → **cách chặn**.

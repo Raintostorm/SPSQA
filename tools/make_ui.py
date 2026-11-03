@@ -66,7 +66,7 @@ def draw(fill, ink):
 def meta(name):
     """GUID suy tu TEN, khong sinh ngau nhien.
 
-    Ly do la loi A2 trong Handoff/11: GUID nam o .meta, mat no la moi tham
+    Ly do la loi A2 trong doc/reference/legacy/11-LOI-DA-GAP.md: GUID nam o .meta, mat no la moi tham
     chieu trong scene va prefab chet im lang. Suy tu ten thi chay lai script
     bao nhieu lan GUID van the."""
     guid = hashlib.md5(f"spinsquad/ui/{name}".encode()).hexdigest()

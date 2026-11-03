@@ -21,7 +21,7 @@ Ba khoa:
                                Bilinear thi thay "nay" muc khi doi kich thuoc
 
 KHONG dung toi guid. Doi guid la moi tham chieu trong scene va prefab chet
-im lang — xem loi A2 trong Handoff/11.
+im lang — xem loi A2 trong doc/reference/legacy/11-LOI-DA-GAP.md.
 
     python3 tools/set_sprite_quality.py          # xem se doi gi
     python3 tools/set_sprite_quality.py --write

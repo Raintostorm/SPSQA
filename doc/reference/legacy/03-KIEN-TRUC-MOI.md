@@ -1,3 +1,5 @@
+> TÀI LIỆU LỊCH SỬ (09–10/2026). Không phải luật hay hướng dẫn hiện hành. Đọc [chỉ mục hiện tại](../../README.md) trước; kiểm tra mã nguồn trước khi sử dụng số liệu hoặc pipeline bên dưới.
+
 # 03 — Kiến trúc bản mới
 
 Mục tiêu: **không bao giờ có file 5.000 dòng nữa**, và bạn luôn biết một thứ
