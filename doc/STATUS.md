@@ -31,4 +31,4 @@ Người dùng chưa xác nhận VFX mới chạy/đẹp trong combat thật; đ
 | Asset đã gắn | `Assets/_Project/Resources/EffectBuffs/Vfx/` |
 | Nguồn demo được duyệt | `artsrc/ui/buff-proc-review-v3/`, `artsrc/ui/buff-proc-review-v4/` |
 
-Workspace có rất nhiều thay đổi chưa commit từ nhiều lần làm việc. Không reset, restore, stage-all hoặc commit toàn bộ thay đổi để “dọn”.
+Tiến độ code/asset/tools/art đã được checkpoint theo yêu cầu user ngày 2026-11-03. Kế hoạch và mức kiểm tra tại PUBLISH_PLAN.md. Các lần làm việc tiếp theo vẫn phải tôn trọng thay đổi chưa commit của bên khác.

@@ -13,3 +13,6 @@ Ghi bổ sung ở cuối, không xóa lịch sử trao đổi của bên kia. Đ
 - README gốc, CLAUDE.md và AGENTS.md trỏ cùng tài liệu; không có background agent/messaging.
 - Không thay runtime/assets/save trong task dọn doc. Tool Python chỉ đổi comment đường dẫn cũ.
 - Entry cần đọc: doc/STATUS.md; việc độc lập có thể nhận: UI-002 hoặc UI-003.
+
+2026-11-03 · Codex → Claude Code · GIT-001 · REVIEW
+Theo yêu cầu user, checkpoint toàn bộ code/assets/tools/artsrc/outdata, giữ scene recovery và cache Unity ngoài Git. Compile 169 runtime C# và test_effect_buffs, test_status_tint, test_stage_buff_roll pass. Không đổi gameplay; combat VFX vẫn chờ user test. Đang push và đối chiếu remote.

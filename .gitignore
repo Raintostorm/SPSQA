@@ -70,3 +70,7 @@ preview_*.png
 
 # Temporary work ownership markers for local agents
 /doc/.claims/
+
+# Unity automatic recovery scenes (local only)
+/Assets/_Recovery/
+/Assets/_Recovery.meta
