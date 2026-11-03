@@ -1,0 +1,52 @@
+<div id="home-walk-preview-v1" class="viz-dotted-background">
+  <div class="walk-controls"><button type="button" data-play>Phát demo</button><button type="button" data-slow aria-pressed="false">Chậm hơn</button></div>
+  <canvas width="800" height="1732" role="img" aria-label="Demo Home: ba allies đi sang phải, nền cuộn trái nhiều lớp; UI và năm icon dưới đứng yên.">Home walking animation preview</canvas>
+</div>
+<style>
+#home-walk-preview-v1{padding:12px;background-color:transparent}
+#home-walk-preview-v1 canvas{display:block;width:100%;max-width:400px;height:auto;margin:auto;border-radius:12px;background:#07aff2}
+#home-walk-preview-v1 .walk-controls{display:flex;justify-content:center;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+#home-walk-preview-v1 button{background:#172235;color:#fff;border:1px solid #72839c;border-radius:8px;padding:10px 16px;font:500 14px system-ui;min-height:44px}
+</style>
+<script>
+(()=>{
+const root=document.getElementById('home-walk-preview-v1'),canvas=root.querySelector('canvas'),g=canvas.getContext('2d');
+const data=__ASSETS__,images={};let ready=false,playing=false,slow=false,t=0,last=0;
+const units=['dead_common','human_legendary','elf_rare'];
+const button=root.querySelector('[data-play]'),speed=root.querySelector('[data-slow]');
+let pending=Object.keys(data).length;
+for(const [key,value] of Object.entries(data)){const im=new Image();images[key]=im;im.onload=()=>{if(--pending===0){ready=true;draw();}};im.src=value;}
+function image(key,x,y,w,h){const im=images[key];if(im?.complete&&im.naturalWidth)g.drawImage(im,x,y,w,h);}
+function box(x,y,w,h,color,r=8){g.beginPath();g.roundRect(x,y,w,h,r);g.fillStyle=color;g.fill();g.strokeStyle='#080d17';g.lineWidth=2;g.stroke();}
+function text(value,x,y,size=16,color='#fff',outline=true){g.font=`bold ${size}px Arial`;g.textAlign='center';g.textBaseline='middle';g.lineJoin='round';if(outline){g.strokeStyle='#091019';g.lineWidth=size*.13;g.strokeText(value,x,y);}g.fillStyle=color;g.fillText(value,x,y);}
+// Alternate mirrored instances give continuous edge pixels, with no crossfade ghosting.
+function layer(name,y,h,w,velocity){const pos=t*velocity;const start=Math.floor(pos/w);for(let i=start;i<=start+2;i++){const x=i*w-pos;g.save();if(i%2){g.translate(x+w,y);g.scale(-1,1);image(name,0,0,w,h);}else image(name,x,y,w,h);g.restore();}}
+function draw(){if(!ready)return;g.setTransform(2,0,0,2,0,0);g.clearRect(0,0,400,866);
+g.fillStyle='#04aff1';g.fillRect(0,0,400,866);
+layer('sky',0,530,1590,1.2);
+layer('ground',490,310,925,22);
+layer('trees',365,230,690,5.5);
+const phase=t*15;
+for(let i=0;i<3;i++){
+const x=110+i*90,foot=642+(i===1?8:0),frame=Math.floor(phase+i*4)%15;
+g.fillStyle='rgba(28,56,9,.18)';g.beginPath();g.ellipse(x,foot+1,17,4,0,0,Math.PI*2);g.fill();
+const im=images[units[i]+frame],scale=(i===1?67:60)/128;
+if(im?.naturalWidth)g.drawImage(im,x-im.width*scale/2,foot-im.height*scale,im.width*scale,im.height*scale);
+}
+box(14,25,51,56,'#1a3546',7);image('battle',23,34,33,36);
+box(196,25,105,31,'#172333');image('gold',186,19,43,43);text('76,110',260,41,18);
+box(329,25,59,31,'#172333');image('key',305,20,39,39);text('30',366,41,18);
+box(134,140,132,28,'#10bc80',5);text('Chapter 1-2',200,155,19,'#081c22',false);
+text('WAVE',200,205,29,'#ffdb3f');text('10',200,260,74);
+image('home',183,665,34,34);text('Select Chapter',200,711,17);
+box(88,730,224,57,'#ffc423',11);g.fillStyle='rgba(255,255,255,.2)';g.fillRect(98,738,204,8);text('BATTLE',200,760,30);
+g.fillStyle='#302546';g.fillRect(0,802,400,64);g.fillStyle='#514372';g.fillRect(0,802,400,3);
+// Compact fixed icon-only home dock. No navigation labels.
+const nav=['home','relics','battle','gold'];for(let i=0;i<4;i++){image(nav[i],17+i*80,812,46,44);g.fillStyle='#201b33';g.fillRect(78+i*80,819,1,30);}text('≡',360,835,28);
+}
+function tick(now){if(last&&playing)t+=Math.min((now-last)/1000,.05)*(slow?.6:1);last=now;draw();requestAnimationFrame(tick);}
+button.onclick=()=>{playing=!playing;button.textContent=playing?'Tạm dừng':'Phát demo';button.setAttribute('aria-pressed',String(playing));};
+speed.onclick=()=>{slow=!slow;speed.setAttribute('aria-pressed',String(slow));};
+requestAnimationFrame(tick);
+})();
+</script>

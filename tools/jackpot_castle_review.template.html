@@ -1,0 +1,31 @@
+<div id="jackpot-review-v2">
+ <div class="jp-controls"><button type="button" data-play>▶ Xem Jackpot</button><label>Tốc độ <select data-speed><option value="1">x1</option><option value="2">x2</option><option value="3">x3</option></select></label><button type="button" data-pause>Tạm dừng</button></div>
+ <canvas width="440" height="730" role="img" aria-label="Demo Jackpot lâu đài vàng tại khu quay, không có allies ăn mừng"></canvas>
+ <div class="jp-state" aria-live="polite">Sẵn sàng</div>
+</div>
+<style>
+#jackpot-review-v2{max-width:440px;margin:auto;font:14px system-ui;color:light-dark(#182636,#eef5ff)}#jackpot-review-v2 canvas{display:block;width:100%;height:auto;border-radius:12px}#jackpot-review-v2 .jp-controls{display:flex;align-items:center;flex-wrap:wrap;gap:8px;padding:10px 0}#jackpot-review-v2 button,#jackpot-review-v2 select{font:inherit;padding:9px 12px;border-radius:8px;border:1px solid #8c99a8;background:light-dark(#fff,#233143);color:inherit}#jackpot-review-v2 .jp-state{padding:8px 0}
+</style>
+<script>
+(()=>{const root=document.getElementById('jackpot-review-v2'),c=root.querySelector('canvas'),g=c.getContext('2d'),assets=__ASSETS__,ims={};let t=0,run=false,paused=false,last=0,phase='Sẵn sàng';
+const clip=v=>Math.max(0,Math.min(1,v)),ease=v=>1-Math.pow(1-clip(v),3);
+for(const[k,v]of Object.entries(assets)){const im=new Image();im.src=v;ims[k]=im;}
+function image(k,x,y,w,h,alpha=1){const im=ims[k];if(!im?.complete||!im.naturalWidth)return;g.save();g.globalAlpha=alpha;g.drawImage(im,x,y,w,h);g.restore();}
+function actor(k,x,y,h,alpha=1){const im=ims[k];if(!im?.complete||!im.naturalWidth)return;const w=h*im.naturalWidth/im.naturalHeight;image(k,x-w/2,y-h,w,h,alpha);}
+function burst(step,x,y,size,alpha=1){const im=ims.fireworks;if(!im?.complete||!im.naturalWidth)return;g.save();g.globalAlpha=alpha;g.drawImage(im,step%3*im.naturalWidth/3,Math.floor(step/3)*im.naturalHeight/2,im.naturalWidth/3,im.naturalHeight/2,x-size/2,y-size/2,size,size);g.restore();}
+function box(x,y,w,h,fill,r=10){g.fillStyle=fill;g.strokeStyle='#08111c';g.lineWidth=3;g.beginPath();g.roundRect(x,y,w,h,r);g.fill();g.stroke();}
+function text(s,x,y,size=20,fill='#fff'){g.font=`900 ${size}px system-ui`;g.textAlign='center';g.lineJoin='round';g.lineWidth=4;g.strokeStyle='#10121c';g.strokeText(s,x,y);g.fillStyle=fill;g.fillText(s,x,y);}
+function draw(){g.clearRect(0,0,440,730);image('bg',0,0,440,730);box(16,30,408,49,'#152a3b');text('Allies 3',80,61,18);text('Wave 1',230,61,22);box(16,89,408,40,'#161e2e');text('♥ +0%    ⚔ +0%    ϟ +0%    ◎ +0%',220,115,16);
+actor('human',110,390,55);actor('elf',230,420,58);actor('machine',320,395,55);
+box(14,525,412,84,'#29243d',14);const colors=['#e3e9f4','#44c2ff','#b75aff','#ffd443'];
+for(let i=0;i<6;i++){const settle=.2+i*.12;let tier=t<settle?0:Math.min(3,Math.floor(Math.max(0,t-.8)/.25));let color=run&&t<settle?colors[Math.floor(t*16+i)%4]:colors[tier];if(!run&&t===0)color='#9c8b6d';box(23+i*66,538,58,58,color,25);image('roll',33+i*66,548,38,38);if(run&&t>=settle&&t<settle+.22)burst(Math.min(5,Math.floor((t-settle)/.22*6)),52+i*66,565,86);}
+box(18,630,150,69,'#0699e4');image('roll',26,640,45,45);text('20',115,675,27);box(185,630,237,69,'#f4ad20');image('battle',197,640,45,45);text('Vào trận',325,674,24);
+if(t>1.55&&t<3.7){const exit=ease((t-3.15)/.45),entr=ease((t-1.65)/.25),y=490+(1-entr)*100+exit*130,alpha=1-exit;
+for(let i=0;i<3;i++){const f=(t-1.55-i*.12)/.8;if(f>=0&&f<1)burst(Math.min(5,Math.floor(f*6)),65+i*155,475-i%2*40,190,alpha);}
+const rise=ease((t-1.75)/.32);g.save();g.translate(220,y+38);const scale=.8+.2*rise;g.scale(scale,scale);image('castle',-88,-145+(1-rise)*25,176,150,alpha);g.restore();
+image('ribbon',-10,y-4,460,103,alpha);g.save();g.globalAlpha=alpha;g.translate(220,y+80);const pop=1+.2*Math.sin(clip((t-1.9)/.32)*Math.PI);g.scale(pop,pop);text('JACKPOT!',0,0,39,'#fff5c5');g.restore();}
+let next=t===0?'Sẵn sàng':t<.9?'Dừng từng ô':t<1.65?'Tích sáng · trắng → xanh → tím → vàng':t<2?'Bùng vàng':t<3.15?'Lâu đài vàng · Jackpot':t<3.7?'Thu dải · trả lại kết quả':'Kết thúc';if(next!==phase){phase=next;root.querySelector('.jp-state').textContent=next;}}
+root.querySelector('[data-play]').onclick=()=>{t=0;run=true;paused=false;root.querySelector('[data-pause]').textContent='Tạm dừng';};root.querySelector('[data-pause]').onclick=()=>{paused=!paused;root.querySelector('[data-pause]').textContent=paused?'Tiếp tục':'Tạm dừng';};
+function tick(now){if(!last)last=now;let dt=Math.min(.05,(now-last)/1000);last=now;if(run&&!paused){t+=dt*Number(root.querySelector('[data-speed]').value);if(t>=4){t=4;run=false;}}draw();requestAnimationFrame(tick);}requestAnimationFrame(tick);
+})();
+</script>

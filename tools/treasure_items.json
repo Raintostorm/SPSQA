@@ -1,6 +1,6 @@
 [
  {
-  "name": "Cốc gỗ sứt",
+  "name": "Chipped Wooden Cup",
   "tier": "Common",
   "stats": [
    {
@@ -13,7 +13,7 @@
   "art": "a chipped wooden drinking cup, plain and worn"
  },
  {
-  "name": "Ly thiếc móp",
+  "name": "Dented Tin Mug",
   "tier": "Common",
   "stats": [
    {
@@ -26,7 +26,7 @@
   "art": "a dented tin tankard with a simple handle"
  },
  {
-  "name": "Gậy gỗ sồi",
+  "name": "Oak Staff",
   "tier": "Common",
   "stats": [
    {
@@ -39,7 +39,7 @@
   "art": "a plain oak walking staff, bark still on it"
  },
  {
-  "name": "Áo choàng vải thô",
+  "name": "Burlap Cloak",
   "tier": "Common",
   "stats": [
    {
@@ -52,7 +52,7 @@
   "art": "a coarse brown burlap cloak with a rope tie"
  },
  {
-  "name": "Ấn đất nung",
+  "name": "Terracotta Seal",
   "tier": "Common",
   "stats": [
    {
@@ -65,7 +65,7 @@
   "art": "a small terracotta clay seal stamp"
  },
  {
-  "name": "Bùa cỏ bện",
+  "name": "Woven Grass Charm",
   "tier": "Common",
   "stats": [
    {
@@ -78,7 +78,7 @@
   "art": "a charm braided from dry grass and twine"
  },
  {
-  "name": "Huy hiệu đồng",
+  "name": "Bronze Badge",
   "tier": "Common",
   "stats": [
    {
@@ -91,7 +91,7 @@
   "art": "a plain round bronze badge, slightly tarnished"
  },
  {
-  "name": "Nhẫn sắt",
+  "name": "Iron Ring",
   "tier": "Common",
   "stats": [
    {
@@ -104,7 +104,7 @@
   "art": "a plain iron band ring, no gem"
  },
  {
-  "name": "Chuông đồng nhỏ",
+  "name": "Small Bronze Bell",
   "tier": "Common",
   "stats": [
    {
@@ -117,7 +117,7 @@
   "art": "a small bronze handbell"
  },
  {
-  "name": "Sách da cũ",
+  "name": "Worn Leather Book",
   "tier": "Common",
   "stats": [
    {
@@ -130,7 +130,7 @@
   "art": "a worn leather-bound book, pages frayed"
  },
  {
-  "name": "Mũ da",
+  "name": "Leather Cap",
   "tier": "Common",
   "stats": [
    {
@@ -143,7 +143,7 @@
   "art": "a simple brown leather cap"
  },
  {
-  "name": "Dây chuyền xương",
+  "name": "Bone Necklace",
   "tier": "Common",
   "stats": [
    {
@@ -156,7 +156,7 @@
   "art": "a necklace of small bone beads on a cord"
  },
  {
-  "name": "Chén bạc",
+  "name": "Silver Goblet",
   "tier": "Rare",
   "stats": [
    {
@@ -169,7 +169,7 @@
   "art": "a polished silver goblet with an engraved rim"
  },
  {
-  "name": "Trượng khắc rune",
+  "name": "Runic Staff",
   "tier": "Rare",
   "stats": [
    {
@@ -182,7 +182,7 @@
   "art": "a dark wooden staff carved with glowing blue runes"
  },
  {
-  "name": "Áo choàng lông sói",
+  "name": "Wolf-Fur Cloak",
   "tier": "Rare",
   "stats": [
    {
@@ -195,7 +195,7 @@
   "art": "a grey wolf-fur cloak with a silver clasp"
  },
  {
-  "name": "Ấn triện bạc",
+  "name": "Silver Seal",
   "tier": "Rare",
   "stats": [
    {
@@ -208,7 +208,7 @@
   "art": "a silver seal stamp with a scrollwork handle"
  },
  {
-  "name": "Bùa mắt quạ",
+  "name": "Raven Eye Charm",
   "tier": "Rare",
   "stats": [
    {
@@ -221,7 +221,7 @@
   "art": "an amulet shaped like a raven's eye, black feather attached"
  },
  {
-  "name": "Huy hiệu kỵ sĩ",
+  "name": "Knight Badge",
   "tier": "Rare",
   "stats": [
    {
@@ -234,7 +234,7 @@
   "art": "a silver winged knight's badge"
  },
  {
-  "name": "Đồng hồ cát",
+  "name": "Hourglass",
   "tier": "Rare",
   "stats": [
    {
@@ -247,7 +247,7 @@
   "art": "a small hourglass in a silver frame, blue sand inside"
  },
  {
-  "name": "Nhẫn hồng ngọc",
+  "name": "Ruby Ring",
   "tier": "Rare",
   "stats": [
    {
@@ -260,7 +260,7 @@
   "art": "a silver ring set with a single red ruby"
  },
  {
-  "name": "Chén thánh vàng",
+  "name": "Golden Chalice",
   "tier": "Epic",
   "stats": [
    {
@@ -278,7 +278,7 @@
   "art": "an ornate golden chalice brimming with glowing red liquid"
  },
  {
-  "name": "Trượng tinh thể",
+  "name": "Crystal Staff",
   "tier": "Epic",
   "stats": [
    {
@@ -296,7 +296,7 @@
   "art": "a gold staff topped with a large purple crystal, faint glow"
  },
  {
-  "name": "Áo choàng bóng tối",
+  "name": "Shadow Cloak",
   "tier": "Epic",
   "stats": [
    {
@@ -314,7 +314,7 @@
   "art": "a black cloak dissolving into purple smoke at the hem"
  },
  {
-  "name": "Ấn triện rồng",
+  "name": "Dragon Seal",
   "tier": "Epic",
   "stats": [
    {
@@ -332,7 +332,7 @@
   "art": "a gold seal stamp with a coiled dragon handle"
  },
  {
-  "name": "Sách cấm",
+  "name": "Forbidden Grimoire",
   "tier": "Epic",
   "stats": [
    {
@@ -350,7 +350,7 @@
   "art": "a chained grimoire with a purple eye on the cover, glowing"
  },
  {
-  "name": "Đèn thần",
+  "name": "Genie Lamp",
   "tier": "Epic",
   "stats": [
    {
@@ -368,7 +368,7 @@
   "art": "a golden genie lamp with blue smoke curling from the spout"
  },
  {
-  "name": "Vương miện bất tử",
+  "name": "Immortal Crown",
   "tier": "Legendary",
   "stats": [
    {
@@ -386,7 +386,7 @@
   "art": "a radiant golden crown set with red gems, bright light rays"
  },
  {
-  "name": "Trượng hỗn mang",
+  "name": "Chaos Staff",
   "tier": "Legendary",
   "stats": [
    {
@@ -404,7 +404,7 @@
   "art": "a twisted black-and-gold staff with a swirling void orb, radiant"
  },
  {
-  "name": "Ấn triện thần",
+  "name": "Divine Seal",
   "tier": "Legendary",
   "stats": [
    {
@@ -422,7 +422,7 @@
   "art": "a divine gold seal stamp with a winged handle, blazing light"
  },
  {
-  "name": "Giáp hoàng kim",
+  "name": "Golden Armor",
   "tier": "Legendary",
   "stats": [
    {
