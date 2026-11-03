@@ -28,6 +28,7 @@ namespace Project.Battle
         public Unit Spawn(UnitDefinition def, UnitTeam team, Vector3 position,
                           Transform parent = null)
         {
+            if(def && def.Rank==Rank.Mythic && team==UnitTeam.Ally && MythicFusion.Count>=MythicFusion.Limit)return null;
             if (def == null)
             {
                 Debug.LogError("[UnitSpawner] UnitDefinition = null.", this);

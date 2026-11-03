@@ -33,3 +33,4 @@ MonoBehaviour:
   MaxUnitsPerCell: 3
   MaxMythicPerCell: 1
   StartingMythicLimit: 2
+  UnitMaxLevel: 30

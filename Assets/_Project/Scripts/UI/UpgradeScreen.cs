@@ -6,7 +6,7 @@ using UnityEngine.UI;
 namespace Project.UI
 {
     /// <summary>
-    /// Màn Nâng cấp: 20 nhân vật, mỗi con một dòng, nâng bằng vàng.
+    /// Màn Nâng cấp: nâng bằng vàng và mảnh riêng của từng nhân vật.
     ///
     /// Một dòng chứ không phải ô lưới: còn phải ghi cấp, giá, và nút nâng.
     /// Ô vuông không đủ chỗ cho ba thứ đó.
@@ -36,6 +36,8 @@ namespace Project.UI
 
         void Start()
         {
+            // Keep serialized roster/balance references, replace the legacy row UI.
+            if (AllyUpgradeView.Install(transform, units, balance, treasures)) return;
             if (backButton != null)
             {
                 backButton.onClick.RemoveAllListeners();
@@ -52,6 +54,12 @@ namespace Project.UI
             {
                 if (portraitButtons[i] == null) continue;
                 var k = i;
+                if (i < units.Length && units[i] != null && units[i].Animations != null &&
+                    units[i].Animations.Idle != null && units[i].Animations.Idle.IsValid)
+                {
+                    var portrait = portraitButtons[i].GetComponent<Image>();
+                    if (portrait != null) portrait.sprite = units[i].Animations.Idle.FrameAt(0);
+                }
                 portraitButtons[i].onClick.RemoveAllListeners();
                 portraitButtons[i].onClick.AddListener(() => ShowDetail(k));
             }
@@ -89,20 +97,20 @@ namespace Project.UI
                 if (src != null) detailPortrait.sprite = src.sprite;
             }
             if (detailTitle != null)
-                detailTitle.text = $"{def.DisplayName}   ·   {def.Rank}   ·   Cấp {level}";
+                detailTitle.text = $"{def.DisplayName}   ·   {def.Rank}   ·   Level {level}";
 
             if (detailBody != null)
             {
                 string Line(string what, float basis, float lv, float tr) =>
                     $"{what}\n" +
-                    $"   gốc            {basis:N0}\n" +
-                    $"   cấp nâng   +{lv - 1f:P0}  →  {basis * lv:N0}\n" +
-                    $"   kho báu     +{tr:P0}  →  {basis * lv * (1f + tr):N0}\n" +
-                    $"   TỔNG        {basis * lv * (1f + tr):N0}\n";
+                    $"   Base           {basis:N0}\n" +
+                    $"   Upgrade    +{lv - 1f:P0}  →  {basis * lv:N0}\n" +
+                    $"   Relics      +{tr:P0}  →  {basis * lv * (1f + tr):N0}\n" +
+                    $"   TOTAL        {basis * lv * (1f + tr):N0}\n";
 
                 detailBody.text =
-                    Line("MÁU", def.BaseHp, lvMul, tHp) + "\n" +
-                    Line("SÁT THƯƠNG", def.BaseAttack, lvMul, tAtk);
+                    Line("HP", def.BaseHp, lvMul, tHp) + "\n" +
+                    Line("ATTACK", def.BaseAttack, lvMul, tAtk);
             }
             ShowPanel(true);
         }
@@ -131,20 +139,7 @@ namespace Project.UI
         void Buy(int i)
         {
             if (i < 0 || i >= units.Length || units[i] == null) return;
-            var save = SaveSystem.Current;
-            var row = save.FindUnit(units[i].UnitId);
-            if (row == null)
-            {
-                row = new SaveData.UnitUpgrade { UnitId = units[i].UnitId, Level = 1 };
-                save.Units.Add(row);
-            }
-
-            var max = balance != null ? balance.UnitMaxLevel : 10;
-            if (row.Level >= max) return;
-            if (!GameProgress.SpendGold(CostFor(row.Level))) return;
-
-            row.Level++;
-            SaveSystem.Save();
+            if(!AllySummon.TryUpgrade(units[i].UnitId,balance))return;
             Refresh();
         }
 
@@ -152,7 +147,7 @@ namespace Project.UI
         {
             if (goldLabel != null) goldLabel.text = $"{GameProgress.Gold:N0}";
             var save = SaveSystem.Current;
-            var max = balance != null ? balance.UnitMaxLevel : 10;
+            var max = balance != null ? balance.UnitMaxLevel : 30;
 
             for (var i = 0; i < units.Length; i++)
             {
@@ -168,14 +163,14 @@ namespace Project.UI
                 // tiet — nhet ca vao mot dong 1000px thi chu nho toi muc
                 // khong doc duoc, ma van khong du cho.
                 if (statLabels[i] != null)
-                    statLabels[i].text = top ? "TỐI ĐA" : $"Cấp {level}/{max}";
+                    statLabels[i].text = top ? "MAX" : $"Lv.{level}/{max} · Shards {row?.Shards ?? 0}/{AllySummon.ShardsFor(level)}";
 
                 if (costLabels[i] != null)
                     costLabels[i].text = top ? "—" : $"{CostFor(level):N0}¢";
 
                 if (upgradeButtons[i] != null)
                     upgradeButtons[i].interactable =
-                        !top && GameProgress.Gold >= CostFor(level);
+                        !top && GameProgress.Gold >= CostFor(level) && (row?.Shards ?? 0)>=AllySummon.ShardsFor(level);
             }
         }
     }

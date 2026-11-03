@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Unit_monster_common
   m_EditorClassIdentifier: Assembly-CSharp::Project.Data.UnitDefinition
   UnitId: monster_common
-  DisplayName: monster_common
+  DisplayName: "Cave Spider"
   Race: 3
   Rank: 0
   BaseHp: 180

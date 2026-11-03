@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Unit_machine_common
   m_EditorClassIdentifier: Assembly-CSharp::Project.Data.UnitDefinition
   UnitId: machine_common
-  DisplayName: machine_common
+  DisplayName: "Scrap Crawler"
   Race: 4
   Rank: 0
   BaseHp: 180

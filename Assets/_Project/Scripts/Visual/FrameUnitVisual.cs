@@ -26,7 +26,7 @@ namespace Project.Visual
     [RequireComponent(typeof(SpriteRenderer))]
     public sealed class FrameUnitVisual : MonoBehaviour, IUnitVisual
     {
-        enum State { Idle, Walk, Attack, Dead }
+        enum State { Idle, Walk, Attack, Skill, Dead }
 
         [SerializeField] UnitAnimationSet set;
         [SerializeField] SpriteRenderer target;
@@ -62,6 +62,7 @@ namespace Project.Visual
         SpriteRenderer walkVfxRight;
         SpriteRenderer attackVfx;
         SpriteRenderer deathVfx;
+        SpriteRenderer skillVfx;
         bool deathVfxPlaying;
         int deathVfxStep;
         float deathVfxTimer;
@@ -71,6 +72,7 @@ namespace Project.Visual
         float stepTimer;
         float speedMul = 1f;
         bool isDead;
+        UnitAnimationSet.Clip activeAttack;
 
         Action pendingImpact;
         Action pendingFinished;
@@ -80,10 +82,16 @@ namespace Project.Visual
         Vector3 restLocal;          // vi tri goc, moi chuyen dong phu cong len day
         float phase;                // dong ho rieng cho nhun/nghieng
 
+        // Consumers must use the animated body, not the empty legacy renderer
+        // on the prefab root or the health-bar renderers.
+        public SpriteRenderer BodyRenderer => target;
+        public bool EmpoweredAttack { get; set; }
+        UnitAnimationSet.Clip AttackClip => EmpoweredAttack && set != null && set.EmpoweredAttack != null && set.EmpoweredAttack.IsValid ? set.EmpoweredAttack : set?.Attack;
+
         /// <summary>Gọi lúc sinh lính. UnitSpawner truyền bộ khung hình vào.</summary>
         public void Bind(UnitAnimationSet animations)
         {
-            set = animations;
+            set = animations;activeAttack=null;
             state = State.Idle;
             step = 0;
             stepTimer = 0f;
@@ -109,9 +117,12 @@ namespace Project.Visual
         void Update()
         {
             if (set == null) return;
+            var combat = GetComponent<Project.Battle.LegendaryCombat>();
+            if (combat && combat.Stunned) return;
             Tick(Time.deltaTime);
             TickDeathVfx(Time.deltaTime);
             Secondary(Time.deltaTime);
+            if (state == State.Skill) ApplyVfx();
         }
 
         void Tick(float dt)
@@ -129,7 +140,7 @@ namespace Project.Visual
             {
                 stepTimer -= StepTime(clip, step);
 
-                if (state == State.Attack && !impactFired && step >= ImpactStep)
+                if ((state == State.Attack || state == State.Skill) && !impactFired && step >= ImpactStep)
                 {
                     impactFired = true;
                     var cb = pendingImpact; pendingImpact = null;
@@ -140,7 +151,7 @@ namespace Project.Visual
                 if (step < n) { Apply(); continue; }
 
                 // Het clip.
-                if (state == State.Attack) { Finish(); return; }
+                if (state == State.Attack || state == State.Skill) { Finish(); return; }
                 if (!clip.Loop) { step = n - 1; stepTimer = 0f; Apply(); return; }
                 step = 0;
                 Apply();
@@ -154,6 +165,12 @@ namespace Project.Visual
         void Secondary(float dt)
         {
             if (isDead) return;
+            if (set != null && set.BakedMotion)
+            {
+                target.transform.localPosition = restLocal;
+                target.transform.localRotation = Quaternion.identity;
+                return;
+            }
             phase += dt;
             var t = target.transform;
 
@@ -189,7 +206,7 @@ namespace Project.Visual
         {
             if (isDead) { onFinished?.Invoke(); return; }
 
-            var clip = set != null ? set.Attack : null;
+            var clip = AttackClip;
             if (clip == null || !clip.IsValid)
             {
                 // Thieu clip danh thi van PHAI ra damage va PHAI bao xong —
@@ -200,6 +217,7 @@ namespace Project.Visual
                 return;
             }
 
+            activeAttack=clip;
             pendingImpact = onImpact;
             pendingFinished = onFinished;
             impactFired = false;
@@ -208,13 +226,13 @@ namespace Project.Visual
 
         public void SetMoving(bool isMoving)
         {
-            if (isDead || state == State.Attack) return;
+            if (isDead || state == State.Attack || state == State.Skill) return;
             Switch(isMoving ? State.Walk : State.Idle);
         }
 
         public void PlayIdle()
         {
-            if (isDead) return;
+            if (isDead || state == State.Skill) return;
             Switch(State.Idle);
         }
 
@@ -275,7 +293,8 @@ namespace Project.Visual
         {
             if (Mathf.Abs(dirX) < 0.01f) return;
             var s = transform.localScale;
-            s.x = Mathf.Abs(s.x) * (dirX < 0f ? -1f : 1f);
+            s.x = Mathf.Abs(s.x) * (dirX < 0f ? -1f : 1f)
+                * (set != null && set.SourceFacesLeft ? -1f : 1f);
             transform.localScale = s;
         }
 
@@ -287,7 +306,8 @@ namespace Project.Visual
         UnitAnimationSet.Clip Current => set == null ? null : state switch
         {
             State.Walk => Pick(set.Walk, set.Idle),
-            State.Attack => set.Attack,
+            State.Attack => activeAttack ?? AttackClip,
+            State.Skill => Pick(set.Skill, set.Attack),
             State.Dead => Pick(set.Dead, set.Idle),
             _ => set.Idle,
         };
@@ -295,7 +315,23 @@ namespace Project.Visual
         static UnitAnimationSet.Clip Pick(UnitAnimationSet.Clip a, UnitAnimationSet.Clip fallback)
             => a != null && a.IsValid ? a : fallback;
 
-        int ImpactStep => set == null ? 2 : Mathf.Max(0, set.ImpactStep);
+        // Hoi CLIP DANH, khong doc so cung: clip 3 khung va clip 8 khung
+        // can hai buoc cham khac nhau. ImpactStepFor tra ve giua clip khi
+        // UnitAnimationSet.ImpactStep de -1.
+        int ImpactStep => set == null
+            ? 1
+            : state == State.Skill ? (set.SkillImpactStep >= 0 ? Mathf.Clamp(set.SkillImpactStep, 0, Steps(Current) - 1) : Mathf.Max(0, Steps(Current) / 2)) : Mathf.Max(0, set.ImpactStepFor(set.Attack));
+
+        public void PlaySkill(Action onImpact, Action onFinished)
+        {
+            if (isDead) { onFinished?.Invoke(); return; }
+            var clip = set != null ? Pick(set.Skill, set.Attack) : null;
+            if (clip == null || !clip.IsValid) { onImpact?.Invoke(); onFinished?.Invoke(); return; }
+            pendingImpact = onImpact;
+            pendingFinished = onFinished;
+            impactFired = false;
+            Switch(State.Skill);
+        }
 
         /// <summary>Số bước của clip, đã tính cả phần đảo chiều.</summary>
         int Steps(UnitAnimationSet.Clip clip)
@@ -356,6 +392,7 @@ namespace Project.Visual
             walkVfxRight = MakeVfxRenderer("WalkVfxRight", -1, set != null ? set.WalkVfx : null);
             attackVfx = MakeVfxRenderer("AttackVfx", 1, set != null ? set.AttackVfx : null);
             deathVfx = MakeVfxRenderer("DeathVfx", 1, set != null ? set.DeathVfx : null);
+            skillVfx = MakeVfxRenderer("SkillVfx", 2, set != null ? set.SkillVfx : null);
         }
 
         SpriteRenderer MakeVfxRenderer(string nodeName, int orderDelta, UnitAnimationSet.Clip clip)
@@ -390,10 +427,24 @@ namespace Project.Visual
             Disable(walkVfxRight);
             Disable(attackVfx);
             Disable(deathVfx);
+            Disable(skillVfx);
             if (!visualsVisible || set == null) return;
 
             switch (state)
             {
+                case State.Skill:
+                    var combat = GetComponent<Project.Battle.LegendaryCombat>();
+                    if (set.SkillVfx != null && set.SkillVfx.IsValid &&
+                        step >= set.SkillVfxStartStep && step < set.SkillVfxEndStep &&
+                        set.SkillVfxOffsets != null && step < set.SkillVfxOffsets.Length &&
+                        (!combat || combat.Casting))
+                    {
+                        var progress = (step - set.SkillVfxStartStep + stepTimer / StepTime(Current, step)) /
+                                       Mathf.Max(1, set.SkillVfxEndStep - set.SkillVfxStartStep);
+                        Show(skillVfx, set.SkillVfx, set.SkillVfxOffsets[step], set.SkillVfxScale,
+                             1f, Mathf.FloorToInt(progress * set.SkillVfx.Count));
+                    }
+                    break;
                 case State.Walk:
                     if (set.WalkVfx != null && set.WalkVfx.IsValid)
                     {

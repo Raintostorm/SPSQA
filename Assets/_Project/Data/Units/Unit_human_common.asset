@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Unit_human_common
   m_EditorClassIdentifier: Assembly-CSharp::Project.Data.UnitDefinition
   UnitId: human_common
-  DisplayName: "D\xE2n qu\xE2n c\u1EA7m li\u1EC1m"
+  DisplayName: "Sickle Militia"
   Race: 0
   Rank: 0
   BaseHp: 180
@@ -26,7 +26,7 @@ MonoBehaviour:
   ProjectileSpeed: 6
   ProjectileArcHeight: 0
   Animations: {fileID: 11400000, guid: fb08f01cb91954423bf346331e3b4661, type: 2}
-  Scale: 0.583
+  Scale: 0.586
   CellOffset: {x: -0.0374, y: -0.2465}
   BattlePrefab: {fileID: 0}
   Portrait: {fileID: 0}

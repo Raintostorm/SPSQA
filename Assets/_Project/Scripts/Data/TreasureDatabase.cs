@@ -13,6 +13,14 @@ namespace Project.Data
     {
         public TreasureItem[] Items = System.Array.Empty<TreasureItem>();
 
+        void OnEnable()
+        {
+            if(!Application.isPlaying)return;
+            foreach(var it in Items)if(it.Id==Project.Battle.MythicFusion.CapacityRelic){if(!it.Icon)it.Icon=MythicCatalog.Effect("relic")[0];return;}
+            var list=new System.Collections.Generic.List<TreasureItem>(Items);
+            list.Add(new TreasureItem{Id=Project.Battle.MythicFusion.CapacityRelic,DisplayName="Astral Contract",Tier=Rank.Legendary,MaxLevel=10,Icon=MythicCatalog.Effect("relic")[0],Stats=new[]{new TreasureItem.Entry{Stat=TreasureStat.MythicCapacity,Base=0,PerLevel=.5f}}});Items=list.ToArray();
+        }
+
         public TreasureItem Find(string id)
         {
             foreach (var it in Items)

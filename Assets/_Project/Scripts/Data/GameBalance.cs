@@ -94,7 +94,7 @@ namespace Project.Data
         [Header("Nâng cấp nhân vật")]
         [Tooltip("Giá lên cấp N = giá này × N. Mỗi cấp +10% máu và sát thương.")]
         public int UpgradeBaseCost = 500;
-        public int UnitMaxLevel = 10;
+        public int UnitMaxLevel = 30;
 
         [Header("Thưởng khi qua một màn")]
         [Tooltip("Lần ĐẦU qua màn đó.")]
@@ -108,6 +108,12 @@ namespace Project.Data
                  "đúng hai con số này.")]
         public int GoldPerLevelReplay = 1000;
         public int KeysPerLevelReplay = 3;
+
+        public int WavesForLevel(int level) => level == 2 ? 10 : WavesPerLevel;
+        public int GoldForLevel(int level, bool firstClear) => level == 2 ? 5000 :
+            (firstClear ? GoldPerLevelClear : GoldPerLevelReplay);
+        public int KeysForLevel(int level, bool firstClear) => level == 2 ? 30 :
+            (firstClear ? KeysPerLevelClear : KeysPerLevelReplay);
 
         [Header("Grid")]
         public int GridRows = 4;

@@ -19,7 +19,7 @@ namespace Project.Meta
         /// <summary>Màn cao nhất được phép chơi, đếm từ 1.</summary>
         public static int Unlocked
         {
-            get => Mathf.Max(1, SaveSystem.Current.HighestLevelUnlocked);
+            get => Mathf.Max(2, SaveSystem.Current.HighestLevelUnlocked);
             private set
             {
                 SaveSystem.Current.HighestLevelUnlocked = Mathf.Max(1, value);
@@ -29,6 +29,19 @@ namespace Project.Meta
 
         public static int Gold => SaveSystem.Current.Gold;
         public static int Keys => SaveSystem.Current.TreasureKeys;
+        public static int Gems => SaveSystem.Current.Gems;
+        public static int GemsForLevel(int level) => level==1?80:level==2?250:0;
+        public static void AddGems(int amount)
+        {
+            if(amount<=0)return;
+            SaveSystem.Current.Gems=checked(SaveSystem.Current.Gems+amount);
+            SaveSystem.Save();
+        }
+        public static bool SpendGems(int amount)
+        {
+            if(amount<0 || Gems<amount)return false;
+            SaveSystem.Current.Gems-=amount;SaveSystem.Save();return true;
+        }
 
         /// <summary>
         /// Màn đang chơi. Trang chủ đặt, màn trận đọc.
@@ -54,11 +67,11 @@ namespace Project.Meta
 
             if (balance != null)
             {
-                save.Gold += firstTime ? balance.GoldPerLevelClear
-                                       : balance.GoldPerLevelReplay;
-                save.TreasureKeys += firstTime ? balance.KeysPerLevelClear
-                                               : balance.KeysPerLevelReplay;
+                save.Gold += balance.GoldForLevel(level, firstTime);
+                save.TreasureKeys += balance.KeysForLevel(level, firstTime);
             }
+            // Award on every successful clear, including replays. No retroactive grants.
+            save.Gems+=GemsForLevel(level);
 
             if (firstTime) save.HighestLevelUnlocked = level + 1;
             SaveSystem.Save();

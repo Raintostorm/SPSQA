@@ -63,8 +63,8 @@ namespace Project.Gacha
                     case RollCellKind.Buff:
                         var stat = (BuffStatKind)rng.Next(0, 4);
                         var value = BuffValue(balance, stat, tier);
-                        payout.BuffAdds.Add(new BuffRollAdd(stat, value));
-                        sb.Append($"{Label(stat)} +{value:P0}  ");
+                        payout.BuffAdds.Add(new BuffRollAdd(stat, value, (Rank)tier));
+                        sb.Append($"{(Rank)tier} {Label(stat)} +{value:P0}  ");
                         break;
                 }
             }
@@ -77,10 +77,10 @@ namespace Project.Gacha
         /// <summary>Tên buff cho người đọc, không phải tên enum.</summary>
         static string Label(BuffStatKind s) => s switch
         {
-            BuffStatKind.HpPct       => "MÁU",
-            BuffStatKind.DmgPct      => "SÁT THƯƠNG",
-            BuffStatKind.AtkSpeedPct => "TỐC ĐÁNH",
-            _                        => "CHÍ MẠNG",
+            BuffStatKind.HpPct       => "HP",
+            BuffStatKind.DmgPct      => "ATTACK",
+            BuffStatKind.AtkSpeedPct => "ATTACK SPEED",
+            _                        => "CRIT CHANCE",
         };
 
         /// <summary>

@@ -24,9 +24,19 @@ namespace Project.EditorTools
         const string ArtDir = "Assets/_Project/Art/Units";
 
         const float RowH = 200f, RowGap = 16f;
+
+        /// <summary>
+        /// Sprite nền thẻ theo BẬC — Common, Rare, Epic, Legendary.
+        ///
+        /// Bốn ảnh RIÊNG, không phải một ảnh nhuộm bốn màu. Nhuộm là phép
+        /// nhân, nó kéo tối cả nét viền đen lẫn hai vạch gờ sáng/tối — mất
+        /// đúng cái cấu tạo năm tầng làm nút trông ra nút.
+        /// </summary>
+        static readonly string[] RankCard =
+            { "card", "card_rare", "card_epic", "card_legend" };
         const float ListTop = -420f, ListBottom = 60f;
 
-        [MenuItem("SpinSquad/Dựng màn NÂNG CẤP")]
+        [MenuItem("SpinSquad/Dựng màn UPGRADE CẤP")]
         internal static void Build()
         {
             var scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
@@ -67,19 +77,20 @@ namespace Project.EditorTools
 
             Backdrop(root.transform, Bg);
 
-            var panel = S("panel");
-            var btn = S("button");
-            var down = S("button_down");
+            var panel = S("card");
+            var btn = S("btn_primary");
+            var down = S("btn_primary_down");
 
             var goldLabel = ResourceBar(root.transform, "Gold", S("bar_resource"),
                 new Vector2(0f, 1f), new Vector2(26f, -40f), S("icon_gold"));
-            var back = TextButton(root.transform, "BackButton", btn, down,
+            var back = TextButton(root.transform, "BackButton",
+                S("btn_small"), S("btn_small"),
                 new Vector2(1f, 1f), new Vector2(-26f, -40f),
-                new Vector2(200f, 128f), 2.2f, "✕", 48);
+                new Vector2(140f, 128f), 1f, "✕", 48);
 
             Label(Box(root.transform, "Title", panel, new Vector2(0.5f, 1f),
                       new Vector2(0f, -200f), new Vector2(620f, 110f), 2f),
-                  "LÒ RÈN", 64, FontStyle.Bold, new Color(1f, 0.86f, 0.35f),
+                  "UPGRADE", 64, FontStyle.Bold, new Color(1f, 0.86f, 0.35f),
                   SliceBorder / 2f);
 
             // ── vùng cuộn ─────────────────────────────────────────────
@@ -116,12 +127,14 @@ namespace Project.EditorTools
             {
                 var rt = Box(content.transform, $"Row{i}", panel,
                     new Vector2(0.5f, 1f), new Vector2(0f, -i * (RowH + RowGap) - RowH * 0.5f),
-                    new Vector2(1000f, RowH), 1.6f);
+                    new Vector2(1000f, RowH), 1f);
                 rt.pivot = new Vector2(0.5f, 0.5f);
+                rt.GetComponent<Image>().sprite = S(RankCard[(int)units[i].Rank]);
 
                 // Chân dung: khung idle đầu tiên, không cần art riêng.
-                var portrait = AssetDatabase.LoadAssetAtPath<Sprite>(
-                    $"{ArtDir}/{units[i].UnitId}/idle_1.png");
+                var portrait = units[i].Animations != null && units[i].Animations.Idle != null
+                    ? units[i].Animations.Idle.FrameAt(0)
+                    : AssetDatabase.LoadAssetAtPath<Sprite>($"{ArtDir}/{units[i].UnitId}/idle_1.png");
                 var pg = New("Portrait", rt);
                 var prt = Need<RectTransform>(pg);
                 prt.anchorMin = prt.anchorMax = new Vector2(0f, 0.5f);
@@ -136,22 +149,27 @@ namespace Project.EditorTools
                 pbtn.transition = Selectable.Transition.ColorTint;
                 portraits[i] = pbtn;
 
+                // The gio co mau dam theo bac -> chu TRANG co vien den.
                 names[i] = Row(rt, "Name", new Vector2(200f, 10f),
                                new Vector2(480f, 60f), 36, TextAnchor.MiddleLeft,
                                Color.white);
+                Outlined(names[i]);
                 stats[i] = Row(rt, "Stat", new Vector2(200f, -50f),
                                new Vector2(480f, 50f), 28, TextAnchor.MiddleLeft,
-                               new Color(0.72f, 0.95f, 0.72f));
+                               new Color(0.92f, 0.96f, 0.92f));
+                Outlined(stats[i]);
 
                 buttons[i] = TextButton(rt, "Buy", btn, down,
                     new Vector2(1f, 0.5f), new Vector2(-24f, 0f),
-                    new Vector2(260f, 110f), 2.2f, "NÂNG", 34);
-                costs[i] = Row(rt, "Cost", new Vector2(-170f, -60f),
-                               new Vector2(240f, 44f), 26, TextAnchor.MiddleCenter,
-                               new Color(1f, 0.86f, 0.35f));
-                var ca = costs[i].GetComponent<RectTransform>();
-                ca.anchorMin = ca.anchorMax = ca.pivot = new Vector2(1f, 0.5f);
-                ca.anchoredPosition = new Vector2(-24f, -62f);
+                    new Vector2(260f, 110f), 2.2f, "UPGRADE", 34);
+                // Gia nam trong mot PILL CON, khong phai chu tran tren the.
+                // Do la cach game tham chieu ghi "0/5" — mot vien thuoc toi
+                // nho dat trong the mau.
+                var costBox = Box(rt, "CostPill", S("pill_small"),
+                    new Vector2(1f, 0.5f), new Vector2(-24f, -62f),
+                    new Vector2(240f, 52f), 1f);
+                costs[i] = Label(costBox, "", 26, FontStyle.Bold,
+                                 new Color(1f, 0.90f, 0.45f), 10f);
             }
 
             // ── bảng chi tiết, phủ lên trên ───────────────────────────
@@ -183,14 +201,14 @@ namespace Project.EditorTools
 
             var dTitle = Card(card, "Title", new Vector2(0f, -360f),
                               new Vector2(860f, 60f), 36, TextAnchor.MiddleCenter,
-                              Color.white);
+                              new Color(0.16f, 0.12f, 0.06f));
             var dBody = Card(card, "Body", new Vector2(0f, -440f),
                              new Vector2(860f, 480f), 30, TextAnchor.UpperLeft,
-                             new Color(0.80f, 0.95f, 0.80f));
+                             new Color(0.30f, 0.38f, 0.26f));
 
             var dClose = TextButton(card, "Close", btn, down,
                 new Vector2(0.5f, 0f), new Vector2(0f, 40f),
-                new Vector2(340f, 110f), 2.2f, "ĐÓNG", 36);
+                new Vector2(340f, 110f), 2.2f, "CLOSE", 36);
 
             var screen = Need<UpgradeScreen>(root);
             Set(screen, so =>
@@ -218,6 +236,14 @@ namespace Project.EditorTools
 
             EditorSceneManager.MarkSceneDirty(scene);
             Debug.Log($"[UpgradeSceneSetup] Xong. {units.Count} dòng.", root);
+        }
+
+        /// <summary>Viền đen quanh chữ, để đọc được trên mọi nền.</summary>
+        static void Outlined(Text t, float px = 3f)
+        {
+            var o = Need<UnityEngine.UI.Outline>(t.gameObject);
+            o.effectColor = new Color(0f, 0f, 0f, 0.92f);
+            o.effectDistance = new Vector2(px, px);
         }
 
         static Text Card(Transform parent, string name, Vector2 pos, Vector2 size,

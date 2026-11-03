@@ -118,7 +118,11 @@ namespace Project.Battle
                                    UnitDefinition def) =>
             CellToWorld(row, col) + (Vector3)unitAnchor
             + (Vector3)FormationOffset(slot, occupancy)
-            + (def != null ? (Vector3)def.CellOffset : Vector3.zero);
+            + (def != null ? (Vector3)def.CellOffset : Vector3.zero)
+            // Mythic sprites are taller and foot-pivoted. Lower their preparation
+            // anchor within the cell; combat deployment uses FormationOffset only.
+            + (def != null && def.Rank == Rank.Mythic
+                ? Vector3.down * (CellHeight * .18f) : Vector3.zero);
 
         /// <summary>
         /// Độ lệch của lính thứ <paramref name="slot"/> so với tâm nhóm, khi

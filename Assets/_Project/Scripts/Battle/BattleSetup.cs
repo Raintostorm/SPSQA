@@ -35,6 +35,20 @@ namespace Project.Battle
                 "tối đa 3 con — luật ở BattleBoard.")]
         [SerializeField] Entry[] allies;
         [SerializeField] Entry[] enemies;
+        [SerializeField] bool useChapterOneSlimes = true;
+        ChapterOneSlimes slimeRoster;
+
+        void OnDestroy() => slimeRoster?.Dispose();
+
+        UnitDefinition EnemyFor(int slot, int wave, bool special)
+        {
+            var replacement = slimeRoster?.Pick(slot,wave,flow ? flow.TotalWaves : 3,special);
+            return replacement ? replacement : enemies[slot % enemies.Length].definition;
+        }
+
+        // Retained for callers that block input while a starter picker is open.
+        // Chapter 1-2 now grants the Mythic recipe kit directly instead.
+        public bool IsChoosingLegend => false;
 
         [Tooltip("Để trống cũng chạy. Có thì mỗi wave mới sẽ sinh lại quân địch.")]
         [SerializeField] BattleFlow flow;
@@ -86,8 +100,18 @@ namespace Project.Battle
         /// </summary>
         void SpawnEnemies(int wave)
         {
-            SpawnSide(enemies, enemyBoard, UnitTeam.Enemy);
-
+            var multiplier = Project.Meta.GameProgress.CurrentLevel == 2 ? 2 : 1;
+            if (enemies == null || enemies.Length == 0) return;
+            var baseWave = new List<Entry>();
+            for (var i = 0; i < enemies.Length; i++)
+            {
+                var definition = EnemyFor(i,wave,true);
+                int count = Mathf.Max(1,enemies[i].count)*multiplier;
+                bool special = definition && definition.EnemyTier != UnitDefinition.EnemyClass.Common;
+                baseWave.Add(new Entry {definition=definition,count=special?1:count});
+                if(special && count>1)baseWave.Add(new Entry {definition=EnemyFor(i,wave,false),count=count-1});
+            }
+            SpawnSide(baseWave.ToArray(), enemyBoard, UnitTeam.Enemy);
             var extra = Mathf.Max(0, extraEnemiesPerWave) * Mathf.Max(0, wave - 1);
             if (extra == 0 || enemies == null || enemies.Length == 0) return;
 
@@ -96,7 +120,7 @@ namespace Project.Battle
             {
                 var src = enemies[i % enemies.Length];
                 if (src.definition == null) continue;
-                pick.Add(new Entry { definition = src.definition, count = 1 });
+                pick.Add(new Entry { definition = EnemyFor(i % enemies.Length,wave,false), count = multiplier });
             }
             SpawnSide(pick.ToArray(), enemyBoard, UnitTeam.Enemy);
         }
@@ -116,13 +140,29 @@ namespace Project.Battle
 
         void SpawnBothSides()
         {
+            if (slimeRoster == null && useChapterOneSlimes && enemies != null)
+            {
+                var templates = new UnitDefinition[enemies.Length];
+                for(int i=0;i<enemies.Length;i++)templates[i]=enemies[i].definition;
+                slimeRoster = new ChapterOneSlimes(templates);
+            }
             SpawnSide(allies,  allyBoard,  UnitTeam.Ally);
-            SpawnSide(enemies, enemyBoard, UnitTeam.Enemy);
+            // Temporary Chapter 1-3 starter requested for live buff / mana VFX testing.
+            // Run-only unit: no unlock, shards, level or save changes.
+            if (Project.Meta.GameProgress.CurrentLevel == 3)
+                foreach (var definition in MythicCatalog.All)
+                    if (definition.Mythic == MythicKind.Guardian)
+                    {
+                        SpawnSide(new[]{new Entry{definition=definition,count=1}},allyBoard,UnitTeam.Ally);
+                        break;
+                    }
+            SpawnEnemies(1);
         }
 
-        void SpawnSide(Entry[] entries, BattleBoard board, UnitTeam team)
+        Unit SpawnSide(Entry[] entries, BattleBoard board, UnitTeam team)
         {
-            if (entries == null) return;
+            Unit lastSpawned = null;
+            if (entries == null) return null;
 
             foreach (var e in entries)
             {
@@ -146,6 +186,7 @@ namespace Project.Battle
                     if (unit == null) continue;
 
                     board.Place(unit, row, col);
+                    lastSpawned = unit;
 
                     // Quay mặt về phía địch ngay từ lúc xếp quân. UnitBrain
                     // lo việc này khi đánh, nhưng lúc chờ thì nó đang tắt —
@@ -157,6 +198,7 @@ namespace Project.Battle
                     if (brain != null) brain.enabled = false;
                 }
             }
+            return lastSpawned;
         }
 
     }

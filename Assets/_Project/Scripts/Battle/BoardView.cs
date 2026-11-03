@@ -33,6 +33,9 @@ namespace Project.Battle
         {
             if (flow == null) flow = FindFirstObjectByType<BattleFlow>();
             Capture();
+            foreach(var b in new[]{allyBoard,enemyBoard})if(b)
+                foreach(var renderer in b.GetComponentsInChildren<SpriteRenderer>(true))
+                    if(renderer.name.StartsWith("Cell_"))renderer.enabled=true;
         }
 
         /// <summary>
@@ -65,6 +68,13 @@ namespace Project.Battle
             // không phải để xem lại địch.
             if (p == BattleFlow.Phase.Prep) ShowingEnemy = false;
             Apply();
+        }
+
+        public Vector3 HomeCell(BattleBoard board,int row,int col)
+        {
+            Capture();
+            var home=board==allyBoard?allyHome:board==enemyBoard?enemyHome:board.transform.position;
+            return board.Grid.CellToWorld(row,col)+home-board.transform.position;
         }
 
         public void Toggle()

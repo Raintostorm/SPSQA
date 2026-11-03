@@ -1,5 +1,6 @@
 using Project.Battle;
 using Project.Data;
+using System.Collections;
 using UnityEngine;
 
 namespace Project.Gacha
@@ -26,21 +27,30 @@ namespace Project.Gacha
 
         [Tooltip("Dùng thay roster nếu có. Một nguồn cho cả gacha lẫn tiến hoá.")]
         [SerializeField] UnitPool pool;
+        public bool IsDelivering { get; private set; }
 
         void OnEnable()
         {
             if (roll == null) roll = FindFirstObjectByType<RollService>();
-            if (roll != null) roll.Rolled += Place;
+            if (roll != null) roll.RewardReady += Place;
         }
 
         void OnDisable()
         {
-            if (roll != null) roll.Rolled -= Place;
+            if (roll != null) roll.RewardReady -= Place;
+            StopAllCoroutines();
+            IsDelivering = false;
         }
 
         void Place(RollPayout payout)
         {
             if (payout == null || allyBoard == null || spawner == null) return;
+            StartCoroutine(Deliver(payout));
+        }
+
+        IEnumerator Deliver(RollPayout payout)
+        {
+            IsDelivering = true;
 
             foreach (var grant in payout.AllyGrants)
             {
@@ -65,10 +75,29 @@ namespace Project.Gacha
 
                 // Sinh ở tâm ô; Place() xếp lại đúng đội hình sau khi biết
                 // trong ô có mấy con. Giống hệt BattleSetup.
+                var occupied = allyBoard.CountAt(row,col);
+                var destination = allyBoard.Grid.SlotToWorld(row,col,occupied,occupied+1,def);
+                var camera = Camera.main;
+                if (camera)
+                {
+                    var source = camera.ScreenToWorldPoint(new Vector3(Screen.width * .5f, Screen.height * .22f, Mathf.Abs(camera.transform.position.z - destination.z)));
+                    var panel = FindFirstObjectByType<Project.UI.RollPanel>();
+                    if (panel) source = panel.RewardOrigin(camera, destination.z);
+                    Project.Visual.SkillEffects.Recruit(source, destination, .55f,
+                        Project.Visual.PrepUnitRing.ColorForRank(def.Rank));
+                    float elapsed = 0f;
+                    while (elapsed < .55f)
+                    {
+                        if (!Project.UI.SharedSettings.IsPaused) elapsed += Time.deltaTime;
+                        yield return null;
+                    }
+                }
+                if (!allyBoard || !spawner) break;
                 var unit = spawner.Spawn(def, UnitTeam.Ally,
-                                         allyBoard.Grid.CellToWorld(row, col),
+                                         destination,
                                          allyBoard.transform);
                 if (unit == null) continue;
+                BattleContribution.Recruited++;
 
                 allyBoard.Place(unit, row, col);
                 unit.Visual?.SetFacing(1f);
@@ -79,7 +108,10 @@ namespace Project.Gacha
                 if (brain != null) brain.enabled = false;
 
                 Debug.Log($"[RollRewardPlacer] +{def.name} vào ô ({row},{col})", this);
+                Project.Visual.SkillEffects.RecruitArrival(unit.transform.position, .7f,
+                    Project.Visual.PrepUnitRing.ColorForRank(def.Rank), .5f);
             }
+            IsDelivering = false;
         }
 
         UnitDefinition Find(Rank rank, Race race)

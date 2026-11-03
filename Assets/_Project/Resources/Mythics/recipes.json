@@ -1,0 +1,68 @@
+{
+  "recipes": [
+    {
+      "mythic": "mythic_guardian",
+      "ingredients": [
+        "human_epic",
+        "human_common",
+        "human_common"
+      ]
+    },
+    {
+      "mythic": "mythic_undead",
+      "ingredients": [
+        "dead_legendary",
+        "dead_epic",
+        "dead_common"
+      ]
+    },
+    {
+      "mythic": "mythic_elf",
+      "ingredients": [
+        "elf_legendary",
+        "elf_epic",
+        "elf_rare"
+      ]
+    },
+    {
+      "mythic": "mythic_bear",
+      "ingredients": [
+        "monster_legendary",
+        "monster_epic",
+        "monster_rare"
+      ]
+    },
+    {
+      "mythic": "mythic_robot",
+      "ingredients": [
+        "machine_legendary",
+        "machine_epic",
+        "machine_common"
+      ]
+    },
+    {
+      "mythic": "mythic_clock",
+      "ingredients": [
+        "elf_legendary",
+        "human_epic",
+        "dead_rare"
+      ]
+    },
+    {
+      "mythic": "mythic_mimic",
+      "ingredients": [
+        "dead_legendary",
+        "machine_epic",
+        "monster_common"
+      ]
+    },
+    {
+      "mythic": "mythic_swordsman",
+      "ingredients": [
+        "human_legendary",
+        "elf_epic",
+        "human_rare"
+      ]
+    }
+  ]
+}

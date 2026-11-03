@@ -2,17 +2,13 @@ using Project.Battle;
 using Project.Meta;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 namespace Project.UI
 {
     /// <summary>
-    /// Bảng kết quả khi qua màn hoặc thua. Tạm thời đóng luôn vai trò
-    /// "trang chủ" — chỗ duy nhất ra khỏi một ván.
-    ///
-    /// Là một lớp phủ trong CÙNG scene, không phải scene riêng. Lý do kỹ
-    /// thuật: file .unity do Unity giữ trong bộ nhớ, tôi không ghi được
-    /// (xem Handoff/11 mục E). Khi nào cần trang chủ thật có chọn level thì
-    /// bạn tạo scene, tôi dựng nội dung.
+    /// Dedicated opaque full-screen Result view on its own canvas.
+    /// Existing scene bindings remain only for backward compatibility.
     /// </summary>
     public sealed class ResultPanel : MonoBehaviour
     {
@@ -30,6 +26,10 @@ namespace Project.UI
         [SerializeField] Button againButton;
         [SerializeField] Text againLabel;
         [SerializeField] Button homeButton;
+        GameObject resultScreen;
+        Font resultFont;
+        float playSeconds;
+        bool presented;
 
         void Awake()
         {
@@ -49,29 +49,119 @@ namespace Project.UI
             if (flow != null) flow.PhaseChanged -= OnPhase;
         }
 
+        void Update()
+        {if(flow && !presented)playSeconds+=Time.deltaTime;}
+
         void OnPhase(BattleFlow.Phase phase)
         {
             var win = phase == BattleFlow.Phase.LevelCleared;
             var lose = phase == BattleFlow.Phase.Defeated;
             if (!win && !lose) { Show(false); return; }
+            if(presented)return;
+            presented=true;
+            int oldGold=GameProgress.Gold,oldKeys=GameProgress.Keys,oldGems=GameProgress.Gems;
 
             // Mở màn kế NGAY khi thắng, không đợi người chơi bấm gì. Đợi
             // bấm thì ai thoát game ở màn này là mất tiến độ.
             if (win) GameProgress.Clear(GameProgress.CurrentLevel, balance);
-
-            if (title != null)
-            {
-                title.text = win ? "QUA MÀN" : "THUA RỒI";
-                title.color = win ? new Color(1f, 0.87f, 0.35f)
-                                  : new Color(1f, 0.5f, 0.45f);
-            }
-            if (detail != null)
-                detail.text = win
-                    ? $"Màn {GameProgress.CurrentLevel} — trụ hết {flow.Wave} wave"
-                    : $"Màn {GameProgress.CurrentLevel} — gục ở wave {flow.Wave}";
-            if (againLabel != null) againLabel.text = win ? "CHƠI TIẾP" : "CHƠI LẠI";
-            Show(true);
+            BuildResult(win,GameProgress.Gold-oldGold,GameProgress.Keys-oldKeys,GameProgress.Gems-oldGems);
         }
+
+        RectTransform Rect(string name,Transform parent,Vector2 anchor,Vector2 pos,Vector2 size)
+        {
+            var r=new GameObject(name,typeof(RectTransform)).GetComponent<RectTransform>();r.SetParent(parent,false);
+            BattleUiSkin.Place(r,anchor,pos,size);return r;
+        }
+
+        Text Label(Transform parent,string value,Vector2 anchor,Vector2 pos,Vector2 size,int fontSize,Color color)
+        {
+            var r=Rect(value,parent,anchor,pos,size);var text=r.gameObject.AddComponent<Text>();text.font=resultFont;text.text=value;text.fontSize=fontSize;text.fontStyle=FontStyle.Bold;text.color=color;text.alignment=TextAnchor.MiddleCenter;text.raycastTarget=false;
+            var ink=r.gameObject.AddComponent<Outline>();ink.effectColor=new Color(0,0,0,.8f);ink.effectDistance=new Vector2(2,-2);return text;
+        }
+
+        Button Action(Transform parent,string label,string glyph,float top,bool secondary,UnityEngine.Events.UnityAction action)
+        {
+            var size=new Vector2(1000,secondary?135:175);
+            var r=Rect(label,parent,new Vector2(.5f,1),new Vector2(0,-top),size);
+            var image=r.gameObject.AddComponent<Image>();BattleUiSkin.Skin(image,secondary?BattleUiSkin.Purple:BattleUiSkin.Orange);
+            var button=r.gameObject.AddComponent<Button>();button.targetGraphic=image;ButtonFamilySkin.States(button);
+            button.onClick.AddListener(action);
+            Label(r,glyph,new Vector2(.5f,.5f),new Vector2(-350,0),new Vector2(120,120),secondary?65:90,Color.white);
+            Label(r,label,new Vector2(.5f,.5f),new Vector2(70,0),new Vector2(720,130),secondary?48:60,Color.white);
+            return button;
+        }
+
+        void BuildResult(bool win,int gold,int keys,int gems)
+        {
+            // Presentation only. Reward settlement stays in OnPhase, never in this renderer.
+            Show(false);
+            if(resultScreen)Destroy(resultScreen);
+            resultFont=Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+            resultScreen=new GameObject("ResultScreen",typeof(RectTransform),typeof(Canvas),typeof(CanvasScaler),typeof(GraphicRaycaster));
+            var canvas=resultScreen.GetComponent<Canvas>();canvas.renderMode=RenderMode.ScreenSpaceOverlay;canvas.sortingOrder=500;
+            var scaler=resultScreen.GetComponent<CanvasScaler>();scaler.uiScaleMode=CanvasScaler.ScaleMode.ScaleWithScreenSize;scaler.referenceResolution=new Vector2(1125,2436);scaler.matchWidthOrHeight=0;
+            var bg=Rect("Background",resultScreen.transform,Vector2.zero,Vector2.zero,Vector2.zero);bg.anchorMax=Vector2.one;bg.offsetMin=bg.offsetMax=Vector2.zero;bg.gameObject.AddComponent<Image>().color=new Color(.075f,.09f,.17f);
+            var safe=Rect("SafeArea",resultScreen.transform,Vector2.zero,Vector2.zero,Vector2.zero);var area=Screen.safeArea;safe.anchorMin=new Vector2(area.xMin/Screen.width,area.yMin/Screen.height);safe.anchorMax=new Vector2(area.xMax/Screen.width,area.yMax/Screen.height);safe.offsetMin=safe.offsetMax=Vector2.zero;
+            var content=Rect("ResultContent",safe,new Vector2(.5f,.5f),Vector2.zero,new Vector2(1060,2230));
+            for(int i=0;i<16;i++)
+            {
+                var mark=Rect("BackgroundDiamond",bg,new Vector2(.5f,.5f),new Vector2((i%3-1)*410+(i%2)*90,(i/3-2)*420),Vector2.one*(i%2==0?110:65));
+                mark.localRotation=Quaternion.Euler(0,0,45);var image=mark.gameObject.AddComponent<Image>();image.color=new Color(.6f,.5f,.9f,.045f);image.raycastTarget=false;
+            }
+            var ribbon=Art(content,"ResultBanner",win?0:1,25,new Vector2(1040,315));
+            Label(ribbon,win?"VICTORY!":"DEFEAT",new Vector2(.5f,.5f),new Vector2(0,25),new Vector2(900,180),110,Color.white);
+            Label(content,$"Chapter 1-{GameProgress.CurrentLevel}",new Vector2(.5f,1),new Vector2(0,-365),new Vector2(1000,80),48,Color.white);
+            Art(content,"ResultIllustration",win?2:3,460,new Vector2(990,600));
+            var stats=Rect("BattleSummary",content,new Vector2(.5f,1),new Vector2(0,-1090),new Vector2(1000,220));BattleUiSkin.Skin(stats.gameObject.AddComponent<Image>(),BattleUiSkin.Navy);
+            int total=flow?Mathf.Max(1,flow.TotalWaves):Mathf.Max(1,balance?balance.WavesForLevel(GameProgress.CurrentLevel):3);
+            int cleared=win?total:Mathf.Clamp(flow?flow.Wave-1:0,0,total);
+            Label(stats,"Waves Cleared",new Vector2(.5f,.5f),new Vector2(-250,55),new Vector2(460,70),36,new Color(.72f,.77f,.86f));
+            Label(stats,$"{cleared} / {total}",new Vector2(.5f,.5f),new Vector2(-250,-35),new Vector2(460,110),76,Color.white);
+            int seconds=Mathf.Max(0,Mathf.FloorToInt(playSeconds));
+            Label(stats,"Time",new Vector2(.5f,.5f),new Vector2(250,55),new Vector2(460,70),36,new Color(.72f,.77f,.86f));
+            Label(stats,$"{seconds/60:00}:{seconds%60:00}",new Vector2(.5f,.5f),new Vector2(250,-35),new Vector2(460,110),76,Color.white);
+            var heading=Label(content,"REWARDS",new Vector2(.5f,1),new Vector2(0,-1350),new Vector2(990,75),42,new Color(.72f,.77f,.86f));heading.alignment=TextAnchor.MiddleLeft;
+            if(win)
+            {
+                Reward(content,"Gold",gold,-340,"gold");Reward(content,"Keys",keys,0,"key");Reward(content,"Gems",gems,340,"gem");
+            }
+            else
+            {
+                var empty=Rect("NoRewards",content,new Vector2(.5f,1),new Vector2(0,-1450),new Vector2(1000,350));BattleUiSkin.Skin(empty.gameObject.AddComponent<Image>(),BattleUiSkin.Navy);
+                Label(empty,"No rewards this time",new Vector2(.5f,.5f),Vector2.zero,new Vector2(900,100),42,new Color(.72f,.77f,.86f));
+            }
+            int level=GameProgress.CurrentLevel;
+            bool hasNext=win&&level<(balance?balance.LevelCount:3);
+            Action(content,hasNext?"NEXT LEVEL":"RETRY",hasNext?"›":"↻",1860,false,()=>{Time.timeScale=1;SceneRoutes.PlayLevel(hasNext?level+1:level);});
+            Action(content,"HOME","⌂",2070,true,()=>{Time.timeScale=1;SceneRoutes.GoHome();});
+            Canvas.ForceUpdateCanvases();
+            float fit=Mathf.Min(1,Mathf.Min((safe.rect.width-40)/1060,(safe.rect.height-50)/2230));
+            StartCoroutine(Reveal(content,Mathf.Max(.1f,fit)));
+        }
+
+        RectTransform Art(Transform parent,string name,int index,float top,Vector2 size)
+        {
+            var r=Rect(name,parent,new Vector2(.5f,1),new Vector2(0,-top),size);var image=r.gameObject.AddComponent<Image>();
+            image.sprite=ResultScreenArt.Get(index);image.preserveAspect=true;image.raycastTarget=false;return r;
+        }
+
+        void Reward(Transform parent,string name,int amount,float x,string icon)
+        {
+            var r=Rect(name,parent,new Vector2(.5f,1),new Vector2(x,-1450),new Vector2(320,350));BattleUiSkin.Skin(r.gameObject.AddComponent<Image>(),BattleUiSkin.Navy);
+            var art=Rect("Icon",r,new Vector2(.5f,1),new Vector2(0,-25),new Vector2(155,155)).gameObject.AddComponent<Image>();
+            art.sprite=Resources.Load<Sprite>(name=="Gems"?"Summon/gem":"HomeChrome/"+(name=="Gold"?"coin":"key"));art.preserveAspect=true;art.raycastTarget=false;art.enabled=art.sprite;
+            Label(r,name,new Vector2(.5f,.5f),new Vector2(0,-35),new Vector2(295,60),36,Color.white);
+            Label(r,"+"+amount.ToString("N0"),new Vector2(.5f,0),new Vector2(0,20),new Vector2(300,100),64,new Color(1,.85f,.25f));
+        }
+
+        IEnumerator Reveal(RectTransform content,float fit)
+        {
+            var cg=content.gameObject.AddComponent<CanvasGroup>();float t=0;
+            while(content&&t<.35f){t+=Time.unscaledDeltaTime;float p=Mathf.Clamp01(t/.35f);cg.alpha=p;content.localScale=Vector3.one*(fit*Mathf.Lerp(.94f,1,1-Mathf.Pow(1-p,3)));yield return null;}
+            if(content){cg.alpha=1;content.localScale=Vector3.one*fit;}
+        }
+
+        void OnDestroy(){if(resultScreen)Destroy(resultScreen);}
 
         void Again()
         {

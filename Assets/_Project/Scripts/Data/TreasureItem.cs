@@ -6,7 +6,7 @@ namespace Project.Data
     public enum TreasureStat
     {
         Atk = 0, Hp, AtkSpeed, CritDamage,   // kiểu NHÂN — % chỉ số gốc
-        CritChance, LifeSteal, Armor,        // kiểu XÁC SUẤT — điểm tuyệt đối
+        CritChance, LifeSteal, Armor, MythicCapacity,        // kiểu XÁC SUẤT — điểm tuyệt đối
     }
 
     /// <summary>
@@ -41,6 +41,7 @@ namespace Project.Data
         /// </summary>
         public float ValueAt(TreasureStat stat, int level)
         {
+            if(stat==TreasureStat.MythicCapacity)return Mathf.Clamp(level,1,MaxLevel)/2;
             foreach (var e in Stats)
                 if (e.Stat == stat)
                     return e.Base + e.PerLevel * (Mathf.Clamp(level, 1, MaxLevel) - 1);

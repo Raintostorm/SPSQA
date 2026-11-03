@@ -89,7 +89,9 @@ namespace Project.Gacha
             var unit = spawner.Spawn(next, team, board.Grid.CellToWorld(r, c),
                                      board.transform);
             if (unit == null) return null;
+            if(team==UnitTeam.Ally)BattleContribution.Merges++;
             board.Place(unit, r, c);
+            Project.Visual.MergeReveal.Play(unit);
             unit.Visual?.SetFacing(team == UnitTeam.Ally ? 1f : -1f);
 
             var brain = unit.GetComponent<UnitBrain>();

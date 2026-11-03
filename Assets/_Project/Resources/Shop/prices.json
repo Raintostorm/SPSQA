@@ -1,0 +1,8 @@
+{
+  "GoldPerGem": 100,
+  "AllyShards": 20,
+  "RelicShards": 5,
+  "AllyGemPrices": [15, 30, 75, 150],
+  "RelicGemPrices": [10, 25, 60, 120],
+  "ExchangeGemCosts": [100, 500, 1000]
+}

@@ -39,7 +39,7 @@ namespace Project.Battle
             for (var i = 0; i < all.Count; i++)
             {
                 var u = all[i];
-                if (u == null || !u.IsAlive || u.Team == team) continue;
+                if (u == null || !u.IsAlive || u.Team == team || u.Mythic != null && !u.Mythic.Deployed) continue;
 
                 // So bình phương khoảng cách, khỏi tính căn bậc hai.
                 var sqr = (u.transform.position - from).sqrMagnitude;

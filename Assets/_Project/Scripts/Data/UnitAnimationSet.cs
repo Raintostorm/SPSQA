@@ -72,15 +72,27 @@ namespace Project.Data
         public Clip Idle;
         public Clip Walk;
         public Clip Attack;
+        public Clip EmpoweredAttack;
         public Clip Dead;
 
         [Tooltip("Chỉ bậc Legendary có. Để trống là không có chiêu.")]
         public Clip Skill;
 
+        [Tooltip("Chuyển động và effect đã bake từ demo: không cộng nhún/lao lần thứ hai.")]
+        public bool BakedMotion;
+        [Tooltip("Source sprites face left instead of the default right.")]
+        public bool SourceFacesLeft;
+
         [Header("Hiệu ứng hình ảnh — để trống nếu nhân vật chưa có VFX")]
         public Clip WalkVfx;
         public Clip AttackVfx;
         public Clip DeathVfx;
+        public Clip SkillVfx;
+        public int SkillVfxStartStep;
+        public int SkillVfxEndStep;
+        public Vector2[] SkillVfxOffsets;
+        public float SkillVfxScale = 1f;
+        public int SkillImpactStep = -1;
         public Vector2 WalkVfxOffset;
         [Min(0f)] public float WalkVfxFootSpacing = 0.1f;
         public Vector2 AttackVfxOffset;
@@ -94,6 +106,25 @@ namespace Project.Data
 
         [Tooltip("Đòn ra sát thương ở bước thứ mấy của clip đánh, đếm từ 0. " +
                  "Thay cho animation event — không có gì để quên đặt.")]
-        public int ImpactStep = 2;
+        public int ImpactStep = -1;
+
+        /// <summary>
+        /// Bước thực sự trừ máu. -1 nghĩa là "giữa clip".
+        ///
+        /// Trước đây mặc định cứng là 2, đúng khi clip có 8 khung. Bộ art mới
+        /// chỉ 3 khung mỗi clip (đo trên game tham chiếu: trung vị 3 khung cho
+        /// idle và attack, 2 cho walk, 1 cho dead) — lúc đó bước 2 là khung
+        /// CUỐI, tức đánh xong mới trừ máu, cảm giác hụt hẳn.
+        ///
+        /// Lấy giữa clip thì đúng với mọi độ dài, không phải nhớ sửa.
+        /// </summary>
+        public int ImpactStepFor(Clip clip)
+        {
+            if (ImpactStep >= 0) return ImpactStep;
+            var n = clip?.Sequence != null && clip.Sequence.Length > 0
+                ? clip.Sequence.Length
+                : (clip?.Frames?.Length ?? 1);
+            return Mathf.Max(0, (n - 1) / 2);
+        }
     }
 }

@@ -21,6 +21,8 @@ Shader "SpinSquad/SpriteFlash"
 
         _FlashColor ("Flash Color", Color) = (1,1,1,1)
         _FlashAmount ("Flash Amount", Range(0,1)) = 0
+        _SlowAmount ("Slow Amount", Range(0,1)) = 0
+        _BurnAmount ("Burn Amount", Range(0,1)) = 0
     }
 
     SubShader
@@ -52,6 +54,8 @@ Shader "SpinSquad/SpriteFlash"
 
             fixed4 _FlashColor;
             float  _FlashAmount;
+            float _SlowAmount;
+            float _BurnAmount;
 
             fixed4 FlashFrag(v2f IN) : SV_Target
             {
@@ -59,6 +63,9 @@ Shader "SpinSquad/SpriteFlash"
 
                 // Lerp TRUOC khi nhan alpha. Lam nguoc lai la nhan alpha hai
                 // lan, nuoc son bi toi di thay vi sang len.
+                float luminance = dot(c.rgb, fixed3(.299,.587,.114));
+                c.rgb = lerp(c.rgb, luminance * fixed3(.48,.82,1.12), _SlowAmount);
+                c.rgb = lerp(c.rgb, luminance * fixed3(1.65,.3,.22), _BurnAmount);
                 c.rgb = lerp(c.rgb, _FlashColor.rgb, _FlashAmount);
 
                 c.rgb *= c.a;     // sprite Unity dung premultiplied alpha

@@ -23,14 +23,30 @@ namespace Project.EditorTools
         const string BarSprite = "Assets/_Project/Art/UI/bar_resource.png";
         const string GoldIcon = "Assets/_Project/Art/UI/icon_gold.png";
         const string KeyIcon = "Assets/_Project/Art/UI/icon_key.png";
-        const string PanelSprite = "Assets/_Project/Art/UI/panel.png";
-        const string ButtonSprite = "Assets/_Project/Art/UI/button.png";
-        const string ButtonDown = "Assets/_Project/Art/UI/button_down.png";
+        // Bo PHANG. Bo go cham tro cu (panel/button) van con trong du an
+        // nhung khong dung o day nua — xem ghi chu o SliceBorder.
+        const string PanelSprite = "Assets/_Project/Art/UI/card.png";
+        const string ButtonSprite = "Assets/_Project/Art/UI/btn_blue.png";
+        const string ButtonDown = "Assets/_Project/Art/UI/btn_blue_down.png";
+        const string PrimarySprite = "Assets/_Project/Art/UI/btn_primary.png";
+        const string PrimaryDown = "Assets/_Project/Art/UI/btn_primary_down.png";
+        // bar_resource DAC, khong phai pill_bar trong suot: chu vang de
+        // len nen trong thi nen sang xuyen qua va chu chim.
+        const string PillSprite = "Assets/_Project/Art/UI/bar_resource.png";
 
         // Man DOC, khop BattleHudBuilder. Truoc day la (1920,1080) — so cua
         // thoi game con ngang, va no lam moi toa do duoi day sai het.
         static readonly Vector2 Reference = new Vector2(1125f, 2436f);
-        internal const float SliceBorder = 112f;
+        /// <summary>
+        /// Vien 9 manh cua bo PHANG, do tu chinh anh: 17-35px tuy hinh.
+        /// Lay 30 lam so chung cho viec thut chu vao.
+        ///
+        /// Bo go cu la 112px — va day la nguon cua 15 canh bao "nho hon hai
+        /// lan vien 9 manh": nut cao 110px khong chua noi hai nap 112px,
+        /// bon goc chong len nhau. Bo phang thi nut 110px van con 40-70px
+        /// mat phang.
+        /// </summary>
+        internal const float SliceBorder = 30f;
         internal static readonly Vector2 PageReference = new Vector2(1125f, 2436f);
         const int Levels = 3;
 
@@ -85,7 +101,7 @@ namespace Project.EditorTools
             // ── thanh tài nguyên, đỉnh màn ────────────────────────
             // Vàng bên trái, chìa bên phải. Khung 9 mảnh bar_resource rộng
             // 384 gốc, nên ppuMul 2 cho viền co lại còn 56 — vừa ô 430.
-            var bar = AssetDatabase.LoadAssetAtPath<Sprite>(BarSprite);
+            var bar = AssetDatabase.LoadAssetAtPath<Sprite>(PillSprite);
             var goldLabel = Resource(root.transform, "Gold", bar,
                 new Vector2(0f, 1f), new Vector2(26f, -40f), GoldIcon);
             var keyLabel = Resource(root.transform, "Keys", bar,
@@ -102,19 +118,20 @@ namespace Project.EditorTools
             // ── ba thẻ chọn màn ───────────────────────────────────────
             // Thẻ RỘNG chứ không phải nút vuông nhỏ: màn dọc thừa bề ngang
             // mà thiếu bề cao, nên trải ngang là dùng đúng chỗ đang có.
-            const float cardW = 900f, cardH = 200f, cardGap = 40f, cardPpu = 1.4f;
+            const float cardW = 260f, cardH = 130f, cardPpu = 1.4f;
             var buttons = new Button[Levels];
             var labels = new Text[Levels];
             for (var i = 0; i < Levels; i++)
             {
-                var y = -760f - i * (cardH + cardGap);
+                var y = -1050f;
                 var rt = Box(root.transform, $"Level{i + 1}", btn,
-                    new Vector2(0.5f, 1f), new Vector2(0f, y),
+                    new Vector2(0.5f, 1f), new Vector2((i - 1) * 285f, y),
                     new Vector2(cardW, cardH), cardPpu);
-                labels[i] = Label(rt, $"MÀN {i + 1}", 58, FontStyle.Bold,
-                                  new Color(0.16f, 0.1f, 0.03f), SliceBorder / cardPpu);
+                labels[i] = Label(rt, $"1-{i + 1}", 58, FontStyle.Bold,
+                                  Color.white, SliceBorder / cardPpu);
                 buttons[i] = Need<Button>(rt.gameObject);
                 buttons[i].targetGraphic = rt.GetComponent<Image>();
+                rt.gameObject.SetActive(false);
                 if (down != null)
                 {
                     buttons[i].transition = Selectable.Transition.SpriteSwap;
@@ -129,27 +146,30 @@ namespace Project.EditorTools
             const float sideW = 430f, sideH = 150f, sidePpu = 1.6f;
             var upgradeBtn = SideButton(root.transform, "UpgradeButton", btn, down,
                 new Vector2(-240f, -1560f), new Vector2(sideW, sideH), sidePpu,
-                "NÂNG CẤP");
+                "Upgrade");
             var treasureBtn = SideButton(root.transform, "TreasureButton", btn, down,
                 new Vector2(240f, -1560f), new Vector2(sideW, sideH), sidePpu,
-                "KHO BÁU");
+                "Relics");
 
             // ── nút CHƠI, đáy màn ─────────────────────────────────────
             // Cùng toạ độ với nút XUẤT QUÂN trong trận: hai màn dùng chung
             // một chỗ cho "hành động chính", tay không phải học lại.
             const float playPpu = 1.2f;
-            var playRt = Box(root.transform, "PlayButton", btn,
+            var primary = AssetDatabase.LoadAssetAtPath<Sprite>(PrimarySprite);
+            var primaryDown = AssetDatabase.LoadAssetAtPath<Sprite>(PrimaryDown);
+            var playRt = Box(root.transform, "PlayButton", primary,
                 new Vector2(0.5f, 0f), new Vector2(0f, 34f),
                 new Vector2(1040f, 160f), playPpu);
-            Label(playRt, "CHƠI", 64, FontStyle.Bold,
+            Label(playRt, "Start", 64, FontStyle.Bold,
                   new Color(0.16f, 0.1f, 0.03f), SliceBorder / playPpu);
+            // Chu DEN tren nut vang, TRANG tren nut xanh — do tuong phan.
             var playBtn = Need<Button>(playRt.gameObject);
             playBtn.targetGraphic = playRt.GetComponent<Image>();
-            if (down != null)
+            if (primaryDown != null)
             {
                 playBtn.transition = Selectable.Transition.SpriteSwap;
                 playBtn.spriteState = new SpriteState
-                    { pressedSprite = down, selectedSprite = btn };
+                    { pressedSprite = primaryDown, selectedSprite = primary };
             }
 
             // ── dòng gợi ý, ngay trên nút CHƠI ────────────────────────
@@ -162,6 +182,8 @@ namespace Project.EditorTools
             var home = Need<HomeScreen>(root);
             Set(home, so =>
             {
+                so.FindProperty("secondaryButtonSprite").objectReferenceValue =
+                    AssetDatabase.LoadAssetAtPath<Sprite>("Assets/_Project/Art/UI/btn_disabled.png");
                 Fill(so.FindProperty("levelButtons"), buttons);
                 Fill(so.FindProperty("levelLabels"), labels);
                 so.FindProperty("hint").objectReferenceValue = hint;
@@ -173,6 +195,11 @@ namespace Project.EditorTools
                 so.FindProperty("balance").objectReferenceValue =
                     UnityEditor.AssetDatabase.LoadAssetAtPath<Project.Data.GameBalance>(
                         "Assets/_Project/Data/GameBalance.asset");
+                Fill(so.FindProperty("homeUnits"), new[] {
+                    AssetDatabase.LoadAssetAtPath<Project.Data.UnitAnimationSet>("Assets/_Project/Data/Units/Anim_dead_common.asset"),
+                    AssetDatabase.LoadAssetAtPath<Project.Data.UnitAnimationSet>("Assets/_Project/Data/Units/Anim_human_legendary.asset"),
+                    AssetDatabase.LoadAssetAtPath<Project.Data.UnitAnimationSet>("Assets/_Project/Data/Units/Anim_elf_rare.asset")
+                });
             });
 
             EditorSceneManager.MarkSceneDirty(scene);
@@ -213,8 +240,7 @@ namespace Project.EditorTools
                                  float ppu, string text)
         {
             var rt = Box(parent, name, normal, new Vector2(0.5f, 1f), pos, size, ppu);
-            Label(rt, text, 40, FontStyle.Bold,
-                  new Color(0.16f, 0.1f, 0.03f), SliceBorder / ppu);
+            Label(rt, text, 40, FontStyle.Bold, Color.white, SliceBorder / ppu);
             var b = Need<Button>(rt.gameObject);
             b.targetGraphic = rt.GetComponent<Image>();
             if (down != null)
@@ -280,7 +306,10 @@ namespace Project.EditorTools
             var img = Need<Image>(go);
             img.sprite = sprite;
             img.type = Image.Type.Sliced;
-            img.pixelsPerUnitMultiplier = ppuMul;
+            // LUON 1. ppuMul sinh ra de co vien 112px cua bo go lai cho vua
+            // nut nho; bo phang vien chi 17-35px nen khong con can, ma co
+            // them nua la vien mong toi muc mat net.
+            img.pixelsPerUnitMultiplier = 1f;
             return rt;
         }
 

@@ -29,6 +29,8 @@ namespace Project.Battle
 
         /// <summary>Bắn ĐÚNG MỘT LẦN, ngay khi máu chạm 0.</summary>
         public event Action<Unit> Died;
+        // Fires before any instant revival, so old projectiles cannot hit a new life.
+        public event Action<Unit> LifeEnded;
 
         /// <summary>
         /// Điểm giữa thân — chỗ đạn nhắm tới, không phải dưới chân.
@@ -44,6 +46,11 @@ namespace Project.Battle
 
         public bool IsAlive { get; private set; }
         public float CurrentHp { get; private set; }
+        public LegendaryCombat Combat { get; private set; }
+        public EffectBuffUnit Effects { get; private set; }
+        public MythicCombat Mythic { get; private set; }
+        bool finalRemoval;
+        float summonedHp = -1f, summonedAttack = -1f;
 
         // Nhân buff TẠI CHỖ ĐỌC, không nhân một lần lúc spawn: buff mua ở
         // wave 3 phải ăn vào cả lính đã đứng trên sân từ wave 1. Nhân lúc
@@ -52,15 +59,17 @@ namespace Project.Battle
         // lính, vat pham kho bau, va buff mua trong tran la ba he doc lap.
         // Cong gop thi mot he manh len lam hai he kia nhe di — khong ai
         // mong doi vay.
-        public float MaxHp => definition == null ? 0f
+        public float MaxHp => (summonedHp >= 0f ? summonedHp : definition == null ? 0f
             : definition.BaseHp
               * (1f + UnitUpgrades.Bonus(definition.UnitId, team))
-              * (1f + RunBuffs.Hp(team));
+              * (1f + RunBuffs.Hp(team))) * (EffectBuffSystem.Current?EffectBuffSystem.Current.HpMultiplier(this):1);
 
-        public float AttackPower => definition == null ? 0f
+        public MythicEquipment Equipment { get; private set; }
+
+        public float AttackPower => (summonedAttack >= 0f ? summonedAttack : definition == null ? 0f
             : definition.BaseAttack
               * (1f + UnitUpgrades.Bonus(definition.UnitId, team))
-              * (1f + RunBuffs.Dmg(team));
+              * (1f + RunBuffs.Dmg(team))) * (Combat != null ? Combat.AttackMultiplier : 1f) * (Mythic != null ? Mythic.AttackMultiplier : 1f) * (EffectBuffSystem.Current?EffectBuffSystem.Current.AttackMultiplier(this):1);
 
         // Ghi danh vao UnitRegistry de nguoi khac tim duoc, va RUT TEN khi tat.
         // Thieu OnDisable thi xac van nam trong danh sach -> lính khac cu nham
@@ -70,12 +79,20 @@ namespace Project.Battle
 
         void Awake()
         {
+            Effects=GetComponent<EffectBuffUnit>();if(!Effects)Effects=gameObject.AddComponent<EffectBuffUnit>();
+            if (GetComponent<PrepUnitRing>() == null) gameObject.AddComponent<PrepUnitRing>();
+            if (GetComponent<BattleGroundConstraint>() == null) gameObject.AddComponent<BattleGroundConstraint>();
             Visual = GetComponent<IUnitVisual>();
+            Combat = GetComponent<LegendaryCombat>();
+            if (!Combat) Combat = gameObject.AddComponent<LegendaryCombat>();
             if (Visual == null)
                 Debug.LogError(
                     $"[Unit] '{name}' không có component nào cài IUnitVisual. " +
                     $"Thêm FrameUnitVisual vào cùng GameObject.", this);
 
+            Equipment=GetComponent<MythicEquipment>();if(!Equipment)Equipment=gameObject.AddComponent<MythicEquipment>();
+            Mythic = GetComponent<MythicCombat>();
+            if(!Mythic) Mythic=gameObject.AddComponent<MythicCombat>();
             ResetState();
         }
 
@@ -154,23 +171,26 @@ namespace Project.Battle
         /// <summary>Ghi công sát thương vừa gây ra cho con khác.</summary>
         public void AddDamageDealt(float amount)
         {
-            if (amount > 0f) DamageDealt += amount;
+            if (amount > 0f) { DamageDealt += amount; BattleContribution.Damage(this,amount,false); }
         }
 
         /// <summary>Hồi máu, không vượt quá máu tối đa.</summary>
-        public void Heal(float amount)
+        public void Heal(float amount,bool showWhenFull=false)
         {
             if (!IsAlive || amount <= 0f) return;
             var before = CurrentHp;
             CurrentHp = Mathf.Min(MaxHp, CurrentHp + amount);
-            Healing += CurrentHp - before;
+            float restored=CurrentHp-before;
+            Healing += restored;
+            if(restored>0)Project.Visual.DamagePopup.ShowHealing(HitPoint,restored);
+            else if(showWhenFull)Project.Visual.DamagePopup.ShowHealingFull(HitPoint,amount);
         }
 
         /// <summary>
         /// <paramref name="source"/> là con gây ra đòn này — dùng để ghi công
         /// vào bảng chỉ số. Truyền null cho sát thương không của ai (bẫy, độc).
         /// </summary>
-        public void TakeDamage(float amount, Unit source = null)
+        public void TakeDamage(float amount, Unit source = null, bool basicAttack = true)
         {
             // Hai con cùng đánh trúng trong một frame: cú thứ hai phải rơi vào
             // hư không. Thiếu dòng này thì Died bắn hai lần và mọi thứ đang
@@ -183,39 +203,73 @@ namespace Project.Battle
             // hien tren man, va so mau that mat phai la cung mot con so.
             amount = RunBuffs.DamageAfterArmor(amount, team);
             if (amount <= 0f) return;
+            if (basicAttack && source != null && source != this && source.Team != team)
+            {
+                source.Combat?.BasicHit();
+                Combat?.ReceiveBasicHit();
+            }
+            amount=Effects.Absorb(amount);
+            if (Combat != null) amount = Combat.Absorb(amount);
+            if (Mythic != null) amount = Mythic.Absorb(amount);
+            if (amount <= 0f) return;
 
             // Ghi cong theo so MAU THAT SU MAT, khong theo so dinh gay: con
             // sap chet chi con 5 mau ma an cu 200 thi chi tinh 5. Khong vay
             // thi bang chi so cong len cao hon tong mau ca doi dich.
             var real = Mathf.Min(amount, CurrentHp);
             DamageTaken += real;
+            BattleContribution.Damage(this,real,true);
             source?.AddDamageDealt(real);
 
             // Hien dung so MAU THAT SU MAT, cung con so vao bang chi so.
             // Hien so dinh gay thi con sap chet con 5 mau an cu 200 se bay
             // len "200" roi nga — nguoi choi doc duoc mot con so khong co
             // that o dau ca.
-            Project.Visual.DamagePopup.Show(HitPoint, real, team);
+            // Suppress the finishing basic-hit number on enemies; skills remain visible in purple.
+            // Already-dead targets return at the top, before any feedback or damage bookkeeping.
+            bool finishingBasicOnEnemy=basicAttack&&team==UnitTeam.Enemy&&amount>=CurrentHp;
+            if(!finishingBasicOnEnemy)Project.Visual.DamagePopup.Show(HitPoint,real,team,!basicAttack);
 
             // Hut mau theo MAU THAT MAT, khong theo so dinh gay. Danh vao
             // con sap chet con 5 mau ma hoi theo 200 thi hut mau thanh ra
             // manh nhat luc doi thu gan het mau — nguoc hoan toan.
             if (source != null && source != this)
             {
-                var steal = RunBuffs.Steal(source.Team);
+                var steal = RunBuffs.Steal(source.Team)+(EffectBuffSystem.Current?EffectBuffSystem.Current.TileLifesteal(source):0);
                 if (steal > 0f) source.Heal(real * steal);
             }
 
             CurrentHp -= amount;
 
+
             if (CurrentHp > 0f)
             {
-                Visual?.PlayHit();
+                if(source&&source!=this&&source.Team!=team&&EffectBuffSystem.Current)EffectBuffSystem.Current.OnDamage(source,this,basicAttack,false);
+                if(IsAlive)Visual?.PlayHit();
                 return;
             }
 
             CurrentHp = 0f;
             Die();
+            if(source&&source!=this&&source.Team!=team&&EffectBuffSystem.Current)EffectBuffSystem.Current.OnDamage(source,this,basicAttack,!IsAlive);
+            if(!IsAlive&&source&&source!=this&&source.Team!=team)source.Equipment?.OnKill(this);
+        }
+
+        public void Promote(UnitDefinition next)
+        {
+            if(!next||!definition||definition.Rank>=Rank.Legendary||next.Rank!=definition.Rank+1)return;
+            float ratio=next.Scale/Mathf.Max(.01f,definition.Scale);
+            definition=next;summonedHp=summonedAttack=-1;name=next.DisplayName;transform.localScale*=ratio;CurrentHp=MaxHp;
+            GetComponent<Project.Visual.FrameUnitVisual>()?.Bind(next.Animations);
+            GetComponent<UnitBrain>()?.RefreshDefinition();
+        }
+
+        // Snapshot caster stats without editing a shared UnitDefinition asset.
+        public void SetSummonedStats(float hp, float attack)
+        {
+            summonedHp = Mathf.Max(1f, hp);
+            summonedAttack = Mathf.Max(0f, attack);
+            CurrentHp = MaxHp;
         }
 
         /// <summary>
@@ -260,8 +314,27 @@ namespace Project.Battle
             if (CurrentHp < MaxHp) CurrentHp = MaxHp;
         }
 
+        public void ChangeTeam(UnitTeam newTeam) => team=newTeam;
+
+        public void ReviveInBattle(float hpFraction)
+        {
+            IsAlive=true;CurrentHp=Mathf.Max(1,MaxHp*Mathf.Clamp01(hpFraction));Visual?.Revive();
+            GetComponentInChildren<Project.Visual.HealthBar>(true)?.Restore();
+            var brain=GetComponent<UnitBrain>();if(brain)brain.enabled=true;
+        }
+
+        public void EndSummonedLife()
+        {
+            finalRemoval=true;
+            if (!IsAlive) return;
+            CurrentHp = 0f;
+            Die();
+        }
+
         void Die()
         {
+            LifeEnded?.Invoke(this);
+            if(!finalRemoval && Mythic != null && Mythic.TryRevive())return;
             IsAlive = false;
             Visual?.PlayDeath();
 
@@ -278,6 +351,7 @@ namespace Project.Battle
             // wave sau, nhưng HealthBar đã mất đăng ký nên lần chết tiếp theo
             // thanh máu không ẩn đi. Một biện pháp phòng thừa đổi thành một
             // lỗi thật.
+            if(team==UnitTeam.Enemy&&EffectBuffSystem.Current)EffectBuffSystem.Current.EnemyDefeated();
             Died?.Invoke(this);
         }
 

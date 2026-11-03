@@ -13,6 +13,7 @@ namespace Project.Meta
     /// </summary>
     public static class TreasureRoll
     {
+        public const int ShardsPerRoll = 1;
         public struct Result
         {
             public TreasureItem Item;
@@ -21,6 +22,7 @@ namespace Project.Meta
 
             /// <summary>Món này vừa nhận lần đầu.</summary>
             public bool IsNew;
+            public int ShardsGranted;
         }
 
         /// <summary>Quay <paramref name="count"/> lượt. Trừ chìa trước khi gọi.</summary>
@@ -86,7 +88,7 @@ namespace Project.Meta
 
         /// <summary>
         /// Ghi món vào save. Chưa có thì nhận cấp 1; đã có thì cộng mảnh,
-        /// đủ thì lên cấp.
+        /// chỉ cộng mảnh; người chơi nâng thủ công bằng gold và mảnh.
         ///
         /// Trùng lặp là chuyện THƯỜNG XUYÊN: 100 lượt ra ~70 món Common cho
         /// 12 loại, tức mỗi loại ~5.8 bản. Không có luật xử lý thì từ lượt
@@ -97,23 +99,35 @@ namespace Project.Meta
             var owned = save.FindItem(item.Id);
             if (owned == null)
             {
-                save.Items.Add(new SaveData.OwnedItem { Id = item.Id, Level = 1, Shards = 0 });
-                return new Result { Item = item, IsNew = true, NewLevel = 1 };
+                save.Items.Add(new SaveData.OwnedItem { Id = item.Id, Level = 1, Shards = ShardsPerRoll });
+                return new Result { Item = item, IsNew = true, NewLevel = 1, ShardsGranted = ShardsPerRoll };
             }
 
             if (owned.Level >= item.MaxLevel)
                 return new Result { Item = item, NewLevel = owned.Level };
 
-            owned.Shards++;
-            var leveled = false;
-            while (owned.Level < item.MaxLevel &&
-                   owned.Shards >= TreasureItem.ShardsToNext(owned.Level))
-            {
-                owned.Shards -= TreasureItem.ShardsToNext(owned.Level);
-                owned.Level++;
-                leveled = true;
-            }
-            return new Result { Item = item, LeveledUp = leveled, NewLevel = owned.Level };
+            int granted = (int)System.Math.Min(ShardsPerRoll, (long)int.MaxValue - owned.Shards);
+            owned.Shards += granted;
+            return new Result { Item = item, NewLevel = owned.Level, ShardsGranted = granted };
+        }
+
+        // Initial manual-upgrade price; displayed before purchase. No save migration.
+        public static int UpgradeCost(TreasureItem item, int level) => 1000 * ((int)item.Tier + 1) * Mathf.Max(1, level);
+        public static bool Upgrade(TreasureItem item)
+        {
+            if (!TryUpgrade(SaveSystem.Current, item)) return false;
+            SaveSystem.Save();
+            return true;
+        }
+        public static bool TryUpgrade(SaveData save, TreasureItem item)
+        {
+            if (item == null) return false;
+            var owned = save.FindItem(item.Id);
+            if (owned == null || owned.Level >= item.MaxLevel) return false;
+            int shards = TreasureItem.ShardsToNext(owned.Level), gold = UpgradeCost(item, owned.Level);
+            if (owned.Shards < shards || save.Gold < gold) return false;
+            save.Gold -= gold; owned.Shards -= shards; owned.Level++;
+            return true;
         }
 
         /// <summary>

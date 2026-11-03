@@ -74,27 +74,12 @@ namespace Project.Gacha
         {
             switch (add.Stat)
             {
-                case BuffStatKind.HpPct:       HpPct += add.Value; break;
-                case BuffStatKind.DmgPct:      DmgPct += add.Value; break;
-                case BuffStatKind.AtkSpeedPct: AtkSpeedPct += add.Value; break;
-                case BuffStatKind.CritChance:  CritChance += add.Value; break;
+                case BuffStatKind.HpPct:       HpPct += add.Value; RunBuffs.HpPct += add.Value; break;
+                case BuffStatKind.DmgPct:      DmgPct += add.Value; RunBuffs.DmgPct += add.Value; break;
+                case BuffStatKind.AtkSpeedPct: AtkSpeedPct += add.Value; RunBuffs.AtkSpeedPct += add.Value; break;
+                case BuffStatKind.CritChance:  CritChance += add.Value; RunBuffs.CritChance += add.Value; break;
             }
-            Publish();
-        }
-
-        /// <summary>
-        /// Đẩy sang RunBuffs cho phía trận đấu đọc.
-        ///
-        /// Hai bản số trông thừa, nhưng chúng ở hai tầng khác nhau: RunState
-        /// là sổ sách của gacha, RunBuffs là hộp phẳng mà lính đọc. Cho lính
-        /// đọc thẳng RunState là Battle phải biết Gacha.
-        /// </summary>
-        void Publish()
-        {
-            RunBuffs.HpPct = HpPct;
-            RunBuffs.DmgPct = DmgPct;
-            RunBuffs.AtkSpeedPct = AtkSpeedPct;
-            RunBuffs.CritChance = CritChance;
+            // Add only this roll's delta: assigning totals erases the Relic baseline.
         }
 
         public override string ToString() =>

@@ -57,13 +57,14 @@ namespace Project.Battle
 
         public int CountAt(int row, int col) => UnitsAt(row, col).Count;
 
-        public bool IsFull(int row, int col) => CountAt(row, col) >= Grid.MaxPerCell;
+        public bool IsFull(int row, int col) => CountAt(row, col) >= (CountAt(row,col)>0 && UnitsAt(row,col)[0].Definition.Rank==Rank.Mythic ? 1 : Grid.MaxPerCell);
 
         /// <summary>Ô này nhận thêm được con mang định nghĩa đó không.</summary>
         public bool CanPlace(int row, int col, UnitDefinition def)
         {
             if (!Grid.IsInside(row, col) || def == null) return false;
             if (IsFull(row, col)) return false;
+            if(def.Rank==Rank.Mythic && Cells[row,col].Count>0)return false;
 
             var list = Cells[row, col];
             // Ô trống thì nhận ai cũng được. Ô có người thì phải cùng loại.

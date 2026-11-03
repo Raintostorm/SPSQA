@@ -24,15 +24,16 @@ namespace Project.Visual
         [SerializeField] Color allyColor  = new Color(0.35f, 0.85f, 0.35f);
         [SerializeField] Color enemyColor = new Color(0.90f, 0.35f, 0.30f);
 
-        [Tooltip("Ẩn thanh khi máu đầy — đỡ rối mắt lúc chưa đánh nhau.")]
-        [SerializeField] bool hideWhenFull = true;
 
         float fullWidth;
         UnitTeam? shownTeam;        // phe ma mau hien tai dang the hien
+        UnitBrain brain;
+        SpriteRenderer manaFill, manaBackground;
 
         void Awake()
         {
             if (unit == null) unit = GetComponentInParent<Unit>();
+            if(unit)brain=unit.GetComponent<UnitBrain>();
             if (unit == null || fill == null)
             {
                 Debug.LogWarning($"[HealthBar] '{name}' thiếu tham chiếu Unit " +
@@ -44,6 +45,21 @@ namespace Project.Visual
             // Nhớ bề ngang lúc đầu rồi nhân theo tỉ lệ — KHÔNG gán scale = tỉ lệ.
             // Gán thẳng thì mọi chỉnh tay về bề ngang trong Inspector bị xoá sạch.
             fullWidth = fill.transform.localScale.x;
+            manaBackground = Instantiate(background != null ? background : fill, transform);
+            manaBackground.name = "ManaBackground";
+            // Background has a centred pivot; fill has a left-edge pivot.
+            // Keep each one's HP anchor instead of placing both at the left edge.
+            manaBackground.transform.localPosition = (background != null ? background.transform.localPosition : fill.transform.localPosition) + Vector3.down * .13f;
+            var bs = fill.transform.localScale; bs.y *= .6f;
+            manaBackground.transform.localScale = bs;
+            manaBackground.color = new Color(.06f,.12f,.23f);
+            manaFill = Instantiate(fill, transform);
+            manaFill.name = "ManaFill";
+            manaFill.transform.localPosition = fill.transform.localPosition + Vector3.down * .13f;
+            manaFill.transform.localScale = bs;
+            manaFill.color = new Color(.12f,.6f,1f);
+            manaFill.sortingOrder = manaBackground.sortingOrder + 1;
+            manaFill.enabled = manaBackground.enabled = false;
         }
 
         void OnEnable()
@@ -89,7 +105,14 @@ namespace Project.Visual
                 }
             }
 
-            var visible = !(hideWhenFull && ratio >= 1f) && unit.IsAlive;
+            // Health is visible only while wounded; mana remains independent.
+            var active = unit.IsAlive && brain != null && brain.enabled;
+            var visible = active && unit.CurrentHp < max;
+            var showMana = active && unit.Combat && unit.Combat.UsesMana;
+            manaFill.enabled = manaBackground.enabled = showMana;
+            var ms = manaFill.transform.localScale;
+            ms.x = fullWidth * (unit.Combat ? unit.Combat.Mana / LegendaryCombat.MaxMana : 0f);
+            manaFill.transform.localScale = ms;
             if (fill.enabled != visible)
             {
                 fill.enabled = visible;
@@ -105,6 +128,7 @@ namespace Project.Visual
         void OnUnitDied(Unit _)
         {
             fill.enabled = false;
+            if (manaFill) manaFill.enabled = manaBackground.enabled = false;
             if (background != null) background.enabled = false;
         }
 
@@ -116,8 +140,9 @@ namespace Project.Visual
         /// </summary>
         public void Restore()
         {
-            fill.enabled = true;
-            if (background != null) background.enabled = true;
+            bool visible = unit && unit.IsAlive && unit.CurrentHp < unit.MaxHp && brain && brain.enabled;
+            fill.enabled = visible;
+            if (background != null) background.enabled = visible;
         }
     }
 }

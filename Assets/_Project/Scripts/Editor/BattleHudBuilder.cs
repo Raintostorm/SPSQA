@@ -20,10 +20,16 @@ namespace Project.EditorTools
     /// </summary>
     public static class BattleHudBuilder
     {
-        const string PanelSprite  = "Assets/_Project/Art/UI/panel.png";
+        const string PanelSprite  = "Assets/_Project/Art/UI/card.png";
         const string UiDir        = "Assets/_Project/Art/UI/";
-        const string ButtonSprite = "Assets/_Project/Art/UI/button.png";
-        const string ButtonDown   = "Assets/_Project/Art/UI/button_down.png";
+        const string ButtonSprite = "Assets/_Project/Art/UI/btn_primary.png";
+
+        /// <summary>
+        /// Cam #F09000, đo từ nút "Strike!" và "Spin!" của game tham chiếu.
+        /// Vàng chanh của sprite gốc quá nhạt, chữ trắng đè lên đọc không ra.
+        /// </summary>
+        static readonly Color PrimaryTint = new Color32(0xF0, 0x90, 0x00, 0xFF);
+        const string ButtonDown   = "Assets/_Project/Art/UI/btn_primary_down.png";
 
         // Khung tham chiếu. Mọi toạ độ dưới đây tính theo khung này; Unity
         // tự co giãn khi màn thật khác kích thước.
@@ -73,7 +79,10 @@ namespace Project.EditorTools
         /// tools/import_ui_art.py — nắp gỗ-kim loại của bộ art này chiếm
         /// 112 đơn vị mỗi bên, nên KHÔNG nút nào được hẹp hơn 224.
         /// </summary>
-        const float SliceBorder = 112f;
+        // Bo PHANG: vien 9 manh 17-35px, khong phai 112px cua bo go cham
+        // tro. 112 la nguon cua 15 canh bao "nho hon hai lan vien" — nut
+        // cao 110px khong chua noi hai nap 112px.
+        const float SliceBorder = 30f;
 
         public static void Build(BattleFlow flow)
         {
@@ -115,7 +124,7 @@ namespace Project.EditorTools
             var viewRect = Box(root.transform, "EnemyToggle", button,
                 anchor: new Vector2(1f, 1f), pos: new Vector2(-26f, -26f),
                 size: new Vector2(420f, BoxH), ppuMul: 1.15f);
-            var enemy = Label(viewRect, "XEM ĐỊCH", 34, FontStyle.Bold,
+            var enemy = Label(viewRect, "ENEMIES", 34, FontStyle.Bold,
                               new Color(0.16f, 0.1f, 0.03f), SliceBorder / 1.15f);
             var viewBtn = Need<Button>(viewRect.gameObject);
             viewBtn.targetGraphic = viewRect.GetComponent<Image>();
@@ -125,18 +134,22 @@ namespace Project.EditorTools
                 viewBtn.spriteState = new SpriteState { pressedSprite = down, selectedSprite = button };
             }
 
-            var status = Label(
-                Box(root.transform, "TopBar", panel,
-                    anchor: new Vector2(0.5f, 1f), pos: new Vector2(0f, -(26f + BoxH + 14f)),
-                    size: new Vector2(Reference.x - 52f, BoxH)),
-                "", 44, FontStyle.Bold, Color.white, SliceBorder + 8f);
+            // KHONG khung. Chu tran co vien, nhu game tham chieu.
+            var status = FloatingText(root.transform, "TopBar",
+                new Vector2(0.5f, 1f), new Vector2(0f, -(26f + BoxH + 14f)),
+                new Vector2(Reference.x - 52f, BoxH), 46,
+                TextAnchor.MiddleCenter, Color.white);
 
             // ── nút dưới ──────────────────────────────────────────────
+            // Nhuom CAM. Nut chinh cua game tham chieu la #F09000.
             var btnRect = Box(root.transform, "StartButton", button,
                 anchor: new Vector2(0.5f, 0f),
                 pos: new Vector2(0f, ButtonY),
                 size: new Vector2(Reference.x - 52f, BigButtonH));
-            Label(btnRect, "XUẤT QUÂN", 54, FontStyle.Bold, new Color(0.16f, 0.1f, 0.03f), SliceBorder);
+            btnRect.GetComponent<Image>().color = PrimaryTint;
+            var startLabel = Label(btnRect, "BATTLE", 56, FontStyle.Bold,
+                                   Color.white, SliceBorder);
+            Outline(startLabel);
 
             var btn = Need<Button>(btnRect.gameObject);
             btn.targetGraphic = btnRect.GetComponent<Image>();
@@ -341,8 +354,11 @@ namespace Project.EditorTools
             var go = New($"Row{slot}", parent);
             var rt = StatSlot(go, slot);
 
+            // Chu o NUA TREN, thanh o NUA DUOI. Truoc day chu can giua CA o
+            // (64px) roi thanh ve de len nua duoi — chu chiem y 15..49, thanh
+            // chiem y 6..20, chong nhau 5px. Doc ra chu nat.
             var name = MakeText(go.transform, "Name", 26, TextAnchor.MiddleLeft, Color.white);
-            Stretch(name.rectTransform, new Vector2(34f, 0f), new Vector2(-170f, 0f));
+            Stretch(name.rectTransform, new Vector2(34f, 24f), new Vector2(-170f, 0f));
 
             var barBg = New("BarBg", go.transform);
             var bg = Need<Image>(barBg);
@@ -350,7 +366,8 @@ namespace Project.EditorTools
             var bgr = Need<RectTransform>(barBg);
             bgr.anchorMin = new Vector2(0f, 0f); bgr.anchorMax = new Vector2(1f, 0f);
             bgr.pivot = new Vector2(0.5f, 0f);
-            bgr.offsetMin = new Vector2(34f, 6f); bgr.offsetMax = new Vector2(-170f, 20f);
+            // Thanh day hon (6..22) va khong con chu nao o day.
+            bgr.offsetMin = new Vector2(34f, 6f); bgr.offsetMax = new Vector2(-170f, 22f);
 
             var barGo = New("Bar", barBg.transform);
             var bar = Need<Image>(barGo);
@@ -361,7 +378,7 @@ namespace Project.EditorTools
 
             var val = MakeText(go.transform, "Value", 26, TextAnchor.MiddleRight,
                                new Color(1f, 0.86f, 0.35f));
-            Stretch(val.rectTransform, new Vector2(-160f, 0f), new Vector2(-24f, 0f));
+            Stretch(val.rectTransform, new Vector2(-160f, 24f), new Vector2(-24f, 0f));
             val.rectTransform.anchorMin = new Vector2(1f, 0f);
             val.rectTransform.anchorMax = new Vector2(1f, 1f);
             val.rectTransform.offsetMin = new Vector2(-160f, 0f);
@@ -445,10 +462,10 @@ namespace Project.EditorTools
             // nên bảng phải rộng ít nhất 2×300 + lề = 700.
             var again = MakeButton(box, "Again", btn, btnDown,
                 new Vector2(0f, 0f), new Vector2(26f, 22f), new Vector2(320f, 100f),
-                "CHƠI LẠI", out var againLabel);
+                "RETRY", out var againLabel);
             var home = MakeButton(box, "Home", btn, btnDown,
                 new Vector2(1f, 0f), new Vector2(-26f, 22f), new Vector2(320f, 100f),
-                "TRANG CHỦ", out _);
+                "HOME", out _);
 
             var rp = Need<UI.ResultPanel>(go);
             Set(rp, so =>
@@ -515,10 +532,10 @@ namespace Project.EditorTools
             // với bộ art này — xem SliceBorder.
             var sell = MakeButton(rt.transform, "Sell", btn, btnDown,
                 new Vector2(0f, 0f), new Vector2(26f, 22f), new Vector2(300f, 96f),
-                "BÁN", out var sellLabel);
+                "SELL", out var sellLabel);
             var evolve = MakeButton(rt.transform, "Evolve", btn, btnDown,
                 new Vector2(1f, 0f), new Vector2(-26f, 22f), new Vector2(300f, 96f),
-                "TIẾN HOÁ", out _);
+                "MERGE", out _);
 
             // KHÔNG có nút Đóng. Bấm ra chỗ trống là đóng — CellInspector đã
             // làm sẵn. Thêm nút nữa thì hàng dưới có ba nút, mỗi nút tối
@@ -639,7 +656,7 @@ namespace Project.EditorTools
         /// Bốn ô "icon + số" chia đều bề ngang thanh buff.
         ///
         /// Vì sao là icon chứ không phải chữ: bốn cái tên đầy đủ
-        /// ("TỐC ĐÁNH", "CHÍ MẠNG"...) cộng bốn con số dài hơn thanh buff,
+        /// ("ATTACK SPEED", "CRIT CHANCE"...) cộng bốn con số dài hơn thanh buff,
         /// nên chữ phải co nhỏ tới mức khó đọc. Icon nói đúng một việc mà
         /// không tốn bề ngang.
         ///
@@ -721,7 +738,8 @@ namespace Project.EditorTools
             // Sliced: giữ nguyên bốn góc, chỉ kéo giãn phần giữa. Để Simple
             // thì nét viền béo ra theo chiều dài nút.
             img.type = Image.Type.Sliced;
-            img.pixelsPerUnitMultiplier = ppuMul;
+            // LUON 1 — xem ghi chu o SliceBorder.
+            img.pixelsPerUnitMultiplier = 1f;
             return rt;
         }
 
@@ -734,6 +752,50 @@ namespace Project.EditorTools
         /// khúc giữa — đúng phần phẳng.
         /// </summary>
         /// <summary>Chữ tự do, căn trái/phải tuỳ ý — khác Label() luôn căn giữa.</summary>
+        /// <summary>
+        /// Chữ TRẦN trên nền, viền đen dày — không khung bọc.
+        ///
+        /// Đo trên game tham chiếu: "WAVE 0", đồng hồ, số wave, tên nhân vật
+        /// đều là chữ trần có viền, không nằm trong khung nào. Ta thì bọc mọi
+        /// thứ vào một khung 9 mảnh — đó là phần lớn cảm giác "rườm rà".
+        ///
+        /// Viền 3px theo cả bốn hướng: mỏng hơn thì chữ sáng chìm vào nền
+        /// sáng, dày hơn thì nét chữ bị bóp.
+        /// </summary>
+        static Text FloatingText(Transform parent, string name, Vector2 anchor,
+                                 Vector2 pos, Vector2 size, int fontSize,
+                                 TextAnchor align, Color color)
+        {
+            var go = New(name, parent);
+            var rt = Need<RectTransform>(go);
+            rt.anchorMin = rt.anchorMax = rt.pivot = anchor;
+            rt.anchoredPosition = pos;
+            rt.sizeDelta = size;
+
+            var t = Need<Text>(go);
+            t.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+            t.fontSize = fontSize;
+            t.fontStyle = FontStyle.Bold;
+            t.alignment = align;
+            t.color = color;
+            t.raycastTarget = false;
+            t.horizontalOverflow = HorizontalWrapMode.Overflow;
+            t.verticalOverflow = VerticalWrapMode.Overflow;
+
+            var o = Need<Outline>(go);
+            o.effectColor = new Color(0f, 0f, 0f, 0.92f);
+            o.effectDistance = new Vector2(3f, 3f);
+            return t;
+        }
+
+        /// <summary>Viền đen quanh chữ — đọc được trên mọi nền.</summary>
+        static void Outline(Text t, float px = 3f)
+        {
+            var o = Need<UnityEngine.UI.Outline>(t.gameObject);
+            o.effectColor = new Color(0f, 0f, 0f, 0.92f);
+            o.effectDistance = new Vector2(px, px);
+        }
+
         static Text MakeText(Transform parent, string name, int size,
                              TextAnchor align, Color color)
         {

@@ -55,21 +55,22 @@ namespace Project.EditorTools
 
             Backdrop(root.transform, Bg);
 
-            var panel = S("panel");
-            var btn = S("button");
-            var down = S("button_down");
+            var panel = S("card");
+            var btn = S("btn_blue");
+            var down = S("btn_blue_down");
             var bar = S("bar_resource");
 
             // ── thanh chìa + nút quay lại ─────────────────────────────
             var keyLabel = ResourceBar(root.transform, "Keys", bar,
                 new Vector2(0f, 1f), new Vector2(26f, -40f), S("icon_key"));
-            var back = TextButton(root.transform, "BackButton", btn, down,
+            var back = TextButton(root.transform, "BackButton",
+                S("btn_small"), S("btn_small"),
                 new Vector2(1f, 1f), new Vector2(-26f, -40f),
-                new Vector2(200f, 128f), 2.2f, "✕", 48);
+                new Vector2(140f, 128f), 1f, "✕", 48);
 
             Label(Box(root.transform, "Title", panel, new Vector2(0.5f, 1f),
                       new Vector2(0f, -200f), new Vector2(620f, 110f), 2f),
-                  "KHO BÁU", 64, FontStyle.Bold, new Color(1f, 0.86f, 0.35f),
+                  "RELICS", 64, FontStyle.Bold, new Color(1f, 0.86f, 0.35f),
                   SliceBorder / 2f);
 
             // ── rương ở giữa ──────────────────────────────────────────
@@ -136,7 +137,7 @@ namespace Project.EditorTools
             for (var c = 0; c < Cols; c++)
             {
                 var i = r * Cols + c;
-                var rt = Box(content.transform, $"Slot{i}", S("slot_locked"),
+                var rt = Box(content.transform, $"Slot{i}", S("slot_empty"),
                     new Vector2(0.5f, 1f),
                     new Vector2(left + c * (Slot + Gap),
                                 -Gap - Slot * 0.5f - r * (Slot + Gap)),
@@ -207,7 +208,7 @@ namespace Project.EditorTools
 
             var dClose = TextButton(card, "Close", btn, down,
                 new Vector2(0.5f, 0f), new Vector2(0f, 40f),
-                new Vector2(320f, 110f), 2.2f, "ĐÓNG", 36);
+                new Vector2(320f, 110f), 2.2f, "CLOSE", 36);
 
             var screen = Need<TreasureScreen>(root);
             Set(screen, so =>
@@ -234,10 +235,15 @@ namespace Project.EditorTools
                 Fill(so.FindProperty("slotFrames"), frames);
                 Fill(so.FindProperty("slotIcons"), icons);
                 Fill(so.FindProperty("slotLevels"), levels);
+                // Bo phang chi co HAI khung: chua co / da co. Bon khung
+                // theo bac cua bo cu da bi bo — chung cham tro nang, va
+                // bac da duoc the hien bang chinh icon vat pham.
+                // slot_owned co vien VANG, slot_empty thi khong. Bac cua
+                // mon do doc ra tu chinh icon, khong can bon khung rieng.
                 Fill(so.FindProperty("frameByTier"), new[]
                 {
-                    S("slot_locked"), S("slot_common"), S("slot_rare"),
-                    S("slot_epic"), S("slot_legendary"),
+                    S("slot_empty"), S("slot_owned"), S("slot_owned"),
+                    S("slot_owned"), S("slot_owned"),
                 });
             });
 
@@ -309,8 +315,7 @@ namespace Project.EditorTools
                                           Vector2 size, float ppu, string text, int font)
         {
             var rt = Box(parent, name, normal, anchor, pos, size, ppu);
-            Label(rt, text, font, FontStyle.Bold,
-                  new Color(0.16f, 0.1f, 0.03f), SliceBorder / ppu);
+            Label(rt, text, font, FontStyle.Bold, Color.white, SliceBorder / ppu);
             var b = Need<Button>(rt.gameObject);
             b.targetGraphic = rt.GetComponent<Image>();
             if (down != null)

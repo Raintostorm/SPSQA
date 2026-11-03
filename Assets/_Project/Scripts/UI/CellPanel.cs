@@ -36,13 +36,82 @@ namespace Project.UI
         Project.Visual.CellTiles lit;
         int row, col;
         System.Random rng;
+        Button infoButton;
+        bool showInfo;
+        RectTransform floating;
+        GameObject infoCard;
 
         void Awake()
         {
             rng = new System.Random();
             if (sellButton != null) sellButton.onClick.AddListener(DoSell);
             if (evolveButton != null) evolveButton.onClick.AddListener(DoEvolve);
+            BuildCompactActions();
             Close();
+        }
+
+        void BuildCompactActions()
+        {
+            floating = group != null ? group.GetComponent<RectTransform>() : GetComponent<RectTransform>();
+            if (!floating) return;
+            foreach (var image in floating.GetComponentsInChildren<Image>(true))
+                if (image.transform == floating ||
+                    (title && image.transform == title.transform.parent))
+                { image.color = Color.clear; image.raycastTarget = false; }
+            BattleUiSkin.Place(floating, Vector2.one * .5f, Vector2.zero, new Vector2(420,400));
+            if (sellButton)
+            {
+                BattleUiSkin.Place(sellButton.GetComponent<RectTransform>(),Vector2.one*.5f,new Vector2(0,130),new Vector2(270,100));
+                BattleUiSkin.Button(sellButton,BattleUiSkin.Red,"+0");
+                BattleUiSkin.Icon(sellButton,"gold");
+            }
+            if (evolveButton)
+            {
+                BattleUiSkin.Place(evolveButton.GetComponent<RectTransform>(),Vector2.one*.5f,new Vector2(0,-120),new Vector2(270,100));
+                BattleUiSkin.Button(evolveButton,BattleUiSkin.Orange,"Merge");
+                BattleUiSkin.Icon(evolveButton,"upgrade");
+            }
+            var go = new GameObject("UnitInfoButton",typeof(RectTransform),typeof(Image),typeof(Button));
+            go.transform.SetParent(floating,false);infoButton=go.GetComponent<Button>();
+            BattleUiSkin.Place(go.GetComponent<RectTransform>(),Vector2.one*.5f,new Vector2(195,0),new Vector2(90,90));
+            ApprovedUiArt.Apply(go.GetComponent<Image>(),"info");
+            var label=new GameObject("Label",typeof(RectTransform),typeof(Text)).GetComponent<Text>();
+            label.transform.SetParent(go.transform,false);label.font=title ? title.font : Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+            label.fontSize=48;label.text="";label.alignment=TextAnchor.MiddleCenter;label.color=Color.white;label.raycastTarget=false;
+            BattleUiSkin.Place(label.rectTransform,Vector2.one*.5f,Vector2.zero,new Vector2(80,80));
+            infoButton.onClick.AddListener(()=>{var units=board?.UnitsAt(row,col);if(units!=null&&units.Count>0)BattleUnitInfo.Show(units[0]);});
+            infoCard=new GameObject("UnitInfoCard",typeof(RectTransform),typeof(Image));
+            infoCard.transform.SetParent(floating,false);
+            BattleUiSkin.Place(infoCard.GetComponent<RectTransform>(),Vector2.one*.5f,new Vector2(0,255),new Vector2(570,230));
+            BattleUiSkin.Skin(infoCard.GetComponent<Image>(),BattleUiSkin.Navy);
+            infoCard.GetComponent<Image>().raycastTarget=false;
+            if(title){title.transform.SetParent(infoCard.transform,false);BattleUiSkin.Place(title.rectTransform,Vector2.one*.5f,new Vector2(0,65),new Vector2(530,60));}
+            if(stats){stats.transform.SetParent(infoCard.transform,false);BattleUiSkin.Place(stats.rectTransform,Vector2.one*.5f,new Vector2(0,-30),new Vector2(530,120));}
+        }
+        void SetInfoVisible()
+        {if(infoCard)infoCard.SetActive(showInfo);if(title)title.gameObject.SetActive(showInfo);if(stats)stats.gameObject.SetActive(showInfo);}
+        void LateUpdate()
+        {
+            if (!board || !floating || !group || group.alpha == 0) return;
+            var camera=Camera.main;var parent=floating.parent as RectTransform;
+            if (!camera || !parent) return;
+            var units=board.UnitsAt(row,col);
+            var centre=Vector3.zero;int count=0;
+            foreach(var unit in units)if(unit){centre+=unit.transform.position;count++;}
+            if(count==0){Close();return;}
+            centre/=count;centre+=Vector3.up*.2f;
+            var screen=camera.WorldToScreenPoint(centre);
+            var canvas=floating.GetComponentInParent<Canvas>();
+            Vector2 point;
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(parent,screen,
+                canvas && canvas.renderMode != RenderMode.ScreenSpaceOverlay ? canvas.worldCamera : null,out point);
+            point.x=Mathf.Clamp(point.x,parent.rect.xMin+145,parent.rect.xMax-145);
+            point.y=Mathf.Clamp(point.y,parent.rect.yMin+250,parent.rect.yMax-360);
+            if(infoButton)infoButton.GetComponent<RectTransform>().anchoredPosition=
+                new Vector2(point.x+245>parent.rect.xMax?-195:195,0);
+            if(infoCard)infoCard.GetComponent<RectTransform>().anchoredPosition=
+                new Vector2(Mathf.Clamp(point.x,parent.rect.xMin+290,parent.rect.xMax-290)-point.x,255);
+            floating.anchoredPosition=point;
         }
 
         public void Open(BattleBoard b, int r, int c)
@@ -51,11 +120,13 @@ namespace Project.UI
             // bam sang o phe dich ma khong co dong nay thi ca hai cung sang.
             Highlight(null);
             board = b; row = r; col = c;
+            showInfo=false;SetInfoVisible();
             Refresh();
         }
 
         public void Close()
         {
+            Project.Visual.PrepUnitRing.Select(null);
             Highlight(null);
             board = null;
             Show(false);
@@ -86,6 +157,7 @@ namespace Project.UI
             // chac o nay co linh. Bat o Open() thi bam vao o rong cung sang
             // mot nhip roi moi tat.
             Highlight(board);
+            Project.Visual.PrepUnitRing.Select(units);
 
             var def = units[0].Definition;
             var ally = units[0].Team == UnitTeam.Ally;
@@ -102,19 +174,26 @@ namespace Project.UI
             {
                 var u = units[0];
                 stats.text = def == null ? string.Empty :
-                    $"{def.Race} · {def.Rank}   ·   {(def.IsRanged ? "đánh xa" : "cận chiến")}\n" +
-                    $"MÁU {u.MaxHp:0}      SÁT THƯƠNG {u.AttackPower:0}\n" +
-                    $"TẦM {def.AttackRange:0.0}   NHỊP {def.AttackCooldown:0.00}s";
+                    (def.Mythic!=MythicKind.None ? $"Mythic · {(def.IsRanged ? "Ranged" : "Melee")}\n" : $"{def.Race} · {def.Rank} · {(def.IsRanged ? "Ranged" : "Melee")}\n") +
+                    $"HP {u.MaxHp:0}      ATTACK {u.AttackPower:0}\n" +
+                    $"RANGE {def.AttackRange:0.0}   ATK SPD {u.GetComponent<UnitBrain>().AttacksPerSecond:0.##}/s";
+                int gearCount=u.Equipment.Types.Count;
+                foreach(int type in u.Equipment.Types)
+                    stats.text+="\n<color=#99FFBF>"+BattleItemRecipes.Items[type].Name+" · "+BattleItemRecipes.Effect(type)+"</color>";
+                if(infoCard)infoCard.GetComponent<RectTransform>().sizeDelta=new Vector2(570,230+gearCount*65);
+                stats.rectTransform.sizeDelta=new Vector2(530,120+gearCount*65);
+                if(title)title.rectTransform.anchoredPosition=new Vector2(0,65+gearCount*32.5f);
             }
 
             // Phe địch: chỉ xem, không bán không tiến hoá.
             if (sellButton != null) sellButton.gameObject.SetActive(ally);
-            if (evolveButton != null) evolveButton.gameObject.SetActive(ally);
+            if (evolveButton != null) evolveButton.gameObject.SetActive(ally &&
+                EvolutionSystem.CanEvolve(board, row, col, pool, out _, out _));
 
             if (ally)
             {
                 var price = SellPrice(units);
-                if (sellLabel != null) sellLabel.text = $"BÁN  +{price}¢";
+                if (sellLabel != null) sellLabel.text = $"+{price}";
                 if (evolveButton != null)
                     evolveButton.interactable =
                         EvolutionSystem.CanEvolve(board, row, col, pool, out _, out _);

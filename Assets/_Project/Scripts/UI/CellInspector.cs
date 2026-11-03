@@ -35,12 +35,17 @@ namespace Project.UI
         void Update()
         {
             if (flow != null && flow.Current != BattleFlow.Phase.Prep) return;
+            var roll = FindFirstObjectByType<RollService>();
+            if (roll != null && roll.IsPresenting) { pressed=false; return; }
 
             var mouse = Mouse.current;
             if (mouse == null || cam == null) return;
 
             if (mouse.leftButton.wasPressedThisFrame)
             {
+                if (UnityEngine.EventSystems.EventSystem.current != null &&
+                    UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
+                { pressed = false; return; }
                 pressAt = mouse.position.ReadValue();
                 pressed = true;
                 return;

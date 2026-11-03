@@ -37,11 +37,15 @@ namespace Project.Visual
         Transform holder;
 
         BattleBoard board;
+        bool[,] dragTargets;
+        bool dragging, inPrep;
+        float selectionUntil;
         BattleBoard Board => board != null ? board : (board = GetComponent<BattleBoard>());
 
         void Awake()
         {
             Collect();
+            HideImmediately();
             if (flow == null) flow = FindFirstObjectByType<BattleFlow>();
         }
 
@@ -62,8 +66,69 @@ namespace Project.Visual
         void OnPhase(BattleFlow.Phase p)
         {
             var prep = p == BattleFlow.Phase.Prep;
+            inPrep = prep;
+            dragging = false;
             if (!prep) Deselect();      // khong de o sang mac ket qua tran danh
             SetShown(prep);
+            HideImmediately();
+        }
+
+        void HideImmediately()
+        {
+            if (tiles == null) return;
+            foreach (var sr in tiles) if (sr != null) sr.color = new Color(.45f, .75f, .72f, 0);
+        }
+
+        void Update()
+        {
+            if (tiles == null || !inPrep) return;
+            if (!dragging && selectionUntil > 0 && Time.unscaledTime >= selectionUntil) Deselect();
+            for (int r = 0; r < tiles.GetLength(0); r++)
+            for (int c = 0; c < tiles.GetLength(1); c++)
+            {
+                var sr = tiles[r,c];
+                if (sr == null) continue;
+                bool active = r == selRow && c == selCol;
+                float alpha = active ? .48f : dragging && dragTargets != null && dragTargets[r,c] ? .16f : 0;
+                var color = active ? new Color(.55f, 1f, 1f) : new Color(.45f, .75f, .72f);
+                color.a = Mathf.MoveTowards(sr.color.a, alpha, Time.unscaledDeltaTime * 3);
+                sr.color = color;
+            }
+        }
+
+        public void BeginDrag(Project.Data.UnitDefinition definition, int count, int fromRow, int fromCol)
+        {
+            dragging = true;
+            selectionUntil = 0;
+            var g = Board.Grid;
+            dragTargets = new bool[g.Rows,g.Cols];
+            for (int r = 0; r < g.Rows; r++)
+            for (int c = 0; c < g.Cols; c++)
+            {
+                var units = Board.UnitsAt(r,c);
+                dragTargets[r,c] = (r == fromRow && c == fromCol) ||
+                    ((units.Count == 0 || units[0].Definition == definition) && units.Count + count <= g.MaxPerCell);
+            }
+        }
+
+        public void HoverDrag(Vector3 world)
+        {
+            if (!dragging) return;
+            if (Board.Grid.WorldToCell(world, out int r, out int c) && dragTargets[r,c]) Select(r,c);
+            else Deselect();
+        }
+
+        public void EndDrag(int row, int col)
+        {
+            dragging = false;
+            Select(row,col);
+            selectionUntil = Time.unscaledTime + .65f;
+        }
+
+        public void CancelDrag()
+        {
+            dragging = false;
+            Deselect();
         }
 
         void SetShown(bool on)
@@ -99,6 +164,7 @@ namespace Project.Visual
         /// <summary>Làm sáng một ô. Ô đang sáng trước đó tự tắt.</summary>
         public void Select(int row, int col)
         {
+            selectionUntil = 0;
             Deselect();
             if (tiles == null || !Board.Grid.IsInside(row, col)) return;
             var sr = tiles[row, col];
@@ -109,6 +175,7 @@ namespace Project.Visual
 
         public void Deselect()
         {
+            selectionUntil = 0;
             if (tiles == null || selRow < 0) return;
             var sr = tiles[selRow, selCol];
             if (sr != null) sr.sprite = normal;

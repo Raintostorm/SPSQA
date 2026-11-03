@@ -25,7 +25,7 @@ namespace Project.Battle
                  "địch không dịch chuyển tức thời, 0.2s là quá đủ.")]
         [SerializeField] float retargetInterval = 0.2f;
 
-        [Tooltip("Điểm sinh đạn. Để trống thì đạn sinh ngay tại gốc lính. " +
+        [Tooltip("Điểm sinh đạn. Để trống thì dùng điểm nhả theo vũ khí trong khung hình. " +
                  "Chỉ dùng khi UnitDefinition.IsRanged = true.")]
         [SerializeField] Transform muzzle;
 
@@ -43,9 +43,14 @@ namespace Project.Battle
 
         State state = State.Idle;
         Unit target;
+        Unit attackTarget; // Frozen at wind-up; never redirect an in-flight hit.
+        Vector3 focusPosition;
+        bool hasFocus; // Keep the last position if this enemy dies before contact.
         float retargetTimer;
         float cooldownTimer;
         bool attackInProgress;
+        bool empoweredAttack;
+        public float SummonedCooldown = -1f, SummonedMoveSpeed = -1f;
 
         float attackClock;          // bao lau roi ke tu luc bat dau vung
         float stallClock;           // bao lau roi ma chua nhich duoc
@@ -71,6 +76,8 @@ namespace Project.Battle
             if (self != null) self.Died -= OnSelfDied;
         }
 
+        public void RefreshDefinition(){def=self.Definition;}
+
         void Start()
         {
             def = self.Definition;
@@ -80,12 +87,17 @@ namespace Project.Battle
         void Update()
         {
             if (!self.IsAlive) return;
+            if (self.Combat.Stunned || self.Combat.Casting || self.Mythic.Casting) return;
+            visual?.SetAttackSpeedMultiplier((1f + Mathf.Max(0f, RunBuffs.Speed(self.Team))) * self.Combat.SpeedMultiplier * self.Mythic.SpeedMultiplier * (1f + self.Equipment.SpeedBonus) * self.Effects.SpeedMultiplier);
 
             TickTimers();
             Watchdog();
+            // Finish the current swing even if its victim dies. Do not retarget or
+            // rotate the actor until the animation reports completion.
+            if (attackInProgress) return;
             EnsureTarget();
 
-            if (target == null)
+            if (!hasFocus)
             {
                 GoIdle();
                 return;
@@ -93,12 +105,9 @@ namespace Project.Battle
 
             FaceTarget();
 
-            // Đang vung thì KHÔNG đụng vào gì cả: không đi, không đánh tiếp.
-            // Thiếu chốt này thì lính vừa trượt vừa chém, và clip bị restart
-            // giữa chừng nên onImpact không bao giờ bắn.
-            if (attackInProgress) return;
+            if (self.Combat.TryCast(target)) { state = State.Idle; return; }
 
-            if (DistanceToTarget() > def.AttackRange)
+            if (DistanceToTarget() > EffectiveAttackRange)
             {
                 Chase();
                 return;
@@ -170,20 +179,47 @@ namespace Project.Battle
 
         void EnsureTarget()
         {
-            // Đổi mục tiêu khi: chưa có, mục tiêu chết, hoặc tới hẹn quét lại.
-            var needsNew = target == null || !target.IsAlive;
-            if (!needsNew && retargetTimer > 0f) return;
-
+            if (target != null && target.IsAlive && target.Team != self.Team && target.Mythic.Deployed)
+            {
+                focusPosition = target.transform.position;
+                hasFocus = true;
+                return;
+            }
+            // A death commits one final, harmless swing at the last known position.
+            // A living unit that changes sides or leaves the field is not a valid focus.
+            if (hasFocus && (target == null || !target.IsAlive)) return;
+            hasFocus = false;
+            target = null;
+            if (retargetTimer > 0f) return;
             retargetTimer = retargetInterval;
             target = UnitRegistry.FindNearestEnemy(transform.position, self.Team);
+            if (target != null)
+            {
+                focusPosition = target.transform.position;
+                hasFocus = true;
+            }
         }
 
-        float DistanceToTarget() =>
-            Vector3.Distance(transform.position, target.transform.position);
+        float DistanceToTarget() => Vector3.Distance(transform.position, focusPosition);
+        public float EffectiveAttackRange
+        {
+            get { var definition=self?self.Definition:null;return !definition?0:definition.IsRanged?definition.AttackRange:Mathf.Min(definition.AttackRange,.55f); }
+        }
+        // UI reads the same speed factors as animation playback and cooldown.
+        public float AttacksPerSecond
+        {
+            get
+            {
+                // In preparation this component is disabled before Start assigns def.
+                var definition=self?self.Definition:null;if(!definition)return 0;
+                float multiplier=(1f+Mathf.Max(0f,RunBuffs.Speed(self.Team)))*(self.Combat?self.Combat.SpeedMultiplier:1)*(self.Mythic?self.Mythic.SpeedMultiplier:1)*(1f+(self.Equipment?self.Equipment.SpeedBonus:0))*self.Effects.SpeedMultiplier;
+                return multiplier/Mathf.Max(.01f,(definition.Animations?.Attack?.Total??0f)+(SummonedCooldown>=0f?SummonedCooldown:definition.AttackCooldown));
+            }
+        }
 
         void FaceTarget()
         {
-            visual?.SetFacing(target.transform.position.x - transform.position.x);
+            visual?.SetFacing(focusPosition.x - transform.position.x);
         }
 
         void GoIdle()
@@ -211,8 +247,9 @@ namespace Project.Battle
             // Hợp lệ vì đây là trận ĐƯỜNG THẲNG: hai phe luôn ở hai đầu trục
             // x, không bao giờ cần đi lên xuống để tới được nhau.
             var p = transform.position;
-            var t = target.transform.position;
-            p.x = Mathf.MoveTowards(p.x, t.x, def.MoveSpeed * Time.deltaTime);
+            var t = focusPosition;
+            var moveSpeed = (SummonedMoveSpeed >= 0f ? SummonedMoveSpeed : def.MoveSpeed)*self.Effects.SpeedMultiplier;
+            p.x = Mathf.MoveTowards(p.x, t.x, moveSpeed * Time.deltaTime);
 
             // Luoi an toan cho mot the be tac: DistanceToTarget do theo CA HAI
             // truc, con doan tren chi di theo X. Neu lech truc Y mot minh no
@@ -224,8 +261,8 @@ namespace Project.Battle
             // khac nhau, khong ai rang buoc chung. Nen vuot nguong thi khep
             // Y lai — bang mot nua toc do, de doi hinh van giu duoc hinh.
             var dy = t.y - p.y;
-            if (Mathf.Abs(dy) > def.AttackRange * 0.9f)
-                p.y = Mathf.MoveTowards(p.y, t.y, def.MoveSpeed * 0.5f * Time.deltaTime);
+            if (Mathf.Abs(dy) > EffectiveAttackRange * 0.9f)
+                p.y = Mathf.MoveTowards(p.y, t.y, moveSpeed * 0.5f * Time.deltaTime);
 
             transform.position = p;
         }
@@ -240,7 +277,8 @@ namespace Project.Battle
 
             if (cooldownTimer > 0f) return;
 
-            attackInProgress = true;
+            attackTarget = target;
+            attackInProgress = true;empoweredAttack=self.Mythic.Charged;
             visual?.PlayAttack(OnImpact, OnAttackFinished);
         }
 
@@ -253,13 +291,18 @@ namespace Project.Battle
         void OnImpact()
         {
             // Địch có thể chết trong lúc mình đang vung.
-            if (target == null || !target.IsAlive) return;
+            if(self.IsAlive&&!self.Combat.Stunned&&!def.IsRanged)MeleeAttackEffect.Play(self,empoweredAttack);
+            var victim = attackTarget;
+            if (!self.IsAlive || self.Combat.Stunned || victim == null || !victim.IsAlive || victim.Team==self.Team || !victim.Mythic.Deployed) return;
+
+            // Recheck at contact: a target may move away during wind-up.
+            if (!def.IsRanged && Vector3.Distance(transform.position, victim.transform.position) > EffectiveAttackRange + .05f) return;
 
             // Quay chí mạng MỘT LẦN cho cả hai lối đánh. Quay riêng trong
             // FireProjectile thì cận chiến và đánh xa thành hai luật khác nhau.
             var damage = RollDamage();
-            if (def.IsRanged) FireProjectile(damage);
-            else target.TakeDamage(damage, self);
+            if (def.IsRanged) FireProjectile(damage, victim);
+            else {victim.TakeDamage(damage, self);self.Mythic.AfterBasicAttack(victim,empoweredAttack);}
         }
 
         /// <summary>Sát thương một nhát, đã quay chí mạng.</summary>
@@ -280,19 +323,29 @@ namespace Project.Battle
         /// liên tục còn con nhịp dài gần như không đổi.
         /// </summary>
         float Cooldown =>
-            def.AttackCooldown / (1f + Mathf.Max(0f, RunBuffs.Speed(self.Team)));
+            (SummonedCooldown >= 0f ? SummonedCooldown : def.AttackCooldown) / ((1f + Mathf.Max(0f, RunBuffs.Speed(self.Team))) * self.Combat.SpeedMultiplier * self.Mythic.SpeedMultiplier * (1f + self.Equipment.SpeedBonus) * self.Effects.SpeedMultiplier);
 
         void OnAttackFinished()
         {
             attackInProgress = false;
+            attackTarget = null;
+            if (target == null || !target.IsAlive || target.Team == self.Team || !target.Mythic.Deployed)
+            { target = null; hasFocus = false; retargetTimer = 0f; }
 
             // Hồi chiêu tính TỪ LÚC CLIP XONG, không phải từ lúc bắt đầu vung.
             // Đó là nghĩa của UnitDefinition.AttackCooldown.
             cooldownTimer = Cooldown;
         }
 
-        void FireProjectile(float damage)
+        void FireProjectile(float damage, Unit victim)
         {
+            if (def.ProjectilePrefab == null && self.Mythic.Active)
+            {
+                var bolt=new GameObject("Mythic energy bolt");bolt.transform.position=RangedShotStyle.Origin(self,muzzle);
+                var image=bolt.AddComponent<SpriteRenderer>();image.sortingOrder=151;bolt.transform.localScale=Vector3.one*.45f;
+                bolt.AddComponent<MythicProjectileArt>().Bind(self.Mythic.Kind==MythicKind.Clock?"clock-bolt":"elf-bolt");
+                bolt.AddComponent<Projectile>().Launch(victim,damage,8,0,self);return;
+            }
             if (def.ProjectilePrefab == null)
             {
                 Debug.LogWarning(
@@ -302,8 +355,20 @@ namespace Project.Battle
                 return;
             }
 
-            var origin = muzzle != null ? muzzle.position : transform.position;
+            var origin = RangedShotStyle.Origin(self,muzzle);
             var go = Instantiate(def.ProjectilePrefab, origin, Quaternion.identity);
+            if(def.ProjectileSpriteOverride)
+            {
+                var renderers=go.GetComponentsInChildren<SpriteRenderer>();
+                for(int i=0;i<renderers.Length;i++)
+                {
+                    renderers[i].enabled=i==0;
+                    if(i!=0)continue;
+                    renderers[i].sprite=def.ProjectileSpriteOverride;
+                    renderers[i].color=def.ProjectileTint;
+                    renderers[i].transform.localScale=Vector3.one;
+                }
+            }
 
             var p = go.GetComponent<Projectile>();
             if (p == null)
@@ -317,13 +382,14 @@ namespace Project.Battle
 
             // Truyen "self" de dan biet ai ban: ghi cong luc TRUNG chu khong
             // luc ban. Ghi luc ban thi cu truot van duoc tinh diem.
-            p.Launch(target, damage,
+            p.Launch(victim, damage,
                      def.ProjectileSpeed, def.ProjectileArcHeight, self);
         }
 
         void OnSelfDied(Unit _)
         {
-            target = null;
+            target = attackTarget = null;
+            hasFocus = false;
             attackInProgress = false;
             attackClock = stallClock = 0f;
             enabled = false;      // ngừng Update, xác nằm yên

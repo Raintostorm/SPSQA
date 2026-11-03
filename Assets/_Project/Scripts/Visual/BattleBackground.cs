@@ -67,9 +67,21 @@ namespace Project.Visual
             return new Vector2(k * b.x, k * b.y);
         }
 
+        // Stable battle-space bounds, also available while the prep artwork is showing.
+        public Bounds CombatBounds
+        {
+            get
+            {
+                var cam=Camera.main;
+                if(battleSprite&&cam){var size=FitDesign(battleSprite,cam.orthographicSize);return new Bounds(transform.position,new Vector3(size.x,size.y,0));}
+                return GetComponent<SpriteRenderer>().bounds;
+            }
+        }
+
         void Awake()
         {
             sr = GetComponent<SpriteRenderer>();
+            sr.enabled=true;
             if (flow == null) flow = FindFirstObjectByType<BattleFlow>();
         }
 

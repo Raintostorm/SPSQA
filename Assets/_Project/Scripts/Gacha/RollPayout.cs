@@ -23,13 +23,15 @@ namespace Project.Gacha
     public readonly struct BuffRollAdd
     {
         public readonly BuffStatKind Stat;
+        public readonly Rank Rank;
 
         /// <summary>Phân số, KHÔNG phải phần trăm: 0.1 = +10%. CritChance cũng 0–1: 0.01 = 1%.</summary>
         public readonly float Value;
 
-        public BuffRollAdd(BuffStatKind stat, float value)
+        public BuffRollAdd(BuffStatKind stat, float value, Rank rank = Rank.Common)
         {
             Stat = stat;
+            Rank = rank;
             Value = value;
         }
     }

@@ -12,6 +12,10 @@ namespace Project.Data
         [Header("Identity")]
         public string UnitId;          // chi de ĐỌC (save/log). KHONG parse ra Race/Rank tu chuoi nay.
         public string DisplayName;
+        public MythicKind Mythic;
+        // Enemy difficulty is independent of the ally merge rarity.
+        public enum EnemyClass { Common, Elite, Boss }
+        public EnemyClass EnemyTier;
 
         [Tooltip("Giong loai. Nhanh NGANG — doi giong khong lam manh len.")]
         public Race Race = Race.Human;
@@ -44,6 +48,8 @@ namespace Project.Data
 
         [Header("Ranged — bo qua neu IsRanged = false")]
         public GameObject ProjectilePrefab;
+        public Sprite ProjectileSpriteOverride;
+        public Color ProjectileTint = Color.white;
         public float ProjectileSpeed = 6f;
 
         /// <summary>

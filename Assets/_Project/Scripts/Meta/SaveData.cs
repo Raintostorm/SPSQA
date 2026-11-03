@@ -24,6 +24,11 @@ namespace Project.Meta
         // file da ton tai giu nguyen so cu.
         public int Gold = 15000;
         public int TreasureKeys = 35;
+        public int Gems;
+        public int MythicStones;
+        public List<string> EncounteredMonsters = new();
+        // One-time requested test reset. Does not reset subsequent legitimate upgrades.
+        public int AllyLevelResetRevision;
         public int HighestLevelUnlocked = 1;
 
         /// <summary>
@@ -34,6 +39,16 @@ namespace Project.Meta
         /// và mất âm thầm, họ chỉ thấy "sao mãi không ra".
         /// </summary>
         public int RollsSinceLegendary;
+        public int SummonsSinceLegendary;
+        public string DailyShopDay;
+        public List<ShopOffer> DailyShopOffers = new();
+        [Serializable] public sealed class ShopOffer
+        {
+            public string Id;
+            public bool Ally;
+            public int Count, GemPrice;
+            public bool Sold;
+        }
 
         public List<OwnedItem> Items = new();
         public List<UnitUpgrade> Units = new();
@@ -53,6 +68,7 @@ namespace Project.Meta
         {
             public string UnitId;
             public int Level = 1;
+            public int Shards;
         }
 
         public OwnedItem FindItem(string id)

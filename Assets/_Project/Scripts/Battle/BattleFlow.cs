@@ -74,14 +74,16 @@ namespace Project.Battle
 
         float SpawnInterval => balance != null ? balance.WaveSpawnInterval : 0.7f;
         float PostBattlePause => balance != null ? balance.PostBattlePause : 1.5f;
-        int WavesPerLevel => balance != null ? balance.WavesPerLevel : 3;
+        int WavesPerLevel => balance != null ? balance.WavesForLevel(Project.Meta.GameProgress.CurrentLevel) :
+            (Project.Meta.GameProgress.CurrentLevel == 2 ? 10 : 3);
 
         /// <summary>Wave thứ mấy, đếm từ 1. Tăng khi quay lại chuẩn bị.</summary>
         public int Wave { get; private set; } = 1;
+        public int TotalWaves => WavesPerLevel;
 
         float finishedTimer;
 
-        void Start() => EnterPrep();
+        void Start() { BattleContribution.Reset(); EnterPrep(); }
 
         void Update()
         {
@@ -144,6 +146,11 @@ namespace Project.Battle
         public void StartWave()
         {
             if (Current != Phase.Prep) return;
+            var setup = FindFirstObjectByType<BattleSetup>();
+            if (setup && setup.IsChoosingLegend) return;
+            var roll = FindFirstObjectByType<Project.Gacha.RollService>();
+            var delivery = FindFirstObjectByType<Project.Gacha.RollRewardPlacer>();
+            if (roll && roll.IsPresenting || delivery && delivery.IsDelivering) return;
             SetPhase(Phase.Marching);
             SetCells(false);
             if (dragHandler != null) dragHandler.enabled = false;
@@ -160,6 +167,7 @@ namespace Project.Battle
 
             // Chỉ ẩn phần nhìn thấy. Không tắt GameObject vì Unit.OnDisable
             // sẽ rút quân khỏi Registry và làm sai việc đếm quân đang chờ.
+            foreach(var queued in AllUnits())if(queued.Mythic)queued.Mythic.Deployed=false;
             SetQueueVisible(allyQueue, false);
             SetQueueVisible(enemyQueue, false);
             allySpawned = enemySpawned = 0;
@@ -247,6 +255,7 @@ namespace Project.Battle
         System.Collections.IEnumerator RestartNextFrame()
         {
             yield return null;               // cho Destroy thi hanh xong
+            BattleContribution.Reset();
             RunRestarted?.Invoke();
             EnterPrep();
             Debug.Log("[BattleFlow] Chơi lại từ wave 1.", this);
@@ -277,13 +286,14 @@ namespace Project.Battle
         {
             var ally  = UnitRegistry.CountAlive(UnitTeam.Ally);
             var enemy = UnitRegistry.CountAlive(UnitTeam.Enemy);
+            if(ally==0&&enemy>0&&EffectBuffSystem.Current&&EffectBuffSystem.Current.TryRescue())return;
             if (ally > 0 && enemy > 0) return;
 
             Winner = ally > 0 ? UnitTeam.Ally
                    : enemy > 0 ? UnitTeam.Enemy
                    : (UnitTeam?)null;
             SetPhase(Phase.Finished);
-            finishedTimer = PostBattlePause;
+            finishedTimer = Winner == UnitTeam.Ally ? 2f : PostBattlePause;
             Debug.Log($"[BattleFlow] Hết trận wave {Wave} — {(Winner?.ToString() ?? "hoà")}. " +
                       $"Còn lại {ally} ally, {enemy} enemy.", this);
         }
@@ -296,6 +306,8 @@ namespace Project.Battle
         /// </summary>
         void TickFinished()
         {
+            // Two game seconds after victory: follows x1/x2/x3 and pause.
+            if (Project.UI.SharedSettings.IsPaused) return;
             finishedTimer -= Time.deltaTime;
             if (finishedTimer > 0f) return;
 
@@ -421,6 +433,7 @@ namespace Project.Battle
             {
                 if (u == null || !u.IsAlive) continue;
 
+                u.Mythic.Deployed=true;
                 // Rut khoi luoi TRUOC khi doi cho — khong thi BattleBoard van
                 // tuong no dang dung trong o va se keo no ve moi lan Reflow.
                 board?.Remove(u);
@@ -429,15 +442,29 @@ namespace Project.Battle
                 if (lane != null)
                 {
                     var off = grid != null ? grid.FormationOffset(slot, n) : Vector2.zero;
-                    u.transform.position = entry + new Vector3(off.x, off.y, 0f);
+                    // More legible triangle; keep the relative offsets when
+                    // fitting the entire cell into the battle road below.
+                    var position = entry + new Vector3(off.x * 1.8f, off.y * 2.1f, 0f);
+                    // The prep boards have already moved offscreen. Never use
+                    // their world coordinates for battle deployment.
+                    u.transform.position = position;
                 }
+                var sorting = u.GetComponent<UnityEngine.Rendering.SortingGroup>();
+                if (sorting != null)
+                    sorting.sortingOrder = Mathf.Max(BattleGrid.UnitOrderFloor,
+                        Mathf.RoundToInt(-u.transform.position.y * 100f));
                 u.Visual?.SetFacing(team == UnitTeam.Ally ? 1f : -1f);
                 u.Visual?.SetVisible(true);
+                if(team==UnitTeam.Enemy && u.Definition && Project.Meta.MonsterDiscovery.Encounter(Project.Meta.SaveSystem.Current,u.Definition.UnitId)>0)
+                    Project.Meta.SaveSystem.Save();
 
                 var brain = u.GetComponent<UnitBrain>();
                 if (brain != null) brain.enabled = true;
                 slot++;
             }
+
+            Project.Visual.BattleGroundConstraint.FitDeployment(cell,
+                lane != null ? lane.RowFraction(count) : .5f);
 
             count++;                                    // dem O, khong dem con
             return true;

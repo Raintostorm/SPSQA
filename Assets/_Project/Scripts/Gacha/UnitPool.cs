@@ -26,8 +26,10 @@ namespace Project.Gacha
         void Rebuild()
         {
             byRank.Clear();
-            if (all == null) return;
-            foreach (var d in all)
+            var roster = new List<UnitDefinition>(all ?? System.Array.Empty<UnitDefinition>());
+            roster.AddRange(MythicCatalog.All);
+            MythicCatalog.PrewarmEffects();
+            foreach (var d in roster)
             {
                 if (d == null) continue;
                 if (!byRank.TryGetValue(d.Rank, out var list))

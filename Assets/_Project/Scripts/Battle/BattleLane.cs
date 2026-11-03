@@ -30,6 +30,8 @@ namespace Project.Battle
         [SerializeField] float rowSpacing = 0.95f;
 
         public float LaneY => laneY;
+        public float RowFraction(int index)
+        { var n=Mathf.Max(1,laneRows);return n==1?.5f:((index%n+n)%n)/(float)(n-1); }
 
         /// <summary>
         /// Chỗ Ô thứ <paramref name="index"/> của phe này bước vào.

@@ -14,7 +14,7 @@ namespace Project.UI
     /// biết còn gì phía trước, mà biết còn gì phía trước chính là lý do họ
     /// quay tiếp.
     /// </summary>
-    public sealed class TreasureScreen : MonoBehaviour
+    public sealed partial class TreasureScreen : MonoBehaviour
     {
         [Header("Do TreasureSceneSetup gán")]
         [SerializeField] TreasureDatabase database;
@@ -47,8 +47,9 @@ namespace Project.UI
         [SerializeField] Sprite[] frameByTier = new Sprite[5];
 
         System.Random rng;
+        bool revealing;
 
-        void Start()
+        void LegacyStart()
         {
             // Hat giong theo dong ho: moi lan vao man la mot day ket qua khac.
             // Co dinh hat giong thi quay lai game van ra dung thu tu cu.
@@ -84,24 +85,85 @@ namespace Project.UI
 
         void DoRoll(int count)
         {
-            if (database == null || balance == null) return;
+            if (revealing || database == null || balance == null) return;
 
             if (!GameProgress.SpendKeys(count))
             {
                 if (resultLabel != null)
-                    resultLabel.text = $"Thiếu chìa — cần {count}, có {GameProgress.Keys}";
+                    resultLabel.text = $"Not enough keys — need {count}, have {GameProgress.Keys}";
                 return;
             }
 
             var got = TreasureRoll.Roll(count, database, balance, rng);
-            Report(got);
-            Refresh();
+            // Grant/save once before the presentation; closing a screen cannot lose rewards.
+            StartCoroutine(RevealChest(got));
+        }
+
+        System.Collections.IEnumerator RevealChest(List<TreasureRoll.Result> got)
+        {
+            revealing=true;
+            foreach(var button in rollButtons)if(button)button.interactable=false;
+            if(chestImage && chestClosed)chestImage.sprite=chestClosed;
+            var chest=chestImage ? chestImage.rectTransform : null;
+            var scale=chest ? chest.localScale : Vector3.one;
+            float time=0;
+            while(time<.65f)
+            {
+                time+=Time.unscaledDeltaTime;
+                if(chest){chest.localRotation=Quaternion.Euler(0,0,Mathf.Sin(time*55)*7);chest.localScale=scale*(1+.08f*Mathf.Sin(time*20));}
+                yield return null;
+            }
+            if(chest){chest.localRotation=Quaternion.identity;chest.localScale=scale;}
+            Report(got);Refresh();
+            yield return new WaitForSecondsRealtime(.2f);
+            var groups=new Dictionary<TreasureItem,List<TreasureRoll.Result>>();
+            foreach(var reward in got){if(reward.Item==null)continue;if(!groups.ContainsKey(reward.Item))groups[reward.Item]=new List<TreasureRoll.Result>();groups[reward.Item].Add(reward);}
+            var canvas=GetComponentInParent<Canvas>();
+            var overlay=new GameObject("ChestRewards",typeof(RectTransform),typeof(Image));
+            overlay.transform.SetParent(canvas ? canvas.transform : transform,false);
+            var root=overlay.GetComponent<RectTransform>();root.anchorMin=Vector2.zero;root.anchorMax=Vector2.one;root.offsetMin=root.offsetMax=Vector2.zero;
+            overlay.GetComponent<Image>().color=new Color(.035f,.05f,.1f,.97f);
+            RewardText(root,"RELICS RECEIVED",new Vector2(0,830),new Vector2(980,100),52);
+            var close=new GameObject("Continue",typeof(RectTransform),typeof(Image),typeof(Button));close.transform.SetParent(root,false);
+            BattleUiSkin.Place(close.GetComponent<RectTransform>(),Vector2.one*.5f,new Vector2(0,-870),new Vector2(600,110));
+            BattleUiSkin.Button(close.GetComponent<Button>(),BattleUiSkin.Purple,"Continue");
+            RewardText(close.transform,"Continue",Vector2.zero,new Vector2(560,100),44);
+            bool dismissed=false;
+            close.GetComponent<Button>().onClick.AddListener(()=>dismissed=true);
+            close.SetActive(false);
+            int index=0;
+            foreach(var entry in groups)
+            {
+                var card=new GameObject("RelicCard",typeof(RectTransform),typeof(Image),typeof(CanvasGroup));card.transform.SetParent(root,false);
+                var rect=card.GetComponent<RectTransform>();
+                BattleUiSkin.Place(rect,Vector2.one*.5f,new Vector2((index%5-2)*195,650-index/5*240),new Vector2(180,220));
+                var tier=(int)entry.Key.Tier;
+                card.GetComponent<Image>().color=tier==3?new Color(.55f,.36f,.06f):tier==2?new Color(.35f,.15f,.5f):tier==1?new Color(.08f,.28f,.5f):new Color(.22f,.25f,.3f);
+                var icon=new GameObject("Icon",typeof(RectTransform),typeof(Image));icon.transform.SetParent(rect,false);
+                BattleUiSkin.Place(icon.GetComponent<RectTransform>(),Vector2.one*.5f,new Vector2(0,28),new Vector2(105,105));
+                var image=icon.GetComponent<Image>();image.sprite=entry.Key.Icon;image.enabled=image.sprite!=null;image.preserveAspect=true;image.raycastTarget=false;
+                bool isNew=entry.Value.Exists(r=>r.IsNew);
+                RewardText(rect,entry.Key.DisplayName,new Vector2(0,-48),new Vector2(170,60),23);
+                RewardText(rect,(isNew?"NEW · ":"")+"×"+entry.Value.Count,new Vector2(0,-88),new Vector2(170,35),25);
+                float pop=0;while(pop<.09f){pop+=Time.unscaledDeltaTime;rect.localScale=Vector3.one*Mathf.Lerp(.75f,1,Mathf.Clamp01(pop/.09f));yield return null;}rect.localScale=Vector3.one;
+                index++;
+            }
+            close.SetActive(true);
+            while(!dismissed)yield return null;
+            Destroy(overlay);revealing=false;
+            foreach(var button in rollButtons)if(button)button.interactable=true;
+        }
+
+        Text RewardText(Transform parent,string value,Vector2 position,Vector2 size,int fontSize)
+        {
+            var text=new GameObject("Label",typeof(RectTransform),typeof(Text)).GetComponent<Text>();text.transform.SetParent(parent,false);
+            BattleUiSkin.Place(text.rectTransform,Vector2.one*.5f,position,size);text.text=value;text.font=Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");text.fontSize=fontSize;text.alignment=TextAnchor.MiddleCenter;text.color=Color.white;text.raycastTarget=false;return text;
         }
 
         void Report(List<TreasureRoll.Result> got)
         {
             if (resultLabel == null) return;
-            if (got.Count == 0) { resultLabel.text = "Không ra gì."; return; }
+            if (got.Count == 0) { resultLabel.text = "No items received."; return; }
 
             // Mot luot x100 khong the liet ke 100 dong. Dem theo bac, roi
             // goi ten rieng thu HIEM nhat — do la thu nguoi choi muon biet.
@@ -118,7 +180,7 @@ namespace Project.UI
                        $"Epic {byTier[2]} · Legend {byTier[3]}";
             if (best.Item != null)
                 line += $"\n{best.Item.DisplayName} — " +
-                        (best.IsNew ? "MỚI!" : $"cấp {best.NewLevel}");
+                        (best.IsNew ? "NEW!" : $"level {best.NewLevel}");
             resultLabel.text = line;
 
             if (chestImage != null && chestOpen != null)
@@ -144,9 +206,9 @@ namespace Project.UI
             }
             if (detailTitle != null)
                 detailTitle.text = owned == null
-                    ? $"{item.DisplayName}  ·  {TierName(item.Tier)}  ·  CHƯA CÓ"
+                    ? $"{item.DisplayName}  ·  {TierName(item.Tier)}  ·  NOT OWNED"
                     : $"{item.DisplayName}  ·  {TierName(item.Tier)}  ·  " +
-                      (level >= item.MaxLevel ? "TỐI ĐA" : $"Cấp {level}/{item.MaxLevel}");
+                      (level >= item.MaxLevel ? "MAX" : $"Level {level}/{item.MaxLevel}");
 
             if (detailBody != null)
             {
@@ -161,9 +223,9 @@ namespace Project.UI
                     sb.Append('\n');
                 }
                 if (owned != null && level < item.MaxLevel)
-                    sb.Append($"\nMảnh: {owned.Shards}/{TreasureItem.ShardsToNext(level)}");
+                    sb.Append($"\nShards: {owned.Shards}/{TreasureItem.ShardsToNext(level)}");
                 else if (owned == null)
-                    sb.Append("\nQuay rương để nhận.");
+                    sb.Append("\nOpen chests to obtain.");
                 detailBody.text = sb.ToString();
             }
             ShowPanel(true);
@@ -185,19 +247,20 @@ namespace Project.UI
 
         static string StatName(TreasureStat s) => s switch
         {
-            TreasureStat.Atk => "Sát thương",
-            TreasureStat.Hp => "Máu",
-            TreasureStat.AtkSpeed => "Tốc đánh",
-            TreasureStat.CritDamage => "ST chí mạng",
-            TreasureStat.CritChance => "Chí mạng",
-            TreasureStat.LifeSteal => "Hút máu",
-            _ => "Giáp",
+            TreasureStat.MythicCapacity => "Mythic limit · +1 every 2 levels",
+            TreasureStat.Atk => "Attack",
+            TreasureStat.Hp => "HP",
+            TreasureStat.AtkSpeed => "Attack Speed",
+            TreasureStat.CritDamage => "Crit Damage",
+            TreasureStat.CritChance => "Crit Chance",
+            TreasureStat.LifeSteal => "Lifesteal",
+            _ => "Armor",
         };
 
         /// <summary>Hai thang đơn vị khác nhau — ghi sai là người chơi hiểu sai.</summary>
         static string Unit(TreasureStat s) =>
             s is TreasureStat.CritChance or TreasureStat.LifeSteal or TreasureStat.Armor
-                ? " điểm" : "%";
+                ? " points" : "%";
 
         void Refresh()
         {

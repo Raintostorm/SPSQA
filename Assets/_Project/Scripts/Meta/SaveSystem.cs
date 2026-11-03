@@ -29,7 +29,24 @@ namespace Project.Meta
             Application.persistentDataPath, BackupName);
 
         /// <summary>Bản đang dùng. Tự nạp ở lần gọi đầu.</summary>
-        public static SaveData Current => current ??= Load();
+        public static SaveData Current
+        {
+            get
+            {
+                current ??= Load();
+                if(current.AllyLevelResetRevision<1)
+                {
+                    // Keep a recovery snapshot before the explicitly requested reset.
+                    try { if(File.Exists(Path) && !File.Exists(Path+".before-ally-reset"))File.Copy(Path,Path+".before-ally-reset"); }
+                    catch(IOException e){Debug.LogWarning("[SaveSystem] Reset backup: "+e.Message);}
+                    if(current.Units==null)current.Units=new System.Collections.Generic.List<SaveData.UnitUpgrade>();
+                    foreach(var unit in current.Units)if(unit!=null)unit.Level=1;
+                    current.AllyLevelResetRevision=1;
+                    Save();
+                }
+                return current;
+            }
+        }
 
         /// <summary>
         /// Xoá bản trong bộ nhớ, KHÔNG đụng file.

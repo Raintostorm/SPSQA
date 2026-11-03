@@ -28,15 +28,22 @@ namespace Project.Battle
         readonly List<Unit> carried = new List<Unit>();
         int fromRow, fromCol;
         Vector3 grabOffset;
+        Project.Visual.CellTiles cellTiles;
+        bool draggingTiles;
+        Vector3 grabWorld;
 
         void Awake()
         {
             board = GetComponent<BattleBoard>();
+            cellTiles = GetComponent<Project.Visual.CellTiles>();
             cam = Camera.main;
         }
 
         void Update()
         {
+            if(Project.UI.BattleItemDrag.IsDragging)return;
+            var roll = FindFirstObjectByType<Project.Gacha.RollService>();
+            if (carried.Count == 0 && roll != null && roll.IsPresenting) return;
             var mouse = Mouse.current;
             if (mouse == null || cam == null) return;
 
@@ -59,6 +66,8 @@ namespace Project.Battle
 
         void TryGrab(Vector3 world)
         {
+            if (UnityEngine.EventSystems.EventSystem.current != null &&
+                UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject()) return;
             if (!board.Grid.WorldToCell(world, out var r, out var c)) return;
 
             var list = board.UnitsAt(r, c);
@@ -66,7 +75,11 @@ namespace Project.Battle
 
             carried.Clear();
             carried.AddRange(list);
+            foreach (var u in carried)
+                if (u != null && u.TryGetComponent<Project.Visual.PrepUnitRing>(out var ring)) ring.Dragging = true;
             fromRow = r; fromCol = c;
+            grabWorld = world;
+            draggingTiles = false;
 
             // Nhớ lệch giữa con trỏ và tâm ô, để nhóm không nhảy giật vào
             // đúng con trỏ ngay khi bấm.
@@ -78,6 +91,13 @@ namespace Project.Battle
         void Carry(Vector3 world)
         {
             var centre = world + grabOffset;
+            if (!draggingTiles && Vector3.Distance(world, grabWorld) < .05f) return;
+            if (cellTiles != null)
+            {
+                if (!draggingTiles) cellTiles.BeginDrag(carried[0].Definition, carried.Count, fromRow, fromCol);
+                cellTiles.HoverDrag(centre);
+            }
+            draggingTiles = true;
             for (var i = 0; i < carried.Count; i++)
             {
                 if (carried[i] == null) continue;
@@ -106,6 +126,10 @@ namespace Project.Battle
             foreach (var u in carried) board.Place(u, row, col);
 
             SetAlpha(1f);
+            if (draggingTiles) cellTiles?.EndDrag(row, col);
+            draggingTiles = false;
+            foreach (var u in carried)
+                if (u != null && u.TryGetComponent<Project.Visual.PrepUnitRing>(out var ring)) ring.Dragging = false;
             carried.Clear();
         }
 
@@ -138,7 +162,11 @@ namespace Project.Battle
             // Tắt giữa lúc đang kéo thì phải trả lính về chỗ cũ, không thì
             // chúng đứng lơ lửng ở nơi con trỏ dừng lại.
             if (carried.Count == 0) return;
+            cellTiles?.CancelDrag();
+            draggingTiles = false;
             SetAlpha(1f);
+            foreach (var u in carried)
+                if (u != null && u.TryGetComponent<Project.Visual.PrepUnitRing>(out var ring)) ring.Dragging = false;
             foreach (var u in carried) board.Place(u, fromRow, fromCol);
             carried.Clear();
         }
