@@ -1,0 +1,13 @@
+SCENE Home
+EVENTSYSTEM EventSystem
+INPUT EventSystem active=True point=True click=True
+BUTTON HomeUI/HomeChrome/Navigation/UpgradeButton enabled=True size=(210.00, 180.00) center=(562.50, 100.00) hit=HomeUI/GemEconomyScreen reachable=False
+BUTTON HomeUI/PlayButton enabled=True size=(680.00, 170.00) center=(562.50, 325.00) hit=HomeUI/GemEconomyScreen reachable=False
+BUTTON HomeUI/GemEconomyScreen/SafeArea/SummonLayout/Back enabled=True size=(460.00, 130.00) center=(562.50, 228.00) hit=HomeUI/GemEconomyScreen/SafeArea/SummonLayout/Back reachable=True
+BUTTON HomeUI/HomeChrome/Navigation/Nav0 enabled=True size=(210.00, 180.00) center=(122.50, 100.00) hit=HomeUI/GemEconomyScreen reachable=False
+BUTTON HomeUI/HomeChrome/Navigation/Nav4 enabled=True size=(210.00, 180.00) center=(1002.50, 100.00) hit=HomeUI/GemEconomyScreen reachable=False
+BUTTON HomeUI/HomeChrome/Navigation/TreasureButton enabled=True size=(210.00, 180.00) center=(782.50, 100.00) hit=HomeUI/GemEconomyScreen reachable=False
+BUTTON HomeUI/GemEconomyScreen/SafeArea/SummonLayout/ enabled=True size=(490.00, 190.00) center=(822.50, 563.00) hit=HomeUI/GemEconomyScreen/SafeArea/SummonLayout/ reachable=True
+BUTTON HomeUI/HomeChrome/Navigation/Nav1 enabled=True size=(210.00, 180.00) center=(342.50, 100.00) hit=HomeUI/GemEconomyScreen reachable=False
+BUTTON HomeUI/SelectChapter enabled=True size=(500.00, 140.00) center=(562.50, 510.00) hit=HomeUI/GemEconomyScreen reachable=False
+BUTTON HomeUI/GemEconomyScreen/SafeArea/SummonLayout/ enabled=True size=(490.00, 190.00) center=(302.50, 563.00) hit=HomeUI/GemEconomyScreen/SafeArea/SummonLayout/ reachable=True

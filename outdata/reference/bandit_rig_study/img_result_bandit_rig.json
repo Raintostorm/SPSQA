@@ -1,0 +1,14 @@
+[
+  {
+    "path": "img_result_bandit",
+    "error": "'PPtr' object has no attribute 'get_obj'"
+  },
+  {
+    "path": "img_result_bandit",
+    "error": "'PPtr' object has no attribute 'get_obj'"
+  },
+  {
+    "path": "img_result_bandit",
+    "error": "'PPtr' object has no attribute 'get_obj'"
+  }
+]

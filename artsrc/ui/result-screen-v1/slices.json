@@ -1,0 +1,34 @@
+{
+  "source": "Assets/_Project/Resources/ResultScreen/atlas.png",
+  "size": [
+    1536,
+    1024
+  ],
+  "coordinateSystem": "top-left xyxy",
+  "regions": {
+    "victory-ribbon": [
+      29,
+      142,
+      737,
+      356
+    ],
+    "defeat-ribbon": [
+      793,
+      139,
+      1500,
+      355
+    ],
+    "victory-illustration": [
+      31,
+      559,
+      774,
+      950
+    ],
+    "defeat-illustration": [
+      833,
+      635,
+      1492,
+      945
+    ]
+  }
+}

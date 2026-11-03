@@ -1,0 +1,10 @@
+11/2/2026 10:00:49 PM
+Editor diagnostic sample; timeScale=1; GC counter valid=True; main counter valid=True
+GC bytes/frame: n=6021 mean=9862.35 p95=9775.00 max=140791.00
+main ms/frame: n=6021 mean=1.66 p95=5.53 max=17.47
+
+11/2/2026 10:03:52 PM
+Editor diagnostic sample; timeScale=3; GC counter valid=True; main counter valid=True
+GC bytes/frame: n=64 mean=376.13 p95=502.00 max=5548.00
+main ms/frame: n=64 mean=153.13 p95=200.01 max=200.33
+

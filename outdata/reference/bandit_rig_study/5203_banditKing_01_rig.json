@@ -1,0 +1,14 @@
+[
+  {
+    "path": "5203_banditKing_01",
+    "error": "'PPtr' object has no attribute 'get_obj'"
+  },
+  {
+    "path": "5203_banditKing_01",
+    "error": "'PPtr' object has no attribute 'get_obj'"
+  },
+  {
+    "path": "5203_banditKing_01",
+    "error": "'PPtr' object has no attribute 'get_obj'"
+  }
+]

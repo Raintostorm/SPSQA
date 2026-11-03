@@ -1,0 +1,4 @@
+# Battle chrome v2
+Built-in imagegen, approved concept family. Source: buttons-atlas.png; runtime identical bytes: Assets/_Project/Resources/BattleChrome/buttons-v2.bytes.
+Prompt: Extract and clean the approved button family into a genuinely transparent sprite atlas. Navy/steel-blue recipe and equipment buttons, empty cyan roll background, gold crossed-swords Start. Three rows: normal, pressed, disabled. Fourth row: empty inventory cell, standalone dice, coin, red close X. Same flat chibi black outlines, no labels or baked prices, generous transparent separation. Preserve the approved palette and simple geometry.
+Actual atlas 1254x1254; measured top-left rectangles are recorded in BattleChrome.Part. Unity Sprite.Create slices retain original alpha; no destructive bitmap processing. Roll price is live Text, not baked artwork. Inventory stays 2x5.

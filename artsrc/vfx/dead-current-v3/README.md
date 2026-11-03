@@ -1,0 +1,9 @@
+# Dead current-animation preview
+
+Preserves the currently assigned Skeleton King animation (Unit_dead_legendary -> Anim_dead_legendary GUID 4f05bad88b3b74dd1abf513258853333). All 42 existing sprite frames/pivots are replayed at 30fps. No generated replacement body is used.
+
+Built-in imagegen prompt for hand-magic.png: using the actual skill_hit.png only as style reference, generate a six-frame 3x2 transparent small purple summoning orb, short orbit wisps and motes above the left open palm; clean dark-purple contours, simple cel shading, no character/hand/sword/background/text. The existing 1.4s animation raises the sword, plants it while the left palm is open, then recovers. Preview attaches the effect to the open-palm phase (approximately 0.28–0.46s).
+
+Roll placement audit (no gameplay edits): FindSpotFor prioritizes same-definition non-full cells, then scans empty cells. This rule is consistent with grouping up to 3 allies per cell. However RollRewardPlacer currently aims at CellToWorld (cell centre), whereas BattleBoard.Place/Reflow finally positions each member using SlotToWorld (cell centre + unitAnchor + formation offset + per-definition CellOffset). Hence the light's target is not guaranteed to equal the recruit's final feet position. If placing a second/third unit, existing members also move instantly into the new formation. Board dragging remains available while delivery is in flight, so the destination can be invalidated unless reserved or locked.
+
+Recommended next implementation: validate/reserve selected cell, compute final occupancy and exact new member SlotToWorld before flight, use that position for arrival flash and spawn reveal, then gently reflow existing members. Never put mixed definitions into a cell; never obscure an existing unit with the arrival flash. Do not silently change the board-full compensation rule.

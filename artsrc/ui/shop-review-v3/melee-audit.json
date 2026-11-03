@@ -1,0 +1,154 @@
+[
+  {
+    "id": "dead_common",
+    "ranged": "0",
+    "attackVfxFrames": 0,
+    "contactFrame": "Assets/_Project/Art/UnitsSimple/dead_common/attack_006.png",
+    "attackFrames": 21,
+    "bakedContactCue": "visible in attack_008.png"
+  },
+  {
+    "id": "dead_epic",
+    "ranged": "1",
+    "attackVfxFrames": 0,
+    "contactFrame": "Assets/_Project/Art/UnitsSimple/dead_epic/attack_006.png",
+    "attackFrames": 21
+  },
+  {
+    "id": "dead_legendary",
+    "ranged": "0",
+    "attackVfxFrames": 0,
+    "contactFrame": "Assets/_Project/Art/UnitsSimple/dead_legendary/attack_006.png",
+    "attackFrames": 21,
+    "bakedContactCue": "visible in attack_008.png"
+  },
+  {
+    "id": "dead_rare",
+    "ranged": "1",
+    "attackVfxFrames": 0,
+    "contactFrame": "Assets/_Project/Art/UnitsSimple/dead_rare/attack_006.png",
+    "attackFrames": 21
+  },
+  {
+    "id": "elf_common",
+    "ranged": "1",
+    "attackVfxFrames": 0,
+    "contactFrame": "Assets/_Project/Art/UnitsSimple/elf_common/attack_006.png",
+    "attackFrames": 21
+  },
+  {
+    "id": "elf_epic",
+    "ranged": "1",
+    "attackVfxFrames": 0,
+    "contactFrame": "Assets/_Project/Art/UnitsSimple/elf_epic/attack_006.png",
+    "attackFrames": 21
+  },
+  {
+    "id": "elf_legendary",
+    "ranged": "1",
+    "attackVfxFrames": 0,
+    "contactFrame": "Assets/_Project/Art/UnitsSimple/elf_legendary/attack_006.png",
+    "attackFrames": 21
+  },
+  {
+    "id": "elf_rare",
+    "ranged": "0",
+    "attackVfxFrames": 0,
+    "contactFrame": "Assets/_Project/Art/UnitsSimple/elf_rare/attack_006.png",
+    "attackFrames": 21,
+    "bakedContactCue": "visible in attack_008.png"
+  },
+  {
+    "id": "human_common",
+    "ranged": "0",
+    "attackVfxFrames": 0,
+    "contactFrame": "Assets/_Project/Art/UnitsSimple/human_common/attack_006.png",
+    "attackFrames": 21,
+    "bakedContactCue": "visible in attack_008.png"
+  },
+  {
+    "id": "human_epic",
+    "ranged": "1",
+    "attackVfxFrames": 0,
+    "contactFrame": "Assets/_Project/Art/UnitsSimple/human_epic/attack_006.png",
+    "attackFrames": 21
+  },
+  {
+    "id": "human_legendary",
+    "ranged": "0",
+    "attackVfxFrames": 0,
+    "contactFrame": "Assets/_Project/Art/UnitsSimple/human_legendary/attack_006.png",
+    "attackFrames": 21,
+    "bakedContactCue": "visible in attack_008.png"
+  },
+  {
+    "id": "human_rare",
+    "ranged": "0",
+    "attackVfxFrames": 0,
+    "contactFrame": "Assets/_Project/Art/UnitsSimple/human_rare/attack_006.png",
+    "attackFrames": 21,
+    "bakedContactCue": "visible in attack_008.png"
+  },
+  {
+    "id": "machine_common",
+    "ranged": "0",
+    "attackVfxFrames": 0,
+    "contactFrame": "Assets/_Project/Art/UnitsSimple/machine_common/attack_006.png",
+    "attackFrames": 21,
+    "bakedContactCue": "not clearly present"
+  },
+  {
+    "id": "machine_epic",
+    "ranged": "0",
+    "attackVfxFrames": 0,
+    "contactFrame": "Assets/_Project/Art/Units/machine_epic/attack_smooth_5.png",
+    "attackFrames": 8,
+    "bakedContactCue": "not clearly present"
+  },
+  {
+    "id": "machine_legendary",
+    "ranged": "0",
+    "attackVfxFrames": 0,
+    "contactFrame": "Assets/_Project/Art/UnitsSimple/machine_legendary/attack_006.png",
+    "attackFrames": 21,
+    "bakedContactCue": "visible in attack_008.png"
+  },
+  {
+    "id": "machine_rare",
+    "ranged": "1",
+    "attackVfxFrames": 0,
+    "contactFrame": "Assets/_Project/Art/UnitsSimple/machine_rare/attack_006.png",
+    "attackFrames": 21
+  },
+  {
+    "id": "monster_common",
+    "ranged": "1",
+    "attackVfxFrames": 0,
+    "contactFrame": "Assets/_Project/Art/UnitsSimple/monster_common/attack_006.png",
+    "attackFrames": 21
+  },
+  {
+    "id": "monster_epic",
+    "ranged": "0",
+    "attackVfxFrames": 0,
+    "contactFrame": "Assets/_Project/Art/UnitsSimple/monster_epic/attack_006.png",
+    "attackFrames": 21,
+    "bakedContactCue": "visible in attack_008.png"
+  },
+  {
+    "id": "monster_legendary",
+    "ranged": "0",
+    "attackVfxFrames": 0,
+    "contactFrame": "Assets/_Project/Art/UnitsSimple/monster_legendary/attack_006.png",
+    "attackFrames": 21,
+    "bakedContactCue": "visible in attack_008.png"
+  },
+  {
+    "id": "monster_rare",
+    "ranged": "0",
+    "attackVfxFrames": 0,
+    "contactFrame": "Assets/_Project/Art/UnitsSimple/monster_rare/attack_006.png",
+    "attackFrames": 21,
+    "bakedContactCue": "visible in attack_008.png"
+  }
+]

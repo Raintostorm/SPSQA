@@ -1,0 +1,26 @@
+<div id="compare-KEY">
+  <h3>SCREEN</h3>
+  <div class="pair">
+    <section aria-label="UI hiện tại">
+      <div class="text-small text-muted">Đang dùng · ảnh chụp thật</div>
+      <div class="phone old"><img src="OLD_IMAGE" alt="SCREEN hiện tại chụp từ Game View" /></div>
+    </section>
+    <section aria-label="UI đề xuất">
+      <div class="text-small text-muted">Đề xuất · ảnh concept</div>
+      <div class="phone"><img src="NEW_IMAGE" alt="SCREEN đề xuất mới" /></div>
+    </section>
+  </div>
+  <button class="btn" type="button" aria-pressed="false">Xem lớn từng ảnh</button>
+</div>
+<style>
+#compare-KEY .pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin:12px 0}
+#compare-KEY section{min-width:0}
+#compare-KEY .phone{aspect-ratio:1125/2436;overflow:hidden;position:relative;margin-top:8px}
+#compare-KEY .phone>img{display:block;width:100%;height:100%;object-fit:fill}
+#compare-KEY .old>img{position:absolute;width:467.350427%;height:auto;max-width:none;left:-161.367521%;top:-17.219589%}
+#compare-KEY.large .pair{grid-template-columns:minmax(0,1fr)}
+@media(max-width:480px){#compare-KEY .pair{grid-template-columns:minmax(0,1fr)}}
+</style>
+<script>
+(()=>{const root=document.getElementById('compare-KEY');const button=root.querySelector('button');button.addEventListener('click',()=>{const large=root.classList.toggle('large');button.setAttribute('aria-pressed',String(large));button.textContent=large?'Đặt hai ảnh cạnh nhau':'Xem lớn từng ảnh';});})();
+</script>

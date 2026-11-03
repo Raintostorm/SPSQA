@@ -1,0 +1,1 @@
+Preview only. Left: code-based recreation of current BuffProcVisual (0.65s rising icon) and Ember orange pulse. Right: built-in imagegen eight-frame sheets. Actual Guardian idle crops extracted from runtime manifest. No production VFX replaced. Sources and prompts saved in generation.json.

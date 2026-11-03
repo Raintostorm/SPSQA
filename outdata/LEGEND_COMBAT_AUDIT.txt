@@ -1,0 +1,24 @@
+PASS 5 basic hits = 100 mana
+PASS skill damage does not grant mana
+PASS shield = recipient own HP / 2 (2500, 150)
+PASS shield absorbs before HP
+PASS shield refresh never stacks
+PASS roar +30% attack/speed, non-stacking
+PASS elf starts real skill clip and consumes mana
+PASS elf skill clip finishes without lock
+PASS human starts real skill clip and consumes mana
+PASS human skill clip finishes without lock
+PASS dead starts real skill clip and consumes mana
+PASS dead skill clip finishes without lock
+PASS Dead hand magic plays during casting
+PASS Dead hand magic hidden after casting
+PASS summon HP/attack = caster / 3
+PASS summon HP/attack = caster / 3
+PASS summon HP/attack = caster / 3
+PASS Dead summons exactly 3
+PASS monster starts real skill clip and consumes mana
+PASS monster skill clip finishes without lock
+PASS machine starts real skill clip and consumes mana
+PASS machine skill clip finishes without lock
+PASS shield expires at 8 game seconds
+PASS wave cleanup removes three temporary summons

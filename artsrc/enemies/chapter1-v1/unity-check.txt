@@ -1,0 +1,1 @@
+PASS: textures loaded, 4 common identities, 2 melee/2 ranged, all clips, elite/boss routing, ally definitions untouched.

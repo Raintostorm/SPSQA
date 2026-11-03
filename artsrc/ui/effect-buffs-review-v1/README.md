@@ -1,0 +1,3 @@
+# Effect buffs UI preview
+Built-in image_gen, three iPhone X ratio screens: Epic choice, Legendary choice, field zones. Existing game navy/chibi style, translucent red heart tile and yellow coin tile. Legendary values are proposed, not approved balance. UI/effect gameplay not integrated. Stage 1-3 first roll hook implemented separately using existing stat buff resolver; see doc/BUFFS.md.
+Prompt: three screens with 3-card choose-one panels Epic purple vs Legendary gold and ground tile battlefield; red1%/15%, gold4coins Epic vs red2%/20%, gold6coins Legendary, shield20vs30%; simple icons, readable white typography, no invented tile timer. Full detailed prompt in conversation.

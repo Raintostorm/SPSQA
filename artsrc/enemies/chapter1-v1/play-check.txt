@@ -1,0 +1,1 @@
+PASS: actual CharacterLab wave 1 spawns 3 slime enemies with live sprites: enemy_slime_amber, enemy_slime_green, enemy_slime_stone

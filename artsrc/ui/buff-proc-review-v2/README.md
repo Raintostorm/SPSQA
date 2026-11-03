@@ -1,0 +1,1 @@
+Preview only; no runtime changes. Built-in imagegen flames and foot mana sheets, cropped to individual frames with bottom anchors. Guardian idle uses real runtime sprites. Burn red tint and timed HP ticks are simulated here; HP 100, -20 per tick and MP 20→44 are illustrative demonstration values, not changes to game balance. Full prompts in generation.json.

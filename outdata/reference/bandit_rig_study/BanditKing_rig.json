@@ -1,0 +1,14 @@
+[
+  {
+    "path": "banditKing",
+    "error": "'PPtr' object has no attribute 'get_obj'"
+  },
+  {
+    "path": "banditKing",
+    "error": "'PPtr' object has no attribute 'get_obj'"
+  },
+  {
+    "path": "banditKing",
+    "error": "'PPtr' object has no attribute 'get_obj'"
+  }
+]

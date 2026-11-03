@@ -1,0 +1,22 @@
+<!doctype html><html lang="vi"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ô Máu — animation mượt</title><style>*{box-sizing:border-box}body{margin:0;background:#101c2c;color:#f5f7fc;font:16px system-ui}main{max-width:1080px;margin:auto;padding:28px}h1{font-size:25px;margin:0 0 8px}p{color:#b9cbda;line-height:1.5}section{display:grid;grid-template-columns:1.35fr 1fr;gap:22px;margin-top:24px}article{background:#192c40;padding:16px;border:1px solid #34506a;border-radius:18px}h2{font-size:16px;margin:0 0 12px}canvas{width:100%;display:block;border-radius:12px}button{font:inherit;border:1px solid #4a718b;border-radius:10px;background:#214b68;color:white;padding:10px 18px;margin:16px 8px 0 0;cursor:pointer}button[aria-pressed=true]{background:#307ca2}small{display:block;color:#b9cbda;line-height:1.5;margin-top:14px}@media(max-width:650px){section{grid-template-columns:1fr}main{padding:16px}}</style><main><h1>Ô Máu · Mưa nhẹ</h1><p>Mưa máu nhẹ trên trận đồ đơn giản. Nét đỏ mờ, giữ nhân vật dễ nhìn.</p><section><article><h2>Trên nền sân hiện tại</h2><canvas id="field" width="600" height="600"></canvas></article><article><h2>Phóng to chuyển động</h2><canvas id="zoom" width="440" height="440"></canvas><button id="pause">Tạm dừng</button><button id="slow" aria-pressed="false">Chậm ×0.5</button><small>Chuyển động nội suy liên tục theo thời gian. Không nhảy frame; không sáng nhấp nháy.</small></article></section><p>Mẫu hiệu ứng để duyệt; chưa thay animation trong Unity.</p></main><script>
+const bg=new Image();bg.src='/Assets/_Project/Art/Backgrounds/bg_prep_portrait.png';
+const canvas=document.querySelector('#field'),zoom=document.querySelector('#zoom');
+let elapsed=0,last=0,paused=false,speed=1;const duration=1.65;
+function random(n){let a=Math.sin(n*91.733+17.1)*43758.5453;return a-Math.floor(a)}
+function drop(ctx,x,y,a,stretch){ctx.save();ctx.translate(x,y);ctx.globalAlpha=a;ctx.scale(1,stretch);ctx.beginPath();ctx.moveTo(0,-7);ctx.bezierCurveTo(-1,-3,-4,0,-4,3);ctx.bezierCurveTo(-4,8,4,8,4,3);ctx.bezierCurveTo(4,0,1,-3,0,-7);ctx.fillStyle='#b52738';ctx.strokeStyle='#78232e';ctx.lineWidth=1.3;ctx.fill();ctx.stroke();ctx.restore()}
+function zone(ctx,t){ctx.save();ctx.beginPath();ctx.roundRect(-105,-92,210,184,15);ctx.fillStyle='rgba(153,30,46,.105)';ctx.fill();ctx.strokeStyle='rgba(148,35,43,.40)';ctx.lineWidth=1.6;ctx.stroke();
+// Quiet ritual seal: a thin ring, inner diamond and four short cardinal marks.
+ctx.save();ctx.strokeStyle='rgba(139,31,46,.30)';ctx.lineWidth=1.3;
+ctx.beginPath();ctx.ellipse(0,2,68,57,0,0,Math.PI*2);ctx.stroke();
+ctx.beginPath();ctx.moveTo(0,-44);ctx.lineTo(53,2);ctx.lineTo(0,48);ctx.lineTo(-53,2);ctx.closePath();ctx.stroke();
+ctx.beginPath();ctx.ellipse(0,2,13,11,0,0,Math.PI*2);ctx.stroke();
+for(let i=0;i<4;i++){let a=i*Math.PI/2;ctx.beginPath();ctx.moveTo(Math.cos(a)*61,2+Math.sin(a)*51);ctx.lineTo(Math.cos(a)*75,2+Math.sin(a)*63);ctx.stroke();}
+ctx.restore();
+// Nine droplets share the same continuous timeline but never fall in lockstep.
+for(let i=0;i<9;i++){let full=t/duration+i/9,cycle=Math.floor(full),p=full-cycle;let x=(random(i*19+cycle*7)-.5)*178,ground=(random(i*31+cycle*11+4)-.5)*145;
+if(p<.66){let q=p/.66,y=ground-55*(1-q*q);let alpha=Math.min(1,q/.12)*.78;ctx.beginPath();ctx.moveTo(x,y-5);ctx.lineTo(x,y-15);ctx.strokeStyle=`rgba(158,36,47,${alpha*.22})`;ctx.lineWidth=1.5;ctx.stroke();drop(ctx,x,y,alpha,1+.17*q)}else{let q=(p-.66)/.34,a=(1-q)*(1-q)*.48,r=3+q*15;ctx.beginPath();ctx.ellipse(x,ground+4,r,r*.40,0,0,Math.PI*2);ctx.lineWidth=1.5;ctx.strokeStyle=`rgba(169,38,48,${a})`;ctx.stroke();if(q<.18)drop(ctx,x,ground+3,(1-q/.18)*.5,.38)}}ctx.restore()}
+function grass(ctx,w,h){ctx.fillStyle='#7abf42';ctx.fillRect(0,0,w,h);if(bg.complete&&bg.naturalWidth)ctx.drawImage(bg,0,bg.naturalHeight*.39,bg.naturalWidth,bg.naturalWidth,0,0,w,h)}
+function render(t){let c=canvas.getContext('2d');grass(c,600,600);c.save();c.translate(300,320);c.scale(.82,.82);zone(c,t);c.restore();let z=zoom.getContext('2d');grass(z,440,440);z.save();z.translate(220,235);z.scale(1.6,1.6);zone(z,t);z.restore()}
+function tick(now){if(last&&!paused)elapsed+=Math.min((now-last)/1000,.05)*speed;last=now;render(elapsed);requestAnimationFrame(tick)}requestAnimationFrame(tick);
+document.querySelector('#pause').onclick=e=>{paused=!paused;e.target.textContent=paused?'Tiếp tục':'Tạm dừng'};document.querySelector('#slow').onclick=e=>{speed=speed===1?.5:1;e.target.setAttribute('aria-pressed',speed===.5)};
+</script></html>

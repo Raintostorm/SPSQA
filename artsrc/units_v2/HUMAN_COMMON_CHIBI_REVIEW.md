@@ -1,0 +1,13 @@
+# human_common — bản duyệt
+
+Nguồn pose/order:4 runtime strips ghép từ8frame/clip trong Anim_human_common.asset bằng reference_runtime_dead_common.py human_common. Style/tỉlệ lấy mẫu chibi_proportions_approved.png; idle human tạo trước rồi làmidentity cho3clip cònlại. Giữvũkhíliềmngắn. Chưa sửaAssets/importgame, chưauserduyệt human.
+
+Imagegen tíchhợp. Prompt chung:
+Image1 is HUMAN-COMMON runtime POSE sequence, exact8frames order. Image2 is approved CHIBI PROPORTIONS/flatstyle only, NOT skeletonidentity. Restyle human as young brownhaired militia with plainsteelpothelmet, simplenavyshirt/pants,creamwrap on oneleg,brownshortboots,skincream face. Largehead+helmet abouthalfstandingheight, compactbody,shortchunkylimbs smallfeet same as chibi reference. Flat limited5fills skincream,navy,warmbrown,steelgrey,creamwrap (reuse skincream), darktoneduniformheavyoutlines, no texture,rivets,patches,scratches,gradients,highlights. Face2simpledarkeyes tiny mouth no brows/nose. Preserve all8specific body/leg/arm motions from runtime, do not duplicateidle across movingclips. Exactly8complete poses1horizontalrow transparentAAalpha,nocells,no squarecrop,nolabels,noshadow,allblade/feet/helmet intact withgenerousgaps. Weapon ONE SHORT HAND SICKLE with compactbrownhandle and clearlycurvedsteelhookblade, not sword/not longscythe. ALWAYS anatomicalRIGHT handclosedgrip onhandle. LEFT hand free, never switchesgrip or fuseswithblade. If original restingpose shows left nearweapon, keepleft openfree, no accidental twohandgrip. No shield. Sameweapon/proportions acrossallframes.
+
+Idle: Preserve subtlebreathing of8idleframes, no walking; hold short sicklelowforwardright.
+Walk: Copy8 distinctwalklegs fromruntime including liftedrearfoot2/4/6/8 and supportleg shifts, loops8to1. Short sickle moves rigidly with rightwrist. Lefthandfree.
+Attack: Copy exact8runtime attackposes:ready1,compress2,raisesicklebehindabovehead3,leftarmfreeforward,forwardslash4,extendedlowforwardstrike5,recover6/7,ready8. SAME right hand,onehandgrip allframes; no second sickle,no weapon morph. Follow original blade/wristangles not new swordthrust.
+Dead: Copy exact runtime collapseFORWARDRIGHT:recoil1/2,buckle3,kneel4,torsofalls5/6,lyingfaceforwardheadRIGHTfeetLEFT7/8. Keephead/weapon same size not shrinkcorpse. No reversefall, no ghosteffects. Right hand keepssickle.
+
+Kếtquả8cụm chính mỗi clip. Baseline raw lệch idle1px,walk3px,attack1px,dead10px. Preview cùngscale, không cắt ôvuông, alphaAA giữnguyên, duration lấy runtime (GIF làmtròn10ms). Deadgiữcuối2giây rồiresetdemo. Không chứngnhận palette/viền/pose khớp tuyệtđối; cần duyệt chuyểnđộng trước import.

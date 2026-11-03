@@ -1,0 +1,54 @@
+PASS 8 approved identities
+PASS mythic_guardian complete isolated clips
+PASS mythic_undead complete isolated clips
+PASS mythic_robot complete isolated clips
+PASS mythic_elf complete isolated clips
+PASS mythic_clock complete isolated clips
+PASS mythic_mimic complete isolated clips
+PASS mythic_swordsman complete isolated clips
+PASS mythic_bear complete isolated clips
+PASS 5 landed basic attacks charge Mythic mana
+PASS Guardian begins cast
+PASS Aura rejects both mana gain sources
+PASS Aura ticks damage while free to act
+PASS Time field stops enemy
+PASS Time stop expires after 5 seconds
+PASS Elite converts to allied temporary unit
+PASS Ally revives once with seal
+PASS Second ally death is final
+PASS Boss never converts
+PASS VFX loaded time
+PASS VFX loaded devour
+PASS VFX loaded heal
+PASS VFX loaded slash
+PASS VFX loaded aura
+PASS VFX loaded revive
+PASS VFX loaded buff
+PASS VFX loaded shield
+PASS VFX loaded seal
+PASS VFX loaded relic
+PASS VFX loaded electric
+PASS VFX loaded elf-bolt
+PASS VFX loaded clock-bolt
+PASS Bear chains once to two different targets at 50% ATK (50, 50)
+PASS Robot shield refreshes instead of stacking
+PASS Mythic shield absorbs actual damage
+PASS Team buff uses derived multipliers, never compounds
+PASS Mimic damages Boss without pulling it
+PASS Mimic heals 50% actual damage
+PASS Dash sweeps corridor and hits each target once
+PASS 4 exact ingredients mythic_guardian
+PASS 4 exact ingredients mythic_undead
+PASS 4 exact ingredients mythic_robot
+PASS 4 exact ingredients mythic_elf
+PASS 4 exact ingredients mythic_clock
+PASS 4 exact ingredients mythic_mimic
+PASS 4 exact ingredients mythic_swordsman
+PASS 4 exact ingredients mythic_bear
+PASS Missing ingredients do not spawn or consume
+PASS Exact recipe consumes 4 units for one Mythic
+PASS No consumed ingredient remains registered
+PASS Mythic cell refuses a second occupant
+PASS Second distinct recipe works
+PASS Ingredient readiness remains visible when Mythic cap is full
+PASS Battle cap rejects fusion atomically

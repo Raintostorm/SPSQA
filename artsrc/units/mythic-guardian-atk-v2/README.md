@@ -1,0 +1,7 @@
+# Dawn Guardian attack review
+
+Generated using built-in imagegen from the current guardian-base art. First atlas rejected because VFX approached/entered neighboring cells. Revised sheet has visible alpha >100 at least 21 pixels from every cell edge (crop-audit.json). Frames are uniform-grid crops, not frame blending. Demo compares the actual four runtime attack sprites from catalog.json to eight proposed poses. The new art has not replaced the runtime catalog.
+
+Code audit: current attack is 4 x .13s = .52s; cooldown .7s. ImpactStep=2 dispatches after the third frame, ~.39s. Guardian cast is 4 x .16s=.64s; aura resolves ~.48s into cast, then the casting flag clears on animation finish. AuraActive does not block UnitBrain. Aura radius1.2 exceeds melee range .55. Aura tick deals20%ATK per second. OnImpact skips damage if target has died. SetMoving refuses to interrupt Attack/Skill, so target death does not itself truncate the attack clip. EnsureTarget currently can change targets during wind-up; a miss after a target change is possible. Findings are from code/art inspection, not a fresh runtime combat recording.
+
+Proposed eight-frame durations [.06,.06,.08,.04,.05,.07,.08,.08] keep .52s total. Contact artwork appears in frames4–6. Integration would require assigning a contact step matching the new frames; do not retain the old step2 accidentally. Idle/walk/skill/dead are untouched.

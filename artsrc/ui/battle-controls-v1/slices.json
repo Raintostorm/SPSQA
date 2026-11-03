@@ -1,0 +1,52 @@
+{
+  "source": "Assets/_Project/Resources/BattleControls/atlas.png",
+  "sourceSize": [
+    1536,
+    1024
+  ],
+  "coordinateSystem": "top-left xyxy",
+  "regions": {
+    "roll-icon": [
+      65,
+      146,
+      484,
+      478
+    ],
+    "battle-icon": [
+      613,
+      159,
+      952,
+      483
+    ],
+    "gold-icon": [
+      1127,
+      166,
+      1437,
+      482
+    ],
+    "roll-background": [
+      48,
+      666,
+      544,
+      864
+    ],
+    "battle-background": [
+      585,
+      666,
+      1082,
+      864
+    ],
+    "ally-frame": [
+      1139,
+      595,
+      1478,
+      913
+    ]
+  },
+  "bordersForBackgrounds": [
+    50,
+    50,
+    50,
+    50
+  ]
+}

@@ -1,0 +1,13 @@
+[
+  "*.csv",
+  ".csv",
+  "DataTable.RemotingVersion",
+  "Localization.csv",
+  "ResourceVersion",
+  "ResourceVersionState",
+  "The ResourceReader class does not know how to read this version of .resources files. Expected version: {0}  This file: {1}",
+  "ToolWaveBattleInfo.csv",
+  "{0}.zip",
+  "{0}\uc5d0 \ud574\ub2f9\ud558\ub294 Id\uac00 UnitCombinationInfo\uc5d0 \uc5c6\uc5c8\uc2b5\ub2c8\ub2e4",
+  "{0}\uc5d0 \ud574\ub2f9\ud558\ub294 UnitCombinationInfo \ud14c\uc774\ube14\uc5d0 \uc7ac\ub8cc Id\uac00 \uc5c6\uc5c8\uc2b5\ub2c8\ub2e4"
+]

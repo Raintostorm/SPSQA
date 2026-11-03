@@ -1,0 +1,63 @@
+{
+  "size": [
+    2172,
+    724
+  ],
+  "major_components": 8,
+  "boxes": [
+    [
+      40,
+      239,
+      284,
+      542
+    ],
+    [
+      328,
+      250,
+      553,
+      542
+    ],
+    [
+      603,
+      239,
+      811,
+      543
+    ],
+    [
+      859,
+      223,
+      1067,
+      542
+    ],
+    [
+      1116,
+      240,
+      1357,
+      542
+    ],
+    [
+      1391,
+      250,
+      1618,
+      542
+    ],
+    [
+      1676,
+      239,
+      1883,
+      542
+    ],
+    [
+      1933,
+      223,
+      2134,
+      542
+    ]
+  ],
+  "foot_spread_px": 1,
+  "foot_spread_percent": 0.33003300330033003,
+  "opaque_unique_rgb": 39752,
+  "alpha_levels": 256,
+  "sharp_outline_percent": null,
+  "outline_note": "Original metric algorithm/denominator not provided; not certified."
+}

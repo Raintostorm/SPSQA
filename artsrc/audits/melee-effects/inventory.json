@@ -1,0 +1,158 @@
+[
+  {
+    "id": "dead_common",
+    "name": "Skeleton Warrior",
+    "frames": 21,
+    "separateVfx": 0,
+    "paths": [
+      "Assets/_Project/Art/UnitsSimple/dead_common/attack_000.png",
+      "Assets/_Project/Art/UnitsSimple/dead_common/attack_005.png",
+      "Assets/_Project/Art/UnitsSimple/dead_common/attack_010.png",
+      "Assets/_Project/Art/UnitsSimple/dead_common/attack_015.png",
+      "Assets/_Project/Art/UnitsSimple/dead_common/attack_020.png"
+    ]
+  },
+  {
+    "id": "dead_legendary",
+    "name": "Skeleton King",
+    "frames": 21,
+    "separateVfx": 0,
+    "paths": [
+      "Assets/_Project/Art/UnitsSimple/dead_legendary/attack_000.png",
+      "Assets/_Project/Art/UnitsSimple/dead_legendary/attack_005.png",
+      "Assets/_Project/Art/UnitsSimple/dead_legendary/attack_010.png",
+      "Assets/_Project/Art/UnitsSimple/dead_legendary/attack_015.png",
+      "Assets/_Project/Art/UnitsSimple/dead_legendary/attack_020.png"
+    ]
+  },
+  {
+    "id": "elf_rare",
+    "name": "Leaf Blade",
+    "frames": 21,
+    "separateVfx": 0,
+    "paths": [
+      "Assets/_Project/Art/UnitsSimple/elf_rare/attack_000.png",
+      "Assets/_Project/Art/UnitsSimple/elf_rare/attack_005.png",
+      "Assets/_Project/Art/UnitsSimple/elf_rare/attack_010.png",
+      "Assets/_Project/Art/UnitsSimple/elf_rare/attack_015.png",
+      "Assets/_Project/Art/UnitsSimple/elf_rare/attack_020.png"
+    ]
+  },
+  {
+    "id": "human_common",
+    "name": "\"Sickle Militia\"",
+    "frames": 21,
+    "separateVfx": 0,
+    "paths": [
+      "Assets/_Project/Art/UnitsSimple/human_common/attack_000.png",
+      "Assets/_Project/Art/UnitsSimple/human_common/attack_005.png",
+      "Assets/_Project/Art/UnitsSimple/human_common/attack_010.png",
+      "Assets/_Project/Art/UnitsSimple/human_common/attack_015.png",
+      "Assets/_Project/Art/UnitsSimple/human_common/attack_020.png"
+    ]
+  },
+  {
+    "id": "human_legendary",
+    "name": "Royal Hero",
+    "frames": 21,
+    "separateVfx": 0,
+    "paths": [
+      "Assets/_Project/Art/UnitsSimple/human_legendary/attack_000.png",
+      "Assets/_Project/Art/UnitsSimple/human_legendary/attack_005.png",
+      "Assets/_Project/Art/UnitsSimple/human_legendary/attack_010.png",
+      "Assets/_Project/Art/UnitsSimple/human_legendary/attack_015.png",
+      "Assets/_Project/Art/UnitsSimple/human_legendary/attack_020.png"
+    ]
+  },
+  {
+    "id": "human_rare",
+    "name": "Lion Spear Knight",
+    "frames": 21,
+    "separateVfx": 0,
+    "paths": [
+      "Assets/_Project/Art/UnitsSimple/human_rare/attack_000.png",
+      "Assets/_Project/Art/UnitsSimple/human_rare/attack_005.png",
+      "Assets/_Project/Art/UnitsSimple/human_rare/attack_010.png",
+      "Assets/_Project/Art/UnitsSimple/human_rare/attack_015.png",
+      "Assets/_Project/Art/UnitsSimple/human_rare/attack_020.png"
+    ]
+  },
+  {
+    "id": "machine_common",
+    "name": "\"Scrap Crawler\"",
+    "frames": 21,
+    "separateVfx": 0,
+    "paths": [
+      "Assets/_Project/Art/UnitsSimple/machine_common/attack_000.png",
+      "Assets/_Project/Art/UnitsSimple/machine_common/attack_005.png",
+      "Assets/_Project/Art/UnitsSimple/machine_common/attack_010.png",
+      "Assets/_Project/Art/UnitsSimple/machine_common/attack_015.png",
+      "Assets/_Project/Art/UnitsSimple/machine_common/attack_020.png"
+    ]
+  },
+  {
+    "id": "machine_epic",
+    "name": "Furnace Crawler",
+    "frames": 8,
+    "separateVfx": 0,
+    "paths": [
+      "Assets/_Project/Art/Units/machine_epic/attack_smooth_1.png",
+      "Assets/_Project/Art/Units/machine_epic/attack_smooth_3.png",
+      "Assets/_Project/Art/Units/machine_epic/attack_smooth_5.png",
+      "Assets/_Project/Art/Units/machine_epic/attack_smooth_7.png",
+      "Assets/_Project/Art/Units/machine_epic/attack_smooth_8.png"
+    ]
+  },
+  {
+    "id": "machine_legendary",
+    "name": "Titan Pugilist",
+    "frames": 21,
+    "separateVfx": 0,
+    "paths": [
+      "Assets/_Project/Art/UnitsSimple/machine_legendary/attack_000.png",
+      "Assets/_Project/Art/UnitsSimple/machine_legendary/attack_005.png",
+      "Assets/_Project/Art/UnitsSimple/machine_legendary/attack_010.png",
+      "Assets/_Project/Art/UnitsSimple/machine_legendary/attack_015.png",
+      "Assets/_Project/Art/UnitsSimple/machine_legendary/attack_020.png"
+    ]
+  },
+  {
+    "id": "monster_epic",
+    "name": "Lava Scorpion",
+    "frames": 21,
+    "separateVfx": 0,
+    "paths": [
+      "Assets/_Project/Art/UnitsSimple/monster_epic/attack_000.png",
+      "Assets/_Project/Art/UnitsSimple/monster_epic/attack_005.png",
+      "Assets/_Project/Art/UnitsSimple/monster_epic/attack_010.png",
+      "Assets/_Project/Art/UnitsSimple/monster_epic/attack_015.png",
+      "Assets/_Project/Art/UnitsSimple/monster_epic/attack_020.png"
+    ]
+  },
+  {
+    "id": "monster_legendary",
+    "name": "Lion Warlord",
+    "frames": 21,
+    "separateVfx": 0,
+    "paths": [
+      "Assets/_Project/Art/UnitsSimple/monster_legendary/attack_000.png",
+      "Assets/_Project/Art/UnitsSimple/monster_legendary/attack_005.png",
+      "Assets/_Project/Art/UnitsSimple/monster_legendary/attack_010.png",
+      "Assets/_Project/Art/UnitsSimple/monster_legendary/attack_015.png",
+      "Assets/_Project/Art/UnitsSimple/monster_legendary/attack_020.png"
+    ]
+  },
+  {
+    "id": "monster_rare",
+    "name": "Armored Bear",
+    "frames": 21,
+    "separateVfx": 0,
+    "paths": [
+      "Assets/_Project/Art/UnitsSimple/monster_rare/attack_000.png",
+      "Assets/_Project/Art/UnitsSimple/monster_rare/attack_005.png",
+      "Assets/_Project/Art/UnitsSimple/monster_rare/attack_010.png",
+      "Assets/_Project/Art/UnitsSimple/monster_rare/attack_015.png",
+      "Assets/_Project/Art/UnitsSimple/monster_rare/attack_020.png"
+    ]
+  }
+]

@@ -1,0 +1,8 @@
+[ItemEffectAudit]
+PASS Mana Heart boosts starting 40 MP to 60
+PASS Mana Heart boosts landed hit 20 MP to 30
+PASS Mana Heart boosts received hit 4 MP to 6
+PASS Mana gain remains capped at 100
+PASS Twin Fang attack speed x1.5
+PASS Runic kill slashes nearest surviving enemy for 20 percent ATK
+PASS Secondary slash cannot recursively proc itself

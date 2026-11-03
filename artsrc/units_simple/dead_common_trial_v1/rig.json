@@ -1,0 +1,40 @@
+{
+  "pose_order": [
+    "idle",
+    "walk",
+    "windup",
+    "strike",
+    "recovery",
+    "hurt"
+  ],
+  "pixel_pivots": [
+    [
+      176.24596215966776,
+      488.0
+    ],
+    [
+      131.9816733067729,
+      487.0
+    ],
+    [
+      191.04429223744293,
+      488.0
+    ],
+    [
+      163.04433249370277,
+      450.0
+    ],
+    [
+      161.2982180293501,
+      469.0
+    ],
+    [
+      159.40771812080536,
+      438.0
+    ]
+  ],
+  "scale_reference_height": 484.0,
+  "profile": "skeleton",
+  "expressive": true,
+  "notes": "One scale for all six poses. Fixed equipment ownership (elf left bow/right draw; melee right weapon/left offhand; mechanical attachments unchanged). Full canvas transforms; no square pose cropping. Authored trial motion, not APK curves."
+}

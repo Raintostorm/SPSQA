@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';import {Revival,Aura,chain,elfStats,shield} from './rules.mjs';
+const unit=(id,team='ally',tier='common')=>({id,team,tier,hp:0,maxHp:100,deaths:1});
+let r=new Revival(),boss=unit('b','enemy','boss');assert.equal(r.die(boss),'final');
+for(const tier of ['common','elite']){const e=unit(tier,'enemy',tier);assert.equal(r.die(e),'converted');assert.equal(e.team,'ally');e.hp=0;e.deaths++;assert.equal(r.die(e,2),'revived');assert(e.skull);e.hp=0;e.deaths++;assert.equal(r.die(e,5),'final')}
+let a=unit('a');assert.equal(r.die(a,3),'revived');a.hp=0;a.deaths++;assert.equal(r.die(a,9),'final');assert.equal(r.die(a,9),'duplicate');assert.equal(new Revival().die(unit('a')),'revived');
+let aura=new Aura(),self={hp:20,maxHp:100},targets=[{hp:100,inRange:true,reduction:.5},{hp:100,inRange:false}];aura.gainMana(50);assert.equal(aura.mana,100);aura.step(1,targets,self);assert.equal(aura.mana,85);assert.equal(targets[0].hp,90);assert.equal(self.hp,25);aura.gainMana(20);assert.equal(aura.mana,85);aura.step(10,targets,self);assert(!aura.active);assert.equal(aura.mana,0);assert.equal(aura.damage,60);assert.equal(targets[1].hp,100);assert(self.hp<=100);
+let es=[{x:0,y:0,hp:100},{x:60,y:0,hp:100},{x:120,y:0,hp:100},{x:200,y:0,hp:0},{x:900,y:0,hp:100}];assert.equal(chain(es[0],es).length,3);assert.equal(new Set(chain(es[0],es)).size,3);
+const base={atk:100,speed:1};assert.deepEqual(elfStats(base,.2,.2),{atk:120,speed:1.2});assert.deepEqual(elfStats(base,.2,.2),elfStats(base,.2,.2));assert.equal(base.atk,100);shield(self);shield(self);assert.equal(self.shield,25);
+console.log('PASS: Boss excluded; Common/Elite conversion; one ally revival regardless of Undead count; duplicate death guard; battle reset; aura drain/no recharge/actual-damage heal/expiry; unique chain targets; non-compounding elf stats and shields.');
+assert.deepEqual(chain(null,es),[]);assert.deepEqual(chain({...es[0],hp:0},es),[]);console.log('PASS: lightning never starts from a missing/dead primary target.');

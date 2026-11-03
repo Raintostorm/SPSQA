@@ -1,0 +1,10 @@
+[
+  {
+    "path": "BanditAnimation",
+    "error": "'PPtr' object has no attribute 'get_obj'"
+  },
+  {
+    "path": "BanditAnimation",
+    "error": "'PPtr' object has no attribute 'get_obj'"
+  }
+]

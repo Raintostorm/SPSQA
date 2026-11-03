@@ -1,0 +1,38 @@
+{
+  "pose_order": [
+    "idle",
+    "walk",
+    "windup",
+    "strike",
+    "recovery",
+    "hurt"
+  ],
+  "pixel_pivots": [
+    [
+      197.23625,
+      411.0
+    ],
+    [
+      215.4867886178862,
+      413.0
+    ],
+    [
+      166.91221159257174,
+      402.0
+    ],
+    [
+      131.9650900900901,
+      397.0
+    ],
+    [
+      192.15527230590962,
+      404.0
+    ],
+    [
+      145.52157598499062,
+      390.0
+    ]
+  ],
+  "scale_reference_height": 408.0,
+  "notes": "One scale for all six poses. Same near-side right weapon hand throughout. Full canvas transforms; no square pose cropping. Authored trial motion, not APK curves."
+}

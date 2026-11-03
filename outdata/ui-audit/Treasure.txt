@@ -1,0 +1,42 @@
+SCENE Treasure
+EVENTSYSTEM EventSystem
+INPUT EventSystem active=True point=True click=True
+BUTTON TreasureUI/RelicsReviewUI/RelicScroll/Content/item_c9 enabled=True size=(320.00, 290.00) center=(907.50, 906.00) hit=TreasureUI/RelicsReviewUI/RelicDetails/Panel reachable=False
+BUTTON TreasureUI/RelicsReviewUI/RelicDetails/Panel/Close enabled=True size=(90.00, 80.00) center=(982.50, 1735.50) hit=NONE reachable=False
+BUTTON TreasureUI/RelicsReviewUI/RelicScroll/Content/item_e2 enabled=True size=(320.00, 290.00) center=(562.50, -1239.00) hit=NONE reachable=False
+BUTTON TreasureUI/RelicsReviewUI/RelicScroll/Content/item_c3 enabled=True size=(320.00, 290.00) center=(907.50, 1676.00) hit=NONE reachable=False
+BUTTON TreasureUI/RelicsReviewUI/RelicScroll/Content/item_e3 enabled=True size=(320.00, 290.00) center=(907.50, -1239.00) hit=NONE reachable=False
+BUTTON TreasureUI/RelicsReviewUI/RelicScroll/Content/item_l2 enabled=True size=(320.00, 290.00) center=(562.50, -2119.00) hit=NONE reachable=False
+BUTTON TreasureUI/RelicsReviewUI/RelicScroll/Content/item_c4 enabled=True size=(320.00, 290.00) center=(217.50, 1291.00) hit=TreasureUI/RelicsReviewUI/RelicDetails/Panel reachable=False
+BUTTON TreasureUI/RelicsReviewUI/RelicScroll/Content/item_c2 enabled=True size=(320.00, 290.00) center=(562.50, 1676.00) hit=NONE reachable=False
+BUTTON TreasureUI/RelicsReviewUI/RelicScroll/Content/item_r2 enabled=True size=(320.00, 290.00) center=(562.50, 26.00) hit=TreasureUI/RelicsReviewUI/RelicDetails reachable=False
+BUTTON TreasureUI/RelicsReviewUI/RelicDetails/Panel/Next enabled=True size=(70.00, 85.00) center=(1022.50, 1448.00) hit=NONE reachable=False
+BUTTON TreasureUI/RelicsReviewUI/RelicScroll/Content/item_l3 enabled=True size=(320.00, 290.00) center=(907.50, -2119.00) hit=NONE reachable=False
+BUTTON TreasureUI/RelicsReviewUI/RelicScroll/Content/item_r7 enabled=True size=(320.00, 290.00) center=(217.50, -744.00) hit=NONE reachable=False
+BUTTON TreasureUI/RelicsReviewUI/RelicScroll/Content/item_c10 enabled=True size=(320.00, 290.00) center=(217.50, 521.00) hit=TreasureUI/RelicsReviewUI/RelicDetails reachable=False
+BUTTON TreasureUI/RelicsReviewUI/RelicScroll/Content/item_e5 enabled=True size=(320.00, 290.00) center=(562.50, -1624.00) hit=NONE reachable=False
+BUTTON TreasureUI/RelicsReviewUI/RelicScroll/Content/item_c5 enabled=True size=(320.00, 290.00) center=(562.50, 1291.00) hit=TreasureUI/RelicsReviewUI/RelicDetails/Panel reachable=False
+BUTTON TreasureUI/RelicsReviewUI/RelicDetails/Panel/UpgradeRelic enabled=True size=(840.00, 130.00) center=(562.50, 820.50) hit=TreasureUI/RelicsReviewUI/RelicDetails/Panel/UpgradeRelic reachable=True
+BUTTON TreasureUI/RelicsReviewUI/Back enabled=True size=(100.00, 90.00) center=(82.50, 2366.00) hit=NONE reachable=False
+BUTTON TreasureUI/RelicsReviewUI/RelicScroll/Content/item_c1 enabled=True size=(320.00, 290.00) center=(217.50, 1676.00) hit=NONE reachable=False
+BUTTON TreasureUI/RelicsReviewUI/RelicScroll/Content/item_r5 enabled=True size=(320.00, 290.00) center=(562.50, -359.00) hit=NONE reachable=False
+BUTTON TreasureUI/RelicsReviewUI/RelicScroll/Content/item_r6 enabled=True size=(320.00, 290.00) center=(907.50, -359.00) hit=NONE reachable=False
+BUTTON TreasureUI/RelicsReviewUI/RelicScroll/Content/astral_contract enabled=True size=(320.00, 290.00) center=(562.50, -2504.00) hit=NONE reachable=False
+BUTTON TreasureUI/RelicsReviewUI/RelicScroll/Content/item_c12 enabled=True size=(320.00, 290.00) center=(907.50, 521.00) hit=TreasureUI/RelicsReviewUI/RelicDetails reachable=False
+BUTTON TreasureUI/RelicsReviewUI/RelicScroll/Content/item_r1 enabled=True size=(320.00, 290.00) center=(217.50, 26.00) hit=TreasureUI/RelicsReviewUI/RelicDetails reachable=False
+BUTTON TreasureUI/RelicsReviewUI/RelicScroll/Content/item_e4 enabled=True size=(320.00, 290.00) center=(217.50, -1624.00) hit=NONE reachable=False
+BUTTON TreasureUI/RelicsReviewUI/RelicScroll/Content/item_c11 enabled=True size=(320.00, 290.00) center=(562.50, 521.00) hit=TreasureUI/RelicsReviewUI/RelicDetails reachable=False
+BUTTON TreasureUI/RelicsReviewUI/RelicScroll/Content/item_c7 enabled=True size=(320.00, 290.00) center=(217.50, 906.00) hit=TreasureUI/RelicsReviewUI/RelicDetails/Panel reachable=False
+BUTTON TreasureUI/RelicsReviewUI/OpenAll enabled=True size=(1010.00, 145.00) center=(562.50, 113.50) hit=TreasureUI/RelicsReviewUI/RelicDetails reachable=False
+BUTTON TreasureUI/RelicsReviewUI/RelicDetails/Panel/Previous enabled=True size=(70.00, 85.00) center=(102.50, 1448.00) hit=NONE reachable=False
+BUTTON TreasureUI/RelicsReviewUI/RelicScroll/Content/item_e6 enabled=True size=(320.00, 290.00) center=(907.50, -1624.00) hit=NONE reachable=False
+BUTTON TreasureUI/RelicsReviewUI/RelicScroll/Content/item_l4 enabled=True size=(320.00, 290.00) center=(217.50, -2504.00) hit=NONE reachable=False
+BUTTON TreasureUI/RelicsReviewUI/RelicScroll/Content/item_r3 enabled=True size=(320.00, 290.00) center=(907.50, 26.00) hit=TreasureUI/RelicsReviewUI/RelicDetails reachable=False
+BUTTON TreasureUI/RelicsReviewUI/RelicScroll/Content/item_c6 enabled=True size=(320.00, 290.00) center=(907.50, 1291.00) hit=TreasureUI/RelicsReviewUI/RelicDetails/Panel reachable=False
+BUTTON TreasureUI/RelicsReviewUI/RelicScroll/Content/item_r4 enabled=True size=(320.00, 290.00) center=(217.50, -359.00) hit=NONE reachable=False
+BUTTON TreasureUI/RelicsReviewUI/RelicScroll/Content/item_r8 enabled=True size=(320.00, 290.00) center=(562.50, -744.00) hit=NONE reachable=False
+BUTTON TreasureUI/RelicsReviewUI/RelicScroll/Content/item_l1 enabled=True size=(320.00, 290.00) center=(217.50, -2119.00) hit=NONE reachable=False
+BUTTON SharedSettings/SafeArea/Menu enabled=True size=(140.00, 140.00) center=(1040.00, 1966.00) hit=NONE reachable=False
+BUTTON TreasureUI/RelicsReviewUI/RelicScroll/Content/item_c8 enabled=True size=(320.00, 290.00) center=(562.50, 906.00) hit=TreasureUI/RelicsReviewUI/RelicDetails/Panel reachable=False
+BUTTON TreasureUI/RelicsReviewUI/RelicScroll/Content/item_e1 enabled=True size=(320.00, 290.00) center=(217.50, -1239.00) hit=NONE reachable=False
+TEXT_HEIGHT TreasureUI/RelicsReviewUI/RelicDetails/Panel/Text area=(280.00, 100.00) needs=108 text=<size=30>Next Level</size>|<color=#61ee80>+0.3%</color>

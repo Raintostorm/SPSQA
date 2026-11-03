@@ -1,0 +1,56 @@
+{
+  "pose_order": [
+    "idle",
+    "walk",
+    "windup",
+    "strike",
+    "recovery",
+    "hurt",
+    "skill_windup",
+    "skill_hit",
+    "skill_recovery"
+  ],
+  "pixel_pivots": [
+    [
+      132.12735326688815,
+      352.0
+    ],
+    [
+      125.17184643510055,
+      352.0
+    ],
+    [
+      133.9189814814815,
+      357.0
+    ],
+    [
+      186.91423357664235,
+      307.0
+    ],
+    [
+      123.52637362637363,
+      322.0
+    ],
+    [
+      154.23652504755864,
+      266.0
+    ],
+    [
+      121.15262515262515,
+      374.0
+    ],
+    [
+      164.7663622526636,
+      326.0
+    ],
+    [
+      126.19369894982498,
+      340.0
+    ]
+  ],
+  "scale_reference_height": 349.0,
+  "profile": "king",
+  "expressive": true,
+  "strong_fx": true,
+  "notes": "One common scale across authored poses. Fixed equipment ownership (elf left bow/right draw; melee right weapon/left offhand; mechanical attachments unchanged). Full canvas transforms; no square pose cropping. Authored trial motion, not APK curves."
+}

@@ -1,0 +1,69 @@
+{
+  "m_Name": "anim_player_unit_1005",
+  "m_Controller": {
+    "m_FileID": 1,
+    "m_PathID": 1
+  },
+  "m_Clips": [
+    {
+      "m_OriginalClip": {
+        "m_FileID": 2,
+        "m_PathID": 1
+      },
+      "m_OverrideClip": {
+        "m_FileID": 3,
+        "m_PathID": 1
+      }
+    },
+    {
+      "m_OriginalClip": {
+        "m_FileID": 4,
+        "m_PathID": 1
+      },
+      "m_OverrideClip": {
+        "m_FileID": 5,
+        "m_PathID": 1
+      }
+    },
+    {
+      "m_OriginalClip": {
+        "m_FileID": 6,
+        "m_PathID": 1
+      },
+      "m_OverrideClip": {
+        "m_FileID": 7,
+        "m_PathID": 1
+      }
+    },
+    {
+      "m_OriginalClip": {
+        "m_FileID": 8,
+        "m_PathID": 1
+      },
+      "m_OverrideClip": {
+        "m_FileID": 9,
+        "m_PathID": 1
+      }
+    },
+    {
+      "m_OriginalClip": {
+        "m_FileID": 10,
+        "m_PathID": 1
+      },
+      "m_OverrideClip": {
+        "m_FileID": 11,
+        "m_PathID": 1
+      }
+    },
+    {
+      "m_OriginalClip": {
+        "m_FileID": 12,
+        "m_PathID": 1
+      },
+      "m_OverrideClip": {
+        "m_FileID": 5,
+        "m_PathID": 1
+      }
+    }
+  ]
+}

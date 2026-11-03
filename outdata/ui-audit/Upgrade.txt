@@ -1,0 +1,35 @@
+SCENE Upgrade
+EVENTSYSTEM EventSystem
+INPUT EventSystem active=True point=True click=True
+BUTTON UpgradeUI/AlliesStageUI/FittedPage/MercenariesScreen/RosterViewport/Roster/Ally machine_legendary enabled=True size=(310.00, 300.00) center=(562.50, -1040.65) hit=NONE reachable=False
+BUTTON UpgradeUI/AlliesStageUI/FittedPage/MercenariesScreen/RosterViewport/Roster/Ally human_common enabled=True size=(310.00, 300.00) center=(209.86, 1036.27) hit=UpgradeUI/AlliesStageUI/FittedPage/MercenariesScreen/RosterViewport/Roster/Ally human_common reachable=True
+BUTTON UpgradeUI/AlliesStageUI/FittedPage/MercenariesScreen/RosterViewport/Roster/Ally elf_rare enabled=True size=(310.00, 300.00) center=(209.86, 343.96) hit=UpgradeUI/AlliesStageUI/FittedPage/MercenariesScreen/RosterViewport/Roster/Ally elf_rare reachable=True
+BUTTON UpgradeUI/AlliesStageUI/FittedPage/MercenariesScreen/RosterViewport/Roster/Ally human_epic enabled=True size=(310.00, 300.00) center=(562.50, -2.19) hit=NONE reachable=False
+BUTTON UpgradeUI/AlliesStageUI/FittedPage/MercenariesScreen/RosterViewport/Roster/Ally elf_epic enabled=True size=(310.00, 300.00) center=(915.14, -2.19) hit=NONE reachable=False
+BUTTON UpgradeUI/AlliesStageUI/FittedPage/MercenariesScreen/RosterViewport/Roster/Ally mythic_swordsman enabled=True size=(310.00, 300.00) center=(209.86, -1841.14) hit=NONE reachable=False
+BUTTON UpgradeUI/AlliesStageUI/FittedPage/MercenariesScreen/RosterViewport/Roster/Ally mythic_undead enabled=True size=(310.00, 300.00) center=(915.14, -1841.14) hit=NONE reachable=False
+BUTTON UpgradeUI/AlliesStageUI/FittedPage/MercenariesScreen/RosterViewport/Roster/Ally monster_rare enabled=True size=(310.00, 300.00) center=(915.14, 343.96) hit=UpgradeUI/AlliesStageUI/FittedPage/MercenariesScreen/RosterViewport/Roster/Ally monster_rare reachable=True
+BUTTON UpgradeUI/AlliesStageUI/FittedPage/MercenariesScreen/RosterViewport/Roster/Ally mythic_mimic enabled=True size=(310.00, 300.00) center=(915.14, -1494.98) hit=NONE reachable=False
+BUTTON SharedSettings/SafeArea/Menu enabled=True size=(140.00, 140.00) center=(1040.00, 1966.00) hit=NONE reachable=False
+BUTTON UpgradeUI/AlliesStageUI/FittedPage/MercenariesScreen/RosterViewport/Roster/Ally dead_epic enabled=True size=(310.00, 300.00) center=(209.86, -348.35) hit=NONE reachable=False
+BUTTON UpgradeUI/AlliesStageUI/FittedPage/MercenariesScreen/RosterViewport/Roster/Ally machine_epic enabled=True size=(310.00, 300.00) center=(915.14, -348.35) hit=NONE reachable=False
+BUTTON UpgradeUI/AlliesStageUI/FittedPage/MercenariesScreen/SortRarity enabled=True size=(470.00, 120.00) center=(292.07, 1304.54) hit=UpgradeUI/AlliesStageUI/FittedPage/MercenariesScreen/SortRarity reachable=True
+BUTTON UpgradeUI/AlliesStageUI/FittedPage/MercenariesScreen/RosterViewport/Roster/Ally human_rare enabled=True size=(310.00, 300.00) center=(915.14, 690.12) hit=UpgradeUI/AlliesStageUI/FittedPage/MercenariesScreen/RosterViewport/Roster/Ally human_rare reachable=True
+BUTTON UpgradeUI/AlliesStageUI/FittedPage/MercenariesScreen/RosterViewport/Roster/Ally monster_legendary enabled=True size=(310.00, 300.00) center=(209.86, -1040.65) hit=NONE reachable=False
+BUTTON UpgradeUI/AlliesStageUI/FittedPage/MercenariesScreen/RosterViewport/Roster/Ally human_legendary enabled=True size=(310.00, 300.00) center=(209.86, -694.50) hit=NONE reachable=False
+BUTTON UpgradeUI/AlliesStageUI/FittedPage/MercenariesScreen/RosterViewport/Roster/Ally mythic_guardian enabled=True size=(310.00, 300.00) center=(209.86, -1494.98) hit=NONE reachable=False
+BUTTON UpgradeUI/AlliesStageUI/FittedPage/MercenariesScreen/RosterViewport/Roster/Ally elf_common enabled=True size=(310.00, 300.00) center=(562.50, 1036.27) hit=UpgradeUI/AlliesStageUI/FittedPage/MercenariesScreen/RosterViewport/Roster/Ally elf_common reachable=True
+BUTTON UpgradeUI/AlliesStageUI/FittedPage/MercenariesScreen/RosterViewport/Roster/Ally machine_rare enabled=True size=(310.00, 300.00) center=(209.86, -2.19) hit=NONE reachable=False
+BUTTON UpgradeUI/AlliesStageUI/FittedPage/MercenariesScreen/SortLevel enabled=True size=(470.00, 120.00) center=(832.93, 1304.54) hit=UpgradeUI/AlliesStageUI/FittedPage/MercenariesScreen/SortLevel reachable=True
+BUTTON UpgradeUI/AlliesStageUI/FittedPage/MercenariesScreen/RosterViewport/Roster/Ally mythic_clock enabled=True size=(310.00, 300.00) center=(562.50, -1494.98) hit=NONE reachable=False
+BUTTON UpgradeUI/AlliesStageUI/FittedPage/MercenariesScreen/RosterViewport/Roster/Ally mythic_bear enabled=True size=(310.00, 300.00) center=(209.86, -2187.29) hit=NONE reachable=False
+BUTTON UpgradeUI/AlliesStageUI/FittedPage/MercenariesScreen/RosterViewport/Roster/Ally dead_legendary enabled=True size=(310.00, 300.00) center=(915.14, -694.50) hit=NONE reachable=False
+BUTTON UpgradeUI/AlliesStageUI/FittedPage/MercenariesScreen/RosterViewport/Roster/Ally dead_rare enabled=True size=(310.00, 300.00) center=(562.50, 343.96) hit=UpgradeUI/AlliesStageUI/FittedPage/MercenariesScreen/RosterViewport/Roster/Ally dead_rare reachable=True
+BUTTON UpgradeUI/AlliesStageUI/FittedPage/MercenariesScreen/RosterViewport/Roster/Ally mythic_elf enabled=True size=(310.00, 300.00) center=(562.50, -1841.14) hit=NONE reachable=False
+BUTTON UpgradeUI/AlliesStageUI/FittedPage/Back enabled=True size=(960.00, 120.00) center=(562.50, 93.00) hit=UpgradeUI/AlliesStageUI/FittedPage/Back reachable=True
+BUTTON UpgradeUI/AlliesStageUI/FittedPage/MercenariesScreen/RosterViewport/Roster/Ally dead_common enabled=True size=(310.00, 300.00) center=(915.14, 1036.27) hit=UpgradeUI/AlliesStageUI/FittedPage/MercenariesScreen/RosterViewport/Roster/Ally dead_common reachable=True
+BUTTON UpgradeUI/AlliesStageUI/FittedPage/MercenariesScreen/RosterViewport/Roster/Ally machine_common enabled=True size=(310.00, 300.00) center=(562.50, 690.12) hit=UpgradeUI/AlliesStageUI/FittedPage/MercenariesScreen/RosterViewport/Roster/Ally machine_common reachable=True
+BUTTON UpgradeUI/AlliesStageUI/FittedPage/MercenariesScreen/RosterViewport/Roster/Ally elf_legendary enabled=True size=(310.00, 300.00) center=(562.50, -694.50) hit=NONE reachable=False
+BUTTON UpgradeUI/AlliesStageUI/FittedPage/MercenariesScreen/RosterViewport/Roster/Ally monster_epic enabled=True size=(310.00, 300.00) center=(562.50, -348.35) hit=NONE reachable=False
+BUTTON UpgradeUI/AlliesStageUI/FittedPage/MercenariesScreen/RosterViewport/Roster/Ally mythic_robot enabled=True size=(310.00, 300.00) center=(562.50, -2187.29) hit=NONE reachable=False
+BUTTON UpgradeUI/AlliesStageUI/FittedPage/MercenariesScreen/RosterViewport/Roster/Ally monster_common enabled=True size=(310.00, 300.00) center=(209.86, 690.12) hit=UpgradeUI/AlliesStageUI/FittedPage/MercenariesScreen/RosterViewport/Roster/Ally monster_common reachable=True

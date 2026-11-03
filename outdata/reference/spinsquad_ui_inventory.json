@@ -1,0 +1,4957 @@
+{
+  "source": "Spin+Squad! 2.5.1 supplied XAPK",
+  "containers": [],
+  "objects": [
+    {
+      "name": "LimitedText_daily",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/0000eaa862ea16944bc27e5296e1836c",
+      "id": 15
+    },
+    {
+      "name": "EventShopProductView",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/0000eaa862ea16944bc27e5296e1836c",
+      "id": 18
+    },
+    {
+      "name": "EquipIconItem4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/0043b11fb05febe49827b222b7fab030",
+      "id": 3
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/0043b11fb05febe49827b222b7fab030",
+      "id": 18
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/0043b11fb05febe49827b222b7fab030",
+      "id": 36
+    },
+    {
+      "name": "EquipIconItem4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/0043b11fb05febe49827b222b7fab030",
+      "id": 92
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/0043b11fb05febe49827b222b7fab030",
+      "id": 97
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/0043b11fb05febe49827b222b7fab030",
+      "id": 140
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/0043b11fb05febe49827b222b7fab030",
+      "id": 141
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/0043b11fb05febe49827b222b7fab030",
+      "id": 150
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/0043b11fb05febe49827b222b7fab030",
+      "id": 161
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/0043b11fb05febe49827b222b7fab030",
+      "id": 166
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/0043b11fb05febe49827b222b7fab030",
+      "id": 174
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/0043b11fb05febe49827b222b7fab030",
+      "id": 176
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/0043b11fb05febe49827b222b7fab030",
+      "id": 177
+    },
+    {
+      "name": "EquipRoot",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/0043b11fb05febe49827b222b7fab030",
+      "id": 178
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/0043b11fb05febe49827b222b7fab030",
+      "id": 198
+    },
+    {
+      "name": "UI_shuttle_idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/0057625a941a41d4da10608fe3162276",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "202004_kingtroll_attack",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/0144f478b54f6ff45a11a337d080baa2",
+      "id": 1,
+      "duration": 1.5166666507720947
+    },
+    {
+      "name": "UI_104004_mastertiger_walk_01",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/02b5a1834cad1c1438f31287a98cd0ab",
+      "id": 1,
+      "duration": 0.3500000238418579
+    },
+    {
+      "name": "Trollking",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/02ca86f1359fefb48adc50d67604b34f",
+      "id": 4
+    },
+    {
+      "name": "UI_Rank_4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/0392842ce1842aa4395cd44183f076ef",
+      "id": 4
+    },
+    {
+      "name": "MonthlyShopPackage",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/0462c6509e7e94555b45cdcb8fb35896",
+      "id": 7
+    },
+    {
+      "name": "UI_Rank_3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/062d9f05f669936419e42b1b0655d799",
+      "id": 4
+    },
+    {
+      "name": "UI_105207_carter_Idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/08d927fe7f65b56408bca69bd4084146",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "UI_102006_badger_idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/08ea609f0805a8e4f92ce092db27df3d",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "UI_104004_mastertiger_walk",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/0980693b1c8aa794aab710823bb8d23e",
+      "id": 1,
+      "duration": 0.3500000238418579
+    },
+    {
+      "name": "LobbyItemGetAction_End",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/0b36c52fdb38bf149b22202ae3d95376",
+      "id": 1,
+      "duration": 0.13333334028720856
+    },
+    {
+      "name": "UI_101005_bandit_idle_02",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/0bf95fa9e8d2f0f42b19b40e58d24e89",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "UI_102006_badger_idle_02",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/0ceab2b333b0b8e4982681fed36662fb",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "UI_103003_hunter_idle_01",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/0d33ef75a5df05e4795fc3a832ec906d",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "UI_105206_funk_idle_01",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/0e26d7725d66c504cbd9e7c49c17148d",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "Effect_Equip_2007",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/0f73747457b07c84884f3cd282993366",
+      "id": 2
+    },
+    {
+      "name": "UI_105204_01_clint_idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/0fb90a096503bcf4bbc561b4c3878a70",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "DebugUIMessageBox",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/10a25524b0986f9488b430e2829bbbe8",
+      "id": 1
+    },
+    {
+      "name": "UI_102006",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/116ddb076b7d79442a61bcae179a9fdf",
+      "id": 4
+    },
+    {
+      "name": "VIPShopProductView_buy",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/12e304016ecef40ecbe2de3ae13c1116",
+      "id": 1,
+      "duration": 4.5
+    },
+    {
+      "name": "UI_103001_shockbotv2_walk",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/13b61ba11545c804a99c6710f6a0b7a7",
+      "id": 1,
+      "duration": 0.3500000238418579
+    },
+    {
+      "name": "UI_DiceKing",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/16da438bc483dfd488b79b119c9b59d6",
+      "id": 7
+    },
+    {
+      "name": "Fx_UI_PickUp_Fail",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/16da438bc483dfd488b79b119c9b59d6",
+      "id": 10
+    },
+    {
+      "name": "Fx_UI_Relic_Fr",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/16da438bc483dfd488b79b119c9b59d6",
+      "id": 12
+    },
+    {
+      "name": "EquipIconItem4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/16dcaa6c188af90449782633cb0995df",
+      "id": 5
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/16dcaa6c188af90449782633cb0995df",
+      "id": 16
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/16dcaa6c188af90449782633cb0995df",
+      "id": 26
+    },
+    {
+      "name": "EquipIconItem4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/16dcaa6c188af90449782633cb0995df",
+      "id": 99
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/16dcaa6c188af90449782633cb0995df",
+      "id": 107
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/16dcaa6c188af90449782633cb0995df",
+      "id": 141
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/16dcaa6c188af90449782633cb0995df",
+      "id": 142
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/16dcaa6c188af90449782633cb0995df",
+      "id": 148
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/16dcaa6c188af90449782633cb0995df",
+      "id": 157
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/16dcaa6c188af90449782633cb0995df",
+      "id": 162
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/16dcaa6c188af90449782633cb0995df",
+      "id": 167
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/16dcaa6c188af90449782633cb0995df",
+      "id": 169
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/16dcaa6c188af90449782633cb0995df",
+      "id": 171
+    },
+    {
+      "name": "EquipRoot",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/16dcaa6c188af90449782633cb0995df",
+      "id": 172
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/16dcaa6c188af90449782633cb0995df",
+      "id": 188
+    },
+    {
+      "name": "UI_105116_overclockrocketchu_Idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/17f630316c97fcc4ea08317c71b8cf5a",
+      "id": 1,
+      "duration": 1.0166666507720947
+    },
+    {
+      "name": "UI_103101_01_Idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/182c62c3a794574419207b4676d56acc",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "202004_kingtroll_walk",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/1842fdfe8c9c82548b794d47af389914",
+      "id": 1,
+      "duration": 1.0166666507720947
+    },
+    {
+      "name": "UI_103001_shockbotv2_idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/18706ce3331f0f74e9803949a35199b4",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "EquipIconWearing",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/188b588542df8334787df0a92d5875e8",
+      "id": 1,
+      "duration": 0.25
+    },
+    {
+      "name": "201008_trollroll_dead",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/1894bace37732454991c4d061b423cad",
+      "id": 1,
+      "duration": 0.7666666507720947
+    },
+    {
+      "name": "UI_104007_sheriff_idle_01",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/192c15557b0b88f4e8f9e3841109d2ad",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "UIParticle",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/1b82fa042f4ee704aad3bac62f2d7b74",
+      "id": 6
+    },
+    {
+      "name": "UI_105116",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/1b82fa042f4ee704aad3bac62f2d7b74",
+      "id": 7
+    },
+    {
+      "name": "201006_troll",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/1c35be774bbc0054d8b993c13c6a3d22",
+      "id": 82
+    },
+    {
+      "name": "DebugUIFoldout",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/1c87ab2ce8b8b304d98fbe9a734b1f74",
+      "id": 5
+    },
+    {
+      "name": "EquipIconItem4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/1d2945c9b7839e04b91d8a6993f14bec",
+      "id": 5
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/1d2945c9b7839e04b91d8a6993f14bec",
+      "id": 22
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/1d2945c9b7839e04b91d8a6993f14bec",
+      "id": 35
+    },
+    {
+      "name": "EquipIconItem4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/1d2945c9b7839e04b91d8a6993f14bec",
+      "id": 114
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/1d2945c9b7839e04b91d8a6993f14bec",
+      "id": 117
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/1d2945c9b7839e04b91d8a6993f14bec",
+      "id": 155
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/1d2945c9b7839e04b91d8a6993f14bec",
+      "id": 156
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/1d2945c9b7839e04b91d8a6993f14bec",
+      "id": 162
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/1d2945c9b7839e04b91d8a6993f14bec",
+      "id": 173
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/1d2945c9b7839e04b91d8a6993f14bec",
+      "id": 180
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/1d2945c9b7839e04b91d8a6993f14bec",
+      "id": 185
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/1d2945c9b7839e04b91d8a6993f14bec",
+      "id": 186
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/1d2945c9b7839e04b91d8a6993f14bec",
+      "id": 187
+    },
+    {
+      "name": "EquipRoot",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/1d2945c9b7839e04b91d8a6993f14bec",
+      "id": 189
+    },
+    {
+      "name": "SummonPivot",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/1d2945c9b7839e04b91d8a6993f14bec",
+      "id": 202
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/1d2945c9b7839e04b91d8a6993f14bec",
+      "id": 207
+    },
+    {
+      "name": "UI_104003",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/1d95a3bbb730caf44953a0665e3a7229",
+      "id": 7
+    },
+    {
+      "name": "UI_103102_02_Idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/1e1c131a6f3ff014aaeae693c1e570dd",
+      "id": 1,
+      "duration": 0.8499999642372131
+    },
+    {
+      "name": "UI_105104_ironmeow_idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/209c598b635e86b40b1658ef3fa8a22b",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "202005_bosstroll_Idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/20fa73c5521f5a840a7164c922c6f8af",
+      "id": 1,
+      "duration": 0.5
+    },
+    {
+      "name": "UI_105211_Idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/24ffd635b6c7bb045ab4ef29e4f62a40",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "UI_shuttle_cash",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/25ad6959318482c49a066570621b8637",
+      "id": 4
+    },
+    {
+      "name": "UI_105202_scai_idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/2632a537930119b4eb30e46cfdd0c6ae",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "UI_103005_01_generalhawk_idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/2bea87d5a73feca4990d4c11ad3d243b",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "UI_105202_01_scai_idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/2c4073ec9dd11174f8f20654698284ab",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "DebugUIRow",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/2d019437ff89b8d44949727731cd9357",
+      "id": 5
+    },
+    {
+      "name": "UI_102002",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/2dacc0c9a4c4efd469a0531bd8147c63",
+      "id": 2
+    },
+    {
+      "name": "UI_105213_panking_Idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/2dc248621d7448a4da10d1cfd34aae81",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "EquipIconItem4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/2f13b93d9d285a242991f11673d24d6d",
+      "id": 2
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/2f13b93d9d285a242991f11673d24d6d",
+      "id": 8
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/2f13b93d9d285a242991f11673d24d6d",
+      "id": 20
+    },
+    {
+      "name": "EquipIconItem4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/2f13b93d9d285a242991f11673d24d6d",
+      "id": 87
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/2f13b93d9d285a242991f11673d24d6d",
+      "id": 90
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/2f13b93d9d285a242991f11673d24d6d",
+      "id": 131
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/2f13b93d9d285a242991f11673d24d6d",
+      "id": 132
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/2f13b93d9d285a242991f11673d24d6d",
+      "id": 139
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/2f13b93d9d285a242991f11673d24d6d",
+      "id": 147
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/2f13b93d9d285a242991f11673d24d6d",
+      "id": 152
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/2f13b93d9d285a242991f11673d24d6d",
+      "id": 158
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/2f13b93d9d285a242991f11673d24d6d",
+      "id": 161
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/2f13b93d9d285a242991f11673d24d6d",
+      "id": 163
+    },
+    {
+      "name": "EquipRoot",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/2f13b93d9d285a242991f11673d24d6d",
+      "id": 164
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/2f13b93d9d285a242991f11673d24d6d",
+      "id": 196
+    },
+    {
+      "name": "UI_Rank_1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/2f61cb8ecdea874418e8d064b66eb460",
+      "id": 4
+    },
+    {
+      "name": "202004_kingtroll",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/2f7745fa768c84f41b8ab1e6b647222a",
+      "id": 14
+    },
+    {
+      "name": "EquipIconItem4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/2f78a2088abe02e4fa9297fa1eb08be9",
+      "id": 3
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/2f78a2088abe02e4fa9297fa1eb08be9",
+      "id": 10
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/2f78a2088abe02e4fa9297fa1eb08be9",
+      "id": 25
+    },
+    {
+      "name": "EquipIconItem4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/2f78a2088abe02e4fa9297fa1eb08be9",
+      "id": 101
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/2f78a2088abe02e4fa9297fa1eb08be9",
+      "id": 106
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/2f78a2088abe02e4fa9297fa1eb08be9",
+      "id": 151
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/2f78a2088abe02e4fa9297fa1eb08be9",
+      "id": 154
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/2f78a2088abe02e4fa9297fa1eb08be9",
+      "id": 161
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/2f78a2088abe02e4fa9297fa1eb08be9",
+      "id": 169
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/2f78a2088abe02e4fa9297fa1eb08be9",
+      "id": 175
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/2f78a2088abe02e4fa9297fa1eb08be9",
+      "id": 180
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/2f78a2088abe02e4fa9297fa1eb08be9",
+      "id": 183
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/2f78a2088abe02e4fa9297fa1eb08be9",
+      "id": 184
+    },
+    {
+      "name": "EquipRoot",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/2f78a2088abe02e4fa9297fa1eb08be9",
+      "id": 188
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/2f78a2088abe02e4fa9297fa1eb08be9",
+      "id": 215
+    },
+    {
+      "name": "202038_keogugui_skill_1",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/2fe20660b002a2f4e96f3e9a2493017e",
+      "id": 1,
+      "duration": 1.0166666507720947
+    },
+    {
+      "name": "UI_Rank_5",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/305683dde7c06844b9dd785cc7e140fb",
+      "id": 5
+    },
+    {
+      "name": "SR_LoadingSpinner",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/307fd4bc23452cc41bdacc036bc9e0b1",
+      "id": 3
+    },
+    {
+      "name": "UI_102002_shockbot_idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/3216411c62755de40826e66fa3a0911a",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "SR_Result",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/3234e6770548fe841adb652f4ad4bca6",
+      "id": 44
+    },
+    {
+      "name": "UIParticle",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/324a649a8c5399c44857e71dcf8804d5",
+      "id": 2
+    },
+    {
+      "name": "UI_105203",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/324a649a8c5399c44857e71dcf8804d5",
+      "id": 7
+    },
+    {
+      "name": "DebugUIVector2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/326f7c58aed965d41bf7805a782d1e44",
+      "id": 10
+    },
+    {
+      "name": "UI_101007_robo_idle_01",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/33f3cecc1fb6a4449bc669295ed796b7",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "UI_shuttle_mythstone",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/3404b17d4306982438e47e6a83aa21ad",
+      "id": 4
+    },
+    {
+      "name": "201006_troll_skill_1",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/343f695cf7df7674484e1bafb3bf0803",
+      "id": 1,
+      "duration": 1.0166666507720947
+    },
+    {
+      "name": "DebugPanel",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/3484bf178624a77488fdf8a593f2d7a0",
+      "id": 2
+    },
+    {
+      "name": "SR__TabController",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/3484bf178624a77488fdf8a593f2d7a0",
+      "id": 4
+    },
+    {
+      "name": "UIParticle",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/34ca57449267a324e86df93349e35c2b",
+      "id": 7
+    },
+    {
+      "name": "UI_105209",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/34ca57449267a324e86df93349e35c2b",
+      "id": 8
+    },
+    {
+      "name": "UI_103005",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/361680af61fed6d428c0c10fde5c4787",
+      "id": 3
+    },
+    {
+      "name": "UI_105218_bamba_idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/363cdfda8530d2642a2d92616ed35d91",
+      "id": 1,
+      "duration": 1.0166666507720947
+    },
+    {
+      "name": "StepUpShopPackageProductView Variant",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/3649a8ca14f165544b72df9b978a8d82",
+      "id": 89
+    },
+    {
+      "name": "PanelPackageTime",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/3649a8ca14f165544b72df9b978a8d82",
+      "id": 134
+    },
+    {
+      "name": "201006_troll_attack_1",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/3694991fac7383645a51e6b31c023045",
+      "id": 1,
+      "duration": 1.5166666507720947
+    },
+    {
+      "name": "UI_104003_warmachine_walk",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/36f87da0f0bd0464c8de2958492b3143",
+      "id": 1,
+      "duration": 0.3500000238418579
+    },
+    {
+      "name": "EquipIconMerge",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/374ee1396fda70b40abba096a50ebbdd",
+      "id": 1,
+      "duration": 0.25
+    },
+    {
+      "name": "202005_bosstroll_attack",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/37f4f1ff84371484091ac13d96e693d8",
+      "id": 1,
+      "duration": 1.5166666507720947
+    },
+    {
+      "name": "UI_104004_mastertiger_idle_01",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/389294d389e999b4785eaf10e1b22b2b",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "DebugUIGroup",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/38a07789c9e87004dad98c2909f58369",
+      "id": 4
+    },
+    {
+      "name": "202004_kingtroll_skill_1",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/38ba1c3050477814c8c91a06ed09efd7",
+      "id": 1,
+      "duration": 1.0
+    },
+    {
+      "name": "UI_diceking_kingIdle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/39c27e994856c9f4e9297f827401b099",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "EquipIconItem4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/39d2658280425704594aa7ba138f8951",
+      "id": 4
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/39d2658280425704594aa7ba138f8951",
+      "id": 15
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/39d2658280425704594aa7ba138f8951",
+      "id": 25
+    },
+    {
+      "name": "EquipIconItem4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/39d2658280425704594aa7ba138f8951",
+      "id": 99
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/39d2658280425704594aa7ba138f8951",
+      "id": 107
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/39d2658280425704594aa7ba138f8951",
+      "id": 140
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/39d2658280425704594aa7ba138f8951",
+      "id": 141
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/39d2658280425704594aa7ba138f8951",
+      "id": 147
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/39d2658280425704594aa7ba138f8951",
+      "id": 156
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/39d2658280425704594aa7ba138f8951",
+      "id": 161
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/39d2658280425704594aa7ba138f8951",
+      "id": 165
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/39d2658280425704594aa7ba138f8951",
+      "id": 168
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/39d2658280425704594aa7ba138f8951",
+      "id": 170
+    },
+    {
+      "name": "EquipRoot",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/39d2658280425704594aa7ba138f8951",
+      "id": 171
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/39d2658280425704594aa7ba138f8951",
+      "id": 186
+    },
+    {
+      "name": "UI_105208_danner_Idle_01",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/3afb2e21c6edbcc4dbf5f06f1dd92708",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "PanelPackageTime",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/3b912427ed34246e78a751d4b6d6886a",
+      "id": 62
+    },
+    {
+      "name": "202005_bosstroll_walk",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/3bed204917f427a4ebdbcd96b876c371",
+      "id": 1,
+      "duration": 1.0166666507720947
+    },
+    {
+      "name": "201008_trollroll_walk",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/3d160a53f2a8d47079f9da60a596ced7",
+      "id": 1,
+      "duration": 1.0166666507720947
+    },
+    {
+      "name": "UI_101101_Idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/3e3548b4ddbc17f4799efa2549b949a5",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "EquipIconItem4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/3e54ef5b4158e374896ee6209fb78f43",
+      "id": 3
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/3e54ef5b4158e374896ee6209fb78f43",
+      "id": 10
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/3e54ef5b4158e374896ee6209fb78f43",
+      "id": 24
+    },
+    {
+      "name": "EquipIconItem4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/3e54ef5b4158e374896ee6209fb78f43",
+      "id": 114
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/3e54ef5b4158e374896ee6209fb78f43",
+      "id": 117
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/3e54ef5b4158e374896ee6209fb78f43",
+      "id": 151
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/3e54ef5b4158e374896ee6209fb78f43",
+      "id": 152
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/3e54ef5b4158e374896ee6209fb78f43",
+      "id": 160
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/3e54ef5b4158e374896ee6209fb78f43",
+      "id": 166
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/3e54ef5b4158e374896ee6209fb78f43",
+      "id": 170
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/3e54ef5b4158e374896ee6209fb78f43",
+      "id": 173
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/3e54ef5b4158e374896ee6209fb78f43",
+      "id": 175
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/3e54ef5b4158e374896ee6209fb78f43",
+      "id": 176
+    },
+    {
+      "name": "EquipRoot",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/3e54ef5b4158e374896ee6209fb78f43",
+      "id": 177
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/3e54ef5b4158e374896ee6209fb78f43",
+      "id": 196
+    },
+    {
+      "name": "Subscribe_Daily_Gold",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/3ee74c0fe3cebc5418f439115ca185c7",
+      "id": 8
+    },
+    {
+      "name": "Fx_UI_WavepassBooster",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/3ee74c0fe3cebc5418f439115ca185c7",
+      "id": 43
+    },
+    {
+      "name": "RewardRoot",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/3ee74c0fe3cebc5418f439115ca185c7",
+      "id": 64
+    },
+    {
+      "name": "UIParticle",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/3f41b39c5840d4c408c3e8e2cbbc75d0",
+      "id": 6
+    },
+    {
+      "name": "UI_105215",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/3f41b39c5840d4c408c3e8e2cbbc75d0",
+      "id": 7
+    },
+    {
+      "name": "UI_103005_generalhawk_idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/41f21b8c85fcbe64494c62ab594e4031",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "202005_bosstroll_skill_1",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/434c88b67a9812b43b301541a64fe283",
+      "id": 1,
+      "duration": 1.0166666507720947
+    },
+    {
+      "name": "UI_101007_robo_walk_01",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/435d80d30b8c55d41972c8570e93e79e",
+      "id": 1,
+      "duration": 0.3500000238418579
+    },
+    {
+      "name": "202004_kingtroll_skill_2",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/447a317f816552f4fb1a303593ebf626",
+      "id": 1,
+      "duration": 1.0166666507720947
+    },
+    {
+      "name": "UIParticle",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/45a1b4b0c1113d8498b12d2f1e78fe14",
+      "id": 3
+    },
+    {
+      "name": "UI_105216",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/45a1b4b0c1113d8498b12d2f1e78fe14",
+      "id": 7
+    },
+    {
+      "name": "UI_105204",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/45ff417f2f095994d92c9203e71fff29",
+      "id": 4
+    },
+    {
+      "name": "UIParticle",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/45ff417f2f095994d92c9203e71fff29",
+      "id": 11
+    },
+    {
+      "name": "UI_101006_ammo_DigOut",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/46e5bffd3c37ac0449002fc8a3ed1218",
+      "id": 1,
+      "duration": 0.4166666865348816
+    },
+    {
+      "name": "projectile_equip_2007",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/4701b7b0b4e2db74bb9f5b1ce2bce212",
+      "id": 3
+    },
+    {
+      "name": "DebugUIObjectPopupField",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/48fb043c850cadc4a883b53785e14c6e",
+      "id": 2
+    },
+    {
+      "name": "Panel",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/48fb043c850cadc4a883b53785e14c6e",
+      "id": 6
+    },
+    {
+      "name": "UI_shuttle_gold",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/49da342279b4edf46a60d4179fddc80d",
+      "id": 5
+    },
+    {
+      "name": "UIParticle",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/4a9ae76a72a43204fbdce3d8be499a1b",
+      "id": 7
+    },
+    {
+      "name": "UI_105212",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/4a9ae76a72a43204fbdce3d8be499a1b",
+      "id": 8
+    },
+    {
+      "name": "UI_105201_01_mecharomancer_idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/4aee4ebb933b774469a4dce39152746d",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "VVIPShopProductView_buy",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/4ceadffe1e7614485bf74b529aeda38c",
+      "id": 1,
+      "duration": 4.5
+    },
+    {
+      "name": "UI_105212_goodgun_Idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/4f41fbaccaa6005409ea506b66b7db6c",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "UIParticle",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/4fe9b02e795141749b8595d6bb03a178",
+      "id": 5
+    },
+    {
+      "name": "UI_105207",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/4fe9b02e795141749b8595d6bb03a178",
+      "id": 6
+    },
+    {
+      "name": "DebugUIToggleHistory",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/5088d0220f0c4df439cf06c5c270eacb",
+      "id": 4
+    },
+    {
+      "name": "UI_103102_Idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/50da28900e1056f4da7962602bf801c7",
+      "id": 1,
+      "duration": 0.8499999642372131
+    },
+    {
+      "name": "202038_keogugui",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/536ca7fd917c2754695d23ca1b74596b",
+      "id": 130
+    },
+    {
+      "name": "Fx_UI_Weapon_Legendary",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/53fa5e6592ff89b45a4493bf9f13f80e",
+      "id": 6
+    },
+    {
+      "name": "Fx_UI_Weapon_Sclaer",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/53fa5e6592ff89b45a4493bf9f13f80e",
+      "id": 13
+    },
+    {
+      "name": "BattleEquipIconItemUI",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/53fa5e6592ff89b45a4493bf9f13f80e",
+      "id": 17
+    },
+    {
+      "name": "UI_101006",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/54a660e44bc3e3848ab10099292612f0",
+      "id": 2
+    },
+    {
+      "name": "UI_105206_funk_idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/54a881ec748550043bdf95fba5ac1f42",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "UI_101101_01_walk",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/56d50f4847ff4e6428005295c3891b03",
+      "id": 1,
+      "duration": 0.5833333134651184
+    },
+    {
+      "name": "LobbyItemGetAction_Start",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/5831bed1c95503845a25a9b41a307525",
+      "id": 1,
+      "duration": 0.6666666865348816
+    },
+    {
+      "name": "201006_troll_walk",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/58441a669b4244e76a69682bfac897af",
+      "id": 1,
+      "duration": 1.0166666507720947
+    },
+    {
+      "name": "UI_105205_chef_idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/58b1c725b279b4c4193a08d2074f79ac",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "UI_105212_01_goodgun_Idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/590e4f9be34a555468627f6bce61bb99",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "UI_105104_ironmeow_idle_01",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/5942ec2d58a43ed4db88b14e325529ff",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "UIParticle",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/597eb93867196fa4488870fff7d5398b",
+      "id": 8
+    },
+    {
+      "name": "UI_105115",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/597eb93867196fa4488870fff7d5398b",
+      "id": 9
+    },
+    {
+      "name": "UI_101005_bandit_idle_01",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/598df21eab142ff45b2c0642a7b2f5eb",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "EquipIconItem4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/5afc133920cf84a4290db1afe9db0b30",
+      "id": 4
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/5afc133920cf84a4290db1afe9db0b30",
+      "id": 15
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/5afc133920cf84a4290db1afe9db0b30",
+      "id": 30
+    },
+    {
+      "name": "EquipIconItem4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/5afc133920cf84a4290db1afe9db0b30",
+      "id": 113
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/5afc133920cf84a4290db1afe9db0b30",
+      "id": 119
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/5afc133920cf84a4290db1afe9db0b30",
+      "id": 156
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/5afc133920cf84a4290db1afe9db0b30",
+      "id": 158
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/5afc133920cf84a4290db1afe9db0b30",
+      "id": 166
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/5afc133920cf84a4290db1afe9db0b30",
+      "id": 171
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/5afc133920cf84a4290db1afe9db0b30",
+      "id": 178
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/5afc133920cf84a4290db1afe9db0b30",
+      "id": 183
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/5afc133920cf84a4290db1afe9db0b30",
+      "id": 185
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/5afc133920cf84a4290db1afe9db0b30",
+      "id": 187
+    },
+    {
+      "name": "EquipRoot",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/5afc133920cf84a4290db1afe9db0b30",
+      "id": 190
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/5afc133920cf84a4290db1afe9db0b30",
+      "id": 215
+    },
+    {
+      "name": "UI_102002_shockbot_walk_01",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/5c645667212ed61408871dca29a148fe",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "EquipIconItem4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/5d2ba3f54c62f3f4e93b5fa11f694b9e",
+      "id": 3
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/5d2ba3f54c62f3f4e93b5fa11f694b9e",
+      "id": 16
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/5d2ba3f54c62f3f4e93b5fa11f694b9e",
+      "id": 27
+    },
+    {
+      "name": "EquipIconItem4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/5d2ba3f54c62f3f4e93b5fa11f694b9e",
+      "id": 101
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/5d2ba3f54c62f3f4e93b5fa11f694b9e",
+      "id": 110
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/5d2ba3f54c62f3f4e93b5fa11f694b9e",
+      "id": 150
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/5d2ba3f54c62f3f4e93b5fa11f694b9e",
+      "id": 151
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/5d2ba3f54c62f3f4e93b5fa11f694b9e",
+      "id": 159
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/5d2ba3f54c62f3f4e93b5fa11f694b9e",
+      "id": 164
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/5d2ba3f54c62f3f4e93b5fa11f694b9e",
+      "id": 170
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/5d2ba3f54c62f3f4e93b5fa11f694b9e",
+      "id": 174
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/5d2ba3f54c62f3f4e93b5fa11f694b9e",
+      "id": 175
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/5d2ba3f54c62f3f4e93b5fa11f694b9e",
+      "id": 176
+    },
+    {
+      "name": "EquipRoot",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/5d2ba3f54c62f3f4e93b5fa11f694b9e",
+      "id": 179
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/5d2ba3f54c62f3f4e93b5fa11f694b9e",
+      "id": 193
+    },
+    {
+      "name": "UI_105208",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/614396f8de7b7bf4b85ac5228eef2a8f",
+      "id": 5
+    },
+    {
+      "name": "UIParticle",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/614396f8de7b7bf4b85ac5228eef2a8f",
+      "id": 11
+    },
+    {
+      "name": "UI_101101",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/62955b0592c841347abec8843acf7c0d",
+      "id": 3
+    },
+    {
+      "name": "UIParticle",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/63a2d77e97e9be441828259e8ccae83b",
+      "id": 3
+    },
+    {
+      "name": "UI_105217",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/63a2d77e97e9be441828259e8ccae83b",
+      "id": 8
+    },
+    {
+      "name": "202038_keogugui_idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/6404c2348a80bba4d9078235112223b1",
+      "id": 1,
+      "duration": 0.6833333373069763
+    },
+    {
+      "name": "UI_Rank5_Walk",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/6424eec990898de42aecb0f53cbb9592",
+      "id": 1,
+      "duration": 0.4333333373069763
+    },
+    {
+      "name": "UI_Rank1_Walk",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/64515dfdbdf8d7a4da18c94795d075ff",
+      "id": 1,
+      "duration": 0.5999999642372131
+    },
+    {
+      "name": "UI_diceking_walk",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/664e1f87523a6594f8fa68a1da303cf4",
+      "id": 1,
+      "duration": 0.4166666567325592
+    },
+    {
+      "name": "202004_kingtroll_teleportation",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/669c620eb35ef8a458b721f7f2f8bc5e",
+      "id": 1,
+      "duration": 0.06666667014360428
+    },
+    {
+      "name": "UI_105217_01_arin_idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/688e075725257ad499ef3724e0e2ee08",
+      "id": 1,
+      "duration": 0.8499999642372131
+    },
+    {
+      "name": "UI_105106",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/6cbefa357e1f4ac46b0e0d4eaf77f56b",
+      "id": 4
+    },
+    {
+      "name": "UIParticle",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/6cbefa357e1f4ac46b0e0d4eaf77f56b",
+      "id": 12
+    },
+    {
+      "name": "UI_105104_ironmeow_idle_02",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/6ed8c48d8df02674496ac3a90c15e47b",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "Effect_Equip_2017",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/6f127e130c853164d8667d903db756ed",
+      "id": 2
+    },
+    {
+      "name": "Fx_2017_Equip",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/6f127e130c853164d8667d903db756ed",
+      "id": 3
+    },
+    {
+      "name": "RewardValueText",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/6f7ea5116ccd68e488fbf95eed29b0d0",
+      "id": 6
+    },
+    {
+      "name": "202038_keogugui_walk",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/6fb71297b36cb53419a0a524ac31ee64",
+      "id": 1,
+      "duration": 1.0166666507720947
+    },
+    {
+      "name": "201014_kingtroll_normal_Teleport",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/7057d02c103f97744a25695ade82aabc",
+      "id": 1,
+      "duration": 0.06666667014360428
+    },
+    {
+      "name": "UI_101006_ammo_idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/70ca165d2323bcd419b3917665a69ee3",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "UI_105007_ninja_walk",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/71b32471e7dc72f46a2ec4757a256d12",
+      "id": 1,
+      "duration": 0.3500000238418579
+    },
+    {
+      "name": "UI_101102",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/720d23633eb932749af1368324776811",
+      "id": 4
+    },
+    {
+      "name": "202038_keogugui_dead",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/720d7fa3dd29b5044b33e5de0cf751b8",
+      "id": 1,
+      "duration": 1.0
+    },
+    {
+      "name": "UI_102001_elfarcher_idle_01",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/722400390b9a6464db0386088863751a",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "UI_101005_bandit_attack_01",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/737b42dc7f62bc94c91266a67660daa6",
+      "id": 1,
+      "duration": 0.4333333373069763
+    },
+    {
+      "name": "201014_kingtroll_normal_Idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/73fef2530584c5b489d5257340049c8d",
+      "id": 1,
+      "duration": 0.5
+    },
+    {
+      "name": "UI_Rank_2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/74c1c654f6e71f1409ad3a0f7b6b7bfb",
+      "id": 4
+    },
+    {
+      "name": "201006_troll_dead",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/74efb2e361f854a81a6eab8583cc533c",
+      "id": 1,
+      "duration": 0.7666666507720947
+    },
+    {
+      "name": "UI_101007_robo_idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/7523bbab3f63ce64eadd351752f333b2",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "UI_105210_princess_Idle_01",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/756550d3a58b9664c8e931cc4d2bc6f7",
+      "id": 1,
+      "duration": 0.5
+    },
+    {
+      "name": "UI_102006_badger_walk_01",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/75e1664ed9033f94ebf210f85961dd05",
+      "id": 1,
+      "duration": 0.3500000238418579
+    },
+    {
+      "name": "DebugUIColor",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/77c185820dd1a464eac89cae3abccddf",
+      "id": 6
+    },
+    {
+      "name": "chest",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/77e34faa78419414b8c4511ee272290c",
+      "id": 141
+    },
+    {
+      "name": "201008_trollroll_idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/78a8c2ada4314f545a82ad125c285011",
+      "id": 1,
+      "duration": 0.5
+    },
+    {
+      "name": "UI_diceking_swiming1",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/79ea9bea950e81040b1087bf73c54d57",
+      "id": 1,
+      "duration": 0.5666666626930237
+    },
+    {
+      "name": "UI_102002_shockbot_idle_01",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/7b682b22b7fa65a4e92e380c51b0197b",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "DebugUI Toggle 22",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/7c78b588b2e1f7c4a86ca4a985cf6e4a",
+      "id": 8
+    },
+    {
+      "name": "DebugUI Toggle 28",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/7c78b588b2e1f7c4a86ca4a985cf6e4a",
+      "id": 16
+    },
+    {
+      "name": "DebugUI Toggle 17",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/7c78b588b2e1f7c4a86ca4a985cf6e4a",
+      "id": 22
+    },
+    {
+      "name": "DebugUI Toggle 13",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/7c78b588b2e1f7c4a86ca4a985cf6e4a",
+      "id": 29
+    },
+    {
+      "name": "DebugUI Toggle 24",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/7c78b588b2e1f7c4a86ca4a985cf6e4a",
+      "id": 32
+    },
+    {
+      "name": "DebugUI Toggle 6",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/7c78b588b2e1f7c4a86ca4a985cf6e4a",
+      "id": 34
+    },
+    {
+      "name": "DebugUI Toggle 4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/7c78b588b2e1f7c4a86ca4a985cf6e4a",
+      "id": 56
+    },
+    {
+      "name": "DebugUI Toggle 3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/7c78b588b2e1f7c4a86ca4a985cf6e4a",
+      "id": 58
+    },
+    {
+      "name": "DebugUI Toggle 9",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/7c78b588b2e1f7c4a86ca4a985cf6e4a",
+      "id": 59
+    },
+    {
+      "name": "DebugUI Toggle 0",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/7c78b588b2e1f7c4a86ca4a985cf6e4a",
+      "id": 63
+    },
+    {
+      "name": "DebugUI Toggle 25",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/7c78b588b2e1f7c4a86ca4a985cf6e4a",
+      "id": 71
+    },
+    {
+      "name": "DebugUI Toggle 11",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/7c78b588b2e1f7c4a86ca4a985cf6e4a",
+      "id": 75
+    },
+    {
+      "name": "DebugUI Toggle 26",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/7c78b588b2e1f7c4a86ca4a985cf6e4a",
+      "id": 79
+    },
+    {
+      "name": "DebugUI Toggle 18",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/7c78b588b2e1f7c4a86ca4a985cf6e4a",
+      "id": 81
+    },
+    {
+      "name": "DebugUI Toggle 8",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/7c78b588b2e1f7c4a86ca4a985cf6e4a",
+      "id": 93
+    },
+    {
+      "name": "DebugUI Toggle 1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/7c78b588b2e1f7c4a86ca4a985cf6e4a",
+      "id": 97
+    },
+    {
+      "name": "DebugUI Toggle 27",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/7c78b588b2e1f7c4a86ca4a985cf6e4a",
+      "id": 100
+    },
+    {
+      "name": "DebugUI Toggle 15",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/7c78b588b2e1f7c4a86ca4a985cf6e4a",
+      "id": 106
+    },
+    {
+      "name": "DebugUIBitField",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/7c78b588b2e1f7c4a86ca4a985cf6e4a",
+      "id": 113
+    },
+    {
+      "name": "DebugUI Toggle 21",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/7c78b588b2e1f7c4a86ca4a985cf6e4a",
+      "id": 115
+    },
+    {
+      "name": "DebugUI Toggle 30",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/7c78b588b2e1f7c4a86ca4a985cf6e4a",
+      "id": 119
+    },
+    {
+      "name": "DebugUI Toggle 10",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/7c78b588b2e1f7c4a86ca4a985cf6e4a",
+      "id": 127
+    },
+    {
+      "name": "DebugUI Toggle 16",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/7c78b588b2e1f7c4a86ca4a985cf6e4a",
+      "id": 128
+    },
+    {
+      "name": "DebugUI Toggle 7",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/7c78b588b2e1f7c4a86ca4a985cf6e4a",
+      "id": 130
+    },
+    {
+      "name": "DebugUI Toggle 23",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/7c78b588b2e1f7c4a86ca4a985cf6e4a",
+      "id": 134
+    },
+    {
+      "name": "DebugUI Toggle 5",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/7c78b588b2e1f7c4a86ca4a985cf6e4a",
+      "id": 139
+    },
+    {
+      "name": "DebugUI Toggle 20",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/7c78b588b2e1f7c4a86ca4a985cf6e4a",
+      "id": 141
+    },
+    {
+      "name": "DebugUI Toggle 31",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/7c78b588b2e1f7c4a86ca4a985cf6e4a",
+      "id": 142
+    },
+    {
+      "name": "DebugUI Toggle 12",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/7c78b588b2e1f7c4a86ca4a985cf6e4a",
+      "id": 144
+    },
+    {
+      "name": "DebugUI Toggle 19",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/7c78b588b2e1f7c4a86ca4a985cf6e4a",
+      "id": 148
+    },
+    {
+      "name": "DebugUI Toggle 14",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/7c78b588b2e1f7c4a86ca4a985cf6e4a",
+      "id": 149
+    },
+    {
+      "name": "DebugUI Toggle 29",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/7c78b588b2e1f7c4a86ca4a985cf6e4a",
+      "id": 156
+    },
+    {
+      "name": "DebugUI Toggle 2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/7c78b588b2e1f7c4a86ca4a985cf6e4a",
+      "id": 163
+    },
+    {
+      "name": "UIParticle",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/7de54cd808c8a404a87bec4eb5af15ef",
+      "id": 4
+    },
+    {
+      "name": "UI_105206",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/7de54cd808c8a404a87bec4eb5af15ef",
+      "id": 5
+    },
+    {
+      "name": "UI_105204_clint_idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/7f6f324e0bcc857499977066fbfd3f02",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "UI_102001_elfarcher_walk_02",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/85e03373ceaa160498395c8463293538",
+      "id": 1,
+      "duration": 0.3500000238418579
+    },
+    {
+      "name": "UI_105205",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/86731171f1e9e1243bc765b284e98b91",
+      "id": 6
+    },
+    {
+      "name": "UIParticle",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/86731171f1e9e1243bc765b284e98b91",
+      "id": 8
+    },
+    {
+      "name": "UI_105209_mushking_idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/8682450c803b083408b4f87553019dbe",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "DebugUIValuePersistent",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/8778e6b26b51c6a4999b94d7cacd8b5d",
+      "id": 1
+    },
+    {
+      "name": "UI_103102",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/88f1f43f734819f4ba574b3fca2409d0",
+      "id": 3
+    },
+    {
+      "name": "UI_Rank3_Walk",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/894b31dae86f74e409c4b9c2ef273060",
+      "id": 1,
+      "duration": 0.5999999642372131
+    },
+    {
+      "name": "UI_105201",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/8964f1ffe82ef8e48b1a4952fa4ba426",
+      "id": 4
+    },
+    {
+      "name": "UIParticle",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/8964f1ffe82ef8e48b1a4952fa4ba426",
+      "id": 14
+    },
+    {
+      "name": "UI_104007",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/8b4d8e415441e624692ecaec0a7ccc36",
+      "id": 3
+    },
+    {
+      "name": "UI_103001_shockbotv2_walk_01",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/8b4eb0fc4e583e9499d53fc79ed8685a",
+      "id": 1,
+      "duration": 0.3500000238418579
+    },
+    {
+      "name": "UI_103101",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/8bb8e0d8cc74db64288cd30527a179bf",
+      "id": 3
+    },
+    {
+      "name": "EquipIconItem4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/8d0927a0cbec5934a9845200856585a3",
+      "id": 5
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/8d0927a0cbec5934a9845200856585a3",
+      "id": 15
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/8d0927a0cbec5934a9845200856585a3",
+      "id": 28
+    },
+    {
+      "name": "EquipIconItem4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/8d0927a0cbec5934a9845200856585a3",
+      "id": 110
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/8d0927a0cbec5934a9845200856585a3",
+      "id": 115
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/8d0927a0cbec5934a9845200856585a3",
+      "id": 154
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/8d0927a0cbec5934a9845200856585a3",
+      "id": 155
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/8d0927a0cbec5934a9845200856585a3",
+      "id": 162
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/8d0927a0cbec5934a9845200856585a3",
+      "id": 171
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/8d0927a0cbec5934a9845200856585a3",
+      "id": 177
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/8d0927a0cbec5934a9845200856585a3",
+      "id": 188
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/8d0927a0cbec5934a9845200856585a3",
+      "id": 190
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/8d0927a0cbec5934a9845200856585a3",
+      "id": 192
+    },
+    {
+      "name": "EquipRoot",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/8d0927a0cbec5934a9845200856585a3",
+      "id": 193
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/8d0927a0cbec5934a9845200856585a3",
+      "id": 214
+    },
+    {
+      "name": "UI_105205_chef_idle_01",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/8d31f13bfae938648a4a8d239db422bd",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "UI_101005_bandit_walk_01",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/8d3b5348b22a0d64bb60a87abb0bfa92",
+      "id": 1,
+      "duration": 0.3500000238418579
+    },
+    {
+      "name": "UIParticle",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/8d8e051cdacf34f488e151ea0f6aba10",
+      "id": 6
+    },
+    {
+      "name": "UI_105210",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/8d8e051cdacf34f488e151ea0f6aba10",
+      "id": 7
+    },
+    {
+      "name": "VVIPShopProductView_idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/8dd0e31382f6a420f80ca7291db0257f",
+      "id": 1,
+      "duration": 4.5
+    },
+    {
+      "name": "Equipment",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/8df4855a6ba845247a3337911e8828fd",
+      "id": 1
+    },
+    {
+      "name": "BattleReward",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/8df4855a6ba845247a3337911e8828fd",
+      "id": 2
+    },
+    {
+      "name": "UI_101006_ammo_Jump",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/8e2143dca8c20e84a8a6ea9c47a45e89",
+      "id": 1,
+      "duration": 0.4166666865348816
+    },
+    {
+      "name": "201014_kingtroll_normal_dead",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/8fa2e5784040342499de60bb4248511c",
+      "id": 1,
+      "duration": 2.0333333015441895
+    },
+    {
+      "name": "201006_troll_Idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/9068c80a5fc49da458f09aa264c49c86",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "UI_105201_mecharomancer_idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/923f3c077098e3549b5ea733b00d249d",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "201008_trollroll_attack_1",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/923f3e1d3702a04469d286faa3e91b9f",
+      "id": 1,
+      "duration": 1.5166666507720947
+    },
+    {
+      "name": "Effect_Equip_2009",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/92dd9df034086b544840da2c34602b5a",
+      "id": 2
+    },
+    {
+      "name": "EquipIconItem4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/935bbc87385d0f7479840984ad2e680d",
+      "id": 4
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/935bbc87385d0f7479840984ad2e680d",
+      "id": 15
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/935bbc87385d0f7479840984ad2e680d",
+      "id": 25
+    },
+    {
+      "name": "EquipIconItem4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/935bbc87385d0f7479840984ad2e680d",
+      "id": 101
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/935bbc87385d0f7479840984ad2e680d",
+      "id": 109
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/935bbc87385d0f7479840984ad2e680d",
+      "id": 143
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/935bbc87385d0f7479840984ad2e680d",
+      "id": 144
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/935bbc87385d0f7479840984ad2e680d",
+      "id": 152
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/935bbc87385d0f7479840984ad2e680d",
+      "id": 161
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/935bbc87385d0f7479840984ad2e680d",
+      "id": 167
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/935bbc87385d0f7479840984ad2e680d",
+      "id": 171
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/935bbc87385d0f7479840984ad2e680d",
+      "id": 173
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/935bbc87385d0f7479840984ad2e680d",
+      "id": 175
+    },
+    {
+      "name": "EquipRoot",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/935bbc87385d0f7479840984ad2e680d",
+      "id": 176
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/935bbc87385d0f7479840984ad2e680d",
+      "id": 194
+    },
+    {
+      "name": "DebugUIVector3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/94afea5f242d72547979595ba963f335",
+      "id": 8
+    },
+    {
+      "name": "UI_diceking_kingWalk",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/9637b34ef66834b4080d3628c2e76bd1",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "EquipIconItem4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/964caa2bfbc7c164faf6ee58da93caab",
+      "id": 5
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/964caa2bfbc7c164faf6ee58da93caab",
+      "id": 12
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/964caa2bfbc7c164faf6ee58da93caab",
+      "id": 66
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/964caa2bfbc7c164faf6ee58da93caab",
+      "id": 84
+    },
+    {
+      "name": "EquipIconItem4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/964caa2bfbc7c164faf6ee58da93caab",
+      "id": 98
+    },
+    {
+      "name": "SummonPivot",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/964caa2bfbc7c164faf6ee58da93caab",
+      "id": 121
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/964caa2bfbc7c164faf6ee58da93caab",
+      "id": 130
+    },
+    {
+      "name": "EquipRoot",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/964caa2bfbc7c164faf6ee58da93caab",
+      "id": 135
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/964caa2bfbc7c164faf6ee58da93caab",
+      "id": 136
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/964caa2bfbc7c164faf6ee58da93caab",
+      "id": 156
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/964caa2bfbc7c164faf6ee58da93caab",
+      "id": 162
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/964caa2bfbc7c164faf6ee58da93caab",
+      "id": 163
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/964caa2bfbc7c164faf6ee58da93caab",
+      "id": 166
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/964caa2bfbc7c164faf6ee58da93caab",
+      "id": 173
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/964caa2bfbc7c164faf6ee58da93caab",
+      "id": 179
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/964caa2bfbc7c164faf6ee58da93caab",
+      "id": 196
+    },
+    {
+      "name": "PackageShopView",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/9728404f5ce2c0b4fa88cb49bd1fcf49",
+      "id": 1
+    },
+    {
+      "name": "DebugUIEnumField",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/988db55689193434fb0b3b89538f978f",
+      "id": 1
+    },
+    {
+      "name": "Panel",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/988db55689193434fb0b3b89538f978f",
+      "id": 4
+    },
+    {
+      "name": "202038_keogugui_attack",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/9905c69e4b210984ba62f63c4872e6fb",
+      "id": 1,
+      "duration": 1.5166666507720947
+    },
+    {
+      "name": "EquipIconItem4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/9c1028c739cdc29469b0805db66d6490",
+      "id": 2
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/9c1028c739cdc29469b0805db66d6490",
+      "id": 21
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/9c1028c739cdc29469b0805db66d6490",
+      "id": 30
+    },
+    {
+      "name": "EquipIconItem4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/9c1028c739cdc29469b0805db66d6490",
+      "id": 104
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/9c1028c739cdc29469b0805db66d6490",
+      "id": 109
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/9c1028c739cdc29469b0805db66d6490",
+      "id": 150
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/9c1028c739cdc29469b0805db66d6490",
+      "id": 151
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/9c1028c739cdc29469b0805db66d6490",
+      "id": 159
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/9c1028c739cdc29469b0805db66d6490",
+      "id": 165
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/9c1028c739cdc29469b0805db66d6490",
+      "id": 173
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/9c1028c739cdc29469b0805db66d6490",
+      "id": 177
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/9c1028c739cdc29469b0805db66d6490",
+      "id": 178
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/9c1028c739cdc29469b0805db66d6490",
+      "id": 179
+    },
+    {
+      "name": "EquipRoot",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/9c1028c739cdc29469b0805db66d6490",
+      "id": 180
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/9c1028c739cdc29469b0805db66d6490",
+      "id": 194
+    },
+    {
+      "name": "Effect_Smoke (Missing Prefab with guid: b0df5b07278797f4b9a106d531f8e492)",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/9c665c27e4b412e459f216a29bb52ddd",
+      "id": 146
+    },
+    {
+      "name": "UI_101007_robo_walk",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/9c6870cf880f1fb42b81478823806d71",
+      "id": 1,
+      "duration": 0.3500000238418579
+    },
+    {
+      "name": "UI_101006_02_ammo_idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/9cb688201d265424ba7a3b13e6d161a3",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "GetStatUIEffect",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/9d0b6e3f1cfd59d469264f477b60194f",
+      "id": 13
+    },
+    {
+      "name": "HitEffect_Equip_40010",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/9dfe64f852250344a9faa53cf8cbc3e0",
+      "id": 3
+    },
+    {
+      "name": "UI_103003",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/9fa65ee0befb35843952b853ead741e5",
+      "id": 5
+    },
+    {
+      "name": "UI_102001",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/9fc3239de4117dd4b86e35799a5835aa",
+      "id": 3
+    },
+    {
+      "name": "UI_105214_magenyang_idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/a063dd218fb6d804aa0a4a0ae1adf5d2",
+      "id": 1,
+      "duration": 0.4000000059604645
+    },
+    {
+      "name": "UI_101005_bandit_walk_02",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/a0881a3a7147cf34cb7989f0955db317",
+      "id": 1,
+      "duration": 0.3500000238418579
+    },
+    {
+      "name": "UI_102006_badger_walk_02",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/a123064157ffc95429e10e65a0d63ded",
+      "id": 1,
+      "duration": 0.3500000238418579
+    },
+    {
+      "name": "UI_103102_01_Idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/a148be3c093440546825a26d314bc43f",
+      "id": 1,
+      "duration": 0.8499999642372131
+    },
+    {
+      "name": "DebugUIValueTuple",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/a2148203dd960814ca5db0c293ceda35",
+      "id": 1
+    },
+    {
+      "name": "PanelPackageTime",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/a30e845269fa8f941b4f56a8c749b2fb",
+      "id": 34
+    },
+    {
+      "name": "ShopPackageProductView",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/a30e845269fa8f941b4f56a8c749b2fb",
+      "id": 66
+    },
+    {
+      "name": "UI_102006_badger_walk",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/a3d18b344c7ab35479c92fb5569ec108",
+      "id": 1,
+      "duration": 0.3500000238418579
+    },
+    {
+      "name": "202004_kingtroll_Idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/a3e0fb6935134f643be73b8ba744a06a",
+      "id": 1,
+      "duration": 0.5
+    },
+    {
+      "name": "201014_kingtroll_normal",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/a400d6ebd34f18146828b829f358d8ae",
+      "id": 108
+    },
+    {
+      "name": "201008_trollroll_skill_1",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/a45d5cf6490392541ae905a6a2b8415a",
+      "id": 1,
+      "duration": 1.0166666507720947
+    },
+    {
+      "name": "UI_105203_banditKing_idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/a4b53deb7e5a6b74f9fab8ba38e1f2a9",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "UI_105106_01_dragon_idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/a5865acbe80fa8248aab8e2205f5e6a7",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "UI_105210_princess_Idle_02",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/a6776b2fcd13c6e4295e54797c82f9be",
+      "id": 1,
+      "duration": 0.5
+    },
+    {
+      "name": "UI_Rank4_Walk",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/a7571f737c0232d4d8956ee4d1a6ec0f",
+      "id": 1,
+      "duration": 0.3500000238418579
+    },
+    {
+      "name": "EquipIconItem4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/a83ce4b52475ace49a08faed93a0b4bc",
+      "id": 5
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/a83ce4b52475ace49a08faed93a0b4bc",
+      "id": 12
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/a83ce4b52475ace49a08faed93a0b4bc",
+      "id": 67
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/a83ce4b52475ace49a08faed93a0b4bc",
+      "id": 85
+    },
+    {
+      "name": "EquipIconItem4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/a83ce4b52475ace49a08faed93a0b4bc",
+      "id": 100
+    },
+    {
+      "name": "SummonPivot",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/a83ce4b52475ace49a08faed93a0b4bc",
+      "id": 124
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/a83ce4b52475ace49a08faed93a0b4bc",
+      "id": 133
+    },
+    {
+      "name": "EquipRoot",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/a83ce4b52475ace49a08faed93a0b4bc",
+      "id": 138
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/a83ce4b52475ace49a08faed93a0b4bc",
+      "id": 139
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/a83ce4b52475ace49a08faed93a0b4bc",
+      "id": 159
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/a83ce4b52475ace49a08faed93a0b4bc",
+      "id": 164
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/a83ce4b52475ace49a08faed93a0b4bc",
+      "id": 165
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/a83ce4b52475ace49a08faed93a0b4bc",
+      "id": 168
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/a83ce4b52475ace49a08faed93a0b4bc",
+      "id": 175
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/a83ce4b52475ace49a08faed93a0b4bc",
+      "id": 181
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/a83ce4b52475ace49a08faed93a0b4bc",
+      "id": 198
+    },
+    {
+      "name": "DebugUIObject",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/a87cfaef648f17c41b568e842e068c51",
+      "id": 1
+    },
+    {
+      "name": "SR_ScrollView",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/abd74791d32aafa4c9ca4f20145cd14c",
+      "id": 7
+    },
+    {
+      "name": "SR_ScrollToBottomButton",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/abd74791d32aafa4c9ca4f20145cd14c",
+      "id": 9
+    },
+    {
+      "name": "SR_ScrollBar",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/abd74791d32aafa4c9ca4f20145cd14c",
+      "id": 17
+    },
+    {
+      "name": "SR_ConsoleScrollRect",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/abd74791d32aafa4c9ca4f20145cd14c",
+      "id": 36
+    },
+    {
+      "name": "SR_ScrollToTopButton",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/abd74791d32aafa4c9ca4f20145cd14c",
+      "id": 52
+    },
+    {
+      "name": "SR_ConsoleHandlerErrorPopup",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/abd74791d32aafa4c9ca4f20145cd14c",
+      "id": 77
+    },
+    {
+      "name": "SR_LoggingIsDisabledErrorPopup",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/abd74791d32aafa4c9ca4f20145cd14c",
+      "id": 79
+    },
+    {
+      "name": "UI_105007",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/ac079bd3c0d3cb44fbef0641f0903724",
+      "id": 5
+    },
+    {
+      "name": "UIParticle",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/ac079bd3c0d3cb44fbef0641f0903724",
+      "id": 9
+    },
+    {
+      "name": "EquipIconItem4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/ad578dcea3aae6141bb6f7f282959643",
+      "id": 4
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/ad578dcea3aae6141bb6f7f282959643",
+      "id": 20
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/ad578dcea3aae6141bb6f7f282959643",
+      "id": 44
+    },
+    {
+      "name": "EquipIconItem4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/ad578dcea3aae6141bb6f7f282959643",
+      "id": 127
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/ad578dcea3aae6141bb6f7f282959643",
+      "id": 135
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/ad578dcea3aae6141bb6f7f282959643",
+      "id": 187
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/ad578dcea3aae6141bb6f7f282959643",
+      "id": 188
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/ad578dcea3aae6141bb6f7f282959643",
+      "id": 202
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/ad578dcea3aae6141bb6f7f282959643",
+      "id": 217
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/ad578dcea3aae6141bb6f7f282959643",
+      "id": 225
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/ad578dcea3aae6141bb6f7f282959643",
+      "id": 236
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/ad578dcea3aae6141bb6f7f282959643",
+      "id": 238
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/ad578dcea3aae6141bb6f7f282959643",
+      "id": 240
+    },
+    {
+      "name": "EquipRoot",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/ad578dcea3aae6141bb6f7f282959643",
+      "id": 242
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/ad578dcea3aae6141bb6f7f282959643",
+      "id": 267
+    },
+    {
+      "name": "DebugUIObjectList",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/ad83bc56407925d44a77a5bd01cd6783",
+      "id": 1
+    },
+    {
+      "name": "Panel",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/ad83bc56407925d44a77a5bd01cd6783",
+      "id": 4
+    },
+    {
+      "name": "UI_104007_sheriff_idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/ad89d3c604e3ab24fab869116e29d52e",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "DebugUIIntField",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/ae00bb75e0cd5b04b8fe7fb4ab662629",
+      "id": 1
+    },
+    {
+      "name": "Panel",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/ae00bb75e0cd5b04b8fe7fb4ab662629",
+      "id": 5
+    },
+    {
+      "name": "projectile_equip_2009",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/af20386e81fc23a409b516cc15a43062",
+      "id": 2
+    },
+    {
+      "name": "UI_104003_02_warmachine_idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/b00b71d6a62939c448a4f6f4816de0f1",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "EquipIconItem4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/b0e39b18df2c9ad49ae04e9fb38ca4cf",
+      "id": 4
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/b0e39b18df2c9ad49ae04e9fb38ca4cf",
+      "id": 13
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/b0e39b18df2c9ad49ae04e9fb38ca4cf",
+      "id": 26
+    },
+    {
+      "name": "EquipIconItem4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/b0e39b18df2c9ad49ae04e9fb38ca4cf",
+      "id": 105
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/b0e39b18df2c9ad49ae04e9fb38ca4cf",
+      "id": 110
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/b0e39b18df2c9ad49ae04e9fb38ca4cf",
+      "id": 138
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/b0e39b18df2c9ad49ae04e9fb38ca4cf",
+      "id": 139
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/b0e39b18df2c9ad49ae04e9fb38ca4cf",
+      "id": 148
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/b0e39b18df2c9ad49ae04e9fb38ca4cf",
+      "id": 155
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/b0e39b18df2c9ad49ae04e9fb38ca4cf",
+      "id": 165
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/b0e39b18df2c9ad49ae04e9fb38ca4cf",
+      "id": 174
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/b0e39b18df2c9ad49ae04e9fb38ca4cf",
+      "id": 176
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/b0e39b18df2c9ad49ae04e9fb38ca4cf",
+      "id": 177
+    },
+    {
+      "name": "EquipRoot",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/b0e39b18df2c9ad49ae04e9fb38ca4cf",
+      "id": 179
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/b0e39b18df2c9ad49ae04e9fb38ca4cf",
+      "id": 196
+    },
+    {
+      "name": "UI_Rank2_Walk",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/b0fc169eb1e2e484db884a9bd66aa2d5",
+      "id": 1,
+      "duration": 0.5999999642372131
+    },
+    {
+      "name": "UI_103001_shockbotv2_walk_02",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/b12933c5b05a91c4b9f29840494a3549",
+      "id": 1,
+      "duration": 0.3500000238418579
+    },
+    {
+      "name": "SR_ScrollView",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/b1e14a36132e86c4a86149b6ecbe53f4",
+      "id": 9
+    },
+    {
+      "name": "DebugUIEnumHistory",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/b2da6b27df236b144b3516ed8e7d36ac",
+      "id": 2
+    },
+    {
+      "name": "UI_102002_shockbot_walk",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/b30edf24303b18949ac04274a9c2b621",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "UI_102001_elfarcher_idle_02",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/b330e6b29ef93f746a3d5f76a03c4c4d",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "SR_ScrollBackground",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/b375b5741c9234f4c8e08b2f4c81e15d",
+      "id": 10
+    },
+    {
+      "name": "UIParticle",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/b495c358966bdc84391b1447d06f87fb",
+      "id": 4
+    },
+    {
+      "name": "UI_105218",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/b495c358966bdc84391b1447d06f87fb",
+      "id": 8
+    },
+    {
+      "name": "projectile_equip_2017",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/b874b2cd8960ece4786c2ea19188167a",
+      "id": 2
+    },
+    {
+      "name": "Fx_2017_Equip_Projectile",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/b874b2cd8960ece4786c2ea19188167a",
+      "id": 3
+    },
+    {
+      "name": "VIPShopProductView_idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/ba3eb52dccb1541c6b4c85f552e69f3c",
+      "id": 1,
+      "duration": 4.5
+    },
+    {
+      "name": "UI_105216_munie_idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/ba57673ac2cd59d4fa2b947afd284b58",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "UI_103001_shockbotv2_idle_02",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/bb0247f1dcc7e78459dd3558aeca7bb6",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "SR_ConsoleScrollRect",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/bb4f9efb6ebc3b84cae1ddbccbd53c6f",
+      "id": 4
+    },
+    {
+      "name": "PinnedUI",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/bb4f9efb6ebc3b84cae1ddbccbd53c6f",
+      "id": 28
+    },
+    {
+      "name": "SR_ScrollBar",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/bb4f9efb6ebc3b84cae1ddbccbd53c6f",
+      "id": 80
+    },
+    {
+      "name": "EquipIconItem4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/bb6b976c110635e4ba83f050a02f2ed3",
+      "id": 29
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/bb6b976c110635e4ba83f050a02f2ed3",
+      "id": 34
+    },
+    {
+      "name": "EquipIconItem4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/bb6b976c110635e4ba83f050a02f2ed3",
+      "id": 46
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/bb6b976c110635e4ba83f050a02f2ed3",
+      "id": 58
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/bb6b976c110635e4ba83f050a02f2ed3",
+      "id": 81
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/bb6b976c110635e4ba83f050a02f2ed3",
+      "id": 100
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/bb6b976c110635e4ba83f050a02f2ed3",
+      "id": 105
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/bb6b976c110635e4ba83f050a02f2ed3",
+      "id": 107
+    },
+    {
+      "name": "EquipRoot",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/bb6b976c110635e4ba83f050a02f2ed3",
+      "id": 119
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/bb6b976c110635e4ba83f050a02f2ed3",
+      "id": 120
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/bb6b976c110635e4ba83f050a02f2ed3",
+      "id": 130
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/bb6b976c110635e4ba83f050a02f2ed3",
+      "id": 191
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/bb6b976c110635e4ba83f050a02f2ed3",
+      "id": 199
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/bb6b976c110635e4ba83f050a02f2ed3",
+      "id": 204
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/bb6b976c110635e4ba83f050a02f2ed3",
+      "id": 214
+    },
+    {
+      "name": "UI_101006_01_ammo_idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/bd445b089bd4dc047a9de2299c61286a",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "UI_101007",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/bdb50c143987af2429e622b40dd51738",
+      "id": 4
+    },
+    {
+      "name": "UI_105210_princess_Idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/be2c8c9d1ed48de4d8d5db18c72a32f2",
+      "id": 1,
+      "duration": 0.5
+    },
+    {
+      "name": "EquipIconItem4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/be4ecaa4b803e2649be0cd7301216acc",
+      "id": 5
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/be4ecaa4b803e2649be0cd7301216acc",
+      "id": 23
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/be4ecaa4b803e2649be0cd7301216acc",
+      "id": 36
+    },
+    {
+      "name": "EquipIconItem4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/be4ecaa4b803e2649be0cd7301216acc",
+      "id": 109
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/be4ecaa4b803e2649be0cd7301216acc",
+      "id": 114
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/be4ecaa4b803e2649be0cd7301216acc",
+      "id": 151
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/be4ecaa4b803e2649be0cd7301216acc",
+      "id": 152
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/be4ecaa4b803e2649be0cd7301216acc",
+      "id": 160
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/be4ecaa4b803e2649be0cd7301216acc",
+      "id": 168
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/be4ecaa4b803e2649be0cd7301216acc",
+      "id": 175
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/be4ecaa4b803e2649be0cd7301216acc",
+      "id": 180
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/be4ecaa4b803e2649be0cd7301216acc",
+      "id": 181
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/be4ecaa4b803e2649be0cd7301216acc",
+      "id": 183
+    },
+    {
+      "name": "EquipRoot",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/be4ecaa4b803e2649be0cd7301216acc",
+      "id": 184
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/be4ecaa4b803e2649be0cd7301216acc",
+      "id": 204
+    },
+    {
+      "name": "UI_105106_dragon_idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/befe86697f1852844b9cbf74481ef58e",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "Subscribe_Daily_Invitation",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/bfb1eb647716b574ba242e048dbd99a0",
+      "id": 8
+    },
+    {
+      "name": "Fx_UI_WavepassBooster",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/bfb1eb647716b574ba242e048dbd99a0",
+      "id": 45
+    },
+    {
+      "name": "RewardRoot",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/bfb1eb647716b574ba242e048dbd99a0",
+      "id": 66
+    },
+    {
+      "name": "UI_104004",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/c0742fc7f2acd5145909a207c92f4788",
+      "id": 3
+    },
+    {
+      "name": "UIParticle",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/c12e3fd11003b8746bb8920679927ef6",
+      "id": 5
+    },
+    {
+      "name": "UI_105214",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/c12e3fd11003b8746bb8920679927ef6",
+      "id": 6
+    },
+    {
+      "name": "UI_101005_bandit_attack",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/c24da7392e1268a478547353ca03690d",
+      "id": 1,
+      "duration": 0.4333333373069763
+    },
+    {
+      "name": "UI_101005_bandit_idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/c2e0d032d08954a499eb51c66de3f4cc",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "UI_diceking_swiming2",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/c379795c3bba8a14aa4d5d0fd756ae26",
+      "id": 1,
+      "duration": 0.6666666865348816
+    },
+    {
+      "name": "EquipIconItem4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/c3dd85bff265bf040b6a6046d836fe7b",
+      "id": 3
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/c3dd85bff265bf040b6a6046d836fe7b",
+      "id": 22
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/c3dd85bff265bf040b6a6046d836fe7b",
+      "id": 34
+    },
+    {
+      "name": "EquipIconItem4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/c3dd85bff265bf040b6a6046d836fe7b",
+      "id": 87
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/c3dd85bff265bf040b6a6046d836fe7b",
+      "id": 95
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/c3dd85bff265bf040b6a6046d836fe7b",
+      "id": 149
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/c3dd85bff265bf040b6a6046d836fe7b",
+      "id": 150
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/c3dd85bff265bf040b6a6046d836fe7b",
+      "id": 156
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/c3dd85bff265bf040b6a6046d836fe7b",
+      "id": 166
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/c3dd85bff265bf040b6a6046d836fe7b",
+      "id": 178
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/c3dd85bff265bf040b6a6046d836fe7b",
+      "id": 182
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/c3dd85bff265bf040b6a6046d836fe7b",
+      "id": 184
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/c3dd85bff265bf040b6a6046d836fe7b",
+      "id": 185
+    },
+    {
+      "name": "EquipRoot",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/c3dd85bff265bf040b6a6046d836fe7b",
+      "id": 188
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/c3dd85bff265bf040b6a6046d836fe7b",
+      "id": 206
+    },
+    {
+      "name": "201008_trollroll",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/c820e7933bbbe4a4bbe391ae14ffc91d",
+      "id": 105
+    },
+    {
+      "name": "201014_kingtroll_normal_skill_2",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/c8aa7d6cd5669004fb774802089961b6",
+      "id": 1,
+      "duration": 1.0
+    },
+    {
+      "name": "UI_101101_01_Idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/c8e70b962af8b244db28656b4c1d5813",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "EquipIconIdle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/c9a5148cd57a9c645a735996dc7c2dcd",
+      "id": 1,
+      "duration": 0.0
+    },
+    {
+      "name": "DebugUIVBox",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/ca3e294656861a64b8aeeb9f916da0a9",
+      "id": 1
+    },
+    {
+      "name": "UI_diceking_change",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/cb497854a0cc4ff41bc7b3acfa37f25b",
+      "id": 1,
+      "duration": 2.7666666507720947
+    },
+    {
+      "name": "UI_102101_01_Idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/cb61f7458b7fa794c84f9beeca2b1814",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "UI_102101",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/cd30259f2b5325746bae7f0fc14bfed6",
+      "id": 3
+    },
+    {
+      "name": "UI_105208_danner_Idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/cd465afe9b29be64ba34f388fd7c93de",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "DebugUIToggle",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/ce347ad101f41ee4ab5c3fbc0ea447db",
+      "id": 3
+    },
+    {
+      "name": "DebugUICanvas",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/cf6cbdd672089a84796e55a21fed1cbe",
+      "id": 1
+    },
+    {
+      "name": "UI_101006_ammo_walk",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/cfd3ac81b53e6a542bb147e034d158a4",
+      "id": 1,
+      "duration": 0.5
+    },
+    {
+      "name": "UI_102001_elfarcher_walk",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/d0ed9b6f81c577341a32007cb5147c26",
+      "id": 1,
+      "duration": 0.3500000238418579
+    },
+    {
+      "name": "UI_104007_sheriff_walk",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/d13ae8d05597d9e41a8af630753de806",
+      "id": 1,
+      "duration": 0.3500000238418579
+    },
+    {
+      "name": "UI_103101_Idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/d13e27889ab051d4989b0e247016eb85",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "UI_105203_banditKing_idle_01",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/d1454ce6cfefbb5459f8af5f1a92a44a",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "UI_104004_mastertiger_walk_02",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/d1a39fb16cf718b4cb0f381f7a4fcad6",
+      "id": 1,
+      "duration": 0.3500000238418579
+    },
+    {
+      "name": "201014_kingtroll_normal_attack",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/d1c90d620e500014c9c91dafdb109096",
+      "id": 1,
+      "duration": 1.5166666507720947
+    },
+    {
+      "name": "UI_104004_mastertiger_idle_02",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/d1d5c245c5a2d7e45ae4924dbd09974c",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "BattleRewardEffect",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/d2c2a8613a3ee5b448d41883b0bef400",
+      "id": 2
+    },
+    {
+      "name": "BattleReward_3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/d2c2a8613a3ee5b448d41883b0bef400",
+      "id": 4
+    },
+    {
+      "name": "Equipment",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/d2c2a8613a3ee5b448d41883b0bef400",
+      "id": 5
+    },
+    {
+      "name": "BattleReward_1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/d2c2a8613a3ee5b448d41883b0bef400",
+      "id": 6
+    },
+    {
+      "name": "BattleReward",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/d2c2a8613a3ee5b448d41883b0bef400",
+      "id": 11
+    },
+    {
+      "name": "Equipment",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/d2c2a8613a3ee5b448d41883b0bef400",
+      "id": 13
+    },
+    {
+      "name": "BattleReward_2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/d2c2a8613a3ee5b448d41883b0bef400",
+      "id": 14
+    },
+    {
+      "name": "Equipment",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/d2c2a8613a3ee5b448d41883b0bef400",
+      "id": 15
+    },
+    {
+      "name": "BattleReward_1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/d2c2a8613a3ee5b448d41883b0bef400",
+      "id": 17
+    },
+    {
+      "name": "Equipment",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/d2c2a8613a3ee5b448d41883b0bef400",
+      "id": 18
+    },
+    {
+      "name": "Equipment",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/d2c2a8613a3ee5b448d41883b0bef400",
+      "id": 20
+    },
+    {
+      "name": "Equipment",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/d2c2a8613a3ee5b448d41883b0bef400",
+      "id": 22
+    },
+    {
+      "name": "BattleReward",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/d2c2a8613a3ee5b448d41883b0bef400",
+      "id": 23
+    },
+    {
+      "name": "UI_105209_01_mushking_idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/d329fe0654fc2aa45922dbb397645155",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "DebugUIProgressBar",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/d3770aaa3bbd8384aabab9ddd383e21e",
+      "id": 1
+    },
+    {
+      "name": "Panel",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/d3770aaa3bbd8384aabab9ddd383e21e",
+      "id": 4
+    },
+    {
+      "name": "201014_kingtroll_normal_walk",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/d3864f80dad23804ca066cc2b9398a73",
+      "id": 1,
+      "duration": 1.0166666507720947
+    },
+    {
+      "name": "UI_102001_elfarcher_walk_01",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/d3eeabf109eadc648bf90ce4419bd4a5",
+      "id": 1,
+      "duration": 0.3500000238418579
+    },
+    {
+      "name": "UI_105215_blob_dle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/d45d894f608bbdd429216aa0e8110e00",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "DebugUIVector4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/d47f009476100f545971a81ede14c750",
+      "id": 15
+    },
+    {
+      "name": "EquipIconItem4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/d4d382c98edb09e479d111a45cfc1aa1",
+      "id": 6
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/d4d382c98edb09e479d111a45cfc1aa1",
+      "id": 21
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/d4d382c98edb09e479d111a45cfc1aa1",
+      "id": 33
+    },
+    {
+      "name": "EquipIconItem4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/d4d382c98edb09e479d111a45cfc1aa1",
+      "id": 104
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/d4d382c98edb09e479d111a45cfc1aa1",
+      "id": 111
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/d4d382c98edb09e479d111a45cfc1aa1",
+      "id": 150
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/d4d382c98edb09e479d111a45cfc1aa1",
+      "id": 151
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/d4d382c98edb09e479d111a45cfc1aa1",
+      "id": 155
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/d4d382c98edb09e479d111a45cfc1aa1",
+      "id": 164
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/d4d382c98edb09e479d111a45cfc1aa1",
+      "id": 170
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/d4d382c98edb09e479d111a45cfc1aa1",
+      "id": 176
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/d4d382c98edb09e479d111a45cfc1aa1",
+      "id": 177
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/d4d382c98edb09e479d111a45cfc1aa1",
+      "id": 179
+    },
+    {
+      "name": "EquipRoot",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/d4d382c98edb09e479d111a45cfc1aa1",
+      "id": 180
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/d4d382c98edb09e479d111a45cfc1aa1",
+      "id": 194
+    },
+    {
+      "name": "UI_102101_Idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/d4eb6a09b526a524298ab7f59ce125cd",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "UI_102006_badger_idle_01",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/d6bc2271e0629ea4399379f7e499279d",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "UI_101005_bandit_attack_02",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/d853b2932ef27504fb64f330ded8722f",
+      "id": 1,
+      "duration": 0.4333333373069763
+    },
+    {
+      "name": "UI_105116_01_overclockrocketchu_Idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/d859cdd1cccde6f4e88694f787e0094c",
+      "id": 1,
+      "duration": 1.0166666507720947
+    },
+    {
+      "name": "DebugUIFloatField",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/d8c744701b43c864b88e7f8144e19bc5",
+      "id": 1
+    },
+    {
+      "name": "Panel",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/d8c744701b43c864b88e7f8144e19bc5",
+      "id": 6
+    },
+    {
+      "name": "UI_103005_generalhawk_walk",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/d9305facc4f65f0498e2b731879bb2c6",
+      "id": 1,
+      "duration": 0.3500000238418579
+    },
+    {
+      "name": "UI_105202",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/d9c744a02acf8094d94dde015503527c",
+      "id": 3
+    },
+    {
+      "name": "UIParticle",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/d9c744a02acf8094d94dde015503527c",
+      "id": 10
+    },
+    {
+      "name": "Scrollbar Horizontal",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/daa46a58178a6ad41ae1ddc2dc7f856d",
+      "id": 3
+    },
+    {
+      "name": "DebugUIPanel",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/daa46a58178a6ad41ae1ddc2dc7f856d",
+      "id": 4
+    },
+    {
+      "name": "Scrollbar Vertical",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/daa46a58178a6ad41ae1ddc2dc7f856d",
+      "id": 8
+    },
+    {
+      "name": "Scroll View",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/daa46a58178a6ad41ae1ddc2dc7f856d",
+      "id": 11
+    },
+    {
+      "name": "Panel",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/daa46a58178a6ad41ae1ddc2dc7f856d",
+      "id": 14
+    },
+    {
+      "name": "Panel",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/daa46a58178a6ad41ae1ddc2dc7f856d",
+      "id": 19
+    },
+    {
+      "name": "UI_103003_hunter_walk_02",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/db2a37065e548b144841109c84199aee",
+      "id": 1,
+      "duration": 0.3500000238418579
+    },
+    {
+      "name": "UI_101102_hon_Idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/dbe40ec8c76295b44932e10a3541e6e0",
+      "id": 1,
+      "duration": 0.8333333134651184
+    },
+    {
+      "name": "DebugUIValue",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/dc0f88987826e6e48b1fe9c7c2b53a53",
+      "id": 1
+    },
+    {
+      "name": "UI_104004_mastertiger_idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/dc5d151d20fcfb6469d4e1c7627e7bab",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "UI_105217_arin_idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/de4e131a2b529ab489dcd555e415a069",
+      "id": 1,
+      "duration": 0.8499999642372131
+    },
+    {
+      "name": "BattleEquipIconItemUI",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/defea484219b995438e8377b6e1528cc",
+      "id": 1
+    },
+    {
+      "name": "UI_101005",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/dfc46c913d1f30043b47ec92fc48a0c2",
+      "id": 5
+    },
+    {
+      "name": "UI_103001_shockbotv2_idle_01",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/e05dfea1c5908a74192389a7e720e3d6",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "WeeklyShopPackage",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/e098a4fd1c56a40c7b0f16905588b353",
+      "id": 12
+    },
+    {
+      "name": "202002_bosstroll",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/e25321da5cd58ea46b508e33b8b16514",
+      "id": 99
+    },
+    {
+      "name": "UI_101006_ammo_DigIn",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/e26e53ecb8e789948ba005b995a742f0",
+      "id": 1,
+      "duration": 0.4166666865348816
+    },
+    {
+      "name": "UI_105115_rocketchu_Idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/e3370082eb5e6884a84f0b6abad18b4f",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "UI_105218_01_bamba_idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/e36caf8c292eabc458d97ce56119125b",
+      "id": 1,
+      "duration": 1.0166666507720947
+    },
+    {
+      "name": "UI_105007_ninja_idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/e3c6de937139f7146a80f39df14bf2dd",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "TriggerShopPackageProductView",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/e5a0cdd02fdf4d745b79903ced889807",
+      "id": 121
+    },
+    {
+      "name": "PanelPackageTime",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/e5a0cdd02fdf4d745b79903ced889807",
+      "id": 162
+    },
+    {
+      "name": "UI_103003_hunter_idle_02",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/e73702d06363626499824ee56a53bd07",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "UI_1001",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/e7c9dc3beb1812e4e82fa50e69c0a2fc",
+      "id": 2
+    },
+    {
+      "name": "UI_103001",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/e8436f8cc9b540a4fb75a4280949f645",
+      "id": 4
+    },
+    {
+      "name": "EquipIconItem4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/e97b19e033c461d4eb4b97fdada7375f",
+      "id": 6
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/e97b19e033c461d4eb4b97fdada7375f",
+      "id": 20
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/e97b19e033c461d4eb4b97fdada7375f",
+      "id": 36
+    },
+    {
+      "name": "EquipIconItem4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/e97b19e033c461d4eb4b97fdada7375f",
+      "id": 114
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/e97b19e033c461d4eb4b97fdada7375f",
+      "id": 120
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/e97b19e033c461d4eb4b97fdada7375f",
+      "id": 158
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/e97b19e033c461d4eb4b97fdada7375f",
+      "id": 160
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/e97b19e033c461d4eb4b97fdada7375f",
+      "id": 169
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/e97b19e033c461d4eb4b97fdada7375f",
+      "id": 177
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/e97b19e033c461d4eb4b97fdada7375f",
+      "id": 183
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/e97b19e033c461d4eb4b97fdada7375f",
+      "id": 192
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/e97b19e033c461d4eb4b97fdada7375f",
+      "id": 193
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/e97b19e033c461d4eb4b97fdada7375f",
+      "id": 194
+    },
+    {
+      "name": "EquipRoot",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/e97b19e033c461d4eb4b97fdada7375f",
+      "id": 197
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/e97b19e033c461d4eb4b97fdada7375f",
+      "id": 217
+    },
+    {
+      "name": "UI_diceking_Idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/ea5549da992bab64fa270c323e8e3060",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "202004_kingtroll_dead",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/ea92cbfd539882040ab7206750c0db59",
+      "id": 1,
+      "duration": 1.0166666507720947
+    },
+    {
+      "name": "UI_1001slime_idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/eb6daaf43cb53894081f819c85ada0b2",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "AppLovinSettings",
+      "type": "MonoScript",
+      "bundle": "assets/bin/Data/ebc0ba1b5ef6b4a6b9dd53d7eadfea16",
+      "id": 1
+    },
+    {
+      "name": "202005_bosstroll_dead",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/ebf20a858656e044d8b6b62bd9d974d4",
+      "id": 1,
+      "duration": 1.0166666507720947
+    },
+    {
+      "name": "ScrollRectPatch",
+      "type": "MonoScript",
+      "bundle": "assets/bin/Data/ec8340b6e7293114da3d567338dc8e9f",
+      "id": 1
+    },
+    {
+      "name": "UI_101005_bandit_walk",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/ec9b39248b923844ca4db1684d336bb0",
+      "id": 1,
+      "duration": 0.3500000238418579
+    },
+    {
+      "name": "RewardRoot",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/ed0962c051b406d43b1cee5ecdf9c6df",
+      "id": 37
+    },
+    {
+      "name": "RewardRoot",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/ed0962c051b406d43b1cee5ecdf9c6df",
+      "id": 51
+    },
+    {
+      "name": "RewardRoot",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/ed0962c051b406d43b1cee5ecdf9c6df",
+      "id": 57
+    },
+    {
+      "name": "UI_104003_warmachine_idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/ed290603e59992b4ebd589952fd5f189",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "UIParticle",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/edf21a2b93efb8e458edbb9505ab7a61",
+      "id": 6
+    },
+    {
+      "name": "UI_105211",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/edf21a2b93efb8e458edbb9505ab7a61",
+      "id": 7
+    },
+    {
+      "name": "UIParticle",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/f0a803b0fc2a41d43ae5f519b7425595",
+      "id": 4
+    },
+    {
+      "name": "UI_105213",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/f0a803b0fc2a41d43ae5f519b7425595",
+      "id": 5
+    },
+    {
+      "name": "DebugUIUIntField",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/f22bcc84a5f4a1944b075a2c4ac71493",
+      "id": 1
+    },
+    {
+      "name": "Panel",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/f22bcc84a5f4a1944b075a2c4ac71493",
+      "id": 4
+    },
+    {
+      "name": "UInt",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/f22bcc84a5f4a1944b075a2c4ac71493",
+      "id": 5
+    },
+    {
+      "name": "UI_101101_walk",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/f342a315023dacc419f84ace431ec5b5",
+      "id": 1,
+      "duration": 0.5833333134651184
+    },
+    {
+      "name": "SR_ScrollBackground",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/f38fe2ab9831b6c4c9c90aef8dabcb69",
+      "id": 1
+    },
+    {
+      "name": "UI_102001_elfarcher_idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/f3d637114ea190b489944d89d609be92",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "UI_105115_01_rocketchu_Idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/f4158db094fa2a74db8d3beb10bf61b6",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "UI_105104",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/f543040dee3fe2d4b8dfaf047de08374",
+      "id": 7
+    },
+    {
+      "name": "UIParticle",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/f543040dee3fe2d4b8dfaf047de08374",
+      "id": 14
+    },
+    {
+      "name": "DebugUI Persistent Panel",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/f6b1a0fe75d5009449cf55ae76220e2b",
+      "id": 1
+    },
+    {
+      "name": "DebugUIPersistentCanvas",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/f6b1a0fe75d5009449cf55ae76220e2b",
+      "id": 2
+    },
+    {
+      "name": "DebugUIButton",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/f6ce33b91f6ffe54cadacbf4bb112440",
+      "id": 2
+    },
+    {
+      "name": "DebugUIHBox",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/f7f5e36797cf0c1408561665c67b179b",
+      "id": 1
+    },
+    {
+      "name": "UI_103003_hunter_walk",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/f9a13f2fbfec8bf489c81e35d6bf8f09",
+      "id": 1,
+      "duration": 0.3500000238418579
+    },
+    {
+      "name": "PassExp1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/fa638a7b4c9680241b7e285e61ddf97b",
+      "id": 3
+    },
+    {
+      "name": "PassExp3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/fa638a7b4c9680241b7e285e61ddf97b",
+      "id": 7
+    },
+    {
+      "name": "Scroll1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/fa638a7b4c9680241b7e285e61ddf97b",
+      "id": 13
+    },
+    {
+      "name": "ScrollRoot",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/fa638a7b4c9680241b7e285e61ddf97b",
+      "id": 30
+    },
+    {
+      "name": "Scroll2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/fa638a7b4c9680241b7e285e61ddf97b",
+      "id": 33
+    },
+    {
+      "name": "PassExpRoot",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/fa638a7b4c9680241b7e285e61ddf97b",
+      "id": 38
+    },
+    {
+      "name": "ChallengRankingPointRoot",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/fa638a7b4c9680241b7e285e61ddf97b",
+      "id": 39
+    },
+    {
+      "name": "GetRewardUIEffect",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/fa638a7b4c9680241b7e285e61ddf97b",
+      "id": 40
+    },
+    {
+      "name": "Scroll3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/fa638a7b4c9680241b7e285e61ddf97b",
+      "id": 41
+    },
+    {
+      "name": "PassExp4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/fa638a7b4c9680241b7e285e61ddf97b",
+      "id": 42
+    },
+    {
+      "name": "Scroll5",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/fa638a7b4c9680241b7e285e61ddf97b",
+      "id": 47
+    },
+    {
+      "name": "PassExp5",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/fa638a7b4c9680241b7e285e61ddf97b",
+      "id": 49
+    },
+    {
+      "name": "PassExp2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/fa638a7b4c9680241b7e285e61ddf97b",
+      "id": 54
+    },
+    {
+      "name": "DailyQuestRoot",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/fa638a7b4c9680241b7e285e61ddf97b",
+      "id": 55
+    },
+    {
+      "name": "Quest3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/fa638a7b4c9680241b7e285e61ddf97b",
+      "id": 56
+    },
+    {
+      "name": "Quest5",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/fa638a7b4c9680241b7e285e61ddf97b",
+      "id": 58
+    },
+    {
+      "name": "Quest4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/fa638a7b4c9680241b7e285e61ddf97b",
+      "id": 64
+    },
+    {
+      "name": "Quest1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/fa638a7b4c9680241b7e285e61ddf97b",
+      "id": 68
+    },
+    {
+      "name": "Quest2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/fa638a7b4c9680241b7e285e61ddf97b",
+      "id": 72
+    },
+    {
+      "name": "Scroll4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/fa638a7b4c9680241b7e285e61ddf97b",
+      "id": 73
+    },
+    {
+      "name": "UI_104003_01_warmachine_idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/faa9c06553da7d04185233fc3cca4004",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "201014_kingtroll_normal_skill_1",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/fac35189021789c45888edd4e15e1494",
+      "id": 1,
+      "duration": 1.0166666507720947
+    },
+    {
+      "name": "UI_103003_hunter_idle",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/fd20b178356e3b141923e3e36b65fdb0",
+      "id": 1,
+      "duration": 0.5166666507720947
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/fddc6da1d0180cf4386ee15264fa47b7",
+      "id": 10
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/fddc6da1d0180cf4386ee15264fa47b7",
+      "id": 12
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/fddc6da1d0180cf4386ee15264fa47b7",
+      "id": 23
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/fddc6da1d0180cf4386ee15264fa47b7",
+      "id": 33
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/fddc6da1d0180cf4386ee15264fa47b7",
+      "id": 75
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/fddc6da1d0180cf4386ee15264fa47b7",
+      "id": 104
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/fddc6da1d0180cf4386ee15264fa47b7",
+      "id": 109
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/fddc6da1d0180cf4386ee15264fa47b7",
+      "id": 111
+    },
+    {
+      "name": "EquipRoot",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/fddc6da1d0180cf4386ee15264fa47b7",
+      "id": 114
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/fddc6da1d0180cf4386ee15264fa47b7",
+      "id": 115
+    },
+    {
+      "name": "EquipIconItem3",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/fddc6da1d0180cf4386ee15264fa47b7",
+      "id": 137
+    },
+    {
+      "name": "EquipIconItem4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/fddc6da1d0180cf4386ee15264fa47b7",
+      "id": 154
+    },
+    {
+      "name": "EquipIconItem2",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/fddc6da1d0180cf4386ee15264fa47b7",
+      "id": 167
+    },
+    {
+      "name": "EquipIconItem4",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/fddc6da1d0180cf4386ee15264fa47b7",
+      "id": 200
+    },
+    {
+      "name": "EquipIconItem1",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/fddc6da1d0180cf4386ee15264fa47b7",
+      "id": 205
+    },
+    {
+      "name": "BattleEquipIconItem",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/fec410a21aed0e04990927241f0797a7",
+      "id": 1
+    },
+    {
+      "name": "UI_103003_hunter_walk_01",
+      "type": "AnimationClip",
+      "bundle": "assets/bin/Data/fed24c75f8d7e4e4cb0146b944a1f6ec",
+      "id": 1,
+      "duration": 0.3500000238418579
+    },
+    {
+      "name": "SceneTransitionManager",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/level0",
+      "id": 4
+    },
+    {
+      "name": "ControllableSfxPlayers",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/level0",
+      "id": 7
+    },
+    {
+      "name": "ScenebaseSound",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/level0",
+      "id": 8
+    },
+    {
+      "name": "SceneBaseTask",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/level0",
+      "id": 12
+    },
+    {
+      "name": "SplashScene",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/level0",
+      "id": 13
+    },
+    {
+      "name": "ScenebaseUI",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/level1",
+      "id": 1
+    },
+    {
+      "name": "SceneBaseToast",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/level1",
+      "id": 2
+    },
+    {
+      "name": "SceneBasePopup",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/level1",
+      "id": 5
+    },
+    {
+      "name": "Scroll View",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/level1",
+      "id": 18
+    },
+    {
+      "name": "PanelBackgroundDimmed",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/level1",
+      "id": 26
+    },
+    {
+      "name": "PanelBackgroundDimmed",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/level1",
+      "id": 27
+    },
+    {
+      "name": "TitleScene",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/level1",
+      "id": 28
+    },
+    {
+      "name": "SceneBaseTask",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/level1",
+      "id": 45
+    },
+    {
+      "name": "ScenebaseSound",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/level1",
+      "id": 51
+    },
+    {
+      "name": "TitleUIGameSync",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/level1",
+      "id": 58
+    },
+    {
+      "name": "TitleUIAppSync",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/level1",
+      "id": 59
+    },
+    {
+      "name": "TitleUILoginAuto",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/level1",
+      "id": 60
+    },
+    {
+      "name": "TitleUILoginManual",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/level1",
+      "id": 61
+    },
+    {
+      "name": "PanelButtonPID",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/level1",
+      "id": 62
+    },
+    {
+      "name": "TitleUICommon",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/level1",
+      "id": 64
+    },
+    {
+      "name": "UI_Pattern",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/level1",
+      "id": 72
+    },
+    {
+      "name": "Popup_Frame",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/level1",
+      "id": 74
+    },
+    {
+      "name": "UserSanctionPopup",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/level1",
+      "id": 79
+    },
+    {
+      "name": "CommonDialogPopup",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/level1",
+      "id": 80
+    },
+    {
+      "name": "TitleUIComplete",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/level1",
+      "id": 88
+    },
+    {
+      "name": "PanelBackgroundDimmed",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/level1",
+      "id": 116
+    },
+    {
+      "name": "PanelButtonPID",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/level1",
+      "id": 118
+    },
+    {
+      "name": "Popup_Frame",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/level1",
+      "id": 131
+    },
+    {
+      "name": "Popup_Frame",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/level1",
+      "id": 132
+    },
+    {
+      "name": "UI_Pattern",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/level1",
+      "id": 140
+    },
+    {
+      "name": "ControllableSfxPlayers",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/level1",
+      "id": 175
+    },
+    {
+      "name": "LobbyCommonToast",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/level1",
+      "id": 182
+    },
+    {
+      "name": "AbuserBuyPopup",
+      "type": "GameObject",
+      "bundle": "assets/bin/Data/level1",
+      "id": 195
+    },
+    {
+      "name": "GUISkin",
+      "type": "MonoScript",
+      "bundle": "assets/bin/Data/unity default resources",
+      "id": 12001
+    },
+    {
+      "name": "TextSettings",
+      "type": "MonoScript",
+      "bundle": "assets/bin/Data/unity default resources",
+      "id": 19000
+    },
+    {
+      "name": "PanelSettings",
+      "type": "MonoScript",
+      "bundle": "assets/bin/Data/unity default resources",
+      "id": 19101
+    },
+    {
+      "name": "UIDocument",
+      "type": "MonoScript",
+      "bundle": "assets/bin/Data/unity default resources",
+      "id": 19102
+    },
+    {
+      "name": "PanelTextSettings",
+      "type": "MonoScript",
+      "bundle": "assets/bin/Data/unity default resources",
+      "id": 19103
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+PASS: double bite actual damage=66.58447, expected=66.58447, mana=0

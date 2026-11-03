@@ -1,0 +1,134 @@
+[
+  {
+    "index": 1,
+    "name": "btn_primary",
+    "file": "btn_primary.png",
+    "rect": [
+      72,
+      94,
+      379,
+      186
+    ]
+  },
+  {
+    "index": 2,
+    "name": "btn_primary_down",
+    "file": "btn_primary_down.png",
+    "rect": [
+      490,
+      94,
+      380,
+      186
+    ]
+  },
+  {
+    "index": 3,
+    "name": "btn_secondary",
+    "file": "btn_secondary.png",
+    "rect": [
+      904,
+      94,
+      381,
+      186
+    ]
+  },
+  {
+    "index": 4,
+    "name": "btn_secondary_down",
+    "file": "btn_secondary_down.png",
+    "rect": [
+      1322,
+      94,
+      381,
+      186
+    ]
+  },
+  {
+    "index": 5,
+    "name": "btn_disabled",
+    "file": "btn_disabled.png",
+    "rect": [
+      72,
+      366,
+      379,
+      184
+    ]
+  },
+  {
+    "index": 6,
+    "name": "btn_square",
+    "file": "btn_square.png",
+    "rect": [
+      516,
+      366,
+      184,
+      184
+    ]
+  },
+  {
+    "index": 7,
+    "name": "pill_bar",
+    "file": "pill_bar.png",
+    "rect": [
+      760,
+      366,
+      525,
+      184
+    ]
+  },
+  {
+    "index": 8,
+    "name": "card_common",
+    "file": "card_common.png",
+    "rect": [
+      1322,
+      366,
+      381,
+      184
+    ]
+  },
+  {
+    "index": 9,
+    "name": "card_rare",
+    "file": "card_rare.png",
+    "rect": [
+      72,
+      626,
+      379,
+      184
+    ]
+  },
+  {
+    "index": 10,
+    "name": "card_epic",
+    "file": "card_epic.png",
+    "rect": [
+      490,
+      626,
+      380,
+      184
+    ]
+  },
+  {
+    "index": 11,
+    "name": "card_legendary",
+    "file": "card_legendary.png",
+    "rect": [
+      904,
+      626,
+      381,
+      184
+    ]
+  },
+  {
+    "index": 12,
+    "name": "grid_cell",
+    "file": "grid_cell.png",
+    "rect": [
+      1420,
+      626,
+      184,
+      184
+    ]
+  }
+]

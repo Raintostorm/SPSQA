@@ -1,0 +1,10 @@
+# MACHINE Legendary V1
+
+Titan Pugilist: cute biped squat teal round robot boiler body, a single circular orange furnace aperture on FRONT-RIGHT of torso (not a face), small gold chimney, massive gold boxing gauntlets with GREY flat fist faces, short grey feet and gold shoulder joints. NO gun NO handheld weapon. Each arm fixed to its own shoulder, no detaching or swapping fists. Anatomical RIGHT NEAR gauntlet attached screen-left/front shoulder does the punch; LEFT far gauntlet stays near body. Idle both fists low, walk leg raised; windup RIGHT near fist drawn back/left elbow bent, left guarding chest; hit RIGHT near fist reaches FORWARD to right across FRONT torso and clearly connects to near shoulder via gold arm, LEFT fist stays near chest; recovery right fist back guard, hurt robot slumped knees folded. Skill windup same RIGHT fist pulled far back with knees crouched; skill hit powerful forward RIGHT punch arm near shoulder visibly continuous across FRONT chest, left guarding; skill recovery fist returns same shoulder. Do not create third fist or rotate camera.
+
+Nine authored full silhouettes, dynamically cropped, preserving original antialiased alpha. Pose order: idle/walk/windup/strike/recovery/hurt/skill_windup/skill_hit/skill_recovery. Same common scale, feet-based pivots with forward weapon-tip exclusion; no forced square cells. Six demos: idle/walk/attack/skill/dead/full. Skill uses three dedicated drawn poses with procedural movement, not additional hand-drawn interpolation frames.
+
+Equipment ownership visually reviewed: melee right near arm holds weapon; archer left far arm holds bow/right near arm draws string; robot right near fist attacks. Never mirror bodies. Effects separate and active only at release/contact. Demo-only, user approval pending; Unity untouched. Machine Epic remains deferred.
+
+Reproduce: python3 tools/preview_simple_bandit.py --directory artsrc/units_simple/machine_legendary_trial_v1 --profile titan --skills --effects --expressive --strong-fx
+
