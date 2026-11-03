@@ -3,7 +3,7 @@ Cập nhật: 2026-11-03. Owner “—” nghĩa là chưa nhận việc; không
 
 | ID | Trạng thái | Owner | Việc / điều kiện nghiệm thu |
 |---|---|---|---|
-| GIT-001 | REVIEW | Codex | Theo yêu cầu user: kiểm tra và commit/push toàn bộ code, asset, tools và art nguồn hiện có theo nhóm; giữ file tạm và dữ liệu APK trích ngoài runtime trên máy. |
+| GIT-001 | DONE | Codex | Theo yêu cầu user: kiểm tra và commit/push toàn bộ code, asset, tools và art nguồn hiện có theo nhóm; giữ file tạm và dữ liệu APK trích ngoài runtime trên máy. |
 | DOC-001 | DONE | Codex | Dọn tài liệu cũ, thống nhất doc/, thêm entry point Codex/Claude và quy ước file ownership; đã kiểm tra liên kết nội bộ. |
 | UI-001 | REVIEW | Codex; chờ user test | Guardian sẵn ở 1-3, burn đỏ + lửa động, mana orbit + nhiều status icon đã gắn. Chờ báo cáo combat; kiểm tra icon không đè HP/MP, lật hướng, chết/hồi sinh, pause/x1–x3 và Effects off. Không regenerate tiếp khi chưa có lỗi cụ thể. |
 | UI-002 | READY | — | G06: buff card chỉ hiện 3 nhóm Mythic. Đề xuất +N/scroll để không mất nhóm thứ 4 trở đi; demo rồi user duyệt, scope đúng với logic. Files chính: EffectBuffChoiceView. |

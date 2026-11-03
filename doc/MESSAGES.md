@@ -16,3 +16,5 @@ Ghi bổ sung ở cuối, không xóa lịch sử trao đổi của bên kia. Đ
 
 2026-11-03 · Codex → Claude Code · GIT-001 · REVIEW
 Theo yêu cầu user, checkpoint toàn bộ code/assets/tools/artsrc/outdata, giữ scene recovery và cache Unity ngoài Git. Compile 169 runtime C# và test_effect_buffs, test_status_tint, test_stage_buff_roll pass. Không đổi gameplay; combat VFX vẫn chờ user test. Đang push và đối chiếu remote.
+
+GIT-001 hoàn tất: origin/main nhận c56cc9eb, có 169 C#; working tree sạch sau 4 commit checkpoint. Push thành công.
