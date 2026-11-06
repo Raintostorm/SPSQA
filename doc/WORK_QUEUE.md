@@ -49,4 +49,4 @@ Kế hoạch UI chi tiết từng bước: `doc/UI_PLAN.md`. Thứ tự đề xu
 
 | ART-063 | REVIEW | Codex | Lớp chibi LevelUp/Relic/Result + 3GIF/timing/board; chờ duyệt trước import. |
 
-| PUBLISH-065 | DONE | Codex | User cho phép commit/push toàn bộ còn lại; kiểmchapter1-2/testharness; ghi mứcQAthật. |
+| PUBLISH-065 | WAITING_APPROVAL | Codex | User cho phép commit/push toàn bộ còn lại; kiểmchapter1-2/testharness; ghi mứcQAthật. |

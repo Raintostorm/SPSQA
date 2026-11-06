@@ -314,3 +314,5 @@ User authorized publishing all remaining code, runtime assets, art sources and c
 - Chapter 1-2: GameBalance.WavesForLevel(2)=10; BattleFlow fallback also 10, and victory condition compares Wave against that count.
 - Unity Home observed in Play mode; chapter navigation click did not change screen. No claim of completing ten waves. Physical-device QA remains pending.
 - Ignored Unity crash recovery/cache files remain excluded intentionally.
+
+PUBLISH-065: Local grouped commits completed. Automatic approval review rejected push because explicit destination confirmation was missing. Await user confirmation for https://github.com/Raintostorm/SPSQA.git branch main. No push occurred.
