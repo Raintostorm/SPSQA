@@ -1,0 +1,200 @@
+{
+  "imported": [
+    {
+      "path": "Assets/_Project/Resources/Anim/Chest/chest-body.png",
+      "size": [
+        512,
+        512
+      ],
+      "guid": "6012ed1ea6664082ac6a523b6a89a62d"
+    },
+    {
+      "path": "Assets/_Project/Resources/Anim/Chest/chest-lid.png",
+      "size": [
+        512,
+        512
+      ],
+      "guid": "795f25ab79c940099c37c06f7287a71a"
+    },
+    {
+      "path": "Assets/_Project/Resources/Anim/LevelUp/levelup-flash-0.png",
+      "size": [
+        256,
+        256
+      ],
+      "guid": "846fc24eda764262bedb182c13f86a6d"
+    },
+    {
+      "path": "Assets/_Project/Resources/Anim/LevelUp/levelup-flash-1.png",
+      "size": [
+        256,
+        256
+      ],
+      "guid": "f9d69371a036474b961ccd368af23976"
+    },
+    {
+      "path": "Assets/_Project/Resources/Anim/LevelUp/levelup-flash-2.png",
+      "size": [
+        256,
+        256
+      ],
+      "guid": "aad4183bea9246ff9afb2b4dd3ef2881"
+    },
+    {
+      "path": "Assets/_Project/Resources/Anim/LevelUp/levelup-flash-3.png",
+      "size": [
+        256,
+        256
+      ],
+      "guid": "92b473a762da49e1a01207ff9156af26"
+    },
+    {
+      "path": "Assets/_Project/Resources/Anim/Summon/burst-0.png",
+      "size": [
+        512,
+        512
+      ],
+      "guid": "274fdd2ace7646f1adf77f83adfdaaee"
+    },
+    {
+      "path": "Assets/_Project/Resources/Anim/Summon/burst-1.png",
+      "size": [
+        512,
+        512
+      ],
+      "guid": "73e73f9218e440e4a07a7b906a0e578c"
+    },
+    {
+      "path": "Assets/_Project/Resources/Anim/Summon/burst-2.png",
+      "size": [
+        512,
+        512
+      ],
+      "guid": "3ab18e866b8c42a18872ca89ac40e31b"
+    },
+    {
+      "path": "Assets/_Project/Resources/Anim/Summon/burst-3.png",
+      "size": [
+        512,
+        512
+      ],
+      "guid": "b34c23d6c4d04b00816ce62261e08518"
+    },
+    {
+      "path": "Assets/_Project/Resources/Anim/Summon/burst-4.png",
+      "size": [
+        512,
+        512
+      ],
+      "guid": "b4e21f2b13b24938beb36a9c58b7aad3"
+    },
+    {
+      "path": "Assets/_Project/Resources/Anim/Summon/burst-5.png",
+      "size": [
+        512,
+        512
+      ],
+      "guid": "1ee7bfcf7d584dc2bcad59f4279ac9f1"
+    },
+    {
+      "path": "Assets/_Project/Resources/Anim/Summon/orb-core.png",
+      "size": [
+        512,
+        512
+      ],
+      "guid": "061a320413454f618854d2da5e27a648"
+    },
+    {
+      "path": "Assets/_Project/Resources/Anim/Summon/card-back.png",
+      "size": [
+        400,
+        560
+      ],
+      "guid": "a76b41f4d62e4c7cacea952d6e07551d"
+    },
+    {
+      "path": "Assets/_Project/Resources/Anim/Common/glow.png",
+      "size": [
+        512,
+        512
+      ],
+      "guid": "643ba36043fe4740aebe8bc99601c7fd"
+    },
+    {
+      "path": "Assets/_Project/Resources/Anim/Common/swirl.png",
+      "size": [
+        512,
+        512
+      ],
+      "guid": "71d6bc3743e04dd3a96d60fb5d05c0f9"
+    },
+    {
+      "path": "Assets/_Project/Resources/Anim/Common/chest-light.png",
+      "size": [
+        512,
+        512
+      ],
+      "guid": "ff29f1e45dfc411fb772f52cbd367329"
+    },
+    {
+      "path": "Assets/_Project/Resources/Anim/Common/sparkle.png",
+      "size": [
+        512,
+        512
+      ],
+      "guid": "fa63f25add914bddbfa658bcbb49b633"
+    },
+    {
+      "path": "Assets/_Project/Resources/Anim/Common/rarity-ray.png",
+      "size": [
+        512,
+        512
+      ],
+      "guid": "4ba68141f125485ebd8e1a3bb03c04a3"
+    },
+    {
+      "path": "Assets/_Project/Resources/Anim/LevelUp/levelup-arrow.png",
+      "size": [
+        256,
+        256
+      ],
+      "guid": "c137e41849f349d3a21af848aca15b09"
+    },
+    {
+      "path": "Assets/_Project/Resources/Anim/LevelUp/merge-swirl.png",
+      "size": [
+        512,
+        512
+      ],
+      "guid": "a9c8f52def3b4893b1052910e29144e6"
+    },
+    {
+      "path": "Assets/_Project/Resources/Anim/Chest/shard.png",
+      "size": [
+        96,
+        96
+      ],
+      "guid": "445848861b7745f2b8ca96f2452c9603"
+    },
+    {
+      "path": "Assets/_Project/Resources/ButtonIcons/contribution.png",
+      "size": [
+        256,
+        256
+      ],
+      "guid": "830931633bb14f6caa7370b96ea0e4b6"
+    },
+    {
+      "path": "Assets/_Project/Resources/Glyphs/sort.png",
+      "size": [
+        150,
+        150
+      ],
+      "guid": "c14757d2b704488582cc71f101367529"
+    }
+  ],
+  "count": 24,
+  "atlas_unchanged": true,
+  "atlas_meta_unchanged": true,
+  "unity_run": false
+}

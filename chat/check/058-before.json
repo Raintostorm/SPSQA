@@ -1,0 +1,102 @@
+{
+  "Assets/_Project/Resources/Anim/Chest/chest-body.png": {
+    "sha256": null,
+    "meta": null
+  },
+  "Assets/_Project/Resources/Anim/Chest/chest-lid.png": {
+    "sha256": null,
+    "meta": null
+  },
+  "Assets/_Project/Resources/Anim/LevelUp/levelup-flash-0.png": {
+    "sha256": null,
+    "meta": null
+  },
+  "Assets/_Project/Resources/Anim/LevelUp/levelup-flash-1.png": {
+    "sha256": null,
+    "meta": null
+  },
+  "Assets/_Project/Resources/Anim/LevelUp/levelup-flash-2.png": {
+    "sha256": null,
+    "meta": null
+  },
+  "Assets/_Project/Resources/Anim/LevelUp/levelup-flash-3.png": {
+    "sha256": null,
+    "meta": null
+  },
+  "Assets/_Project/Resources/Anim/Summon/burst-0.png": {
+    "sha256": null,
+    "meta": null
+  },
+  "Assets/_Project/Resources/Anim/Summon/burst-1.png": {
+    "sha256": null,
+    "meta": null
+  },
+  "Assets/_Project/Resources/Anim/Summon/burst-2.png": {
+    "sha256": null,
+    "meta": null
+  },
+  "Assets/_Project/Resources/Anim/Summon/burst-3.png": {
+    "sha256": null,
+    "meta": null
+  },
+  "Assets/_Project/Resources/Anim/Summon/burst-4.png": {
+    "sha256": null,
+    "meta": null
+  },
+  "Assets/_Project/Resources/Anim/Summon/burst-5.png": {
+    "sha256": null,
+    "meta": null
+  },
+  "Assets/_Project/Resources/Anim/Summon/orb-core.png": {
+    "sha256": null,
+    "meta": null
+  },
+  "Assets/_Project/Resources/Anim/Summon/card-back.png": {
+    "sha256": null,
+    "meta": null
+  },
+  "Assets/_Project/Resources/Anim/Common/glow.png": {
+    "sha256": null,
+    "meta": null
+  },
+  "Assets/_Project/Resources/Anim/Common/swirl.png": {
+    "sha256": null,
+    "meta": null
+  },
+  "Assets/_Project/Resources/Anim/Common/chest-light.png": {
+    "sha256": null,
+    "meta": null
+  },
+  "Assets/_Project/Resources/Anim/Common/sparkle.png": {
+    "sha256": null,
+    "meta": null
+  },
+  "Assets/_Project/Resources/Anim/Common/rarity-ray.png": {
+    "sha256": null,
+    "meta": null
+  },
+  "Assets/_Project/Resources/Anim/LevelUp/levelup-arrow.png": {
+    "sha256": null,
+    "meta": null
+  },
+  "Assets/_Project/Resources/Anim/LevelUp/merge-swirl.png": {
+    "sha256": null,
+    "meta": null
+  },
+  "Assets/_Project/Resources/Anim/Chest/shard.png": {
+    "sha256": null,
+    "meta": null
+  },
+  "Assets/_Project/Resources/ButtonIcons/contribution.png": {
+    "sha256": null,
+    "meta": null
+  },
+  "Assets/_Project/Resources/Glyphs/sort.png": {
+    "sha256": null,
+    "meta": null
+  },
+  "Assets/_Project/Resources/ResultScreen/atlas.png": {
+    "sha256": "6623d37e5d1feb8af131d556abf6e591aa110c3f0ca18c264b93b4d9650c0c9e",
+    "meta": "fileFormatVersion: 2\nguid: f2e5555eae474fb98402a55d30e395c7\nTextureImporter:\n  serializedVersion: 13\n  mipmaps:\n    enableMipMap: 0\n  isReadable: 1\n  nPOTScale: 0\n  textureType: 0\n  maxTextureSize: 2048\n  alphaIsTransparency: 1\n  textureCompression: 0\n  sRGBTexture: 1\n"
+  }
+}

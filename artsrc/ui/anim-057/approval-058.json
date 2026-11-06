@@ -1,0 +1,34 @@
+{
+  "approved_by": "user",
+  "message": "User duyệt 057 trừ ribbon Defeat. Gắn mọi thứ ở mục 4 (trừ ô 6-overlay của burst).",
+  "targets": [
+    "Assets/_Project/Resources/Anim/Chest/chest-body.png",
+    "Assets/_Project/Resources/Anim/Chest/chest-lid.png",
+    "Assets/_Project/Resources/Anim/LevelUp/levelup-flash-0.png",
+    "Assets/_Project/Resources/Anim/LevelUp/levelup-flash-1.png",
+    "Assets/_Project/Resources/Anim/LevelUp/levelup-flash-2.png",
+    "Assets/_Project/Resources/Anim/LevelUp/levelup-flash-3.png",
+    "Assets/_Project/Resources/Anim/Summon/burst-0.png",
+    "Assets/_Project/Resources/Anim/Summon/burst-1.png",
+    "Assets/_Project/Resources/Anim/Summon/burst-2.png",
+    "Assets/_Project/Resources/Anim/Summon/burst-3.png",
+    "Assets/_Project/Resources/Anim/Summon/burst-4.png",
+    "Assets/_Project/Resources/Anim/Summon/burst-5.png",
+    "Assets/_Project/Resources/Anim/Summon/orb-core.png",
+    "Assets/_Project/Resources/Anim/Summon/card-back.png",
+    "Assets/_Project/Resources/Anim/Common/glow.png",
+    "Assets/_Project/Resources/Anim/Common/swirl.png",
+    "Assets/_Project/Resources/Anim/Common/chest-light.png",
+    "Assets/_Project/Resources/Anim/Common/sparkle.png",
+    "Assets/_Project/Resources/Anim/Common/rarity-ray.png",
+    "Assets/_Project/Resources/Anim/LevelUp/levelup-arrow.png",
+    "Assets/_Project/Resources/Anim/LevelUp/merge-swirl.png",
+    "Assets/_Project/Resources/Anim/Chest/shard.png",
+    "Assets/_Project/Resources/ButtonIcons/contribution.png",
+    "Assets/_Project/Resources/Glyphs/sort.png"
+  ],
+  "excluded": [
+    "Assets/_Project/Resources/ResultScreen/atlas.png"
+  ],
+  "date": "2026-11-05"
+}

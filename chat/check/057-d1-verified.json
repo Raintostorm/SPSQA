@@ -1,0 +1,3475 @@
+{
+  "applied": true,
+  "assets": [
+    {
+      "asset": "Assets/_Project/Resources/ButtonFamilies/atlas.png",
+      "key": "ButtonFamilies/atlas",
+      "decision": "KEEP",
+      "reason": "ButtonFamilySkin.Get loads atlas; BattleUiSkin.Skin calls Get(6/7) and Red/Purple/Info/etc use Get. Live and fallback paths.",
+      "guid": "c1e811f055554910a5fe6bbe5fc77726",
+      "guid_consumers": [],
+      "tools": [],
+      "tools_note": "No tool input dependency found.",
+      "candidates": [
+        {
+          "asset": "Assets/_Project/Resources/ButtonFamilies/atlas.png",
+          "location": "Assets/_Project/Scripts/UI/ButtonFamilySkin.cs:15",
+          "old_line": 15,
+          "code": "var t=Resources.Load<Texture2D>(\"ButtonFamilies/atlas\");if(!t)return null;",
+          "loader": "ButtonFamilies/atlas",
+          "can_execute": "c\u00f3",
+          "reason": "Literal atlas load reached from ButtonFamilySkin.Get."
+        }
+      ],
+      "sha256": "e0ee223f6fdb25cd7ac5d260e0cbae16bf8c8ce8f0d7cb6d78d725959cbe4bf4"
+    },
+    {
+      "asset": "Assets/_Project/Resources/Buttons/blue-pressed.png",
+      "key": "Buttons/blue-pressed",
+      "decision": "RETIRE",
+      "reason": "No reachable loader argument found after reviewing actual helper calls; 049 tokens refer to other resources/comments or an uncalled method.",
+      "guid": "e420531addf1446799221e320f3c1494",
+      "guid_consumers": [],
+      "tools": [
+        "tools/import_buttons_v2.py",
+        "tools/import_buttons_summon_kit.py"
+      ],
+      "tools_note": "Legacy importer output targets only; source images and Art/UI/btn_blue.png.meta template retained.",
+      "candidates": [],
+      "sha256": "117677050e89825d6138622f665eaea9d6d72a0b967d41755ebd0f8bd8bf7f42",
+      "retired_to": "artsrc/ui/retired-2026-11-05/Buttons/blue-pressed.png"
+    },
+    {
+      "asset": "Assets/_Project/Resources/Buttons/blue.png",
+      "key": "Buttons/blue",
+      "decision": "RETIRE",
+      "reason": "No reachable loader argument found after reviewing actual helper calls; 049 tokens refer to other resources/comments or an uncalled method.",
+      "guid": "c405c3bf762345d4a40e015f37e31936",
+      "guid_consumers": [],
+      "tools": [
+        "tools/import_buttons_v2.py",
+        "tools/import_buttons_summon_kit.py"
+      ],
+      "tools_note": "Legacy importer output targets only; source images and Art/UI/btn_blue.png.meta template retained.",
+      "candidates": [],
+      "sha256": "ab9df9f1cdc8fcb1397564aee9518779ea3059d6c082bce4b90426514ec14894",
+      "retired_to": "artsrc/ui/retired-2026-11-05/Buttons/blue.png"
+    },
+    {
+      "asset": "Assets/_Project/Resources/Buttons/disabled.png",
+      "key": "Buttons/disabled",
+      "decision": "RETIRE",
+      "reason": "No reachable loader argument found after reviewing actual helper calls; 049 tokens refer to other resources/comments or an uncalled method.",
+      "guid": "9702cdeae57d48f4b2fdf8b08a8b3309",
+      "guid_consumers": [],
+      "tools": [
+        "tools/import_buttons_v2.py",
+        "tools/import_buttons_summon_kit.py"
+      ],
+      "tools_note": "Legacy importer output targets only; source images and Art/UI/btn_blue.png.meta template retained.",
+      "candidates": [],
+      "sha256": "51e37f87e05f4262454206a96ef61167b998dadb780f1dce413bcab3ef132443",
+      "retired_to": "artsrc/ui/retired-2026-11-05/Buttons/disabled.png"
+    },
+    {
+      "asset": "Assets/_Project/Resources/Buttons/gold-pressed.png",
+      "key": "Buttons/gold-pressed",
+      "decision": "RETIRE",
+      "reason": "No reachable loader argument found after reviewing actual helper calls; 049 tokens refer to other resources/comments or an uncalled method.",
+      "guid": "2a3b4a4000cd4af486570b3929356f9a",
+      "guid_consumers": [],
+      "tools": [
+        "tools/import_buttons_v2.py",
+        "tools/import_buttons_summon_kit.py"
+      ],
+      "tools_note": "Legacy importer output targets only; source images and Art/UI/btn_blue.png.meta template retained.",
+      "candidates": [],
+      "sha256": "c3ad87cf11edac8f2dc7d3d2618fe8f50b8f9b48dbb6d44cfe4d4964c9ae04f9",
+      "retired_to": "artsrc/ui/retired-2026-11-05/Buttons/gold-pressed.png"
+    },
+    {
+      "asset": "Assets/_Project/Resources/Buttons/gold.png",
+      "key": "Buttons/gold",
+      "decision": "RETIRE",
+      "reason": "No reachable loader argument found after reviewing actual helper calls; 049 tokens refer to other resources/comments or an uncalled method.",
+      "guid": "22536af151f94143b82d67b38c067657",
+      "guid_consumers": [],
+      "tools": [
+        "tools/import_buttons_v2.py",
+        "tools/import_buttons_summon_kit.py"
+      ],
+      "tools_note": "Legacy importer output targets only; source images and Art/UI/btn_blue.png.meta template retained.",
+      "candidates": [],
+      "sha256": "163bdfb905ce759f30611a3800d03b23a9537e5679f46801f5494a035b0caf93",
+      "retired_to": "artsrc/ui/retired-2026-11-05/Buttons/gold.png"
+    },
+    {
+      "asset": "Assets/_Project/Resources/Buttons/red-pressed.png",
+      "key": "Buttons/red-pressed",
+      "decision": "RETIRE",
+      "reason": "No reachable loader argument found after reviewing actual helper calls; 049 tokens refer to other resources/comments or an uncalled method.",
+      "guid": "0db68561cea44e07802bf4c8647e2ed2",
+      "guid_consumers": [],
+      "tools": [
+        "tools/import_buttons_v2.py",
+        "tools/import_buttons_summon_kit.py"
+      ],
+      "tools_note": "Legacy importer output targets only; source images and Art/UI/btn_blue.png.meta template retained.",
+      "candidates": [],
+      "sha256": "9a18f74fe10a362837b5f50698fc25062d050f433965c9eb8742c192e0de40e0",
+      "retired_to": "artsrc/ui/retired-2026-11-05/Buttons/red-pressed.png"
+    },
+    {
+      "asset": "Assets/_Project/Resources/Buttons/red.png",
+      "key": "Buttons/red",
+      "decision": "RETIRE",
+      "reason": "No reachable loader argument found after reviewing actual helper calls; 049 tokens refer to other resources/comments or an uncalled method.",
+      "guid": "0bb68eed32ed43b29f15fb7504ccb2ee",
+      "guid_consumers": [],
+      "tools": [
+        "tools/import_buttons_v2.py",
+        "tools/import_buttons_summon_kit.py"
+      ],
+      "tools_note": "Legacy importer output targets only; source images and Art/UI/btn_blue.png.meta template retained.",
+      "candidates": [],
+      "sha256": "2d4f1435f4468285fbdbfb671cf08ba948dce30f3a2cc0c587d574bc8b150ef2",
+      "retired_to": "artsrc/ui/retired-2026-11-05/Buttons/red.png"
+    },
+    {
+      "asset": "Assets/_Project/Resources/Buttons/slate-pressed.png",
+      "key": "Buttons/slate-pressed",
+      "decision": "RETIRE",
+      "reason": "No reachable loader argument found after reviewing actual helper calls; 049 tokens refer to other resources/comments or an uncalled method.",
+      "guid": "adbe6c0128284e75a609ad7a62ed9ade",
+      "guid_consumers": [],
+      "tools": [
+        "tools/import_buttons_v2.py",
+        "tools/import_buttons_summon_kit.py"
+      ],
+      "tools_note": "Legacy importer output targets only; source images and Art/UI/btn_blue.png.meta template retained.",
+      "candidates": [],
+      "sha256": "1cde2d3fc5572c00038807a14127b110578f5be746a34ca0de2b5b86d0c4ab47",
+      "retired_to": "artsrc/ui/retired-2026-11-05/Buttons/slate-pressed.png"
+    },
+    {
+      "asset": "Assets/_Project/Resources/Buttons/slate.png",
+      "key": "Buttons/slate",
+      "decision": "RETIRE",
+      "reason": "No reachable loader argument found after reviewing actual helper calls; 049 tokens refer to other resources/comments or an uncalled method.",
+      "guid": "3a50a5047b394e35af65f98be40c48d3",
+      "guid_consumers": [],
+      "tools": [
+        "tools/import_buttons_v2.py",
+        "tools/import_buttons_summon_kit.py"
+      ],
+      "tools_note": "Legacy importer output targets only; source images and Art/UI/btn_blue.png.meta template retained.",
+      "candidates": [],
+      "sha256": "64aa7ee8c28239b432c8ae5881f3eab31aaa7bef29b75210b8b0da4751dfbd45",
+      "retired_to": "artsrc/ui/retired-2026-11-05/Buttons/slate.png"
+    },
+    {
+      "asset": "Assets/_Project/Resources/SharedUI/btn_blue.png",
+      "key": "SharedUI/btn_blue",
+      "decision": "KEEP",
+      "reason": "SharedSettings.Start literal Resources.Load<Sprite>(SharedUI/btn_blue); keep even if later role skin replaces it.",
+      "guid": "4e454ca7210f9630c76eb3eec494fe55",
+      "guid_consumers": [],
+      "tools": [
+        "tools/import_settings_icons.py",
+        "tools/import_home_chrome.py",
+        "tools/build_jackpot_castle_review.py",
+        "tools/build_skill_roll_review.py",
+        "tools/build_home_walk_review.py",
+        "tools/import_home_walk_art.py",
+        "tools/import_chapter_art.py",
+        "tools/import_summon_art.py",
+        "tools/import_action_icons.py",
+        "tools/build_jackpot_review.py"
+      ],
+      "tools_note": "Review tool references: tools/import_settings_icons.py, tools/import_home_chrome.py, tools/build_jackpot_castle_review.py, tools/build_skill_roll_review.py, tools/build_home_walk_review.py, tools/import_home_walk_art.py, tools/import_chapter_art.py, tools/import_summon_art.py, tools/import_action_icons.py, tools/build_jackpot_review.py",
+      "candidates": [
+        {
+          "asset": "Assets/_Project/Resources/SharedUI/btn_blue.png",
+          "location": "Assets/_Project/Scripts/UI/BattleModalView.cs:75",
+          "old_line": 75,
+          "code": "else {var art=Rect(row,\"Icon\",new Vector2(-325,0),new Vector2(85,85)).gameObject.AddComponent<Image>();art.sprite=Resources.Load<Sprite>(\"SharedUI/\"+icon);art.preserveAspect=true;art.raycastTarget=false;}",
+          "loader": "SharedUI/btn_blue",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        },
+        {
+          "asset": "Assets/_Project/Resources/SharedUI/btn_blue.png",
+          "location": "Assets/_Project/Scripts/UI/BattleUiSkin.cs:58",
+          "old_line": 58,
+          "code": "var sprite=Resources.Load<Sprite>(name.Contains(\"/\")?name:\"SharedUI/\"+name);",
+          "loader": "SharedUI/btn_blue",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        },
+        {
+          "asset": "Assets/_Project/Resources/SharedUI/btn_blue.png",
+          "location": "Assets/_Project/Scripts/UI/SharedSettings.cs:54",
+          "old_line": 54,
+          "code": "buttonSprite = Resources.Load<Sprite>(\"SharedUI/btn_blue\");",
+          "loader": "SharedUI/btn_blue",
+          "can_execute": "c\u00f3",
+          "reason": "Exact SharedUI Resources load (not Art/UI template)."
+        },
+        {
+          "asset": "Assets/_Project/Resources/SharedUI/btn_blue.png",
+          "location": "Assets/_Project/Scripts/UI/SharedSettings.cs:153",
+          "old_line": 153,
+          "code": "icon == \"close\" ? \"Glyphs/close\" : \"SharedUI/\" + icon;",
+          "loader": "SharedUI/btn_blue",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        },
+        {
+          "asset": "Assets/_Project/Resources/SharedUI/btn_blue.png",
+          "location": "Assets/_Project/Scripts/Editor/TreasureSceneSetup.cs:59",
+          "old_line": 59,
+          "code": "var btn = S(\"btn_blue\");",
+          "loader": "SharedUI/btn_blue",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        }
+      ],
+      "sha256": "51f5caded958c5e1cbb8926792cc831dbf142ecaf5533a681fd555ba1f1d26c2"
+    },
+    {
+      "asset": "Assets/_Project/Resources/SharedUI/btn_primary.png",
+      "key": "SharedUI/btn_primary",
+      "decision": "KEEP",
+      "reason": "SharedSettings.Button Resume literal load; valid initialization path before role skin.",
+      "guid": "3357f6d79ece4fec16679ee687cdc8d3",
+      "guid_consumers": [],
+      "tools": [
+        "tools/import_settings_icons.py",
+        "tools/import_home_chrome.py",
+        "tools/build_jackpot_castle_review.py",
+        "tools/build_skill_roll_review.py",
+        "tools/build_home_walk_review.py",
+        "tools/import_home_walk_art.py",
+        "tools/import_chapter_art.py",
+        "tools/import_summon_art.py",
+        "tools/import_action_icons.py",
+        "tools/build_jackpot_review.py"
+      ],
+      "tools_note": "Review tool references: tools/import_settings_icons.py, tools/import_home_chrome.py, tools/build_jackpot_castle_review.py, tools/build_skill_roll_review.py, tools/build_home_walk_review.py, tools/import_home_walk_art.py, tools/import_chapter_art.py, tools/import_summon_art.py, tools/import_action_icons.py, tools/build_jackpot_review.py",
+      "candidates": [
+        {
+          "asset": "Assets/_Project/Resources/SharedUI/btn_primary.png",
+          "location": "Assets/_Project/Scripts/UI/BattleModalView.cs:75",
+          "old_line": 75,
+          "code": "else {var art=Rect(row,\"Icon\",new Vector2(-325,0),new Vector2(85,85)).gameObject.AddComponent<Image>();art.sprite=Resources.Load<Sprite>(\"SharedUI/\"+icon);art.preserveAspect=true;art.raycastTarget=false;}",
+          "loader": "SharedUI/btn_primary",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        },
+        {
+          "asset": "Assets/_Project/Resources/SharedUI/btn_primary.png",
+          "location": "Assets/_Project/Scripts/UI/BattleUiSkin.cs:58",
+          "old_line": 58,
+          "code": "var sprite=Resources.Load<Sprite>(name.Contains(\"/\")?name:\"SharedUI/\"+name);",
+          "loader": "SharedUI/btn_primary",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        },
+        {
+          "asset": "Assets/_Project/Resources/SharedUI/btn_primary.png",
+          "location": "Assets/_Project/Scripts/UI/SharedSettings.cs:153",
+          "old_line": 153,
+          "code": "icon == \"close\" ? \"Glyphs/close\" : \"SharedUI/\" + icon;",
+          "loader": "SharedUI/btn_primary",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        },
+        {
+          "asset": "Assets/_Project/Resources/SharedUI/btn_primary.png",
+          "location": "Assets/_Project/Scripts/UI/SharedSettings.cs:159",
+          "old_line": 159,
+          "code": "if (label == \"Resume\") image.sprite = Resources.Load<Sprite>(\"SharedUI/btn_primary\");",
+          "loader": "SharedUI/btn_primary",
+          "can_execute": "c\u00f3",
+          "reason": "Exact SharedUI Resources load (not Art/UI template)."
+        },
+        {
+          "asset": "Assets/_Project/Resources/SharedUI/btn_primary.png",
+          "location": "Assets/_Project/Scripts/Editor/UpgradeSceneSetup.cs:81",
+          "old_line": 81,
+          "code": "var btn = S(\"btn_primary\");",
+          "loader": "SharedUI/btn_primary",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        }
+      ],
+      "sha256": "f123ff7e2579a2f4cbf85575d5b84be362b898d4742487d5dedd9258b134a07e"
+    },
+    {
+      "asset": "Assets/_Project/Resources/SharedUI/buff_speed.png",
+      "key": "SharedUI/buff_speed",
+      "decision": "KEEP",
+      "reason": "Visual/MonsterBuffVisual.cs MakeBadge AttackSpeed literal load.",
+      "guid": "c690242ca88b43b6a72bc9f042e19c20",
+      "guid_consumers": [],
+      "tools": [
+        "tools/import_settings_icons.py",
+        "tools/import_home_chrome.py",
+        "tools/build_jackpot_castle_review.py",
+        "tools/build_skill_roll_review.py",
+        "tools/build_home_walk_review.py",
+        "tools/import_home_walk_art.py",
+        "tools/import_chapter_art.py",
+        "tools/import_summon_art.py",
+        "tools/import_action_icons.py",
+        "tools/build_jackpot_review.py"
+      ],
+      "tools_note": "Review tool references: tools/import_settings_icons.py, tools/import_home_chrome.py, tools/build_jackpot_castle_review.py, tools/build_skill_roll_review.py, tools/build_home_walk_review.py, tools/import_home_walk_art.py, tools/import_chapter_art.py, tools/import_summon_art.py, tools/import_action_icons.py, tools/build_jackpot_review.py",
+      "candidates": [
+        {
+          "asset": "Assets/_Project/Resources/SharedUI/buff_speed.png",
+          "location": "Assets/_Project/Scripts/UI/BattleModalView.cs:75",
+          "old_line": 75,
+          "code": "else {var art=Rect(row,\"Icon\",new Vector2(-325,0),new Vector2(85,85)).gameObject.AddComponent<Image>();art.sprite=Resources.Load<Sprite>(\"SharedUI/\"+icon);art.preserveAspect=true;art.raycastTarget=false;}",
+          "loader": "SharedUI/buff_speed",
+          "can_execute": "c\u00f3",
+          "reason": "Check live evidence MonsterBuffVisual; generic helper string alone not sufficient."
+        },
+        {
+          "asset": "Assets/_Project/Resources/SharedUI/buff_speed.png",
+          "location": "Assets/_Project/Scripts/UI/BattleUiSkin.cs:58",
+          "old_line": 58,
+          "code": "var sprite=Resources.Load<Sprite>(name.Contains(\"/\")?name:\"SharedUI/\"+name);",
+          "loader": "SharedUI/buff_speed",
+          "can_execute": "c\u00f3",
+          "reason": "Check live evidence MonsterBuffVisual; generic helper string alone not sufficient."
+        },
+        {
+          "asset": "Assets/_Project/Resources/SharedUI/buff_speed.png",
+          "location": "Assets/_Project/Scripts/UI/SharedSettings.cs:153",
+          "old_line": 153,
+          "code": "icon == \"close\" ? \"Glyphs/close\" : \"SharedUI/\" + icon;",
+          "loader": "SharedUI/buff_speed",
+          "can_execute": "c\u00f3",
+          "reason": "Check live evidence MonsterBuffVisual; generic helper string alone not sufficient."
+        },
+        {
+          "asset": "Assets/_Project/Resources/SharedUI/buff_speed.png",
+          "location": "Assets/_Project/Scripts/Visual/MonsterBuffVisual.cs:37",
+          "old_line": 37,
+          "code": "MakeBadge(\"AttackSpeed\",Resources.Load<Sprite>(\"SharedUI/buff_speed\"),.22f);",
+          "loader": "SharedUI/buff_speed",
+          "can_execute": "c\u00f3",
+          "reason": "Check live evidence MonsterBuffVisual; generic helper string alone not sufficient."
+        }
+      ],
+      "sha256": "2ec82dc84ae2638d3138ed9acceb031bd736d8dc79a97033850a218b99228d98"
+    },
+    {
+      "asset": "Assets/_Project/Resources/SharedUI/gold.png",
+      "key": "SharedUI/gold",
+      "decision": "KEEP_TOOL",
+      "reason": "BattleUiSkin.Icon real arguments: settings,battle,enemy,upgrade,qualified Glyphs/home/close and HomeChrome/coin. SharedSettings generic pictogram args use home/close/restart/resume; toggle args sound/vibration; no gold/key. CoinRewardEffect now HomeChrome/coin. Old token matches are other loaders.",
+      "guid": "a2c18ee6376554ac8952401b37946abb",
+      "guid_consumers": [],
+      "tools": [
+        "tools/build_home_walk_review.py"
+      ],
+      "tools_note": "Actual tool input: build_home_walk_review.py:13 reads SharedUI/{name}.png with names gold/key; retain to keep reproducible demo.",
+      "candidates": [
+        {
+          "asset": "Assets/_Project/Resources/SharedUI/gold.png",
+          "location": "Assets/_Project/Scripts/UI/BattleModalView.cs:75",
+          "old_line": 75,
+          "code": "else {var art=Rect(row,\"Icon\",new Vector2(-325,0),new Vector2(85,85)).gameObject.AddComponent<Image>();art.sprite=Resources.Load<Sprite>(\"SharedUI/\"+icon);art.preserveAspect=true;art.raycastTarget=false;}",
+          "loader": "SharedUI/gold",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        },
+        {
+          "asset": "Assets/_Project/Resources/SharedUI/gold.png",
+          "location": "Assets/_Project/Scripts/UI/BattleUiSkin.cs:13",
+          "old_line": 13,
+          "code": "public static Sprite Gold => ApprovedUiArt.Get(\"gold\",true) ?? ButtonFamilySkin.Get(2) ?? gold ?? (gold = Make(new Color32(255,219,74,255),new Color32(255,200,31,255)));",
+          "loader": "SharedUI/gold",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        },
+        {
+          "asset": "Assets/_Project/Resources/SharedUI/gold.png",
+          "location": "Assets/_Project/Scripts/UI/BattleUiSkin.cs:19",
+          "old_line": 19,
+          "code": "public static Sprite Orange => ApprovedUiArt.Get(\"gold\",true) ?? ButtonFamilySkin.Get(0) ?? orange ?? (orange = Make(new Color32(255,205,38,255), new Color32(255,144,0,255)));",
+          "loader": "SharedUI/gold",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        },
+        {
+          "asset": "Assets/_Project/Resources/SharedUI/gold.png",
+          "location": "Assets/_Project/Scripts/UI/BattleUiSkin.cs:58",
+          "old_line": 58,
+          "code": "var sprite=Resources.Load<Sprite>(name.Contains(\"/\")?name:\"SharedUI/\"+name);",
+          "loader": "SharedUI/gold",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        },
+        {
+          "asset": "Assets/_Project/Resources/SharedUI/gold.png",
+          "location": "Assets/_Project/Scripts/UI/ScreenChrome.cs:85",
+          "old_line": 85,
+          "code": "_ => \"gold\",",
+          "loader": "SharedUI/gold",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        },
+        {
+          "asset": "Assets/_Project/Resources/SharedUI/gold.png",
+          "location": "Assets/_Project/Scripts/UI/ResultPanel.cs:126",
+          "old_line": 126,
+          "code": "Reward(content,\"Gold\",gold,-340,\"gold\");Reward(content,\"Keys\",keys,0,\"key\");Reward(content,\"Gems\",gems,340,\"gem\");",
+          "loader": "SharedUI/gold",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        },
+        {
+          "asset": "Assets/_Project/Resources/SharedUI/gold.png",
+          "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:48",
+          "old_line": 48,
+          "code": "Apply(button.GetComponent<Image>(), \"gold\", true);",
+          "loader": "SharedUI/gold",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        },
+        {
+          "asset": "Assets/_Project/Resources/SharedUI/gold.png",
+          "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:50",
+          "old_line": 50,
+          "code": "button.spriteState = new SpriteState { highlightedSprite = Get(\"gold\", true), selectedSprite = Get(\"gold\", true), pressedSprite = Get(\"pressed\", true), disabledSprite = Get(\"disabled\", true) };",
+          "loader": "SharedUI/gold",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        },
+        {
+          "asset": "Assets/_Project/Resources/SharedUI/gold.png",
+          "location": "Assets/_Project/Scripts/UI/SharedSettings.cs:153",
+          "old_line": 153,
+          "code": "icon == \"close\" ? \"Glyphs/close\" : \"SharedUI/\" + icon;",
+          "loader": "SharedUI/gold",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        }
+      ],
+      "sha256": "129b48d4a4099ad3fa1161a66c472d88917474fa8690be6166f7de6f63adee8a"
+    },
+    {
+      "asset": "Assets/_Project/Resources/SharedUI/key.png",
+      "key": "SharedUI/key",
+      "decision": "KEEP_TOOL",
+      "reason": "BattleUiSkin.Icon real arguments: settings,battle,enemy,upgrade,qualified Glyphs/home/close and HomeChrome/coin. SharedSettings generic pictogram args use home/close/restart/resume; toggle args sound/vibration; no gold/key. CoinRewardEffect now HomeChrome/coin. Old token matches are other loaders.",
+      "guid": "e97bffcddf16b0a52b8c8d13b202e9e5",
+      "guid_consumers": [],
+      "tools": [
+        "tools/build_home_walk_review.py"
+      ],
+      "tools_note": "Actual tool input: build_home_walk_review.py:13 reads SharedUI/{name}.png with names gold/key; retain to keep reproducible demo.",
+      "candidates": [
+        {
+          "asset": "Assets/_Project/Resources/SharedUI/key.png",
+          "location": "Assets/_Project/Scripts/UI/BattleModalView.cs:75",
+          "old_line": 75,
+          "code": "else {var art=Rect(row,\"Icon\",new Vector2(-325,0),new Vector2(85,85)).gameObject.AddComponent<Image>();art.sprite=Resources.Load<Sprite>(\"SharedUI/\"+icon);art.preserveAspect=true;art.raycastTarget=false;}",
+          "loader": "SharedUI/key",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        },
+        {
+          "asset": "Assets/_Project/Resources/SharedUI/key.png",
+          "location": "Assets/_Project/Scripts/UI/BattleUiSkin.cs:58",
+          "old_line": 58,
+          "code": "var sprite=Resources.Load<Sprite>(name.Contains(\"/\")?name:\"SharedUI/\"+name);",
+          "loader": "SharedUI/key",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        },
+        {
+          "asset": "Assets/_Project/Resources/SharedUI/key.png",
+          "location": "Assets/_Project/Scripts/UI/ResultPanel.cs:126",
+          "old_line": 126,
+          "code": "Reward(content,\"Gold\",gold,-340,\"gold\");Reward(content,\"Keys\",keys,0,\"key\");Reward(content,\"Gems\",gems,340,\"gem\");",
+          "loader": "SharedUI/key",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        },
+        {
+          "asset": "Assets/_Project/Resources/SharedUI/key.png",
+          "location": "Assets/_Project/Scripts/UI/ResultPanel.cs:152",
+          "old_line": 152,
+          "code": "art.sprite=Resources.Load<Sprite>(name==\"Gems\"?\"Summon/gem\":\"HomeChrome/\"+(name==\"Gold\"?\"coin\":\"key\"));art.preserveAspect=true;art.raycastTarget=false;art.enabled=art.sprite;",
+          "loader": "SharedUI/key",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        },
+        {
+          "asset": "Assets/_Project/Resources/SharedUI/key.png",
+          "location": "Assets/_Project/Scripts/UI/HomeChrome.cs:41",
+          "old_line": 41,
+          "code": "self.Wallet(keys,\"key\",new Vector2(-380,-160),new Vector2(250,95));",
+          "loader": "SharedUI/key",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        },
+        {
+          "asset": "Assets/_Project/Resources/SharedUI/key.png",
+          "location": "Assets/_Project/Scripts/UI/SharedSettings.cs:153",
+          "old_line": 153,
+          "code": "icon == \"close\" ? \"Glyphs/close\" : \"SharedUI/\" + icon;",
+          "loader": "SharedUI/key",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        }
+      ],
+      "sha256": "c0a656d19617f1eb712ad40b8deb8f018cdbdd407a3834b9b6b70b4cf44aadfd"
+    },
+    {
+      "asset": "Assets/_Project/Resources/SummonKit/card-common.png",
+      "key": "SummonKit/card-common",
+      "decision": "RETIRE",
+      "reason": "No reachable loader argument found after reviewing actual helper calls; 049 tokens refer to other resources/comments or an uncalled method.",
+      "guid": "c986d2d0327d47a4b2d149aa827864ae",
+      "guid_consumers": [],
+      "tools": [
+        "tools/import_buttons_summon_kit.py"
+      ],
+      "tools_note": "Legacy importer output targets only; source images and Art/UI/btn_blue.png.meta template retained.",
+      "candidates": [],
+      "sha256": "71552e35b313a98a384108b4f61481b3e77fb98cfd27abd220f21a904fa1d8ef",
+      "retired_to": "artsrc/ui/retired-2026-11-05/SummonKit/card-common.png"
+    },
+    {
+      "asset": "Assets/_Project/Resources/SummonKit/card-epic.png",
+      "key": "SummonKit/card-epic",
+      "decision": "RETIRE",
+      "reason": "No reachable loader argument found after reviewing actual helper calls; 049 tokens refer to other resources/comments or an uncalled method.",
+      "guid": "7a1e1a86d46c4055b19883edae6e032d",
+      "guid_consumers": [],
+      "tools": [
+        "tools/import_buttons_summon_kit.py"
+      ],
+      "tools_note": "Legacy importer output targets only; source images and Art/UI/btn_blue.png.meta template retained.",
+      "candidates": [],
+      "sha256": "3a49e8452b1c404681ddeb91669aaf46f1cd85515b5529e0d5cee7c1e34a7a7f",
+      "retired_to": "artsrc/ui/retired-2026-11-05/SummonKit/card-epic.png"
+    },
+    {
+      "asset": "Assets/_Project/Resources/SummonKit/card-legendary.png",
+      "key": "SummonKit/card-legendary",
+      "decision": "RETIRE",
+      "reason": "No reachable loader argument found after reviewing actual helper calls; 049 tokens refer to other resources/comments or an uncalled method.",
+      "guid": "0d052859b062409486da97731abcf72e",
+      "guid_consumers": [],
+      "tools": [
+        "tools/import_buttons_summon_kit.py"
+      ],
+      "tools_note": "Legacy importer output targets only; source images and Art/UI/btn_blue.png.meta template retained.",
+      "candidates": [],
+      "sha256": "e9dc7bfa475a29fd3b453d1dd9cf80653ddc98bf413259fb7e928cf677dfcff6",
+      "retired_to": "artsrc/ui/retired-2026-11-05/SummonKit/card-legendary.png"
+    },
+    {
+      "asset": "Assets/_Project/Resources/SummonKit/card-rare.png",
+      "key": "SummonKit/card-rare",
+      "decision": "RETIRE",
+      "reason": "No reachable loader argument found after reviewing actual helper calls; 049 tokens refer to other resources/comments or an uncalled method.",
+      "guid": "2f4bf4c37aea4abc838ec3b82e4c3d78",
+      "guid_consumers": [],
+      "tools": [
+        "tools/import_buttons_summon_kit.py"
+      ],
+      "tools_note": "Legacy importer output targets only; source images and Art/UI/btn_blue.png.meta template retained.",
+      "candidates": [],
+      "sha256": "2650a1f5a78e3c0a73536c6800f66e48ddb9f9f1d9b0d696ecc38339b842506d",
+      "retired_to": "artsrc/ui/retired-2026-11-05/SummonKit/card-rare.png"
+    },
+    {
+      "asset": "Assets/_Project/Resources/SummonKit/card-stone.png",
+      "key": "SummonKit/card-stone",
+      "decision": "RETIRE",
+      "reason": "No reachable loader argument found after reviewing actual helper calls; 049 tokens refer to other resources/comments or an uncalled method.",
+      "guid": "d2bc5ce3b00443b5a5124980a8c56be9",
+      "guid_consumers": [],
+      "tools": [
+        "tools/import_buttons_summon_kit.py"
+      ],
+      "tools_note": "Legacy importer output targets only; source images and Art/UI/btn_blue.png.meta template retained.",
+      "candidates": [],
+      "sha256": "06af11617402083021b1d984b2e1f16f276a12e57fd69608d3e7241cdcb483cd",
+      "retired_to": "artsrc/ui/retired-2026-11-05/SummonKit/card-stone.png"
+    },
+    {
+      "asset": "Assets/_Project/Resources/SummonKit/price-pill.png",
+      "key": "SummonKit/price-pill",
+      "decision": "KEEP",
+      "reason": "GemEconomyScreen.SummonButton, SummonResultsView count badge, DailyShopScreen count badge literal loads.",
+      "guid": "886370639f4743ecbea17db510a37bbc",
+      "guid_consumers": [],
+      "tools": [
+        "tools/import_buttons_summon_kit.py"
+      ],
+      "tools_note": "Legacy importer output targets only; source images and Art/UI/btn_blue.png.meta template retained.",
+      "candidates": [
+        {
+          "asset": "Assets/_Project/Resources/SummonKit/price-pill.png",
+          "location": "Assets/_Project/Scripts/UI/SummonResultsView.cs:56",
+          "old_line": 56,
+          "code": "var badge=Box(card.transform,\"Count\",82,6,124,54,Color.white);badge.sprite=Resources.Load<Sprite>(\"SummonKit/price-pill\");",
+          "loader": "SummonKit/price-pill",
+          "can_execute": "c\u00f3",
+          "reason": "Literal Resources key."
+        },
+        {
+          "asset": "Assets/_Project/Resources/SummonKit/price-pill.png",
+          "location": "Assets/_Project/Scripts/UI/DailyShopScreen.cs:93",
+          "old_line": 93,
+          "code": "var badge=Box(card,\"Count\",72,204,150,54,Color.white);badge.raycastTarget=false;badge.sprite=Resources.Load<Sprite>(\"SummonKit/price-pill\");",
+          "loader": "SummonKit/price-pill",
+          "can_execute": "c\u00f3",
+          "reason": "Literal Resources key."
+        },
+        {
+          "asset": "Assets/_Project/Resources/SummonKit/price-pill.png",
+          "location": "Assets/_Project/Scripts/UI/GemEconomyScreen.cs:99",
+          "old_line": 99,
+          "code": "pillImage.sprite=Resources.Load<Sprite>(\"SummonKit/price-pill\");pillImage.enabled=pillImage.sprite;",
+          "loader": "SummonKit/price-pill",
+          "can_execute": "c\u00f3",
+          "reason": "Literal Resources key."
+        }
+      ],
+      "sha256": "c194844874a3fc6d28959e4f7d7eb9d462c8ce548e1a8f4768a0924ed4b95d82"
+    },
+    {
+      "asset": "Assets/_Project/Resources/SummonKit/summon-x1.png",
+      "key": "SummonKit/summon-x1",
+      "decision": "RETIRE",
+      "reason": "No reachable loader argument found after reviewing actual helper calls; 049 tokens refer to other resources/comments or an uncalled method.",
+      "guid": "e94a19ca3d95447e8255cf57b249d92a",
+      "guid_consumers": [],
+      "tools": [
+        "tools/import_buttons_summon_kit.py"
+      ],
+      "tools_note": "Legacy importer output targets only; source images and Art/UI/btn_blue.png.meta template retained.",
+      "candidates": [],
+      "sha256": "9c28fd64fed7d7fe5d30db25d8ab902cdeb8a078fca8d87d0fd20051e43c3575",
+      "retired_to": "artsrc/ui/retired-2026-11-05/SummonKit/summon-x1.png"
+    },
+    {
+      "asset": "Assets/_Project/Resources/SummonKit/summon-x10.png",
+      "key": "SummonKit/summon-x10",
+      "decision": "RETIRE",
+      "reason": "No reachable loader argument found after reviewing actual helper calls; 049 tokens refer to other resources/comments or an uncalled method.",
+      "guid": "3f5db5d054ed418fb26dad8c1166fa1f",
+      "guid_consumers": [],
+      "tools": [
+        "tools/import_buttons_summon_kit.py"
+      ],
+      "tools_note": "Legacy importer output targets only; source images and Art/UI/btn_blue.png.meta template retained.",
+      "candidates": [],
+      "sha256": "b25144863b28a7f026f2798f53d4a83caecf54be6c5c3a388790f3341ea66a8f",
+      "retired_to": "artsrc/ui/retired-2026-11-05/SummonKit/summon-x10.png"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/atk.bytes",
+      "key": "UiRefresh/atk",
+      "decision": "KEEP",
+      "reason": "ApprovedUiArt.Get/Apply/StatTexture active argument maps to UiRefresh/atk",
+      "guid": "795e1f72053414f50b99936b02e28b58",
+      "guid_consumers": [],
+      "tools": [],
+      "tools_note": "No tool input dependency found.",
+      "candidates": [
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/atk.bytes",
+          "location": "Assets/_Project/Scripts/UI/TreasureReviewUi.cs:193",
+          "old_line": 193,
+          "code": "string statIcon=entry.Stat switch{TreasureStat.Atk=>\"atk\",TreasureStat.Hp=>\"hp\",TreasureStat.AtkSpeed=>\"speed\",TreasureStat.CritDamage=>\"crit_damage\",TreasureStat.CritChance=>\"crit_chance\",TreasureStat.LifeSteal=>\"lifesteal\",_=>\"defense\"};",
+          "loader": "UiRefresh/atk",
+          "can_execute": "c\u00f3",
+          "reason": "Stat mapping flows into ApprovedUiArt.StatTexture \u2192 Get first, StatIcons fallback second."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/atk.bytes",
+          "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+          "old_line": 20,
+          "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+          "loader": "UiRefresh/atk",
+          "can_execute": "c\u00f3",
+          "reason": "Generic loader, reviewed actual caller argument set: slug reachable."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/atk.bytes",
+          "location": "Assets/_Project/Scripts/UI/ChapterMonsterViews.cs:114",
+          "old_line": 114,
+          "code": "string[] names={\"HP\",\"ATK\",\"ATK SPD\",\"RANGE\"};string[] icons={\"hp\",\"atk\",\"speed\",\"range\"};",
+          "loader": "UiRefresh/atk",
+          "can_execute": "c\u00f3",
+          "reason": "Stat mapping flows into ApprovedUiArt.StatTexture \u2192 Get first, StatIcons fallback second."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/atk.bytes",
+          "location": "Assets/_Project/Scripts/UI/AllyUpgradeView.cs:125",
+          "old_line": 125,
+          "code": "string[] icons={\"hp\",\"mp\",\"atk\",\"speed\",\"crit_chance\",\"crit_damage\",\"defense\",\"range\"};",
+          "loader": "UiRefresh/atk",
+          "can_execute": "c\u00f3",
+          "reason": "Stat mapping flows into ApprovedUiArt.StatTexture \u2192 Get first, StatIcons fallback second."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/atk.bytes",
+          "location": "Assets/_Project/Scripts/UI/BattleUnitInfo.cs:77",
+          "old_line": 77,
+          "code": "string[] icons={\"hp\",\"mp\",\"atk\",\"speed\",\"crit_chance\",\"crit_damage\",\"defense\",\"range\"};",
+          "loader": "UiRefresh/atk",
+          "can_execute": "c\u00f3",
+          "reason": "Stat mapping flows into ApprovedUiArt.StatTexture \u2192 Get first, StatIcons fallback second."
+        }
+      ],
+      "sha256": "58b811212e9468ebdc70d95453b5275131c599536ab2c6061e483363ce37d38a"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/back.bytes",
+      "key": "UiRefresh/back",
+      "decision": "KEEP",
+      "reason": "ApprovedUiArt.Get/Apply/StatTexture active argument maps to UiRefresh/back",
+      "guid": "0d478f359be69460f9cda071ed0e9493",
+      "guid_consumers": [],
+      "tools": [],
+      "tools_note": "No tool input dependency found.",
+      "candidates": [
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/back.bytes",
+          "location": "Assets/_Project/Scripts/UI/BattleUiSkin.cs:22",
+          "old_line": 22,
+          "code": "public static Sprite Back => ApprovedUiArt.Get(\"back\") ?? ButtonFamilySkin.Get(6) ?? Blue;",
+          "loader": "UiRefresh/back",
+          "can_execute": "c\u00f3",
+          "reason": "Helper call argument resolves to UiRefresh/back"
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/back.bytes",
+          "location": "Assets/_Project/Scripts/UI/ScreenChrome.cs:263",
+          "old_line": 263,
+          "code": "/// <summary>N\u00fat back tr\u00f2n \u0111\u00e3 duy\u1ec7t (Resources/UiRefresh/back), \u0111\u1eb7t \u1edf g\u00f3c tr\u00ean tr\u00e1i.</summary>",
+          "loader": "UiRefresh/back",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/back.bytes",
+          "location": "Assets/_Project/Scripts/UI/ScreenChrome.cs:265",
+          "old_line": 265,
+          "code": "=> Round(parent, \"back\", \"blue\", position, BackSize, onClick);",
+          "loader": "UiRefresh/back",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/back.bytes",
+          "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+          "old_line": 20,
+          "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+          "loader": "UiRefresh/back",
+          "can_execute": "c\u00f3",
+          "reason": "Generic loader, reviewed actual caller argument set: slug reachable."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/back.bytes",
+          "location": "Assets/_Project/Scripts/UI/AllyUpgradeView.cs:105",
+          "old_line": 105,
+          "code": "var prev=ScreenChrome.Round(stage,\"back\",\"blue\",Vector2.zero,120,()=>Select((selected+units.Length-1)%units.Length));",
+          "loader": "UiRefresh/back",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        }
+      ],
+      "sha256": "63256af18aa332cacecc327eee8a23c4b349a6f9f492029dcc9c754e5622e206"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/battle.bytes",
+      "key": "UiRefresh/battle",
+      "decision": "KEEP",
+      "reason": "ApprovedUiArt.Get/Apply/StatTexture active argument maps to UiRefresh/battle",
+      "guid": "17e193f2e697d4cae9940fd564ac8047",
+      "guid_consumers": [],
+      "tools": [],
+      "tools_note": "No tool input dependency found.",
+      "candidates": [
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/battle.bytes",
+          "location": "Assets/_Project/Scripts/UI/BattleHud.cs:123",
+          "old_line": 123,
+          "code": "var swords=new GameObject(\"Start swords\",typeof(RectTransform),typeof(Image)).GetComponent<Image>();swords.transform.SetParent(startButton.transform,false);swords.sprite=ApprovedUiArt.Get(\"battle\");swords.preserveAspect=true;swords.raycastTarget=false;BattleUiSkin.Place(swords.rectTransform,Vector2.one*.5f,Vector2.zero,new Vector2(150,140));",
+          "loader": "UiRefresh/battle",
+          "can_execute": "c\u00f3",
+          "reason": "Helper call argument resolves to UiRefresh/battle"
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/battle.bytes",
+          "location": "Assets/_Project/Scripts/UI/MythicFusionPanel.cs:155",
+          "old_line": 155,
+          "code": "var icon=Rect(tab.transform,\"Tab icon\",new Vector2(-155,0),new Vector2(60,60)).gameObject.AddComponent<Image>();icon.sprite=ApprovedUiArt.Get(tab==tabAllies?\"recipe\":\"battle\");icon.preserveAspect=true;icon.raycastTarget=false;",
+          "loader": "UiRefresh/battle",
+          "can_execute": "c\u00f3",
+          "reason": "Helper call argument resolves to UiRefresh/battle"
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/battle.bytes",
+          "location": "Assets/_Project/Scripts/UI/HomeScreen.cs:77",
+          "old_line": 77,
+          "code": "BattleUiSkin.Icon(playButton,\"battle\");",
+          "loader": "UiRefresh/battle",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/battle.bytes",
+          "location": "Assets/_Project/Scripts/UI/HomeScreen.cs:79",
+          "old_line": 79,
+          "code": "ScreenChrome.Action(playButton,ScreenChrome.Role.Primary,\"battle\");",
+          "loader": "UiRefresh/battle",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/battle.bytes",
+          "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+          "old_line": 20,
+          "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+          "loader": "UiRefresh/battle",
+          "can_execute": "c\u00f3",
+          "reason": "Generic loader, reviewed actual caller argument set: slug reachable."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/battle.bytes",
+          "location": "Assets/_Project/Scripts/UI/SharedSettings.cs:199",
+          "old_line": 199,
+          "code": "if(Battle){var stats=Button(menu,\"Contribution\",new Vector2(-220,-165),BuildContribution);stats.sizeDelta=new Vector2(400,90);BattleUiSkin.Button(stats.GetComponent<Button>(),BattleUiSkin.Purple,\"Contribution\");ScreenChrome.Action(stats.GetComponent<Button>(),ScreenChrome.Role.Secondary);BattleUiSkin.Icon(stats.GetComponent<Button>(),\"battle\");}",
+          "loader": "UiRefresh/battle",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        }
+      ],
+      "sha256": "4c2ca85c29e759c07971d79aff7659165d6f1c2fcdd79edb03abb103d383f19f"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/close.bytes",
+      "key": "UiRefresh/close",
+      "decision": "KEEP",
+      "reason": "ApprovedUiArt.Get/Apply/StatTexture active argument maps to UiRefresh/close",
+      "guid": "3d1134b89003e48269f915582f3e36fd",
+      "guid_consumers": [],
+      "tools": [],
+      "tools_note": "No tool input dependency found.",
+      "candidates": [
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/close.bytes",
+          "location": "Assets/_Project/Scripts/UI/BattleChrome.cs:39",
+          "old_line": 39,
+          "code": "var image=new GameObject(\"Action pictogram\",typeof(RectTransform),typeof(Image)).GetComponent<Image>();image.transform.SetParent(parent,false);image.sprite=ApprovedUiArt.Get(index==1?\"dice\":index==4?\"close\":index==2?\"inventory\":\"recipe\");image.preserveAspect=true;image.raycastTarget=false;BattleUiSkin.Place(image.rectTransform,Vector2.one*.5f,pos,size);return image;",
+          "loader": "UiRefresh/close",
+          "can_execute": "c\u00f3",
+          "reason": "Helper call argument resolves to UiRefresh/close"
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/close.bytes",
+          "location": "Assets/_Project/Scripts/UI/MythicFusionPanel.cs:159",
+          "old_line": 159,
+          "code": "var close=Button(root,\"\",new Vector2(440,headerY),new Vector2(125,125),()=>Destroy(modal));ApprovedUiArt.Apply(close.GetComponent<Image>(),\"close\");",
+          "loader": "UiRefresh/close",
+          "can_execute": "c\u00f3",
+          "reason": "Helper call argument resolves to UiRefresh/close"
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/close.bytes",
+          "location": "Assets/_Project/Scripts/UI/TreasureReviewUi.cs:166",
+          "old_line": 166,
+          "code": "ApprovedUiArt.Apply(close.GetComponent<Image>(),\"close\");",
+          "loader": "UiRefresh/close",
+          "can_execute": "c\u00f3",
+          "reason": "Helper call argument resolves to UiRefresh/close"
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/close.bytes",
+          "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+          "old_line": 20,
+          "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+          "loader": "UiRefresh/close",
+          "can_execute": "c\u00f3",
+          "reason": "Generic loader, reviewed actual caller argument set: slug reachable."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/close.bytes",
+          "location": "Assets/_Project/Scripts/UI/SharedSettings.cs:144",
+          "old_line": 144,
+          "code": "label == \"Home\" || label == \"Leave\" ? \"home\" : label == \"Close\" || label == \"Cancel\" ? \"close\" : null;",
+          "loader": "UiRefresh/close",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/close.bytes",
+          "location": "Assets/_Project/Scripts/UI/SharedSettings.cs:153",
+          "old_line": 153,
+          "code": "icon == \"close\" ? \"Glyphs/close\" : \"SharedUI/\" + icon;",
+          "loader": "UiRefresh/close",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/close.bytes",
+          "location": "Assets/_Project/Scripts/UI/BattleUnitInfo.cs:58",
+          "old_line": 58,
+          "code": "var close=Rect(panel,\"Close\",new Vector2(440,1010),new Vector2(125,125));ApprovedUiArt.Apply(close.gameObject.AddComponent<Image>(),\"close\");close.gameObject.AddComponent<Button>().onClick.AddListener(Close);",
+          "loader": "UiRefresh/close",
+          "can_execute": "c\u00f3",
+          "reason": "Helper call argument resolves to UiRefresh/close"
+        }
+      ],
+      "sha256": "ffd79be73b143c6a4c11d5b4ac53401d2a7af43a6d6a5d2a95cae413c208cf99"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/coin.bytes",
+      "key": "UiRefresh/coin",
+      "decision": "KEEP",
+      "reason": "ApprovedUiArt.Get/Apply/StatTexture active argument maps to UiRefresh/coin",
+      "guid": "70b7335626a594115bd0ceb4645fc92a",
+      "guid_consumers": [],
+      "tools": [],
+      "tools_note": "No tool input dependency found.",
+      "candidates": [
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/coin.bytes",
+          "location": "Assets/_Project/Scripts/UI/BattleHud.cs:127",
+          "old_line": 127,
+          "code": "var coin=BattleChrome.Draw(rollButton.transform,1,new Vector2(75,0),new Vector2(65,65));coin.sprite=ApprovedUiArt.Get(\"coin\");",
+          "loader": "UiRefresh/coin",
+          "can_execute": "c\u00f3",
+          "reason": "Helper call argument resolves to UiRefresh/coin"
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/coin.bytes",
+          "location": "Assets/_Project/Scripts/UI/RollRewardArt.cs:68",
+          "old_line": 68,
+          "code": "var fx=Create(parent,\"coin\");fx.space=parent;fx.target=destination;",
+          "loader": "UiRefresh/coin",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/coin.bytes",
+          "location": "Assets/_Project/Scripts/UI/RollRewardArt.cs:91",
+          "old_line": 91,
+          "code": "fx.art.rectTransform.sizeDelta=Vector2.one*(sheet==\"coin\"?70:95);",
+          "loader": "UiRefresh/coin",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/coin.bytes",
+          "location": "Assets/_Project/Scripts/UI/ResultPanel.cs:152",
+          "old_line": 152,
+          "code": "art.sprite=Resources.Load<Sprite>(name==\"Gems\"?\"Summon/gem\":\"HomeChrome/\"+(name==\"Gold\"?\"coin\":\"key\"));art.preserveAspect=true;art.raycastTarget=false;art.enabled=art.sprite;",
+          "loader": "UiRefresh/coin",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/coin.bytes",
+          "location": "Assets/_Project/Scripts/UI/TreasureReviewUi.cs:82",
+          "old_line": 82,
+          "code": "walletGold=T(reviewRoot,\"\",-155,25,260,85,48);Icon(reviewRoot,ApprovedUiArt.Get(\"coin\"),-300,35,65);",
+          "loader": "UiRefresh/coin",
+          "can_execute": "c\u00f3",
+          "reason": "Helper call argument resolves to UiRefresh/coin"
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/coin.bytes",
+          "location": "Assets/_Project/Scripts/UI/TreasureReviewUi.cs:208",
+          "old_line": 208,
+          "code": "Icon(buy.transform,ApprovedUiArt.Get(\"coin\"),-215,24,80);T(buy.transform,price.ToString(\"N0\"),65,0,550,150,64);",
+          "loader": "UiRefresh/coin",
+          "can_execute": "c\u00f3",
+          "reason": "Helper call argument resolves to UiRefresh/coin"
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/coin.bytes",
+          "location": "Assets/_Project/Scripts/UI/HomeChrome.cs:40",
+          "old_line": 40,
+          "code": "self.Wallet(gold,\"coin\",new Vector2(-710,-160),new Vector2(290,95));",
+          "loader": "UiRefresh/coin",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/coin.bytes",
+          "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+          "old_line": 20,
+          "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+          "loader": "UiRefresh/coin",
+          "can_execute": "c\u00f3",
+          "reason": "Generic loader, reviewed actual caller argument set: slug reachable."
+        }
+      ],
+      "sha256": "48c4fbd1cfc22cdd131f7691b41cab89dcb8b4e33eb6d9597792a936bada4314"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/cyan.bytes",
+      "key": "UiRefresh/cyan",
+      "decision": "KEEP",
+      "reason": "ApprovedUiArt.Get/Apply/StatTexture active argument maps to UiRefresh/cyan",
+      "guid": "1bead61ad4e3e4b6b882b35784024afe",
+      "guid_consumers": [],
+      "tools": [],
+      "tools_note": "No tool input dependency found.",
+      "candidates": [
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/cyan.bytes",
+          "location": "Assets/_Project/Scripts/UI/BattleChrome.cs:22",
+          "old_line": 22,
+          "code": "ApprovedUiArt.Apply(button.GetComponent<Image>(),\"cyan\",true);",
+          "loader": "UiRefresh/cyan",
+          "can_execute": "c\u00f3",
+          "reason": "Helper call argument resolves to UiRefresh/cyan"
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/cyan.bytes",
+          "location": "Assets/_Project/Scripts/UI/BattleUiSkin.cs:18",
+          "old_line": 18,
+          "code": "public static Sprite Blue => ApprovedUiArt.Get(\"cyan\",true) ?? blue ?? (blue = Make(new Color32(43,174,244,255), new Color32(0,119,226,255)));",
+          "loader": "UiRefresh/cyan",
+          "can_execute": "c\u00f3",
+          "reason": "Helper call argument resolves to UiRefresh/cyan"
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/cyan.bytes",
+          "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+          "old_line": 20,
+          "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+          "loader": "UiRefresh/cyan",
+          "can_execute": "c\u00f3",
+          "reason": "Generic loader, reviewed actual caller argument set: slug reachable."
+        }
+      ],
+      "sha256": "9869736f13737fbd04d1b55f098c1cd1299ff3d8c24e52c77516057207a88781"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/defense.bytes",
+      "key": "UiRefresh/defense",
+      "decision": "KEEP",
+      "reason": "ApprovedUiArt.Get/Apply/StatTexture active argument maps to UiRefresh/defense",
+      "guid": "de7848c107df84893b58548f9a4afd64",
+      "guid_consumers": [],
+      "tools": [],
+      "tools_note": "No tool input dependency found.",
+      "candidates": [
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/defense.bytes",
+          "location": "Assets/_Project/Scripts/UI/TreasureReviewUi.cs:193",
+          "old_line": 193,
+          "code": "string statIcon=entry.Stat switch{TreasureStat.Atk=>\"atk\",TreasureStat.Hp=>\"hp\",TreasureStat.AtkSpeed=>\"speed\",TreasureStat.CritDamage=>\"crit_damage\",TreasureStat.CritChance=>\"crit_chance\",TreasureStat.LifeSteal=>\"lifesteal\",_=>\"defense\"};",
+          "loader": "UiRefresh/defense",
+          "can_execute": "c\u00f3",
+          "reason": "Stat mapping flows into ApprovedUiArt.StatTexture \u2192 Get first, StatIcons fallback second."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/defense.bytes",
+          "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+          "old_line": 20,
+          "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+          "loader": "UiRefresh/defense",
+          "can_execute": "c\u00f3",
+          "reason": "Generic loader, reviewed actual caller argument set: slug reachable."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/defense.bytes",
+          "location": "Assets/_Project/Scripts/UI/AllyUpgradeView.cs:125",
+          "old_line": 125,
+          "code": "string[] icons={\"hp\",\"mp\",\"atk\",\"speed\",\"crit_chance\",\"crit_damage\",\"defense\",\"range\"};",
+          "loader": "UiRefresh/defense",
+          "can_execute": "c\u00f3",
+          "reason": "Stat mapping flows into ApprovedUiArt.StatTexture \u2192 Get first, StatIcons fallback second."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/defense.bytes",
+          "location": "Assets/_Project/Scripts/UI/BattleUnitInfo.cs:77",
+          "old_line": 77,
+          "code": "string[] icons={\"hp\",\"mp\",\"atk\",\"speed\",\"crit_chance\",\"crit_damage\",\"defense\",\"range\"};",
+          "loader": "UiRefresh/defense",
+          "can_execute": "c\u00f3",
+          "reason": "Stat mapping flows into ApprovedUiArt.StatTexture \u2192 Get first, StatIcons fallback second."
+        }
+      ],
+      "sha256": "ad3f4f3bc6fb3a91e28eb99197770452c7b17119e02a869ae1ae8469b8badc4a"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/dice.bytes",
+      "key": "UiRefresh/dice",
+      "decision": "KEEP",
+      "reason": "ApprovedUiArt.Get/Apply/StatTexture active argument maps to UiRefresh/dice",
+      "guid": "ea161472e386a4314a086d9824c7ef48",
+      "guid_consumers": [],
+      "tools": [],
+      "tools_note": "No tool input dependency found.",
+      "candidates": [
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/dice.bytes",
+          "location": "Assets/_Project/Scripts/UI/BattleChrome.cs:39",
+          "old_line": 39,
+          "code": "var image=new GameObject(\"Action pictogram\",typeof(RectTransform),typeof(Image)).GetComponent<Image>();image.transform.SetParent(parent,false);image.sprite=ApprovedUiArt.Get(index==1?\"dice\":index==4?\"close\":index==2?\"inventory\":\"recipe\");image.preserveAspect=true;image.raycastTarget=false;BattleUiSkin.Place(image.rectTransform,Vector2.one*.5f,pos,size);return image;",
+          "loader": "UiRefresh/dice",
+          "can_execute": "c\u00f3",
+          "reason": "Helper call argument resolves to UiRefresh/dice"
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/dice.bytes",
+          "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+          "old_line": 20,
+          "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+          "loader": "UiRefresh/dice",
+          "can_execute": "c\u00f3",
+          "reason": "Generic loader, reviewed actual caller argument set: slug reachable."
+        }
+      ],
+      "sha256": "2c3027448e9694fb9b3038c707f94aaf33d9394a14ee7ce0ddf51021702d4c20"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/disabled.bytes",
+      "key": "UiRefresh/disabled",
+      "decision": "RETIRE",
+      "reason": "Only ApprovedUiArt.GoldStates references this slug; no code calls GoldStates.",
+      "guid": "924c0db00a5be4ffea59e6f8001c9a2a",
+      "guid_consumers": [],
+      "tools": [],
+      "tools_note": "No tool input dependency found.",
+      "candidates": [
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/disabled.bytes",
+          "location": "Assets/_Project/Scripts/UI/ScreenChrome.cs:100",
+          "old_line": 100,
+          "code": "// Sprite \"disabled\" ch\u1ec9 thay m\u1eb7t n\u00fat; ch\u1eef v\u00e0 icon b\u00ean trong v\u1eabn s\u00e1ng nguy\u00ean n\u00ean",
+          "loader": "UiRefresh/disabled",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/disabled.bytes",
+          "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+          "old_line": 20,
+          "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+          "loader": "UiRefresh/disabled",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Generic loader, reviewed actual caller argument set: slug not passed by live callers."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/disabled.bytes",
+          "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:50",
+          "old_line": 50,
+          "code": "button.spriteState = new SpriteState { highlightedSprite = Get(\"gold\", true), selectedSprite = Get(\"gold\", true), pressedSprite = Get(\"pressed\", true), disabledSprite = Get(\"disabled\", true) };",
+          "loader": "UiRefresh/disabled",
+          "can_execute": "kh\u00f4ng",
+          "reason": "GoldStates method has zero callers; not a live path."
+        }
+      ],
+      "sha256": "cfed3d69e95f945f0d23f62fac92bb3910475946f40bc1b62050d301694961ad",
+      "retired_to": "artsrc/ui/retired-2026-11-05/UiRefresh/disabled.bytes"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/gold.bytes",
+      "key": "UiRefresh/gold",
+      "decision": "KEEP",
+      "reason": "ApprovedUiArt.Get/Apply/StatTexture active argument maps to UiRefresh/gold",
+      "guid": "dbe05199e72b44eb1bcde9a44c0c1254",
+      "guid_consumers": [],
+      "tools": [],
+      "tools_note": "No tool input dependency found.",
+      "candidates": [
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/gold.bytes",
+          "location": "Assets/_Project/Scripts/UI/BattleUiSkin.cs:13",
+          "old_line": 13,
+          "code": "public static Sprite Gold => ApprovedUiArt.Get(\"gold\",true) ?? ButtonFamilySkin.Get(2) ?? gold ?? (gold = Make(new Color32(255,219,74,255),new Color32(255,200,31,255)));",
+          "loader": "UiRefresh/gold",
+          "can_execute": "c\u00f3",
+          "reason": "Helper call argument resolves to UiRefresh/gold"
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/gold.bytes",
+          "location": "Assets/_Project/Scripts/UI/BattleUiSkin.cs:19",
+          "old_line": 19,
+          "code": "public static Sprite Orange => ApprovedUiArt.Get(\"gold\",true) ?? ButtonFamilySkin.Get(0) ?? orange ?? (orange = Make(new Color32(255,205,38,255), new Color32(255,144,0,255)));",
+          "loader": "UiRefresh/gold",
+          "can_execute": "c\u00f3",
+          "reason": "Helper call argument resolves to UiRefresh/gold"
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/gold.bytes",
+          "location": "Assets/_Project/Scripts/UI/ScreenChrome.cs:85",
+          "old_line": 85,
+          "code": "_ => \"gold\",",
+          "loader": "UiRefresh/gold",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/gold.bytes",
+          "location": "Assets/_Project/Scripts/UI/ResultPanel.cs:126",
+          "old_line": 126,
+          "code": "Reward(content,\"Gold\",gold,-340,\"gold\");Reward(content,\"Keys\",keys,0,\"key\");Reward(content,\"Gems\",gems,340,\"gem\");",
+          "loader": "UiRefresh/gold",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/gold.bytes",
+          "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+          "old_line": 20,
+          "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+          "loader": "UiRefresh/gold",
+          "can_execute": "c\u00f3",
+          "reason": "Generic loader, reviewed actual caller argument set: slug reachable."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/gold.bytes",
+          "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:48",
+          "old_line": 48,
+          "code": "Apply(button.GetComponent<Image>(), \"gold\", true);",
+          "loader": "UiRefresh/gold",
+          "can_execute": "kh\u00f4ng",
+          "reason": "GoldStates method has zero callers; not a live path."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/gold.bytes",
+          "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:50",
+          "old_line": 50,
+          "code": "button.spriteState = new SpriteState { highlightedSprite = Get(\"gold\", true), selectedSprite = Get(\"gold\", true), pressedSprite = Get(\"pressed\", true), disabledSprite = Get(\"disabled\", true) };",
+          "loader": "UiRefresh/gold",
+          "can_execute": "kh\u00f4ng",
+          "reason": "GoldStates method has zero callers; not a live path."
+        }
+      ],
+      "sha256": "60c7fee386f0b24a6ed70720b91d75a80fee0e6617e055c6b42e7a4279611c85"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/hp.bytes",
+      "key": "UiRefresh/hp",
+      "decision": "KEEP",
+      "reason": "ApprovedUiArt.Get/Apply/StatTexture active argument maps to UiRefresh/hp",
+      "guid": "774e4f1489b9f4b09a0b9374e786fbb6",
+      "guid_consumers": [],
+      "tools": [],
+      "tools_note": "No tool input dependency found.",
+      "candidates": [
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/hp.bytes",
+          "location": "Assets/_Project/Scripts/UI/TreasureReviewUi.cs:193",
+          "old_line": 193,
+          "code": "string statIcon=entry.Stat switch{TreasureStat.Atk=>\"atk\",TreasureStat.Hp=>\"hp\",TreasureStat.AtkSpeed=>\"speed\",TreasureStat.CritDamage=>\"crit_damage\",TreasureStat.CritChance=>\"crit_chance\",TreasureStat.LifeSteal=>\"lifesteal\",_=>\"defense\"};",
+          "loader": "UiRefresh/hp",
+          "can_execute": "c\u00f3",
+          "reason": "Stat mapping flows into ApprovedUiArt.StatTexture \u2192 Get first, StatIcons fallback second."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/hp.bytes",
+          "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+          "old_line": 20,
+          "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+          "loader": "UiRefresh/hp",
+          "can_execute": "c\u00f3",
+          "reason": "Generic loader, reviewed actual caller argument set: slug reachable."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/hp.bytes",
+          "location": "Assets/_Project/Scripts/UI/ChapterMonsterViews.cs:114",
+          "old_line": 114,
+          "code": "string[] names={\"HP\",\"ATK\",\"ATK SPD\",\"RANGE\"};string[] icons={\"hp\",\"atk\",\"speed\",\"range\"};",
+          "loader": "UiRefresh/hp",
+          "can_execute": "c\u00f3",
+          "reason": "Stat mapping flows into ApprovedUiArt.StatTexture \u2192 Get first, StatIcons fallback second."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/hp.bytes",
+          "location": "Assets/_Project/Scripts/UI/AllyUpgradeView.cs:125",
+          "old_line": 125,
+          "code": "string[] icons={\"hp\",\"mp\",\"atk\",\"speed\",\"crit_chance\",\"crit_damage\",\"defense\",\"range\"};",
+          "loader": "UiRefresh/hp",
+          "can_execute": "c\u00f3",
+          "reason": "Stat mapping flows into ApprovedUiArt.StatTexture \u2192 Get first, StatIcons fallback second."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/hp.bytes",
+          "location": "Assets/_Project/Scripts/UI/BattleUnitInfo.cs:77",
+          "old_line": 77,
+          "code": "string[] icons={\"hp\",\"mp\",\"atk\",\"speed\",\"crit_chance\",\"crit_damage\",\"defense\",\"range\"};",
+          "loader": "UiRefresh/hp",
+          "can_execute": "c\u00f3",
+          "reason": "Stat mapping flows into ApprovedUiArt.StatTexture \u2192 Get first, StatIcons fallback second."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/hp.bytes",
+          "location": "Assets/_Project/Scripts/Debug/BattleProbe.cs:54",
+          "old_line": 54,
+          "code": "sb.AppendLine($\"{\"t\",6} {\"ten\",-10} {\"phe\",-5} {\"x\",7} {\"hp\",7} {\"song\",4} {\"dan\",4}\");",
+          "loader": "UiRefresh/hp",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        }
+      ],
+      "sha256": "995fcef4d736a4a7be5abefbcc3a2327b6d04d6867cd5f8764e20e47227af4d1"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/info.bytes",
+      "key": "UiRefresh/info",
+      "decision": "KEEP",
+      "reason": "ApprovedUiArt.Get/Apply/StatTexture active argument maps to UiRefresh/info",
+      "guid": "c5af4bb544fa34e569ddd4d076d5c9ff",
+      "guid_consumers": [],
+      "tools": [],
+      "tools_note": "No tool input dependency found.",
+      "candidates": [
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/info.bytes",
+          "location": "Assets/_Project/Scripts/UI/CellPanel.cs:77",
+          "old_line": 77,
+          "code": "ApprovedUiArt.Apply(go.GetComponent<Image>(),\"info\");",
+          "loader": "UiRefresh/info",
+          "can_execute": "c\u00f3",
+          "reason": "Helper call argument resolves to UiRefresh/info"
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/info.bytes",
+          "location": "Assets/_Project/Scripts/UI/BattleUiSkin.cs:23",
+          "old_line": 23,
+          "code": "public static Sprite Info => ApprovedUiArt.Get(\"info\") ?? ButtonFamilySkin.Get(7) ?? Navy;",
+          "loader": "UiRefresh/info",
+          "can_execute": "c\u00f3",
+          "reason": "Helper call argument resolves to UiRefresh/info"
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/info.bytes",
+          "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+          "old_line": 20,
+          "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+          "loader": "UiRefresh/info",
+          "can_execute": "c\u00f3",
+          "reason": "Generic loader, reviewed actual caller argument set: slug reachable."
+        }
+      ],
+      "sha256": "d405017fc2212685ec5d76db1f384482944c130989c766c26363ab780913d39c"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/inventory.bytes",
+      "key": "UiRefresh/inventory",
+      "decision": "KEEP",
+      "reason": "ApprovedUiArt.Get/Apply/StatTexture active argument maps to UiRefresh/inventory",
+      "guid": "f8396b3a3b0eb435fb4b7f4b2e22f8b3",
+      "guid_consumers": [],
+      "tools": [],
+      "tools_note": "No tool input dependency found.",
+      "candidates": [
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/inventory.bytes",
+          "location": "Assets/_Project/Scripts/UI/BattleChrome.cs:21",
+          "old_line": 21,
+          "code": "if(family==0 || family==2){ApprovedUiArt.Action(button,\"navy\",family==0?\"recipe\":\"inventory\");return;}",
+          "loader": "UiRefresh/inventory",
+          "can_execute": "c\u00f3",
+          "reason": "Helper call argument resolves to UiRefresh/inventory"
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/inventory.bytes",
+          "location": "Assets/_Project/Scripts/UI/BattleChrome.cs:39",
+          "old_line": 39,
+          "code": "var image=new GameObject(\"Action pictogram\",typeof(RectTransform),typeof(Image)).GetComponent<Image>();image.transform.SetParent(parent,false);image.sprite=ApprovedUiArt.Get(index==1?\"dice\":index==4?\"close\":index==2?\"inventory\":\"recipe\");image.preserveAspect=true;image.raycastTarget=false;BattleUiSkin.Place(image.rectTransform,Vector2.one*.5f,pos,size);return image;",
+          "loader": "UiRefresh/inventory",
+          "can_execute": "c\u00f3",
+          "reason": "Helper call argument resolves to UiRefresh/inventory"
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/inventory.bytes",
+          "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+          "old_line": 20,
+          "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+          "loader": "UiRefresh/inventory",
+          "can_execute": "c\u00f3",
+          "reason": "Generic loader, reviewed actual caller argument set: slug reachable."
+        }
+      ],
+      "sha256": "bb5cd1b6da2c3c256a22768703ee3353678cd67bf6086a4ff17703580590ed52"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/key.bytes",
+      "key": "UiRefresh/key",
+      "decision": "RETIRE",
+      "reason": "ResultPanel reward key and HomeChrome wallet key use HomeChrome/key, not ApprovedUiArt; generic UiRefresh loader alone is not an argument.",
+      "guid": "1816e46ad773f49bc9dd1780dc56879e",
+      "guid_consumers": [],
+      "tools": [],
+      "tools_note": "No tool input dependency found.",
+      "candidates": [
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/key.bytes",
+          "location": "Assets/_Project/Scripts/UI/ResultPanel.cs:126",
+          "old_line": 126,
+          "code": "Reward(content,\"Gold\",gold,-340,\"gold\");Reward(content,\"Keys\",keys,0,\"key\");Reward(content,\"Gems\",gems,340,\"gem\");",
+          "loader": "UiRefresh/key",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/key.bytes",
+          "location": "Assets/_Project/Scripts/UI/ResultPanel.cs:152",
+          "old_line": 152,
+          "code": "art.sprite=Resources.Load<Sprite>(name==\"Gems\"?\"Summon/gem\":\"HomeChrome/\"+(name==\"Gold\"?\"coin\":\"key\"));art.preserveAspect=true;art.raycastTarget=false;art.enabled=art.sprite;",
+          "loader": "UiRefresh/key",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/key.bytes",
+          "location": "Assets/_Project/Scripts/UI/HomeChrome.cs:41",
+          "old_line": 41,
+          "code": "self.Wallet(keys,\"key\",new Vector2(-380,-160),new Vector2(250,95));",
+          "loader": "UiRefresh/key",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/key.bytes",
+          "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+          "old_line": 20,
+          "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+          "loader": "UiRefresh/key",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Generic loader, reviewed actual caller argument set: slug not passed by live callers."
+        }
+      ],
+      "sha256": "07d1144e5bcae3d0e755927927a3f11a78ffca5aff52897caa9f05ff3f2a00a9",
+      "retired_to": "artsrc/ui/retired-2026-11-05/UiRefresh/key.bytes"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/menu.bytes",
+      "key": "UiRefresh/menu",
+      "decision": "KEEP",
+      "reason": "ApprovedUiArt.Get/Apply/StatTexture active argument maps to UiRefresh/menu",
+      "guid": "8d6858d10dfc6486ab7b21f1fd8a0541",
+      "guid_consumers": [],
+      "tools": [],
+      "tools_note": "No tool input dependency found.",
+      "candidates": [
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/menu.bytes",
+          "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+          "old_line": 20,
+          "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+          "loader": "UiRefresh/menu",
+          "can_execute": "c\u00f3",
+          "reason": "Generic loader, reviewed actual caller argument set: slug reachable."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/menu.bytes",
+          "location": "Assets/_Project/Scripts/UI/SharedSettings.cs:97",
+          "old_line": 97,
+          "code": "else { BattleUiSkin.Skin(openImage,BattleUiSkin.Dark); ApprovedUiArt.Apply(openImage,\"menu\"); }",
+          "loader": "UiRefresh/menu",
+          "can_execute": "c\u00f3",
+          "reason": "Helper call argument resolves to UiRefresh/menu"
+        }
+      ],
+      "sha256": "1881dfd765e6dbdd7cd4799234064b26b413d623c1607a134835f6b159eafe7c"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/mp.bytes",
+      "key": "UiRefresh/mp",
+      "decision": "KEEP",
+      "reason": "ApprovedUiArt.Get/Apply/StatTexture active argument maps to UiRefresh/mp",
+      "guid": "a49c35429793f49e4b6841ed1fecb12f",
+      "guid_consumers": [],
+      "tools": [],
+      "tools_note": "No tool input dependency found.",
+      "candidates": [
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/mp.bytes",
+          "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+          "old_line": 20,
+          "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+          "loader": "UiRefresh/mp",
+          "can_execute": "c\u00f3",
+          "reason": "Generic loader, reviewed actual caller argument set: slug reachable."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/mp.bytes",
+          "location": "Assets/_Project/Scripts/UI/AllyUpgradeView.cs:125",
+          "old_line": 125,
+          "code": "string[] icons={\"hp\",\"mp\",\"atk\",\"speed\",\"crit_chance\",\"crit_damage\",\"defense\",\"range\"};",
+          "loader": "UiRefresh/mp",
+          "can_execute": "c\u00f3",
+          "reason": "Stat mapping flows into ApprovedUiArt.StatTexture \u2192 Get first, StatIcons fallback second."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/mp.bytes",
+          "location": "Assets/_Project/Scripts/UI/BattleUnitInfo.cs:77",
+          "old_line": 77,
+          "code": "string[] icons={\"hp\",\"mp\",\"atk\",\"speed\",\"crit_chance\",\"crit_damage\",\"defense\",\"range\"};",
+          "loader": "UiRefresh/mp",
+          "can_execute": "c\u00f3",
+          "reason": "Stat mapping flows into ApprovedUiArt.StatTexture \u2192 Get first, StatIcons fallback second."
+        }
+      ],
+      "sha256": "09989637dd3da58ad520f04560c4d4818d1a3c65356d328490ef38caf9746e90"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/navy.bytes",
+      "key": "UiRefresh/navy",
+      "decision": "KEEP",
+      "reason": "ApprovedUiArt.Get/Apply/StatTexture active argument maps to UiRefresh/navy",
+      "guid": "79de498472a774a05929a0cca9b6be17",
+      "guid_consumers": [],
+      "tools": [],
+      "tools_note": "No tool input dependency found.",
+      "candidates": [
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/navy.bytes",
+          "location": "Assets/_Project/Scripts/UI/BattleChrome.cs:21",
+          "old_line": 21,
+          "code": "if(family==0 || family==2){ApprovedUiArt.Action(button,\"navy\",family==0?\"recipe\":\"inventory\");return;}",
+          "loader": "UiRefresh/navy",
+          "can_execute": "c\u00f3",
+          "reason": "Helper call argument resolves to UiRefresh/navy"
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/navy.bytes",
+          "location": "Assets/_Project/Scripts/UI/BattleUiSkin.cs:17",
+          "old_line": 17,
+          "code": "public static Sprite Navy => ApprovedUiArt.Get(\"navy\",true) ?? navy ?? (navy = Make(new Color32(15,39,57,255), new Color32(10,27,40,255)));",
+          "loader": "UiRefresh/navy",
+          "can_execute": "c\u00f3",
+          "reason": "Helper call argument resolves to UiRefresh/navy"
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/navy.bytes",
+          "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+          "old_line": 20,
+          "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+          "loader": "UiRefresh/navy",
+          "can_execute": "c\u00f3",
+          "reason": "Generic loader, reviewed actual caller argument set: slug reachable."
+        }
+      ],
+      "sha256": "dcc3b3bc94229cb2829c4aa15af229b65a446379b86c824657d86316e2419067"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/next.bytes",
+      "key": "UiRefresh/next",
+      "decision": "KEEP",
+      "reason": "ApprovedUiArt.Get/Apply/StatTexture active argument maps to UiRefresh/next",
+      "guid": "431a76e911247434fa0110c9c07e4ef0",
+      "guid_consumers": [],
+      "tools": [],
+      "tools_note": "No tool input dependency found.",
+      "candidates": [
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/next.bytes",
+          "location": "Assets/_Project/Scripts/UI/ResultPanel.cs:135",
+          "old_line": 135,
+          "code": "Action(content,hasNext?\"NEXT LEVEL\":\"RETRY\",hasNext?\"next\":\"replay\",1860,false,()=>{Time.timeScale=1;SceneRoutes.PlayLevel(hasNext?level+1:level);});",
+          "loader": "UiRefresh/next",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/next.bytes",
+          "location": "Assets/_Project/Scripts/UI/TreasureReviewUi.cs:216",
+          "old_line": 216,
+          "code": "ApprovedUiArt.Apply(previous.GetComponent<Image>(),\"previous\");ApprovedUiArt.Apply(nextButton.GetComponent<Image>(),\"next\");",
+          "loader": "UiRefresh/next",
+          "can_execute": "c\u00f3",
+          "reason": "Helper call argument resolves to UiRefresh/next"
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/next.bytes",
+          "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+          "old_line": 20,
+          "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+          "loader": "UiRefresh/next",
+          "can_execute": "c\u00f3",
+          "reason": "Generic loader, reviewed actual caller argument set: slug reachable."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/next.bytes",
+          "location": "Assets/_Project/Scripts/UI/AllyUpgradeView.cs:109",
+          "old_line": 109,
+          "code": "var nxt=ScreenChrome.Round(stage,\"next\",\"blue\",Vector2.zero,120,()=>Select((selected+1)%units.Length));",
+          "loader": "UiRefresh/next",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        }
+      ],
+      "sha256": "8e2be54616c499b62867a845d6756621f2617ecb2b2b3190ab66782d069b1630"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/panel.bytes",
+      "key": "UiRefresh/panel",
+      "decision": "RETIRE",
+      "reason": "No ApprovedUiArt call passes panel. BattleSceneSetup panel is a serialized property name, unrelated.",
+      "guid": "1d7d900c6a50f42c293f0b3ceebf57c9",
+      "guid_consumers": [],
+      "tools": [],
+      "tools_note": "No tool input dependency found.",
+      "candidates": [
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/panel.bytes",
+          "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+          "old_line": 20,
+          "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+          "loader": "UiRefresh/panel",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Generic loader, reviewed actual caller argument set: slug not passed by live callers."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/panel.bytes",
+          "location": "Assets/_Project/Scripts/Editor/BattleSceneSetup.cs:483",
+          "old_line": 483,
+          "code": "so.FindProperty(\"panel\").objectReferenceValue = panel;",
+          "loader": "UiRefresh/panel",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        }
+      ],
+      "sha256": "ebf3c8d9d6b761ab5d5e4befaeafce79615765427162ba83f0ac8a42dda1875d",
+      "retired_to": "artsrc/ui/retired-2026-11-05/UiRefresh/panel.bytes"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/pressed.bytes",
+      "key": "UiRefresh/pressed",
+      "decision": "RETIRE",
+      "reason": "Only ApprovedUiArt.GoldStates references this slug; no code calls GoldStates (one comment says deliberately not used).",
+      "guid": "c00ef986fbf184a7cbee403c526c0c5c",
+      "guid_consumers": [],
+      "tools": [],
+      "tools_note": "No tool input dependency found.",
+      "candidates": [
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/pressed.bytes",
+          "location": "Assets/_Project/Scripts/UI/ScreenChrome.cs:98",
+          "old_line": 98,
+          "code": "// Art c\u1ee7a b\u1ea3n \"pressed\" ch\u1ec9 \u0111\u1eadm h\u01a1n m\u1ed9t ch\u00fat, n\u00ean h\u1ea1 n\u1ed9i dung xu\u1ed1ng cho th\u1ea5y r\u00f5 l\u00e0 \u0111ang b\u1ea5m.",
+          "loader": "UiRefresh/pressed",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/pressed.bytes",
+          "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+          "old_line": 20,
+          "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+          "loader": "UiRefresh/pressed",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Generic loader, reviewed actual caller argument set: slug not passed by live callers."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/pressed.bytes",
+          "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:50",
+          "old_line": 50,
+          "code": "button.spriteState = new SpriteState { highlightedSprite = Get(\"gold\", true), selectedSprite = Get(\"gold\", true), pressedSprite = Get(\"pressed\", true), disabledSprite = Get(\"disabled\", true) };",
+          "loader": "UiRefresh/pressed",
+          "can_execute": "kh\u00f4ng",
+          "reason": "GoldStates method has zero callers; not a live path."
+        }
+      ],
+      "sha256": "eb8feef4416820548ec5364c59db1aaa07b50363517cdd0a0f8303e33c01d8ad",
+      "retired_to": "artsrc/ui/retired-2026-11-05/UiRefresh/pressed.bytes"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/previous.bytes",
+      "key": "UiRefresh/previous",
+      "decision": "KEEP",
+      "reason": "ApprovedUiArt.Get/Apply/StatTexture active argument maps to UiRefresh/previous",
+      "guid": "7a8b4a3d0c0cc405b91a7c14a10fcb6e",
+      "guid_consumers": [],
+      "tools": [],
+      "tools_note": "No tool input dependency found.",
+      "candidates": [
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/previous.bytes",
+          "location": "Assets/_Project/Scripts/UI/TreasureReviewUi.cs:216",
+          "old_line": 216,
+          "code": "ApprovedUiArt.Apply(previous.GetComponent<Image>(),\"previous\");ApprovedUiArt.Apply(nextButton.GetComponent<Image>(),\"next\");",
+          "loader": "UiRefresh/previous",
+          "can_execute": "c\u00f3",
+          "reason": "Helper call argument resolves to UiRefresh/previous"
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/previous.bytes",
+          "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+          "old_line": 20,
+          "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+          "loader": "UiRefresh/previous",
+          "can_execute": "c\u00f3",
+          "reason": "Generic loader, reviewed actual caller argument set: slug reachable."
+        }
+      ],
+      "sha256": "dab0d549d2b446047441b8e5f576273c32c43285e745ec22af709fd6f52872e2"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/range.bytes",
+      "key": "UiRefresh/range",
+      "decision": "KEEP",
+      "reason": "ApprovedUiArt.Get/Apply/StatTexture active argument maps to UiRefresh/range",
+      "guid": "99a06e174c35542a5bbf8ffb96d2431d",
+      "guid_consumers": [],
+      "tools": [],
+      "tools_note": "No tool input dependency found.",
+      "candidates": [
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/range.bytes",
+          "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+          "old_line": 20,
+          "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+          "loader": "UiRefresh/range",
+          "can_execute": "c\u00f3",
+          "reason": "Generic loader, reviewed actual caller argument set: slug reachable."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/range.bytes",
+          "location": "Assets/_Project/Scripts/UI/ChapterMonsterViews.cs:114",
+          "old_line": 114,
+          "code": "string[] names={\"HP\",\"ATK\",\"ATK SPD\",\"RANGE\"};string[] icons={\"hp\",\"atk\",\"speed\",\"range\"};",
+          "loader": "UiRefresh/range",
+          "can_execute": "c\u00f3",
+          "reason": "Stat mapping flows into ApprovedUiArt.StatTexture \u2192 Get first, StatIcons fallback second."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/range.bytes",
+          "location": "Assets/_Project/Scripts/UI/AllyUpgradeView.cs:125",
+          "old_line": 125,
+          "code": "string[] icons={\"hp\",\"mp\",\"atk\",\"speed\",\"crit_chance\",\"crit_damage\",\"defense\",\"range\"};",
+          "loader": "UiRefresh/range",
+          "can_execute": "c\u00f3",
+          "reason": "Stat mapping flows into ApprovedUiArt.StatTexture \u2192 Get first, StatIcons fallback second."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/range.bytes",
+          "location": "Assets/_Project/Scripts/UI/BattleUnitInfo.cs:77",
+          "old_line": 77,
+          "code": "string[] icons={\"hp\",\"mp\",\"atk\",\"speed\",\"crit_chance\",\"crit_damage\",\"defense\",\"range\"};",
+          "loader": "UiRefresh/range",
+          "can_execute": "c\u00f3",
+          "reason": "Stat mapping flows into ApprovedUiArt.StatTexture \u2192 Get first, StatIcons fallback second."
+        }
+      ],
+      "sha256": "4acbc420753f5610dce15749e8c971206f812f462d5e9fe0ce4b7c5ff4059ade"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/recipe.bytes",
+      "key": "UiRefresh/recipe",
+      "decision": "KEEP",
+      "reason": "ApprovedUiArt.Get/Apply/StatTexture active argument maps to UiRefresh/recipe",
+      "guid": "d41cc72a43449480f8fe63aa86417cf2",
+      "guid_consumers": [],
+      "tools": [],
+      "tools_note": "No tool input dependency found.",
+      "candidates": [
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/recipe.bytes",
+          "location": "Assets/_Project/Scripts/UI/BattleChrome.cs:21",
+          "old_line": 21,
+          "code": "if(family==0 || family==2){ApprovedUiArt.Action(button,\"navy\",family==0?\"recipe\":\"inventory\");return;}",
+          "loader": "UiRefresh/recipe",
+          "can_execute": "c\u00f3",
+          "reason": "Helper call argument resolves to UiRefresh/recipe"
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/recipe.bytes",
+          "location": "Assets/_Project/Scripts/UI/BattleChrome.cs:39",
+          "old_line": 39,
+          "code": "var image=new GameObject(\"Action pictogram\",typeof(RectTransform),typeof(Image)).GetComponent<Image>();image.transform.SetParent(parent,false);image.sprite=ApprovedUiArt.Get(index==1?\"dice\":index==4?\"close\":index==2?\"inventory\":\"recipe\");image.preserveAspect=true;image.raycastTarget=false;BattleUiSkin.Place(image.rectTransform,Vector2.one*.5f,pos,size);return image;",
+          "loader": "UiRefresh/recipe",
+          "can_execute": "c\u00f3",
+          "reason": "Helper call argument resolves to UiRefresh/recipe"
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/recipe.bytes",
+          "location": "Assets/_Project/Scripts/UI/MythicFusionPanel.cs:155",
+          "old_line": 155,
+          "code": "var icon=Rect(tab.transform,\"Tab icon\",new Vector2(-155,0),new Vector2(60,60)).gameObject.AddComponent<Image>();icon.sprite=ApprovedUiArt.Get(tab==tabAllies?\"recipe\":\"battle\");icon.preserveAspect=true;icon.raycastTarget=false;",
+          "loader": "UiRefresh/recipe",
+          "can_execute": "c\u00f3",
+          "reason": "Helper call argument resolves to UiRefresh/recipe"
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/recipe.bytes",
+          "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+          "old_line": 20,
+          "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+          "loader": "UiRefresh/recipe",
+          "can_execute": "c\u00f3",
+          "reason": "Generic loader, reviewed actual caller argument set: slug reachable."
+        }
+      ],
+      "sha256": "45cd8d8de6178932b2e182e60106215b36054ac6be976c7eba67629355819199"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/speed.bytes",
+      "key": "UiRefresh/speed",
+      "decision": "KEEP",
+      "reason": "ApprovedUiArt.Get/Apply/StatTexture active argument maps to UiRefresh/speed",
+      "guid": "9ebe32e91caab4762a412fded5c00675",
+      "guid_consumers": [],
+      "tools": [],
+      "tools_note": "No tool input dependency found.",
+      "candidates": [
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/speed.bytes",
+          "location": "Assets/_Project/Scripts/UI/TreasureReviewUi.cs:193",
+          "old_line": 193,
+          "code": "string statIcon=entry.Stat switch{TreasureStat.Atk=>\"atk\",TreasureStat.Hp=>\"hp\",TreasureStat.AtkSpeed=>\"speed\",TreasureStat.CritDamage=>\"crit_damage\",TreasureStat.CritChance=>\"crit_chance\",TreasureStat.LifeSteal=>\"lifesteal\",_=>\"defense\"};",
+          "loader": "UiRefresh/speed",
+          "can_execute": "c\u00f3",
+          "reason": "Stat mapping flows into ApprovedUiArt.StatTexture \u2192 Get first, StatIcons fallback second."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/speed.bytes",
+          "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+          "old_line": 20,
+          "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+          "loader": "UiRefresh/speed",
+          "can_execute": "c\u00f3",
+          "reason": "Generic loader, reviewed actual caller argument set: slug reachable."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/speed.bytes",
+          "location": "Assets/_Project/Scripts/UI/ChapterMonsterViews.cs:114",
+          "old_line": 114,
+          "code": "string[] names={\"HP\",\"ATK\",\"ATK SPD\",\"RANGE\"};string[] icons={\"hp\",\"atk\",\"speed\",\"range\"};",
+          "loader": "UiRefresh/speed",
+          "can_execute": "c\u00f3",
+          "reason": "Stat mapping flows into ApprovedUiArt.StatTexture \u2192 Get first, StatIcons fallback second."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/speed.bytes",
+          "location": "Assets/_Project/Scripts/UI/AllyUpgradeView.cs:125",
+          "old_line": 125,
+          "code": "string[] icons={\"hp\",\"mp\",\"atk\",\"speed\",\"crit_chance\",\"crit_damage\",\"defense\",\"range\"};",
+          "loader": "UiRefresh/speed",
+          "can_execute": "c\u00f3",
+          "reason": "Stat mapping flows into ApprovedUiArt.StatTexture \u2192 Get first, StatIcons fallback second."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/speed.bytes",
+          "location": "Assets/_Project/Scripts/UI/BattleUnitInfo.cs:77",
+          "old_line": 77,
+          "code": "string[] icons={\"hp\",\"mp\",\"atk\",\"speed\",\"crit_chance\",\"crit_damage\",\"defense\",\"range\"};",
+          "loader": "UiRefresh/speed",
+          "can_execute": "c\u00f3",
+          "reason": "Stat mapping flows into ApprovedUiArt.StatTexture \u2192 Get first, StatIcons fallback second."
+        }
+      ],
+      "sha256": "1453f42e6f9e5433816703337e33e31825fb10b25df0438fbb42644912359944"
+    }
+  ],
+  "candidates": [
+    {
+      "asset": "Assets/_Project/Resources/ButtonFamilies/atlas.png",
+      "location": "Assets/_Project/Scripts/UI/ButtonFamilySkin.cs:15",
+      "old_line": 15,
+      "code": "var t=Resources.Load<Texture2D>(\"ButtonFamilies/atlas\");if(!t)return null;",
+      "loader": "ButtonFamilies/atlas",
+      "can_execute": "c\u00f3",
+      "reason": "Literal atlas load reached from ButtonFamilySkin.Get."
+    },
+    {
+      "asset": "Assets/_Project/Resources/SharedUI/btn_blue.png",
+      "location": "Assets/_Project/Scripts/UI/BattleModalView.cs:75",
+      "old_line": 75,
+      "code": "else {var art=Rect(row,\"Icon\",new Vector2(-325,0),new Vector2(85,85)).gameObject.AddComponent<Image>();art.sprite=Resources.Load<Sprite>(\"SharedUI/\"+icon);art.preserveAspect=true;art.raycastTarget=false;}",
+      "loader": "SharedUI/btn_blue",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Token is not a load of this asset."
+    },
+    {
+      "asset": "Assets/_Project/Resources/SharedUI/btn_blue.png",
+      "location": "Assets/_Project/Scripts/UI/BattleUiSkin.cs:58",
+      "old_line": 58,
+      "code": "var sprite=Resources.Load<Sprite>(name.Contains(\"/\")?name:\"SharedUI/\"+name);",
+      "loader": "SharedUI/btn_blue",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Token is not a load of this asset."
+    },
+    {
+      "asset": "Assets/_Project/Resources/SharedUI/btn_blue.png",
+      "location": "Assets/_Project/Scripts/UI/SharedSettings.cs:54",
+      "old_line": 54,
+      "code": "buttonSprite = Resources.Load<Sprite>(\"SharedUI/btn_blue\");",
+      "loader": "SharedUI/btn_blue",
+      "can_execute": "c\u00f3",
+      "reason": "Exact SharedUI Resources load (not Art/UI template)."
+    },
+    {
+      "asset": "Assets/_Project/Resources/SharedUI/btn_blue.png",
+      "location": "Assets/_Project/Scripts/UI/SharedSettings.cs:153",
+      "old_line": 153,
+      "code": "icon == \"close\" ? \"Glyphs/close\" : \"SharedUI/\" + icon;",
+      "loader": "SharedUI/btn_blue",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Token is not a load of this asset."
+    },
+    {
+      "asset": "Assets/_Project/Resources/SharedUI/btn_blue.png",
+      "location": "Assets/_Project/Scripts/Editor/TreasureSceneSetup.cs:59",
+      "old_line": 59,
+      "code": "var btn = S(\"btn_blue\");",
+      "loader": "SharedUI/btn_blue",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Token is not a load of this asset."
+    },
+    {
+      "asset": "Assets/_Project/Resources/SharedUI/btn_primary.png",
+      "location": "Assets/_Project/Scripts/UI/BattleModalView.cs:75",
+      "old_line": 75,
+      "code": "else {var art=Rect(row,\"Icon\",new Vector2(-325,0),new Vector2(85,85)).gameObject.AddComponent<Image>();art.sprite=Resources.Load<Sprite>(\"SharedUI/\"+icon);art.preserveAspect=true;art.raycastTarget=false;}",
+      "loader": "SharedUI/btn_primary",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Token is not a load of this asset."
+    },
+    {
+      "asset": "Assets/_Project/Resources/SharedUI/btn_primary.png",
+      "location": "Assets/_Project/Scripts/UI/BattleUiSkin.cs:58",
+      "old_line": 58,
+      "code": "var sprite=Resources.Load<Sprite>(name.Contains(\"/\")?name:\"SharedUI/\"+name);",
+      "loader": "SharedUI/btn_primary",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Token is not a load of this asset."
+    },
+    {
+      "asset": "Assets/_Project/Resources/SharedUI/btn_primary.png",
+      "location": "Assets/_Project/Scripts/UI/SharedSettings.cs:153",
+      "old_line": 153,
+      "code": "icon == \"close\" ? \"Glyphs/close\" : \"SharedUI/\" + icon;",
+      "loader": "SharedUI/btn_primary",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Token is not a load of this asset."
+    },
+    {
+      "asset": "Assets/_Project/Resources/SharedUI/btn_primary.png",
+      "location": "Assets/_Project/Scripts/UI/SharedSettings.cs:159",
+      "old_line": 159,
+      "code": "if (label == \"Resume\") image.sprite = Resources.Load<Sprite>(\"SharedUI/btn_primary\");",
+      "loader": "SharedUI/btn_primary",
+      "can_execute": "c\u00f3",
+      "reason": "Exact SharedUI Resources load (not Art/UI template)."
+    },
+    {
+      "asset": "Assets/_Project/Resources/SharedUI/btn_primary.png",
+      "location": "Assets/_Project/Scripts/Editor/UpgradeSceneSetup.cs:81",
+      "old_line": 81,
+      "code": "var btn = S(\"btn_primary\");",
+      "loader": "SharedUI/btn_primary",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Token is not a load of this asset."
+    },
+    {
+      "asset": "Assets/_Project/Resources/SharedUI/buff_speed.png",
+      "location": "Assets/_Project/Scripts/UI/BattleModalView.cs:75",
+      "old_line": 75,
+      "code": "else {var art=Rect(row,\"Icon\",new Vector2(-325,0),new Vector2(85,85)).gameObject.AddComponent<Image>();art.sprite=Resources.Load<Sprite>(\"SharedUI/\"+icon);art.preserveAspect=true;art.raycastTarget=false;}",
+      "loader": "SharedUI/buff_speed",
+      "can_execute": "c\u00f3",
+      "reason": "Check live evidence MonsterBuffVisual; generic helper string alone not sufficient."
+    },
+    {
+      "asset": "Assets/_Project/Resources/SharedUI/buff_speed.png",
+      "location": "Assets/_Project/Scripts/UI/BattleUiSkin.cs:58",
+      "old_line": 58,
+      "code": "var sprite=Resources.Load<Sprite>(name.Contains(\"/\")?name:\"SharedUI/\"+name);",
+      "loader": "SharedUI/buff_speed",
+      "can_execute": "c\u00f3",
+      "reason": "Check live evidence MonsterBuffVisual; generic helper string alone not sufficient."
+    },
+    {
+      "asset": "Assets/_Project/Resources/SharedUI/buff_speed.png",
+      "location": "Assets/_Project/Scripts/UI/SharedSettings.cs:153",
+      "old_line": 153,
+      "code": "icon == \"close\" ? \"Glyphs/close\" : \"SharedUI/\" + icon;",
+      "loader": "SharedUI/buff_speed",
+      "can_execute": "c\u00f3",
+      "reason": "Check live evidence MonsterBuffVisual; generic helper string alone not sufficient."
+    },
+    {
+      "asset": "Assets/_Project/Resources/SharedUI/buff_speed.png",
+      "location": "Assets/_Project/Scripts/Visual/MonsterBuffVisual.cs:37",
+      "old_line": 37,
+      "code": "MakeBadge(\"AttackSpeed\",Resources.Load<Sprite>(\"SharedUI/buff_speed\"),.22f);",
+      "loader": "SharedUI/buff_speed",
+      "can_execute": "c\u00f3",
+      "reason": "Check live evidence MonsterBuffVisual; generic helper string alone not sufficient."
+    },
+    {
+      "asset": "Assets/_Project/Resources/SharedUI/gold.png",
+      "location": "Assets/_Project/Scripts/UI/BattleModalView.cs:75",
+      "old_line": 75,
+      "code": "else {var art=Rect(row,\"Icon\",new Vector2(-325,0),new Vector2(85,85)).gameObject.AddComponent<Image>();art.sprite=Resources.Load<Sprite>(\"SharedUI/\"+icon);art.preserveAspect=true;art.raycastTarget=false;}",
+      "loader": "SharedUI/gold",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Token is not a load of this asset."
+    },
+    {
+      "asset": "Assets/_Project/Resources/SharedUI/gold.png",
+      "location": "Assets/_Project/Scripts/UI/BattleUiSkin.cs:13",
+      "old_line": 13,
+      "code": "public static Sprite Gold => ApprovedUiArt.Get(\"gold\",true) ?? ButtonFamilySkin.Get(2) ?? gold ?? (gold = Make(new Color32(255,219,74,255),new Color32(255,200,31,255)));",
+      "loader": "SharedUI/gold",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Token is not a load of this asset."
+    },
+    {
+      "asset": "Assets/_Project/Resources/SharedUI/gold.png",
+      "location": "Assets/_Project/Scripts/UI/BattleUiSkin.cs:19",
+      "old_line": 19,
+      "code": "public static Sprite Orange => ApprovedUiArt.Get(\"gold\",true) ?? ButtonFamilySkin.Get(0) ?? orange ?? (orange = Make(new Color32(255,205,38,255), new Color32(255,144,0,255)));",
+      "loader": "SharedUI/gold",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Token is not a load of this asset."
+    },
+    {
+      "asset": "Assets/_Project/Resources/SharedUI/gold.png",
+      "location": "Assets/_Project/Scripts/UI/BattleUiSkin.cs:58",
+      "old_line": 58,
+      "code": "var sprite=Resources.Load<Sprite>(name.Contains(\"/\")?name:\"SharedUI/\"+name);",
+      "loader": "SharedUI/gold",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Token is not a load of this asset."
+    },
+    {
+      "asset": "Assets/_Project/Resources/SharedUI/gold.png",
+      "location": "Assets/_Project/Scripts/UI/ScreenChrome.cs:85",
+      "old_line": 85,
+      "code": "_ => \"gold\",",
+      "loader": "SharedUI/gold",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Token is not a load of this asset."
+    },
+    {
+      "asset": "Assets/_Project/Resources/SharedUI/gold.png",
+      "location": "Assets/_Project/Scripts/UI/ResultPanel.cs:126",
+      "old_line": 126,
+      "code": "Reward(content,\"Gold\",gold,-340,\"gold\");Reward(content,\"Keys\",keys,0,\"key\");Reward(content,\"Gems\",gems,340,\"gem\");",
+      "loader": "SharedUI/gold",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Token is not a load of this asset."
+    },
+    {
+      "asset": "Assets/_Project/Resources/SharedUI/gold.png",
+      "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:48",
+      "old_line": 48,
+      "code": "Apply(button.GetComponent<Image>(), \"gold\", true);",
+      "loader": "SharedUI/gold",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Token is not a load of this asset."
+    },
+    {
+      "asset": "Assets/_Project/Resources/SharedUI/gold.png",
+      "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:50",
+      "old_line": 50,
+      "code": "button.spriteState = new SpriteState { highlightedSprite = Get(\"gold\", true), selectedSprite = Get(\"gold\", true), pressedSprite = Get(\"pressed\", true), disabledSprite = Get(\"disabled\", true) };",
+      "loader": "SharedUI/gold",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Token is not a load of this asset."
+    },
+    {
+      "asset": "Assets/_Project/Resources/SharedUI/gold.png",
+      "location": "Assets/_Project/Scripts/UI/SharedSettings.cs:153",
+      "old_line": 153,
+      "code": "icon == \"close\" ? \"Glyphs/close\" : \"SharedUI/\" + icon;",
+      "loader": "SharedUI/gold",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Token is not a load of this asset."
+    },
+    {
+      "asset": "Assets/_Project/Resources/SharedUI/key.png",
+      "location": "Assets/_Project/Scripts/UI/BattleModalView.cs:75",
+      "old_line": 75,
+      "code": "else {var art=Rect(row,\"Icon\",new Vector2(-325,0),new Vector2(85,85)).gameObject.AddComponent<Image>();art.sprite=Resources.Load<Sprite>(\"SharedUI/\"+icon);art.preserveAspect=true;art.raycastTarget=false;}",
+      "loader": "SharedUI/key",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Token is not a load of this asset."
+    },
+    {
+      "asset": "Assets/_Project/Resources/SharedUI/key.png",
+      "location": "Assets/_Project/Scripts/UI/BattleUiSkin.cs:58",
+      "old_line": 58,
+      "code": "var sprite=Resources.Load<Sprite>(name.Contains(\"/\")?name:\"SharedUI/\"+name);",
+      "loader": "SharedUI/key",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Token is not a load of this asset."
+    },
+    {
+      "asset": "Assets/_Project/Resources/SharedUI/key.png",
+      "location": "Assets/_Project/Scripts/UI/ResultPanel.cs:126",
+      "old_line": 126,
+      "code": "Reward(content,\"Gold\",gold,-340,\"gold\");Reward(content,\"Keys\",keys,0,\"key\");Reward(content,\"Gems\",gems,340,\"gem\");",
+      "loader": "SharedUI/key",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Token is not a load of this asset."
+    },
+    {
+      "asset": "Assets/_Project/Resources/SharedUI/key.png",
+      "location": "Assets/_Project/Scripts/UI/ResultPanel.cs:152",
+      "old_line": 152,
+      "code": "art.sprite=Resources.Load<Sprite>(name==\"Gems\"?\"Summon/gem\":\"HomeChrome/\"+(name==\"Gold\"?\"coin\":\"key\"));art.preserveAspect=true;art.raycastTarget=false;art.enabled=art.sprite;",
+      "loader": "SharedUI/key",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Token is not a load of this asset."
+    },
+    {
+      "asset": "Assets/_Project/Resources/SharedUI/key.png",
+      "location": "Assets/_Project/Scripts/UI/HomeChrome.cs:41",
+      "old_line": 41,
+      "code": "self.Wallet(keys,\"key\",new Vector2(-380,-160),new Vector2(250,95));",
+      "loader": "SharedUI/key",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Token is not a load of this asset."
+    },
+    {
+      "asset": "Assets/_Project/Resources/SharedUI/key.png",
+      "location": "Assets/_Project/Scripts/UI/SharedSettings.cs:153",
+      "old_line": 153,
+      "code": "icon == \"close\" ? \"Glyphs/close\" : \"SharedUI/\" + icon;",
+      "loader": "SharedUI/key",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Token is not a load of this asset."
+    },
+    {
+      "asset": "Assets/_Project/Resources/SummonKit/price-pill.png",
+      "location": "Assets/_Project/Scripts/UI/SummonResultsView.cs:56",
+      "old_line": 56,
+      "code": "var badge=Box(card.transform,\"Count\",82,6,124,54,Color.white);badge.sprite=Resources.Load<Sprite>(\"SummonKit/price-pill\");",
+      "loader": "SummonKit/price-pill",
+      "can_execute": "c\u00f3",
+      "reason": "Literal Resources key."
+    },
+    {
+      "asset": "Assets/_Project/Resources/SummonKit/price-pill.png",
+      "location": "Assets/_Project/Scripts/UI/DailyShopScreen.cs:93",
+      "old_line": 93,
+      "code": "var badge=Box(card,\"Count\",72,204,150,54,Color.white);badge.raycastTarget=false;badge.sprite=Resources.Load<Sprite>(\"SummonKit/price-pill\");",
+      "loader": "SummonKit/price-pill",
+      "can_execute": "c\u00f3",
+      "reason": "Literal Resources key."
+    },
+    {
+      "asset": "Assets/_Project/Resources/SummonKit/price-pill.png",
+      "location": "Assets/_Project/Scripts/UI/GemEconomyScreen.cs:99",
+      "old_line": 99,
+      "code": "pillImage.sprite=Resources.Load<Sprite>(\"SummonKit/price-pill\");pillImage.enabled=pillImage.sprite;",
+      "loader": "SummonKit/price-pill",
+      "can_execute": "c\u00f3",
+      "reason": "Literal Resources key."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/atk.bytes",
+      "location": "Assets/_Project/Scripts/UI/TreasureReviewUi.cs:193",
+      "old_line": 193,
+      "code": "string statIcon=entry.Stat switch{TreasureStat.Atk=>\"atk\",TreasureStat.Hp=>\"hp\",TreasureStat.AtkSpeed=>\"speed\",TreasureStat.CritDamage=>\"crit_damage\",TreasureStat.CritChance=>\"crit_chance\",TreasureStat.LifeSteal=>\"lifesteal\",_=>\"defense\"};",
+      "loader": "UiRefresh/atk",
+      "can_execute": "c\u00f3",
+      "reason": "Stat mapping flows into ApprovedUiArt.StatTexture \u2192 Get first, StatIcons fallback second."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/atk.bytes",
+      "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+      "old_line": 20,
+      "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+      "loader": "UiRefresh/atk",
+      "can_execute": "c\u00f3",
+      "reason": "Generic loader, reviewed actual caller argument set: slug reachable."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/atk.bytes",
+      "location": "Assets/_Project/Scripts/UI/ChapterMonsterViews.cs:114",
+      "old_line": 114,
+      "code": "string[] names={\"HP\",\"ATK\",\"ATK SPD\",\"RANGE\"};string[] icons={\"hp\",\"atk\",\"speed\",\"range\"};",
+      "loader": "UiRefresh/atk",
+      "can_execute": "c\u00f3",
+      "reason": "Stat mapping flows into ApprovedUiArt.StatTexture \u2192 Get first, StatIcons fallback second."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/atk.bytes",
+      "location": "Assets/_Project/Scripts/UI/AllyUpgradeView.cs:125",
+      "old_line": 125,
+      "code": "string[] icons={\"hp\",\"mp\",\"atk\",\"speed\",\"crit_chance\",\"crit_damage\",\"defense\",\"range\"};",
+      "loader": "UiRefresh/atk",
+      "can_execute": "c\u00f3",
+      "reason": "Stat mapping flows into ApprovedUiArt.StatTexture \u2192 Get first, StatIcons fallback second."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/atk.bytes",
+      "location": "Assets/_Project/Scripts/UI/BattleUnitInfo.cs:77",
+      "old_line": 77,
+      "code": "string[] icons={\"hp\",\"mp\",\"atk\",\"speed\",\"crit_chance\",\"crit_damage\",\"defense\",\"range\"};",
+      "loader": "UiRefresh/atk",
+      "can_execute": "c\u00f3",
+      "reason": "Stat mapping flows into ApprovedUiArt.StatTexture \u2192 Get first, StatIcons fallback second."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/back.bytes",
+      "location": "Assets/_Project/Scripts/UI/BattleUiSkin.cs:22",
+      "old_line": 22,
+      "code": "public static Sprite Back => ApprovedUiArt.Get(\"back\") ?? ButtonFamilySkin.Get(6) ?? Blue;",
+      "loader": "UiRefresh/back",
+      "can_execute": "c\u00f3",
+      "reason": "Helper call argument resolves to UiRefresh/back"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/back.bytes",
+      "location": "Assets/_Project/Scripts/UI/ScreenChrome.cs:263",
+      "old_line": 263,
+      "code": "/// <summary>N\u00fat back tr\u00f2n \u0111\u00e3 duy\u1ec7t (Resources/UiRefresh/back), \u0111\u1eb7t \u1edf g\u00f3c tr\u00ean tr\u00e1i.</summary>",
+      "loader": "UiRefresh/back",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Token is not a load of this asset."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/back.bytes",
+      "location": "Assets/_Project/Scripts/UI/ScreenChrome.cs:265",
+      "old_line": 265,
+      "code": "=> Round(parent, \"back\", \"blue\", position, BackSize, onClick);",
+      "loader": "UiRefresh/back",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Token is not a load of this asset."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/back.bytes",
+      "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+      "old_line": 20,
+      "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+      "loader": "UiRefresh/back",
+      "can_execute": "c\u00f3",
+      "reason": "Generic loader, reviewed actual caller argument set: slug reachable."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/back.bytes",
+      "location": "Assets/_Project/Scripts/UI/AllyUpgradeView.cs:105",
+      "old_line": 105,
+      "code": "var prev=ScreenChrome.Round(stage,\"back\",\"blue\",Vector2.zero,120,()=>Select((selected+units.Length-1)%units.Length));",
+      "loader": "UiRefresh/back",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Token is not a load of this asset."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/battle.bytes",
+      "location": "Assets/_Project/Scripts/UI/BattleHud.cs:123",
+      "old_line": 123,
+      "code": "var swords=new GameObject(\"Start swords\",typeof(RectTransform),typeof(Image)).GetComponent<Image>();swords.transform.SetParent(startButton.transform,false);swords.sprite=ApprovedUiArt.Get(\"battle\");swords.preserveAspect=true;swords.raycastTarget=false;BattleUiSkin.Place(swords.rectTransform,Vector2.one*.5f,Vector2.zero,new Vector2(150,140));",
+      "loader": "UiRefresh/battle",
+      "can_execute": "c\u00f3",
+      "reason": "Helper call argument resolves to UiRefresh/battle"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/battle.bytes",
+      "location": "Assets/_Project/Scripts/UI/MythicFusionPanel.cs:155",
+      "old_line": 155,
+      "code": "var icon=Rect(tab.transform,\"Tab icon\",new Vector2(-155,0),new Vector2(60,60)).gameObject.AddComponent<Image>();icon.sprite=ApprovedUiArt.Get(tab==tabAllies?\"recipe\":\"battle\");icon.preserveAspect=true;icon.raycastTarget=false;",
+      "loader": "UiRefresh/battle",
+      "can_execute": "c\u00f3",
+      "reason": "Helper call argument resolves to UiRefresh/battle"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/battle.bytes",
+      "location": "Assets/_Project/Scripts/UI/HomeScreen.cs:77",
+      "old_line": 77,
+      "code": "BattleUiSkin.Icon(playButton,\"battle\");",
+      "loader": "UiRefresh/battle",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Token is not a load of this asset."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/battle.bytes",
+      "location": "Assets/_Project/Scripts/UI/HomeScreen.cs:79",
+      "old_line": 79,
+      "code": "ScreenChrome.Action(playButton,ScreenChrome.Role.Primary,\"battle\");",
+      "loader": "UiRefresh/battle",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Token is not a load of this asset."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/battle.bytes",
+      "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+      "old_line": 20,
+      "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+      "loader": "UiRefresh/battle",
+      "can_execute": "c\u00f3",
+      "reason": "Generic loader, reviewed actual caller argument set: slug reachable."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/battle.bytes",
+      "location": "Assets/_Project/Scripts/UI/SharedSettings.cs:199",
+      "old_line": 199,
+      "code": "if(Battle){var stats=Button(menu,\"Contribution\",new Vector2(-220,-165),BuildContribution);stats.sizeDelta=new Vector2(400,90);BattleUiSkin.Button(stats.GetComponent<Button>(),BattleUiSkin.Purple,\"Contribution\");ScreenChrome.Action(stats.GetComponent<Button>(),ScreenChrome.Role.Secondary);BattleUiSkin.Icon(stats.GetComponent<Button>(),\"battle\");}",
+      "loader": "UiRefresh/battle",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Token is not a load of this asset."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/close.bytes",
+      "location": "Assets/_Project/Scripts/UI/BattleChrome.cs:39",
+      "old_line": 39,
+      "code": "var image=new GameObject(\"Action pictogram\",typeof(RectTransform),typeof(Image)).GetComponent<Image>();image.transform.SetParent(parent,false);image.sprite=ApprovedUiArt.Get(index==1?\"dice\":index==4?\"close\":index==2?\"inventory\":\"recipe\");image.preserveAspect=true;image.raycastTarget=false;BattleUiSkin.Place(image.rectTransform,Vector2.one*.5f,pos,size);return image;",
+      "loader": "UiRefresh/close",
+      "can_execute": "c\u00f3",
+      "reason": "Helper call argument resolves to UiRefresh/close"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/close.bytes",
+      "location": "Assets/_Project/Scripts/UI/MythicFusionPanel.cs:159",
+      "old_line": 159,
+      "code": "var close=Button(root,\"\",new Vector2(440,headerY),new Vector2(125,125),()=>Destroy(modal));ApprovedUiArt.Apply(close.GetComponent<Image>(),\"close\");",
+      "loader": "UiRefresh/close",
+      "can_execute": "c\u00f3",
+      "reason": "Helper call argument resolves to UiRefresh/close"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/close.bytes",
+      "location": "Assets/_Project/Scripts/UI/TreasureReviewUi.cs:166",
+      "old_line": 166,
+      "code": "ApprovedUiArt.Apply(close.GetComponent<Image>(),\"close\");",
+      "loader": "UiRefresh/close",
+      "can_execute": "c\u00f3",
+      "reason": "Helper call argument resolves to UiRefresh/close"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/close.bytes",
+      "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+      "old_line": 20,
+      "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+      "loader": "UiRefresh/close",
+      "can_execute": "c\u00f3",
+      "reason": "Generic loader, reviewed actual caller argument set: slug reachable."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/close.bytes",
+      "location": "Assets/_Project/Scripts/UI/SharedSettings.cs:144",
+      "old_line": 144,
+      "code": "label == \"Home\" || label == \"Leave\" ? \"home\" : label == \"Close\" || label == \"Cancel\" ? \"close\" : null;",
+      "loader": "UiRefresh/close",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Token is not a load of this asset."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/close.bytes",
+      "location": "Assets/_Project/Scripts/UI/SharedSettings.cs:153",
+      "old_line": 153,
+      "code": "icon == \"close\" ? \"Glyphs/close\" : \"SharedUI/\" + icon;",
+      "loader": "UiRefresh/close",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Token is not a load of this asset."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/close.bytes",
+      "location": "Assets/_Project/Scripts/UI/BattleUnitInfo.cs:58",
+      "old_line": 58,
+      "code": "var close=Rect(panel,\"Close\",new Vector2(440,1010),new Vector2(125,125));ApprovedUiArt.Apply(close.gameObject.AddComponent<Image>(),\"close\");close.gameObject.AddComponent<Button>().onClick.AddListener(Close);",
+      "loader": "UiRefresh/close",
+      "can_execute": "c\u00f3",
+      "reason": "Helper call argument resolves to UiRefresh/close"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/coin.bytes",
+      "location": "Assets/_Project/Scripts/UI/BattleHud.cs:127",
+      "old_line": 127,
+      "code": "var coin=BattleChrome.Draw(rollButton.transform,1,new Vector2(75,0),new Vector2(65,65));coin.sprite=ApprovedUiArt.Get(\"coin\");",
+      "loader": "UiRefresh/coin",
+      "can_execute": "c\u00f3",
+      "reason": "Helper call argument resolves to UiRefresh/coin"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/coin.bytes",
+      "location": "Assets/_Project/Scripts/UI/RollRewardArt.cs:68",
+      "old_line": 68,
+      "code": "var fx=Create(parent,\"coin\");fx.space=parent;fx.target=destination;",
+      "loader": "UiRefresh/coin",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Token is not a load of this asset."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/coin.bytes",
+      "location": "Assets/_Project/Scripts/UI/RollRewardArt.cs:91",
+      "old_line": 91,
+      "code": "fx.art.rectTransform.sizeDelta=Vector2.one*(sheet==\"coin\"?70:95);",
+      "loader": "UiRefresh/coin",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Token is not a load of this asset."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/coin.bytes",
+      "location": "Assets/_Project/Scripts/UI/ResultPanel.cs:152",
+      "old_line": 152,
+      "code": "art.sprite=Resources.Load<Sprite>(name==\"Gems\"?\"Summon/gem\":\"HomeChrome/\"+(name==\"Gold\"?\"coin\":\"key\"));art.preserveAspect=true;art.raycastTarget=false;art.enabled=art.sprite;",
+      "loader": "UiRefresh/coin",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Token is not a load of this asset."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/coin.bytes",
+      "location": "Assets/_Project/Scripts/UI/TreasureReviewUi.cs:82",
+      "old_line": 82,
+      "code": "walletGold=T(reviewRoot,\"\",-155,25,260,85,48);Icon(reviewRoot,ApprovedUiArt.Get(\"coin\"),-300,35,65);",
+      "loader": "UiRefresh/coin",
+      "can_execute": "c\u00f3",
+      "reason": "Helper call argument resolves to UiRefresh/coin"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/coin.bytes",
+      "location": "Assets/_Project/Scripts/UI/TreasureReviewUi.cs:208",
+      "old_line": 208,
+      "code": "Icon(buy.transform,ApprovedUiArt.Get(\"coin\"),-215,24,80);T(buy.transform,price.ToString(\"N0\"),65,0,550,150,64);",
+      "loader": "UiRefresh/coin",
+      "can_execute": "c\u00f3",
+      "reason": "Helper call argument resolves to UiRefresh/coin"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/coin.bytes",
+      "location": "Assets/_Project/Scripts/UI/HomeChrome.cs:40",
+      "old_line": 40,
+      "code": "self.Wallet(gold,\"coin\",new Vector2(-710,-160),new Vector2(290,95));",
+      "loader": "UiRefresh/coin",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Token is not a load of this asset."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/coin.bytes",
+      "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+      "old_line": 20,
+      "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+      "loader": "UiRefresh/coin",
+      "can_execute": "c\u00f3",
+      "reason": "Generic loader, reviewed actual caller argument set: slug reachable."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/cyan.bytes",
+      "location": "Assets/_Project/Scripts/UI/BattleChrome.cs:22",
+      "old_line": 22,
+      "code": "ApprovedUiArt.Apply(button.GetComponent<Image>(),\"cyan\",true);",
+      "loader": "UiRefresh/cyan",
+      "can_execute": "c\u00f3",
+      "reason": "Helper call argument resolves to UiRefresh/cyan"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/cyan.bytes",
+      "location": "Assets/_Project/Scripts/UI/BattleUiSkin.cs:18",
+      "old_line": 18,
+      "code": "public static Sprite Blue => ApprovedUiArt.Get(\"cyan\",true) ?? blue ?? (blue = Make(new Color32(43,174,244,255), new Color32(0,119,226,255)));",
+      "loader": "UiRefresh/cyan",
+      "can_execute": "c\u00f3",
+      "reason": "Helper call argument resolves to UiRefresh/cyan"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/cyan.bytes",
+      "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+      "old_line": 20,
+      "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+      "loader": "UiRefresh/cyan",
+      "can_execute": "c\u00f3",
+      "reason": "Generic loader, reviewed actual caller argument set: slug reachable."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/defense.bytes",
+      "location": "Assets/_Project/Scripts/UI/TreasureReviewUi.cs:193",
+      "old_line": 193,
+      "code": "string statIcon=entry.Stat switch{TreasureStat.Atk=>\"atk\",TreasureStat.Hp=>\"hp\",TreasureStat.AtkSpeed=>\"speed\",TreasureStat.CritDamage=>\"crit_damage\",TreasureStat.CritChance=>\"crit_chance\",TreasureStat.LifeSteal=>\"lifesteal\",_=>\"defense\"};",
+      "loader": "UiRefresh/defense",
+      "can_execute": "c\u00f3",
+      "reason": "Stat mapping flows into ApprovedUiArt.StatTexture \u2192 Get first, StatIcons fallback second."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/defense.bytes",
+      "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+      "old_line": 20,
+      "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+      "loader": "UiRefresh/defense",
+      "can_execute": "c\u00f3",
+      "reason": "Generic loader, reviewed actual caller argument set: slug reachable."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/defense.bytes",
+      "location": "Assets/_Project/Scripts/UI/AllyUpgradeView.cs:125",
+      "old_line": 125,
+      "code": "string[] icons={\"hp\",\"mp\",\"atk\",\"speed\",\"crit_chance\",\"crit_damage\",\"defense\",\"range\"};",
+      "loader": "UiRefresh/defense",
+      "can_execute": "c\u00f3",
+      "reason": "Stat mapping flows into ApprovedUiArt.StatTexture \u2192 Get first, StatIcons fallback second."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/defense.bytes",
+      "location": "Assets/_Project/Scripts/UI/BattleUnitInfo.cs:77",
+      "old_line": 77,
+      "code": "string[] icons={\"hp\",\"mp\",\"atk\",\"speed\",\"crit_chance\",\"crit_damage\",\"defense\",\"range\"};",
+      "loader": "UiRefresh/defense",
+      "can_execute": "c\u00f3",
+      "reason": "Stat mapping flows into ApprovedUiArt.StatTexture \u2192 Get first, StatIcons fallback second."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/dice.bytes",
+      "location": "Assets/_Project/Scripts/UI/BattleChrome.cs:39",
+      "old_line": 39,
+      "code": "var image=new GameObject(\"Action pictogram\",typeof(RectTransform),typeof(Image)).GetComponent<Image>();image.transform.SetParent(parent,false);image.sprite=ApprovedUiArt.Get(index==1?\"dice\":index==4?\"close\":index==2?\"inventory\":\"recipe\");image.preserveAspect=true;image.raycastTarget=false;BattleUiSkin.Place(image.rectTransform,Vector2.one*.5f,pos,size);return image;",
+      "loader": "UiRefresh/dice",
+      "can_execute": "c\u00f3",
+      "reason": "Helper call argument resolves to UiRefresh/dice"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/dice.bytes",
+      "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+      "old_line": 20,
+      "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+      "loader": "UiRefresh/dice",
+      "can_execute": "c\u00f3",
+      "reason": "Generic loader, reviewed actual caller argument set: slug reachable."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/disabled.bytes",
+      "location": "Assets/_Project/Scripts/UI/ScreenChrome.cs:100",
+      "old_line": 100,
+      "code": "// Sprite \"disabled\" ch\u1ec9 thay m\u1eb7t n\u00fat; ch\u1eef v\u00e0 icon b\u00ean trong v\u1eabn s\u00e1ng nguy\u00ean n\u00ean",
+      "loader": "UiRefresh/disabled",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Token is not a load of this asset."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/disabled.bytes",
+      "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+      "old_line": 20,
+      "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+      "loader": "UiRefresh/disabled",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Generic loader, reviewed actual caller argument set: slug not passed by live callers."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/disabled.bytes",
+      "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:50",
+      "old_line": 50,
+      "code": "button.spriteState = new SpriteState { highlightedSprite = Get(\"gold\", true), selectedSprite = Get(\"gold\", true), pressedSprite = Get(\"pressed\", true), disabledSprite = Get(\"disabled\", true) };",
+      "loader": "UiRefresh/disabled",
+      "can_execute": "kh\u00f4ng",
+      "reason": "GoldStates method has zero callers; not a live path."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/gold.bytes",
+      "location": "Assets/_Project/Scripts/UI/BattleUiSkin.cs:13",
+      "old_line": 13,
+      "code": "public static Sprite Gold => ApprovedUiArt.Get(\"gold\",true) ?? ButtonFamilySkin.Get(2) ?? gold ?? (gold = Make(new Color32(255,219,74,255),new Color32(255,200,31,255)));",
+      "loader": "UiRefresh/gold",
+      "can_execute": "c\u00f3",
+      "reason": "Helper call argument resolves to UiRefresh/gold"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/gold.bytes",
+      "location": "Assets/_Project/Scripts/UI/BattleUiSkin.cs:19",
+      "old_line": 19,
+      "code": "public static Sprite Orange => ApprovedUiArt.Get(\"gold\",true) ?? ButtonFamilySkin.Get(0) ?? orange ?? (orange = Make(new Color32(255,205,38,255), new Color32(255,144,0,255)));",
+      "loader": "UiRefresh/gold",
+      "can_execute": "c\u00f3",
+      "reason": "Helper call argument resolves to UiRefresh/gold"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/gold.bytes",
+      "location": "Assets/_Project/Scripts/UI/ScreenChrome.cs:85",
+      "old_line": 85,
+      "code": "_ => \"gold\",",
+      "loader": "UiRefresh/gold",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Token is not a load of this asset."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/gold.bytes",
+      "location": "Assets/_Project/Scripts/UI/ResultPanel.cs:126",
+      "old_line": 126,
+      "code": "Reward(content,\"Gold\",gold,-340,\"gold\");Reward(content,\"Keys\",keys,0,\"key\");Reward(content,\"Gems\",gems,340,\"gem\");",
+      "loader": "UiRefresh/gold",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Token is not a load of this asset."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/gold.bytes",
+      "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+      "old_line": 20,
+      "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+      "loader": "UiRefresh/gold",
+      "can_execute": "c\u00f3",
+      "reason": "Generic loader, reviewed actual caller argument set: slug reachable."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/gold.bytes",
+      "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:48",
+      "old_line": 48,
+      "code": "Apply(button.GetComponent<Image>(), \"gold\", true);",
+      "loader": "UiRefresh/gold",
+      "can_execute": "kh\u00f4ng",
+      "reason": "GoldStates method has zero callers; not a live path."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/gold.bytes",
+      "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:50",
+      "old_line": 50,
+      "code": "button.spriteState = new SpriteState { highlightedSprite = Get(\"gold\", true), selectedSprite = Get(\"gold\", true), pressedSprite = Get(\"pressed\", true), disabledSprite = Get(\"disabled\", true) };",
+      "loader": "UiRefresh/gold",
+      "can_execute": "kh\u00f4ng",
+      "reason": "GoldStates method has zero callers; not a live path."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/hp.bytes",
+      "location": "Assets/_Project/Scripts/UI/TreasureReviewUi.cs:193",
+      "old_line": 193,
+      "code": "string statIcon=entry.Stat switch{TreasureStat.Atk=>\"atk\",TreasureStat.Hp=>\"hp\",TreasureStat.AtkSpeed=>\"speed\",TreasureStat.CritDamage=>\"crit_damage\",TreasureStat.CritChance=>\"crit_chance\",TreasureStat.LifeSteal=>\"lifesteal\",_=>\"defense\"};",
+      "loader": "UiRefresh/hp",
+      "can_execute": "c\u00f3",
+      "reason": "Stat mapping flows into ApprovedUiArt.StatTexture \u2192 Get first, StatIcons fallback second."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/hp.bytes",
+      "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+      "old_line": 20,
+      "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+      "loader": "UiRefresh/hp",
+      "can_execute": "c\u00f3",
+      "reason": "Generic loader, reviewed actual caller argument set: slug reachable."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/hp.bytes",
+      "location": "Assets/_Project/Scripts/UI/ChapterMonsterViews.cs:114",
+      "old_line": 114,
+      "code": "string[] names={\"HP\",\"ATK\",\"ATK SPD\",\"RANGE\"};string[] icons={\"hp\",\"atk\",\"speed\",\"range\"};",
+      "loader": "UiRefresh/hp",
+      "can_execute": "c\u00f3",
+      "reason": "Stat mapping flows into ApprovedUiArt.StatTexture \u2192 Get first, StatIcons fallback second."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/hp.bytes",
+      "location": "Assets/_Project/Scripts/UI/AllyUpgradeView.cs:125",
+      "old_line": 125,
+      "code": "string[] icons={\"hp\",\"mp\",\"atk\",\"speed\",\"crit_chance\",\"crit_damage\",\"defense\",\"range\"};",
+      "loader": "UiRefresh/hp",
+      "can_execute": "c\u00f3",
+      "reason": "Stat mapping flows into ApprovedUiArt.StatTexture \u2192 Get first, StatIcons fallback second."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/hp.bytes",
+      "location": "Assets/_Project/Scripts/UI/BattleUnitInfo.cs:77",
+      "old_line": 77,
+      "code": "string[] icons={\"hp\",\"mp\",\"atk\",\"speed\",\"crit_chance\",\"crit_damage\",\"defense\",\"range\"};",
+      "loader": "UiRefresh/hp",
+      "can_execute": "c\u00f3",
+      "reason": "Stat mapping flows into ApprovedUiArt.StatTexture \u2192 Get first, StatIcons fallback second."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/hp.bytes",
+      "location": "Assets/_Project/Scripts/Debug/BattleProbe.cs:54",
+      "old_line": 54,
+      "code": "sb.AppendLine($\"{\"t\",6} {\"ten\",-10} {\"phe\",-5} {\"x\",7} {\"hp\",7} {\"song\",4} {\"dan\",4}\");",
+      "loader": "UiRefresh/hp",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Token is not a load of this asset."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/info.bytes",
+      "location": "Assets/_Project/Scripts/UI/CellPanel.cs:77",
+      "old_line": 77,
+      "code": "ApprovedUiArt.Apply(go.GetComponent<Image>(),\"info\");",
+      "loader": "UiRefresh/info",
+      "can_execute": "c\u00f3",
+      "reason": "Helper call argument resolves to UiRefresh/info"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/info.bytes",
+      "location": "Assets/_Project/Scripts/UI/BattleUiSkin.cs:23",
+      "old_line": 23,
+      "code": "public static Sprite Info => ApprovedUiArt.Get(\"info\") ?? ButtonFamilySkin.Get(7) ?? Navy;",
+      "loader": "UiRefresh/info",
+      "can_execute": "c\u00f3",
+      "reason": "Helper call argument resolves to UiRefresh/info"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/info.bytes",
+      "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+      "old_line": 20,
+      "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+      "loader": "UiRefresh/info",
+      "can_execute": "c\u00f3",
+      "reason": "Generic loader, reviewed actual caller argument set: slug reachable."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/inventory.bytes",
+      "location": "Assets/_Project/Scripts/UI/BattleChrome.cs:21",
+      "old_line": 21,
+      "code": "if(family==0 || family==2){ApprovedUiArt.Action(button,\"navy\",family==0?\"recipe\":\"inventory\");return;}",
+      "loader": "UiRefresh/inventory",
+      "can_execute": "c\u00f3",
+      "reason": "Helper call argument resolves to UiRefresh/inventory"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/inventory.bytes",
+      "location": "Assets/_Project/Scripts/UI/BattleChrome.cs:39",
+      "old_line": 39,
+      "code": "var image=new GameObject(\"Action pictogram\",typeof(RectTransform),typeof(Image)).GetComponent<Image>();image.transform.SetParent(parent,false);image.sprite=ApprovedUiArt.Get(index==1?\"dice\":index==4?\"close\":index==2?\"inventory\":\"recipe\");image.preserveAspect=true;image.raycastTarget=false;BattleUiSkin.Place(image.rectTransform,Vector2.one*.5f,pos,size);return image;",
+      "loader": "UiRefresh/inventory",
+      "can_execute": "c\u00f3",
+      "reason": "Helper call argument resolves to UiRefresh/inventory"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/inventory.bytes",
+      "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+      "old_line": 20,
+      "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+      "loader": "UiRefresh/inventory",
+      "can_execute": "c\u00f3",
+      "reason": "Generic loader, reviewed actual caller argument set: slug reachable."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/key.bytes",
+      "location": "Assets/_Project/Scripts/UI/ResultPanel.cs:126",
+      "old_line": 126,
+      "code": "Reward(content,\"Gold\",gold,-340,\"gold\");Reward(content,\"Keys\",keys,0,\"key\");Reward(content,\"Gems\",gems,340,\"gem\");",
+      "loader": "UiRefresh/key",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Token is not a load of this asset."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/key.bytes",
+      "location": "Assets/_Project/Scripts/UI/ResultPanel.cs:152",
+      "old_line": 152,
+      "code": "art.sprite=Resources.Load<Sprite>(name==\"Gems\"?\"Summon/gem\":\"HomeChrome/\"+(name==\"Gold\"?\"coin\":\"key\"));art.preserveAspect=true;art.raycastTarget=false;art.enabled=art.sprite;",
+      "loader": "UiRefresh/key",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Token is not a load of this asset."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/key.bytes",
+      "location": "Assets/_Project/Scripts/UI/HomeChrome.cs:41",
+      "old_line": 41,
+      "code": "self.Wallet(keys,\"key\",new Vector2(-380,-160),new Vector2(250,95));",
+      "loader": "UiRefresh/key",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Token is not a load of this asset."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/key.bytes",
+      "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+      "old_line": 20,
+      "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+      "loader": "UiRefresh/key",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Generic loader, reviewed actual caller argument set: slug not passed by live callers."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/menu.bytes",
+      "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+      "old_line": 20,
+      "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+      "loader": "UiRefresh/menu",
+      "can_execute": "c\u00f3",
+      "reason": "Generic loader, reviewed actual caller argument set: slug reachable."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/menu.bytes",
+      "location": "Assets/_Project/Scripts/UI/SharedSettings.cs:97",
+      "old_line": 97,
+      "code": "else { BattleUiSkin.Skin(openImage,BattleUiSkin.Dark); ApprovedUiArt.Apply(openImage,\"menu\"); }",
+      "loader": "UiRefresh/menu",
+      "can_execute": "c\u00f3",
+      "reason": "Helper call argument resolves to UiRefresh/menu"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/mp.bytes",
+      "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+      "old_line": 20,
+      "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+      "loader": "UiRefresh/mp",
+      "can_execute": "c\u00f3",
+      "reason": "Generic loader, reviewed actual caller argument set: slug reachable."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/mp.bytes",
+      "location": "Assets/_Project/Scripts/UI/AllyUpgradeView.cs:125",
+      "old_line": 125,
+      "code": "string[] icons={\"hp\",\"mp\",\"atk\",\"speed\",\"crit_chance\",\"crit_damage\",\"defense\",\"range\"};",
+      "loader": "UiRefresh/mp",
+      "can_execute": "c\u00f3",
+      "reason": "Stat mapping flows into ApprovedUiArt.StatTexture \u2192 Get first, StatIcons fallback second."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/mp.bytes",
+      "location": "Assets/_Project/Scripts/UI/BattleUnitInfo.cs:77",
+      "old_line": 77,
+      "code": "string[] icons={\"hp\",\"mp\",\"atk\",\"speed\",\"crit_chance\",\"crit_damage\",\"defense\",\"range\"};",
+      "loader": "UiRefresh/mp",
+      "can_execute": "c\u00f3",
+      "reason": "Stat mapping flows into ApprovedUiArt.StatTexture \u2192 Get first, StatIcons fallback second."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/navy.bytes",
+      "location": "Assets/_Project/Scripts/UI/BattleChrome.cs:21",
+      "old_line": 21,
+      "code": "if(family==0 || family==2){ApprovedUiArt.Action(button,\"navy\",family==0?\"recipe\":\"inventory\");return;}",
+      "loader": "UiRefresh/navy",
+      "can_execute": "c\u00f3",
+      "reason": "Helper call argument resolves to UiRefresh/navy"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/navy.bytes",
+      "location": "Assets/_Project/Scripts/UI/BattleUiSkin.cs:17",
+      "old_line": 17,
+      "code": "public static Sprite Navy => ApprovedUiArt.Get(\"navy\",true) ?? navy ?? (navy = Make(new Color32(15,39,57,255), new Color32(10,27,40,255)));",
+      "loader": "UiRefresh/navy",
+      "can_execute": "c\u00f3",
+      "reason": "Helper call argument resolves to UiRefresh/navy"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/navy.bytes",
+      "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+      "old_line": 20,
+      "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+      "loader": "UiRefresh/navy",
+      "can_execute": "c\u00f3",
+      "reason": "Generic loader, reviewed actual caller argument set: slug reachable."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/next.bytes",
+      "location": "Assets/_Project/Scripts/UI/ResultPanel.cs:135",
+      "old_line": 135,
+      "code": "Action(content,hasNext?\"NEXT LEVEL\":\"RETRY\",hasNext?\"next\":\"replay\",1860,false,()=>{Time.timeScale=1;SceneRoutes.PlayLevel(hasNext?level+1:level);});",
+      "loader": "UiRefresh/next",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Token is not a load of this asset."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/next.bytes",
+      "location": "Assets/_Project/Scripts/UI/TreasureReviewUi.cs:216",
+      "old_line": 216,
+      "code": "ApprovedUiArt.Apply(previous.GetComponent<Image>(),\"previous\");ApprovedUiArt.Apply(nextButton.GetComponent<Image>(),\"next\");",
+      "loader": "UiRefresh/next",
+      "can_execute": "c\u00f3",
+      "reason": "Helper call argument resolves to UiRefresh/next"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/next.bytes",
+      "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+      "old_line": 20,
+      "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+      "loader": "UiRefresh/next",
+      "can_execute": "c\u00f3",
+      "reason": "Generic loader, reviewed actual caller argument set: slug reachable."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/next.bytes",
+      "location": "Assets/_Project/Scripts/UI/AllyUpgradeView.cs:109",
+      "old_line": 109,
+      "code": "var nxt=ScreenChrome.Round(stage,\"next\",\"blue\",Vector2.zero,120,()=>Select((selected+1)%units.Length));",
+      "loader": "UiRefresh/next",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Token is not a load of this asset."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/panel.bytes",
+      "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+      "old_line": 20,
+      "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+      "loader": "UiRefresh/panel",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Generic loader, reviewed actual caller argument set: slug not passed by live callers."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/panel.bytes",
+      "location": "Assets/_Project/Scripts/Editor/BattleSceneSetup.cs:483",
+      "old_line": 483,
+      "code": "so.FindProperty(\"panel\").objectReferenceValue = panel;",
+      "loader": "UiRefresh/panel",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Token is not a load of this asset."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/pressed.bytes",
+      "location": "Assets/_Project/Scripts/UI/ScreenChrome.cs:98",
+      "old_line": 98,
+      "code": "// Art c\u1ee7a b\u1ea3n \"pressed\" ch\u1ec9 \u0111\u1eadm h\u01a1n m\u1ed9t ch\u00fat, n\u00ean h\u1ea1 n\u1ed9i dung xu\u1ed1ng cho th\u1ea5y r\u00f5 l\u00e0 \u0111ang b\u1ea5m.",
+      "loader": "UiRefresh/pressed",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Token is not a load of this asset."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/pressed.bytes",
+      "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+      "old_line": 20,
+      "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+      "loader": "UiRefresh/pressed",
+      "can_execute": "kh\u00f4ng",
+      "reason": "Generic loader, reviewed actual caller argument set: slug not passed by live callers."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/pressed.bytes",
+      "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:50",
+      "old_line": 50,
+      "code": "button.spriteState = new SpriteState { highlightedSprite = Get(\"gold\", true), selectedSprite = Get(\"gold\", true), pressedSprite = Get(\"pressed\", true), disabledSprite = Get(\"disabled\", true) };",
+      "loader": "UiRefresh/pressed",
+      "can_execute": "kh\u00f4ng",
+      "reason": "GoldStates method has zero callers; not a live path."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/previous.bytes",
+      "location": "Assets/_Project/Scripts/UI/TreasureReviewUi.cs:216",
+      "old_line": 216,
+      "code": "ApprovedUiArt.Apply(previous.GetComponent<Image>(),\"previous\");ApprovedUiArt.Apply(nextButton.GetComponent<Image>(),\"next\");",
+      "loader": "UiRefresh/previous",
+      "can_execute": "c\u00f3",
+      "reason": "Helper call argument resolves to UiRefresh/previous"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/previous.bytes",
+      "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+      "old_line": 20,
+      "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+      "loader": "UiRefresh/previous",
+      "can_execute": "c\u00f3",
+      "reason": "Generic loader, reviewed actual caller argument set: slug reachable."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/range.bytes",
+      "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+      "old_line": 20,
+      "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+      "loader": "UiRefresh/range",
+      "can_execute": "c\u00f3",
+      "reason": "Generic loader, reviewed actual caller argument set: slug reachable."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/range.bytes",
+      "location": "Assets/_Project/Scripts/UI/ChapterMonsterViews.cs:114",
+      "old_line": 114,
+      "code": "string[] names={\"HP\",\"ATK\",\"ATK SPD\",\"RANGE\"};string[] icons={\"hp\",\"atk\",\"speed\",\"range\"};",
+      "loader": "UiRefresh/range",
+      "can_execute": "c\u00f3",
+      "reason": "Stat mapping flows into ApprovedUiArt.StatTexture \u2192 Get first, StatIcons fallback second."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/range.bytes",
+      "location": "Assets/_Project/Scripts/UI/AllyUpgradeView.cs:125",
+      "old_line": 125,
+      "code": "string[] icons={\"hp\",\"mp\",\"atk\",\"speed\",\"crit_chance\",\"crit_damage\",\"defense\",\"range\"};",
+      "loader": "UiRefresh/range",
+      "can_execute": "c\u00f3",
+      "reason": "Stat mapping flows into ApprovedUiArt.StatTexture \u2192 Get first, StatIcons fallback second."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/range.bytes",
+      "location": "Assets/_Project/Scripts/UI/BattleUnitInfo.cs:77",
+      "old_line": 77,
+      "code": "string[] icons={\"hp\",\"mp\",\"atk\",\"speed\",\"crit_chance\",\"crit_damage\",\"defense\",\"range\"};",
+      "loader": "UiRefresh/range",
+      "can_execute": "c\u00f3",
+      "reason": "Stat mapping flows into ApprovedUiArt.StatTexture \u2192 Get first, StatIcons fallback second."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/recipe.bytes",
+      "location": "Assets/_Project/Scripts/UI/BattleChrome.cs:21",
+      "old_line": 21,
+      "code": "if(family==0 || family==2){ApprovedUiArt.Action(button,\"navy\",family==0?\"recipe\":\"inventory\");return;}",
+      "loader": "UiRefresh/recipe",
+      "can_execute": "c\u00f3",
+      "reason": "Helper call argument resolves to UiRefresh/recipe"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/recipe.bytes",
+      "location": "Assets/_Project/Scripts/UI/BattleChrome.cs:39",
+      "old_line": 39,
+      "code": "var image=new GameObject(\"Action pictogram\",typeof(RectTransform),typeof(Image)).GetComponent<Image>();image.transform.SetParent(parent,false);image.sprite=ApprovedUiArt.Get(index==1?\"dice\":index==4?\"close\":index==2?\"inventory\":\"recipe\");image.preserveAspect=true;image.raycastTarget=false;BattleUiSkin.Place(image.rectTransform,Vector2.one*.5f,pos,size);return image;",
+      "loader": "UiRefresh/recipe",
+      "can_execute": "c\u00f3",
+      "reason": "Helper call argument resolves to UiRefresh/recipe"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/recipe.bytes",
+      "location": "Assets/_Project/Scripts/UI/MythicFusionPanel.cs:155",
+      "old_line": 155,
+      "code": "var icon=Rect(tab.transform,\"Tab icon\",new Vector2(-155,0),new Vector2(60,60)).gameObject.AddComponent<Image>();icon.sprite=ApprovedUiArt.Get(tab==tabAllies?\"recipe\":\"battle\");icon.preserveAspect=true;icon.raycastTarget=false;",
+      "loader": "UiRefresh/recipe",
+      "can_execute": "c\u00f3",
+      "reason": "Helper call argument resolves to UiRefresh/recipe"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/recipe.bytes",
+      "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+      "old_line": 20,
+      "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+      "loader": "UiRefresh/recipe",
+      "can_execute": "c\u00f3",
+      "reason": "Generic loader, reviewed actual caller argument set: slug reachable."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/speed.bytes",
+      "location": "Assets/_Project/Scripts/UI/TreasureReviewUi.cs:193",
+      "old_line": 193,
+      "code": "string statIcon=entry.Stat switch{TreasureStat.Atk=>\"atk\",TreasureStat.Hp=>\"hp\",TreasureStat.AtkSpeed=>\"speed\",TreasureStat.CritDamage=>\"crit_damage\",TreasureStat.CritChance=>\"crit_chance\",TreasureStat.LifeSteal=>\"lifesteal\",_=>\"defense\"};",
+      "loader": "UiRefresh/speed",
+      "can_execute": "c\u00f3",
+      "reason": "Stat mapping flows into ApprovedUiArt.StatTexture \u2192 Get first, StatIcons fallback second."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/speed.bytes",
+      "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+      "old_line": 20,
+      "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+      "loader": "UiRefresh/speed",
+      "can_execute": "c\u00f3",
+      "reason": "Generic loader, reviewed actual caller argument set: slug reachable."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/speed.bytes",
+      "location": "Assets/_Project/Scripts/UI/ChapterMonsterViews.cs:114",
+      "old_line": 114,
+      "code": "string[] names={\"HP\",\"ATK\",\"ATK SPD\",\"RANGE\"};string[] icons={\"hp\",\"atk\",\"speed\",\"range\"};",
+      "loader": "UiRefresh/speed",
+      "can_execute": "c\u00f3",
+      "reason": "Stat mapping flows into ApprovedUiArt.StatTexture \u2192 Get first, StatIcons fallback second."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/speed.bytes",
+      "location": "Assets/_Project/Scripts/UI/AllyUpgradeView.cs:125",
+      "old_line": 125,
+      "code": "string[] icons={\"hp\",\"mp\",\"atk\",\"speed\",\"crit_chance\",\"crit_damage\",\"defense\",\"range\"};",
+      "loader": "UiRefresh/speed",
+      "can_execute": "c\u00f3",
+      "reason": "Stat mapping flows into ApprovedUiArt.StatTexture \u2192 Get first, StatIcons fallback second."
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/speed.bytes",
+      "location": "Assets/_Project/Scripts/UI/BattleUnitInfo.cs:77",
+      "old_line": 77,
+      "code": "string[] icons={\"hp\",\"mp\",\"atk\",\"speed\",\"crit_chance\",\"crit_damage\",\"defense\",\"range\"};",
+      "loader": "UiRefresh/speed",
+      "can_execute": "c\u00f3",
+      "reason": "Stat mapping flows into ApprovedUiArt.StatTexture \u2192 Get first, StatIcons fallback second."
+    }
+  ],
+  "moves": [
+    {
+      "asset": "Assets/_Project/Resources/Buttons/blue-pressed.png",
+      "key": "Buttons/blue-pressed",
+      "decision": "RETIRE",
+      "reason": "No reachable loader argument found after reviewing actual helper calls; 049 tokens refer to other resources/comments or an uncalled method.",
+      "guid": "e420531addf1446799221e320f3c1494",
+      "guid_consumers": [],
+      "tools": [
+        "tools/import_buttons_v2.py",
+        "tools/import_buttons_summon_kit.py"
+      ],
+      "tools_note": "Legacy importer output targets only; source images and Art/UI/btn_blue.png.meta template retained.",
+      "candidates": [],
+      "sha256": "117677050e89825d6138622f665eaea9d6d72a0b967d41755ebd0f8bd8bf7f42",
+      "retired_to": "artsrc/ui/retired-2026-11-05/Buttons/blue-pressed.png"
+    },
+    {
+      "asset": "Assets/_Project/Resources/Buttons/blue.png",
+      "key": "Buttons/blue",
+      "decision": "RETIRE",
+      "reason": "No reachable loader argument found after reviewing actual helper calls; 049 tokens refer to other resources/comments or an uncalled method.",
+      "guid": "c405c3bf762345d4a40e015f37e31936",
+      "guid_consumers": [],
+      "tools": [
+        "tools/import_buttons_v2.py",
+        "tools/import_buttons_summon_kit.py"
+      ],
+      "tools_note": "Legacy importer output targets only; source images and Art/UI/btn_blue.png.meta template retained.",
+      "candidates": [],
+      "sha256": "ab9df9f1cdc8fcb1397564aee9518779ea3059d6c082bce4b90426514ec14894",
+      "retired_to": "artsrc/ui/retired-2026-11-05/Buttons/blue.png"
+    },
+    {
+      "asset": "Assets/_Project/Resources/Buttons/disabled.png",
+      "key": "Buttons/disabled",
+      "decision": "RETIRE",
+      "reason": "No reachable loader argument found after reviewing actual helper calls; 049 tokens refer to other resources/comments or an uncalled method.",
+      "guid": "9702cdeae57d48f4b2fdf8b08a8b3309",
+      "guid_consumers": [],
+      "tools": [
+        "tools/import_buttons_v2.py",
+        "tools/import_buttons_summon_kit.py"
+      ],
+      "tools_note": "Legacy importer output targets only; source images and Art/UI/btn_blue.png.meta template retained.",
+      "candidates": [],
+      "sha256": "51e37f87e05f4262454206a96ef61167b998dadb780f1dce413bcab3ef132443",
+      "retired_to": "artsrc/ui/retired-2026-11-05/Buttons/disabled.png"
+    },
+    {
+      "asset": "Assets/_Project/Resources/Buttons/gold-pressed.png",
+      "key": "Buttons/gold-pressed",
+      "decision": "RETIRE",
+      "reason": "No reachable loader argument found after reviewing actual helper calls; 049 tokens refer to other resources/comments or an uncalled method.",
+      "guid": "2a3b4a4000cd4af486570b3929356f9a",
+      "guid_consumers": [],
+      "tools": [
+        "tools/import_buttons_v2.py",
+        "tools/import_buttons_summon_kit.py"
+      ],
+      "tools_note": "Legacy importer output targets only; source images and Art/UI/btn_blue.png.meta template retained.",
+      "candidates": [],
+      "sha256": "c3ad87cf11edac8f2dc7d3d2618fe8f50b8f9b48dbb6d44cfe4d4964c9ae04f9",
+      "retired_to": "artsrc/ui/retired-2026-11-05/Buttons/gold-pressed.png"
+    },
+    {
+      "asset": "Assets/_Project/Resources/Buttons/gold.png",
+      "key": "Buttons/gold",
+      "decision": "RETIRE",
+      "reason": "No reachable loader argument found after reviewing actual helper calls; 049 tokens refer to other resources/comments or an uncalled method.",
+      "guid": "22536af151f94143b82d67b38c067657",
+      "guid_consumers": [],
+      "tools": [
+        "tools/import_buttons_v2.py",
+        "tools/import_buttons_summon_kit.py"
+      ],
+      "tools_note": "Legacy importer output targets only; source images and Art/UI/btn_blue.png.meta template retained.",
+      "candidates": [],
+      "sha256": "163bdfb905ce759f30611a3800d03b23a9537e5679f46801f5494a035b0caf93",
+      "retired_to": "artsrc/ui/retired-2026-11-05/Buttons/gold.png"
+    },
+    {
+      "asset": "Assets/_Project/Resources/Buttons/red-pressed.png",
+      "key": "Buttons/red-pressed",
+      "decision": "RETIRE",
+      "reason": "No reachable loader argument found after reviewing actual helper calls; 049 tokens refer to other resources/comments or an uncalled method.",
+      "guid": "0db68561cea44e07802bf4c8647e2ed2",
+      "guid_consumers": [],
+      "tools": [
+        "tools/import_buttons_v2.py",
+        "tools/import_buttons_summon_kit.py"
+      ],
+      "tools_note": "Legacy importer output targets only; source images and Art/UI/btn_blue.png.meta template retained.",
+      "candidates": [],
+      "sha256": "9a18f74fe10a362837b5f50698fc25062d050f433965c9eb8742c192e0de40e0",
+      "retired_to": "artsrc/ui/retired-2026-11-05/Buttons/red-pressed.png"
+    },
+    {
+      "asset": "Assets/_Project/Resources/Buttons/red.png",
+      "key": "Buttons/red",
+      "decision": "RETIRE",
+      "reason": "No reachable loader argument found after reviewing actual helper calls; 049 tokens refer to other resources/comments or an uncalled method.",
+      "guid": "0bb68eed32ed43b29f15fb7504ccb2ee",
+      "guid_consumers": [],
+      "tools": [
+        "tools/import_buttons_v2.py",
+        "tools/import_buttons_summon_kit.py"
+      ],
+      "tools_note": "Legacy importer output targets only; source images and Art/UI/btn_blue.png.meta template retained.",
+      "candidates": [],
+      "sha256": "2d4f1435f4468285fbdbfb671cf08ba948dce30f3a2cc0c587d574bc8b150ef2",
+      "retired_to": "artsrc/ui/retired-2026-11-05/Buttons/red.png"
+    },
+    {
+      "asset": "Assets/_Project/Resources/Buttons/slate-pressed.png",
+      "key": "Buttons/slate-pressed",
+      "decision": "RETIRE",
+      "reason": "No reachable loader argument found after reviewing actual helper calls; 049 tokens refer to other resources/comments or an uncalled method.",
+      "guid": "adbe6c0128284e75a609ad7a62ed9ade",
+      "guid_consumers": [],
+      "tools": [
+        "tools/import_buttons_v2.py",
+        "tools/import_buttons_summon_kit.py"
+      ],
+      "tools_note": "Legacy importer output targets only; source images and Art/UI/btn_blue.png.meta template retained.",
+      "candidates": [],
+      "sha256": "1cde2d3fc5572c00038807a14127b110578f5be746a34ca0de2b5b86d0c4ab47",
+      "retired_to": "artsrc/ui/retired-2026-11-05/Buttons/slate-pressed.png"
+    },
+    {
+      "asset": "Assets/_Project/Resources/Buttons/slate.png",
+      "key": "Buttons/slate",
+      "decision": "RETIRE",
+      "reason": "No reachable loader argument found after reviewing actual helper calls; 049 tokens refer to other resources/comments or an uncalled method.",
+      "guid": "3a50a5047b394e35af65f98be40c48d3",
+      "guid_consumers": [],
+      "tools": [
+        "tools/import_buttons_v2.py",
+        "tools/import_buttons_summon_kit.py"
+      ],
+      "tools_note": "Legacy importer output targets only; source images and Art/UI/btn_blue.png.meta template retained.",
+      "candidates": [],
+      "sha256": "64aa7ee8c28239b432c8ae5881f3eab31aaa7bef29b75210b8b0da4751dfbd45",
+      "retired_to": "artsrc/ui/retired-2026-11-05/Buttons/slate.png"
+    },
+    {
+      "asset": "Assets/_Project/Resources/SummonKit/card-common.png",
+      "key": "SummonKit/card-common",
+      "decision": "RETIRE",
+      "reason": "No reachable loader argument found after reviewing actual helper calls; 049 tokens refer to other resources/comments or an uncalled method.",
+      "guid": "c986d2d0327d47a4b2d149aa827864ae",
+      "guid_consumers": [],
+      "tools": [
+        "tools/import_buttons_summon_kit.py"
+      ],
+      "tools_note": "Legacy importer output targets only; source images and Art/UI/btn_blue.png.meta template retained.",
+      "candidates": [],
+      "sha256": "71552e35b313a98a384108b4f61481b3e77fb98cfd27abd220f21a904fa1d8ef",
+      "retired_to": "artsrc/ui/retired-2026-11-05/SummonKit/card-common.png"
+    },
+    {
+      "asset": "Assets/_Project/Resources/SummonKit/card-epic.png",
+      "key": "SummonKit/card-epic",
+      "decision": "RETIRE",
+      "reason": "No reachable loader argument found after reviewing actual helper calls; 049 tokens refer to other resources/comments or an uncalled method.",
+      "guid": "7a1e1a86d46c4055b19883edae6e032d",
+      "guid_consumers": [],
+      "tools": [
+        "tools/import_buttons_summon_kit.py"
+      ],
+      "tools_note": "Legacy importer output targets only; source images and Art/UI/btn_blue.png.meta template retained.",
+      "candidates": [],
+      "sha256": "3a49e8452b1c404681ddeb91669aaf46f1cd85515b5529e0d5cee7c1e34a7a7f",
+      "retired_to": "artsrc/ui/retired-2026-11-05/SummonKit/card-epic.png"
+    },
+    {
+      "asset": "Assets/_Project/Resources/SummonKit/card-legendary.png",
+      "key": "SummonKit/card-legendary",
+      "decision": "RETIRE",
+      "reason": "No reachable loader argument found after reviewing actual helper calls; 049 tokens refer to other resources/comments or an uncalled method.",
+      "guid": "0d052859b062409486da97731abcf72e",
+      "guid_consumers": [],
+      "tools": [
+        "tools/import_buttons_summon_kit.py"
+      ],
+      "tools_note": "Legacy importer output targets only; source images and Art/UI/btn_blue.png.meta template retained.",
+      "candidates": [],
+      "sha256": "e9dc7bfa475a29fd3b453d1dd9cf80653ddc98bf413259fb7e928cf677dfcff6",
+      "retired_to": "artsrc/ui/retired-2026-11-05/SummonKit/card-legendary.png"
+    },
+    {
+      "asset": "Assets/_Project/Resources/SummonKit/card-rare.png",
+      "key": "SummonKit/card-rare",
+      "decision": "RETIRE",
+      "reason": "No reachable loader argument found after reviewing actual helper calls; 049 tokens refer to other resources/comments or an uncalled method.",
+      "guid": "2f4bf4c37aea4abc838ec3b82e4c3d78",
+      "guid_consumers": [],
+      "tools": [
+        "tools/import_buttons_summon_kit.py"
+      ],
+      "tools_note": "Legacy importer output targets only; source images and Art/UI/btn_blue.png.meta template retained.",
+      "candidates": [],
+      "sha256": "2650a1f5a78e3c0a73536c6800f66e48ddb9f9f1d9b0d696ecc38339b842506d",
+      "retired_to": "artsrc/ui/retired-2026-11-05/SummonKit/card-rare.png"
+    },
+    {
+      "asset": "Assets/_Project/Resources/SummonKit/card-stone.png",
+      "key": "SummonKit/card-stone",
+      "decision": "RETIRE",
+      "reason": "No reachable loader argument found after reviewing actual helper calls; 049 tokens refer to other resources/comments or an uncalled method.",
+      "guid": "d2bc5ce3b00443b5a5124980a8c56be9",
+      "guid_consumers": [],
+      "tools": [
+        "tools/import_buttons_summon_kit.py"
+      ],
+      "tools_note": "Legacy importer output targets only; source images and Art/UI/btn_blue.png.meta template retained.",
+      "candidates": [],
+      "sha256": "06af11617402083021b1d984b2e1f16f276a12e57fd69608d3e7241cdcb483cd",
+      "retired_to": "artsrc/ui/retired-2026-11-05/SummonKit/card-stone.png"
+    },
+    {
+      "asset": "Assets/_Project/Resources/SummonKit/summon-x1.png",
+      "key": "SummonKit/summon-x1",
+      "decision": "RETIRE",
+      "reason": "No reachable loader argument found after reviewing actual helper calls; 049 tokens refer to other resources/comments or an uncalled method.",
+      "guid": "e94a19ca3d95447e8255cf57b249d92a",
+      "guid_consumers": [],
+      "tools": [
+        "tools/import_buttons_summon_kit.py"
+      ],
+      "tools_note": "Legacy importer output targets only; source images and Art/UI/btn_blue.png.meta template retained.",
+      "candidates": [],
+      "sha256": "9c28fd64fed7d7fe5d30db25d8ab902cdeb8a078fca8d87d0fd20051e43c3575",
+      "retired_to": "artsrc/ui/retired-2026-11-05/SummonKit/summon-x1.png"
+    },
+    {
+      "asset": "Assets/_Project/Resources/SummonKit/summon-x10.png",
+      "key": "SummonKit/summon-x10",
+      "decision": "RETIRE",
+      "reason": "No reachable loader argument found after reviewing actual helper calls; 049 tokens refer to other resources/comments or an uncalled method.",
+      "guid": "3f5db5d054ed418fb26dad8c1166fa1f",
+      "guid_consumers": [],
+      "tools": [
+        "tools/import_buttons_summon_kit.py"
+      ],
+      "tools_note": "Legacy importer output targets only; source images and Art/UI/btn_blue.png.meta template retained.",
+      "candidates": [],
+      "sha256": "b25144863b28a7f026f2798f53d4a83caecf54be6c5c3a388790f3341ea66a8f",
+      "retired_to": "artsrc/ui/retired-2026-11-05/SummonKit/summon-x10.png"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/disabled.bytes",
+      "key": "UiRefresh/disabled",
+      "decision": "RETIRE",
+      "reason": "Only ApprovedUiArt.GoldStates references this slug; no code calls GoldStates.",
+      "guid": "924c0db00a5be4ffea59e6f8001c9a2a",
+      "guid_consumers": [],
+      "tools": [],
+      "tools_note": "No tool input dependency found.",
+      "candidates": [
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/disabled.bytes",
+          "location": "Assets/_Project/Scripts/UI/ScreenChrome.cs:100",
+          "old_line": 100,
+          "code": "// Sprite \"disabled\" ch\u1ec9 thay m\u1eb7t n\u00fat; ch\u1eef v\u00e0 icon b\u00ean trong v\u1eabn s\u00e1ng nguy\u00ean n\u00ean",
+          "loader": "UiRefresh/disabled",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/disabled.bytes",
+          "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+          "old_line": 20,
+          "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+          "loader": "UiRefresh/disabled",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Generic loader, reviewed actual caller argument set: slug not passed by live callers."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/disabled.bytes",
+          "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:50",
+          "old_line": 50,
+          "code": "button.spriteState = new SpriteState { highlightedSprite = Get(\"gold\", true), selectedSprite = Get(\"gold\", true), pressedSprite = Get(\"pressed\", true), disabledSprite = Get(\"disabled\", true) };",
+          "loader": "UiRefresh/disabled",
+          "can_execute": "kh\u00f4ng",
+          "reason": "GoldStates method has zero callers; not a live path."
+        }
+      ],
+      "sha256": "cfed3d69e95f945f0d23f62fac92bb3910475946f40bc1b62050d301694961ad",
+      "retired_to": "artsrc/ui/retired-2026-11-05/UiRefresh/disabled.bytes"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/key.bytes",
+      "key": "UiRefresh/key",
+      "decision": "RETIRE",
+      "reason": "ResultPanel reward key and HomeChrome wallet key use HomeChrome/key, not ApprovedUiArt; generic UiRefresh loader alone is not an argument.",
+      "guid": "1816e46ad773f49bc9dd1780dc56879e",
+      "guid_consumers": [],
+      "tools": [],
+      "tools_note": "No tool input dependency found.",
+      "candidates": [
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/key.bytes",
+          "location": "Assets/_Project/Scripts/UI/ResultPanel.cs:126",
+          "old_line": 126,
+          "code": "Reward(content,\"Gold\",gold,-340,\"gold\");Reward(content,\"Keys\",keys,0,\"key\");Reward(content,\"Gems\",gems,340,\"gem\");",
+          "loader": "UiRefresh/key",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/key.bytes",
+          "location": "Assets/_Project/Scripts/UI/ResultPanel.cs:152",
+          "old_line": 152,
+          "code": "art.sprite=Resources.Load<Sprite>(name==\"Gems\"?\"Summon/gem\":\"HomeChrome/\"+(name==\"Gold\"?\"coin\":\"key\"));art.preserveAspect=true;art.raycastTarget=false;art.enabled=art.sprite;",
+          "loader": "UiRefresh/key",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/key.bytes",
+          "location": "Assets/_Project/Scripts/UI/HomeChrome.cs:41",
+          "old_line": 41,
+          "code": "self.Wallet(keys,\"key\",new Vector2(-380,-160),new Vector2(250,95));",
+          "loader": "UiRefresh/key",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/key.bytes",
+          "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+          "old_line": 20,
+          "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+          "loader": "UiRefresh/key",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Generic loader, reviewed actual caller argument set: slug not passed by live callers."
+        }
+      ],
+      "sha256": "07d1144e5bcae3d0e755927927a3f11a78ffca5aff52897caa9f05ff3f2a00a9",
+      "retired_to": "artsrc/ui/retired-2026-11-05/UiRefresh/key.bytes"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/panel.bytes",
+      "key": "UiRefresh/panel",
+      "decision": "RETIRE",
+      "reason": "No ApprovedUiArt call passes panel. BattleSceneSetup panel is a serialized property name, unrelated.",
+      "guid": "1d7d900c6a50f42c293f0b3ceebf57c9",
+      "guid_consumers": [],
+      "tools": [],
+      "tools_note": "No tool input dependency found.",
+      "candidates": [
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/panel.bytes",
+          "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+          "old_line": 20,
+          "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+          "loader": "UiRefresh/panel",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Generic loader, reviewed actual caller argument set: slug not passed by live callers."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/panel.bytes",
+          "location": "Assets/_Project/Scripts/Editor/BattleSceneSetup.cs:483",
+          "old_line": 483,
+          "code": "so.FindProperty(\"panel\").objectReferenceValue = panel;",
+          "loader": "UiRefresh/panel",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        }
+      ],
+      "sha256": "ebf3c8d9d6b761ab5d5e4befaeafce79615765427162ba83f0ac8a42dda1875d",
+      "retired_to": "artsrc/ui/retired-2026-11-05/UiRefresh/panel.bytes"
+    },
+    {
+      "asset": "Assets/_Project/Resources/UiRefresh/pressed.bytes",
+      "key": "UiRefresh/pressed",
+      "decision": "RETIRE",
+      "reason": "Only ApprovedUiArt.GoldStates references this slug; no code calls GoldStates (one comment says deliberately not used).",
+      "guid": "c00ef986fbf184a7cbee403c526c0c5c",
+      "guid_consumers": [],
+      "tools": [],
+      "tools_note": "No tool input dependency found.",
+      "candidates": [
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/pressed.bytes",
+          "location": "Assets/_Project/Scripts/UI/ScreenChrome.cs:98",
+          "old_line": 98,
+          "code": "// Art c\u1ee7a b\u1ea3n \"pressed\" ch\u1ec9 \u0111\u1eadm h\u01a1n m\u1ed9t ch\u00fat, n\u00ean h\u1ea1 n\u1ed9i dung xu\u1ed1ng cho th\u1ea5y r\u00f5 l\u00e0 \u0111ang b\u1ea5m.",
+          "loader": "UiRefresh/pressed",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Token is not a load of this asset."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/pressed.bytes",
+          "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:20",
+          "old_line": 20,
+          "code": "var data = Resources.Load<TextAsset>(\"UiRefresh/\" + name);",
+          "loader": "UiRefresh/pressed",
+          "can_execute": "kh\u00f4ng",
+          "reason": "Generic loader, reviewed actual caller argument set: slug not passed by live callers."
+        },
+        {
+          "asset": "Assets/_Project/Resources/UiRefresh/pressed.bytes",
+          "location": "Assets/_Project/Scripts/UI/ApprovedUiArt.cs:50",
+          "old_line": 50,
+          "code": "button.spriteState = new SpriteState { highlightedSprite = Get(\"gold\", true), selectedSprite = Get(\"gold\", true), pressedSprite = Get(\"pressed\", true), disabledSprite = Get(\"disabled\", true) };",
+          "loader": "UiRefresh/pressed",
+          "can_execute": "kh\u00f4ng",
+          "reason": "GoldStates method has zero callers; not a live path."
+        }
+      ],
+      "sha256": "eb8feef4416820548ec5364c59db1aaa07b50363517cdd0a0f8303e33c01d8ad",
+      "retired_to": "artsrc/ui/retired-2026-11-05/UiRefresh/pressed.bytes"
+    }
+  ]
+}

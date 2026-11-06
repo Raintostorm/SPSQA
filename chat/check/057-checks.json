@@ -1,0 +1,9 @@
+{
+  "asset_count": 26,
+  "chest_rgba_diff": 0,
+  "burst_max_center_error": 0.5,
+  "levelup_center_alpha": 0,
+  "white_vfx": true,
+  "unity_run": false,
+  "hinge_demo": "2D rotate-X projection; inside/back surface not drawn; not full 3D rig"
+}

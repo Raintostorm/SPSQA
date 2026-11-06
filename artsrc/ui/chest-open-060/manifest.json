@@ -1,0 +1,60 @@
+{
+  "status": "IMPORTED_USER_APPROVED_062",
+  "files": [
+    {
+      "source": "artsrc/ui/chest-open-060/staged/chest-open.png",
+      "target": "Assets/_Project/Resources/Anim/Chest/chest-open.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "0094c5dc89ca7a6e26ea62e95b59c0835789ccc66b4034ce6fc09a3996c61e05",
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "source": "artsrc/ui/chest-open-060/staged/chest-light.png",
+      "target": "Assets/_Project/Resources/Anim/Common/chest-light.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "d0eacc20fdacdc45d29e44e2ebe2b662b041c80f70627a7d92be96dffdf54b5e",
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "checks": {
+    "body_region_different_pixels": 0,
+    "body_region_max_channel_error": 0,
+    "body_mask": "all rows y>=236 plus original body nonzero alpha (including lock above seam)",
+    "body_source": "Assets/_Project/Resources/Anim/Chest/chest-body.png",
+    "body_source_sha256": "4316bc07806c66d4191c1d34a45cc2732fdbcc24737e67d0ffd2a20ca7f9fb86",
+    "upper_source_transform": {
+      "scale": 0.4129032258064516,
+      "offset": [
+        -3,
+        -11
+      ],
+      "rim_source_y": 598
+    },
+    "light_source": "PROCEDURAL smoothstep field; no image source",
+    "light_bottom_fade_pixels": 62.08,
+    "light_half_width_top": 150,
+    "light_half_width_bottom": 125,
+    "light_horizontal_symmetry_exact": true,
+    "light_visible_rgb_white": true,
+    "light_edges_alpha_zero": true,
+    "runtime_imported": false,
+    "unity_run": false
+  },
+  "runtime_imported": true
+}

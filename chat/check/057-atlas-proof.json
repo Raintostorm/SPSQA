@@ -1,0 +1,22 @@
+{
+  "atlas_size": [
+    1536,
+    1024
+  ],
+  "unity_rect": [
+    793,
+    669,
+    707,
+    216
+  ],
+  "top_left_rect": [
+    793,
+    139,
+    1500,
+    355
+  ],
+  "outside_changed_pixels": 0,
+  "original_sha256": "6623d37e5d1feb8af131d556abf6e591aa110c3f0ca18c264b93b4d9650c0c9e",
+  "candidate_sha256": "4dc5c9025f9a7aafcdc4186bb0d707c0f7cc24fe0ca51df3b33db84b130a4eea",
+  "runtime_modified": false
+}

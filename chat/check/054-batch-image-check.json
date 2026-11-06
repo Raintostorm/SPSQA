@@ -1,0 +1,90 @@
+[
+  {
+    "path": "chat/check/051-burst-v2.png",
+    "size": [
+      2172,
+      724
+    ],
+    "alphaRange": [
+      0,
+      254
+    ]
+  },
+  {
+    "path": "chat/check/051-card-back.png",
+    "size": [
+      1060,
+      1484
+    ],
+    "alphaRange": [
+      0,
+      255
+    ]
+  },
+  {
+    "path": "chat/check/051-light-layers-v2.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "alphaRange": [
+      0,
+      254
+    ]
+  },
+  {
+    "path": "chat/check/051-summon-anim.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "alphaRange": [
+      0,
+      254
+    ]
+  },
+  {
+    "path": "chat/check/052-chest-anim.png",
+    "size": [
+      1774,
+      887
+    ],
+    "alphaRange": [
+      0,
+      255
+    ]
+  },
+  {
+    "path": "chat/check/054-g1-banner-source.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "alphaRange": [
+      0,
+      254
+    ]
+  },
+  {
+    "path": "chat/check/054-g1-glyphs.png",
+    "size": [
+      2172,
+      724
+    ],
+    "alphaRange": [
+      0,
+      255
+    ]
+  },
+  {
+    "path": "chat/check/054-glyphs-light-proof.png",
+    "size": [
+      1000,
+      333
+    ],
+    "alphaRange": [
+      255,
+      255
+    ]
+  }
+]

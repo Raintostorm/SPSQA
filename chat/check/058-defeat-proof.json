@@ -1,0 +1,20 @@
+{
+  "source": "Assets/_Project/Resources/ResultScreen/atlas.png",
+  "source_sha256": "6623d37e5d1feb8af131d556abf6e591aa110c3f0ca18c264b93b4d9650c0c9e",
+  "unity_rect": [
+    793,
+    669,
+    707,
+    216
+  ],
+  "size": [
+    707,
+    216
+  ],
+  "alpha_identical": true,
+  "silhouette_changed_pixels": 0,
+  "unchanged_outline_and_uncolored_pixels": true,
+  "method": "original per-pixel luminance transferred onto slate RGB(74,85,112); no geometry resampling, no gold trim, no new highlights",
+  "runtime_atlas_modified": false,
+  "pending_user_approval": true
+}

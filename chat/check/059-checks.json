@@ -1,0 +1,181 @@
+{
+  "files": [
+    {
+      "slug": "orb-core",
+      "source": "PROCEDURAL:radial_gradient (no generated image)",
+      "size": [
+        512,
+        512
+      ],
+      "measured_center": [
+        255.5,
+        255.5
+      ],
+      "max_center_error": 0.5,
+      "white_rgb": false,
+      "alpha_edges_zero": true,
+      "radial_symmetry_exact": true,
+      "monotonic_center_to_edge": true,
+      "inner_radius": 0.1,
+      "outer_radius": 0.84,
+      "sha256": "a50bbd5c9c3ff4d507eec7640fa11ca4a0c116e590c6bbe4d42e5979d15de901"
+    },
+    {
+      "slug": "orb-swirl-a",
+      "source": "swirl-rune.png",
+      "source_crop": [
+        0,
+        0,
+        724,
+        724
+      ],
+      "alpha_crop": [
+        113,
+        96,
+        633,
+        621
+      ],
+      "size": [
+        512,
+        512
+      ],
+      "measured_center": [
+        255.5,
+        255.5
+      ],
+      "max_center_error": 0.5,
+      "white_rgb": true,
+      "alpha_edges_zero": true,
+      "sha256": "3b27fd5d7edd9714543b11a8b376212679f48f77f76c60f85691771d711bb797"
+    },
+    {
+      "slug": "orb-swirl-b",
+      "source": "swirl-rune.png",
+      "source_crop": [
+        724,
+        0,
+        1448,
+        724
+      ],
+      "alpha_crop": [
+        88,
+        86,
+        628,
+        610
+      ],
+      "size": [
+        512,
+        512
+      ],
+      "measured_center": [
+        255.5,
+        255.5
+      ],
+      "max_center_error": 0.5,
+      "white_rgb": true,
+      "alpha_edges_zero": true,
+      "sha256": "7da53f2125bebcfa97136992e2b72f7c11080a9f58380cfa07bf9d87e67113d7"
+    },
+    {
+      "slug": "rune-circle",
+      "source": "swirl-rune.png",
+      "source_crop": [
+        1448,
+        0,
+        2172,
+        724
+      ],
+      "alpha_crop": [
+        67,
+        52,
+        657,
+        650
+      ],
+      "size": [
+        768,
+        768
+      ],
+      "measured_center": [
+        383.5,
+        383.5
+      ],
+      "max_center_error": 0.5,
+      "white_rgb": true,
+      "alpha_edges_zero": true,
+      "sha256": "01aab2b567b9b59274fa7a817be8b048a9d8a68bce315dafed230f4cf9bc6e08"
+    },
+    {
+      "slug": "mote",
+      "source": "PROCEDURAL:radial_gradient (no generated image)",
+      "size": [
+        64,
+        64
+      ],
+      "measured_center": [
+        31.5,
+        31.5
+      ],
+      "max_center_error": 0.5,
+      "white_rgb": true,
+      "alpha_edges_zero": true,
+      "radial_symmetry_exact": true,
+      "monotonic_center_to_edge": true,
+      "inner_radius": 0.04,
+      "outer_radius": 0.82,
+      "sha256": "e6b2d596d6c46532a3cdc8df8cb84b32bd348aba4cb54d6d7d95f11f024a1d0a"
+    },
+    {
+      "slug": "streak",
+      "source": "particles.png",
+      "source_crop": [
+        724,
+        0,
+        1448,
+        724
+      ],
+      "alpha_crop": [
+        107,
+        326,
+        619,
+        400
+      ],
+      "size": [
+        256,
+        64
+      ],
+      "measured_center": [
+        128.0,
+        31.5
+      ],
+      "max_center_error": 0.5,
+      "white_rgb": true,
+      "alpha_edges_zero": true,
+      "sha256": "a2e092c0b4d99a392267cd26c420b4380bc1b3b5b68fef67d2512de4986a82cc"
+    },
+    {
+      "slug": "flash",
+      "source": "PROCEDURAL:radial_gradient (no generated image)",
+      "size": [
+        1024,
+        1024
+      ],
+      "measured_center": [
+        511.5,
+        511.5
+      ],
+      "max_center_error": 0.5,
+      "white_rgb": true,
+      "alpha_edges_zero": true,
+      "radial_symmetry_exact": true,
+      "monotonic_center_to_edge": true,
+      "inner_radius": 0.22,
+      "outer_radius": 0.94,
+      "sha256": "71fd72a2877079dc7ce95f038bdb73e4856ed3fc1e2945aeb0988c9a7857e144"
+    }
+  ],
+  "all_centers_within_1px": true,
+  "white_vfx_rgb_verified": true,
+  "edges_alpha_zero": true,
+  "runtime_imported": true,
+  "unity_run": false
+}

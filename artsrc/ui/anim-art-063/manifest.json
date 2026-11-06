@@ -1,0 +1,294 @@
+{
+  "status": "PREVIEW_PENDING_USER_APPROVAL",
+  "files": [
+    {
+      "slug": "LevelUp/lu-star",
+      "source": "objects.png",
+      "target": "Assets/_Project/Resources/Anim/LevelUp/lu-star.png",
+      "size": [
+        128,
+        128
+      ],
+      "light": false,
+      "center": [
+        63.0,
+        63.5
+      ],
+      "max_center_error": null,
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "d8e2638ec48cdc5993c11046f1ab99b97825741cd86f3d1944c5577d8795971e"
+    },
+    {
+      "slug": "LevelUp/lu-star-small",
+      "source": "same silhouette as lu-star",
+      "target": "Assets/_Project/Resources/Anim/LevelUp/lu-star-small.png",
+      "size": [
+        64,
+        64
+      ],
+      "light": false,
+      "center": [
+        31.5,
+        31.5
+      ],
+      "max_center_error": null,
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "81383b0e3b98037889d20b36e9e8f7acd7b82a07353ec253c6fdd4923f3eb19c"
+    },
+    {
+      "slug": "LevelUp/lu-chevron",
+      "source": "objects.png",
+      "target": "Assets/_Project/Resources/Anim/LevelUp/lu-chevron.png",
+      "size": [
+        128,
+        128
+      ],
+      "light": false,
+      "center": [
+        63.5,
+        63.5
+      ],
+      "max_center_error": null,
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "0ea65e8cd29e4faad9f555db5f685e3af1314f314de96b2491033a289c2d1112"
+    },
+    {
+      "slug": "Result/star-big",
+      "source": "objects.png",
+      "target": "Assets/_Project/Resources/Anim/Result/star-big.png",
+      "size": [
+        256,
+        256
+      ],
+      "light": false,
+      "center": [
+        127.0,
+        127.0
+      ],
+      "max_center_error": null,
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "c6755fd0aacb0a99a5696cedf771341dafe2fb9891efb954f159a57a9c60430b"
+    },
+    {
+      "slug": "Result/star-empty",
+      "source": "star-big shape; slate recolor",
+      "target": "Assets/_Project/Resources/Anim/Result/star-empty.png",
+      "size": [
+        256,
+        256
+      ],
+      "light": false,
+      "center": [
+        127.0,
+        127.0
+      ],
+      "max_center_error": null,
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "3f14f0756a303dfcce3070bb019e50d5fd5342b39b695947901c91b815766cab"
+    },
+    {
+      "slug": "Result/confetti-0",
+      "source": "confetti.png",
+      "target": "Assets/_Project/Resources/Anim/Result/confetti-0.png",
+      "size": [
+        64,
+        64
+      ],
+      "light": false,
+      "center": [
+        31.5,
+        31.0
+      ],
+      "max_center_error": null,
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "800fb1b9e9d57944be1e150497fe02e753cb952f63632ea7a32c1b5459352eea"
+    },
+    {
+      "slug": "Result/confetti-1",
+      "source": "confetti.png",
+      "target": "Assets/_Project/Resources/Anim/Result/confetti-1.png",
+      "size": [
+        64,
+        64
+      ],
+      "light": false,
+      "center": [
+        31.5,
+        31.5
+      ],
+      "max_center_error": null,
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "d8527896578341b8442a43a2fad4d00a01d3c5b47d3484d9e2b2dd8375dcb896"
+    },
+    {
+      "slug": "Result/confetti-2",
+      "source": "confetti.png",
+      "target": "Assets/_Project/Resources/Anim/Result/confetti-2.png",
+      "size": [
+        64,
+        64
+      ],
+      "light": false,
+      "center": [
+        31.5,
+        31.0
+      ],
+      "max_center_error": null,
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "0513f88ef8687544de0a4b85b44c85fa33de8f2a6cee06263b9c0f61608e913c"
+    },
+    {
+      "slug": "Result/confetti-3",
+      "source": "confetti.png",
+      "target": "Assets/_Project/Resources/Anim/Result/confetti-3.png",
+      "size": [
+        64,
+        64
+      ],
+      "light": false,
+      "center": [
+        31.5,
+        31.0
+      ],
+      "max_center_error": null,
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "0d324a49ced39201ceab949474ac5c51d3ce637b52cb55dd1b7492f3de37305f"
+    },
+    {
+      "slug": "LevelUp/lu-pillar",
+      "source": "analytic soft column",
+      "target": "Assets/_Project/Resources/Anim/LevelUp/lu-pillar.png",
+      "size": [
+        384,
+        768
+      ],
+      "light": true,
+      "center": [
+        191.5,
+        383.5
+      ],
+      "max_center_error": 0.5,
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "36890a1ec16547711c1a551fcc379e94a36246b410b8d941989d0b1064b506b6"
+    },
+    {
+      "slug": "LevelUp/lu-ground",
+      "source": "analytic constant-width ellipse ring",
+      "target": "Assets/_Project/Resources/Anim/LevelUp/lu-ground.png",
+      "size": [
+        768,
+        256
+      ],
+      "light": true,
+      "center": [
+        383.5,
+        127.5
+      ],
+      "max_center_error": 0.5,
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "4ef3785da8b028df2a59d33f173895ae97deb914fecc294750a417fa59b9c8a4"
+    },
+    {
+      "slug": "Relic/shine-sweep",
+      "source": "analytic30degree stripe with soft edges",
+      "target": "Assets/_Project/Resources/Anim/Relic/shine-sweep.png",
+      "size": [
+        256,
+        512
+      ],
+      "light": true,
+      "center": [
+        127.5,
+        255.5
+      ],
+      "max_center_error": 0.5,
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "91c60812a7578b422f2af0848afffa55c926c4ad21802cbe73346cda9894f97d"
+    },
+    {
+      "slug": "Relic/glint",
+      "source": "analytic supersampled4point glint",
+      "target": "Assets/_Project/Resources/Anim/Relic/glint.png",
+      "size": [
+        128,
+        128
+      ],
+      "light": true,
+      "center": [
+        64.0,
+        64.0
+      ],
+      "max_center_error": 0.0,
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "8ca2ec4b34574898300edc5fe415398ed99e39c7821a3a60e2df178903a55602"
+    }
+  ],
+  "unit_preview": "Assets/_Project/Art/UnitsSimple/human_common/idle_000.png",
+  "relic_preview": "Assets/_Project/Art/UI/item_c1.png",
+  "unity_run": false
+}

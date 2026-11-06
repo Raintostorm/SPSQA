@@ -1,0 +1,48 @@
+--- a/Assets/_Project/Scripts/UI/TreasureReviewUi.cs
++++ b/Assets/_Project/Scripts/UI/TreasureReviewUi.cs
+@@ -69,12 +69,10 @@
+             reviewRoot=R(transform,"RelicsReviewUI",0,0,1125,2436);
+             reviewRoot.anchorMin=Vector2.zero;reviewRoot.anchorMax=Vector2.one;reviewRoot.offsetMin=reviewRoot.offsetMax=Vector2.zero;
+             B(reviewRoot,"Page",0,0,1125,2436,new Color(.12f,.15f,.20f));
+-            var gallery=Resources.Load<Sprite>("RelicVault/gallery");
+-            if(gallery){var art=B(reviewRoot,"Gallery",0,170,1125,358,Color.white);art.sprite=gallery;art.raycastTarget=false;}
+-            else if(background){var art=B(reviewRoot,"Vault",0,0,1125,2436,Color.white);art.sprite=background;art.raycastTarget=false;}
+-            // Shared chrome (UI-005): ribbon title + round back, pinned in this screen's top-edge layout.
+-            // Gallery replaces the old floating chest; title and wallets remain live UI.
+-            ScreenChrome.PinTop(ScreenChrome.Title(reviewRoot,"RELICS",Vector2.zero,600,ScreenChrome.Banner.Screen,120),0,118);
++            // Gallery and title are created inside scroll content in RefreshReviewUi.
++            // Only the wallet/back and footer remain fixed above/below the viewport.
++            if(!Resources.Load<Sprite>("RelicVault/gallery") && background)
++            {var art=B(reviewRoot,"Vault",0,0,1125,2436,Color.white);art.sprite=background;art.raycastTarget=false;}
+             ScreenChrome.PinTop(ScreenChrome.Back(reviewRoot,Vector2.zero,SceneRoutes.GoHome),-480,10);
+             // Gold wallet shifted right so the round back button no longer covers its coin.
+             B(reviewRoot,"Gold wallet",-170,23,330,85,new Color(.05f,.08f,.13f,.95f));
+@@ -82,7 +80,7 @@
+             walletGold=T(reviewRoot,"",-155,25,260,85,48);Icon(reviewRoot,ApprovedUiArt.Get("coin"),-300,35,65);
+             Icon(reviewRoot,Resources.Load<Sprite>("HomeChrome/key"),250,35,55);
+             walletKeys=T(reviewRoot,"",380,25,200,85,48);
+-            var viewport=R(reviewRoot,"RelicScroll",0,520,1125,1680);viewport.gameObject.AddComponent<RectMask2D>();
++            var viewport=R(reviewRoot,"RelicScroll",0,120,1125,2080);viewport.gameObject.AddComponent<RectMask2D>();
+             var hit=viewport.gameObject.AddComponent<Image>();hit.color=new Color(0,0,0,.001f);
+             var scroll=viewport.gameObject.AddComponent<ScrollRect>();scroll.horizontal=false;scroll.viewport=viewport;
+             collection=R(viewport,"Content",0,0,1125,2000);scroll.content=collection;CollectionScrollHint.Install(scroll);scroll.scrollSensitivity=60;
+@@ -98,8 +96,17 @@
+             openLabel.text="OPEN ALL\n<size=44>"+GameProgress.Keys.ToString("N0")+"</size>";
+             openAll.interactable=!revealing && GameProgress.Keys>0;
+             foreach(Transform child in collection){child.gameObject.SetActive(false);Destroy(child.gameObject);}
+-            if(database==null)return;
+-            float y=0;
++            // One continuous scroll surface: gallery, title and relic rows move together.
++            var gallery=Resources.Load<Sprite>("RelicVault/gallery");
++            float y=130;
++            if(gallery)
++            {
++                var art=B(collection,"Gallery",0,58,1125,358,Color.white);
++                art.sprite=gallery;art.raycastTarget=false;
++                y=418;
++            }
++            ScreenChrome.PinTop(ScreenChrome.Title(collection,"RELICS",Vector2.zero,600,ScreenChrome.Banner.Screen,120),0,0);
++            if(database==null){collection.sizeDelta=new Vector2(1125,y);return;}
+             foreach(Rank tier in new[]{Rank.Common,Rank.Rare,Rank.Epic,Rank.Legendary})
+             {
+                 float sectionTop=y;

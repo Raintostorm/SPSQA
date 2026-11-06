@@ -1,0 +1,24 @@
+{
+  "asset_count": 13,
+  "light_rgb_white": true,
+  "light_centers_within_1px": true,
+  "all_edges_alpha_zero": true,
+  "star_empty_alpha_matches_big": true,
+  "object_readability_preview": "063-board.png bottom48px row",
+  "runtime_imported": false,
+  "unity_run": false,
+  "gif_timing_verified": {
+    "levelup": {
+      "duration_ms": 880,
+      "stored_frames": 22
+    },
+    "relic": {
+      "duration_ms": 720,
+      "stored_frames": 18
+    },
+    "victory": {
+      "duration_ms": 1760,
+      "stored_frames": 44
+    }
+  }
+}

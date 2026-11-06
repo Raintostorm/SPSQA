@@ -1,0 +1,110 @@
+{
+  "files": [
+    {
+      "path": "Assets/_Project/Resources/Anim/Summon/orb-core.png",
+      "size": [
+        512,
+        512
+      ],
+      "guid": "061a320413454f618854d2da5e27a648",
+      "guid_unchanged": true,
+      "sha256": "a50bbd5c9c3ff4d507eec7640fa11ca4a0c116e590c6bbe4d42e5979d15de901"
+    },
+    {
+      "path": "Assets/_Project/Resources/Anim/Summon/orb-swirl-a.png",
+      "size": [
+        512,
+        512
+      ],
+      "guid": "5a44986a2b424629a938202b11ba9a95",
+      "guid_unchanged": true,
+      "sha256": "3b27fd5d7edd9714543b11a8b376212679f48f77f76c60f85691771d711bb797"
+    },
+    {
+      "path": "Assets/_Project/Resources/Anim/Summon/orb-swirl-b.png",
+      "size": [
+        512,
+        512
+      ],
+      "guid": "f9181f94a9664b489c7d6cd548f59cc2",
+      "guid_unchanged": true,
+      "sha256": "7da53f2125bebcfa97136992e2b72f7c11080a9f58380cfa07bf9d87e67113d7"
+    },
+    {
+      "path": "Assets/_Project/Resources/Anim/Summon/rune-circle.png",
+      "size": [
+        768,
+        768
+      ],
+      "guid": "e11e6bf2805b4d869683041645ebfb7f",
+      "guid_unchanged": true,
+      "sha256": "01aab2b567b9b59274fa7a817be8b048a9d8a68bce315dafed230f4cf9bc6e08"
+    },
+    {
+      "path": "Assets/_Project/Resources/Anim/Summon/mote.png",
+      "size": [
+        64,
+        64
+      ],
+      "guid": "a3173f40cc294717b1cad15055ee1db5",
+      "guid_unchanged": true,
+      "sha256": "e6b2d596d6c46532a3cdc8df8cb84b32bd348aba4cb54d6d7d95f11f024a1d0a"
+    },
+    {
+      "path": "Assets/_Project/Resources/Anim/Summon/streak.png",
+      "size": [
+        256,
+        64
+      ],
+      "guid": "fa2f99e672c341a08e84f7a822fc3b6d",
+      "guid_unchanged": true,
+      "sha256": "a2e092c0b4d99a392267cd26c420b4380bc1b3b5b68fef67d2512de4986a82cc"
+    },
+    {
+      "path": "Assets/_Project/Resources/Anim/Summon/flash.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "guid": "e01d9ef7d0664d7bb32f005c1068e2ae",
+      "guid_unchanged": true,
+      "sha256": "71fd72a2877079dc7ce95f038bdb73e4856ed3fc1e2945aeb0988c9a7857e144"
+    },
+    {
+      "path": "Assets/_Project/Resources/Anim/Chest/chest-open.png",
+      "size": [
+        512,
+        512
+      ],
+      "guid": "27596db6fddf4fed98ee6adab2786fdd",
+      "guid_unchanged": true,
+      "sha256": "0094c5dc89ca7a6e26ea62e95b59c0835789ccc66b4034ce6fc09a3996c61e05"
+    },
+    {
+      "path": "Assets/_Project/Resources/Anim/Common/chest-light.png",
+      "size": [
+        512,
+        512
+      ],
+      "guid": "ff29f1e45dfc411fb772f52cbd367329",
+      "guid_unchanged": true,
+      "sha256": "d0eacc20fdacdc45d29e44e2ebe2b662b041c80f70627a7d92be96dffdf54b5e"
+    }
+  ],
+  "count": 9,
+  "all_meta_bytes_preserved": true,
+  "analytic_gradients": [
+    "orb-core",
+    "flash",
+    "mote",
+    "chest-light"
+  ],
+  "radial_monotonic_and_symmetric": true,
+  "column_symmetric": true,
+  "column_foot_max_alpha_step_per_pixel": 6,
+  "column_half_width_top": 150,
+  "column_half_width_bottom": 125,
+  "body_region_different_pixels": 0,
+  "compile_sources": 176,
+  "unity_run": false
+}

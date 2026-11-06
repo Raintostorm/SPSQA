@@ -1,0 +1,737 @@
+{
+  "status": "STAGED_WAITING_USER_APPROVAL",
+  "files": [
+    {
+      "path": "Chest/chest-master.png",
+      "size": [
+        512,
+        512
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "5de9a404c2e5b8a79adaabec6030e7c93d8c843eafc1a1962fabf4f40b8e9b40",
+      "note": "",
+      "alpha_min": 0,
+      "alpha_max": 255
+    },
+    {
+      "path": "Chest/chest-body.png",
+      "size": [
+        512,
+        512
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "4316bc07806c66d4191c1d34a45cc2732fdbcc24737e67d0ffd2a20ca7f9fb86",
+      "note": "",
+      "alpha_min": 0,
+      "alpha_max": 255
+    },
+    {
+      "path": "Chest/chest-lid.png",
+      "size": [
+        512,
+        512
+      ],
+      "pivot": [
+        0.5,
+        0.5390625
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "212a1306c87c669e7573d53a26e4ab61daa2e3f2e460196d5afac885a376d7cb",
+      "note": "Unity pivot at master horizontal seam; full 512 canvas, same scale",
+      "alpha_min": 0,
+      "alpha_max": 255
+    },
+    {
+      "path": "LevelUp/levelup-flash-0.png",
+      "size": [
+        256,
+        256
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "514a027bf902b2f1b773dfa211d57aa2041fcc1d1ce732e05a55fe16a6e06cfb",
+      "note": "source registration fixed; central alpha zero",
+      "alpha_min": 0,
+      "alpha_max": 255
+    },
+    {
+      "path": "LevelUp/levelup-flash-1.png",
+      "size": [
+        256,
+        256
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "38eea3c199d17cb37def5a765580674665e073057822d121a2e925a06a49beae",
+      "note": "source registration fixed; central alpha zero",
+      "alpha_min": 0,
+      "alpha_max": 255
+    },
+    {
+      "path": "LevelUp/levelup-flash-2.png",
+      "size": [
+        256,
+        256
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "6ee376276f92b2564aa6beab9e2c7388f26c7bf6d091df355e694bdce8375018",
+      "note": "source registration fixed; central alpha zero",
+      "alpha_min": 0,
+      "alpha_max": 255
+    },
+    {
+      "path": "LevelUp/levelup-flash-3.png",
+      "size": [
+        256,
+        256
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "5aa6281959db8fcd163057394652bd7c5230a84809d41dc28bf5f45d90203a56",
+      "note": "source registration fixed; central alpha zero",
+      "alpha_min": 0,
+      "alpha_max": 184
+    },
+    {
+      "path": "Summon/burst-0.png",
+      "size": [
+        512,
+        512
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "e5bdc195e98750881a33d5502830ed0e03f264887172684e88ca8c5259e4cafd",
+      "note": "",
+      "alpha_min": 0,
+      "alpha_max": 253
+    },
+    {
+      "path": "Summon/burst-1.png",
+      "size": [
+        512,
+        512
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "69bd40bcc5a0d2063790b752c8128c86a405ca287af2577dba00f9da1cc0ec4e",
+      "note": "",
+      "alpha_min": 0,
+      "alpha_max": 254
+    },
+    {
+      "path": "Summon/burst-2.png",
+      "size": [
+        512,
+        512
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "ff305a9205d2efdcbe2d9cb36937a157d9b32f960b4704ecc833d80e96d24186",
+      "note": "",
+      "alpha_min": 0,
+      "alpha_max": 254
+    },
+    {
+      "path": "Summon/burst-3.png",
+      "size": [
+        512,
+        512
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "60133387a6173675396ef308b43e4ab701a3cddc13c295852c3892f9e8eb6b53",
+      "note": "",
+      "alpha_min": 0,
+      "alpha_max": 253
+    },
+    {
+      "path": "Summon/burst-4.png",
+      "size": [
+        512,
+        512
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "0257c7c53247415d075974570cf4a0f7730829549a0605519fa274038bc57f3f",
+      "note": "",
+      "alpha_min": 0,
+      "alpha_max": 236
+    },
+    {
+      "path": "Summon/burst-5.png",
+      "size": [
+        512,
+        512
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "e09dcb8455888957328bb637ea894e8ace8bc591b04e3a5077e81a40bc677bf1",
+      "note": "",
+      "alpha_min": 0,
+      "alpha_max": 192
+    },
+    {
+      "path": "Summon/orb-core.png",
+      "size": [
+        512,
+        512
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "fc55fe1e3652d6fc75da8b1790c9101e52619804a15e4dbfb13689b66b98dbc1",
+      "note": "reused 056 preview, no new generation",
+      "alpha_min": 0,
+      "alpha_max": 255
+    },
+    {
+      "path": "Summon/card-back.png",
+      "size": [
+        400,
+        560
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "816ef71c9bcaf2f310ccfcf43a2d9623f993ba8e8b4273fd19a9d495ca3e4a99",
+      "note": "reused 056 preview, no new generation",
+      "alpha_min": 0,
+      "alpha_max": 255
+    },
+    {
+      "path": "Common/glow.png",
+      "size": [
+        512,
+        512
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "dc01bcd1df3e3490d9f8eac3876e2de1e1ab47a16552a8d92f93485816bb1ce0",
+      "note": "reused 056 preview, no new generation",
+      "alpha_min": 0,
+      "alpha_max": 253
+    },
+    {
+      "path": "Common/swirl.png",
+      "size": [
+        512,
+        512
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "639860ce120995f17a6abf54f1e40bb45b898074c2e986d7fdaf6c3b2304f07e",
+      "note": "reused 056 preview, no new generation",
+      "alpha_min": 0,
+      "alpha_max": 255
+    },
+    {
+      "path": "Common/chest-light.png",
+      "size": [
+        512,
+        512
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "9655b73b5e545b5254b20828723c14db2cd3d42875612b017cbcd6433dc20270",
+      "note": "reused 056 preview, no new generation",
+      "alpha_min": 0,
+      "alpha_max": 253
+    },
+    {
+      "path": "Common/sparkle.png",
+      "size": [
+        512,
+        512
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "c1b3f7680562aeb3c499cb9137a5d3a8054c0bde41a1c0748d933c3e57bfc25d",
+      "note": "reused 056 preview, no new generation",
+      "alpha_min": 0,
+      "alpha_max": 254
+    },
+    {
+      "path": "Common/rarity-ray.png",
+      "size": [
+        512,
+        512
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "4c9cae9d2c8479826db7bebd293ebf73fa0c81bca3422fcf6937fc73b2bcec12",
+      "note": "reused 056 preview, no new generation",
+      "alpha_min": 0,
+      "alpha_max": 253
+    },
+    {
+      "path": "LevelUp/levelup-arrow.png",
+      "size": [
+        256,
+        256
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "b610819c3342dfb95f188b42583cf7878f37459b9be55f2238d9fd50d20fad73",
+      "note": "reused 056 preview, no new generation",
+      "alpha_min": 0,
+      "alpha_max": 255
+    },
+    {
+      "path": "LevelUp/merge-swirl.png",
+      "size": [
+        512,
+        512
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "639860ce120995f17a6abf54f1e40bb45b898074c2e986d7fdaf6c3b2304f07e",
+      "note": "reused 056 preview, no new generation",
+      "alpha_min": 0,
+      "alpha_max": 255
+    },
+    {
+      "path": "Chest/shard.png",
+      "size": [
+        96,
+        96
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "fad54e95ab41ed04b5d4953d2364251504fc7bb0d229e0059ad01f0e11bd34f8",
+      "note": "reused 056 preview, no new generation",
+      "alpha_min": 0,
+      "alpha_max": 255
+    },
+    {
+      "path": "ButtonIcons/contribution.png",
+      "size": [
+        256,
+        256
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "e117c4ee52a68513d4c71f50ae0f3e75b77999e202aa330f56e4abd4ce00fbce",
+      "note": "",
+      "alpha_min": 0,
+      "alpha_max": 255
+    },
+    {
+      "path": "Glyphs/sort.png",
+      "size": [
+        150,
+        150
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "fc0f24035d9797c27b17371efef0ad32837ee2a3a79ece30b4a98b902c3811ae",
+      "note": "",
+      "alpha_min": 0,
+      "alpha_max": 255
+    },
+    {
+      "path": "ResultScreen/defeat-candidate.png",
+      "size": [
+        707,
+        216
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "52a15961b43263e152b85a3058ce9f414e4968e9ec73eb0ff72ca130ede05653",
+      "note": "",
+      "alpha_min": 0,
+      "alpha_max": 255
+    }
+  ],
+  "fit": {
+    "different_pixels": 0,
+    "max_channel_error": 0,
+    "master_crop": [
+      355,
+      163,
+      1181,
+      861
+    ],
+    "scale": 0.5423728813559322,
+    "offset": [
+      32,
+      66
+    ],
+    "seam_y": 236,
+    "lock_polygon": [
+      [
+        200,
+        236
+      ],
+      [
+        200,
+        233
+      ],
+      [
+        221,
+        212
+      ],
+      [
+        289,
+        212
+      ],
+      [
+        312,
+        234
+      ],
+      [
+        312,
+        236
+      ]
+    ],
+    "pivot_pixels": [
+      256,
+      236
+    ]
+  },
+  "burst_registration": [
+    {
+      "frame": 0,
+      "source_center": [
+        191,
+        358
+      ],
+      "source_half_extent": 110,
+      "scale": 0.9,
+      "correction_pixels": [
+        0,
+        -1
+      ],
+      "measurement": "visible alpha > 40 bounding symmetry midpoint",
+      "actual_center": [
+        256.0,
+        256.0
+      ],
+      "destination_center": [
+        256,
+        256
+      ],
+      "max_center_error_pixels": 0.0
+    },
+    {
+      "frame": 1,
+      "source_center": [
+        546,
+        358
+      ],
+      "source_half_extent": 165,
+      "scale": 0.9,
+      "correction_pixels": [
+        1,
+        -3
+      ],
+      "measurement": "visible alpha > 40 bounding symmetry midpoint",
+      "actual_center": [
+        256.0,
+        256.0
+      ],
+      "destination_center": [
+        256,
+        256
+      ],
+      "max_center_error_pixels": 0.0
+    },
+    {
+      "frame": 2,
+      "source_center": [
+        902,
+        358
+      ],
+      "source_half_extent": 176,
+      "scale": 0.9,
+      "correction_pixels": [
+        -3,
+        0
+      ],
+      "measurement": "visible alpha > 40 bounding symmetry midpoint",
+      "actual_center": [
+        256.0,
+        255.5
+      ],
+      "destination_center": [
+        256,
+        256
+      ],
+      "max_center_error_pixels": 0.5
+    },
+    {
+      "frame": 3,
+      "source_center": [
+        1262,
+        355
+      ],
+      "source_half_extent": 197,
+      "scale": 0.9,
+      "correction_pixels": [
+        0,
+        -1
+      ],
+      "measurement": "visible alpha > 40 bounding symmetry midpoint",
+      "actual_center": [
+        255.5,
+        256.0
+      ],
+      "destination_center": [
+        256,
+        256
+      ],
+      "max_center_error_pixels": 0.5
+    },
+    {
+      "frame": 4,
+      "source_center": [
+        1616,
+        357
+      ],
+      "source_half_extent": 172,
+      "scale": 0.9,
+      "correction_pixels": [
+        -4,
+        0
+      ],
+      "measurement": "visible alpha > 40 bounding symmetry midpoint",
+      "actual_center": [
+        256.5,
+        256.0
+      ],
+      "destination_center": [
+        256,
+        256
+      ],
+      "max_center_error_pixels": 0.5
+    },
+    {
+      "frame": 5,
+      "source_center": [
+        1988,
+        355
+      ],
+      "source_half_extent": 122,
+      "scale": 0.9,
+      "correction_pixels": [
+        -1,
+        0
+      ],
+      "measurement": "visible alpha > 40 bounding symmetry midpoint",
+      "actual_center": [
+        256.0,
+        255.5
+      ],
+      "destination_center": [
+        256,
+        256
+      ],
+      "max_center_error_pixels": 0.5
+    }
+  ]
+}
