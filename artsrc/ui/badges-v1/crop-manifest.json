@@ -1,0 +1,100 @@
+{
+  "source": "source.png",
+  "assets": [
+    {
+      "name": "dot",
+      "size": [
+        388,
+        405
+      ],
+      "border_left_bottom_right_top": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "source_box": [
+        15,
+        195,
+        399,
+        596
+      ]
+    },
+    {
+      "name": "upgrade",
+      "size": [
+        390,
+        409
+      ],
+      "border_left_bottom_right_top": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "source_box": [
+        414,
+        195,
+        800,
+        600
+      ]
+    },
+    {
+      "name": "check",
+      "size": [
+        390,
+        406
+      ],
+      "border_left_bottom_right_top": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "source_box": [
+        814,
+        195,
+        1200,
+        597
+      ]
+    },
+    {
+      "name": "lock",
+      "size": [
+        351,
+        417
+      ],
+      "border_left_bottom_right_top": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "source_box": [
+        1216,
+        187,
+        1563,
+        600
+      ]
+    },
+    {
+      "name": "new",
+      "size": [
+        408,
+        415
+      ],
+      "border_left_bottom_right_top": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "source_box": [
+        1582,
+        187,
+        1986,
+        598
+      ]
+    }
+  ]
+}

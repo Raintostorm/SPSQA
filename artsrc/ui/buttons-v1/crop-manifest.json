@@ -1,0 +1,176 @@
+{
+  "source": "source.png",
+  "assets": [
+    {
+      "name": "gold",
+      "size": [
+        692,
+        142
+      ],
+      "border_left_bottom_right_top": [
+        75,
+        62,
+        75,
+        62
+      ],
+      "source_box": [
+        18,
+        35,
+        706,
+        173
+      ]
+    },
+    {
+      "name": "gold-pressed",
+      "size": [
+        692,
+        142
+      ],
+      "border_left_bottom_right_top": [
+        75,
+        62,
+        75,
+        62
+      ],
+      "source_box": [
+        741,
+        35,
+        1429,
+        173
+      ]
+    },
+    {
+      "name": "disabled",
+      "size": [
+        692,
+        142
+      ],
+      "border_left_bottom_right_top": [
+        75,
+        62,
+        75,
+        62
+      ],
+      "source_box": [
+        1464,
+        35,
+        2152,
+        173
+      ]
+    },
+    {
+      "name": "blue",
+      "size": [
+        693,
+        142
+      ],
+      "border_left_bottom_right_top": [
+        75,
+        62,
+        75,
+        62
+      ],
+      "source_box": [
+        17,
+        212,
+        706,
+        350
+      ]
+    },
+    {
+      "name": "blue-pressed",
+      "size": [
+        693,
+        143
+      ],
+      "border_left_bottom_right_top": [
+        75,
+        62,
+        75,
+        62
+      ],
+      "source_box": [
+        740,
+        212,
+        1429,
+        351
+      ]
+    },
+    {
+      "name": "slate",
+      "size": [
+        693,
+        143
+      ],
+      "border_left_bottom_right_top": [
+        75,
+        62,
+        75,
+        62
+      ],
+      "source_box": [
+        17,
+        389,
+        706,
+        528
+      ]
+    },
+    {
+      "name": "slate-pressed",
+      "size": [
+        692,
+        144
+      ],
+      "border_left_bottom_right_top": [
+        75,
+        62,
+        75,
+        62
+      ],
+      "source_box": [
+        741,
+        389,
+        1429,
+        529
+      ]
+    },
+    {
+      "name": "red",
+      "size": [
+        693,
+        142
+      ],
+      "border_left_bottom_right_top": [
+        75,
+        62,
+        75,
+        62
+      ],
+      "source_box": [
+        17,
+        568,
+        706,
+        706
+      ]
+    },
+    {
+      "name": "red-pressed",
+      "size": [
+        692,
+        142
+      ],
+      "border_left_bottom_right_top": [
+        75,
+        62,
+        75,
+        62
+      ],
+      "source_box": [
+        741,
+        568,
+        1429,
+        706
+      ]
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "source": "source.png",
+  "assets": [
+    {
+      "name": "navy-ribbon",
+      "size": [
+        1301,
+        243
+      ],
+      "border_left_bottom_right_top": [
+        260,
+        26,
+        260,
+        26
+      ],
+      "source_bbox": [
+        37,
+        117,
+        1338,
+        360
+      ]
+    },
+    {
+      "name": "purple-ribbon",
+      "size": [
+        1301,
+        244
+      ],
+      "border_left_bottom_right_top": [
+        260,
+        26,
+        260,
+        26
+      ],
+      "source_bbox": [
+        37,
+        469,
+        1338,
+        713
+      ]
+    },
+    {
+      "name": "navy-plaque",
+      "size": [
+        1276,
+        230
+      ],
+      "border_left_bottom_right_top": [
+        70,
+        38,
+        70,
+        38
+      ],
+      "source_bbox": [
+        49,
+        825,
+        1325,
+        1055
+      ]
+    }
+  ]
+}

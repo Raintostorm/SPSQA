@@ -1,0 +1,68 @@
+[
+  {
+    "topic": "Restart",
+    "current": "SharedUI/restart.png",
+    "comparison": "Glyphs/replay.png",
+    "finding": "REUSE replay; no generation"
+  },
+  {
+    "topic": "Resume",
+    "current": "SharedUI/resume.png",
+    "comparison": "SharedUI/resume.png",
+    "finding": "KEEP for review: outlined play triangle"
+  },
+  {
+    "topic": "Sound",
+    "current": "SharedUI/sound.png",
+    "comparison": "SharedUI/sound.png",
+    "finding": "KEEP for review: speaker + waves"
+  },
+  {
+    "topic": "Vibration",
+    "current": "SharedUI/vibration.png",
+    "comparison": "SharedUI/vibration.png",
+    "finding": "PHONE: design decision; no bell yet"
+  },
+  {
+    "topic": "Home",
+    "current": "SharedUI/home.png",
+    "comparison": "Glyphs/home.png",
+    "finding": "DIFFERENT meaning: tent / navigation home"
+  },
+  {
+    "topic": "Battle",
+    "current": "SharedUI/battle.png",
+    "comparison": "ButtonIcons/battle.png",
+    "finding": "SAME action; white version exists"
+  },
+  {
+    "topic": "Close",
+    "current": "SharedUI/close.png",
+    "comparison": "Glyphs/close.png",
+    "finding": "SAME action; white version exists"
+  },
+  {
+    "topic": "Upgrade",
+    "current": "SharedUI/upgrade.png",
+    "comparison": "ButtonIcons/upgrade.png",
+    "finding": "EXISTING alternatives; no generation"
+  },
+  {
+    "topic": "Key",
+    "current": "SharedUI/key.png",
+    "comparison": "HomeChrome/key.png",
+    "finding": "Two designs: unify at usage if needed"
+  },
+  {
+    "topic": "Wallet gold",
+    "current": "SharedUI/gold.png",
+    "comparison": "HomeChrome/coin.png",
+    "finding": "BAG vs COIN; code alignment, not new art"
+  },
+  {
+    "topic": "Shop package",
+    "current": "Shop/gold.png",
+    "comparison": "ShopPacks/gold-large.png",
+    "finding": "VALID distinct role: package amount"
+  }
+]

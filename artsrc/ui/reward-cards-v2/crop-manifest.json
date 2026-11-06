@@ -1,0 +1,100 @@
+{
+  "source": "source.png",
+  "assets": [
+    {
+      "name": "card-common",
+      "size": [
+        383,
+        577
+      ],
+      "border_left_bottom_right_top": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "source_box": [
+        33,
+        100,
+        412,
+        673
+      ]
+    },
+    {
+      "name": "card-rare",
+      "size": [
+        382,
+        577
+      ],
+      "border_left_bottom_right_top": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "source_box": [
+        430,
+        100,
+        808,
+        673
+      ]
+    },
+    {
+      "name": "card-epic",
+      "size": [
+        383,
+        576
+      ],
+      "border_left_bottom_right_top": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "source_box": [
+        827,
+        101,
+        1206,
+        673
+      ]
+    },
+    {
+      "name": "card-legendary",
+      "size": [
+        383,
+        577
+      ],
+      "border_left_bottom_right_top": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "source_box": [
+        1224,
+        101,
+        1603,
+        674
+      ]
+    },
+    {
+      "name": "card-stone",
+      "size": [
+        383,
+        577
+      ],
+      "border_left_bottom_right_top": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "source_box": [
+        1621,
+        101,
+        2000,
+        674
+      ]
+    }
+  ]
+}

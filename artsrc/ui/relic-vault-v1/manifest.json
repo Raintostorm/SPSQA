@@ -1,0 +1,24 @@
+{
+  "source": [
+    1774,
+    887
+  ],
+  "panels": [
+    "common",
+    "rare",
+    "epic",
+    "legendary"
+  ],
+  "galleryCrop": [
+    0,
+    185,
+    852,
+    456
+  ],
+  "border": [
+    65,
+    105,
+    65,
+    105
+  ]
+}

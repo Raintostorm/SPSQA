@@ -1,0 +1,14 @@
+{
+  "source": "Assets/_Project/Art/UnitsSimple/dead_epic/idle_000.png",
+  "crop_box": [
+    0,
+    0,
+    319,
+    175
+  ],
+  "output_size": [
+    280,
+    280
+  ],
+  "meta_sha256_preserved": "6a16e030ad1ab6009f0b7e4655b2e485e8f5925aa975874167e99a16acfbae22"
+}

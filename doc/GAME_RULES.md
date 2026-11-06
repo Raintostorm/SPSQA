@@ -13,6 +13,10 @@ Cập nhật: 2026-11-03. Thay các bảng cân bằng/handoff cũ; xác nhận 
 - Mythic Stone hiếm hơn Legendary; rate do AllySummon.StoneChance tính; không đưa rates lại lên màn Summon chính.
 - Allies/Mythics max level 30. Upgrade dùng gold + shard của ally, hoặc gold + shared stone cho Mythic.
 - Relic: 1 shard/roll; Open All dùng toàn bộ keys; nâng thủ công bằng gold+shards, không auto-upgrade.
+- Keys trước đây chỉ rơi từ phần thưởng màn chơi, hết keys là kẹt. Shop có thêm mục **Keys**:
+  đổi gems lấy keys, mặc định **5 gems/key**, gói 10 / 50 / 100 (`ShopPrices.GemsPerKey`,
+  `KeyExchangeCounts` trong `Resources/Shop/prices.json`). Tỉ giá này do Claude đề xuất
+  2026-11-04 để test nhanh, **chưa cân bằng** — user chỉnh trong file prices, không sửa code.
 - Chapter 1-1 thưởng 80 gems, 1-2 thưởng 250 gems mỗi lần thắng.
 - Shop: 9 món/ngày, 3 cột, mỗi món mua một lần/ngày. Gold đổi từ gems; mua gems hiện là miễn phí để test vì chưa có thanh toán.
 
@@ -23,8 +27,9 @@ Cập nhật: 2026-11-03. Thay các bảng cân bằng/handoff cũ; xác nhận 
 - Mana Heart: +50% mana nhận từ mọi nguồn. Kunai+mana: khi người trang bị last-hit, đánh một enemy khác với 20% ATK. Kunai+kunai: thêm +50% ATK SPD theo runtime; khi không có speed bonus khác tương đương ×1.5. Có buff tốc khác thì đang cộng bonus, không phải nhân toàn bộ tốc hiện có lên 1.5. Đây là khác biệt cần chốt riêng nếu user muốn nhân cuối cùng.
 - Guardian aura: mỗi giây gây 20% ATK quanh mình, hồi 50% damage gây ra; tiêu 15 MP/s, không hồi MP khi aura hoạt động; vẫn đi/atk sau cast.
 - Undead Mythic: hồi sinh Common/Elite địch, không Boss; mỗi ally hồi sinh tối đa một lần/trận. Clock dừng địch trong vùng 5s. Mimic payout +5 coin/mỗi spell hợp lệ ở wave sau.
+- Hoà (ally và enemy cùng sạch quân) = THUA, kể cả wave cuối: vào Defeated, không qua màn, không thưởng wave (user chốt 2026-11-03). HUD vẫn ghi "Draw" trong lúc Finished. Ngoại lệ: Second Wind đang chờ ở wave đó thì hoà tiêu buff và tính là THẮNG (thưởng wave, wave cuối qua màn); ally hồi đầy ở Prep như mọi wave.
 - Target đã chết: không nhận damage lại. Attack đã commit vẫn kết thúc anim ở điểm đã khóa; projectile theo original target, target chết thì tới death position và biến mất không impact.
-- Skill/effect damage hiện tím; basic hạ gục enemy không hiện số mới. HP bar chỉ hiện khi mất máu; hồi HP đầy lại ẩn. Máu thực luôn cap ở max.
+- Skill/effect damage hiện tím. Mọi đòn đều hiện số, kể cả basic hạ gục enemy (user chốt 2026-11-03, bỏ luật ẩn số đòn kết liễu cũ). HP bar chỉ hiện khi mất máu; hồi HP đầy lại ẩn. Máu thực luôn cap ở max.
 
 ## Test đang bật — không được nhầm là luật release
 - Chapter 1-3: 6 lựa chọn buff miễn phí đầu ván, không trùng loại duy trì; roll trả phí đầu tiên vẫn ép Epic.

@@ -1,0 +1,119 @@
+{
+  "source": "source.png",
+  "assets": [
+    {
+      "name": "tile-common",
+      "size": [
+        358,
+        398
+      ],
+      "border_left_bottom_right_top": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "source_box": [
+        20,
+        152,
+        374,
+        546
+      ]
+    },
+    {
+      "name": "tile-rare",
+      "size": [
+        357,
+        398
+      ],
+      "border_left_bottom_right_top": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "source_box": [
+        379,
+        152,
+        732,
+        546
+      ]
+    },
+    {
+      "name": "tile-epic",
+      "size": [
+        354,
+        398
+      ],
+      "border_left_bottom_right_top": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "source_box": [
+        737,
+        152,
+        1087,
+        546
+      ]
+    },
+    {
+      "name": "tile-legendary",
+      "size": [
+        355,
+        398
+      ],
+      "border_left_bottom_right_top": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "source_box": [
+        1092,
+        152,
+        1443,
+        546
+      ]
+    },
+    {
+      "name": "tile-mythic",
+      "size": [
+        357,
+        398
+      ],
+      "border_left_bottom_right_top": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "source_box": [
+        1447,
+        152,
+        1800,
+        546
+      ]
+    },
+    {
+      "name": "tile-locked",
+      "size": [
+        356,
+        398
+      ],
+      "border_left_bottom_right_top": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "source_box": [
+        1805,
+        152,
+        2157,
+        546
+      ]
+    }
+  ]
+}

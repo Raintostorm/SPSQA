@@ -1,0 +1,1 @@
+Approved generated sheet: source.png. Crop manifest: crop-manifest.json. Rebuild: python3 tools/import_title_banners.py. Runtime sprites in Resources/TitleBanners; use Image.Type.Sliced. Text not baked. Preview in chat/check/001-title-banners-sliced-preview.png; offline only, not Unity QA.

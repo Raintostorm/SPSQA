@@ -1,0 +1,119 @@
+{
+  "source": "source.png",
+  "assets": [
+    {
+      "name": "gold-small",
+      "size": [
+        339,
+        317
+      ],
+      "border_left_bottom_right_top": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "source_box": [
+        55,
+        151,
+        390,
+        464
+      ]
+    },
+    {
+      "name": "gold-medium",
+      "size": [
+        406,
+        412
+      ],
+      "border_left_bottom_right_top": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "source_box": [
+        501,
+        73,
+        903,
+        481
+      ]
+    },
+    {
+      "name": "gold-large",
+      "size": [
+        512,
+        467
+      ],
+      "border_left_bottom_right_top": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "source_box": [
+        1003,
+        31,
+        1511,
+        494
+      ]
+    },
+    {
+      "name": "gems-small",
+      "size": [
+        362,
+        360
+      ],
+      "border_left_bottom_right_top": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "source_box": [
+        43,
+        633,
+        401,
+        989
+      ]
+    },
+    {
+      "name": "gems-medium",
+      "size": [
+        417,
+        440
+      ],
+      "border_left_bottom_right_top": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "source_box": [
+        489,
+        576,
+        902,
+        1012
+      ]
+    },
+    {
+      "name": "gems-large",
+      "size": [
+        524,
+        481
+      ],
+      "border_left_bottom_right_top": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "source_box": [
+        998,
+        537,
+        1518,
+        1014
+      ]
+    }
+  ]
+}

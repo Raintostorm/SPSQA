@@ -1,0 +1,157 @@
+{
+  "source": "source.png",
+  "assets": [
+    {
+      "name": "double-strike",
+      "size": [
+        355,
+        377
+      ],
+      "border_left_bottom_right_top": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "source_box": [
+        77,
+        39,
+        428,
+        412
+      ]
+    },
+    {
+      "name": "bodyguard",
+      "size": [
+        307,
+        375
+      ],
+      "border_left_bottom_right_top": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "source_box": [
+        521,
+        45,
+        824,
+        416
+      ]
+    },
+    {
+      "name": "frost-touch",
+      "size": [
+        386,
+        368
+      ],
+      "border_left_bottom_right_top": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "source_box": [
+        929,
+        43,
+        1311,
+        407
+      ]
+    },
+    {
+      "name": "grand-ascension",
+      "size": [
+        397,
+        369
+      ],
+      "border_left_bottom_right_top": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "source_box": [
+        1348,
+        48,
+        1741,
+        413
+      ]
+    },
+    {
+      "name": "reinforcements",
+      "size": [
+        442,
+        316
+      ],
+      "border_left_bottom_right_top": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "source_box": [
+        16,
+        501,
+        454,
+        813
+      ]
+    },
+    {
+      "name": "weapon-supplies",
+      "size": [
+        334,
+        341
+      ],
+      "border_left_bottom_right_top": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "source_box": [
+        503,
+        482,
+        833,
+        819
+      ]
+    },
+    {
+      "name": "war-chest",
+      "size": [
+        424,
+        378
+      ],
+      "border_left_bottom_right_top": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "source_box": [
+        889,
+        482,
+        1309,
+        856
+      ]
+    },
+    {
+      "name": "second-wind",
+      "size": [
+        384,
+        354
+      ],
+      "border_left_bottom_right_top": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "source_box": [
+        1355,
+        499,
+        1735,
+        849
+      ]
+    }
+  ]
+}

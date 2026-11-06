@@ -1,0 +1,157 @@
+{
+  "source": "source.png",
+  "assets": [
+    {
+      "name": "summon-x1",
+      "size": [
+        761,
+        302
+      ],
+      "border_left_bottom_right_top": [
+        280,
+        70,
+        70,
+        70
+      ],
+      "source_box": [
+        23,
+        32,
+        780,
+        330
+      ]
+    },
+    {
+      "name": "summon-x10",
+      "size": [
+        760,
+        302
+      ],
+      "border_left_bottom_right_top": [
+        300,
+        70,
+        150,
+        70
+      ],
+      "source_box": [
+        794,
+        32,
+        1550,
+        330
+      ]
+    },
+    {
+      "name": "price-pill",
+      "size": [
+        384,
+        123
+      ],
+      "border_left_bottom_right_top": [
+        60,
+        45,
+        60,
+        45
+      ],
+      "source_box": [
+        598,
+        355,
+        978,
+        474
+      ]
+    },
+    {
+      "name": "card-common",
+      "size": [
+        310,
+        445
+      ],
+      "border_left_bottom_right_top": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "source_box": [
+        11,
+        499,
+        317,
+        940
+      ]
+    },
+    {
+      "name": "card-rare",
+      "size": [
+        306,
+        445
+      ],
+      "border_left_bottom_right_top": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "source_box": [
+        327,
+        499,
+        629,
+        940
+      ]
+    },
+    {
+      "name": "card-epic",
+      "size": [
+        306,
+        446
+      ],
+      "border_left_bottom_right_top": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "source_box": [
+        639,
+        499,
+        941,
+        941
+      ]
+    },
+    {
+      "name": "card-legendary",
+      "size": [
+        306,
+        446
+      ],
+      "border_left_bottom_right_top": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "source_box": [
+        950,
+        499,
+        1252,
+        941
+      ]
+    },
+    {
+      "name": "card-stone",
+      "size": [
+        308,
+        445
+      ],
+      "border_left_bottom_right_top": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "source_box": [
+        1263,
+        499,
+        1567,
+        940
+      ]
+    }
+  ]
+}

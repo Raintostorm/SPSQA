@@ -27,7 +27,7 @@ Cập nhật: 2026-11-03. Nguồn: EffectBuffCatalog/System/Scaling/Ground/Unit 
 | Reinforcements | Nhận 3 Legendary ngẫu nhiên; đầy board giữ queue |
 | Weapon Supplies | Nhận 2 basic item; đầy 10 ô giữ queue |
 | War Chest | +200 battle coin ngay |
-| Second Wind | Tự cứu viện một lần khi sắp thua wave sắp tới; hết wave không dùng thì hết hiệu lực |
+| Second Wind | Tự cứu viện một lần khi sắp thua wave sắp tới; hết wave không dùng thì hết hiệu lực. Hoà (hai bên cùng sạch quân) cũng tiêu buff: không hồi sinh tại chỗ, wave tính là thắng |
 | Mana Flow | +20% mana nhận mỗi level; vẫn tôn trọng khóa hồi mana |
 | Wave Dividend | Thắng wave: 3 × số wave vừa thắng × level buff coin; Lv.1 wave 5 = 15 |
 | Mythic Might | Mythic +25% ATK mỗi level |
