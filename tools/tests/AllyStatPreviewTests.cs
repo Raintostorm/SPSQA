@@ -5,12 +5,11 @@ using Project.Data;
 using Project.Meta;
 namespace Project.Data
 {
-    public enum Rank {Common,Rare,Epic,Legendary}
     public enum TreasureStat {Atk,Hp,AtkSpeed,CritDamage,CritChance,LifeSteal,Armor}
     public class UnitDefinition
     {
         public float BaseHp=180,BaseAttack=27,AttackCooldown=.7f,AttackRange=.9f;
-        public bool IsRanged;public Rank Rank;
+        public bool IsRanged;public Rank Rank;public MythicKind Mythic;
         public AnimationSet Animations=new AnimationSet();
     }
     public class AnimationSet {public Clip Attack=new Clip();}
@@ -51,6 +50,18 @@ static class AllyStatPreviewTests
         Near(legend.Hp,856.44f,"level 30 HP");
         var noRelics=AllyStatPreview.Read(def,1,null,null);
         Near(noRelics.CritChance,0,"no invented base crit");Near(noRelics.CritDamage,2,"base crit damage");
-        Console.WriteLine("PASS: all 8 stats, relic stacking, next-level deltas, real melee/ranged range, legend MP and attack cycle.");
+        // Mana is a role rule: Undead Mythic has a passive, every other Mythic uses mana.
+        def.Rank=Rank.Mythic;
+        foreach(MythicKind kind in Enum.GetValues(typeof(MythicKind)))
+        {
+            if(kind==MythicKind.None)continue;
+            def.Mythic=kind;
+            var mythic=AllyStatPreview.Calculate(def,30,2,Total);
+            Near(mythic.Mana,kind==MythicKind.Undead?0:100,"Mythic mana: "+kind);
+            Near(mythic.Hp,legend.Hp,"Mythic permanent HP uses same level/relic model: "+kind);
+        }
+        def.Rank=Rank.Legendary;def.Mythic=MythicKind.Undead;
+        Near(AllyStatPreview.Calculate(def,1,2,Total).Mana,100,"Rank determines Legendary mana despite stale Mythic identity");
+        Console.WriteLine("PASS: all 8 stats, relic stacking, next-level deltas, ranges, attack cycle, Legendary and all Mythic mana roles.");
     }
 }

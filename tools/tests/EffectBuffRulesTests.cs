@@ -26,6 +26,8 @@ class EffectBuffRulesTests
         Check(!EffectBuffMath.FourthHit(0)&&!EffectBuffMath.FourthHit(3)&&EffectBuffMath.FourthHit(4)&&EffectBuffMath.FourthHit(8),"hit cadence");
         Check(EffectBuffMath.RescueEligible(true,2,2,0,3),"rescue at defeat");
         Check(!EffectBuffMath.RescueEligible(false,2,2,0,3)&&!EffectBuffMath.RescueEligible(true,2,3,0,3)&&!EffectBuffMath.RescueEligible(true,2,2,1,3)&&!EffectBuffMath.RescueEligible(true,2,2,0,0),"rescue once/wave/all-dead enemies guards");
+        Check(EffectBuffMath.DrawRescueEligible(true,2,2,0,0),"draw rescue when both wiped");
+        Check(!EffectBuffMath.DrawRescueEligible(false,2,2,0,0)&&!EffectBuffMath.DrawRescueEligible(true,2,3,0,0)&&!EffectBuffMath.DrawRescueEligible(true,2,2,1,0)&&!EffectBuffMath.DrawRescueEligible(true,2,2,0,3),"draw rescue armed/wave/draw-only guards");
         Check(EffectBuffScaling.Describe(EffectBuffKind.GoldTile,3).Contains("12"),"UI value consistent");
         var occupied=new int[,]{{9,9,0}};var counts=new int[,]{{1,1,0}};
         Check(!EffectBuffPlacement.TryPlan(occupied,counts,new[]{1,2},3,out var impossible)&&impossible.Length==0,"split untouched stacks must not be collapsed by capacity estimate");
