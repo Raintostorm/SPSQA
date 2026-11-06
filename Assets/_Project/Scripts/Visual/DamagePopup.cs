@@ -20,7 +20,20 @@ namespace Project.Visual
         Vector3 from;float elapsed;bool playing,requiresNumbers;
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
-        static void ResetPool(){pool.Clear();damageFont=null;lane=0;}
+        static void ResetPool(){pool.Clear();damageFont=null;lane=0;Font.textureRebuilt-=FontRebuilt;Font.textureRebuilt+=FontRebuilt;}
+
+        // UI Text now shares this font (UiFonts). When UI requests new glyphs Unity rebuilds the
+        // font texture, and live TextMesh UVs point at the old layout — the numbers vanish. Re-request.
+        static void FontRebuilt(Font font)
+        {
+            if(font!=damageFont)return;
+            foreach(var popup in pool)if(popup&&popup.playing)popup.Remesh();
+        }
+        void Remesh()
+        {
+            var value=text.text;text.text="";text.text=value;
+            foreach(var outline in stroke){outline.text="";outline.text=value;}
+        }
 
         public static void Show(Vector3 worldPos,float amount,UnitTeam victim,bool skill=false)
         {

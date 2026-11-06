@@ -36,7 +36,7 @@ namespace Project.UI
         {var image=Rect(p,"Icon",position,size).gameObject.AddComponent<Image>();image.sprite=sprite;image.preserveAspect=true;image.raycastTarget=false;return image;}
         void Build()
         {
-            font=Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");flow=FindFirstObjectByType<BattleFlow>();
+            font=UiFonts.Display;flow=FindFirstObjectByType<BattleFlow>();
             var canvas=gameObject.AddComponent<Canvas>();canvas.renderMode=RenderMode.ScreenSpaceOverlay;canvas.sortingOrder=500;
             var scaler=gameObject.AddComponent<CanvasScaler>();scaler.uiScaleMode=CanvasScaler.ScaleMode.ScaleWithScreenSize;scaler.referenceResolution=new Vector2(1125,2436);
             gameObject.AddComponent<GraphicRaycaster>();

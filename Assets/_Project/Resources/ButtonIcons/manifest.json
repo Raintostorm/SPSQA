@@ -1,0 +1,90 @@
+[
+ {
+  "name": "battle",
+  "source_x": [
+   42,
+   254
+  ],
+  "visible": [
+   221,
+   224
+  ]
+ },
+ {
+  "name": "summon-1",
+  "source_x": [
+   312,
+   458
+  ],
+  "visible": [
+   122,
+   224
+  ]
+ },
+ {
+  "name": "summon-10",
+  "source_x": [
+   547,
+   705
+  ],
+  "visible": [
+   129,
+   224
+  ]
+ },
+ {
+  "name": "key",
+  "source_x": [
+   754,
+   954
+  ],
+  "visible": [
+   203,
+   224
+  ]
+ },
+ {
+  "name": "upgrade",
+  "source_x": [
+   983,
+   1205
+  ],
+  "visible": [
+   192,
+   224
+  ]
+ },
+ {
+  "name": "continue",
+  "source_x": [
+   1246,
+   1446
+  ],
+  "visible": [
+   224,
+   178
+  ]
+ },
+ {
+  "name": "confirm",
+  "source_x": [
+   1473,
+   1687
+  ],
+  "visible": [
+   224,
+   220
+  ]
+ },
+ {
+  "name": "cancel",
+  "source_x": [
+   1726,
+   1914
+  ],
+  "visible": [
+   224,
+   223
+  ]
+ }
+]

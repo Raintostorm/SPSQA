@@ -62,13 +62,13 @@ namespace Project.UI
             if (sellButton)
             {
                 BattleUiSkin.Place(sellButton.GetComponent<RectTransform>(),Vector2.one*.5f,new Vector2(0,130),new Vector2(270,100));
-                BattleUiSkin.Button(sellButton,BattleUiSkin.Red,"+0");
-                BattleUiSkin.Icon(sellButton,"gold");
+                BattleUiSkin.Button(sellButton,BattleUiSkin.Red,"+0");ScreenChrome.Action(sellButton,ScreenChrome.Role.Danger);
+                BattleUiSkin.Icon(sellButton,"HomeChrome/coin");
             }
             if (evolveButton)
             {
                 BattleUiSkin.Place(evolveButton.GetComponent<RectTransform>(),Vector2.one*.5f,new Vector2(0,-120),new Vector2(270,100));
-                BattleUiSkin.Button(evolveButton,BattleUiSkin.Orange,"Merge");
+                BattleUiSkin.Button(evolveButton,BattleUiSkin.Orange,"Merge");ScreenChrome.Action(evolveButton,ScreenChrome.Role.Primary);
                 BattleUiSkin.Icon(evolveButton,"upgrade");
             }
             var go = new GameObject("UnitInfoButton",typeof(RectTransform),typeof(Image),typeof(Button));
@@ -76,7 +76,7 @@ namespace Project.UI
             BattleUiSkin.Place(go.GetComponent<RectTransform>(),Vector2.one*.5f,new Vector2(195,0),new Vector2(90,90));
             ApprovedUiArt.Apply(go.GetComponent<Image>(),"info");
             var label=new GameObject("Label",typeof(RectTransform),typeof(Text)).GetComponent<Text>();
-            label.transform.SetParent(go.transform,false);label.font=title ? title.font : Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+            label.transform.SetParent(go.transform,false);label.font=title ? title.font : UiFonts.Display;
             label.fontSize=48;label.text="";label.alignment=TextAnchor.MiddleCenter;label.color=Color.white;label.raycastTarget=false;
             BattleUiSkin.Place(label.rectTransform,Vector2.one*.5f,Vector2.zero,new Vector2(80,80));
             infoButton.onClick.AddListener(()=>{var units=board?.UnitsAt(row,col);if(units!=null&&units.Count>0)BattleUnitInfo.Show(units[0]);});

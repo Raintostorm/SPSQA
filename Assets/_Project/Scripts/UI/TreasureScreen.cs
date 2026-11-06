@@ -87,15 +87,16 @@ namespace Project.UI
         {
             if (revealing || database == null || balance == null) return;
 
-            if (!GameProgress.SpendKeys(count))
+            // Debit, grants and pity commit together; failure leaves keys untouched.
+            if (!GameProgress.TryOpenChest(count, database, balance, rng, out var got))
             {
                 if (resultLabel != null)
-                    resultLabel.text = $"Not enough keys — need {count}, have {GameProgress.Keys}";
+                    resultLabel.text = GameProgress.Keys < count
+                        ? $"Not enough keys — need {count}, have {GameProgress.Keys}"
+                        : "Could not open chest — keys were not spent";
                 return;
             }
-
-            var got = TreasureRoll.Roll(count, database, balance, rng);
-            // Grant/save once before the presentation; closing a screen cannot lose rewards.
+            // Saved before the presentation; closing a screen cannot lose rewards.
             StartCoroutine(RevealChest(got));
         }
 
@@ -126,7 +127,7 @@ namespace Project.UI
             RewardText(root,"RELICS RECEIVED",new Vector2(0,830),new Vector2(980,100),52);
             var close=new GameObject("Continue",typeof(RectTransform),typeof(Image),typeof(Button));close.transform.SetParent(root,false);
             BattleUiSkin.Place(close.GetComponent<RectTransform>(),Vector2.one*.5f,new Vector2(0,-870),new Vector2(600,110));
-            BattleUiSkin.Button(close.GetComponent<Button>(),BattleUiSkin.Purple,"Continue");
+            ScreenChrome.Action(close.GetComponent<Button>(),ScreenChrome.Role.Secondary);
             RewardText(close.transform,"Continue",Vector2.zero,new Vector2(560,100),44);
             bool dismissed=false;
             close.GetComponent<Button>().onClick.AddListener(()=>dismissed=true);
@@ -157,7 +158,7 @@ namespace Project.UI
         Text RewardText(Transform parent,string value,Vector2 position,Vector2 size,int fontSize)
         {
             var text=new GameObject("Label",typeof(RectTransform),typeof(Text)).GetComponent<Text>();text.transform.SetParent(parent,false);
-            BattleUiSkin.Place(text.rectTransform,Vector2.one*.5f,position,size);text.text=value;text.font=Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");text.fontSize=fontSize;text.alignment=TextAnchor.MiddleCenter;text.color=Color.white;text.raycastTarget=false;return text;
+            BattleUiSkin.Place(text.rectTransform,Vector2.one*.5f,position,size);text.text=value;text.font=UiFonts.Display;text.fontSize=fontSize;text.alignment=TextAnchor.MiddleCenter;text.color=Color.white;text.raycastTarget=false;return text;
         }
 
         void Report(List<TreasureRoll.Result> got)

@@ -19,7 +19,7 @@ namespace Project.UI
             var canvas=gameObject.AddComponent<Canvas>();canvas.renderMode=RenderMode.ScreenSpaceOverlay;canvas.sortingOrder=480;
             var scaler=gameObject.AddComponent<CanvasScaler>();scaler.uiScaleMode=CanvasScaler.ScaleMode.ScaleWithScreenSize;scaler.referenceResolution=new Vector2(1125,2436);
             label=new GameObject("Equipped",typeof(RectTransform),typeof(Image)).GetComponent<RectTransform>();label.SetParent(transform,false);label.sizeDelta=new Vector2(320,80);BattleUiSkin.Skin(label.GetComponent<Image>(),BattleUiSkin.Dark);label.GetComponent<Image>().raycastTarget=false;
-            var text=new GameObject("Text",typeof(RectTransform),typeof(Text)).GetComponent<Text>();text.transform.SetParent(label,false);BattleUiSkin.Place(text.rectTransform,Vector2.one*.5f,Vector2.zero,new Vector2(310,75));text.font=Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");text.fontSize=36;text.fontStyle=FontStyle.Bold;text.alignment=TextAnchor.MiddleCenter;text.color=new Color(.5f,1,.7f);text.text="✓  Equipped";text.raycastTarget=false;
+            var text=new GameObject("Text",typeof(RectTransform),typeof(Text)).GetComponent<Text>();text.transform.SetParent(label,false);BattleUiSkin.Place(text.rectTransform,Vector2.one*.5f,Vector2.zero,new Vector2(310,75));text.font=UiFonts.Display;text.fontSize=36;text.fontStyle=FontStyle.Bold;text.alignment=TextAnchor.MiddleCenter;text.color=new Color(.5f,1,.7f);text.text="✓  Equipped";text.raycastTarget=false;
         }
         void LateUpdate()
         {

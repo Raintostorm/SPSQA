@@ -225,10 +225,10 @@ namespace Project.Battle
             // Hien so dinh gay thi con sap chet con 5 mau an cu 200 se bay
             // len "200" roi nga — nguoi choi doc duoc mot con so khong co
             // that o dau ca.
-            // Suppress the finishing basic-hit number on enemies; skills remain visible in purple.
+            // Moi don deu hien so, ke ca don ket lieu (user 2026-11-03): quai yeu chet sau 1 don
+            // thi truoc day khong bao gio thay damage cua allies. Skill van mau tim.
             // Already-dead targets return at the top, before any feedback or damage bookkeeping.
-            bool finishingBasicOnEnemy=basicAttack&&team==UnitTeam.Enemy&&amount>=CurrentHp;
-            if(!finishingBasicOnEnemy)Project.Visual.DamagePopup.Show(HitPoint,real,team,!basicAttack);
+            Project.Visual.DamagePopup.Show(HitPoint,real,team,!basicAttack);
 
             // Hut mau theo MAU THAT MAT, khong theo so dinh gay. Danh vao
             // con sap chet con 5 mau ma hoi theo 200 thi hut mau thanh ra

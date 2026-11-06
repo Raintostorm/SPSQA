@@ -10,11 +10,31 @@ namespace Project.UI
         GameObject notice;
         Text gemLabel;
         int shownGems=-1;
-        void Update(){if(gemLabel && shownGems!=GameProgress.Gems){shownGems=GameProgress.Gems;gemLabel.text=shownGems.ToString("N0");}}
+        Image alliesDot,relicsDot;
+        float dotTimer;
+        void Update()
+        {
+            if(gemLabel && shownGems!=GameProgress.Gems){shownGems=GameProgress.Gems;AnimatedCounter.Wallet(gemLabel,shownGems,"gems");}
+            // Quet lai dinh ky chu khong chi luc dung: nguoi choi nang cap roi quay ve Home,
+            // cham do phai tat ngay, khong doi mo lai man.
+            dotTimer-=Time.unscaledDeltaTime;if(dotTimer>0)return;dotTimer=.5f;
+            if(alliesDot)alliesDot.enabled=HomeSignals.AlliesReady();
+            if(relicsDot)relicsDot.enabled=HomeSignals.RelicsReady();
+        }
+
+        /// <summary>Cham do goc tren phai mot nut dock.</summary>
+        Image Dot(Transform parent)
+        {
+            var r=Rect("Signal",parent,Vector2.one*.5f,new Vector2(72,62),new Vector2(42,42));
+            var image=r.gameObject.AddComponent<Image>();
+            image.sprite=Resources.Load<Sprite>("Badges/dot");
+            image.preserveAspect=true;image.raycastTarget=false;image.enabled=false;
+            return image;
+        }
         public static HomeChrome Build(Transform parent,Text gold,Text keys,Button mercenaries,Button relics)
         {
             var go=new GameObject("HomeChrome",typeof(RectTransform));go.transform.SetParent(parent,false);
-            var self=go.AddComponent<HomeChrome>();self.font=Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+            var self=go.AddComponent<HomeChrome>();self.font=UiFonts.Display;
             var r=go.GetComponent<RectTransform>();var safe=Screen.safeArea;
             r.anchorMin=new Vector2(safe.xMin/Screen.width,safe.yMin/Screen.height);r.anchorMax=new Vector2(safe.xMax/Screen.width,safe.yMax/Screen.height);r.offsetMin=r.offsetMax=Vector2.zero;
             self.Wallet(gold,"coin",new Vector2(-710,-160),new Vector2(290,95));
@@ -32,7 +52,9 @@ namespace Project.UI
                 var bg=button.GetComponent<Image>();bg.sprite=null;bg.color=Color.clear;button.transition=Selectable.Transition.ColorTint;
                 foreach(Transform child in button.transform)child.gameObject.SetActive(false);
                 if(i<4)self.Art(button.transform,new[]{"shop","orb","mercenaries","relics"}[i],Vector2.zero,new Vector2(170,160));
-                else self.Label(button.transform,"☰",Vector2.zero,new Vector2(130,130),85);
+                if(i==2)self.alliesDot=self.Dot(button.transform);
+                if(i==3)self.relicsDot=self.Dot(button.transform);
+                if(i==4){var menu=Resources.Load<Sprite>("Glyphs/menu");if(menu){var g=new GameObject("Glyph",typeof(RectTransform),typeof(Image)).GetComponent<Image>();g.transform.SetParent(button.transform,false);g.sprite=menu;g.preserveAspect=true;g.raycastTarget=false;g.rectTransform.sizeDelta=new Vector2(110,110);}else self.Label(button.transform,"☰",Vector2.zero,new Vector2(130,130),85);}
                 if(i==0)button.onClick.AddListener(()=>GemEconomyScreen.Show(parent,true));
                 if(i==1)button.onClick.AddListener(()=>GemEconomyScreen.Show(parent,false));
                 if(i==4)button.onClick.AddListener(SharedSettings.OpenHomeMenu);

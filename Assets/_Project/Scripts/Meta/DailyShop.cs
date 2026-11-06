@@ -12,6 +12,10 @@ namespace Project.Meta
         public int[] AllyGemPrices={15,30,75,150};
         public int[] RelicGemPrices={10,25,60,120};
         public int[] ExchangeGemCosts={100,500,1000};
+        // Doi gems ra chia khoa ruong. Keys chi roi tu phan thuong man choi, nen nguoi choi
+        // het chia la ket. Gia mac dinh 5 gems/chia; sua trong Resources/Shop/prices.json.
+        public int GemsPerKey=5;
+        public int[] KeyExchangeCounts={10,50,100};
         public static ShopPrices Load()
         {
             var text=Resources.Load<TextAsset>("Shop/prices");
@@ -60,6 +64,14 @@ namespace Project.Meta
                 row.Shards+=o.Count;
             }
             save.Gems-=o.GemPrice;o.Sold=true;return true;
+        }
+        public static bool ExchangeKeys(SaveData save,int keys,ShopPrices prices)
+        {
+            if(prices==null||prices.KeyExchangeCounts==null||!prices.KeyExchangeCounts.Contains(keys)||keys<=0||prices.GemsPerKey<=0)return false;
+            long gems=(long)keys*prices.GemsPerKey;
+            if(gems>int.MaxValue||save.Gems<gems)return false;
+            if(keys>int.MaxValue-save.TreasureKeys)return false;
+            save.Gems-=(int)gems;save.TreasureKeys+=keys;return true;
         }
         public static bool Exchange(SaveData save,int gems,ShopPrices prices)
         {

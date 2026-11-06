@@ -11,7 +11,7 @@ namespace Project.UI
         float elapsed;
         public static void Show(Text label)
         {
-            var sprite = Resources.Load<Sprite>("SharedUI/gold");
+            var sprite = Resources.Load<Sprite>("HomeChrome/coin");
             var owner = label.GetComponentInParent<Canvas>();
             if (!sprite || !owner) return;
             var go = new GameObject("CoinRewardEffect", typeof(RectTransform), typeof(Canvas));

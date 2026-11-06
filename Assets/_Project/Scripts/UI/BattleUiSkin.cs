@@ -54,7 +54,8 @@ namespace Project.UI
         public static void Icon(Button button,string name,bool iconOnly=false)
         {
             if(!button)return;
-            var sprite=Resources.Load<Sprite>("SharedUI/"+name);
+            // Ten co "/" la duong dan day du (Glyphs/home, HomeChrome/coin); khong thi tim trong SharedUI.
+            var sprite=Resources.Load<Sprite>(name.Contains("/")?name:"SharedUI/"+name);
             if(!sprite)return;
             var legacy=button.transform.Find("Pictogram");if(legacy)legacy.gameObject.SetActive(false);
             var existing=button.transform.Find("ActionIcon");

@@ -153,6 +153,11 @@ namespace Project.Battle
         public string Describe(EffectBuffKind kind)=>EffectBuffScaling.Describe(kind,Level(kind))+(kind==EffectBuffKind.SoulHarvest?$"\nActive: +{harvest.ActivePercent:0}% HP / ATK · Next wave: +{harvest.PendingPercent:0}%":"");
         public void EnemyDefeated(){if(Fighting)harvest.Kill(Level(EffectBuffKind.SoulHarvest));}
         int rescueWave=-1;bool rescueArmed;
+        public bool TryRescueDraw()
+        {
+            if(!flow||!EffectBuffMath.DrawRescueEligible(rescueArmed,rescueWave,flow.Wave,UnitRegistry.CountAlive(UnitTeam.Ally),UnitRegistry.CountAlive(UnitTeam.Enemy)))return false;
+            rescueArmed=false;return true;
+        }
         public bool TryRescue()
         {
             if(!flow||!EffectBuffMath.RescueEligible(rescueArmed,rescueWave,flow.Wave,UnitRegistry.CountAlive(UnitTeam.Ally),UnitRegistry.CountAlive(UnitTeam.Enemy)))return false;

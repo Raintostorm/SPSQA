@@ -52,8 +52,18 @@ namespace Project.Battle
         public Phase Current { get; private set; } = Phase.Prep;
 
         /// <summary>Phe thắng, chỉ có nghĩa khi Current == Finished.
-        /// null = hoà (hai bên cùng sạch quân trong một frame).</summary>
+        /// null = hoà (hai bên cùng sạch quân trong một frame) — tính là THUA.</summary>
         public UnitTeam? Winner { get; private set; }
+
+        /// <summary>
+        /// Thưởng của lần qua màn này; null khi chưa qua. Phát ĐÚNG MỘT LẦN
+        /// mỗi run, ngay lúc vào LevelCleared, trước khi bắn PhaseChanged.
+        ///
+        /// Trước đây ResultPanel phát thưởng trong lúc nghe event: panel tắt
+        /// hoặc thiếu là thắng màn mà không mở màn kế, không có vàng. Giờ màn
+        /// kết quả chỉ đọc con số ở đây.
+        /// </summary>
+        public Project.Meta.GameProgress.ClearReward? Settlement { get; private set; }
 
         // Hàng đợi chứa Ô, không chứa từng con. Cả ô ra đường CÙNG MỘT LÚC
         // và giữ nguyên đội hình tam giác đã xếp — thả lẻ từng con thì người
@@ -110,6 +120,8 @@ namespace Project.Battle
         {
             if (Current == next) return;
             Current = next;
+            if (next == Phase.LevelCleared && Settlement == null)
+                Settlement = Project.Meta.GameProgress.Clear(Project.Meta.GameProgress.CurrentLevel, balance);
             PhaseChanged?.Invoke(next);
         }
 
@@ -248,6 +260,7 @@ namespace Project.Battle
             allyQueue.Clear();
             enemyQueue.Clear();
             Winner = null;
+            Settlement = null;
             Wave = 1;
             StartCoroutine(RestartNextFrame());
         }
@@ -289,7 +302,10 @@ namespace Project.Battle
             if(ally==0&&enemy>0&&EffectBuffSystem.Current&&EffectBuffSystem.Current.TryRescue())return;
             if (ally > 0 && enemy > 0) return;
 
-            Winner = ally > 0 ? UnitTeam.Ally
+            // Hoà = thua, TRỪ khi Second Wind đang chờ: buff mất, wave tính là thắng.
+            // Không cần hồi sinh tại chỗ — EnterPrep hồi đầy mọi ally như mọi wave.
+            bool drawRescued = ally == 0 && enemy == 0 && EffectBuffSystem.Current && EffectBuffSystem.Current.TryRescueDraw();
+            Winner = ally > 0 || drawRescued ? UnitTeam.Ally
                    : enemy > 0 ? UnitTeam.Enemy
                    : (UnitTeam?)null;
             SetPhase(Phase.Finished);
@@ -311,8 +327,10 @@ namespace Project.Battle
             finishedTimer -= Time.deltaTime;
             if (finishedTimer > 0f) return;
 
-            // Thua: phe ta sach quan. Het run, khong ve san nua.
-            if (Winner == UnitTeam.Enemy)
+            // Thua: phe ta sach quan, KE CA khi dich cung sach (hoa). Luat user
+            // chot 2026-11-03: hoa = thua. Truoc day chi kiem Enemy, nen hoa o
+            // wave cuoi lot xuong nhanh qua man.
+            if (Winner != UnitTeam.Ally)
             {
                 SetPhase(Phase.Defeated);
                 Debug.Log($"[BattleFlow] THUA ở wave {Wave}.", this);

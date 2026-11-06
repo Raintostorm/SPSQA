@@ -15,26 +15,27 @@ namespace Project.UI
         readonly Color dark=new Color(.17f,.13f,.24f);
         void Start()
         {
-            font=Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");prices=ShopPrices.Load();allies=Resources.Load<AllySummon>("Summon/Catalog");relics=Resources.Load<TreasureDatabase>("Shop/Relics");
+            font=UiFonts.Display;prices=ShopPrices.Load();allies=Resources.Load<AllySummon>("Summon/Catalog");relics=Resources.Load<TreasureDatabase>("Shop/Relics");
             if(!relics)relics=Resources.FindObjectsOfTypeAll<TreasureDatabase>().FirstOrDefault();
             safe=Rect(transform,"SafeArea",0,0,0,0);safe.anchorMin=Vector2.zero;safe.anchorMax=Vector2.one;safe.offsetMin=safe.offsetMax=Vector2.zero;
             layout=Rect(safe,"ShopLayout",0,0,1125,2436);
             Box(layout,"Background",0,0,1125,2436,dark);
             var header=Rect(layout,"MerchantHeader",0,968,1125,500).gameObject.AddComponent<RawImage>();header.texture=Resources.Load<Texture2D>("ShopV2/header");header.uvRect=new Rect(.125f,0,.75f,1);header.raycastTarget=false;
-            var goldWallet=Card(layout,"GoldWallet",-285,1145,440,100,Color.white);BattleUiSkin.Skin(goldWallet.GetComponent<Image>(),BattleUiSkin.Navy);
-            var gemWallet=Card(layout,"GemWallet",285,1145,440,100,Color.white);BattleUiSkin.Skin(gemWallet.GetComponent<Image>(),BattleUiSkin.Navy);
-            Picture(layout,Resources.Load<Sprite>("HomeChrome/coin"),-440,1145,80);gold=Text(layout,"",-250,1145,300,90,52);
-            Picture(layout,Resources.Load<Sprite>("Summon/gem"),130,1145,80);gems=Text(layout,"",320,1145,300,90,52);
-            var viewport=Rect(layout,"ShopScroll",0,-180,1060,1740);viewport.gameObject.AddComponent<RectMask2D>();viewport.gameObject.AddComponent<Image>().color=new Color(0,0,0,.001f);
+            // Shared chrome (UI-005): back top-left (wallets shift right), ribbon title on the counter,
+            // no bottom bar — it only held Back and a single "Shop" tab.
+            ScreenChrome.Back(layout,new Vector2(-487,1145),()=>Destroy(gameObject));
+            var goldWallet=Card(layout,"GoldWallet",-120,1145,360,100,Color.white);BattleUiSkin.Skin(goldWallet.GetComponent<Image>(),BattleUiSkin.Navy);
+            var gemWallet=Card(layout,"GemWallet",330,1145,360,100,Color.white);BattleUiSkin.Skin(gemWallet.GetComponent<Image>(),BattleUiSkin.Navy);
+            Picture(layout,Resources.Load<Sprite>("HomeChrome/coin"),-255,1145,80);gold=Text(layout,"",-90,1145,240,90,52);
+            Picture(layout,Resources.Load<Sprite>("Summon/gem"),195,1145,80);gems=Text(layout,"",360,1145,240,90,52);
+            var viewport=Rect(layout,"ShopScroll",0,-280,1060,1820);viewport.gameObject.AddComponent<RectMask2D>();viewport.gameObject.AddComponent<Image>().color=new Color(0,0,0,.001f);
             var scroll=viewport.gameObject.AddComponent<ScrollRect>();scroll.horizontal=false;scroll.vertical=true;scroll.viewport=viewport;
             scroll.scrollSensitivity=80f;scroll.movementType=ScrollRect.MovementType.Clamped;scroll.inertia=true;scroll.decelerationRate=.135f;
             content=Rect(viewport,"Products",0,0,1060,2600);content.anchorMin=content.anchorMax=content.pivot=new Vector2(.5f,1);content.anchoredPosition=Vector2.zero;scroll.content=content;CollectionScrollHint.Install(scroll);
             // A hit surface also allows dragging in the gaps between products.
             content.gameObject.AddComponent<Image>().color=new Color(0,0,0,.001f);
-            var footer=Box(layout,"Footer",0,-1143,1125,150,Color.white);BattleUiSkin.Skin(footer,BattleUiSkin.Navy);
-            var back=Button(layout,"Back",-460,-1143,110,100,1,()=>Destroy(gameObject));ButtonFamilySkin.Apply(back.GetComponent<Image>(),6);Text(back,"‹",0,0,90,90,72);
-            Picture(layout,Resources.Load<Sprite>("HomeChrome/shop"),0,-1120,90);Text(layout,"Shop",0,-1180,400,55,35);
-            message=Text(layout,"",0,-1015,1000,70,32);
+            ScreenChrome.Title(layout,"SHOP",new Vector2(0,715),620);
+            message=Text(layout,"",0,-1150,1000,70,32);
             Refresh();LateUpdate();
         }
         void LateUpdate()
@@ -57,14 +58,16 @@ namespace Project.UI
             day=DailyShop.Day(DateTime.UtcNow);
             if(DailyShop.Ensure(SaveSystem.Current,day,allies?allies.Units:null,relics,prices,new System.Random()))SaveSystem.Save();
             foreach(Transform child in content){child.gameObject.SetActive(false);Destroy(child.gameObject);}Wallet();
-            Section("Gold",-1570);
+            Section("Gold",-1850);
             for(int i=0;i<prices.ExchangeGemCosts.Length;i++)
             {
                 int cost=prices.ExchangeGemCosts[i];float x=(i-1)*345;
-                var card=Product(content,"GoldPack",x,-1810,325,350);
-                Texture(card,"Shop/gold",0,25,150);var amount=Text(card,(cost*prices.GoldPerGem).ToString("N0"),0,125,310,65,44);amount.color=new Color(.12f,.09f,.08f);
-                var buy=PriceButton(card,"Exchange",-132,325,80,()=>Confirm("Gold",cost*prices.GoldPerGem,cost,null,null,false,()=>DailyShop.Exchange(SaveSystem.Current,cost,prices)));
-                GemPrice(buy,cost);
+                var card=Product(content,"GoldPack",x,-2090,325,350);
+                // Pack art grows with the pack (chat 004): small stack → pouch → chest.
+                var pile=Resources.Load<Sprite>("ShopPacks/gold-"+PackSize(i));if(pile)Picture(card,pile,0,5,190);else Texture(card,"Shop/gold",0,25,150);
+                Text(card,(cost*prices.GoldPerGem).ToString("N0"),0,125,310,65,44);
+                var buy=PriceButton(card,"Exchange",0,-132,300,84,()=>Confirm("Gold",cost*prices.GoldPerGem,cost,null,null,false,()=>DailyShop.Exchange(SaveSystem.Current,cost,prices)));
+                ScreenChrome.Action(buy,ScreenChrome.Role.Primary);GemPrice(buy,cost);
             }
             Section("Daily Shop",-55);
             countdown=Text(content,"",0,-130,1000,55,36);
@@ -77,39 +80,56 @@ namespace Project.UI
                 else item=relics?.Find(offer.Id);
                 bool valid=unit||item!=null;Rank rank=unit?unit.Rank:item?.Tier??Rank.Common;
                 string name=unit?unit.DisplayName:item?.DisplayName??"Unavailable";
-                var card=Product(content,"Offer"+i,(i%3-1)*345,-390-i/3*440,325,415);
-                var title=Text(card,name,0,150,305,90,34);title.color=new Color(.12f,.09f,.08f);
-                Card(card,"PortraitFrame",0,0,225,210,Tier(rank));
+                // Same rarity frames as Summon Results (chat 003), 302x441 aspect; price button under the card.
+                float rowY=-390-i/3*535;
+                var card=Frame(content,"Offer"+i,(i%3-1)*345,rowY,rank);
                 Sprite portrait=unit?unit.Portrait:item?.Icon;
                 if(!portrait && unit && unit.Animations?.Idle?.IsValid==true)portrait=unit.Animations.Idle.FrameAt(0);
                 if(unit) AllyPortrait(card,unit,portrait);
-                else Picture(card,portrait,0,0,185);
-                Texture(card,"Shop/fragment",-85,75,46);
-                Text(card,"×"+offer.Count,55,-77,140,55,44);
-                var buy=PriceButton(card,"BuyShards",-165,325,80,()=>Confirm(name,offer.Count,offer.GemPrice,unit,item?.Icon,true,()=>DailyShop.Buy(SaveSystem.Current,slot,allies?allies.Units:null,relics)));
+                else{var window=Rect(card,"IconWindow",0,52,250,289);SpriteFit.Place(window,portrait,new Vector2(250,289),.8f,.72f,false);}
+                // Long names ("Chipped Wooden Cup") shrink to fit the plate instead of being cut.
+                var plate=Text(card,name,0,-144,250,62,28);plate.resizeTextForBestFit=true;plate.resizeTextMinSize=16;plate.resizeTextMaxSize=26;
+                // Count badge (shard icon + ×N) replaces the unexplained corner icon.
+                var badge=Box(card,"Count",72,204,150,54,Color.white);badge.raycastTarget=false;badge.sprite=Resources.Load<Sprite>("SummonKit/price-pill");
+                if(badge.sprite){badge.type=Image.Type.Sliced;badge.pixelsPerUnitMultiplier=badge.sprite.rect.height/54f;}
+                Texture(badge.transform,"Shop/fragment",-45,0,38);Text(badge.transform,"×"+offer.Count,15,0,100,50,30);
+                var buy=PriceButton(content,"BuyShards",(i%3-1)*345,rowY-262,300,84,()=>Confirm(name,offer.Count,offer.GemPrice,unit,item?.Icon,true,()=>DailyShop.Buy(SaveSystem.Current,slot,allies?allies.Units:null,relics)));
+                ScreenChrome.Action(buy,ScreenChrome.Role.Primary);
                 if(offer.Sold)
                 {
-                    BattleUiSkin.Skin(buy.GetComponent<Image>(),BattleUiSkin.Navy);
-                    buy.GetComponent<Image>().color=new Color(.65f,.68f,.72f);
-                    Text(buy,"SOLD OUT",0,0,280,65,30);
+                    // Sold: grey button AND a dimmed card, so it no longer reads as buyable.
+                    var im=buy.GetComponent<Image>();im.sprite=Resources.Load<Sprite>("ButtonsV2/disabled")??im.sprite;
+                    foreach(var g in card.GetComponentsInChildren<Graphic>())g.color*=new Color(.55f,.55f,.6f,1);
+                    Text(buy,"SOLD OUT",0,0,260,65,30);
                 }
                 else GemPrice(buy,offer.GemPrice);
                 buy.GetComponent<Button>().interactable=!offer.Sold&&valid;
 
             }
-            Section("Gems",-2070);
+            Section("Keys",-2350);
+            for(int i=0;i<prices.KeyExchangeCounts.Length;i++)
+            {
+                int count=prices.KeyExchangeCounts[i];int cost=count*prices.GemsPerKey;float x=(i-1)*345;
+                var card=Product(content,"KeyPack",x,-2590,325,350);
+                var pile=Resources.Load<Sprite>("ShopPacks/keys-"+PackSize(i))??Resources.Load<Sprite>("HomeChrome/key");
+                if(pile)Picture(card,pile,0,5,190);
+                Text(card,count.ToString("N0"),0,125,310,65,44);
+                var buy=PriceButton(card,"ExchangeKeys",0,-132,300,84,()=>Confirm("Keys",count,cost,null,pile,false,()=>DailyShop.ExchangeKeys(SaveSystem.Current,count,prices)));
+                ScreenChrome.Action(buy,ScreenChrome.Role.Primary);GemPrice(buy,cost);
+            }
+            Section("Gems",-2850);
             int[] packs={100,500,1000};
             for(int i=0;i<3;i++)
             {
                 int amount=packs[i];
-                var pack=Product(content,"FreeTestGems",(i-1)*345,-2310,325,350);
-                var label=Text(pack,amount.ToString("N0"),0,125,310,65,44);label.color=new Color(.12f,.09f,.08f);
+                var pack=Product(content,"FreeTestGems",(i-1)*345,-3090,325,350);
+                Text(pack,amount.ToString("N0"),0,125,310,65,44);
                 GemBundle(pack,i);
-                var buy=PriceButton(pack,"ClaimGems",-132,325,80,()=>{GameProgress.AddGems(amount);message.text="+"+amount+" gems · Test only";Wallet();});
-                Text(buy,"FREE",0,0,280,65,38);
+                var buy=PriceButton(pack,"ClaimGems",0,-132,300,84,()=>{GameProgress.AddGems(amount);message.text="+"+amount+" gems · Test only";Wallet();});
+                ScreenChrome.Action(buy,ScreenChrome.Role.Secondary);Text(buy,"FREE",0,0,280,65,38);
             }
-            Text(content,"Test only · No payment",0,-2540,1000,65,32);
-            content.sizeDelta=new Vector2(1060,2630);
+            Text(content,"Test only · No payment",0,-3320,1000,65,32);
+            content.sizeDelta=new Vector2(1060,3390);
         }
         void Confirm(string product,int quantity,int gemCost,UnitDefinition unit,Sprite relicIcon,bool daily,Func<bool> transaction)
         {
@@ -120,7 +140,7 @@ namespace Project.UI
             BattleUiSkin.Skin(panel.GetComponent<Image>(),BattleUiSkin.Navy);
             Text(panel,"CONFIRM PURCHASE",0,455,910,110,54);
             var tile=Card(panel,"ProductPortrait",-285,230,265,265,unit?Tier(unit.Rank):new Color(.24f,.20f,.32f));
-            if(unit)AllyPortrait(tile,unit,unit.Portrait);
+            if(unit)AllyPortrait(tile,unit,unit.Portrait,0);
             else if(relicIcon)Picture(tile,relicIcon,0,0,210);
             else Texture(tile,"Shop/gold",0,0,220);
             Text(panel,product,150,305,550,135,46);
@@ -148,27 +168,43 @@ namespace Project.UI
             Picture(yes,Resources.Load<Sprite>("Summon/gem"),-105,0,85);Text(yes,gemCost.ToString("N0"),65,0,230,110,56);
             yes.GetComponent<Button>().interactable=affordable;
             var no=Button(panel,"Cancel",-225,-400,415,140,1,()=>{dim.gameObject.SetActive(false);Destroy(dim.gameObject);busy=false;});
-            BattleUiSkin.Skin(no.GetComponent<Image>(),BattleUiSkin.Blue);Text(no,"Cancel",0,0,390,110,48);
+            Text(no,"Cancel",0,0,390,110,48);
             Text(panel,daily?"One purchase today":"Gold exchange",0,-515,850,60,31);
         }
         // Content is top-pivoted. Its children MUST also anchor at the top,
         // otherwise their negative Y starts halfway down the full content height.
         RectTransform Rect(Transform p,string name,float x,float y,float w,float h){var r=new GameObject(name,typeof(RectTransform)).GetComponent<RectTransform>();r.SetParent(p,false);r.anchorMin=r.anchorMax=p==content?new Vector2(.5f,1):Vector2.one*.5f;r.pivot=Vector2.one*.5f;r.anchoredPosition=new Vector2(x,y);r.sizeDelta=new Vector2(w,h);return r;}
-        void Section(string label,float y){var plaque=Box(content,"Section",0,y,780,90,Color.white);ShopUiSkin.Apply(plaque,2);Text(plaque.transform,label,0,0,690,80,46);}
-        RectTransform Product(Transform p,string name,float x,float y,float w,float h){var im=Box(p,name,x,y,w,h,Color.white);ShopUiSkin.Apply(im,0);return im.rectTransform;}
-        RectTransform PriceButton(Transform p,string name,float y,float w,float h,Action action){var im=Box(p,name,0,y,w,h,new Color(1,1,1,.001f));var b=im.gameObject.AddComponent<Button>();b.targetGraphic=im;b.onClick.AddListener(()=>action());ButtonFamilySkin.States(b);return im.rectTransform;}
+        // Section headers use the shared navy plaque; re-anchor to the top like every other product row.
+        void Section(string label,float y){var plaque=(RectTransform)ScreenChrome.Title(content,label,Vector2.zero,620,ScreenChrome.Banner.Section).transform.parent;plaque.anchorMin=plaque.anchorMax=new Vector2(.5f,1);plaque.anchoredPosition=new Vector2(0,y);}
+        // Packs use the navy surface of the rest of the game instead of the cream card.
+        RectTransform Product(Transform p,string name,float x,float y,float w,float h){var im=Box(p,name,x,y,w,h,Color.white);BattleUiSkin.Skin(im,BattleUiSkin.Navy);return im.rectTransform;}
+        RectTransform Frame(Transform p,string name,float x,float y,Rank rank)
+        {
+            // Flat v2 frames (chat 003-v2): navy window top 5–71%, dark name band 72–94%.
+            var im=Box(p,name,x,y,290,438,Color.white);im.raycastTarget=false;
+            im.sprite=Resources.Load<Sprite>("RewardCardsV2/card-"+rank switch{Rank.Rare=>"rare",Rank.Epic=>"epic",Rank.Legendary=>"legendary",_=>"common"});
+            if(!im.sprite)RelicUiSkin.Apply(im,3,Tier(rank));
+            return im.rectTransform;
+        }
+        RectTransform PriceButton(Transform p,string name,float x,float y,float w,float h,Action action){var im=Box(p,name,x,y,w,h,new Color(1,1,1,.001f));var b=im.gameObject.AddComponent<Button>();b.targetGraphic=im;b.onClick.AddListener(()=>action());ButtonFamilySkin.States(b);return im.rectTransform;}
         Image Box(Transform p,string n,float x,float y,float w,float h,Color c){var im=Rect(p,n,x,y,w,h).gameObject.AddComponent<Image>();im.color=c;return im;}
         RectTransform Card(Transform p,string n,float x,float y,float w,float h,Color c){var im=Box(p,n,x,y,w,h,c);RelicUiSkin.Apply(im,3,c);return im.rectTransform;}
-        RectTransform Button(Transform p,string n,float x,float y,float w,float h,int skin,Action action){var im=Box(p,n,x,y,w,h,Color.white);BattleUiSkin.Skin(im,skin==0?BattleUiSkin.Gold:BattleUiSkin.Purple);var b=im.gameObject.AddComponent<Button>();b.targetGraphic=im;b.onClick.AddListener(()=>action());ButtonFamilySkin.States(b);return im.rectTransform;}
+        RectTransform Button(Transform p,string n,float x,float y,float w,float h,int skin,Action action){var im=Box(p,n,x,y,w,h,Color.white);var b=im.gameObject.AddComponent<Button>();b.targetGraphic=im;b.onClick.AddListener(()=>action());ScreenChrome.Action(b,skin==0?ScreenChrome.Role.Primary:ScreenChrome.Role.Cancel);return im.rectTransform;}
         Text Text(Transform p,string value,float x,float y,float w,float h,int size){var t=Rect(p,"Label",x,y,w,h).gameObject.AddComponent<Text>();t.font=font;t.fontSize=size;t.fontStyle=FontStyle.Bold;t.alignment=TextAnchor.MiddleCenter;t.color=Color.white;t.text=value;t.raycastTarget=false;var o=t.gameObject.AddComponent<Outline>();o.effectDistance=new Vector2(1.5f,-1.5f);return t;}
         // Shop-only head crops preserve the original battle sprites and animations.
-        void AllyPortrait(Transform card,UnitDefinition unit,Sprite fallback)
+        void AllyPortrait(Transform card,UnitDefinition unit,Sprite fallback,float windowY=52)
         {
             var head=Resources.Load<Sprite>("ShopV2/Heads/"+unit.UnitId);
-            Picture(card,head?head:fallback,0,0,195);
+            // Heads are cut flat at the shoulders: sit them on the bottom of the frame's portrait window.
+            var window=Rect(card,"PortraitWindow",0,windowY,250,289);window.gameObject.AddComponent<RectMask2D>();
+            // Heads v3 are uniform square crops (tools/build_uniform_heads.py): fill the window, sit on its floor.
+            SpriteFit.Place(window,head?head:fallback,new Vector2(250,289),1f,1f,true);
         }
+        static string PackSize(int tier)=>tier==0?"small":tier==1?"medium":"large";
         void GemBundle(Transform card,int tier)
         {
+            var pile=Resources.Load<Sprite>("ShopPacks/gems-"+PackSize(tier));
+            if(pile){Picture(card,pile,0,5,190);return;}
             var gem=Resources.Load<Sprite>("Summon/gem");
             if(tier==0){Picture(card,gem,0,12,140);return;}
             // A shared crystal silhouette keeps the pack art consistent with the wallet.

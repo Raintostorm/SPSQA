@@ -8,6 +8,12 @@ namespace Project.UI
     public static class ApprovedUiArt
     {
         static readonly Dictionary<string, Sprite> cache = new Dictionary<string, Sprite>();
+        static readonly Dictionary<string, string> Modern = new Dictionary<string, string>
+        {
+            {"atk","StatIcons/atk"},{"defense","StatIcons/defense"},{"hp","StatIcons/hp"},{"mp","StatIcons/mp"},
+            {"range","StatIcons/range"},{"speed","StatIcons/speed"},
+            {"coin","HomeChrome/coin"},{"gold","HomeChrome/coin"},{"battle","ButtonIcons/battle"},
+        };
         public static Texture StatTexture(string name)
         {
             var sprite = Get(name);
@@ -17,6 +23,14 @@ namespace Project.UI
         {
             var key = name + (sliced ? ":sliced" : "");
             if (cache.TryGetValue(key, out var sprite)) return sprite;
+            // D1 (bao cao 057): icon cung loai da co ban moi thi tra ban moi, de ca game mot kieu.
+            // Chi doi icon thuan (chi so, xu, kiem); nut/khung co nen rieng (back, close, cyan, navy...)
+            // van doc UiRefresh vi glyph moi la hinh trang can dia tron phia sau.
+            if (!sliced && Modern.TryGetValue(name, out var path))
+            {
+                sprite = Resources.Load<Sprite>(path);
+                if (sprite) { cache[key] = sprite; return sprite; }
+            }
             var data = Resources.Load<TextAsset>("UiRefresh/" + name);
             if (!data) return null;
             var texture = new Texture2D(2, 2, TextureFormat.RGBA32, false);

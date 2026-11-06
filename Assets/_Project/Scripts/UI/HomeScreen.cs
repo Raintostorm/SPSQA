@@ -39,8 +39,9 @@ namespace Project.UI
         {
             SharedSettings.InstallInitialScene();
             selectedLevel = Mathf.Clamp(GameProgress.Unlocked, 1, 3);
-            if (goldLabel != null) goldLabel.text = $"{GameProgress.Gold:N0}";
-            if (keyLabel != null) keyLabel.text = $"{GameProgress.Keys:N0}";
+            // ANIM-005 (theo user): khong bay xu; so trong vi tang thi chay xanh len roi ve mau cu.
+            if (goldLabel != null) AnimatedCounter.Wallet(goldLabel, GameProgress.Gold, "gold");
+            if (keyLabel != null) AnimatedCounter.Wallet(keyLabel, GameProgress.Keys, "keys");
             Wire(playButton, () => SceneRoutes.PlayLevel(selectedLevel), "Battle");
             Wire(upgradeButton, SceneRoutes.GoUpgrade, "Upgrade");
             Wire(treasureButton, SceneRoutes.GoTreasure, "Relics");
@@ -75,21 +76,22 @@ namespace Project.UI
             StyleButton(upgradeButton, 40);
             StyleButton(treasureButton, 40);
             BattleUiSkin.Icon(playButton,"battle");
-            BattleUiSkin.Skin(playButton.GetComponent<Image>(),BattleUiSkin.Orange);
-            playButton.transition=Selectable.Transition.ColorTint;
+            // BATTLE is the primary action of the whole game (UI-006).
+            ScreenChrome.Action(playButton,ScreenChrome.Role.Primary,"battle");
             var battleIcon=playButton.transform.Find("ActionIcon");if(battleIcon)battleIcon.gameObject.SetActive(false);
             var battleText=playButton.GetComponentInChildren<Text>();
             if(battleText){battleText.text="BATTLE";battleText.rectTransform.anchorMin=Vector2.zero;battleText.rectTransform.anchorMax=Vector2.one;battleText.rectTransform.offsetMin=battleText.rectTransform.offsetMax=Vector2.zero;OutlineText(battleText);}
-            BattleUiSkin.Icon(upgradeButton,"upgrade",true);
-            BattleUiSkin.Icon(treasureButton,"relics",true);
+            // Hai icon nay tung duoc dat o day, nhung HomeChrome.Build() ngay sau do tat het
+            // con cua nut roi ve icon dock rieng — nen chung chua bao gio hien. Bo di de
+            // moi khai niem chi con MOT hinh: relic la binh vang, khong phai la ban tim.
             chrome=HomeChrome.Build(transform,goldLabel,keyLabel,upgradeButton,treasureButton);
             var oldTitle=transform.Find("Title");if(oldTitle)oldTitle.gameObject.SetActive(false);
             if(chapterLabel)
             {
                 chapterBadge=new GameObject("ChapterBadge",typeof(RectTransform),typeof(Image)).GetComponent<RectTransform>();chapterBadge.SetParent(transform,false);
-                Place(chapterBadge,new Vector2(.5f,1),new Vector2(0,-400),new Vector2(510,105));BattleUiSkin.Skin(chapterBadge.GetComponent<Image>(),BattleUiSkin.Green);
-                chapterLabel.transform.SetParent(chapterBadge,false);Place(chapterLabel,Vector2.one*.5f,Vector2.zero,new Vector2(490,100));chapterLabel.color=ink;
-                var chapterOutline=chapterLabel.GetComponent<Outline>();if(chapterOutline)chapterOutline.enabled=false;
+                Place(chapterBadge,new Vector2(.5f,1),new Vector2(0,-400),new Vector2(510,105));ScreenChrome.BannerArt(chapterBadge.GetComponent<Image>(),ScreenChrome.Banner.Section,105);
+                chapterLabel.transform.SetParent(chapterBadge,false);Place(chapterLabel,Vector2.one*.5f,Vector2.zero,new Vector2(450,100));chapterLabel.color=Color.white;
+                var chapterOutline=chapterLabel.GetComponent<Outline>();if(chapterOutline)chapterOutline.enabled=true;
                 waveHeading=new GameObject("WaveHeading",typeof(RectTransform),typeof(Text)).GetComponent<Text>();waveHeading.transform.SetParent(transform,false);
                 waveHeading.font=chapterLabel.font;waveHeading.text="WAVE";waveHeading.fontSize=86;waveHeading.fontStyle=FontStyle.Bold;waveHeading.alignment=TextAnchor.MiddleCenter;waveHeading.color=new Color(1,.85f,.15f);waveHeading.raycastTarget=false;
                 Place(waveHeading,new Vector2(.5f,1),new Vector2(0,-550),new Vector2(650,120));OutlineText(waveHeading);
@@ -104,13 +106,17 @@ namespace Project.UI
         void BuildChapterButton()
         {
             var go=new GameObject("SelectChapter",typeof(RectTransform),typeof(Image),typeof(Button));go.transform.SetParent(transform,false);
-            selectChapterButton=go.GetComponent<Button>();go.GetComponent<Image>().color=Color.clear;
-            Place(selectChapterButton,new Vector2(.5f,0),new Vector2(0,440),new Vector2(500,140));
+            selectChapterButton=go.GetComponent<Button>();
+            // UI-009: truoc day la lieu + chu troi giua bai co, trong nhu vat trang tri. Gio la nut tron
+            // (cung bo SmallButtons) dung canh BATTLE, ro la nut bam.
+            var plate=go.GetComponent<Image>();plate.sprite=Resources.Load<Sprite>("SmallButtons/navy");plate.preserveAspect=true;plate.color=plate.sprite?Color.white:Color.clear;
+            selectChapterButton.transition=Selectable.Transition.SpriteSwap;selectChapterButton.spriteState=new SpriteState{pressedSprite=Resources.Load<Sprite>("SmallButtons/navy-pressed")};
+            Place(selectChapterButton,new Vector2(.5f,0),new Vector2(-445,240),new Vector2(170,170));
             selectChapterButton.onClick.AddListener(()=>{selecting=true;Refresh();});
             var icon=new GameObject("Tent",typeof(RectTransform),typeof(Image)).GetComponent<Image>();icon.transform.SetParent(go.transform,false);icon.sprite=Resources.Load<Sprite>("SharedUI/home");icon.preserveAspect=true;icon.raycastTarget=false;
-            Place(icon,Vector2.one*.5f,new Vector2(0,30),new Vector2(100,100));
-            var label=new GameObject("Label",typeof(RectTransform),typeof(Text)).GetComponent<Text>();label.transform.SetParent(go.transform,false);label.font=Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");label.text="Select Chapter";label.fontSize=46;label.fontStyle=FontStyle.Bold;label.color=Color.white;label.alignment=TextAnchor.MiddleCenter;label.raycastTarget=false;
-            Place(label,Vector2.one*.5f,new Vector2(0,-46),new Vector2(490,70));OutlineText(label);
+            Place(icon,Vector2.one*.5f,new Vector2(0,6),new Vector2(112,112));
+            var label=new GameObject("Label",typeof(RectTransform),typeof(Text)).GetComponent<Text>();label.transform.SetParent(go.transform,false);label.font=UiFonts.Display;label.text="Chapters";label.fontSize=32;label.fontStyle=FontStyle.Bold;label.color=Color.white;label.alignment=TextAnchor.MiddleCenter;label.raycastTarget=false;
+            Place(label,Vector2.one*.5f,new Vector2(0,-108),new Vector2(240,46));OutlineText(label);
         }
 
         void SetSecondaryStyle(Button button)

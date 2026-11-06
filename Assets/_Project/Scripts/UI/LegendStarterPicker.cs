@@ -48,7 +48,7 @@ namespace Project.UI
         }
         static void Label(Transform parent,string value,Vector2 position,Vector2 size,int fontSize,Color color)
         {
-            var text=Rect(parent,"Label",position,size).gameObject.AddComponent<Text>();text.text=value;text.font=Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");text.fontSize=fontSize;text.fontStyle=FontStyle.Bold;text.alignment=TextAnchor.MiddleCenter;text.color=color;text.raycastTarget=false;
+            var text=Rect(parent,"Label",position,size).gameObject.AddComponent<Text>();text.text=value;text.font=UiFonts.Display;text.fontSize=fontSize;text.fontStyle=FontStyle.Bold;text.alignment=TextAnchor.MiddleCenter;text.color=color;text.raycastTarget=false;
         }
     }
 }

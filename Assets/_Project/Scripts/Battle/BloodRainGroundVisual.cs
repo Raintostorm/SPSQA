@@ -47,7 +47,8 @@ namespace Project.Battle
             var tex=new Texture2D(w,h,TextureFormat.RGBA32,false);tex.SetPixels32(pixels);tex.filterMode=FilterMode.Bilinear;tex.wrapMode=TextureWrapMode.Clamp;tex.Apply();
             return Sprite.Create(tex,new Rect(0,0,w,h),Vector2.one*.5f,100);
         }
-        void Update(){clock+=Time.deltaTime;Draw();}
+        // Sua .cs luc dang Play: Unity tao moi mang readonly rong -> dung lai giot/vong thay vi bao loi moi khung.
+        void Update(){if(!droplets[0]){foreach(Transform c in transform)Destroy(c.gameObject);Awake();}clock+=Time.deltaTime;Draw();}
         void Draw()
         {
             bool show=Project.UI.SharedSettings.EffectsEnabled;

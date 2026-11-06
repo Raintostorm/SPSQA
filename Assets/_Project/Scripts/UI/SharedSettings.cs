@@ -50,7 +50,7 @@ namespace Project.UI
 
         void Start()
         {
-            font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+            font = UiFonts.Display;
             buttonSprite = Resources.Load<Sprite>("SharedUI/btn_blue");
             var canvas = gameObject.AddComponent<Canvas>();
             canvas.renderMode = RenderMode.ScreenSpaceOverlay;
@@ -70,13 +70,34 @@ namespace Project.UI
             open.anchorMin = open.anchorMax = new Vector2(1, 1);
             open.anchoredPosition = new Vector2(-85, -470);
             open.sizeDelta = new Vector2(140, 140);
-            BattleUiSkin.Skin(open.GetComponent<Image>(),BattleUiSkin.Dark);
-            open.GetComponent<Image>().type = Image.Type.Simple;
-            open.GetComponent<Image>().preserveAspect = true;
-            open.GetComponent<Image>().color = Color.white;
             foreach (Transform child in open) Destroy(child.gameObject);
-            ApprovedUiArt.Apply(open.GetComponent<Image>(),"menu");
-            if(SceneManager.GetActiveScene().name==SceneRoutes.Home)open.gameObject.SetActive(false);
+            // Nut tron chung (chat 012): mat nut navy + ky hieu ba vach roi.
+            var openImage = open.GetComponent<Image>();
+            openImage.type = Image.Type.Simple; openImage.preserveAspect = true; openImage.color = Color.white;
+            var openPlate = Resources.Load<Sprite>("SmallButtons/navy");
+            if (openPlate)
+            {
+                openImage.sprite = openPlate;
+                var openButton = open.GetComponent<Button>();
+                if (openButton)
+                {
+                    openButton.transition = Selectable.Transition.SpriteSwap;
+                    openButton.spriteState = new SpriteState { pressedSprite = Resources.Load<Sprite>("SmallButtons/navy-pressed") };
+                }
+                var openMark = new GameObject("Glyph", typeof(RectTransform), typeof(Image)).GetComponent<RectTransform>();
+                openMark.SetParent(open, false);
+                openMark.anchorMin = openMark.anchorMax = openMark.pivot = Vector2.one * .5f;
+                openMark.anchoredPosition = Vector2.zero; openMark.sizeDelta = Vector2.one * 73;
+                var openMarkImage = openMark.GetComponent<Image>();
+                openMarkImage.sprite = Resources.Load<Sprite>("Glyphs/menu");
+                openMarkImage.preserveAspect = true; openMarkImage.raycastTarget = false;
+                openMarkImage.enabled = openMarkImage.sprite;
+                if (!open.GetComponent<ScreenChrome.Press>()) open.gameObject.AddComponent<ScreenChrome.Press>();
+            }
+            else { BattleUiSkin.Skin(openImage,BattleUiSkin.Dark); ApprovedUiArt.Apply(openImage,"menu"); }
+            // Home has its dock menu; Relics uses Back and should not expose this overlay.
+            if(SceneManager.GetActiveScene().name==SceneRoutes.Home ||
+                SceneManager.GetActiveScene().name==SceneRoutes.Treasure)open.gameObject.SetActive(false);
             audioSource = gameObject.AddComponent<AudioSource>();
             audioSource.ignoreListenerPause = true;
             click = AudioClip.Create("UI click", 1764, 1, 44100, false);
@@ -125,7 +146,12 @@ namespace Project.UI
             {
                 var art = Rect("Pictogram", rect, new Vector2(110, 110), new Vector2(-300, 0));
                 var pictogram = art.gameObject.AddComponent<Image>();
-                pictogram.sprite = Resources.Load<Sprite>("SharedUI/" + icon);
+                // Reuse the approved control glyphs; keep SharedUI/home (tent)
+                // for Select Chapter, which has a different meaning from Go Home.
+                string resource = icon == "restart" ? "Glyphs/replay" :
+                    icon == "home" ? "Glyphs/home" :
+                    icon == "close" ? "Glyphs/close" : "SharedUI/" + icon;
+                pictogram.sprite = Resources.Load<Sprite>(resource);
                 pictogram.preserveAspect = true; pictogram.raycastTarget = false;
                 text.rectTransform.anchoredPosition = new Vector2(60, 0);
                 text.rectTransform.sizeDelta = new Vector2(550, 90);
@@ -169,9 +195,9 @@ namespace Project.UI
             if(SceneManager.GetActiveScene().name==SceneRoutes.Home)
             {menu.anchorMin=menu.anchorMax=menu.pivot=new Vector2(1,0);menu.anchoredPosition=new Vector2(-30,210);}
             BattleUiSkin.Skin(menu.gameObject.AddComponent<Image>(),BattleUiSkin.Dark);
-            var settings=Button(menu,"Settings",new Vector2(-220,-60),()=>{BuildSettings();});settings.sizeDelta=new Vector2(400,90);BattleUiSkin.Button(settings.GetComponent<Button>(),BattleUiSkin.Purple,"Settings");BattleUiSkin.Icon(settings.GetComponent<Button>(),"settings");
-            if(Battle){var stats=Button(menu,"Contribution",new Vector2(-220,-165),BuildContribution);stats.sizeDelta=new Vector2(400,90);BattleUiSkin.Button(stats.GetComponent<Button>(),BattleUiSkin.Purple,"Contribution");BattleUiSkin.Icon(stats.GetComponent<Button>(),"battle");}
-            var leave=Button(menu,Battle?"Leave":"Close",new Vector2(-220,Battle?-270:-165),()=>{if(Battle)Confirm(true);else Close();});leave.sizeDelta=new Vector2(400,90);BattleUiSkin.Button(leave.GetComponent<Button>(),BattleUiSkin.Orange,Battle?"Leave":"Close");BattleUiSkin.Icon(leave.GetComponent<Button>(),Battle?"home":"close");
+            var settings=Button(menu,"Settings",new Vector2(-220,-60),()=>{BuildSettings();});settings.sizeDelta=new Vector2(400,90);BattleUiSkin.Button(settings.GetComponent<Button>(),BattleUiSkin.Purple,"Settings");ScreenChrome.Action(settings.GetComponent<Button>(),ScreenChrome.Role.Secondary);BattleUiSkin.Icon(settings.GetComponent<Button>(),"settings");
+            if(Battle){var stats=Button(menu,"Contribution",new Vector2(-220,-165),BuildContribution);stats.sizeDelta=new Vector2(400,90);BattleUiSkin.Button(stats.GetComponent<Button>(),BattleUiSkin.Purple,"Contribution");ScreenChrome.Action(stats.GetComponent<Button>(),ScreenChrome.Role.Secondary);BattleUiSkin.Icon(stats.GetComponent<Button>(),"ButtonIcons/contribution");}
+            var leave=Button(menu,Battle?"Leave":"Close",new Vector2(-220,Battle?-270:-165),()=>{if(Battle)Confirm(true);else Close();});leave.sizeDelta=new Vector2(400,90);BattleUiSkin.Button(leave.GetComponent<Button>(),BattleUiSkin.Orange,Battle?"Leave":"Close");ScreenChrome.Action(leave.GetComponent<Button>(),Battle?ScreenChrome.Role.Danger:ScreenChrome.Role.Cancel);BattleUiSkin.Icon(leave.GetComponent<Button>(),Battle?"Glyphs/home":"Glyphs/close");
             // Children use the top-right pivot of the unfolding menu.
             foreach(Transform child in menu){var r=(RectTransform)child;r.anchorMin=r.anchorMax=new Vector2(1,1);}
             StartCoroutine(Pop(menu));
@@ -196,7 +222,7 @@ namespace Project.UI
             var panel = Rect("Panel", shade, new Vector2(940, 1050), Vector2.zero);
             BattleUiSkin.Skin(panel.gameObject.AddComponent<Image>(),BattleUiSkin.Dark);
             Label(panel, title, new Vector2(0, 425), 56);
-            var close=Button(panel,"Close",new Vector2(385,425),Close);close.sizeDelta=new Vector2(95,95);BattleUiSkin.Icon(close.GetComponent<Button>(),"close",true);
+            var close=Button(panel,"Close",new Vector2(385,425),Close);close.sizeDelta=new Vector2(95,95);BattleUiSkin.Icon(close.GetComponent<Button>(),"Glyphs/close",true);
             StartCoroutine(Pop(panel));
             return panel;
         }
@@ -269,13 +295,13 @@ namespace Project.UI
             view.Box(view.Panel,"Message",new Vector2(0,25),new Vector2(850,420));
             view.Label(view.Panel,home?"Are you sure you want\nto leave?":"Restart the current battle?",new Vector2(0,80),new Vector2(800,180),48);
             view.Label(view.Panel,"The current attempt will end.",new Vector2(0,-70),new Vector2(800,75),34,new Color(.82f,.8f,.86f));
-            view.Button(view.Panel,"Stay",new Vector2(-225,-285),new Vector2(420,140),BattleUiSkin.Purple,Close);
-            view.Button(view.Panel,home?"Leave":"Restart",new Vector2(225,-285),new Vector2(420,140),BattleUiSkin.Red,() =>
+            ScreenChrome.Action(view.Button(view.Panel,"Stay",new Vector2(-225,-285),new Vector2(420,140),BattleUiSkin.Purple,Close),ScreenChrome.Role.Cancel);
+            ScreenChrome.Action(view.Button(view.Panel,home?"Leave":"Restart",new Vector2(225,-285),new Vector2(420,140),BattleUiSkin.Red,() =>
             {
                 if (leaving) return;
                 leaving = true; paused = false; IsPaused = false; Time.timeScale = 1;
                 if (home) SceneRoutes.GoHome(); else SceneRoutes.PlayLevel(GameProgress.CurrentLevel);
-            });
+            }),ScreenChrome.Role.Danger);
         }
 
         void Close()

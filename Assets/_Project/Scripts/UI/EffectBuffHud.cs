@@ -8,7 +8,7 @@ namespace Project.UI
     {
         EffectBuffSystem effects;GameObject root,detailPanel,overflowPanel,dismiss;RectTransform page;
         readonly Text[] overflowLevels=new Text[6];readonly Image[] overflowIcons=new Image[6];readonly RectTransform[] overflowSlots=new RectTransform[6];
-        Text overflowCount;bool expanded;
+        Text overflowCount;bool expanded;bool warnedMissingSlot;
 #if UNITY_EDITOR
         EffectBuffKind[] preview;
         public void PreviewCount(int count){preview=Enumerable.Range(0,Mathf.Clamp(count,0,10)).Select(i=>(EffectBuffKind)i).ToArray();nextRefresh=0;ClosePanels();}
@@ -69,7 +69,7 @@ namespace Project.UI
         static Text Label(Transform parent,float x,float y,float w,float h,int size)
         {
             var r=Rect(parent,"Label",x,y,w,h);var t=r.gameObject.AddComponent<Text>();
-            t.font=Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");t.fontStyle=FontStyle.Bold;t.fontSize=size;t.alignment=TextAnchor.MiddleCenter;t.color=Color.white;t.raycastTarget=false;
+            t.font=UiFonts.Display;t.fontStyle=FontStyle.Bold;t.fontSize=size;t.alignment=TextAnchor.MiddleCenter;t.color=Color.white;t.raycastTarget=false;
             var o=t.gameObject.AddComponent<Outline>();o.effectDistance=new Vector2(2,-2);return t;
         }
         void ClosePanels(){expanded=false;if(overflowPanel)overflowPanel.SetActive(false);HideDetails();}
@@ -105,19 +105,32 @@ namespace Project.UI
         }
         void Update()
         {
-            if(!effects||!page)return;var a=Screen.safeArea;
+            if(!effects||!page)return;
+            // Nguyen nhan loi NullReference lap lai (da tim ra 06/11): sua .cs trong luc dang Play,
+            // Unity nap lai ma va giu cac truong thuong (page, root) nhung tao MOI cac mang readonly
+            // (slots, icons, overflowSlots) rong. Gap trang thai do thi dung lai HUD tu dau.
+            if(!slots[0]){if(root)Destroy(root);Start();return;}
+            var a=Screen.safeArea;
             page.anchorMin=new Vector2(a.xMin/Screen.width,a.yMin/Screen.height);page.anchorMax=new Vector2(a.xMax/Screen.width,a.yMax/Screen.height);page.offsetMin=page.offsetMax=Vector2.zero;
             if(inspected.HasValue&&Time.unscaledTime>detailUntil)HideDetails();
             if(Time.unscaledTime<nextRefresh)return;nextRefresh=Time.unscaledTime+.15f;
-            var buffs=Buffs();int visible=Mathf.Min(5,buffs.Length);
+            var buffs=Buffs();if(buffs==null)return;int visible=Mathf.Min(5,buffs.Length);
             for(int i=0;i<icons.Length;i++)
             {
+                // Slot chi duoc tao trong Start(). Thieu mot cai nghia la Start() da dung
+                // giua chung — bao mot lan kem chi so de lan chay sau biet no chet o dau,
+                // thay vi NullReference moi khung hinh ma khong noi gi them.
+                if(!slots[i]||!icons[i]||!levels[i])
+                {
+                    if(!warnedMissingSlot){warnedMissingSlot=true;Debug.LogWarning($"[EffectBuffHud] Slot {i} chua duoc dung — Start() da dung giua chung.",this);}
+                    continue;
+                }
                 slots[i].gameObject.SetActive(i<visible);
                 if(i>=visible)continue;
                 slots[i].anchoredPosition=new Vector2((i-(visible-1)*.5f)*148,-430);
                 bool more=i==4&&buffs.Length>5;icons[i].enabled=!more;levels[i].enabled=!more;
                 icons[i].sprite=EffectBuffArt.Get(buffs[i]);levels[i].text="Lv."+BuffLevel(buffs[i]);
-                if(i==4){overflowCount.gameObject.SetActive(more);overflowCount.text="+"+(buffs.Length-4);BattleUiSkin.Skin(slots[i].GetComponent<Image>(),expanded?BattleUiSkin.Blue:BattleUiSkin.Navy);}
+                if(i==4&&overflowCount){overflowCount.gameObject.SetActive(more);overflowCount.text="+"+(buffs.Length-4);BattleUiSkin.Skin(slots[i].GetComponent<Image>(),expanded?BattleUiSkin.Blue:BattleUiSkin.Navy);}
             }
             RefreshOverflow();
             message.text=(effects.PendingAllies+effects.PendingItems==0?"":$"Waiting: {effects.PendingAllies} allies · {effects.PendingItems} items")+(effects.RescueArmed?$"  Second Wind ready · Wave {effects.RescueWave}":"");

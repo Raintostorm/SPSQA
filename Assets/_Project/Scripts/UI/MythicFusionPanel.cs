@@ -17,7 +17,7 @@ namespace Project.UI
             inventory=GetComponent<BattleItemInventory>();if(!inventory)inventory=gameObject.AddComponent<BattleItemInventory>();
             flow=FindFirstObjectByType<BattleFlow>();spawner=FindFirstObjectByType<UnitSpawner>();
             var boards=FindObjectsByType<BattleBoard>(FindObjectsSortMode.None);board=boards.FirstOrDefault(b=>b.name.ToLowerInvariant().Contains("ally"));
-            font=Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+            font=UiFonts.Display;
             opener=Button(transform,"Mythic",new Vector2(-400,150),new Vector2(220,180),Open);opener.GetComponent<RectTransform>().anchorMin=opener.GetComponent<RectTransform>().anchorMax=new Vector2(.5f,0);
             counter=opener.GetComponentInChildren<Text>();counter.text="";BattleChrome.Button(opener,0);
             itemButton=Button(transform,"Item",new Vector2(400,150),new Vector2(220,180),OpenItems);itemButton.GetComponent<RectTransform>().anchorMin=itemButton.GetComponent<RectTransform>().anchorMax=new Vector2(.5f,0);
@@ -103,7 +103,7 @@ namespace Project.UI
             // Deliberately leave this reserved area empty until a Mythic is summoned.
             for(int i=0;i<units.Length;i++)
             {var def=units[i].Definition;var slot=Button(ownedTray,"",new Vector2((i-(units.Length-1)*.5f)*155,0),new Vector2(140,150),()=>ShowDetail(def));var art=Rect(slot.transform,"Mythic portrait",new Vector2(0,10),new Vector2(110,110)).gameObject.AddComponent<Image>();art.sprite=def.Portrait;art.preserveAspect=true;art.raycastTarget=false;
-                var gear=units[i].Equipment;for(int g=0;g<gear.Types.Count;g++){var badge=Rect(slot.transform,"Equipped item",new Vector2(-45+(g%3)*45,-48-(g/3)*32),new Vector2(40,32)).gameObject.AddComponent<Image>();badge.sprite=BattleItemRecipes.Icon(gear.Types[g]);badge.preserveAspect=true;badge.raycastTarget=false;}
+                var gear=units[i].Equipment;for(int g=0;g<gear.Types.Count;g++){var badge=Rect(slot.transform,"Equipped item",new Vector2(-45+(g%3)*45,-48-(g/3)*32),new Vector2(42,42)).gameObject.AddComponent<Image>();badge.sprite=BattleItemRecipes.Icon(gear.Types[g]);badge.preserveAspect=true;badge.raycastTarget=false;}
             }
         }
         void OpenItems()
@@ -122,7 +122,7 @@ namespace Project.UI
             {
                 var cell=Rect(root,"Inventory slot "+i,new Vector2(-400+i%5*200,55-i/5*135),new Vector2(180,120));BattleChrome.Cell(cell.gameObject.AddComponent<Image>());
                 if(i>=available.Length)continue;
-                var item=available[i];ItemRecipeIcon(cell,item.Type,new Vector2(0,7),new Vector2(130,95));Label(cell,"1",new Vector2(62,-38),new Vector2(35,35),25);
+                var item=available[i];ItemRecipeIcon(cell,item.Type,new Vector2(0,7),new Vector2(122,110));Label(cell,"1",new Vector2(62,-38),new Vector2(35,35),25);
                 var drag=cell.gameObject.AddComponent<BattleItemDrag>();drag.Inventory=inventory;drag.Id=item.InstanceId;drag.Changed=OpenItems;drag.Inspect=()=>{foreach(Transform sibling in root)if(sibling.name.StartsWith("Inventory slot"))BattleChrome.Cell(sibling.GetComponent<Image>());BattleUiSkin.Skin(cell.GetComponent<Image>(),BattleUiSkin.Blue);ShowItemEffect(root,item.Type);};
             }
 
@@ -165,7 +165,7 @@ namespace Project.UI
             var recipe=MythicFusion.For(def);if(recipe?.ingredients?.Length==3){var holder=Rect(root,"Ingredients",new Vector2(0,40),new Vector2(990,350));IngredientCards(holder,recipe);}
             bool can=MythicFusion.CanFuse(board,def,out _,out var reason);
             var summon=Button(root,"Summon",new Vector2(0,-210),new Vector2(940,115),()=>{if(MythicFusion.Fuse(board,def,spawner)){signature=int.MinValue;Open();}});
-            BattleUiSkin.Skin(summon.GetComponent<Image>(),can?BattleUiSkin.Gold:(ApprovedUiArt.Get("disabled",true)??BattleUiSkin.Dark));summon.interactable=can;summon.GetComponentInChildren<Text>().fontSize=48;
+            ScreenChrome.Action(summon,ScreenChrome.Role.Primary);summon.interactable=can;summon.GetComponentInChildren<Text>().fontSize=48;
             Label(root,can?"Ready to summon":reason,new Vector2(0,-300),new Vector2(980,55),34).color=can?new Color(.4f,1,.65f):new Color(1,.55f,.5f);
             Label(root,"Mythic "+MythicFusion.Count+" / "+MythicFusion.Limit,new Vector2(0,-370),new Vector2(800,50),32);
             var viewport=Rect(root,"Mythic list",new Vector2(0,-505),new Vector2(1000,200));viewport.gameObject.AddComponent<RectMask2D>();viewport.gameObject.AddComponent<Image>().color=new Color(0,0,0,.02f);
@@ -178,7 +178,7 @@ namespace Project.UI
                 int have=0;var needed=MythicFusion.For(choice);if(needed!=null)foreach(var group in needed.ingredients.GroupBy(x=>x))have+=Mathf.Min(group.Count(),Available(group.Key));
                 Label(button.transform,have+" / 3",new Vector2(0,-62),new Vector2(155,45),32).color=have==3?new Color(.4f,1,.65f):new Color(1,.65f,.6f);
             }
-            var next=Button(root,"›",new Vector2(485,-505),new Vector2(65,100),()=>scroll.horizontalNormalizedPosition=Mathf.Clamp01(scroll.horizontalNormalizedPosition+.35f));next.GetComponentInChildren<Text>().fontSize=60;
+            var next=Button(root,"›",new Vector2(485,-505),new Vector2(65,100),()=>scroll.horizontalNormalizedPosition=Mathf.Clamp01(scroll.horizontalNormalizedPosition+.35f));next.GetComponentInChildren<Text>().fontSize=60;var nextGlyph=Resources.Load<Sprite>("Glyphs/next");if(nextGlyph){next.GetComponentInChildren<Text>().enabled=false;var g=new GameObject("Glyph",typeof(RectTransform),typeof(Image)).GetComponent<Image>();g.transform.SetParent(next.transform,false);g.sprite=nextGlyph;g.preserveAspect=true;g.raycastTarget=false;g.rectTransform.sizeDelta=new Vector2(60,60);}
             Canvas.ForceUpdateCanvases();scroll.horizontalNormalizedPosition=savedPosition;next.interactable=savedPosition<.999f;
             scroll.onValueChanged.AddListener(v=>{listPosition=v.x;next.interactable=v.x<.999f;});
         }
@@ -194,7 +194,7 @@ namespace Project.UI
             for(int i=0;i<3;i++)
             {
                 float x=(i-1)*340;var cell=Rect(root,"Recipe item",new Vector2(x,100),new Vector2(265,230));BattleUiSkin.Skin(cell.gameObject.AddComponent<Image>(),i==2?BattleUiSkin.Blue:BattleUiSkin.Navy);
-                ItemRecipeIcon(cell,recipe[i],new Vector2(0,25),new Vector2(210,140));
+                ItemRecipeIcon(cell,recipe[i],new Vector2(0,35),new Vector2(160,160));
                 Label(cell,BattleItemRecipes.Items[recipe[i]].Name,new Vector2(0,-78),new Vector2(255,65),27);
             }
             Label(root,"+",new Vector2(-170,100),new Vector2(55,65),46);Label(root,"=",new Vector2(170,100),new Vector2(55,65),46);
@@ -203,7 +203,7 @@ namespace Project.UI
             else Label(root,effect[0],new Vector2(0,-80),new Vector2(950,130),36).color=new Color(.6f,1,.78f);
             for(int i=0;i<3;i++)
             {int selected=i;var button=Button(root,"",new Vector2((i-1)*320,-325),new Vector2(300,170),()=>{itemRecipe=selected;Open();});BattleUiSkin.Skin(button.GetComponent<Image>(),i==itemRecipe?BattleUiSkin.Blue:BattleUiSkin.Navy);
-                ItemRecipeIcon(button.transform,BattleItemRecipes.Recipes[i][2],new Vector2(0,22),new Vector2(140,100));Label(button.transform,BattleItemRecipes.Items[BattleItemRecipes.Recipes[i][2]].Name,new Vector2(0,-56),new Vector2(285,45),28);
+                ItemRecipeIcon(button.transform,BattleItemRecipes.Recipes[i][2],new Vector2(0,30),new Vector2(110,110));Label(button.transform,BattleItemRecipes.Items[BattleItemRecipes.Recipes[i][2]].Name,new Vector2(0,-56),new Vector2(285,45),28);
             }
             Label(root,"Mythics only",new Vector2(0,-210),new Vector2(950,45),27).color=new Color(.65f,.8f,.88f);
         }

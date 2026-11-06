@@ -43,22 +43,23 @@ namespace Project.UI
         {
             font=allyHeader?allyHeader.font:GetComponentInChildren<Text>(true).font;
             foreach(Transform child in transform)child.gameObject.SetActive(false);
-            BattleUiSkin.Place((RectTransform)transform,new Vector2(.5f,0),new Vector2(0,40),new Vector2(1060,620));
-            var body=Box(transform,"LiveRanking",Vector2.zero,new Vector2(1060,620),BattleUiSkin.Navy);
+            // Bang Damage thu gon: 620 -> 470 de san danh rong them mot hang quan.
+            BattleUiSkin.Place((RectTransform)transform,new Vector2(.5f,0),new Vector2(0,40),new Vector2(1060,470));
+            var body=Box(transform,"LiveRanking",Vector2.zero,new Vector2(1060,470),BattleUiSkin.Navy);
             for(int i=0;i<2;i++)
             {
                 int selected=i;
-                var r=Box(body,"Metric",new Vector2(i==0?-260:260,250),new Vector2(505,100),BattleUiSkin.Navy);
+                var r=Box(body,"Metric",new Vector2(i==0?-260:260,175),new Vector2(505,86),BattleUiSkin.Navy);
                 r.GetComponent<Image>().raycastTarget=true;
                 var button=r.gameObject.AddComponent<Button>();ButtonFamilySkin.States(button);button.onClick.AddListener(()=>Select((Metric)selected));
                 Text(r,Titles[i],Vector2.zero,new Vector2(490,85),34);metricButtons.Add(button);
             }
-            healthLabel=Text(body,"",new Vector2(-160,166),new Vector2(680,55),27);healthLabel.alignment=TextAnchor.MiddleLeft;
-            totalLabel=Text(body,"",new Vector2(340,166),new Vector2(330,55),30);totalLabel.alignment=TextAnchor.MiddleRight;
-            var viewport=Rect(body,"Viewport",new Vector2(0,-83),new Vector2(1010,420));viewport.gameObject.AddComponent<RectMask2D>();
+            healthLabel=Text(body,"",new Vector2(-160,104),new Vector2(680,52),27);healthLabel.alignment=TextAnchor.MiddleLeft;
+            totalLabel=Text(body,"",new Vector2(340,104),new Vector2(330,52),30);totalLabel.alignment=TextAnchor.MiddleRight;
+            var viewport=Rect(body,"Viewport",new Vector2(0,-62),new Vector2(1010,320));viewport.gameObject.AddComponent<RectMask2D>();
             var hit=viewport.gameObject.AddComponent<Image>();hit.color=new Color(0,0,0,.01f);
             var scroll=viewport.gameObject.AddComponent<ScrollRect>();scroll.viewport=viewport;scroll.horizontal=false;scroll.movementType=ScrollRect.MovementType.Clamped;scroll.scrollSensitivity=40;
-            content=Rect(viewport,"Rows",Vector2.zero,new Vector2(1000,420));content.anchorMin=content.anchorMax=content.pivot=new Vector2(.5f,1);scroll.content=content;
+            content=Rect(viewport,"Rows",Vector2.zero,new Vector2(1000,320));content.anchorMin=content.anchorMax=content.pivot=new Vector2(.5f,1);scroll.content=content;
             Highlight();Refresh();OnPhase(flow?flow.Current:BattleFlow.Phase.Prep);
         }
         void OnPhase(BattleFlow.Phase phase)
@@ -88,7 +89,7 @@ namespace Project.UI
             healthLabel.text=$"HP  Allies {Mathf.CeilToInt(allyHp):N0} · Enemies {Mathf.CeilToInt(enemyHp):N0}";
             totalLabel.text=$"Total {total:N0}";
             while(rows.Count<units.Count)rows.Add(CreateRow());
-            content.sizeDelta=new Vector2(1000,Mathf.Max(420,units.Count*140));
+            content.sizeDelta=new Vector2(1000,Mathf.Max(320,units.Count*140));
             for(int i=0;i<rows.Count;i++)
             {
                 var row=rows[i];row.Root.gameObject.SetActive(i<units.Count);if(i>=units.Count)continue;

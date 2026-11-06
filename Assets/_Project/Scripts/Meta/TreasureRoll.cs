@@ -25,14 +25,34 @@ namespace Project.Meta
             public int ShardsGranted;
         }
 
-        /// <summary>Quay <paramref name="count"/> lượt. Trừ chìa trước khi gọi.</summary>
+        /// <summary>
+        /// Quay rồi ghi đĩa, KHÔNG trừ chìa. Chỉ còn để test và công cụ dùng;
+        /// màn rương phải đi qua <see cref="GameProgress.TryOpenChest"/>.
+        /// </summary>
         public static List<Result> Roll(int count, TreasureDatabase db,
                                         GameBalance balance, System.Random rng)
         {
             var results = new List<Result>();
-            if (db == null || balance == null || count <= 0) return results;
+            if (!RollInto(SaveSystem.Current, count, db, balance, rng, results)) return new List<Result>();
+            SaveSystem.Save();
+            return results;
+        }
 
-            var save = SaveSystem.Current;
+        /// <summary>
+        /// Quay <paramref name="count"/> lượt vào <paramref name="save"/>, KHÔNG
+        /// ghi đĩa. Trả false nếu một lượt rơi vào bậc không có món nào — khi
+        /// đó save đã bị đổi dở dang, người gọi phải huỷ (SaveSystem.Transact
+        /// tự làm việc này).
+        ///
+        /// Bản cũ cập nhật bộ đếm bảo hiểm TRƯỚC khi kiểm kho rồi lặng lẽ bỏ
+        /// qua lượt đó: bảo hiểm 80 gặp kho Legendary trống thì tụt về 0 mà
+        /// người chơi không nhận gì.
+        /// </summary>
+        public static bool RollInto(SaveData save, int count, TreasureDatabase db,
+                                    GameBalance balance, System.Random rng, List<Result> results)
+        {
+            if (save == null || db == null || balance == null || count <= 0) return false;
+
             var floorTier = balance.TenRollFloor;
             var needFloor = count >= 10;
 
@@ -48,19 +68,16 @@ namespace Project.Meta
                     tier = floorTier;
                 if (tier >= floorTier) needFloor = false;
 
+                var pool = db.OfTier(tier);
+                if (pool == null || pool.Count == 0) return false;
+
                 // Bo dem bao hiem: dem tu lan trung Legendary gan nhat.
                 save.RollsSinceLegendary =
                     tier == Rank.Legendary ? 0 : save.RollsSinceLegendary + 1;
 
-                var pool = db.OfTier(tier);
-                if (pool.Count == 0) continue;
-                var item = pool[rng.Next(pool.Count)];
-
-                results.Add(Grant(save, item));
+                results.Add(Grant(save, pool[rng.Next(pool.Count)]));
             }
-
-            SaveSystem.Save();
-            return results;
+            return true;
         }
 
         static Rank PickTier(GameBalance b, SaveData save, System.Random rng)

@@ -73,7 +73,7 @@ namespace Project.UI
             fx.amountLabel=new GameObject("CoinAmount",typeof(RectTransform),typeof(Text)).GetComponent<Text>();
             fx.amountLabel.transform.SetParent(rt,false);
             var source=destination.GetComponent<Text>();
-            fx.amountLabel.font=source?source.font:Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+            fx.amountLabel.font=source?source.font:UiFonts.Display;
             fx.amountLabel.fontSize=38;fx.amountLabel.fontStyle=FontStyle.Bold;fx.amountLabel.color=new Color(1,.86f,.25f);
             fx.amountLabel.alignment=TextAnchor.MiddleLeft;fx.amountLabel.text="+"+amount;fx.amountLabel.raycastTarget=false;
             BattleUiSkin.Place(fx.amountLabel.rectTransform,Vector2.one*.5f,new Vector2(32,0),new Vector2(180,65));
@@ -98,7 +98,7 @@ namespace Project.UI
                 fx.amountLabel=new GameObject("BuffAmount",typeof(RectTransform),typeof(Text),typeof(Outline)).GetComponent<Text>();
                 fx.amountLabel.transform.SetParent(fx.art.transform,false);
                 var label=destination.GetComponent<Text>();
-                fx.amountLabel.font=label?label.font:Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+                fx.amountLabel.font=label?label.font:UiFonts.Display;
                 fx.amountLabel.fontSize=38;fx.amountLabel.fontStyle=FontStyle.Bold;
                 fx.amountLabel.alignment=TextAnchor.MiddleLeft;fx.amountLabel.text=caption;
                 fx.amountLabel.color=new Color(.3f,1,.45f);fx.amountLabel.raycastTarget=false;

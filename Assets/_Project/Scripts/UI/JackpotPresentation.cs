@@ -34,7 +34,7 @@ namespace Project.UI
             fx.castle=Art(root,"GoldenCastle",Resources.Load<Sprite>("Jackpot/castle"),new Vector2(0,280),new Vector2(360,310)).rectTransform;
             fx.banner.SetAsLastSibling();
             var label=new GameObject("JackpotTitle",typeof(RectTransform),typeof(Text),typeof(Outline)).GetComponent<Text>();
-            label.transform.SetParent(fx.banner,false);label.font=Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+            label.transform.SetParent(fx.banner,false);label.font=UiFonts.Display;
             label.text="JACKPOT!";label.fontSize=82;label.fontStyle=FontStyle.Bold;label.alignment=TextAnchor.MiddleCenter;label.color=new Color(1,.96f,.77f);label.raycastTarget=false;
             label.GetComponent<Outline>().effectColor=new Color(.15f,.04f,.2f);label.GetComponent<Outline>().effectDistance=new Vector2(3,-3);
             BattleUiSkin.Place(label.rectTransform,Vector2.one*.5f,Vector2.zero,new Vector2(870,200));

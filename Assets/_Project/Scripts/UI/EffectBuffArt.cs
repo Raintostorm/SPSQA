@@ -19,6 +19,10 @@ namespace Project.UI
                 }
             }
 
+            // Transparent redraws (chat 008). The catalog crops below are the old opaque proposal
+            // sheet (navy background + card edges); kept only as a fallback.
+            var slugs=new[]{null,null,"double-strike","bodyguard","frost-touch","grand-ascension","reinforcements","weapon-supplies","war-chest","second-wind"};
+            if(i<slugs.Length&&slugs[i]!=null){var redraw=Resources.Load<Sprite>("EffectBuffs/icons/"+slugs[i]);if(redraw)return icons[i]=redraw;}
             if(!atlas){var data=Resources.Load<TextAsset>("EffectBuffs/catalog");if(!data)return null;atlas=new Texture2D(2,2);atlas.LoadImage(data.bytes);}
             if(!icons[i]){float sx=atlas.width/1536f,sy=atlas.height/1024f;int row=i%5;icons[i]=Sprite.Create(atlas,new Rect((i<5?35:795)*sx,(1024-306-row*161)*sy,200*sx,137*sy),Vector2.one*.5f,100);}
             return icons[i];

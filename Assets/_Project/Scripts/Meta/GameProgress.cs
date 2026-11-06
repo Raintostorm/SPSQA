@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Project.Meta
@@ -60,25 +61,63 @@ namespace Project.Meta
         /// outdata/PROMPT_HOMEPAGE.md mục 5b. Hiện cả hai bằng nhau đúng
         /// như đã chốt; hôm nào thấy lạm phát thì hạ đúng một con số.
         /// </summary>
-        public static void Clear(int level, Data.GameBalance balance)
+        public static ClearReward Clear(int level, Data.GameBalance balance)
         {
-            var save = SaveSystem.Current;
-            var firstTime = level + 1 > save.HighestLevelUnlocked;
-
-            if (balance != null)
+            var reward = new ClearReward();
+            reward.Saved = SaveSystem.Transact(save =>
             {
-                save.Gold += balance.GoldForLevel(level, firstTime);
-                save.TreasureKeys += balance.KeysForLevel(level, firstTime);
-            }
-            // Award on every successful clear, including replays. No retroactive grants.
-            save.Gems+=GemsForLevel(level);
+                reward.FirstTime = level + 1 > save.HighestLevelUnlocked;
+                if (balance != null)
+                {
+                    reward.Gold = balance.GoldForLevel(level, reward.FirstTime);
+                    reward.Keys = balance.KeysForLevel(level, reward.FirstTime);
+                }
+                // Award on every successful clear, including replays. No retroactive grants.
+                reward.Gems = GemsForLevel(level);
 
-            if (firstTime) save.HighestLevelUnlocked = level + 1;
-            SaveSystem.Save();
+                save.Gold = checked(save.Gold + reward.Gold);
+                save.TreasureKeys = checked(save.TreasureKeys + reward.Keys);
+                save.Gems = checked(save.Gems + reward.Gems);
+                if (reward.FirstTime) save.HighestLevelUnlocked = level + 1;
+                return true;
+            });
+            if (!reward.Saved) reward = new ClearReward { FirstTime = reward.FirstTime };
 
             Debug.Log($"[GameProgress] Qua màn {level}" +
-                      (firstTime ? " (lần đầu)" : " (chơi lại)") +
-                      $" — {save.Gold} vàng, {save.TreasureKeys} chìa.");
+                      (reward.FirstTime ? " (lần đầu)" : " (chơi lại)") +
+                      (reward.Saved ? $" — +{reward.Gold} vàng, +{reward.Keys} chìa, +{reward.Gems} gem."
+                                    : " — KHÔNG ghi được save, chưa phát thưởng."));
+            return reward;
+        }
+
+        /// <summary>Thứ một lần qua màn đã thật sự phát. Màn kết quả chỉ ĐỌC cái này.</summary>
+        public struct ClearReward
+        {
+            public int Gold, Keys, Gems;
+            public bool FirstTime;
+            /// <summary>false = ghi đĩa hỏng, save đã được trả về như trước, không phát gì.</summary>
+            public bool Saved;
+        }
+
+        /// <summary>
+        /// Mở rương: trừ <paramref name="count"/> chìa, quay, phát quà, đếm bảo
+        /// hiểm — tất cả trong MỘT giao dịch, ghi đĩa đúng một lần.
+        ///
+        /// Thiếu chìa, kho thiếu bậc hoặc ghi đĩa hỏng → trả false, chìa và
+        /// bảo hiểm còn nguyên, <paramref name="results"/> rỗng.
+        /// </summary>
+        public static bool TryOpenChest(int count, Data.TreasureDatabase db, Data.GameBalance balance,
+                                        System.Random rng, out List<TreasureRoll.Result> results)
+        {
+            var got = new List<TreasureRoll.Result>();
+            var ok = count > 0 && SaveSystem.Transact(save =>
+            {
+                if (save.TreasureKeys < count) return false;
+                save.TreasureKeys -= count;
+                return TreasureRoll.RollInto(save, count, db, balance, rng, got);
+            });
+            results = ok ? got : new List<TreasureRoll.Result>();
+            return ok;
         }
 
         /// <summary>Trừ vàng nếu đủ. Trả false và KHÔNG đụng ví nếu thiếu.</summary>

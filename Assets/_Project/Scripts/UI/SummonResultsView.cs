@@ -18,7 +18,7 @@ namespace Project.UI
             var full=go.GetComponent<RectTransform>();full.anchorMin=Vector2.zero;full.anchorMax=Vector2.one;full.offsetMin=full.offsetMax=Vector2.zero;
             go.GetComponent<Image>().color=new Color(.075f,.09f,.17f);
             var canvas=go.AddComponent<Canvas>();canvas.overrideSorting=true;canvas.sortingOrder=450;go.AddComponent<GraphicRaycaster>();
-            var view=go.AddComponent<SummonResultsView>();view.font=Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");view.Build(results,rolls);
+            var view=go.AddComponent<SummonResultsView>();view.font=UiFonts.Display;view.Build(results,rolls);
         }
         void LateUpdate()
         {
@@ -29,29 +29,52 @@ namespace Project.UI
         {
             safe=R(transform,"SafeArea",0,0,0,0);safe.anchorMin=Vector2.zero;safe.anchorMax=Vector2.one;safe.offsetMin=safe.offsetMax=Vector2.zero;
             page=R(safe,"Page",0,0,1060,2250);page.anchorMin=page.anchorMax=page.pivot=Vector2.one*.5f;page.anchoredPosition=Vector2.zero;
-            var header=Box(page,"Header",0,20,1020,220,Color.white);BattleUiSkin.Skin(header,BattleUiSkin.Navy);
-            T(header.transform,"SUMMON RESULTS",0,20,980,110,66);
-            T(header.transform,rolls.ToString("N0")+" summons",0,135,980,65,38);
+            // Shared ribbon title (UI-005) instead of a plain navy text box.
+            ScreenChrome.Title(page,"SUMMON RESULTS",new Vector2(0,1025),820);
+            T(page,rolls.ToString("N0")+(rolls==1?" summon":" summons"),0,185,980,55,34);
             var groups=results.Where(r=>r.MythicStone||r.Unit).GroupBy(r=>r.MythicStone?"__mythic_stone":r.Unit.UnitId).OrderByDescending(g=>g.First().MythicStone?4:(int)g.First().Unit.Rank).ThenBy(g=>g.Key).ToArray();
-            Summary(-260,"Ally shards",results.Where(r=>!r.MythicStone).Sum(r=>(long)r.Shards),Resources.Load<Sprite>("Shop/fragment"));
+            Summary(-260,"Ally shards",results.Where(r=>!r.MythicStone).Sum(r=>(long)r.Shards),FragmentIcon());
             Summary(260,"Mythic Stones",results.Where(r=>r.MythicStone).Sum(r=>(long)r.Shards),MythicStoneArt.Icon);
             var viewport=R(page,"RewardsScroll",0,555,1040,1310);viewport.gameObject.AddComponent<RectMask2D>();viewport.gameObject.AddComponent<Image>().color=new Color(0,0,0,.001f);
             var scroll=viewport.gameObject.AddComponent<ScrollRect>();scroll.horizontal=false;scroll.viewport=viewport;scroll.movementType=ScrollRect.MovementType.Clamped;scroll.scrollSensitivity=65;
-            var content=R(viewport,"Content",0,0,1020,Mathf.Max(1310,Mathf.CeilToInt(groups.Length/3f)*550));scroll.content=content;CollectionScrollHint.Install(scroll);
+            var content=R(viewport,"Content",0,0,1020,Mathf.Max(1310,Mathf.CeilToInt(groups.Length/3f)*436));scroll.content=content;CollectionScrollHint.Install(scroll);
+            var revealCards=new List<RectTransform>();var revealTiers=new List<int>();
             foreach(var pair in groups.Select((g,i)=>new {Group=g,Index=i}))
             {
                 bool stone=pair.Group.First().MythicStone;var unit=pair.Group.First().Unit;var color=stone?new Color(.75f,.3f,.07f):unit.Rank switch{Project.Data.Rank.Rare=>new Color(.06f,.40f,.62f),Project.Data.Rank.Epic=>new Color(.45f,.14f,.63f),Project.Data.Rank.Legendary=>new Color(.65f,.43f,.06f),_=>new Color(.40f,.30f,.22f)};
-                var card=Box(content,"AllyReward",(pair.Index%3-1)*340,pair.Index/3*550,320,530,color);RelicUiSkin.Apply(card,3,color);
-                var crop=R(card.transform,"PortraitCrop",0,20,290,270);crop.gameObject.AddComponent<RectMask2D>();
+                // 3 rows of 436 fit the 1310 viewport, so a 10x roll shows 9 cards without a cut-off row.
+                var card=Box(content,"AllyReward",(pair.Index%3-1)*320,pair.Index/3*436,280,423,Color.white);
+                revealCards.Add(card.rectTransform);revealTiers.Add(stone?4:unit.Rank switch{Project.Data.Rank.Legendary=>3,Project.Data.Rank.Epic=>2,Project.Data.Rank.Rare=>1,_=>0});
+                // Flat v2 rarity frames (chat 003-v2): navy window 5–71%, name band 72–94%.
+                card.sprite=Resources.Load<Sprite>("RewardCardsV2/card-"+(stone?"stone":unit.Rank switch{Project.Data.Rank.Rare=>"rare",Project.Data.Rank.Epic=>"epic",Project.Data.Rank.Legendary=>"legendary",_=>"common"}));
+                if(!card.sprite){card.color=color;RelicUiSkin.Apply(card,3,color);}
+                // Window is the top ~68% of the frame; heads are cut flat at the shoulders, so the
+                // art's bottom sits on the window's bottom edge instead of floating mid-card.
+                var crop=R(card.transform,"PortraitCrop",0,21,240,279);crop.gameObject.AddComponent<RectMask2D>();
                 var sprite=stone?MythicStoneArt.Icon:Resources.Load<Sprite>("ShopV2/Heads/"+unit.UnitId);if(!sprite&&!stone)sprite=unit.Portrait;if(!stone&&!sprite && unit.Animations!=null && unit.Animations.Idle!=null && unit.Animations.Idle.IsValid)sprite=unit.Animations.Idle.FrameAt(0);
-                var art=Box(crop,"Portrait",0,5,260,260,Color.white);art.sprite=sprite;art.preserveAspect=true;art.enabled=sprite;
-                T(card.transform,stone?"Mythic Stone":unit.DisplayName,0,295,300,105,38);
-                T(card.transform,"×"+pair.Group.Sum(r=>(long)r.Shards).ToString("N0"),0,405,290,100,72);
+                // Fit by visible pixels (tools/build_sprite_bounds.py): heads sit on the window floor, the stone is centred.
+                SpriteFit.Place(crop,sprite,new Vector2(240,279),stone?.8f:1f,stone?.72f:1f,!stone);
+                // Count sits in a corner badge: over the window it covered the character's face.
+                var badge=Box(card.transform,"Count",82,6,124,54,Color.white);badge.sprite=Resources.Load<Sprite>("SummonKit/price-pill");
+                if(badge.sprite){badge.type=Image.Type.Sliced;badge.pixelsPerUnitMultiplier=badge.sprite.rect.height/54f;}else badge.color=new Color(.06f,.08f,.2f);
+                T(badge.transform,"×"+pair.Group.Sum(r=>(long)r.Shards).ToString("N0"),0,0,118,54,34);
+                T(card.transform,stone?"Mythic Stone":unit.DisplayName,0,321,250,60,30);
             }
             T(page,"Rewards saved · Mythic Stones upgrade any Mythic",0,1910,1020,100,32);
-            var done=Box(page,"Continue",0,2090,1020,145,Color.white);BattleUiSkin.Skin(done,BattleUiSkin.Blue);done.raycastTarget=true;
-            var button=done.gameObject.AddComponent<Button>();button.targetGraphic=done;ButtonFamilySkin.States(button);button.onClick.AddListener(()=>{gameObject.SetActive(false);Destroy(gameObject);});T(done.transform,"CONTINUE",0,0,1000,145,64);
+            var done=Box(page,"Continue",0,2090,1020,145,Color.white);done.raycastTarget=true;
+            var button=done.gameObject.AddComponent<Button>();button.targetGraphic=done;ButtonFamilySkin.States(button);ScreenChrome.Action(button,ScreenChrome.Role.Secondary,"continue");button.onClick.AddListener(()=>{gameObject.SetActive(false);Destroy(gameObject);});T(done.transform,"CONTINUE",0,0,1000,145,64);
             Canvas.ForceUpdateCanvases();content.anchoredPosition=Vector2.zero;scroll.verticalNormalizedPosition=1;LateUpdate();
+            // ANIM-002: trinh dien tren ket qua da luu san; bo qua duoc bang mot cham.
+            gameObject.AddComponent<SummonReveal>().Play(revealCards,revealTiers,page);
+        }
+        // Shop/fragment is imported as a plain Texture (DailyShop draws it as RawImage), so
+        // Load<Sprite> returned null and the tile showed a white square. Wrap the texture once.
+        static Sprite fragment;
+        static Sprite FragmentIcon()
+        {
+            if(fragment)return fragment;
+            var t=Resources.Load<Texture2D>("Shop/fragment");if(!t)return null;
+            return fragment=Sprite.Create(t,new Rect(0,0,t.width,t.height),Vector2.one*.5f,100);
         }
         void Summary(float x,string label,long total,Sprite sprite)
         {

@@ -1,6 +1,7 @@
 using Project.Battle;
 using Project.Data;
 using Project.Gacha;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -51,6 +52,7 @@ namespace Project.UI
         // ca luoi chu, lam moi frame thi phi — ma so chi doi khi co con chet.
         int shownAlly = -1, shownEnemy = -1;
         RollPanel reel;
+        float buffStripWidth;
         Vector4 displayedBuffs = new Vector4(float.NaN,0,0,0);
         GameObject actionDock, dockHint;
         Text rollPrice;
@@ -99,22 +101,25 @@ namespace Project.UI
             BattleUiSkin.Button(viewEnemyButton,BattleUiSkin.Navy,"Enemy");
             StyleActions();
             BattleUiSkin.Icon(viewEnemyButton,"enemy",true);
-            BattleUiSkin.Place(coinLabel.transform.parent.GetComponent<RectTransform>(),new Vector2(.5f,0),new Vector2(0,315),new Vector2(420,80));
+            // Truoc day chi Gold lo lung giua san va thanh day, doc nhu mot mau thong tin
+            // khong thuoc ve dau. Ha xuong cham mep tren thanh day de no thuoc ve cum Roll.
+            BattleUiSkin.Place(coinLabel.transform.parent.GetComponent<RectTransform>(),new Vector2(.5f,0),new Vector2(0,232),new Vector2(360,76));
             coinLabel.fontSize=40;
             if(speedLabel)speedLabel.fontSize=48;
-            BattleUiSkin.Place(speedButton.GetComponent<RectTransform>(),new Vector2(1,0),new Vector2(-60,244),new Vector2(220,72));
+            BattleUiSkin.Place(speedButton.GetComponent<RectTransform>(),new Vector2(0,1),new Vector2(32,-360),new Vector2(220,72));
             var hint=new GameObject("DockHint",typeof(RectTransform),typeof(Text));hint.transform.SetParent(transform,false);
             dockHint=hint;
-            var text=hint.GetComponent<Text>();text.font=statusLabel.font;text.fontSize=26;text.color=new Color(.65f,.82f,.93f);text.alignment=TextAnchor.MiddleCenter;text.text="Roll to recruit · Drag to arrange";text.raycastTarget=false;
-            BattleUiSkin.Place(text.rectTransform,new Vector2(.5f,0),new Vector2(0,34),new Vector2(950,30));
+            var text=hint.GetComponent<Text>();text.font=statusLabel.font;text.fontSize=34;text.color=new Color(.65f,.82f,.93f);text.alignment=TextAnchor.MiddleCenter;text.text="Roll to recruit · Drag to arrange";text.raycastTarget=false;
+            BattleUiSkin.Place(text.rectTransform,new Vector2(.5f,0),new Vector2(0,34),new Vector2(950,44));
             OnCoinsChanged(roll.Run.Coins);
         }
 
         void StyleActions()
         {
-            BattleChrome.Button(rollButton,1);
-            BattleUiSkin.Skin(startButton.GetComponent<Image>(),BattleUiSkin.Gold);
-            startButton.GetComponent<Image>().preserveAspect=false;ApprovedUiArt.GoldStates(startButton);
+            // UI-006: dock tran dau theo dung quy uoc mau nhu cac man khac.
+            // Roll = viec phu (xanh), Start = viec chinh cua man (vang).
+            ScreenChrome.Action(rollButton,ScreenChrome.Role.Secondary);
+            ScreenChrome.Action(startButton,ScreenChrome.Role.Primary);
             var swords=new GameObject("Start swords",typeof(RectTransform),typeof(Image)).GetComponent<Image>();swords.transform.SetParent(startButton.transform,false);swords.sprite=ApprovedUiArt.Get("battle");swords.preserveAspect=true;swords.raycastTarget=false;BattleUiSkin.Place(swords.rectTransform,Vector2.one*.5f,Vector2.zero,new Vector2(150,140));
             ActionLabel(rollButton,"",Vector2.zero,new Vector2(160,130),48);
             ActionLabel(startButton,"",Vector2.zero,new Vector2(270,130),50);
@@ -230,7 +235,9 @@ namespace Project.UI
             if(actionDock)actionDock.SetActive(prep);
             if(dockHint)dockHint.SetActive(prep);
             if(coinLabel)coinLabel.transform.parent.gameObject.SetActive(prep);
-            if(speedButton)BattleUiSkin.Place(speedButton.GetComponent<RectTransform>(),prep?new Vector2(1,0):new Vector2(0,1),prep?new Vector2(-60,244):new Vector2(32,-360),new Vector2(220,72));
+            // Truoc day nut toc do nhay tu goc duoi phai (prep) len goc tren trai (fight),
+            // nguoi choi phai tim lai moi van. Giu mot cho duy nhat o goc tren trai.
+            if(speedButton)BattleUiSkin.Place(speedButton.GetComponent<RectTransform>(),new Vector2(0,1),new Vector2(32,-360),new Vector2(220,72));
             var ally  = UnitRegistry.CountAlive(UnitTeam.Ally);
             var enemy = UnitRegistry.CountAlive(UnitTeam.Enemy);
 
@@ -345,12 +352,61 @@ namespace Project.UI
             Set(1, run?.DmgPct ?? 0f);
             Set(2, run?.AtkSpeedPct ?? 0f);
             Set(3, run?.CritChance ?? 0f);
+            LayoutBuffChips(new[] { run?.HpPct ?? 0f, run?.DmgPct ?? 0f, run?.AtkSpeedPct ?? 0f, run?.CritChance ?? 0f });
 
             void Set(int i, float value)
             {
                 AnimatedCounter.Set(buffValues[i], value, "+", true,
                     roll != null && roll.IsPresenting ? .85f : 0f);
             }
+        }
+
+        /// <summary>
+        /// Chỉ số bằng 0 thì giấu hẳn ô, rồi dồn các ô còn lại vào giữa. Trước đây cả bốn
+        /// ô "+0 %" luôn chiếm một dải ngang mà không nói gì — đầu ván lúc nào cũng thế.
+        /// Cả hàng rỗng thì giấu luôn dải, trả lại khoảng trời cho sân đánh.
+        /// </summary>
+        void LayoutBuffChips(float[] values)
+        {
+            var strip = transform.Find("Buffs") as RectTransform;
+            if (!strip || buffValues == null) return;
+            var shown = new List<RectTransform>();
+            for (int i = 0; i < values.Length && i < buffValues.Length; i++)
+            {
+                var chip = Chip(buffValues[i], strip);
+                if (!chip) continue;
+                // Chu hien la phan tram lam tron, nen moc phai la "co hien thanh 0 khong",
+                // khong phai "co bang 0 khong": 0.004 van lon hon 0 ma ve ra "+0 %".
+                bool on = Mathf.RoundToInt(values[i] * 100f) != 0;
+                chip.gameObject.SetActive(on);
+                if (on) shown.Add(chip);
+            }
+            strip.gameObject.SetActive(shown.Count > 0);
+            if (shown.Count == 0) return;
+            // Moi o duoc BattleHudBuilder neo CO GIAN theo phan tu cua dai (anchor
+            // i/4 -> (i+1)/4), khong phai neo mot diem. Nen doi anchoredPosition
+            // khong nhuc nhich, con thu hep dai lai bop moi o con mot phan tu be ti
+            // va con so bi cat mat — dung la cai vua xay ra.
+            // Cach dung: chia lai PHAN TU theo so o dang hien, roi thu dai dung
+            // bang bay nhieu o; moi o giu nguyen be rong pixel nhu cu.
+            if (buffStripWidth <= 0) buffStripWidth = strip.rect.width;
+            int lanes = Mathf.Max(1, values.Length);
+            strip.sizeDelta = new Vector2(buffStripWidth * shown.Count / lanes, strip.sizeDelta.y);
+            for (int i = 0; i < shown.Count; i++)
+            {
+                var slot = shown[i];
+                slot.anchorMin = new Vector2(i / (float)shown.Count, 0);
+                slot.anchorMax = new Vector2((i + 1) / (float)shown.Count, 1);
+                slot.offsetMin = slot.offsetMax = Vector2.zero;
+            }
+        }
+
+        /// <summary>Ô chứa một chỉ số: tổ tiên gần nhất nằm ngay dưới dải buff.</summary>
+        static RectTransform Chip(Text value, Transform strip)
+        {
+            var node = value ? value.transform : null;
+            while (node && node.parent != strip) node = node.parent;
+            return node as RectTransform;
         }
 
         /// <summary>

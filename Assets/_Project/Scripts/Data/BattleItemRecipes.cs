@@ -25,6 +25,8 @@ namespace Project.Data
         public static Sprite Icon(int index)
         {
             if(sprites[index])return sprites[index];
+            var clean=Resources.Load<Sprite>("BattleItems/Icons/"+Items[index].Id);
+            if(clean)return sprites[index]=clean;
             if(!atlas){var data=Resources.Load<TextAsset>("BattleItems/approved-icons");if(!data)return null;atlas=new Texture2D(2,2,TextureFormat.RGBA32,false);atlas.LoadImage(data.bytes);atlas.filterMode=FilterMode.Bilinear;}
             var r=Items[index].Art;r.y=atlas.height-r.y-r.height;
             return sprites[index]=Sprite.Create(atlas,r,Vector2.one*.5f,100);

@@ -59,7 +59,7 @@ namespace Project.UI
             string[] keys={"ui.sound","ui.damage","ui.effects","ui.vibration"};
             int count=Application.isMobilePlatform?4:3;
             for(int i=0;i<count;i++)ToggleRow(titles[i],icons[i],keys[i],270-i*170,redraw,feedback);
-            Button(Panel,battle?"Resume":"Close",new Vector2(0,-420),new Vector2(810,120),BattleUiSkin.Gold,close);
+            ScreenChrome.Action(Button(Panel,battle?"Resume":"Close",new Vector2(0,-420),new Vector2(810,120),BattleUiSkin.Gold,close),ScreenChrome.Role.Primary);
         }
         void ToggleRow(string title,string icon,string key,float y,Action redraw,Action feedback)
         {
@@ -70,7 +70,7 @@ namespace Project.UI
             if(icon.StartsWith("polish-"))
             {
                 var art=Rect(row,"Icon",new Vector2(-325,0),new Vector2(100,85)).gameObject.AddComponent<RawImage>();
-                art.texture=Resources.Load<Texture2D>("SharedUI/settings-polish");art.uvRect=new Rect(icon=="polish-damage"?0:.5f,0,.5f,1);art.raycastTarget=false;
+                art.texture=Resources.Load<Texture2D>("SettingsIcons/toggles");art.uvRect=new Rect(icon=="polish-damage"?0:.5f,0,.5f,1);art.raycastTarget=false;art.enabled=art.texture!=null;
             }
             else {var art=Rect(row,"Icon",new Vector2(-325,0),new Vector2(85,85)).gameObject.AddComponent<Image>();art.sprite=Resources.Load<Sprite>("SharedUI/"+icon);art.preserveAspect=true;art.raycastTarget=false;}
             Label(row,title,new Vector2(-65,0),new Vector2(390,100),36,null,TextAnchor.MiddleLeft);

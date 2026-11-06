@@ -13,5 +13,7 @@ namespace Project.Battle
         public static float SlowMultiplier(int level)=>Math.Max(.2f,1-Math.Max(0,level)*.2f);
         public static bool FourthHit(int hits)=>hits>0&&hits%4==0;
         public static bool RescueEligible(bool armed,int armedWave,int wave,int aliveAllies,int aliveEnemies)=>armed&&armedWave==wave&&aliveAllies==0&&aliveEnemies>0;
+        // Draw (both sides wiped): no one left to fight, so the buff is spent and the wave counts as won. Allies revive at Prep as usual.
+        public static bool DrawRescueEligible(bool armed,int armedWave,int wave,int aliveAllies,int aliveEnemies)=>armed&&armedWave==wave&&aliveAllies==0&&aliveEnemies==0;
     }
 }
